@@ -23,3 +23,14 @@ jobs:
         with:
           fetch-depth: 0
       - uses: ./.github/actions/prepare
+      
+  conventional-commits:
+    name: Conventional Commits
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/prepare
+      - uses: ./.github/actions/conventional-commits
