@@ -1,5 +1,10 @@
 node_modules
 .env
 
-
+# NX
 .nx/cache
+
+# Next.js
+.next
+out
+dist
