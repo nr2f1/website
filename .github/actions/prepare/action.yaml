@@ -1,0 +1,17 @@
+name: 'Install dependencies'
+description: 'Set environment and install dependencies'
+runs:
+  using: composite
+  steps:
+    - uses: pnpm/action-setup@v3
+      with:
+        version: 8.15.4
+
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/iron
+        cache: pnpm
+
+    - name: Install dependencies 📦
+      shell: bash
+      run: pnpm install

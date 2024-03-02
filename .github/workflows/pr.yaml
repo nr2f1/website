@@ -14,13 +14,12 @@ concurrency:
   group: '${{ github.workflow }} @ ${{ github.ref }}'
 
 jobs:
-  cog_check_job:
+  prepare:
+    name: Prepare
     runs-on: ubuntu-latest
-    name: check conventional commit compliance
     steps:
-      - uses: actions/checkout@main
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Conventional commits check
-        uses: oknozor/cocogitto-action@v3  
+      - uses: ./.github/actions/prepare
