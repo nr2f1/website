@@ -17,9 +17,47 @@ jobs:
   prepare:
     name: Prepare
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true    
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: ./.github/actions/prepare
+
+  conventional-commits:
+    name: Conventional Commits
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true    
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set environment and install dependencies
+        uses: ./.github/actions/prepare
+
+      - name: Conventional Commits
+        uses: ./.github/actions/conventional-commits
+
+  pr-validation:
+    name: PR validation
+    needs: [prepare, conventional-commits] 
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Check jobs for errors
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const checkJobsForErrors = require('./.github/workflows/js/check-for-errors.js');
+            const jobs = ${{ toJSON(needs) }};
+            checkJobsForErrors({ core, jobs });
