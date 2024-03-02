@@ -3,6 +3,16 @@
   "$schema": "../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "website",
   "projectType": "application",
-  "targets": {},
+  "targets": {
+    "lint": {
+      "command": "pnpm biome check website"
+    },
+    "format": {
+      "command": "pnpm biome format website"
+    },
+    "test": {
+      "command": "pnpm vitest website"
+    }
+  },
   "tags": []
 }

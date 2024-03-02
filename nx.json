@@ -12,17 +12,6 @@
         "startTargetName": "start",
         "serveStaticTargetName": "serve-static"
       }
-    },
-    {
-      "plugin": "@nx/vite/plugin",
-      "options": {
-        "targetName": "test",
-        "buildTargetName": "build",
-        "previewTargetName": "preview",
-        "testTargetName": "test",
-        "serveTargetName": "serve",
-        "serveStaticTargetName": "serve-static"
-      }
     }
   ],
   "generators": {
