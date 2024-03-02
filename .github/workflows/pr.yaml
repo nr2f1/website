@@ -17,20 +17,43 @@ jobs:
   prepare:
     name: Prepare
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true    
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: ./.github/actions/prepare
-      
+
   conventional-commits:
     name: Conventional Commits
+    needs: [prepare]     
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true    
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: ./.github/actions/prepare
-      - uses: ./.github/actions/conventional-commits
+
+      - name: Set environment and install dependencies
+        uses: ./.github/actions/prepare
+
+      - name: Conventional Commits
+        uses: ./.github/actions/conventional-commits
+
+  pr-validation:
+    name: PR validation
+    needs: [prepare, conventional-commits] 
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: PR validation
+        uses: ./.github/actions/pr-validation   
