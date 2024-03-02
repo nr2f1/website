@@ -1,0 +1,26 @@
+name: PR validation
+run-name: ${{ github.actor }} is running PR validation
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+  merge_group:
+    types: [checks_requested]
+
+concurrency:
+  cancel-in-progress: true
+  group: '${{ github.workflow }} @ ${{ github.ref }}'
+
+jobs:
+  cog_check_job:
+    runs-on: ubuntu-latest
+    name: check conventional commit compliance
+    steps:
+      - uses: actions/checkout@main
+        with:
+          fetch-depth: 0
+
+      - name: Conventional commits check
+        uses: oknozor/cocogitto-action@v3  

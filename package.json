@@ -1,0 +1,19 @@
+{
+	"name": "website",
+	"version": "1.0.0",
+	"description": "NR2F1 website",
+
+	"keywords": [
+		"NR2F1",
+		"BBSOAS",
+		"Bosch-Boonstra-Schaaf optic atrophy syndrome"
+	],
+	"authors": [
+		{
+			"name": "Pedro Martin",
+			"email": "hola@pataruco.dev",
+			"url": "https://pataruco.dev"
+		}
+	],
+	"license": "MIT"
+}
