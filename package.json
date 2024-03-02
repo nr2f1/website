@@ -1,24 +1,28 @@
 {
-	"name": "website",
-	"version": "1.0.0",
-	"description": "NR2F1 website",
-	"keywords": [
-		"NR2F1",
-		"BBSOAS",
-		"Bosch-Boonstra-Schaaf optic atrophy syndrome"
-	],
-	"authors": [
-		{
-			"name": "Pedro Martin",
-			"email": "hola@pataruco.dev",
-			"url": "https://pataruco.dev"
-		}
-	],
-	"license": "MIT",
-	"devDependencies": {
-		"@biomejs/biome": "1.5.3",
-		"@commitlint/cli": "^19.0.3",
-		"@commitlint/config-conventional": "^19.0.3",
-		"@commitlint/types": "^19.0.3"
-	}
+  "name": "website",
+  "version": "1.0.0",
+  "description": "NR2F1 website",
+  "keywords": [
+    "NR2F1",
+    "BBSOAS",
+    "Bosch-Boonstra-Schaaf optic atrophy syndrome"
+  ],
+  "authors": [
+    {
+      "name": "Pedro Martin",
+      "email": "hola@pataruco.dev",
+      "url": "https://pataruco.dev"
+    }
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "1.5.3",
+    "@commitlint/cli": "^19.0.3",
+    "@commitlint/config-conventional": "^19.0.3",
+    "@commitlint/types": "^19.0.3",
+    "nx": "18.0.6"
+  },
+  "nx": {
+    "targets": {}
+  }
 }
