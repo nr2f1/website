@@ -58,6 +58,6 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const checkJobsForErrors = require('./.github/workflows/js/check-jobs-for-errors.js');
+            const checkJobsForErrors = require('./.github/workflows/js/check-for-errors.js');
             const jobs = ${{ toJSON(needs) }};
             checkJobsForErrors({ core, jobs });
