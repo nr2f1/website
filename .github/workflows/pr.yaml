@@ -43,9 +43,26 @@ jobs:
       - name: Conventional Commits
         uses: ./.github/actions/conventional-commits
 
+  lint-format:
+    name: Linting and formatting
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true    
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set environment and install dependencies
+        uses: ./.github/actions/prepare
+
+      - name: Linting and formatting
+        uses: ./.github/actions/lint-format
+
   pr-validation:
     name: PR validation
-    needs: [prepare, conventional-commits] 
+    needs: [prepare, conventional-commits, lint-format] 
     if: ${{ always() }}
     runs-on: ubuntu-latest
     strategy:
