@@ -11,7 +11,10 @@
       "command": "pnpm biome format website"
     },
     "test": {
-      "command": "pnpm vitest website"
+      "executor": "@nx/vite:test",
+      "options": {
+        "config": "website/vite.config.ts"
+      }
     }
   },
   "tags": []
