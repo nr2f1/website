@@ -1,0 +1,8 @@
+name: Linting and Formatting
+description: 'Lint and format the affected files in the pull request with Biome'
+runs:
+  using: composite
+  steps:
+    - name: Linting 🪮 and Formatting 🖊️
+      shell: bash
+      run: pnpm nx affected run-many -t lint format
