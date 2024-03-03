@@ -8,6 +8,10 @@ on:
     paths:
       - website/**/*
       - .github/workflows/deploy-website-preview.yaml
+  workflow_run:
+    workflows: ["PR validation"]
+    types:
+      - completed      
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
