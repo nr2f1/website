@@ -1,0 +1,38 @@
+:root {
+  --base-space: 1.25rem;
+  --dark-blue: #0d1f36;
+  --light-blue: #03d3ff;
+  --red: #ff3e57;
+  --pink: #ff7283;
+  --salmon: #ffab99;
+  --white: #fff;
+
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: 1.25rem;
+  font-family: 'Avenir Next', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  margin: 0;
+}
+
+picture, video, img, svg, canvas, audio, iframe, embed, object {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.content-wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+
