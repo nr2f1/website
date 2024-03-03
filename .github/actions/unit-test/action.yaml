@@ -1,0 +1,8 @@
+name: Unit Testing 🧪
+description: 'Run unit tests on the affected files in the pull request'
+runs:
+  using: composite
+  steps:
+    - name: Unit Testing 🧪
+      shell: bash
+      run: pnpm nx affected run-many -t test

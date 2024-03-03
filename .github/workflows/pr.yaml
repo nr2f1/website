@@ -63,6 +63,26 @@ jobs:
       - name: Linting and formatting
         uses: ./.github/actions/lint-format
 
+  unit-tests:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true    
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set environment and install dependencies
+        uses: ./.github/actions/prepare
+        
+      - name: Get affected files
+        uses: ./.github/actions/get-affected-files
+
+      - name: Run unit tests
+        uses: ./.github/actions/unit-test
+
   pr-validation:
     name: PR validation
     needs: [prepare, conventional-commits, lint-format] 
