@@ -8,3 +8,6 @@ node_modules
 .next
 out
 dist
+
+website/src/graphql/types.ts
+website/src/graphql/queries.generated.tsx

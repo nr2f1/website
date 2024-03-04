@@ -16,8 +16,16 @@
         "name": "next"
       }
     ],
-    "types": ["jest", "node"]
+    "types": ["jest", "node"],
+     "paths": {
+      "@app/*": ["website/src/app/*"],
+      "@components/*": ["website/src/components/*"],
+      "@styles/*": ["website/src/styles/*"],
+      "@config/*": ["website/src/config/*"],
+      "@graphql/*": ["website/src/graphql/*"],
+    },
   },
+
   "include": [
     "**/*.ts",
     "**/*.tsx",

@@ -15,6 +15,9 @@
       "options": {
         "config": "website/vite.config.ts"
       }
+    },
+    "graphql-generate": {
+      "command": "pnpm graphql-codegen --config website/src/config/codegen.ts"
     }
   },
   "tags": []
