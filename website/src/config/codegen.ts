@@ -25,7 +25,6 @@ const config: CodegenConfig = {
       plugins: ['typescript-operations', 'typescript-react-apollo'],
       config: {
         reactApolloVersion: 3,
-        withHooks: true,
         withResultType: true,
       },
     },

@@ -3,7 +3,6 @@ import './layout.scss';
 
 import Footer from '@components/footer';
 import Header from '@components/header';
-import { ApolloWrapper } from './apollo-wrapper';
 
 export const metadata = {
   title: 'Welcome to website',
@@ -18,11 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ApolloWrapper>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </ApolloWrapper>
+        {/* <ApolloWrapper> */}
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        {/* </ApolloWrapper> */}
       </body>
     </html>
   );
