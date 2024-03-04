@@ -1,4 +1,8 @@
-import './global.css';
+import '@styles/main.scss';
+import './layout.scss';
+
+import Footer from '@components/footer';
+import Header from '@components/header';
 
 export const metadata = {
   title: 'Welcome to website',
@@ -12,7 +16,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {/* <ApolloWrapper> */}
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        {/* </ApolloWrapper> */}
+      </body>
     </html>
   );
 }

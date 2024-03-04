@@ -1,0 +1,18 @@
+query GetBoardMembers{
+  boardMemberCollection {
+    items {
+      name
+      title
+      position
+      email
+      bio
+      order
+      picture {
+        url
+      }
+    }
+  }
+}
+
+
+
