@@ -5,7 +5,7 @@ import './index.scss';
 
 import MainLogo from '@components/logos/main';
 import { usePathname, useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Header = () => {
   const [locale, setLocale] = useState(english);
@@ -14,11 +14,15 @@ const Header = () => {
 
   const pathnameWithoutLocale = pathname.split('/').slice(2).join('/');
 
+  useEffect(() => {
+    const locale = pathname.split('/')[1];
+    setLocale(locale);
+  }, [pathname]);
+
   const handleOnChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const {
       target: { value },
     } = event;
-
     setLocale(value);
     router.push(`/${value}/${pathnameWithoutLocale}`);
   };
