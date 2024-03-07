@@ -1,13 +1,14 @@
 import '@styles/main.scss';
 
-import { type LocaleParamsPath } from '@config/locales';
 import { getClient } from '@graphql/client';
 import {
   GetBoardMembersDocument,
   GetBoardMembersQuery,
 } from '@graphql/queries.generated';
+import { type LocaleParamsPath } from '@i18n/locales';
+import { type NextPage } from 'next';
 
-export default async function Page({ params: { lang } }: LocaleParamsPath) {
+const Page: NextPage<LocaleParamsPath> = async ({ params: { lang } }) => {
   const { query } = getClient();
 
   const {
@@ -42,4 +43,6 @@ export default async function Page({ params: { lang } }: LocaleParamsPath) {
       })}
     </div>
   );
-}
+};
+
+export default Page;

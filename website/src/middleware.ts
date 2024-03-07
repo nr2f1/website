@@ -1,5 +1,5 @@
-import { AVAILABLE_LOCALES, DEFAULT_LOCALE } from '@config/locales';
 import { match } from '@formatjs/intl-localematcher';
+import { AVAILABLE_LOCALES, DEFAULT_LOCALE } from '@i18n/locales';
 import Negotiator from 'negotiator';
 import { NextResponse, type NextRequest } from 'next/server';
 
