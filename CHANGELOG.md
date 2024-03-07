@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.2.0](https://github.com/nr2f1/website/compare/v1.1.0...v1.2.0) (2024-03-07)
+
+
+### Features
+
+* change language using a select ([a93196d](https://github.com/nr2f1/website/commit/a93196d770c82fa3ef59b31bf934b6809ba5b9d4))
+* redirect request based on user language ([ffad848](https://github.com/nr2f1/website/commit/ffad8489f1fa8803f2a07b0d8860bf543b3d005e))
+
+
+### Bug Fixes
+
+* lint import order ([c2b9a02](https://github.com/nr2f1/website/commit/c2b9a02b37df2c189506214848820d2322c224c7))
+
+
+### Performance Improvements
+
+* able to pull content locale from Contentful ([edab6cb](https://github.com/nr2f1/website/commit/edab6cb8a1611dbd2d462f70ea4410b4359f8794))
+
 ## [1.1.0](https://github.com/nr2f1/website/compare/v1.0.0...v1.1.0) (2024-03-04)
 
 
