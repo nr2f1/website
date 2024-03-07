@@ -1,17 +1,23 @@
 import '@styles/main.scss';
-// import './index.scss';
 
 import { getClient } from '@graphql/client';
 import {
   GetBoardMembersDocument,
   GetBoardMembersQuery,
 } from '@graphql/queries.generated';
+import { type LocaleParamsPath } from '@i18n/locales';
+import { type NextPage } from 'next';
 
-export default async function Index() {
+const Page: NextPage<LocaleParamsPath> = async ({ params: { lang } }) => {
+  const { query } = getClient();
+
   const {
     data: { boardMemberCollection },
-  } = await getClient().query<GetBoardMembersQuery>({
+  } = await query<GetBoardMembersQuery>({
     query: GetBoardMembersDocument,
+    variables: {
+      locale: lang,
+    },
   });
 
   const boardMembers = boardMemberCollection?.items;
@@ -37,4 +43,6 @@ export default async function Index() {
       })}
     </div>
   );
-}
+};
+
+export default Page;

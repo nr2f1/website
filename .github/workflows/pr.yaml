@@ -87,7 +87,7 @@ jobs:
 
   pr-validation:
     name: PR validation
-    needs: [prepare, conventional-commits, lint-format] 
+    needs: [prepare, conventional-commits, lint-format, unit-tests] 
     if: ${{ always() }}
     runs-on: ubuntu-latest
     strategy:
