@@ -1,7 +1,7 @@
 import { match } from '@formatjs/intl-localematcher';
 import { AVAILABLE_LOCALES, DEFAULT_LOCALE } from '@i18n/locales';
 import Negotiator from 'negotiator';
-import { NextResponse, type NextRequest } from 'next/server';
+import { type NextRequest, NextResponse } from 'next/server';
 
 const getLocale = (request: NextRequest) => {
   const negotiator = new Negotiator({

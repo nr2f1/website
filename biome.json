@@ -1,7 +1,13 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.5.3/schema.json",
   "organizeImports": {
-    "enabled": true
+    "ignore": [
+      ".next",
+      "dist",
+      ".nx/cache",
+      "website/.next",
+      "website/src/graphql"
+    ]
   },
   "linter": {
     "enabled": true,
