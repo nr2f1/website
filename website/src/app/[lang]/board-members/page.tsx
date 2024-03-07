@@ -1,19 +1,21 @@
 import '@styles/main.scss';
-// import './index.scss';
 
+import { type LocaleParamsPath } from '@config/locales';
 import { getClient } from '@graphql/client';
 import {
   GetBoardMembersDocument,
   GetBoardMembersQuery,
 } from '@graphql/queries.generated';
 
-export default async function Index() {
+export default async function Page({ params: { lang } }: LocaleParamsPath) {
+  const { query } = getClient();
+
   const {
     data: { boardMemberCollection },
-  } = await getClient().query<GetBoardMembersQuery>({
+  } = await query<GetBoardMembersQuery>({
     query: GetBoardMembersDocument,
     variables: {
-      locale: 'de',
+      locale: lang,
     },
   });
 
