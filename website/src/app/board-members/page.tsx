@@ -12,6 +12,9 @@ export default async function Index() {
     data: { boardMemberCollection },
   } = await getClient().query<GetBoardMembersQuery>({
     query: GetBoardMembersDocument,
+    variables: {
+      locale: 'de',
+    },
   });
 
   const boardMembers = boardMemberCollection?.items;
