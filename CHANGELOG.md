@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/nr2f1/website/compare/v1.2.0...v1.2.1) (2024-03-07)
+
+
+### Bug Fixes
+
+* locale selection ([321a160](https://github.com/nr2f1/website/commit/321a160cd46e92cd79cbd06bbb2d9360f43cc715))
+
 ## [1.2.0](https://github.com/nr2f1/website/compare/v1.1.0...v1.2.0) (2024-03-07)
 
 
