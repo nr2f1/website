@@ -3,7 +3,7 @@ import './layout.scss';
 
 import Footer from '@components/footer';
 import Header from '@components/header';
-import { AVAILABLE_LOCALES } from '@i18n/locales';
+import { AVAILABLE_LOCALES, LocaleParamsPath } from '@i18n/locales';
 
 export const metadata = {
   title: 'Welcome to website',
@@ -14,13 +14,16 @@ export async function generateStaticParams() {
   return AVAILABLE_LOCALES.map((lang) => ({ lang }));
 }
 
-export default function RootLayout({
-  children,
-}: {
+interface RootLayoutProps extends LocaleParamsPath {
   children: React.ReactNode;
-}) {
+}
+
+const RootLayout: React.FC<RootLayoutProps> = ({
+  children,
+  params: { lang },
+}) => {
   return (
-    <html lang="en">
+    <html lang={lang}>
       <body>
         {/* <ApolloWrapper> */}
         <Header />
@@ -30,4 +33,6 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

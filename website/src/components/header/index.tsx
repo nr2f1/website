@@ -1,6 +1,6 @@
 'use client';
 
-import { AVAILABLE_LOCALES, english } from '@i18n/locales';
+import { AVAILABLE_LOCALES, AvailableLocale, english } from '@i18n/locales';
 import './index.scss';
 
 import MainLogo from '@components/logos/main';
@@ -8,7 +8,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const Header = () => {
-  const [locale, setLocale] = useState(english);
+  const [locale, setLocale] = useState<AvailableLocale>(english);
   const router = useRouter();
   const pathname = usePathname();
 
@@ -16,14 +16,14 @@ const Header = () => {
 
   useEffect(() => {
     const locale = pathname.split('/')[1];
-    setLocale(locale);
+    setLocale(locale as AvailableLocale);
   }, [pathname]);
 
   const handleOnChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const {
       target: { value },
     } = event;
-    setLocale(value);
+    setLocale(value as AvailableLocale);
     router.push(`/${value}/${pathnameWithoutLocale}`);
   };
 
