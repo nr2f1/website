@@ -28,3 +28,53 @@ To accomplish these goals, the website should have the following features:
 ## Development
 
 This website is built using [Next.js](https://nextjs.org/), a [React](https://react.dev/) framework. It uses [TypeScript](https://www.typescriptlang.org/) for type-checking, [Sass](https://sass-lang.com/) for styling, [Contenful](https://www.contentful.com/) as a headless CMS, [Give Butter](https://givebutter.com/) for donations, and [Vercel](https://vercel.com) for deployment.
+
+We are following conventional commits and semantic versioning for the project.
+
+### How to install
+
+1. Clone the repository
+```sh
+git clone git@github.com:nr2f1/website.git
+```
+
+2. Install dependencies
+```sh
+pnpm install
+```
+
+3. Copy the `.env.example` file in the **website** folder to `.env` and fill in the environment variables
+```sh
+cat ./website/.env.example > ./website/.env
+```
+
+### Local server
+
+```sh
+pnpm nx dev website
+```
+
+### Format
+
+```sh
+pnpm biome format --write <PATH> 
+```
+
+### Lint
+
+```sh 
+pnpm biome lint  <PATH> 
+```
+
+### Build
+
+```sh
+pnpm nx build website
+```
+
+### How to deploy
+
+- A pull request triggers a preview deployment
+- Merging to the `main` branch triggers a production deployment
+
+
