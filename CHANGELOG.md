@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/nr2f1/website/compare/v1.2.1...v1.3.0) (2024-04-15)
+
+
+### Features
+
+* add donation widgets ([6ac1bad](https://github.com/nr2f1/website/commit/6ac1bad005280bf3db0ce6263b7f9c6ce72af321))
+
 ## [1.2.1](https://github.com/nr2f1/website/compare/v1.2.0...v1.2.1) (2024-03-07)
 
 
