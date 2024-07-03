@@ -2,43 +2,47 @@ name: Deploy FEWD to Vercel production
 run-name: ${{ github.actor }} is deploying FEWD to vercel production
 
 on:
-  push:
-    branches:
-      - example
-    paths:
-      - website/**/*
-      - .github/workflows/deploy-website-production.yaml
-      - '!CHANGELOG.md'         
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Select the tag to deploy to production'
+        required: true
+        type: string
+        default: 'latest'
+        
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
 jobs:
   deploy-fewd-to-vercel-production:
-    runs-on: ubuntu-latest
-    environment:
-      name: production
-      url: ${{ steps.deploy.outputs.url }}
-    outputs:
-      url: ${{ steps.deploy.outputs.url }}
-    steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      runs-on: ubuntu-latest
+      environment:
+        name: production
+        url: ${{ steps.deploy.outputs.url }}
+      outputs:
+        url: ${{ steps.deploy.outputs.url }}
+      steps:
+        - name: Checkout 🛎️
+          uses: actions/checkout@v4
+          with:
+            fetch-depth: 0
 
-      - name: Set environment and install dependencies
-        uses: ./.github/actions/prepare
+        - name: checkout tag
+          run: git checkout ${{ github.event.inputs.tag }}
 
-      - name: Pull Vercel environment information
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        - name: Set environment and install dependencies
+          uses: ./.github/actions/prepare
 
-      - name: Build project artifacts
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-        env:
-          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
-          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}        
+        - name: Pull Vercel environment information
+          run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Deploy project artifacts to Vercel
-        id: deploy
-        run: echo "url=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }})" >> $GITHUB_OUTPUT
+        - name: Build project artifacts
+          run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+          env:
+            CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+            CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}        
+
+        - name: Deploy project artifacts to Vercel
+          id: deploy
+          run: echo "url=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }})" >> $GITHUB_OUTPUT
