@@ -9,6 +9,7 @@ on:
       - website/**/*
       - .github/workflows/deploy-website-preview.yaml
       - '!CHANGELOG.md'         
+      - '!website-assets/**/*'         
   workflow_run:
     workflows: ["PR validation"]
     types:
