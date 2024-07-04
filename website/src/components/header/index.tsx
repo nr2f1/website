@@ -1,9 +1,9 @@
 'use client';
-
-import { AVAILABLE_LOCALES, AvailableLocale, english } from '@i18n/locales';
 import styles from './index.module.scss';
 
-import MainLogo from '@components/logos/main';
+import { ASSETS_URL } from '@config/utils';
+import { AVAILABLE_LOCALES, AvailableLocale, english } from '@i18n/locales';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -43,7 +43,13 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.header__logo}>
         <Link href="/">
-          <MainLogo />
+          <Image
+            src={`${ASSETS_URL}/nr2f1-foundation-logo-color-white-text-original.png`}
+            alt="nr2f1 foundation logo"
+            width={1000}
+            height={1000}
+            loading="eager"
+          />
         </Link>
       </div>
     </header>
