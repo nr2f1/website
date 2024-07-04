@@ -1,13 +1,14 @@
 'use client';
 
 import { AVAILABLE_LOCALES, AvailableLocale, english } from '@i18n/locales';
-import './index.scss';
+import styles from './index.module.scss';
 
 import MainLogo from '@components/logos/main';
+import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-const Header = () => {
+const LocaleSelector = () => {
   const [locale, setLocale] = useState<AvailableLocale>(english);
   const router = useRouter();
   const pathname = usePathname();
@@ -26,21 +27,24 @@ const Header = () => {
     setLocale(value as AvailableLocale);
     router.push(`/${value}/${pathnameWithoutLocale}`);
   };
-
   return (
-    <header>
-      <div className="content-wrapper">
-        <div className="logo">
-          <MainLogo />
+    <select value={locale} onChange={handleOnChange}>
+      {AVAILABLE_LOCALES.map((locale) => (
+        <option key={locale} value={locale}>
+          {locale}
+        </option>
+      ))}
+    </select>
+  );
+};
 
-          <select value={locale} onChange={handleOnChange}>
-            {AVAILABLE_LOCALES.map((locale) => (
-              <option key={locale} value={locale}>
-                {locale}
-              </option>
-            ))}
-          </select>
-        </div>
+const Header = () => {
+  return (
+    <header className={styles.header}>
+      <div className={styles.header__logo}>
+        <Link href="/">
+          <MainLogo />
+        </Link>
       </div>
     </header>
   );

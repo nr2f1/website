@@ -1,7 +1,6 @@
 import { Nunito_Sans } from 'next/font/google';
 
 import '@styles/main.scss';
-import './layout.scss';
 
 const nunitoSans = Nunito_Sans({
   display: 'swap',
