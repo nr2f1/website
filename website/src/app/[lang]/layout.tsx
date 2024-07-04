@@ -1,5 +1,14 @@
+import { Nunito_Sans } from 'next/font/google';
+
 import '@styles/main.scss';
 import './layout.scss';
+
+const nunitoSans = Nunito_Sans({
+  display: 'swap',
+  subsets: ['latin'],
+  preload: true,
+  variable: '--font-nunito-sans',
+});
 
 import Footer from '@components/footer';
 import Header from '@components/header';
@@ -23,7 +32,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({
   params: { lang },
 }) => {
   return (
-    <html lang={lang}>
+    <html lang={lang} className={nunitoSans.variable}>
       <body>
         {/* <ApolloWrapper> */}
         <Header />

@@ -1,0 +1,35 @@
+@function spacing($number) {
+  @return $number * 0.25rem;
+}
+
+:root {
+  --spacing-1: #{spacing(1)};
+  --spacing-2: #{spacing(2)};
+  --spacing-3: #{spacing(3)};
+  --spacing-4: #{spacing(4)};
+  --spacing-5: #{spacing(5)};
+  --spacing-6: #{spacing(6)};
+  --spacing-7: #{spacing(7)};
+  --spacing-8: #{spacing(8)};
+  --spacing-9: #{spacing(9)};
+  --spacing-10: #{spacing(10)};
+  --spacing-11: #{spacing(11)};
+  --spacing-12: #{spacing(12)};
+  --spacing-14: #{spacing(14)};
+  --spacing-16: #{spacing(16)};
+  --spacing-20: #{spacing(20)};
+  --spacing-24: #{spacing(24)};
+  --spacing-28: #{spacing(28)};
+  --spacing-32: #{spacing(32)};
+  --spacing-36: #{spacing(36)};
+  --spacing-40: #{spacing(40)};
+  --spacing-44: #{spacing(44)};
+  --spacing-48: #{spacing(48)};
+  --spacing-52: #{spacing(52)};
+  --spacing-56: #{spacing(56)};
+  --spacing-60: #{spacing(60)};
+  --spacing-64: #{spacing(64)};
+  --spacing-72: #{spacing(72)};
+  --spacing-80: #{spacing(80)};
+  --spacing-96: #{spacing(96)};
+}

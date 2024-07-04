@@ -1,0 +1,35 @@
+
+// Small
+$max-small-width: 671px;
+// Medium
+$min-medium-width: 672px;
+$max-medium-width: 1023px;
+// Large
+$min-large-width: 1024px;
+$max-large-width: 1279px;
+// Extra Large
+$min-extra-large-width: 1280px;
+
+@mixin small-screen {
+  @media (max-width: $max-small-width) {
+    @content;
+  }
+}
+
+@mixin medium-screen {
+  @media (min-width: $min-medium-width) and (max-width: $max-medium-width) {
+    @content;
+  }
+}
+
+@mixin large-screen {
+  @media (min-width: $min-large-width) and (max-width: $max-large-width) {
+    @content;
+  }
+}
+
+@mixin extra-large-screen {
+  @media (min-width: $min-extra-large-width) {
+    @content;
+  }
+}

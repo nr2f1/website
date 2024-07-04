@@ -1,3 +1,7 @@
+@use '@styles/text-styles' as *;
+@use '@styles/breakpoints' as *;
+
+
 body {
   display: flex;
   flex-direction: column;
@@ -5,5 +9,25 @@ body {
 
   & main {
     flex: 1 auto;
+  }
+
+  & h1 {
+    @include header-1;
+  }
+
+  @include small-screen {
+    background-color: lightblue;
+  }
+
+  @include medium-screen {
+    background-color: lightgreen;
+  }
+
+  @include large-screen {
+    background-color: lightcoral
+  }
+
+  @include extra-large-screen {
+    background-color: lightgoldenrodyellow;
   }
 }
