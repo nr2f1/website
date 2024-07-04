@@ -1,0 +1,121 @@
+:root {
+  /* Colours */
+  /* White */
+  --white: #fff;
+  /* Turquoise */
+  --turquoise-50: rgba(232, 251, 255, 1);
+  --turquoise-100: rgba(207, 247, 255, 1);
+  --turquoise-200: rgba(156, 238, 255, 1);
+  --turquoise-300: rgba(105, 229, 255, 1);
+  --turquoise-400: rgba(54, 220, 255, 1);
+  --turquoise-500: rgba(3, 211, 255, 1);
+  --turquoise-600: rgba(0, 171, 207, 1);
+  --turquoise-700: rgba(0, 129, 156, 1);
+  --turquoise-800: rgba(0, 87, 105, 1);
+  --turquoise-900: rgba(0, 45, 54, 1);
+
+  /* Coral */
+  --coral-50: rgba(255, 240, 242, 1);
+  --coral-100: rgba(255, 215, 220, 1);
+  --coral-200: rgba(255, 164, 176, 1);
+  --coral-300: rgba(255, 113, 131, 1);
+  --coral-400: rgba(255, 62, 87, 1);
+  --coral-500: rgba(255, 11, 43, 1);
+  --coral-600: rgba(215, 0, 28, 1);
+  --coral-700: rgba(164, 0, 21, 1);
+  --coral-800: rgba(113, 0, 15, 1);
+  --coral-900: rgba(62, 0, 8, 1);
+
+  /* Navy */
+  --navy-50: rgba(247, 250, 253, 1);
+  --navy-100: rgba(227, 236, 248, 1);
+  --navy-200: rgba(186, 209, 238, 1);
+  --navy-300: rgba(145, 181, 228, 1);
+  --navy-400: rgba(103, 154, 219, 1);
+  --navy-500: rgba(62, 127, 209, 1);
+  --navy-600: rgba(43, 102, 177, 1);
+  --navy-700: rgba(33, 78, 136, 1);
+  --navy-800: rgba(23, 55, 95, 1);
+  --navy-900: rgba(13, 31, 54, 1);
+
+  /* Grey */
+  --grey-50: rgba(250, 250, 250, 1);
+  --grey-100: rgba(245, 245, 245, 1);
+  --grey-200: rgba(229, 229, 229, 1);
+  --grey-300: rgba(212, 212, 212, 1);
+  --grey-400: rgba(163, 163, 163, 1);
+  --grey-500: rgba(115, 115, 115, 1);
+  --grey-600: rgba(82, 82, 82, 1);
+  --grey-700: rgba(64, 64, 64, 1);
+  --grey-800: rgba(38, 38, 38, 1);
+  --grey-900: rgba(23, 23, 23, 1);
+
+  /* Green */
+  --green-50: rgba(240, 253, 244, 1);
+  --green-100: rgba(220, 252, 231, 1);
+  --green-200: rgba(187, 247, 208, 1);
+  --green-300: rgba(134, 239, 172, 1);
+  --green-400: rgba(74, 222, 128, 1);
+  --green-500: rgba(34, 197, 94, 1);
+  --green-600: rgba(22, 163, 74, 1);
+  --green-700: rgba(21, 128, 61, 1);
+  --green-800: rgba(22, 101, 52, 1);
+  --green-900: rgba(20, 83, 45, 1);
+
+  /* Red */
+  --red-50: rgba(254, 242, 242, 1);
+  --red-100: rgba(254, 226, 226, 1);
+  --red-200: rgba(254, 202, 202, 1);
+  --red-300: rgba(252, 165, 165, 1);
+  --red-400: rgba(248, 113, 113, 1);
+  --red-500: rgba(239, 68, 68, 1);
+  --red-600: rgba(220, 38, 38, 1);
+  --red-700: rgba(185, 28, 28, 1);
+  --red-800: rgba(153, 27, 27, 1);
+  --red-900: rgba(127, 29, 29, 1);
+
+  /* Foreground */
+  --foreground-primary: var(--turquoise-900);
+  --foreground-secondary: var(--green-50);
+  --foreground-disabled: var(--grey-400);
+  --foreground-error: var(--red-800);
+  --foreground-inverse-primary: var(--white);
+  --foreground-inverse-secondary: var(--grey-300);
+  --foreground-accent-turquoise: var(--turquoise-600);
+  --foreground-interactive-default: var(--turquoise-800);
+  --foreground-interactive-hover: var(--turquoise-900);
+  --foreground-interactive-press_active: var(--turquoise-900);
+  --foreground-inverse-interactive-default: var(--turquoise-500);
+  --foreground-inverse-interactive-hover: var(--turquoise-600);
+  --foreground-inverse-interactive-press_activ: var(--turquoise-700);
+
+  /* Background */
+  --background-primary: var(--white);
+  --background-disabled: var(--grey-200);
+  --background-inverse-primary: var(--navy-900);
+  --background-accent-navy: var(--navy-50);
+  --background-accent-coral: var(--coral-50);
+  --background-interactive-hover: var(--navy-50);
+  --background-interactive-press_active: var(--navy-100);
+  --background-button-primary-default: var(--navy-800);
+  --background-button-primary-hover: var(--navy-700);
+  --background-button-primary-press_active: var(--navy-600);
+  --background-button-inverse-primary-default: var(--turquoise-300);
+  --background-button-inverse-primary-hover: var(--turquoise-500);
+  --background-button-inverse-primary-press_active: var(--turquoise-600);
+  --background-button-accent-default: var(--coral-100);
+  --background-button-accent-hover: var(--coral-200);
+  --background-button-accent-press_active: var(--coral-300);
+
+  /* Borders */
+  --border-default: var(--grey-300);
+  --border-focus: var(--navy-200);
+  --border-disabled: var(--grey-300);
+  --border-error: var(--red-500);
+  --border-input_controls-default: var(--grey-300);
+  --border-input_controls-hover: var(--grey-400);
+  --border-input_controls-press_active: var(--grey-600);
+  --border-input_controls-inverse-default: var(--grey-500);
+  --border-input_controls-inverse-hover: var(--grey-300);
+  --border-input_controls-inverse-press_active: var(--grey-50);
+}
