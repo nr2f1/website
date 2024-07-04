@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.3.1](https://github.com/nr2f1/website/compare/v1.3.0...v1.3.1) (2024-07-04)
+
+
+### Performance Improvements
+
+* build working ([450d6a1](https://github.com/nr2f1/website/commit/450d6a13d574e285b56fba993f4576bfb489f20b))
+* create a gh pages with assets ([48b383d](https://github.com/nr2f1/website/commit/48b383d1e098255948b7ee4b16cc202b9ded6cbd))
+* remove favicon ([cba225d](https://github.com/nr2f1/website/commit/cba225dd6c0d9f22f5cad8192805f9f3d5ba20a0))
+* remove favicon ([3a4b7f1](https://github.com/nr2f1/website/commit/3a4b7f193a15803eaf497de5a59d0af613ddac50))
+
 ## [1.3.0](https://github.com/nr2f1/website/compare/v1.2.1...v1.3.0) (2024-04-15)
 
 
