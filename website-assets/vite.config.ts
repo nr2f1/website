@@ -6,6 +6,7 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 export default defineConfig({
   root: __dirname,
   cacheDir: '../node_modules/.vite/website-assets',
+  base: './',
 
   server: {
     port: 4200,
@@ -22,6 +23,7 @@ export default defineConfig({
   build: {
     outDir: '../dist/website-assets',
     reportCompressedSize: true,
+    assetsDir: './',
     commonjsOptions: {
       transformMixedEsModules: true,
     },
