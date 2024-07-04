@@ -6,15 +6,9 @@ on:
     branches:
       - main
     paths:
-      - website/**/*
       - .github/workflows/deploy-website-preview.yaml
       - '!CHANGELOG.md'         
-      - '!website-assets/**/*'         
-  workflow_run:
-    workflows: ["PR validation"]
-    types:
-      - completed      
-
+      - website/**         
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}

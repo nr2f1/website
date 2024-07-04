@@ -6,13 +6,9 @@ on:
     branches:
       - main
     paths:
-      - website-assets/**/*
+      - website-assets/**
       - .deploy-assets-to-gh-pages.yaml
-      - '!CHANGELOG.md'  
-  workflow_run:
-    workflows: ["PR validation"]
-    types:
-      - completed
+      - '!CHANGELOG.md' 
 
 # Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
 permissions:
