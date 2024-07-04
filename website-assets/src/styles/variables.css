@@ -1,0 +1,7 @@
+:root {
+  --navy-900: rgba(13, 31, 54, 1);
+  --background-inverse-primary: var(--navy-900);
+
+  --grey-300: rgba(212, 212, 212, 1);
+  --border-default: var(--grey-300);
+}

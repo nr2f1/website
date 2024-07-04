@@ -7,5 +7,8 @@ export default defineConfig({
   plugins: [nxViteTsPaths()],
   test: {
     reporters: ['default'],
+    exclude: [
+      'website-assets/src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
+    ],
   },
 });

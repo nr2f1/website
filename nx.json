@@ -12,6 +12,16 @@
         "startTargetName": "start",
         "serveStaticTargetName": "serve-static"
       }
+    },
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "previewTargetName": "preview",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "serveStaticTargetName": "serve-static"
+      }
     }
   ],
   "generators": {
@@ -19,6 +29,11 @@
       "application": {
         "style": "scss"
       }
+    },
+    "@nx/web:application": {
+      "style": "css",
+      "unitTestRunner": "none",
+      "e2eTestRunner": "none"
     }
   }
 }

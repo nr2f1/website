@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: var(--navy-900);
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+picture {
+  display: block;
+}
+
+header {
+  background-color: var(--navy-900);
+  color: white;
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header picture {
+  max-width: 250px;
+}
+
+main {
+  padding: 1.25rem;
+}
+
+.logos ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.logos li {
+  display: flex;
+  align-items: center;
+  column-gap: 1.25rem;
+  border: 1px solid var(--border-default);
+  margin: 1.25rem 0;
+  &.inverse a {
+    background-color: var(--background-inverse-primary);
+    color: white;
+  }
+}
+
+.logos a {
+  display: block;
+  margin-right: 1.25rem;
+}
+
+.logos a[href='./assets/logos/ga-text-white-white.svg'] picture,
+.logos a[href='./assets/logos/ga-white.svg'] picture {
+  background-color: black;
+}
+.logos picture {
+  width: 250px;
+}
+
+.logos li p {
+  /* max-width: 80ch; */
+}
+
+.logos p span {
+  font-weight: bold;
+}
+
+.logos p button {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 6px;
+  font-family: 'Monaco', monospace;
+  border: none;
+}
+
+.logos p button:active,
+.logos p button:focus {
+  background-color: rgba(27, 31, 35, 0.1);
+  font-weight: 700;
+}
+
+.logos p button:after {
+  content: '';
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' width='16' height='16'%3E%3Cpath fill-rule='evenodd' d='M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z' %3E%3C/path%3E%3C/svg%3E%0A");
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+}
+
+.logos p button.copied {
+  color: lightgreen;
+  background-color: white;
+}
+
+.logos p button.copied:after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' width='16' height='16'%3E%3Cstyle%3E path %7B stroke: lightgreen; fill: lightgreen; %7D %3C/style%3E%3Cpath fill-rule='evenodd' d='M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z' %3E%3C/path%3E%3C/svg%3E%0A");
+}

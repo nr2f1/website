@@ -1,0 +1,27 @@
+{
+  "name": "website-assets",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "website-assets/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "options": {
+        "outputPath": "dist/apps/website-assets"
+      }
+    },
+    "lint": {
+      "command": "pnpm biome check website"
+    },
+    "format": {
+      "command": "pnpm biome format website"
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "options": {
+        "config": "website/vite.config.ts"
+      }
+    }
+  }
+}
