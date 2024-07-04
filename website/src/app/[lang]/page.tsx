@@ -6,6 +6,7 @@ const Page: NextPage<LocaleParamsPath> = async ({ params: { lang } }) => {
   return (
     <div className="content-wrapper">
       <DonateButton />
+      <h1>Hola</h1>
       <p>
         Language is <strong>{lang}</strong>
       </p>

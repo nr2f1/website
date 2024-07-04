@@ -1,3 +1,6 @@
+@use '@styles/text-styles' as *;
+
+
 body {
   display: flex;
   flex-direction: column;
@@ -5,5 +8,9 @@ body {
 
   & main {
     flex: 1 auto;
+  }
+
+  & h1 {
+    @include header-1;
   }
 }
