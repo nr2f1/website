@@ -1,4 +1,4 @@
-name: Deploy FEWD to Vercel production
+name: Deploy NR2F1 website to Verceproduction
 run-name: ${{ github.actor }} is deploying FEWD to vercel production
 
 on:
