@@ -10,6 +10,14 @@ const Page: NextPage<LocaleParamsPath> = async ({ params: { lang } }) => {
       <p>
         Language is <strong>{lang}</strong>
       </p>
+      <p>
+        <a href="/" className="button button--on-light">
+          button link
+        </a>
+      </p>
+      <button type="button" className="button button--on-light" disabled>
+        button
+      </button>
     </div>
   );
 };

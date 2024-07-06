@@ -1,13 +1,13 @@
 import { Nunito_Sans } from 'next/font/google';
 
-import '@styles/main.scss';
-
 const nunitoSans = Nunito_Sans({
   display: 'swap',
   subsets: ['latin'],
   preload: true,
   variable: '--font-nunito-sans',
 });
+
+import '@styles/main.scss';
 
 import Footer from '@components/footer';
 import Header from '@components/header';
