@@ -12,6 +12,24 @@ export const AVAILABLE_LOCALES: AvailableLocale[] = [
   french,
   german,
 ];
+export const AVAILABLE_LOCALES_LABEL_KEYS = [
+  {
+    label: 'Español',
+    value: spanish,
+  },
+  {
+    label: 'English (USA)',
+    value: english,
+  },
+  {
+    label: 'Français',
+    value: french,
+  },
+  {
+    label: 'Deutsch',
+    value: german,
+  },
+];
 
 export interface LocaleParamsPath {
   params: {

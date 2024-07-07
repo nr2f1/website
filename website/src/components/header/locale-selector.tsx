@@ -1,4 +1,12 @@
-import { AVAILABLE_LOCALES, AvailableLocale, english } from '@i18n/locales';
+'use client';
+import styles from './locale-selector.module.scss';
+
+import {
+  AVAILABLE_LOCALES_LABEL_KEYS,
+  AvailableLocale,
+  english,
+} from '@i18n/locales';
+
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
@@ -22,13 +30,22 @@ const LocaleSelector = () => {
     router.push(`/${value}/${pathnameWithoutLocale}`);
   };
   return (
-    <select value={locale} onChange={handleOnChange}>
-      {AVAILABLE_LOCALES.map((locale) => (
-        <option key={locale} value={locale}>
-          {locale}
-        </option>
-      ))}
-    </select>
+    <>
+      <select
+        value={locale}
+        onChange={handleOnChange}
+        className={styles.select}
+      >
+        {AVAILABLE_LOCALES_LABEL_KEYS.map(({ label, value }) => (
+          <option
+            key={value}
+            value={value}
+            label={label}
+            className={styles.option}
+          />
+        ))}
+      </select>
+    </>
   );
 };
 
