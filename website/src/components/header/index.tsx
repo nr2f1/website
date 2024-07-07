@@ -17,6 +17,7 @@ const Header = () => {
               width={1000}
               height={1000}
               loading="eager"
+              priority={true}
             />
           </Link>
         </div>

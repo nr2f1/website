@@ -12,7 +12,13 @@ export const AVAILABLE_LOCALES: AvailableLocale[] = [
   french,
   german,
 ];
-export const AVAILABLE_LOCALES_LABEL_KEYS = [
+
+export interface AvailableLocaleOption {
+  label: string;
+  value: AvailableLocale;
+}
+
+export const AVAILABLE_LOCALES_LABEL_KEYS: AvailableLocaleOption[] = [
   {
     label: 'Español',
     value: spanish,
