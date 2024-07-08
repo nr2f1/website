@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/nr2f1/website/compare/v1.4.0...v1.4.1) (2024-07-08)
+
+
+### Bug Fixes
+
+* ci preview ([4e26913](https://github.com/nr2f1/website/commit/4e269132f5c3f36be23648c5660c6c13aab5a551))
+
 ## [1.4.0](https://github.com/nr2f1/website/compare/v1.3.1...v1.4.0) (2024-07-08)
 
 
