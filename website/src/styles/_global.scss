@@ -10,6 +10,8 @@ body {
   font-size: var(--spacing-4);
   font-family: var(--font-nunito-sans), sans-serif;
   font-optical-sizing: auto;
+  margin: 0;
+  padding: 0;
 }
 
 picture, video, img, svg, canvas, audio, iframe, embed, object {
@@ -17,10 +19,4 @@ picture, video, img, svg, canvas, audio, iframe, embed, object {
   height: auto;
   display: block;
 }
-
-.content-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 

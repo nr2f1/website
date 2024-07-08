@@ -58,6 +58,7 @@
     "@apollo/client": "^3.10.8",
     "@apollo/experimental-nextjs-app-support": "^0.8.0",
     "@formatjs/intl-localematcher": "^0.5.4",
+    "@mui/base": "5.0.0-beta.40",
     "graphql": "^16.9.0",
     "negotiator": "^0.6.3",
     "next": "14.0.4",
@@ -65,10 +66,10 @@
     "react-dom": "18.2.0",
     "tslib": "^2.6.3"
   },
-  "packageManager": "pnpm@9.4.0+sha512.f549b8a52c9d2b8536762f99c0722205efc5af913e77835dbccc3b0b0b2ca9e7dc8022b78062c17291c48e88749c70ce88eb5a74f1fa8c4bf5e18bb46c8bd83a",
   "pnpm": {
     "overrides": {
       "next@>=13.4.0 <14.1.1": ">=14.1.1"
     }
-  }
+  },
+  "packageManager": "pnpm@8.15.7+sha512.c85cd21b6da10332156b1ca2aa79c0a61ee7ad2eb0453b88ab299289e9e8ca93e6091232b25c07cbf61f6df77128d9c849e5c9ac6e44854dbd211c49f3a67adc"
 }

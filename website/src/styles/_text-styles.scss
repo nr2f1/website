@@ -3,7 +3,7 @@
   font-size: var(--spacing-12);
   font-style: normal;
   font-weight: 900;
-  line-height: 100%; 
+  line-height: 100%;
 }
 
 @mixin header-2 {
@@ -11,7 +11,7 @@
   font-size: var(--spacing-6);
   font-style: normal;
   font-weight: 800;
-  line-height: 133.33%; 
+  line-height: 133.33%;
 }
 
 @mixin header-3 {
@@ -19,7 +19,7 @@
   font-size: var(--spacing-5);
   font-style: normal;
   font-weight: 800;
-  line-height: 140%; 
+  line-height: 140%;
 }
 
 @mixin header-4 {
@@ -27,31 +27,31 @@
   font-size: #{spacing(4.5)};
   font-style: normal;
   font-weight: 700;
-  line-height: 155.556%; 
+  line-height: 155.556%;
 }
 
 @mixin text-base {
   color: var(--foreground-primary);
-  font-size: #{spacing(4.5)};
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 155.556%; 
+  line-height: 155.556%;
 }
 
 @mixin button {
   color: var(--foreground-primary);
-  font-size: #{spacing(4.5)};
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 155.556%; 
+  line-height: 155.556%;
 }
 
 @mixin text-link {
   color: var(--foreground-primary);
-  font-size: #{spacing(4.5)};
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 155.556%; 
+  line-height: 155.556%;
   text-decoration-line: underline;
 }
 
@@ -60,7 +60,7 @@
   font-size: #{spacing(4)};
   font-style: normal;
   font-weight: 500;
-  line-height: 150%; 
+  line-height: 150%;
 }
 
 @mixin text-link-small {
@@ -68,6 +68,6 @@
   font-size: #{spacing(4)};
   font-style: normal;
   font-weight: 700;
-  line-height: 150%; 
+  line-height: 150%;
   text-decoration-line: underline;
 }

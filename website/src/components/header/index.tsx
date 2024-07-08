@@ -1,46 +1,72 @@
-'use client';
+import styles from './index.module.scss';
 
-import { AVAILABLE_LOCALES, AvailableLocale, english } from '@i18n/locales';
-import './index.scss';
+import { ASSETS_URL } from '@config/utils';
+import Image from 'next/image';
+import Link from 'next/link';
+import LocaleSelector from './locale-selector';
+import NavList, { NavItem } from './nav-list';
 
-import MainLogo from '@components/logos/main';
-import { usePathname, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+const navItems: NavItem[] = [
+  {
+    href: '/',
+    label: 'Menu Item',
+  },
+  {
+    href: '/',
+    label: 'Menu Item',
+  },
+  {
+    href: '/',
+    label: 'Menu Item',
+  },
+  {
+    href: '/',
+    label: 'Menu Item',
+  },
+];
 
 const Header = () => {
-  const [locale, setLocale] = useState<AvailableLocale>(english);
-  const router = useRouter();
-  const pathname = usePathname();
-
-  const pathnameWithoutLocale = pathname.split('/').slice(2).join('/');
-
-  useEffect(() => {
-    const locale = pathname.split('/')[1];
-    setLocale(locale as AvailableLocale);
-  }, [pathname]);
-
-  const handleOnChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const {
-      target: { value },
-    } = event;
-    setLocale(value as AvailableLocale);
-    router.push(`/${value}/${pathnameWithoutLocale}`);
-  };
-
   return (
-    <header>
-      <div className="content-wrapper">
-        <div className="logo">
-          <MainLogo />
-
-          <select value={locale} onChange={handleOnChange}>
-            {AVAILABLE_LOCALES.map((locale) => (
-              <option key={locale} value={locale}>
-                {locale}
-              </option>
-            ))}
-          </select>
+    <header className={styles.header}>
+      <div className={styles.header__top}>
+        <div className={styles.header__logo}>
+          <Link href="/">
+            <Image
+              src={`${ASSETS_URL}/nr2f1-foundation-logo-color-white-text-original.png`}
+              alt="nr2f1 foundation logo"
+              width={1000}
+              height={1000}
+              loading="eager"
+              priority={true}
+            />
+          </Link>
         </div>
+        <div className={styles.header__top_right}>
+          <nav>
+            <ul>
+              <li>
+                <Link href="/" className="button button--on-dark">
+                  Register a patient
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="button button--accent-on-dark">
+                  Donate
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <LocaleSelector />
+        </div>
+      </div>
+      <div className={styles.header__bottom}>
+        <nav>
+          <NavList name="About BBSOS" items={navItems} />
+          <NavList name="Living with BBSOS" items={navItems} />
+          <NavList name="Research" items={navItems} />
+          <NavList name="About us" items={navItems} />
+          <NavList name="Support us" items={navItems} />
+        </nav>
       </div>
     </header>
   );

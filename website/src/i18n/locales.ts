@@ -13,6 +13,30 @@ export const AVAILABLE_LOCALES: AvailableLocale[] = [
   german,
 ];
 
+export interface AvailableLocaleOption {
+  label: string;
+  value: AvailableLocale;
+}
+
+export const AVAILABLE_LOCALES_LABEL_KEYS: AvailableLocaleOption[] = [
+  {
+    label: 'Español',
+    value: spanish,
+  },
+  {
+    label: 'English (USA)',
+    value: english,
+  },
+  {
+    label: 'Français',
+    value: french,
+  },
+  {
+    label: 'Deutsch',
+    value: german,
+  },
+];
+
 export interface LocaleParamsPath {
   params: {
     lang: AvailableLocale;
