@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/nr2f1/website/compare/v1.3.1...v1.4.0) (2024-07-08)
+
+
+### Features
+
+* desktop header ([be7cc1e](https://github.com/nr2f1/website/commit/be7cc1e1a093a9807fbf11836c7029b45c14001b))
+
 ## [1.3.1](https://github.com/nr2f1/website/compare/v1.3.0...v1.3.1) (2024-07-04)
 
 
