@@ -30,6 +30,7 @@
 
   &__bottom {
     background-color: var(--background-inverse-secondary);
+    padding: var(--spacing-2) var(--spacing-8);
 
     & nav {
       display: flex;

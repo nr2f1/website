@@ -4,6 +4,26 @@ import { ASSETS_URL } from '@config/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 import LocaleSelector from './locale-selector';
+import NavList, { NavItem } from './nav-list';
+
+const navItems: NavItem[] = [
+  {
+    href: '/',
+    label: 'Menu Item',
+  },
+  {
+    href: '/',
+    label: 'Menu Item',
+  },
+  {
+    href: '/',
+    label: 'Menu Item',
+  },
+  {
+    href: '/',
+    label: 'Menu Item',
+  },
+];
 
 const Header = () => {
   return (
@@ -41,91 +61,11 @@ const Header = () => {
       </div>
       <div className={styles.header__bottom}>
         <nav>
-          <details>
-            <summary>About BBSOS</summary>
-            <ul>
-              <li>
-                <Link href="/">Menu Item</Link>
-              </li>
-              <li>
-                <Link href="/">Menu Item</Link>
-              </li>
-              <li>
-                <Link href="/">Menu Item</Link>
-              </li>
-              <li>
-                <Link href="/">Menu Item</Link>
-              </li>
-            </ul>
-          </details>
-          <details>
-            <summary>Living with BBSOS</summary>
-            <ul>
-              <li>
-                <Link href="/">Menu Item</Link>
-              </li>
-              <li>
-                <Link href="/">Menu Item</Link>
-              </li>
-              <li>
-                <Link href="/">Menu Item</Link>
-              </li>
-              <li>
-                <Link href="/">Menu Item</Link>
-              </li>
-            </ul>
-          </details>
-          <details>
-            <summary>Research</summary>
-            <ul>
-              <li>
-                <Link href="/">Menu Item</Link>
-              </li>
-              <li>
-                <Link href="/">Menu Item</Link>
-              </li>
-              <li>
-                <Link href="/">Menu Item</Link>
-              </li>
-              <li>
-                <Link href="/">Menu Item</Link>
-              </li>
-            </ul>
-          </details>
-          <details>
-            <summary>About us</summary>
-            <ul>
-              <li>
-                <Link href="/">Menu Item</Link>
-              </li>
-              <li>
-                <Link href="/">Menu Item</Link>
-              </li>
-              <li>
-                <Link href="/">Menu Item</Link>
-              </li>
-              <li>
-                <Link href="/">Menu Item</Link>
-              </li>
-            </ul>
-          </details>
-          <details>
-            <summary>Support us</summary>
-            <ul>
-              <li>
-                <Link href="/">Menu Item</Link>
-              </li>
-              <li>
-                <Link href="/">Menu Item</Link>
-              </li>
-              <li>
-                <Link href="/">Menu Item</Link>
-              </li>
-              <li>
-                <Link href="/">Menu Item</Link>
-              </li>
-            </ul>
-          </details>
+          <NavList name="About BBSOS" items={navItems} />
+          <NavList name="Living with BBSOS" items={navItems} />
+          <NavList name="Research" items={navItems} />
+          <NavList name="About us" items={navItems} />
+          <NavList name="Support us" items={navItems} />
         </nav>
       </div>
     </header>
