@@ -1,7 +1,7 @@
 import styles from './index.module.scss';
 
 import { ASSETS_URL } from '@config/utils';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link';
 import LocaleSelector from './locale-selector';
 import NavList, { NavItem } from './nav-list';
@@ -31,26 +31,40 @@ const Header = () => {
       <div className={styles.header__top}>
         <div className={styles.header__logo}>
           <Link href="/">
-            <Image
+            {/* <Image
               src={`${ASSETS_URL}/nr2f1-foundation-logo-color-white-text-original.png`}
               alt="nr2f1 foundation logo"
               width={1000}
               height={1000}
               loading="eager"
-              priority={true}
-            />
+              // priority={true}
+            /> */}
+            <picture>
+              <img
+                src={`${ASSETS_URL}/nr2f1-foundation-logo-color-white-text-original.png`}
+                alt="nr2f1 foundation logo"
+              />
+            </picture>
           </Link>
         </div>
         <div className={styles.header__top_right}>
-          <nav>
+          <nav title="primary">
             <ul>
               <li>
-                <Link href="/" className="button button--on-dark">
+                <Link
+                  href="/"
+                  className="button button--on-dark"
+                  title="Register a patient"
+                >
                   Register a patient
                 </Link>
               </li>
               <li>
-                <Link href="/" className="button button--accent-on-dark">
+                <Link
+                  href="/"
+                  className="button button--accent-on-dark"
+                  title="Donate"
+                >
                   Donate
                 </Link>
               </li>
@@ -60,7 +74,7 @@ const Header = () => {
         </div>
       </div>
       <div className={styles.header__bottom}>
-        <nav>
+        <nav title="secondary">
           <NavList name="About BBSOS" items={navItems} />
           <NavList name="Living with BBSOS" items={navItems} />
           <NavList name="Research" items={navItems} />

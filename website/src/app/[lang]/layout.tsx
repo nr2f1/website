@@ -12,6 +12,7 @@ import '@styles/main.scss';
 import Footer from '@components/footer';
 import Header from '@components/header';
 import { AVAILABLE_LOCALES, LocaleParamsPath } from '@i18n/locales';
+import React from 'react';
 
 export const metadata = {
   title: 'Welcome to website',

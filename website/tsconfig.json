@@ -24,6 +24,7 @@
       "@config/*": ["website/src/config/*"],
       "@graphql/*": ["website/src/graphql/*"],
       "@i18n/*": ["website/src/i18n/*"],
+      "@tests/*": ["website/src/tests/*"],
     },
   },
 
