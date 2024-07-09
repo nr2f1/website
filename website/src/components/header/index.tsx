@@ -37,20 +37,27 @@ const Header = () => {
               width={1000}
               height={1000}
               loading="eager"
-              priority={true}
             />
           </Link>
         </div>
         <div className={styles.header__top_right}>
-          <nav>
+          <nav title="primary">
             <ul>
               <li>
-                <Link href="/" className="button button--on-dark">
+                <Link
+                  href="/"
+                  className="button button--on-dark"
+                  title="Register a patient"
+                >
                   Register a patient
                 </Link>
               </li>
               <li>
-                <Link href="/" className="button button--accent-on-dark">
+                <Link
+                  href="/"
+                  className="button button--accent-on-dark"
+                  title="Donate"
+                >
                   Donate
                 </Link>
               </li>
@@ -60,7 +67,7 @@ const Header = () => {
         </div>
       </div>
       <div className={styles.header__bottom}>
-        <nav>
+        <nav title="secondary">
           <NavList name="About BBSOS" items={navItems} />
           <NavList name="Living with BBSOS" items={navItems} />
           <NavList name="Research" items={navItems} />

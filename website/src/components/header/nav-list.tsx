@@ -21,7 +21,7 @@ const NavList = ({ name, items }: NavListProps) => {
       <summary>{name}</summary>
       <ul>
         {items.map(({ href, label }) => (
-          <li key={href}>
+          <li key={`${href}-${Math.random()}`}>
             <Link href="/">{label}</Link>
           </li>
         ))}
