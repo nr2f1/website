@@ -1,5 +1,8 @@
-.header {
+@import "@styles/_breakpoints";
 
+$hambuguer-button: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath fill='%2317375F' fill-rule='evenodd' d='M2 4.75A.75.75 0 0 1 2.75 4h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.75ZM2 10a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 10Zm0 5.25a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z' clip-rule='evenodd'/%3E%3C/svg%3E%0A";
+
+.header {
   &__top {
     justify-content: space-between;
     align-items: center;
@@ -21,6 +24,27 @@
       column-gap: var(--spacing-4);
     }
 
+    & button[title="hambuguer-button"] {
+      display: none;
+    }
+
+    @include from-small-to-medium-screen {
+      & button[title="hambuguer-button"] {
+        display: block;
+        width: 100%;
+        max-width: var(--spacing-11);
+        aspect-ratio: 1 / 1;
+        background-image: url($hambuguer-button);
+        background-size: var(--spacing-5);
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      & nav[title="primary"],
+      & [role="combobox"] {
+        display: none;
+      }
+    }
   }
 
   &__logo {
@@ -32,10 +56,19 @@
     background-color: var(--background-inverse-secondary);
     padding: var(--spacing-2) var(--spacing-8);
 
+    @include from-small-to-medium-screen {
+      padding: var(--spacing-5) var(--spacing-6);
+    }
+
     & nav {
       display: flex;
       justify-content: space-between;
       padding: var(--spacing-2) var(--spacing-6);
+
+      @include from-small-to-medium-screen {
+        flex-direction: column;
+        padding: 0;
+      }
     }
 
   }

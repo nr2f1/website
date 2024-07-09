@@ -18,7 +18,11 @@ type MuiEvent =
   | React.FocusEvent<Element, Element>
   | null;
 
-const LocaleSelector = () => {
+interface LocaleSelectorProps {
+  className?: string;
+}
+
+const LocaleSelector: React.FC<LocaleSelectorProps> = ({ className }) => {
   const [locale, setLocale] = useState<AvailableLocale>(english);
   const router = useRouter();
   const pathname = usePathname();
@@ -44,7 +48,7 @@ const LocaleSelector = () => {
     <Select
       value={locale}
       onChange={handleOnChange}
-      className={styles.select}
+      className={`${styles.select} ${className}`}
       slotProps={{
         popup: { className: styles.popup },
         listbox: { className: styles.listbox },

@@ -64,6 +64,11 @@ const Header = () => {
             </ul>
           </nav>
           <LocaleSelector />
+          <button
+            title="hambuguer-button"
+            type="button"
+            className="button button--on-dark"
+          />
         </div>
       </div>
       <div className={styles.header__bottom}>

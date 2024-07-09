@@ -1,5 +1,6 @@
 @import "@styles/text-styles";
 @import "@styles/icons";
+@import "@styles/_breakpoints";
 
 .details {
   appearance: none;
@@ -32,6 +33,11 @@
     &:active {
       background-color: var(--background-interactive-press_active);
     }
+
+    @include from-small-to-medium-screen {
+      padding: var(--spacing-2) var(--spacing-16) var(--spacing-2) var(--spacing-3);
+      background-position-x: calc(100% - var(--spacing-3));
+    }
   }
 
   & ul {
@@ -44,6 +50,11 @@
     background-color: var(--background-primary);
     position: absolute;
     width: 100%;
+
+    @include from-small-to-medium-screen {
+      position: static;
+      box-shadow: none;
+    }
   }
 
   & li {
