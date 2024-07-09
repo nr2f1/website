@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.2](https://github.com/nr2f1/website/compare/v1.4.1...v1.4.2) (2024-07-09)
+
+
+### Bug Fixes
+
+* locale selector z index ([830540e](https://github.com/nr2f1/website/commit/830540e9b97594b980f5e89503fd47a108820695))
+
 ## [1.4.1](https://github.com/nr2f1/website/compare/v1.4.0...v1.4.1) (2024-07-08)
 
 
