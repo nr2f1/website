@@ -1,8 +1,11 @@
+'use client';
+
 import styles from './index.module.scss';
 
 import { ASSETS_URL } from '@config/utils';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import LocaleSelector from './locale-selector';
 import NavList, { NavItem } from './nav-list';
 
@@ -26,6 +29,10 @@ const navItems: NavItem[] = [
 ];
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  console.log('isMenuOpen', isMenuOpen);
+
   return (
     <header className={styles.header}>
       <div className={styles.header__top}>
@@ -68,6 +75,7 @@ const Header = () => {
             title="hambuguer-button"
             type="button"
             className="button button--on-dark"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           />
         </div>
       </div>
