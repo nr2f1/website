@@ -1,5 +1,9 @@
 :root {
+  // width
   --border-width-1: 1px;
+  // radius
   --border-radius-lg: 8px;
   --border-radius-xl: 16px;
+  // color
+  --border-default: var(--grey-300);
 }

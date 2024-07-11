@@ -33,6 +33,27 @@
     background-image: url($chevron-up-on-dark);
     box-shadow: 0 0 0 4px var(--navy-200);
   }
+
+  &--mobile {
+    @include button;
+    appearance: none;
+    background-color: var(--background-primary);
+    background-image: url($chevron-down-on-dark);
+    background-position-x: calc(100% - var(--spacing-3));
+    background-position-y: var(--spacing-3);
+    background-repeat: no-repeat;
+    background-size: var(--spacing-5);
+    border-radius: var(--border-radius-lg);
+    border: var(--spacing-0) solid var(--border-input_controls-inverse-default);
+    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+    color: var(--foreground-inverse-primary);
+    field-sizing: content;
+    font-size: 1.125rem;
+    padding: var(--spacing-2) var(--spacing-5);
+    padding-right: calc((var(--spacing-5) * 2) + var(--spacing-2));
+    display: block;
+    width: 100%;
+  }
 }
 
 .popup {

@@ -28,13 +28,27 @@ const navItems: NavItem[] = [
   },
 ];
 
+const RegisterPatientButton = () => (
+  <Link href="/" className="button button--on-dark" title="Register a patient">
+    Register a patient
+  </Link>
+);
+
+const DonateButton = () => (
+  <Link href="/" className="button button--accent-on-dark" title="Donate">
+    Donate
+  </Link>
+);
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  console.log('isMenuOpen', isMenuOpen);
-
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${
+        isMenuOpen ? styles['header--menu-open'] : ''
+      }`}
+    >
       <div className={styles.header__top}>
         <div className={styles.header__logo}>
           <Link href="/">
@@ -51,22 +65,10 @@ const Header = () => {
           <nav title="primary">
             <ul>
               <li>
-                <Link
-                  href="/"
-                  className="button button--on-dark"
-                  title="Register a patient"
-                >
-                  Register a patient
-                </Link>
+                <RegisterPatientButton />
               </li>
               <li>
-                <Link
-                  href="/"
-                  className="button button--accent-on-dark"
-                  title="Donate"
-                >
-                  Donate
-                </Link>
+                <DonateButton />
               </li>
             </ul>
           </nav>
@@ -87,6 +89,17 @@ const Header = () => {
           <NavList name="About us" items={navItems} />
           <NavList name="Support us" items={navItems} />
         </nav>
+        <div className={styles.header__bottom_medium_screen}>
+          <ul>
+            <li>
+              <RegisterPatientButton />
+            </li>
+            <li>
+              <DonateButton />
+            </li>
+          </ul>
+          <LocaleSelector isMobile />
+        </div>
       </div>
     </header>
   );
