@@ -18,7 +18,13 @@ type MuiEvent =
   | React.FocusEvent<Element, Element>
   | null;
 
-const LocaleSelector = () => {
+interface LocaleSelectorProps {
+  isMobile?: boolean;
+}
+
+const LocaleSelector: React.FC<LocaleSelectorProps> = ({
+  isMobile = false,
+}) => {
   const [locale, setLocale] = useState<AvailableLocale>(english);
   const router = useRouter();
   const pathname = usePathname();
@@ -44,10 +50,22 @@ const LocaleSelector = () => {
     <Select
       value={locale}
       onChange={handleOnChange}
-      className={styles.select}
+      className={
+        isMobile
+          ? `${styles.select} ${styles['select--mobile']}`
+          : styles.select
+      }
       slotProps={{
-        popup: { className: styles.popup },
-        listbox: { className: styles.listbox },
+        popup: {
+          className: isMobile
+            ? `${styles.popup} ${styles['popup--mobile']}`
+            : styles.popup,
+        },
+        listbox: {
+          className: isMobile
+            ? `${styles.listbox} ${styles['listbox--mobile']}`
+            : styles.listbox,
+        },
       }}
     >
       {AVAILABLE_LOCALES_LABEL_KEYS.map(({ label, value }) => (

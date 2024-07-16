@@ -1,7 +1,6 @@
 @import "@styles/text-styles";
 @import "@styles/icons";
-
-
+@import "@styles/breakpoints";
 
 .select {
   @include button;
@@ -18,6 +17,7 @@
   color: var(--foreground-inverse-primary);
   field-sizing: content;
   font-size: 1.125rem;
+  font-weight: 400;
   padding: var(--spacing-2) var(--spacing-5);
   padding-right: calc((var(--spacing-5) * 2) + var(--spacing-2));
 
@@ -35,6 +35,31 @@
     background-image: url($chevron-up-on-dark);
     box-shadow: 0 0 0 4px var(--navy-200);
   }
+
+  &--mobile {
+    @include from-small-to-medium-screen {
+      background-color: var(--background-primary);
+      background-image: url($chevron-down);
+      border: var(--spacing-0) solid var(--border-input_controls-default);
+      box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+      color: var(--foreground-primary);
+      display: block;
+      width: 100%;
+
+      &:hover,
+      &:focus {
+        border: var(--spacing-0) solid var(--grey-400);
+      }
+
+      &:active {
+        border: var(--spacing-0) solid var(--grey-600);
+      }
+
+      &[aria-expanded="true"] {
+        background-image: url($chevron-up);
+      }
+    }
+  }
 }
 
 .popup {
@@ -45,6 +70,14 @@
   // It is important because styles are inlined
   top: var(--spacing-1) !important;
   z-index: 10;
+
+  &--mobile {
+    @include from-small-to-medium-screen {
+      display: block;
+      width: 100%;
+      max-width: calc(100% - (var(--spacing-6) * 2));
+    }
+  }
 }
 
 .listbox {

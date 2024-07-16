@@ -1,4 +1,3 @@
-
 // Small
 $max-small-width: 671px;
 // Medium
@@ -22,8 +21,20 @@ $min-extra-large-width: 1280px;
   }
 }
 
+@mixin from-small-to-medium-screen {
+  @media screen and (max-width: $max-medium-width) {
+    @content;
+  }
+}
+
 @mixin large-screen {
   @media (min-width: $min-large-width) and (max-width: $max-large-width) {
+    @content;
+  }
+}
+
+@mixin from-large-to-extra-screen {
+  @media screen and (min-width: $min-large-width) and (max-width: $min-extra-large-width) {
     @content;
   }
 }

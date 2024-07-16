@@ -1,13 +1,17 @@
 @import "@styles/text-styles";
 @import "@styles/icons";
+@import "@styles/breakpoints";
 
 .details {
   appearance: none;
   @include button;
-  // background-color: lightblue;
   border-radius: var(--border-radius-xl);
   position: relative;
   z-index: 1;
+
+  @include from-small-to-medium-screen {
+    border-radius: unset;
+  }
 
   &[open] summary {
     background-image: url($chevron-up);
@@ -24,6 +28,12 @@
     background-size: var(--spacing-5);
     border-radius: var(--border-radius-xl);
 
+    @include from-small-to-medium-screen {
+      border-radius: unset;
+    }
+
+
+
     &:hover,
     &:focus {
       background-color: var(--background-interactive-hover);
@@ -31,6 +41,11 @@
 
     &:active {
       background-color: var(--background-interactive-press_active);
+    }
+
+    @include from-small-to-medium-screen {
+      padding: var(--spacing-2) var(--spacing-16) var(--spacing-2) var(--spacing-3);
+      background-position-x: calc(100% - var(--spacing-3));
     }
   }
 
@@ -44,6 +59,11 @@
     background-color: var(--background-primary);
     position: absolute;
     width: 100%;
+
+    @include from-small-to-medium-screen {
+      position: static;
+      box-shadow: none;
+    }
   }
 
   & li {
@@ -52,11 +72,21 @@
     &:first-of-type {
       border-top-left-radius: var(--border-radius-xl);
       border-top-right-radius: var(--border-radius-xl);
+
+      @include from-small-to-medium-screen {
+        border-top-left-radius: unset;
+        border-top-right-radius: unset;
+      }
     }
 
     &:last-of-type {
       border-bottom-left-radius: var(--border-radius-xl);
       border-bottom-right-radius: var(--border-radius-xl);
+
+      @include from-small-to-medium-screen {
+        border-bottom-left-radius: unset;
+        border-bottom-right-radius: unset;
+      }
     }
 
     &:hover,
