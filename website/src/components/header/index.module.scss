@@ -98,11 +98,13 @@ $hambuguer-button: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
   &--menu-open & {
     display: block;
 
-    &__bottom {
-      @include visibility-hidden(false);
-
-      &_medium_screen {
+    @include from-small-to-medium-screen {
+      &__bottom {
         @include visibility-hidden(false);
+
+        &_medium_screen {
+          @include visibility-hidden(false);
+        }
       }
     }
   }

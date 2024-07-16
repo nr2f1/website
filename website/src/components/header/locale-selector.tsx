@@ -50,11 +50,21 @@ const LocaleSelector: React.FC<LocaleSelectorProps> = ({
     <Select
       value={locale}
       onChange={handleOnChange}
-      className={isMobile ? styles['select--mobile'] : styles.select}
+      className={
+        isMobile
+          ? `${styles.select} ${styles['select--mobile']}`
+          : styles.select
+      }
       slotProps={{
-        popup: { className: isMobile ? styles['popup--mobile'] : styles.popup },
+        popup: {
+          className: isMobile
+            ? `${styles.popup} ${styles['popup--mobile']}`
+            : styles.popup,
+        },
         listbox: {
-          className: isMobile ? styles['listbox--mobile'] : styles.listbox,
+          className: isMobile
+            ? `${styles.listbox} ${styles['listbox--mobile']}`
+            : styles.listbox,
         },
       }}
     >
