@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/nr2f1/website/compare/v1.4.2...v1.5.0) (2024-07-16)
+
+
+### Features
+
+* mobile header done ([1178748](https://github.com/nr2f1/website/commit/1178748ac7ee2d019981048c62306176d9089be6))
+
 ## [1.4.2](https://github.com/nr2f1/website/compare/v1.4.1...v1.4.2) (2024-07-09)
 
 
