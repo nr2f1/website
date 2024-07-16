@@ -119,5 +119,11 @@ $disabled-heart: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' f
         color: var(--foreground-disabled);
       }
     }
+
+    &--mobile {
+      @include from-small-to-medium-screen {
+        background-position-x: calc(50% - var(--spacing-8));
+      }
+    }
   }
 }

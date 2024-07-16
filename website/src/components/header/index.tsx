@@ -33,9 +33,18 @@ const RegisterPatientButton = () => (
     Register a patient
   </Link>
 );
+interface DonateButtonProps {
+  isMobile?: boolean;
+}
 
-const DonateButton = () => (
-  <Link href="/" className="button button--accent-on-dark" title="Donate">
+const DonateButton: React.FC<DonateButtonProps> = ({ isMobile }) => (
+  <Link
+    href="/"
+    className={`button button--accent-on-dark ${
+      isMobile ? 'button--accent-on-dark--mobile' : ''
+    }`}
+    title="Donate"
+  >
     Donate
   </Link>
 );
@@ -95,7 +104,7 @@ const Header = () => {
               <RegisterPatientButton />
             </li>
             <li>
-              <DonateButton />
+              <DonateButton isMobile />
             </li>
           </ul>
           <LocaleSelector isMobile />
