@@ -19,6 +19,11 @@
   }
 
   & summary {
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    cursor: pointer;
     list-style: none;
     padding: var(--spacing-2) var(--spacing-16) var(--spacing-2) var(--spacing-9);
     background-image: url($chevron-down);
@@ -31,8 +36,6 @@
     @include from-small-to-medium-screen {
       border-radius: unset;
     }
-
-
 
     &:hover,
     &:focus {
