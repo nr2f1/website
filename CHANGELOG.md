@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/nr2f1/website/compare/v1.5.0...v1.5.1) (2024-07-18)
+
+
+### Bug Fixes
+
+* mobile header to be overlay ([9ff285e](https://github.com/nr2f1/website/commit/9ff285e817422d643748a568dfebf75dd6dc182a))
+
 ## [1.5.0](https://github.com/nr2f1/website/compare/v1.4.2...v1.5.0) (2024-07-16)
 
 
