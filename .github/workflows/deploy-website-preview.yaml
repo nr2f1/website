@@ -25,7 +25,7 @@ jobs:
         id: release
         with:
           token: ${{ secrets.RELEASE_PLEASE_GH_TOKEN }}
-          release-type: node
+          release-type: simple
       - uses: actions/checkout@v4
       - name: tag major and minor versions
         if: steps.release.outputs.releases_created == 'true'
