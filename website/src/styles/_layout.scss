@@ -1,12 +1,5 @@
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+$content-max-width: 1152px;
 
-  & main {
-    flex: 1 auto;
-  }
-}
 
 .large-content-wrapper {
   max-width: 1400px;
@@ -18,4 +11,7 @@ body {
   margin: 0 auto;
 }
 
-
+@mixin content-max-width {
+  max-width: $content-max-width;
+  margin: 0 auto;
+}

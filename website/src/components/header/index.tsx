@@ -2,8 +2,7 @@
 
 import styles from './index.module.scss';
 
-import { ASSETS_URL } from '@config/utils';
-import Image from 'next/image';
+import MainLogo from '@components/logos/main';
 import Link from 'next/link';
 import { useState } from 'react';
 import LocaleSelector from './locale-selector';
@@ -61,13 +60,7 @@ const Header = () => {
       <div className={styles.header__top}>
         <div className={styles.header__logo}>
           <Link href="/">
-            <Image
-              src={`${ASSETS_URL}/nr2f1-foundation-logo-color-white-text-original.png`}
-              alt="nr2f1 foundation logo"
-              width={1000}
-              height={1000}
-              loading="eager"
-            />
+            <MainLogo />
           </Link>
         </div>
         <div className={styles.header__top_right}>
