@@ -7,11 +7,13 @@ $content-max-width: 1152px;
 }
 
 .content-wrapper {
-  max-width: 1200px;
+  max-width: $content-max-width;
   margin: 0 auto;
+  width: 100%;
 }
 
 @mixin content-max-width {
   max-width: $content-max-width;
   margin: 0 auto;
+  width: 100%;
 }
