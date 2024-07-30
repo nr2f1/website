@@ -39,8 +39,8 @@ interface DonateButtonProps {
 const DonateButton: React.FC<DonateButtonProps> = ({ isMobile }) => (
   <Link
     href="/"
-    className={`button button--accent-on-dark ${
-      isMobile ? 'button--accent-on-dark--mobile' : ''
+    className={`button button--accent-on-light ${
+      isMobile ? 'button--accent-on-light--mobile' : ''
     }`}
     title="Donate"
   >

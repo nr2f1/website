@@ -104,10 +104,17 @@ $hambuguer-button: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
         list-style: none;
       }
 
-      li>* {
+      li {
         margin-bottom: var(--spacing-4);
-        display: block;
-        text-align: center;
+
+        &:first-of-type a {
+          display: block;
+          text-align: center;
+        }
+
+        &:last-of-type a {
+          display: flex;
+        }
       }
     }
   }
