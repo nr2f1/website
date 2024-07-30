@@ -2,8 +2,7 @@
 
 import styles from './index.module.scss';
 
-import { ASSETS_URL } from '@config/utils';
-import Image from 'next/image';
+import MainLogo from '@components/logos/main';
 import Link from 'next/link';
 import { useState } from 'react';
 import LocaleSelector from './locale-selector';
@@ -40,8 +39,8 @@ interface DonateButtonProps {
 const DonateButton: React.FC<DonateButtonProps> = ({ isMobile }) => (
   <Link
     href="/"
-    className={`button button--accent-on-dark ${
-      isMobile ? 'button--accent-on-dark--mobile' : ''
+    className={`button button--accent-on-light ${
+      isMobile ? 'button--accent-on-light--mobile' : ''
     }`}
     title="Donate"
   >
@@ -59,55 +58,53 @@ const Header = () => {
       }`}
     >
       <div className={styles.header__top}>
-        <div className={styles.header__logo}>
-          <Link href="/">
-            <Image
-              src={`${ASSETS_URL}/nr2f1-foundation-logo-color-white-text-original.png`}
-              alt="nr2f1 foundation logo"
-              width={1000}
-              height={1000}
-              loading="eager"
+        <div className={styles.header__content_wrapper}>
+          <div className={styles.header__logo}>
+            <Link href="/">
+              <MainLogo />
+            </Link>
+          </div>
+          <div className={styles.header__top_right}>
+            <nav title="primary">
+              <ul>
+                <li>
+                  <RegisterPatientButton />
+                </li>
+                <li>
+                  <DonateButton />
+                </li>
+              </ul>
+            </nav>
+            <LocaleSelector />
+            <button
+              title="hambuguer-button"
+              type="button"
+              className="button button--on-dark"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
             />
-          </Link>
+          </div>
         </div>
-        <div className={styles.header__top_right}>
-          <nav title="primary">
+      </div>
+      <div className={styles.header__bottom}>
+        <div className={styles.header__content_wrapper}>
+          <nav title="secondary">
+            <NavList name="About BBSOS" items={navItems} />
+            <NavList name="Living with BBSOS" items={navItems} />
+            <NavList name="Research" items={navItems} />
+            <NavList name="About us" items={navItems} />
+            <NavList name="Support us" items={navItems} />
+          </nav>
+          <div className={styles.header__bottom_medium_screen}>
             <ul>
               <li>
                 <RegisterPatientButton />
               </li>
               <li>
-                <DonateButton />
+                <DonateButton isMobile />
               </li>
             </ul>
-          </nav>
-          <LocaleSelector />
-          <button
-            title="hambuguer-button"
-            type="button"
-            className="button button--on-dark"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          />
-        </div>
-      </div>
-      <div className={styles.header__bottom}>
-        <nav title="secondary">
-          <NavList name="About BBSOS" items={navItems} />
-          <NavList name="Living with BBSOS" items={navItems} />
-          <NavList name="Research" items={navItems} />
-          <NavList name="About us" items={navItems} />
-          <NavList name="Support us" items={navItems} />
-        </nav>
-        <div className={styles.header__bottom_medium_screen}>
-          <ul>
-            <li>
-              <RegisterPatientButton />
-            </li>
-            <li>
-              <DonateButton isMobile />
-            </li>
-          </ul>
-          <LocaleSelector isMobile />
+            <LocaleSelector isMobile />
+          </div>
         </div>
       </div>
     </header>

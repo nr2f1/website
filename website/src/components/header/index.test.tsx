@@ -19,19 +19,6 @@ vi.mock('next/navigation', async (importOriginal) => {
   };
 });
 
-vi.mock('next/image', async (importOriginal) => {
-  const actual = await importOriginal();
-  return {
-    // @ts-ignore
-    ...actual,
-    default(props: unknown) {
-      // @ts-ignore
-      // biome-ignore lint/a11y/useAltText: This is a test file
-      return <img {...props} />;
-    },
-  };
-});
-
 describe('Header', () => {
   it('renders without any accessibility violation', async () => {
     const { container } = render(<Header />);
@@ -40,11 +27,12 @@ describe('Header', () => {
   });
 
   it('render', async () => {
-    const { getByRole } = render(<Header />);
+    const { getAllByRole } = render(<Header />);
 
     await waitFor(() => {
-      const logo = getByRole('img', { name: 'nr2f1 foundation logo' });
-      expect(logo).toBeInTheDocument();
+      const [primary, secondary] = getAllByRole('navigation');
+      expect(primary).toBeInTheDocument();
+      expect(secondary).toBeInTheDocument();
     });
   });
 });

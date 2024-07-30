@@ -92,6 +92,7 @@
   @include button;
   color: var(--foreground-primary);
   font-size: 1.125rem;
+  font-weight: 400;
   padding: var(--spacing-2) var(--spacing-5);
   padding-right: calc((var(--spacing-5) * 2) + var(--spacing-2));
 

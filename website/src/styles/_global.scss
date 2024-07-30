@@ -7,16 +7,31 @@ html {
 }
 
 body {
-  font-size: var(--spacing-4);
+  display: flex;
+  flex-direction: column;
   font-family: var(--font-nunito-sans), sans-serif;
   font-optical-sizing: auto;
+  font-size: var(--spacing-4);
   margin: 0;
+  min-height: 100vh;
   padding: 0;
+
+  & main {
+    flex: 1 auto;
+  }
 }
 
-picture, video, img, svg, canvas, audio, iframe, embed, object {
+
+picture,
+video,
+img,
+svg,
+canvas,
+audio,
+iframe,
+embed,
+object {
   max-width: 100%;
   height: auto;
   display: block;
 }
-
