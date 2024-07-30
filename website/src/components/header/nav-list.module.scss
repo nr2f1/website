@@ -3,9 +3,10 @@
 @import "@styles/breakpoints";
 
 .details {
-  appearance: none;
   @include button;
+  appearance: none;
   border-radius: var(--border-radius-xl);
+  flex: 1 auto;
   position: relative;
   z-index: 1;
 
@@ -14,8 +15,11 @@
   }
 
   &[open] summary {
-    background-image: url($chevron-up);
     background-color: var(--background-interactive-hover);
+
+    &::after {
+      background-image: url($chevron-up);
+    }
   }
 
   & summary {
@@ -23,18 +27,30 @@
       display: none;
     }
 
-    cursor: pointer;
-    list-style: none;
-    padding: var(--spacing-2) var(--spacing-16) var(--spacing-2) var(--spacing-9);
-    background-image: url($chevron-down);
-    background-position-x: calc(100% - var(--spacing-8));
-    background-position-y: var(--spacing-3);
-    background-repeat: no-repeat;
-    background-size: var(--spacing-5);
+    align-items: center;
     border-radius: var(--border-radius-xl);
+    cursor: pointer;
+    display: flex;
+    flex: 1 0 0;
+    column-gap: var(--spacing-2);
+    height: var(--spacing-12);
+    justify-content: center;
+    list-style: none;
+    padding: 0 var(--spacing-4);
+
+    &::after {
+      content: "";
+      display: block;
+      aspect-ratio: 1 / 1;
+      width: var(--spacing-5);
+      background-image: url($chevron-down);
+      background-position: center;
+      background-size: contain;
+    }
 
     @include from-small-to-medium-screen {
       border-radius: unset;
+      justify-content: space-between;
     }
 
     &:hover,
@@ -47,8 +63,7 @@
     }
 
     @include from-small-to-medium-screen {
-      padding: var(--spacing-2) var(--spacing-16) var(--spacing-2) var(--spacing-3);
-      background-position-x: calc(100% - var(--spacing-3));
+      padding: 0 var(--spacing-4);
     }
   }
 
@@ -62,6 +77,7 @@
     background-color: var(--background-primary);
     position: absolute;
     width: 100%;
+    min-width: var(--spacing-72);
 
     @include from-small-to-medium-screen {
       position: static;
