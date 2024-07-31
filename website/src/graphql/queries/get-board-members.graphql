@@ -1,0 +1,15 @@
+query GetBoardMembers($locale: String){
+  boardMemberCollection {
+     items {
+      name
+      title(locale: $locale)
+      position(locale: $locale)
+      email
+      bio(locale: $locale)
+      order
+      picture {
+        url
+      }
+    }
+  }
+}
