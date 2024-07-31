@@ -7,6 +7,7 @@ export const { getClient } = registerApolloClient(() => {
     cache: new InMemoryCache(),
     link: new HttpLink({
       uri: CONTENTUL_GRAPHQL_API,
+      fetchOptions: { cache: 'no-store' },
       headers: {
         Authorization,
       },

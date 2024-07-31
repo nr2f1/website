@@ -61,8 +61,8 @@
     "targets": {}
   },
   "dependencies": {
-    "@apollo/client": "^3.10.8",
-    "@apollo/experimental-nextjs-app-support": "^0.8.0",
+    "@apollo/client": "^3.11.2",
+    "@apollo/experimental-nextjs-app-support": "^0.11.2",
     "@formatjs/intl-localematcher": "^0.5.4",
     "@mui/base": "5.0.0-beta.40",
     "graphql": "^16.9.0",

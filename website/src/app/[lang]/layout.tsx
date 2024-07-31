@@ -9,6 +9,7 @@ const nunitoSans = Nunito_Sans({
 
 import '@styles/main.scss';
 
+import { ApolloWrapper } from '@app/apollo-wrapper';
 import Footer from '@components/footer';
 import Header from '@components/header';
 import { AVAILABLE_LOCALES, LocaleParamsPath } from '@i18n/locales';
@@ -33,11 +34,11 @@ const RootLayout: React.FC<RootLayoutProps> = ({
   return (
     <html lang={lang} className={nunitoSans.variable}>
       <body>
-        {/* <ApolloWrapper> */}
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        {/* </ApolloWrapper> */}
+        <ApolloWrapper>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </ApolloWrapper>
       </body>
     </html>
   );
