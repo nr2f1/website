@@ -14,5 +14,66 @@ query GetBoardMembers($locale: String){
   }
 }
 
+query GetHeader {
+  registerPatient: link(id: "66IWfmWNjm0i2aGv78XJei") {
+    content
+    href
+  }
+
+  donate: link(id: "6PLP5EWQ4JNnx1EwThkq5G") {
+    content
+    href
+  }
+
+  aboutBbsoas: navigationList(id: "2UYFtEkEyzkPoTNsxNmFEb") {
+    name
+    linksCollection {
+      items {
+        content
+        href
+      }
+    }
+  }
+
+  livingWithBbsoas: navigationList(id: "4jbJTi8bRgkk7pYdKHXU9") {
+    name
+    linksCollection {
+      items {
+        content
+        href
+      }
+    }
+  }
+
+  research: navigationList(id: "2TeHhRlvLTOomJiHaxNPUP") {
+    name
+    linksCollection {
+      items {
+        content
+        href
+      }
+    }
+  }
+
+  aboutUs: navigationList(id: "4Oi8Hm5OZH7kK8F6WgLOgg") {
+    name
+    linksCollection {
+      items {
+        content
+        href
+      }
+    }
+  }
+
+  supportUs: navigationList(id: "Lw95NJKD8APWY3EJRdTkD") {
+    name
+    linksCollection {
+      items {
+        content
+        href
+      }
+    }
+  }
+}
 
 
