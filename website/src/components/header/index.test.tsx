@@ -1,7 +1,7 @@
 import { render, waitFor } from '@testing-library/react';
 import axe from '@tests/a11y/test-utils';
 import { describe, expect, it, vi } from 'vitest';
-import Header from '.';
+import Header from './layout';
 
 vi.mock('next/navigation', async (importOriginal) => {
   const actual = await importOriginal();
