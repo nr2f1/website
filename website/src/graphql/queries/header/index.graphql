@@ -1,17 +1,26 @@
-query GetHeader {
-  registerPatient: link(id: "66IWfmWNjm0i2aGv78XJei") {
+query GetHeader(
+  $locale: String
+  $registerPatientId: String!
+  $donateId: String!
+  $aboutBbsoasId: String!
+  $livingWithBbsoasId: String!
+  $researchId: String!
+  $aboutUsId: String!
+  $supportUsId: String!
+) {
+  registerPatient: link(id: $registerPatientId, locale: $locale) {
     content
     href
   }
 
-  donate: link(id: "6PLP5EWQ4JNnx1EwThkq5G") {
+  donate: link(id: $donateId, locale: $locale) {
     content
     href
   }
 
-  aboutBbsoas: navigationList(id: "2UYFtEkEyzkPoTNsxNmFEb") {
+  aboutBbsoas: navigationList(id: $aboutBbsoasId, locale: $locale) {
     name
-    linksCollection {
+    linksCollection(locale: $locale) {
       items {
         content
         href
@@ -19,9 +28,9 @@ query GetHeader {
     }
   }
 
-  livingWithBbsoas: navigationList(id: "4jbJTi8bRgkk7pYdKHXU9") {
+  livingWithBbsoas: navigationList(id: $livingWithBbsoasId, locale: $locales) {
     name
-    linksCollection {
+    linksCollection(locale: $locale) {
       items {
         content
         href
@@ -29,9 +38,9 @@ query GetHeader {
     }
   }
 
-  research: navigationList(id: "2TeHhRlvLTOomJiHaxNPUP") {
+  research: navigationList(id: $researchId, locale: $locale) {
     name
-    linksCollection {
+    linksCollection(locale: $locale) {
       items {
         content
         href
@@ -39,9 +48,9 @@ query GetHeader {
     }
   }
 
-  aboutUs: navigationList(id: "4Oi8Hm5OZH7kK8F6WgLOgg") {
+  aboutUs: navigationList(id: $aboutUsId, locale: $locale) {
     name
-    linksCollection {
+    inksCollection(locale: $locale) {
       items {
         content
         href
@@ -49,9 +58,9 @@ query GetHeader {
     }
   }
 
-  supportUs: navigationList(id: "Lw95NJKD8APWY3EJRdTkD") {
+  supportUs: navigationList(id: $supportUsId, locale: $locale) {
     name
-    linksCollection {
+    inksCollection(locale: $locale) {
       items {
         content
         href
