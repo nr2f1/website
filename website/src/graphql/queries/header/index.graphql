@@ -28,7 +28,7 @@ query GetHeader(
     }
   }
 
-  livingWithBbsoas: navigationList(id: $livingWithBbsoasId, locale: $locales) {
+  livingWithBbsoas: navigationList(id: $livingWithBbsoasId, locale: $locale) {
     name
     linksCollection(locale: $locale) {
       items {
@@ -50,7 +50,7 @@ query GetHeader(
 
   aboutUs: navigationList(id: $aboutUsId, locale: $locale) {
     name
-    inksCollection(locale: $locale) {
+    linksCollection(locale: $locale) {
       items {
         content
         href
@@ -60,7 +60,7 @@ query GetHeader(
 
   supportUs: navigationList(id: $supportUsId, locale: $locale) {
     name
-    inksCollection(locale: $locale) {
+    linksCollection(locale: $locale) {
       items {
         content
         href
