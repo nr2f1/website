@@ -37,36 +37,37 @@ const navItems: NavItem[] = [
   },
 ];
 
-interface RegisterPatientButtonProps {
+interface LocalisedLinkProps {
   href: string;
   content: string;
 }
 
-const RegisterPatientButton: React.FC<RegisterPatientButtonProps> = ({
+const RegisterPatientButton: React.FC<LocalisedLinkProps> = ({
+  href,
+  content,
+}) => (
+  <Link href={href} className="button button--on-dark" title={content}>
+    {content}
+  </Link>
+);
+
+interface DonateButtonProps extends LocalisedLinkProps {
+  isMobile?: boolean;
+}
+
+const DonateButton: React.FC<DonateButtonProps> = ({
+  isMobile,
   href,
   content,
 }) => (
   <Link
     href={href}
-    className="button button--on-dark"
-    title="Register a patient"
-  >
-    {content}
-  </Link>
-);
-interface DonateButtonProps {
-  isMobile?: boolean;
-}
-
-const DonateButton: React.FC<DonateButtonProps> = ({ isMobile }) => (
-  <Link
-    href="/"
     className={`button button--accent-on-light ${
       isMobile ? 'button--accent-on-light--mobile' : ''
     }`}
-    title="Donate"
+    title={content}
   >
-    Donate
+    {content}
   </Link>
 );
 
@@ -88,14 +89,7 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
       aboutUsId,
       supportUsId,
     },
-    errorPolicy: 'all',
   });
-  console.log({ data, error });
-
-  const isError = Boolean(error);
-  const isDataAvailable = Boolean(data && Object.entries(data).length > 0);
-
-  const shouldRender = !isError && isDataAvailable;
 
   return (
     <header
@@ -120,7 +114,10 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
                   />
                 </li>
                 <li>
-                  <DonateButton />
+                  <DonateButton
+                    content={data.donate?.content ?? ''}
+                    href={data.donate?.href ?? ''}
+                  />
                 </li>
               </ul>
             </nav>
@@ -146,10 +143,17 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
           <div className={styles.header__bottom_medium_screen}>
             <ul>
               <li>
-                <RegisterPatientButton href={''} content={''} />
+                <RegisterPatientButton
+                  content={data.registerPatient?.content ?? ''}
+                  href={data.registerPatient?.href ?? ''}
+                />
               </li>
               <li>
-                <DonateButton isMobile />
+                <DonateButton
+                  content={data.donate?.content ?? ''}
+                  href={data.donate?.href ?? ''}
+                  isMobile
+                />
               </li>
             </ul>
             <LocaleSelector isMobile />
