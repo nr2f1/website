@@ -20,10 +20,12 @@
      "paths": {
       "@app/*": ["website/src/app/*"],
       "@components/*": ["website/src/components/*"],
-      "@styles/*": ["website/src/styles/*"],
       "@config/*": ["website/src/config/*"],
       "@graphql/*": ["website/src/graphql/*"],
       "@i18n/*": ["website/src/i18n/*"],
+      "@models/*": ["website/src/models/*"],
+      "@shared/*": ["website/src/shared/*"],
+      "@styles/*": ["website/src/styles/*"],
       "@tests/*": ["website/src/tests/*"],
     },
   },

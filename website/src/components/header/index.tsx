@@ -1,14 +1,14 @@
 import { PreloadQuery } from '@graphql/client';
 import { GetHeaderDocument } from '@graphql/queries/header/index.generated';
-import { Suspense } from 'react';
-import { donateId, registerPatientId } from 'website/src/models/links';
+import { donateId, registerPatientId } from '@models/links';
 import {
   aboutBbsoasId,
   aboutUsId,
   livingWithBbsoasId,
   researchId,
   supportUsId,
-} from 'website/src/models/navlinks';
+} from '@models/navlinks';
+import { Suspense } from 'react';
 import Header, { type HeaderProps } from './layout';
 
 const HeaderWithData: React.FC<HeaderProps> = ({ lang }) => {

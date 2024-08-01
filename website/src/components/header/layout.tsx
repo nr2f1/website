@@ -5,6 +5,7 @@ import styles from './index.module.scss';
 import MainLogo from '@components/logos/main';
 import { useGetHeaderSuspenseQuery } from '@graphql/queries/header/index.generated';
 import { AvailableLocale } from '@i18n/locales';
+import { LocalisedLinkProps } from '@shared/types/link';
 import Link from 'next/link';
 import { useState } from 'react';
 import { donateId, registerPatientId } from 'website/src/models/links';
@@ -36,11 +37,6 @@ const navItems: NavItem[] = [
     label: 'Menu Item',
   },
 ];
-
-interface LocalisedLinkProps {
-  href: string;
-  content: string;
-}
 
 const RegisterPatientButton: React.FC<LocalisedLinkProps> = ({
   href,
