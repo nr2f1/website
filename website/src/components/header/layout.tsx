@@ -3,7 +3,7 @@
 import styles from './index.module.scss';
 
 import MainLogo from '@components/logos/main';
-import { useGetHeaderQuery } from '@graphql/queries/header/index.generated';
+import { useGetHeaderSuspenseQuery } from '@graphql/queries/header/index.generated';
 import { AvailableLocale } from '@i18n/locales';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -77,7 +77,7 @@ export interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ lang }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const { data, loading, error } = useGetHeaderQuery({
+  const { data, error } = useGetHeaderSuspenseQuery({
     variables: {
       locale: lang,
       registerPatientId,
@@ -90,75 +90,73 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
     },
     errorPolicy: 'all',
   });
-  console.log({ data, loading, error });
+  console.log({ data, error });
 
   const isError = Boolean(error);
   const isDataAvailable = Boolean(data && Object.entries(data).length > 0);
 
-  const shouldRender = !isError && !loading && isDataAvailable;
+  const shouldRender = !isError && isDataAvailable;
 
   return (
-    shouldRender && (
-      <header
-        className={`${styles.header} ${
-          isMenuOpen ? styles['header--menu-open'] : ''
-        }`}
-      >
-        <div className={styles.header__top}>
-          <div className={styles.header__content_wrapper}>
-            <div className={styles.header__logo}>
-              <Link href="/">
-                <MainLogo />
-              </Link>
-            </div>
-            <div className={styles.header__top_right}>
-              <nav title="primary">
-                <ul>
-                  <li>
-                    <RegisterPatientButton
-                      content={data?.registerPatient?.content ?? ''}
-                      href={data?.registerPatient?.href ?? ''}
-                    />
-                  </li>
-                  <li>
-                    <DonateButton />
-                  </li>
-                </ul>
-              </nav>
-              <LocaleSelector />
-              <button
-                title="hambuguer-button"
-                type="button"
-                className="button button--on-dark"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-              />
-            </div>
+    <header
+      className={`${styles.header} ${
+        isMenuOpen ? styles['header--menu-open'] : ''
+      }`}
+    >
+      <div className={styles.header__top}>
+        <div className={styles.header__content_wrapper}>
+          <div className={styles.header__logo}>
+            <Link href="/">
+              <MainLogo />
+            </Link>
           </div>
-        </div>
-        <div className={styles.header__bottom}>
-          <div className={styles.header__content_wrapper}>
-            <nav title="secondary">
-              <NavList name="About BBSOS" items={navItems} />
-              <NavList name="Living with BBSOS" items={navItems} />
-              <NavList name="Research" items={navItems} />
-              <NavList name="About us" items={navItems} />
-              <NavList name="Support us" items={navItems} />
-            </nav>
-            <div className={styles.header__bottom_medium_screen}>
+          <div className={styles.header__top_right}>
+            <nav title="primary">
               <ul>
                 <li>
-                  <RegisterPatientButton href={''} content={''} />
+                  <RegisterPatientButton
+                    content={data.registerPatient?.content ?? ''}
+                    href={data.registerPatient?.href ?? ''}
+                  />
                 </li>
                 <li>
-                  <DonateButton isMobile />
+                  <DonateButton />
                 </li>
               </ul>
-              <LocaleSelector isMobile />
-            </div>
+            </nav>
+            <LocaleSelector />
+            <button
+              title="hambuguer-button"
+              type="button"
+              className="button button--on-dark"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            />
           </div>
         </div>
-      </header>
-    )
+      </div>
+      <div className={styles.header__bottom}>
+        <div className={styles.header__content_wrapper}>
+          <nav title="secondary">
+            <NavList name="About BBSOS" items={navItems} />
+            <NavList name="Living with BBSOS" items={navItems} />
+            <NavList name="Research" items={navItems} />
+            <NavList name="About us" items={navItems} />
+            <NavList name="Support us" items={navItems} />
+          </nav>
+          <div className={styles.header__bottom_medium_screen}>
+            <ul>
+              <li>
+                <RegisterPatientButton href={''} content={''} />
+              </li>
+              <li>
+                <DonateButton isMobile />
+              </li>
+            </ul>
+            <LocaleSelector isMobile />
+          </div>
+        </div>
+      </div>
+    </header>
   );
 };
 
