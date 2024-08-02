@@ -5,18 +5,18 @@ import styles from './index.module.scss';
 import MainLogo from '@components/logos/main';
 import { useGetHeaderSuspenseQuery } from '@graphql/queries/header/index.generated';
 import { AvailableLocale } from '@i18n/locales';
-import { LocalisedLinkProps } from '@shared/types/link';
-import { getLocalisedLinkProps } from '@shared/utils/link';
-import Link from 'next/link';
-import { useState } from 'react';
-import { donateId, registerPatientId } from 'website/src/models/links';
+import { donateId, registerPatientId } from '@models/links';
 import {
   aboutBbsoasId,
   aboutUsId,
   livingWithBbsoasId,
   researchId,
   supportUsId,
-} from 'website/src/models/navlinks';
+} from '@models/navlinks';
+import { LocalisedLinkProps } from '@shared/types/link';
+import { getLocalisedLinkProps } from '@shared/utils/link';
+import Link from 'next/link';
+import { useState } from 'react';
 import LocaleSelector from './locale-selector';
 import NavList from './nav-list';
 
