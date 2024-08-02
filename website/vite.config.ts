@@ -13,13 +13,15 @@ export default defineConfig({
     root: 'website/src',
     globals: true,
     alias: {
-      '@tests': '/tests',
       '@app': '/app',
       '@components': '/components',
-      '@styles': '/styles',
       '@config': '/config',
       '@graphql': '/graphql',
       '@i18n': '/i18n',
+      '@models': '/models',
+      '@shared': '/shared',
+      '@styles': '/styles',
+      '@tests': '/tests',
     },
   },
 });

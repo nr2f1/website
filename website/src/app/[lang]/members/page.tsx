@@ -3,7 +3,7 @@ import { getClient } from '@graphql/client';
 import {
   GetBoardMembersDocument,
   GetBoardMembersQuery,
-} from '@graphql/queries.generated';
+} from '@graphql/queries/board-members/index.generated';
 import { type LocaleParamsPath } from '@i18n/locales';
 import { NextPage } from 'next';
 

@@ -1,0 +1,70 @@
+query GetHeader(
+  $locale: String
+  $registerPatientId: String!
+  $donateId: String!
+  $aboutBbsoasId: String!
+  $livingWithBbsoasId: String!
+  $researchId: String!
+  $aboutUsId: String!
+  $supportUsId: String!
+) {
+  registerPatient: link(id: $registerPatientId, locale: $locale) {
+    content
+    href
+  }
+
+  donate: link(id: $donateId, locale: $locale) {
+    content
+    href
+  }
+
+  aboutBbsoas: navigationList(id: $aboutBbsoasId, locale: $locale) {
+    name
+    linksCollection(locale: $locale) {
+      items {
+        content
+        href
+      }
+    }
+  }
+
+  livingWithBbsoas: navigationList(id: $livingWithBbsoasId, locale: $locale) {
+    name
+    linksCollection(locale: $locale) {
+      items {
+        content
+        href
+      }
+    }
+  }
+
+  research: navigationList(id: $researchId, locale: $locale) {
+    name
+    linksCollection(locale: $locale) {
+      items {
+        content
+        href
+      }
+    }
+  }
+
+  aboutUs: navigationList(id: $aboutUsId, locale: $locale) {
+    name
+    linksCollection(locale: $locale) {
+      items {
+        content
+        href
+      }
+    }
+  }
+
+  supportUs: navigationList(id: $supportUsId, locale: $locale) {
+    name
+    linksCollection(locale: $locale) {
+      items {
+        content
+        href
+      }
+    }
+  }
+}

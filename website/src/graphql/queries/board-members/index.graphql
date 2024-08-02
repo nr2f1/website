@@ -13,6 +13,3 @@ query GetBoardMembers($locale: String){
     }
   }
 }
-
-
-

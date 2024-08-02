@@ -1,15 +1,11 @@
 import styles from './nav-list.module.scss';
 
+import { LocalisedLinkProps } from '@shared/types/link';
 import Link from 'next/link';
 
-export interface NavItem {
-  href: string;
-  label: string;
-}
-
 interface NavListProps {
-  name: string;
-  items: NavItem[];
+  name?: string | null;
+  items?: LocalisedLinkProps[];
 }
 
 const NavList = ({ name, items }: NavListProps) => {
@@ -20,11 +16,12 @@ const NavList = ({ name, items }: NavListProps) => {
     <details name="nav" className={styles.details}>
       <summary>{name}</summary>
       <ul>
-        {items.map(({ href, label }) => (
-          <li key={`${href}-${Math.random()}`}>
-            <Link href="/">{label}</Link>
-          </li>
-        ))}
+        {Array.isArray(items) &&
+          items.map(({ href, content }) => (
+            <li key={`${href}-${Math.random()}`}>
+              <Link href="/">{content}</Link>
+            </li>
+          ))}
       </ul>
     </details>
   );
