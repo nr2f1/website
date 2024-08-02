@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/nr2f1/website/compare/v1.6.0...v1.6.1) (2024-08-02)
+
+
+### Bug Fixes
+
+* ci build prod ([4f11aaf](https://github.com/nr2f1/website/commit/4f11aaf5cb467d126dc9824ddc7f91d115b18f12))
+
 ## [1.6.0](https://github.com/nr2f1/website/compare/v1.5.2...v1.6.0) (2024-08-02)
 
 
