@@ -12,7 +12,6 @@ import { CONTENTUL_GRAPHQL_API } from '@config/utils';
 const makeClient = () => {
   const httpLink = new HttpLink({
     uri: CONTENTUL_GRAPHQL_API,
-    fetchOptions: { cache: 'no-store' },
     headers: {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}`,
     },
