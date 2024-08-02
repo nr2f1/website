@@ -6,6 +6,7 @@ import MainLogo from '@components/logos/main';
 import { useGetHeaderSuspenseQuery } from '@graphql/queries/header/index.generated';
 import { AvailableLocale } from '@i18n/locales';
 import { LocalisedLinkProps } from '@shared/types/link';
+import { getLocalisedLinkProps } from '@shared/utils/link';
 import Link from 'next/link';
 import { useState } from 'react';
 import { donateId, registerPatientId } from 'website/src/models/links';
@@ -17,26 +18,7 @@ import {
   supportUsId,
 } from 'website/src/models/navlinks';
 import LocaleSelector from './locale-selector';
-import NavList, { NavItem } from './nav-list';
-
-const navItems: NavItem[] = [
-  {
-    href: '/',
-    label: 'Menu Item',
-  },
-  {
-    href: '/',
-    label: 'Menu Item',
-  },
-  {
-    href: '/',
-    label: 'Menu Item',
-  },
-  {
-    href: '/',
-    label: 'Menu Item',
-  },
-];
+import NavList from './nav-list';
 
 const RegisterPatientButton: React.FC<LocalisedLinkProps> = ({
   href,
@@ -74,7 +56,19 @@ export interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ lang }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const { data, error } = useGetHeaderSuspenseQuery({
+  const {
+    data: {
+      registerPatient,
+      donate,
+      aboutBbsoas,
+      livingWithBbsoas,
+      research,
+      aboutUs,
+      supportUs,
+    },
+    // TODO: Handle error
+    error,
+  } = useGetHeaderSuspenseQuery({
     variables: {
       locale: lang,
       registerPatientId,
@@ -86,6 +80,26 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
       supportUsId,
     },
   });
+
+  const aboutBbsoasLinkItems = getLocalisedLinkProps(
+    aboutBbsoas?.linksCollection?.items,
+  );
+
+  const livingWithBbsoasLinkItems = getLocalisedLinkProps(
+    livingWithBbsoas?.linksCollection?.items,
+  );
+
+  const researchLinkItems = getLocalisedLinkProps(
+    research?.linksCollection?.items,
+  );
+
+  const aboutUsLinkItems = getLocalisedLinkProps(
+    aboutUs?.linksCollection?.items,
+  );
+
+  const supportUsLinkItems = getLocalisedLinkProps(
+    supportUs?.linksCollection?.items,
+  );
 
   return (
     <header
@@ -105,14 +119,14 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
               <ul>
                 <li>
                   <RegisterPatientButton
-                    content={data.registerPatient?.content ?? ''}
-                    href={data.registerPatient?.href ?? ''}
+                    content={registerPatient?.content ?? ''}
+                    href={registerPatient?.href ?? ''}
                   />
                 </li>
                 <li>
                   <DonateButton
-                    content={data.donate?.content ?? ''}
-                    href={data.donate?.href ?? ''}
+                    content={donate?.content ?? ''}
+                    href={donate?.href ?? ''}
                   />
                 </li>
               </ul>
@@ -130,24 +144,27 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
       <div className={styles.header__bottom}>
         <div className={styles.header__content_wrapper}>
           <nav title="secondary">
-            <NavList name="About BBSOS" items={navItems} />
-            <NavList name="Living with BBSOS" items={navItems} />
-            <NavList name="Research" items={navItems} />
-            <NavList name="About us" items={navItems} />
-            <NavList name="Support us" items={navItems} />
+            <NavList name={aboutBbsoas?.name} items={aboutBbsoasLinkItems} />
+            <NavList
+              name={livingWithBbsoas?.name}
+              items={livingWithBbsoasLinkItems}
+            />
+            <NavList name={research?.name} items={researchLinkItems} />
+            <NavList name={aboutUs?.name} items={aboutUsLinkItems} />
+            <NavList name={supportUs?.name} items={supportUsLinkItems} />
           </nav>
           <div className={styles.header__bottom_medium_screen}>
             <ul>
               <li>
                 <RegisterPatientButton
-                  content={data.registerPatient?.content ?? ''}
-                  href={data.registerPatient?.href ?? ''}
+                  content={registerPatient?.content ?? ''}
+                  href={registerPatient?.href ?? ''}
                 />
               </li>
               <li>
                 <DonateButton
-                  content={data.donate?.content ?? ''}
-                  href={data.donate?.href ?? ''}
+                  content={donate?.content ?? ''}
+                  href={donate?.href ?? ''}
                   isMobile
                 />
               </li>

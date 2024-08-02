@@ -26,6 +26,7 @@ const HeaderWithData: React.FC<HeaderProps> = ({ lang }) => {
         supportUsId,
       }}
     >
+      {/* TODO: handle loading */}
       <Suspense fallback={<span>loading</span>}>
         <Header lang={lang} />
       </Suspense>
