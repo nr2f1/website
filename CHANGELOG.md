@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.6.0](https://github.com/nr2f1/website/compare/v1.5.2...v1.6.0) (2024-08-02)
+
+
+### Features
+
+* localise all header ([19d7736](https://github.com/nr2f1/website/commit/19d7736172e01b70589e61f3025a9cf26b9f890a))
+* render register patient component ([563a2a9](https://github.com/nr2f1/website/commit/563a2a90687690d812610afc44d1e4a9131662e0))
+
+
+### Performance Improvements
+
+* change query hook for header ([3e2bc03](https://github.com/nr2f1/website/commit/3e2bc036fcd72ffe13a9e286a8a65efdcc259ada))
+* set env variables to be available on client ([02b1f33](https://github.com/nr2f1/website/commit/02b1f338ea8edd385536285e1f7db74e27e9a89d))
+* set localisation header buttons ([8c35d60](https://github.com/nr2f1/website/commit/8c35d6087e29954aea0575e852d86f43de5c0bdb))
+
 ## [1.5.2](https://github.com/nr2f1/website/compare/v1.5.1...v1.5.2) (2024-07-30)
 
 
