@@ -41,7 +41,8 @@ jobs:
           run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
           env:
             NEXT_PUBLIC_CONTENTFUL_SPACE_ID: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_SPACE_ID }}
-            NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN }}    
+            NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN }} 
+            NODE_ENV: production   
 
         - name: Deploy project artifacts to Vercel
           id: deploy
