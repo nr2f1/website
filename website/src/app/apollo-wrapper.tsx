@@ -1,6 +1,7 @@
 'use client';
 
 import { HttpLink } from '@apollo/client';
+import { loadDevMessages, loadErrorMessages } from '@apollo/client/dev';
 import {
   ApolloClient,
   ApolloNextAppProvider,
@@ -29,4 +30,9 @@ export function ApolloWrapper({ children }: React.PropsWithChildren) {
       {children}
     </ApolloNextAppProvider>
   );
+}
+
+if (process.env.NODE_ENV !== 'production') {
+  loadDevMessages();
+  loadErrorMessages();
 }
