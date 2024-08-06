@@ -35,7 +35,30 @@
         margin-bottom: var(--spacing-4);
       }
     }
+
+    &:last-of-type {
+      p {
+        @include header-4;
+        margin-top: 0;
+        margin-bottom: var(--spacing-4);
+      }
+
+      & form label,
+      & form input {
+        display: block;
+        width: 100%;
+      }
+
+      & form div[class="row"] {
+        display: flex;
+        column-gap: var(--spacing-4);
+        margin-bottom: var(--spacing-4);
+      }
+
+      & form div[class="col"] {
+        flex: 1 1 100%;
+      }
+
+    }
   }
-
-
 }

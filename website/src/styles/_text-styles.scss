@@ -24,7 +24,7 @@
 
 @mixin header-4 {
   color: var(--foreground-primary);
-  font-size: #{spacing(4.5)};
+  font-size: var(--spacing-4);
   font-style: normal;
   font-weight: 700;
   line-height: 155.556%;
