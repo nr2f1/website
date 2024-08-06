@@ -36,6 +36,9 @@ const SocialMediaItem: React.FC<SocialMediaItem> = ({
         className={`button ${
           variant === 'light' ? 'button--on-light' : 'button--on-dark'
         }`}
+        target="_blank"
+        rel="noreferrer"
+        title={label}
       >
         <span>{label}</span>
       </a>

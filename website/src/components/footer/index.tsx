@@ -74,8 +74,9 @@ const Footer = () => {
                 <MainLogo />
               </div>
               <p>
-                ©2021 NR2F1 Foundation. All Rights Reserved. Registered
-                501(c)(3) non-profit organization Federal ID# 83-2659721
+                ©2021 NR2F1 Foundation. All Rights Reserved. <br />
+                Registered 501(c)(3) non-profit organization
+                <br /> Federal ID# 83-2659721
               </p>
               <p>
                 This website is not designed to diagnose, advise or provide
@@ -86,45 +87,15 @@ const Footer = () => {
               </p>
             </div>
             <div className={styles.footer__middle_column}>
-              <ul>
-                <li>
-                  <a
-                    href="https://www.facebook.com/BBSoas"
-                    className="button button--on-dark"
-                  >
-                    <span>YouTube</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.facebook.com/BBSoas"
-                    className="button button--on-dark"
-                  >
-                    <span>X</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.facebook.com/BBSoas"
-                    className="button button--on-dark"
-                  >
-                    <span>Facebook</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.facebook.com/BBSoas"
-                    className="button button--on-dark"
-                  >
-                    <span>Instagram</span>
-                  </a>
-                </li>
-              </ul>
+              <SocialMediaLinks variant="dark" />
               <p>Contact us:</p>
               <address>
-                NR2F1 Foundation 416 E. Kenilworth Ave Royal Oak, MI 48067
-                <a href="mailto:info@nr2f1.org">info@nr2f1.org</a>
+                NR2F1 Foundation <br /> 416 E. Kenilworth Ave <br />
+                Royal Oak, MI 48067
               </address>
+              <a href="mailto:info@nr2f1.org" title="info@nr2f1.org">
+                info@nr2f1.org
+              </a>
             </div>
           </div>
         </div>
