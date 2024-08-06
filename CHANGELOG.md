@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.7.0](https://github.com/nr2f1/website/compare/v1.6.1...v1.7.0) (2024-08-06)
+
+
+### Features
+
+* desktop footer ([ba1d536](https://github.com/nr2f1/website/commit/ba1d5369b0abf07cadde13959d9f08e27fcf4ee7))
+
+
+### Bug Fixes
+
+* font error loading ([2573091](https://github.com/nr2f1/website/commit/2573091a1220f59227532a50623e27d50244564c))
+
 ## [1.6.1](https://github.com/nr2f1/website/compare/v1.6.0...v1.6.1) (2024-08-02)
 
 
