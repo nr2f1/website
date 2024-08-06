@@ -3,8 +3,8 @@ import { Nunito_Sans } from 'next/font/google';
 const nunitoSans = Nunito_Sans({
   display: 'swap',
   subsets: ['latin'],
-  preload: true,
   variable: '--font-nunito-sans',
+  adjustFontFallback: false,
 });
 
 import '@styles/main.scss';

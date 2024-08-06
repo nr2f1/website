@@ -40,8 +40,8 @@ const DonateButton: React.FC<DonateButtonProps> = ({
 }) => (
   <Link
     href={href}
-    className={`button button--accent-on-light ${
-      isMobile ? 'button--accent-on-light--mobile' : ''
+    className={`button button--accent-on-dark ${
+      isMobile ? 'button--accent-on-dark--mobile' : ''
     }`}
     title={content}
   >
