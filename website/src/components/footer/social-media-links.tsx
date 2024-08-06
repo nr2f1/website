@@ -19,21 +19,6 @@ const SocialMediaItems = [
   { label: 'instagram', url: 'https://www.instagram.com/nr2f1foundation' },
 ];
 
-// const getSocialMediaChannel = (label: string) => {
-//   switch (label) {
-//     case 'youtube':
-//       return styles.social_media_item--;
-//     case 'x':
-//       return 'twitter';
-//     case 'facebook':
-//       return 'facebook';
-//     case 'instagram':
-//       return 'instagram';
-//     default:
-//       return 'unknown';
-//   }
-// }
-
 const SocialMediaItem: React.FC<SocialMediaItem> = ({
   label,
   url,
@@ -43,7 +28,7 @@ const SocialMediaItem: React.FC<SocialMediaItem> = ({
     <li
       className={[
         styles.social_media_item,
-        styles[`social_media_item--${label}`],
+        styles[`social_media_item--${variant}-${label}`],
       ].join(' ')}
     >
       <a
@@ -52,7 +37,7 @@ const SocialMediaItem: React.FC<SocialMediaItem> = ({
           variant === 'light' ? 'button--on-light' : 'button--on-dark'
         }`}
       >
-        <span className={label}>{label}</span>
+        <span>{label}</span>
       </a>
     </li>
   );
