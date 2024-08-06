@@ -2,6 +2,7 @@ import styles from './index.module.scss';
 
 import Contentful from '@components/logos/contentful';
 import MainLogo from '@components/logos/main';
+import SocialMediaLinks from './social-media-links';
 
 const Footer = () => {
   return (
@@ -12,40 +13,7 @@ const Footer = () => {
             <div className={styles.footer__top_column}>
               <p>Stay in touch</p>
               <p>Connect with us via our social media channels:</p>
-              <ul>
-                <li>
-                  <a
-                    href="https://www.facebook.com/BBSoas"
-                    className="button button--on-dark"
-                  >
-                    <span>YouTube</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.facebook.com/BBSoas"
-                    className="button button--on-dark"
-                  >
-                    <span>X</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.facebook.com/BBSoas"
-                    className="button button--on-dark"
-                  >
-                    <span>Facebook</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.facebook.com/BBSoas"
-                    className="button button--on-dark"
-                  >
-                    <span>Instagram</span>
-                  </a>
-                </li>
-              </ul>
+              <SocialMediaLinks variant="light" />
             </div>
             <div className={styles.footer__top_column}>
               <p>

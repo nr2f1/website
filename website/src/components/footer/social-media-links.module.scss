@@ -1,0 +1,32 @@
+$youtube-on-light: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M17.456 17.414a2.49 2.49 0 0 0 2.095-1.995c.2-1.147.4-2.843.449-4.938 0-2.094-.25-3.79-.449-4.937a2.49 2.49 0 0 0-2.095-1.995A52.522 52.522 0 0 0 9.976 3c-3.093 0-5.836.3-7.482.549A2.49 2.49 0 0 0 .399 5.544 29.192 29.192 0 0 0 0 10.48c0 2.095.2 3.79.399 4.938a2.49 2.49 0 0 0 2.095 1.995c1.696.25 4.439.549 7.481.549 3.092 0 5.835-.3 7.481-.549Zm-3.491-6.933L7.98 6.99v6.982l5.985-3.49Z' clip-rule='evenodd'/%3E%3C/svg%3E%0A";
+
+
+
+.social_media_links {
+  column-gap: var(--spacing-4);
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social_media_item {
+
+  max-width: var(--spacing-11);
+
+
+  & a {
+    display: block;
+  }
+
+  & a span {
+    font-size: 0;
+    display: block;
+    width: var(--spacing-5);
+    aspect-ratio: 1 / 1;
+  }
+
+  &--youtube a span {
+    background-image: url($youtube-on-light);
+  }
+}

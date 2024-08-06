@@ -1,6 +1,7 @@
 @import "@styles/breakpoints";
 @import "@styles/utils";
 @import "@styles/layout";
+@import "@styles/text-styles";
 
 .footer {
   &__content_wrapper {
@@ -14,8 +15,27 @@
 
   &__top_row {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+    align-items: flex-start;
+    gap: var(--spacing-16);
   }
+
+  &__top_column {
+    flex: 1 1 100%;
+
+    &:first-of-type {
+      p:first-of-type {
+        @include header-1;
+        margin-top: 0;
+        margin-bottom: var(--spacing-6);
+      }
+
+      p:last-of-type {
+        @include text-base;
+        margin-top: 0;
+        margin-bottom: var(--spacing-4);
+      }
+    }
+  }
+
+
 }
