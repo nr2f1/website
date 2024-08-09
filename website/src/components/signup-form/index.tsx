@@ -30,6 +30,8 @@ type MuiEvent =
 
 const VALIDATION_ERROR_MESSAGE = 'This is a mandatory field';
 
+const ErrorMessage = () => <p>{VALIDATION_ERROR_MESSAGE}</p>;
+
 const validationSchema = object({
   firstname: string().required(VALIDATION_ERROR_MESSAGE),
   lastname: string().required(VALIDATION_ERROR_MESSAGE),
@@ -45,12 +47,13 @@ const SignupForm = () => {
   };
 
   const {
-    values,
+    errors,
+    handleBlur,
     handleChange,
     handleSubmit,
     setFieldValue,
-    errors,
-    handleBlur,
+    touched,
+    values,
   } = useFormik({
     initialValues,
     onSubmit,
@@ -63,13 +66,24 @@ const SignupForm = () => {
     }
   };
 
+  const firstnameError = touched.firstname && errors.firstname;
+  const lastnameError = touched.lastname && errors.lastname;
+  const emailError = touched.email && errors.email;
+  const roleError = touched.role && errors.role;
+
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <div className="row">
-        <div className="col">
-          <div className="field">
-            <label htmlFor="firstname">First name</label>
+      <div className={styles.form__row}>
+        <div className={styles.form__col}>
+          <div className={styles.form__field}>
+            <label
+              className={firstnameError ? 'error' : ''}
+              htmlFor="firstname"
+            >
+              First name
+            </label>
             <input
+              className={firstnameError ? 'error' : ''}
               id="firstname"
               name="firstname"
               onBlur={handleBlur}
@@ -78,12 +92,16 @@ const SignupForm = () => {
               type="text"
               value={values.firstname}
             />
+            {firstnameError && <ErrorMessage />}
           </div>
         </div>
-        <div className="col">
-          <div className="field">
-            <label htmlFor="lastname">Last name</label>
+        <div className={styles.form__col}>
+          <div className={styles.form__field}>
+            <label className={lastnameError ? 'error' : ''} htmlFor="lastname">
+              Last name
+            </label>
             <input
+              className={lastnameError ? 'error' : ''}
               id="lastname"
               name="lastname"
               onBlur={handleBlur}
@@ -92,14 +110,18 @@ const SignupForm = () => {
               type="text"
               value={values.lastname}
             />
+            {lastnameError && <ErrorMessage />}
           </div>
         </div>
       </div>
-      <div className="row">
-        <div className="col">
-          <div className="field">
-            <label htmlFor="email">Email address</label>
+      <div className={styles.form__row}>
+        <div className={styles.form__col}>
+          <div className={styles.form__field}>
+            <label className={emailError ? 'error' : ''} htmlFor="email">
+              Email address
+            </label>
             <input
+              className={emailError ? 'error' : ''}
               id="email"
               name="email"
               onBlur={handleBlur}
@@ -108,15 +130,20 @@ const SignupForm = () => {
               type="email"
               value={values.email}
             />
+            {emailError && <ErrorMessage />}
           </div>
         </div>
       </div>
-      <div className="row">
-        <div className="col">
-          <div className="field">
+      <div className={styles.form__row}>
+        <div className={styles.form__col}>
+          <div className={styles.form__field}>
             <label htmlFor="role">I am a:</label>
             <Select
-              className={styles.select}
+              className={
+                roleError
+                  ? [styles.select, styles['select--error']].join(' ')
+                  : styles.select
+              }
               id="role"
               onBlur={handleBlur}
               onChange={handleSelectOnChange}
@@ -141,6 +168,7 @@ const SignupForm = () => {
                 </Option>
               ))}
             </Select>
+            {roleError && <ErrorMessage />}
           </div>
         </div>
       </div>

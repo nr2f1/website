@@ -39,16 +39,19 @@ object {
 label {
   @include text-base;
   margin-bottom: var(--spacing-1);
+
+  &.error {
+    color: var(--foreground-error);
+  }
 }
 
 input {
   @include text-base;
-
   background: var(--white);
   border-radius: var(--border-radius-lg);
   border: 1px solid var(--grey-300);
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-  color: var(--foreground-disabled);
+  color: var(--foreground-primary);
   padding: 0.625rem 0.875rem;
   text-overflow: ellipsis;
 
@@ -68,5 +71,13 @@ input {
 
   &.error {
     border: 1px solid var(--red-500);
+    color: var(--foreground-error)
   }
+
+  &:disabled,
+  &::placeholder {
+    color: var(--foreground-disabled);
+  }
+
+
 }

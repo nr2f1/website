@@ -37,6 +37,10 @@
     box-shadow: 0 0 0 4px var(--navy-200);
   }
 
+  &--error {
+    border-color: var(--border-error);
+  }
+
 }
 
 .popup {
@@ -90,19 +94,27 @@
 
 .form {
 
+  &__row {
+    display: flex;
+    column-gap: var(--spacing-4);
+    margin-bottom: var(--spacing-4);
+  }
+
+  &__col {
+    flex: 1 1 100%;
+  }
+
   & label,
   & input {
     display: block;
     width: 100%;
   }
 
-  & div[class="row"] {
-    display: flex;
-    column-gap: var(--spacing-4);
-    margin-bottom: var(--spacing-4);
-  }
-
-  & div[class="col"] {
-    flex: 1 1 100%;
+  &__field {
+    & p {
+      color: var(--foreground-error);
+      margin-top: var(--spacing-1);
+      margin-bottom: 0;
+    }
   }
 }
