@@ -1,6 +1,6 @@
 import styles from './nav-list.module.scss';
 
-import { LocalisedLinkProps } from '@shared/types/link';
+import type { LocalisedLinkProps } from '@shared/types/link';
 import Link from 'next/link';
 
 interface NavListProps {

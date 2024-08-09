@@ -4,7 +4,7 @@ import styles from './index.module.scss';
 
 import MainLogo from '@components/logos/main';
 import { useGetHeaderSuspenseQuery } from '@graphql/queries/header/index.generated';
-import { AvailableLocale } from '@i18n/locales';
+import type { AvailableLocale } from '@i18n/locales';
 import { donateId, registerPatientId } from '@models/links';
 import {
   aboutBbsoasId,
@@ -13,7 +13,7 @@ import {
   researchId,
   supportUsId,
 } from '@models/navlinks';
-import { LocalisedLinkProps } from '@shared/types/link';
+import type { LocalisedLinkProps } from '@shared/types/link';
 import { getLocalisedLinkProps } from '@shared/utils/link';
 import Link from 'next/link';
 import { useState } from 'react';
