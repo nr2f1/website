@@ -15,10 +15,13 @@
   }
 
   &[open] summary {
-    background-color: var(--background-interactive-hover);
 
     &::after {
-      background-image: url($chevron-up);
+      background-image: url($chevron-up-on-dark);
+
+      @include from-small-to-medium-screen {
+        background-image: url($chevron-up);
+      }
     }
   }
 
@@ -29,6 +32,7 @@
 
     align-items: center;
     border-radius: var(--border-radius-xl);
+    color: var(--foreground-inverse-primary);
     cursor: pointer;
     display: flex;
     flex: 1 0 0;
@@ -40,31 +44,38 @@
 
     &::after {
       aspect-ratio: 1 / 1;
-      background-image: url($chevron-down);
+      background-image: url($chevron-down-on-dark);
       background-position: center;
       background-size: contain;
       content: "";
       display: block;
       width: var(--spacing-5);
+
+      @include from-small-to-medium-screen {
+        background-image: url($chevron-down);
+      }
     }
 
     @include from-small-to-medium-screen {
       border-radius: unset;
       justify-content: space-between;
+      padding: 0 var(--spacing-3);
+      color: var(--foreground-primary);
     }
 
     &:hover,
     &:focus {
-      background-color: var(--background-interactive-hover);
+      background-color: var(--background-button-primary-hover);
+
+      @include from-small-to-medium-screen {
+        background-color: var(--background-interactive-hover);
+      }
     }
 
     &:active {
       background-color: var(--background-interactive-press_active);
     }
 
-    @include from-small-to-medium-screen {
-      padding: 0 var(--spacing-3);
-    }
   }
 
   & ul {

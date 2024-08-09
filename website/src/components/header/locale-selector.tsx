@@ -3,7 +3,7 @@ import styles from './locale-selector.module.scss';
 
 import {
   AVAILABLE_LOCALES_LABEL_KEYS,
-  AvailableLocale,
+  type AvailableLocale,
   english,
 } from '@i18n/locales';
 

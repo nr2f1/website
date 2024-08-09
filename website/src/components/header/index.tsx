@@ -14,6 +14,7 @@ import Header, { type HeaderProps } from './layout';
 const HeaderWithData: React.FC<HeaderProps> = ({ lang }) => {
   return (
     <PreloadQuery
+      // @ts-ignore
       query={GetHeaderDocument}
       variables={{
         locale: lang,

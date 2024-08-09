@@ -2,9 +2,9 @@
 
 import styles from './index.module.scss';
 
-import MainLogo from '@components/logos/main';
+import MainOnLight from '@components/logos/main-on-light';
 import { useGetHeaderSuspenseQuery } from '@graphql/queries/header/index.generated';
-import { AvailableLocale } from '@i18n/locales';
+import type { AvailableLocale } from '@i18n/locales';
 import { donateId, registerPatientId } from '@models/links';
 import {
   aboutBbsoasId,
@@ -13,34 +13,35 @@ import {
   researchId,
   supportUsId,
 } from '@models/navlinks';
-import { LocalisedLinkProps } from '@shared/types/link';
+import type { LocalisedLinkProps } from '@shared/types/link';
 import { getLocalisedLinkProps } from '@shared/utils/link';
 import Link from 'next/link';
 import { useState } from 'react';
 import LocaleSelector from './locale-selector';
 import NavList from './nav-list';
 
-const RegisterPatientButton: React.FC<LocalisedLinkProps> = ({
-  href,
+interface CtaButtons extends LocalisedLinkProps {
+  isMobile?: boolean;
+}
+
+const RegisterPatientButton: React.FC<CtaButtons> = ({
   content,
+  href,
+  isMobile,
 }) => (
-  <Link href={href} className="button button--on-dark" title={content}>
+  <Link
+    href={href}
+    className={isMobile ? 'button button--on-dark' : 'button button--on-light'}
+    title={content}
+  >
     {content}
   </Link>
 );
 
-interface DonateButtonProps extends LocalisedLinkProps {
-  isMobile?: boolean;
-}
-
-const DonateButton: React.FC<DonateButtonProps> = ({
-  isMobile,
-  href,
-  content,
-}) => (
+const DonateButton: React.FC<CtaButtons> = ({ content, href, isMobile }) => (
   <Link
     href={href}
-    className={`button button--accent-on-dark ${
+    className={`button button--accent-on-light ${
       isMobile ? 'button--accent-on-dark--mobile' : ''
     }`}
     title={content}
@@ -111,10 +112,11 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
         <div className={styles.header__content_wrapper}>
           <div className={styles.header__logo}>
             <Link href="/">
-              <MainLogo />
+              <MainOnLight />
             </Link>
           </div>
           <div className={styles.header__top_right}>
+            <LocaleSelector />
             <nav title="primary">
               <ul>
                 <li>
@@ -131,11 +133,10 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
                 </li>
               </ul>
             </nav>
-            <LocaleSelector />
             <button
               title="hambuguer-button"
               type="button"
-              className="button button--on-dark"
+              className="button button--on-light"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             />
           </div>
@@ -159,6 +160,7 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
                 <RegisterPatientButton
                   content={registerPatient?.content ?? ''}
                   href={registerPatient?.href ?? ''}
+                  isMobile
                 />
               </li>
               <li>

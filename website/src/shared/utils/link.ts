@@ -1,4 +1,4 @@
-import { type LocalisedLinkProps } from '@shared/types/link';
+import type { LocalisedLinkProps } from '@shared/types/link';
 
 export type GetLocalisedProps = Array<
   | {

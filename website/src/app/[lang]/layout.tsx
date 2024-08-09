@@ -5,6 +5,7 @@ const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
   variable: '--font-nunito-sans',
   adjustFontFallback: false,
+  preload: true,
 });
 
 import '@styles/main.scss';
@@ -12,7 +13,7 @@ import '@styles/main.scss';
 import { ApolloWrapper } from '@app/apollo-wrapper';
 import Footer from '@components/footer';
 import Header from '@components/header';
-import { AVAILABLE_LOCALES, LocaleParamsPath } from '@i18n/locales';
+import { AVAILABLE_LOCALES, type LocaleParamsPath } from '@i18n/locales';
 
 export const metadata = {
   title: 'Welcome to website',
