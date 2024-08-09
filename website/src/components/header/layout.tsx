@@ -135,7 +135,7 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
             <button
               title="hambuguer-button"
               type="button"
-              className="button button--on-dark"
+              className="button button--on-light"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             />
           </div>
