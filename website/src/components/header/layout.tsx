@@ -20,23 +20,25 @@ import { useState } from 'react';
 import LocaleSelector from './locale-selector';
 import NavList from './nav-list';
 
-const RegisterPatientButton: React.FC<LocalisedLinkProps> = ({
-  href,
+interface CtaButtons extends LocalisedLinkProps {
+  isMobile?: boolean;
+}
+
+const RegisterPatientButton: React.FC<CtaButtons> = ({
   content,
+  href,
+  isMobile
 }) => (
-  <Link href={href} className="button button--on-light" title={content}>
+  <Link href={href} className={isMobile ? "button button--on-dark": "button button--on-light"} title={content}>
     {content}
   </Link>
 );
 
-interface DonateButtonProps extends LocalisedLinkProps {
-  isMobile?: boolean;
-}
 
-const DonateButton: React.FC<DonateButtonProps> = ({
-  isMobile,
-  href,
+const DonateButton: React.FC<CtaButtons> = ({
   content,
+  href,
+  isMobile,
 }) => (
   <Link
     href={href}
@@ -159,6 +161,7 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
                 <RegisterPatientButton
                   content={registerPatient?.content ?? ''}
                   href={registerPatient?.href ?? ''}
+                  isMobile
                 />
               </li>
               <li>

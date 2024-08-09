@@ -75,8 +75,8 @@ $hambuguer-button: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
   }
 
   &__bottom {
-    background-color: var(--background-primary);
-    padding: var(--spacing-2) 0;
+    background-color: var(--background-inverse-primary);
+
 
     @include from-small-to-medium-screen {
       padding: var(--spacing-5) var(--spacing-6);

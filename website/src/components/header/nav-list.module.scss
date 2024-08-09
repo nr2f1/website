@@ -15,10 +15,10 @@
   }
 
   &[open] summary {
-    background-color: var(--background-interactive-hover);
+    // background-color: var(--background-interactive-hover);
 
     &::after {
-      background-image: url($chevron-up);
+      background-image: url($chevron-up-on-dark);
     }
   }
 
@@ -29,6 +29,7 @@
 
     align-items: center;
     border-radius: var(--border-radius-xl);
+    color: var(--foreground-inverse-primary);
     cursor: pointer;
     display: flex;
     flex: 1 0 0;
@@ -40,7 +41,7 @@
 
     &::after {
       aspect-ratio: 1 / 1;
-      background-image: url($chevron-down);
+      background-image: url($chevron-down-on-dark);
       background-position: center;
       background-size: contain;
       content: "";
@@ -55,11 +56,11 @@
 
     &:hover,
     &:focus {
-      background-color: var(--background-interactive-hover);
+      background-color: var(--background-button-primary-hover);
     }
 
     &:active {
-      background-color: var(--background-interactive-press_active);
+      background-color: var(--background-button-inverse-primary-press_active);
     }
 
     @include from-small-to-medium-screen {
