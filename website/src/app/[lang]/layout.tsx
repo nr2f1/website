@@ -5,6 +5,7 @@ const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
   variable: '--font-nunito-sans',
   adjustFontFallback: false,
+  preload: true,
 });
 
 import '@styles/main.scss';
