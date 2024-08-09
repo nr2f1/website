@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/nr2f1/website/compare/v1.7.0...v1.8.0) (2024-08-09)
+
+
+### Features
+
+* new header styles ([11a1e49](https://github.com/nr2f1/website/commit/11a1e495359c86243a9fb4945083c8d57512119a))
+
 ## [1.7.0](https://github.com/nr2f1/website/compare/v1.6.1...v1.7.0) (2024-08-06)
 
 
