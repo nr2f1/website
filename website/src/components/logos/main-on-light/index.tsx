@@ -1,7 +1,7 @@
-
-const  MainOnLight = () => {
+const MainOnLight = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 206 48">
+      <title>NR2F1 Foundation</title>
       <g clipPath="url(#a)">
         <path
           fill="#0D1F36"
@@ -38,11 +38,11 @@ const  MainOnLight = () => {
       </g>
       <defs>
         <clipPath id="a">
-          <path fill="#fff" d="M0 0h206v48H0z"/>
+          <path fill="#fff" d="M0 0h206v48H0z" />
         </clipPath>
       </defs>
     </svg>
   );
-}
+};
 
 export default MainOnLight;

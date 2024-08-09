@@ -15,10 +15,13 @@
   }
 
   &[open] summary {
-    // background-color: var(--background-interactive-hover);
 
     &::after {
       background-image: url($chevron-up-on-dark);
+
+      @include from-small-to-medium-screen {
+        background-image: url($chevron-up);
+      }
     }
   }
 
@@ -47,25 +50,32 @@
       content: "";
       display: block;
       width: var(--spacing-5);
+
+      @include from-small-to-medium-screen {
+        background-image: url($chevron-down);
+      }
     }
 
     @include from-small-to-medium-screen {
       border-radius: unset;
       justify-content: space-between;
+      padding: 0 var(--spacing-3);
+      color: var(--foreground-primary);
     }
 
     &:hover,
     &:focus {
       background-color: var(--background-button-primary-hover);
+
+      @include from-small-to-medium-screen {
+        background-color: var(--background-interactive-hover);
+      }
     }
 
     &:active {
-      background-color: var(--background-button-inverse-primary-press_active);
+      background-color: var(--background-interactive-press_active);
     }
 
-    @include from-small-to-medium-screen {
-      padding: 0 var(--spacing-3);
-    }
   }
 
   & ul {

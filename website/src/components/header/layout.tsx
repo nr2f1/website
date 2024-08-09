@@ -27,19 +27,18 @@ interface CtaButtons extends LocalisedLinkProps {
 const RegisterPatientButton: React.FC<CtaButtons> = ({
   content,
   href,
-  isMobile
+  isMobile,
 }) => (
-  <Link href={href} className={isMobile ? "button button--on-dark": "button button--on-light"} title={content}>
+  <Link
+    href={href}
+    className={isMobile ? 'button button--on-dark' : 'button button--on-light'}
+    title={content}
+  >
     {content}
   </Link>
 );
 
-
-const DonateButton: React.FC<CtaButtons> = ({
-  content,
-  href,
-  isMobile,
-}) => (
+const DonateButton: React.FC<CtaButtons> = ({ content, href, isMobile }) => (
   <Link
     href={href}
     className={`button button--accent-on-light ${
