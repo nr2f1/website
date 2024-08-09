@@ -2,7 +2,7 @@
 
 import styles from './index.module.scss';
 
-import MainLogo from '@components/logos/main';
+import MainOnLight from '@components/logos/main-on-light';
 import { useGetHeaderSuspenseQuery } from '@graphql/queries/header/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { donateId, registerPatientId } from '@models/links';
@@ -24,7 +24,7 @@ const RegisterPatientButton: React.FC<LocalisedLinkProps> = ({
   href,
   content,
 }) => (
-  <Link href={href} className="button button--on-dark" title={content}>
+  <Link href={href} className="button button--on-light" title={content}>
     {content}
   </Link>
 );
@@ -40,7 +40,7 @@ const DonateButton: React.FC<DonateButtonProps> = ({
 }) => (
   <Link
     href={href}
-    className={`button button--accent-on-dark ${
+    className={`button button--accent-on-light ${
       isMobile ? 'button--accent-on-dark--mobile' : ''
     }`}
     title={content}
@@ -111,10 +111,11 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
         <div className={styles.header__content_wrapper}>
           <div className={styles.header__logo}>
             <Link href="/">
-              <MainLogo />
+              <MainOnLight />
             </Link>
           </div>
           <div className={styles.header__top_right}>
+            <LocaleSelector />
             <nav title="primary">
               <ul>
                 <li>
@@ -131,7 +132,6 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
                 </li>
               </ul>
             </nav>
-            <LocaleSelector />
             <button
               title="hambuguer-button"
               type="button"
