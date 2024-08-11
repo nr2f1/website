@@ -117,4 +117,20 @@
       margin-bottom: 0;
     }
   }
+
+  &__extra_fields {
+    padding-top: var(--spacing-2);
+  }
+
+  &__heading {
+    @include header-3;
+    margin: 0;
+    margin-bottom: var(--spacing-3);
+  }
+
+  &__text {
+    @include text-base;
+    margin: 0;
+    margin-bottom: var(--spacing-2);
+  }
 }
