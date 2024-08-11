@@ -40,6 +40,10 @@ label {
   @include text-base;
   margin-bottom: var(--spacing-1);
 
+  & span.optional {
+    color: var(--foreground-secondary)
+  }
+
   &.error {
     color: var(--foreground-error);
   }
