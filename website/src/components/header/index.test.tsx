@@ -2,7 +2,7 @@ import * as HeaderGraphql from '@graphql/queries/header/index.generated';
 import { render, waitFor } from '@testing-library/react';
 import axe from '@tests/a11y/test-utils';
 import { describe, expect, it, vi } from 'vitest';
-import Header from './layout';
+import Header from './markup';
 
 const locale = 'en';
 

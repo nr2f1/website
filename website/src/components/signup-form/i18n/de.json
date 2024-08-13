@@ -196,5 +196,16 @@
     { "label": "Sambia", "value": "ZMB" },
     { "label": "Simbabwe", "value": "ZWE" }
   ],
-  "validatioErrorMessage": "Dies ist ein Pflichtfeld"
+  "validatioErrorMessage": "Dies ist ein Pflichtfeld",
+  "roles": [
+    {
+      "label": "BBSOAS Elternteil/Betreuer oder Patient",
+      "value": "parent-patient"
+    },
+    { "label": "Fan", "value": "supporter" },
+    {
+      "label": "Forscher, Arzt oder Spezialist",
+      "value": "specialist"
+    }
+  ]
 }

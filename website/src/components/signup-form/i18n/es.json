@@ -196,5 +196,16 @@
     { "label": "Zambia", "value": "ZMB" },
     { "label": "Zimbabue", "value": "ZWE" }
   ],
-  "validatioErrorMessage": "Este campo es obligatorio"
+  "validatioErrorMessage": "Este campo es obligatorio",
+  "roles": [
+    {
+      "label": "Pariente/cuidador o paciente de BBSOAS",
+      "value": "parent-patient"
+    },
+    { "label": "Seguidor", "value": "supporter" },
+    {
+      "label": "Investigador, doctor o especialista",
+      "value": "specialist"
+    }
+  ]
 }

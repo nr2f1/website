@@ -9,14 +9,9 @@ import {
 
 import { Option } from '@mui/base/Option';
 import { Select } from '@mui/base/Select';
+import { MuiEvent } from '@shared/types/mui';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-
-type MuiEvent =
-  | React.MouseEvent<Element, MouseEvent>
-  | React.KeyboardEvent<Element>
-  | React.FocusEvent<Element, Element>
-  | null;
 
 interface LocaleSelectorProps {
   isMobile?: boolean;
