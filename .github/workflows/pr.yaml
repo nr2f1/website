@@ -85,8 +85,8 @@ jobs:
       - name: Run unit tests
         uses: ./.github/actions/unit-test
 
-  pr-validation:
-    name: PR validation
+  ci-validation:
+    name: CI validation
     needs: [prepare, conventional-commits, lint-format, unit-tests] 
     if: ${{ always() }}
     runs-on: ubuntu-latest
