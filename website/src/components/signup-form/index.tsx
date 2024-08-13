@@ -8,24 +8,22 @@ import type { MuiEvent } from '@shared/types/mui';
 import { useFormik } from 'formik';
 import { useEffect, useReducer } from 'react';
 import {
+  Role,
+  type SignupFormProps,
+  type SignupFormValues,
   getValidationSchema,
   initialState,
   initialValues,
   reducer,
-  Role,
-  type SignupFormProps,
-  type SignupFormValues
 } from './helper';
-
 
 interface ErrorMessageProps {
   errorMessage?: string;
 }
 
-const ErrorMessage: React.FC<ErrorMessageProps> = ({
-  errorMessage = 'This is a mandatory field',
-}) => <p>{errorMessage}</p>;
-
+const ErrorMessage: React.FC<ErrorMessageProps> = ({ errorMessage }) => (
+  <p>{errorMessage}</p>
+);
 
 const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
   const [{ content, i18nRequestResult }, dispatch] = useReducer(
@@ -36,7 +34,6 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
   const onSubmit = (values: SignupFormValues) => {
     console.log('values', values);
   };
-
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: Only on mount
   useEffect(() => {
@@ -51,9 +48,9 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
         dispatch({ type: 'setError' });
       });
 
-      return () => {
-        dispatch({type: 'setIdle'});
-      }
+    return () => {
+      dispatch({ type: 'setIdle' });
+    };
   }, []);
 
   const {
@@ -105,7 +102,8 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
   const showExtraFields = values.role === Role.ParentPatient;
   const shouldRenderForm = i18nRequestResult === 'success';
 
-  return (shouldRenderForm && 
+  return (
+    shouldRenderForm && (
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.form__row}>
           <div className={styles.form__col}>
@@ -114,7 +112,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
                 className={firstnameError ? 'error' : ''}
                 htmlFor="firstname"
               >
-                First name
+                {content?.fields.firstname.label}
               </label>
               <input
                 className={firstnameError ? 'error' : ''}
@@ -122,7 +120,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
                 name="firstname"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                placeholder="John"
+                placeholder={content?.fields.firstname.placeholder}
                 type="text"
                 value={values.firstname}
               />
@@ -137,7 +135,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
                 className={lastnameError ? 'error' : ''}
                 htmlFor="lastname"
               >
-                Last name
+                {content?.fields.lastname.label}
               </label>
               <input
                 className={lastnameError ? 'error' : ''}
@@ -145,7 +143,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
                 name="lastname"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                placeholder="Smith"
+                placeholder={content?.fields.lastname.placeholder}
                 type="text"
                 value={values.lastname}
               />
@@ -157,7 +155,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
           <div className={styles.form__col}>
             <div className={styles.form__field}>
               <label className={emailError ? 'error' : ''} htmlFor="email">
-                Email address
+                {content?.fields.email.label}
               </label>
               <input
                 className={emailError ? 'error' : ''}
@@ -165,7 +163,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
                 name="email"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                placeholder="name@email.com"
+                placeholder={content?.fields.email.placeholder}
                 type="email"
                 value={values.email}
               />
@@ -176,7 +174,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
         <div className={styles.form__row}>
           <div className={styles.form__col}>
             <div className={styles.form__field}>
-              <label htmlFor="role">I am a:</label>
+              <label htmlFor="role">{content?.fields.role.label}</label>
               <Select
                 className={
                   roleError
@@ -196,7 +194,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
                 }}
                 value={values.role}
               >
-                {content && content.roles.map(({ label, value }) => (
+                {content?.roles.map(({ label, value }) => (
                   <Option
                     key={value}
                     value={value}
@@ -215,26 +213,24 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
           <div className={styles.form__extra_fields}>
             <div className={styles.form__row}>
               <div className={styles.form__col}>
-                <p className={styles.form__heading}>Help us with our mission</p>
-                <p className={styles.form__text}>
-                  If you're a BBSOAS parent, could you share your BBSOAS child's
-                  first name and address with us? We use this to keep track of
-                  the number of diagnoses worldwide.
+                <p className={styles.form__heading}>
+                  {content?.parent.heading}
                 </p>
+                <p className={styles.form__text}>{content?.parent.text}</p>
               </div>
             </div>
             <div className={styles.form__row}>
               <div className={styles.form__col}>
                 <div className={styles.form__field}>
                   <label htmlFor="patientFirstName">
-                    BBSOAS patient's first name
+                    {content?.fields.patientFirstName.label}
                   </label>
                   <input
                     id="patientFirstName"
                     name="patientFirstName"
                     onBlur={handleBlur}
                     onChange={handleChange}
-                    placeholder="Sarah"
+                    placeholder={content?.fields.patientFirstName.placeholder}
                     type="text"
                     value={values.patientFirstName}
                   />
@@ -247,18 +243,19 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
             <div className={styles.form__row}>
               <div className={styles.form__col}>
                 <p className={styles.form__heading}>
-                  BBSOAS parent/carer or patient's contact details
+                  {content?.parentContact.heading}
                 </p>
                 <p className={styles.form__text}>
-                  (Sentence to explain why we need these and what we will use
-                  them for.)
+                  {content?.parentContact.text}
                 </p>
               </div>
             </div>
             <div className={styles.form__row}>
               <div className={styles.form__col}>
                 <div className={styles.form__field}>
-                  <label htmlFor="country">Country</label>
+                  <label htmlFor="country">
+                    {content?.fields.country.label}
+                  </label>
                   <Select
                     className={
                       countryError
@@ -278,7 +275,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
                     }}
                     value={values.country}
                   >
-                    {content && content.countries.map(({ label, value }) => (
+                    {content?.countries.map(({ label, value }) => (
                       <Option
                         key={value}
                         value={value}
@@ -299,15 +296,15 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
               <div className={styles.form__col}>
                 <div className={styles.form__field}>
                   <label htmlFor="region">
-                    State/Province/Region{' '}
-                    <span className="optional">(optional)</span>
+                    {content?.fields.region.label}{' '}
+                    <span className="optional">({content?.optional})</span>
                   </label>
                   <input
                     id="region"
                     name="region"
                     onBlur={handleBlur}
                     onChange={handleChange}
-                    placeholder="Region Name"
+                    placeholder={content?.fields.region.placeholder}
                     type="text"
                     value={values.region}
                   />
@@ -319,14 +316,15 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
               <div className={styles.form__col}>
                 <div className={styles.form__field}>
                   <label htmlFor="streetAdress">
-                    Street address <span className="optional">(optional)</span>
+                    {content?.fields.streetAdress.label}{' '}
+                    <span className="optional">({content?.optional})</span>
                   </label>
                   <input
                     id="streetAdress"
                     name="streetAdress"
                     onBlur={handleBlur}
                     onChange={handleChange}
-                    placeholder="123 Street Name"
+                    placeholder={content?.fields.streetAdress.placeholder}
                     type="text"
                     value={values.streetAdress}
                   />
@@ -340,14 +338,15 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
               <div className={styles.form__col}>
                 <div className={styles.form__field}>
                   <label htmlFor="city">
-                    City <span className="optional">(optional)</span>
+                    {content?.fields.city.label}{' '}
+                    <span className="optional">({content?.optional})</span>
                   </label>
                   <input
                     id="city"
                     name="city"
                     onBlur={handleBlur}
                     onChange={handleChange}
-                    placeholder="City Name"
+                    placeholder={content?.fields.city.placeholder}
                     type="text"
                     value={values.city}
                   />
@@ -359,14 +358,15 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
               <div className={styles.form__col}>
                 <div className={styles.form__field}>
                   <label htmlFor="postCode">
-                    Postal/zip code <span className="optional">(optional)</span>
+                    {content?.fields.postCode.label}{' '}
+                    <span className="optional">({content?.optional})</span>
                   </label>
                   <input
                     id="postCode"
                     name="postCode"
                     onBlur={handleBlur}
                     onChange={handleChange}
-                    placeholder="Postal/zip code"
+                    placeholder={content?.fields.postCode.placeholder}
                     type="text"
                     value={values.postCode}
                   />
@@ -379,9 +379,10 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
           </div>
         )}
         <button type="submit" className="button button--on-light">
-          Sign up
+          {content?.signupButton}
         </button>
       </form>
+    )
   );
 };
 

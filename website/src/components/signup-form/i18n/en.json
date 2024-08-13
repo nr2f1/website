@@ -209,11 +209,11 @@
     }
   ],
   "fields": {
-    "firstName": {
+    "firstname": {
       "label": "First name",
       "placeholder": "John"
     },
-    "lastName": {
+    "lastname": {
       "label": "Last name",
       "placeholder": "Smith"
     },
@@ -255,5 +255,7 @@
   "parentContact": {
     "heading": "BBSOAS parent/carer or patient's contact details",
     "text": "(Sentence to explain why we need these and what we will use them for.)"
-  }
+  },
+  "signupButton": "Sign up",
+  "optional": "optional"
 }

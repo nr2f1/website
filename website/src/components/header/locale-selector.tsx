@@ -9,7 +9,7 @@ import {
 
 import { Option } from '@mui/base/Option';
 import { Select } from '@mui/base/Select';
-import { MuiEvent } from '@shared/types/mui';
+import type { MuiEvent } from '@shared/types/mui';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 

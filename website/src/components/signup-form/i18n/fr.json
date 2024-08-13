@@ -231,11 +231,11 @@
     }
   ],
   "fields": {
-    "firstName": {
+    "firstname": {
       "label": "Prénom",
       "placeholder": "John"
     },
-    "lastName": {
+    "lastname": {
       "label": "Nom de famille",
       "placeholder": "Smith"
     },
@@ -277,5 +277,7 @@
   "parentContact": {
     "heading": "Coordonnées du parent/tuteur ou du patient BBSOAS",
     "text": "(Phrase pour expliquer pourquoi nous avons besoin de ces informations et à quoi elles serviront.)"
-  }
+  },
+  "signupButton": "S'inscrire",
+  "optional": "optionnel"
 }

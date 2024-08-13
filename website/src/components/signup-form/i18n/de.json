@@ -209,11 +209,11 @@
     }
   ],
   "fields": {
-    "firstName": {
+    "firstname": {
       "label": "Vorname",
       "placeholder": "John"
     },
-    "lastName": {
+    "lastname": {
       "label": "Nachname",
       "placeholder": "Smith"
     },
@@ -255,5 +255,7 @@
   "parentContact": {
     "heading": "Kontaktdaten des BBSOAS-Elternteils/Betreuers oder Patienten",
     "text": "(Satz zur Erklärung, warum wir diese Informationen benötigen und wofür wir sie verwenden werden.)"
-  }
+  },
+  "signupButton": "Anmelden",
+  "optional": "optional"
 }
