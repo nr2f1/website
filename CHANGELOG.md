@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.9.0](https://github.com/nr2f1/website/compare/v1.8.0...v1.9.0) (2024-08-13)
+
+
+### Features
+
+* handling error in signup form ([4aa85f0](https://github.com/nr2f1/website/commit/4aa85f05fa501d692320197d2baada53e6956ebf))
+* signup form i18n ([359280f](https://github.com/nr2f1/website/commit/359280f2444788323c5eab4564e834bff69a8418))
+* signup form validation ([a2d5671](https://github.com/nr2f1/website/commit/a2d5671ac809b143e210a0300e81a8b38a14bc18))
+
+
+### Bug Fixes
+
+* header list item style ([84f49d1](https://github.com/nr2f1/website/commit/84f49d10ab1ca5a82a0df0c69d83946853be2ae3))
+* release ci ([ed2c89e](https://github.com/nr2f1/website/commit/ed2c89e5ac838eddd096616164bcc837a62708db))
+* remove signupform from home page ([a16257c](https://github.com/nr2f1/website/commit/a16257cdd25fe36157120a1808b1780f64abf501))
+
+
+### Performance Improvements
+
+* remove signup gorm placeholder from footer ([be2b7ff](https://github.com/nr2f1/website/commit/be2b7ffd07a2e7560f4a83ae1755b896b14ee15e))
+* signup form ([3292411](https://github.com/nr2f1/website/commit/3292411af1e02656cce6ff73b3b5f75b6142ae78))
+* signup form 18n ([494ddea](https://github.com/nr2f1/website/commit/494ddea446545e6032d69ffd120e198cb247e781))
+
 ## [1.8.0](https://github.com/nr2f1/website/compare/v1.7.0...v1.8.0) (2024-08-09)
 
 
