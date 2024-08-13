@@ -207,5 +207,53 @@
       "label": "Forscher, Arzt oder Spezialist",
       "value": "specialist"
     }
-  ]
+  ],
+  "fields": {
+    "firstName": {
+      "label": "Vorname",
+      "placeholder": "John"
+    },
+    "lastName": {
+      "label": "Nachname",
+      "placeholder": "Smith"
+    },
+    "email": {
+      "label": "E-Mail-Adresse",
+      "placeholder": "name@email.com"
+    },
+    "role": {
+      "label": "Ich bin ein(e):"
+    },
+    "patientFirstName": {
+      "label": "Vorname des BBSOAS-Patienten",
+      "placeholder": "Sarah"
+    },
+    "country": {
+      "label": "Land"
+    },
+    "region": {
+      "label": "Bundesland/Provinz/Region",
+      "placeholder": "Regionsname"
+    },
+    "streetAdress": {
+      "label": "Straßenadresse",
+      "placeholder": "Straßenname 123"
+    },
+    "city": {
+      "label": "Stadt",
+      "placeholder": "Stadtname"
+    },
+    "postCode": {
+      "label": "Postleitzahl",
+      "placeholder": "Postleitzahl"
+    }
+  },
+  "parent": {
+    "heading": "Helfen Sie uns bei unserer Mission",
+    "text": "Wenn Sie ein BBSOAS-Elternteil sind, könnten Sie uns den Vornamen und die Adresse Ihres BBSOAS-Kindes mitteilen? Wir verwenden diese Informationen, um die Anzahl der Diagnosen weltweit zu verfolgen."
+  },
+  "parentContact": {
+    "heading": "Kontaktdaten des BBSOAS-Elternteils/Betreuers oder Patienten",
+    "text": "(Satz zur Erklärung, warum wir diese Informationen benötigen und wofür wir sie verwenden werden.)"
+  }
 }

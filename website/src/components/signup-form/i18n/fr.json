@@ -229,5 +229,53 @@
       "label": "Chercheur, médecin ou spécialiste",
       "value": "specialist"
     }
-  ]
+  ],
+  "fields": {
+    "firstName": {
+      "label": "Prénom",
+      "placeholder": "John"
+    },
+    "lastName": {
+      "label": "Nom de famille",
+      "placeholder": "Smith"
+    },
+    "email": {
+      "label": "Adresse e-mail",
+      "placeholder": "name@email.com"
+    },
+    "role": {
+      "label": "Je suis un(e):"
+    },
+    "patientFirstName": {
+      "label": "Prénom du patient BBSOAS",
+      "placeholder": "Sarah"
+    },
+    "country": {
+      "label": "Pays"
+    },
+    "region": {
+      "label": "État/Province/Région",
+      "placeholder": "Nom de la région"
+    },
+    "streetAdress": {
+      "label": "Adresse",
+      "placeholder": "123 Nom de la rue"
+    },
+    "city": {
+      "label": "Ville",
+      "placeholder": "Nom de la ville"
+    },
+    "postCode": {
+      "label": "Code postal",
+      "placeholder": "Code postal"
+    }
+  },
+  "parent": {
+    "heading": "Aidez-nous dans notre mission",
+    "text": "Si vous êtes un parent de BBSOAS, pourriez-vous partager avec nous le prénom et l'adresse de votre enfant atteint de BBSOAS ? Nous utilisons ces informations pour suivre le nombre de diagnostics dans le monde entier."
+  },
+  "parentContact": {
+    "heading": "Coordonnées du parent/tuteur ou du patient BBSOAS",
+    "text": "(Phrase pour expliquer pourquoi nous avons besoin de ces informations et à quoi elles serviront.)"
+  }
 }
