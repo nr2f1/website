@@ -264,3 +264,139 @@ export const getValidationSchema = (lang: AvailableLocale) => {
     }),
   });
 };
+
+export interface SignupFormValues {
+  firstname: string;
+  lastname: string;
+  email: string;
+  role: string | Role;
+  patientFirstName?: string;
+  country?: string;
+  region?: string;
+  streetAdress?: string;
+  city?: string;
+  postCode?: string;
+}
+
+export const initialValues = {
+  firstname: '',
+  lastname: '',
+  email: '',
+  role: '',
+  patientFirstName: '',
+  country: '',
+  region: '',
+  streetAdress: '',
+  city: '',
+  postCode: '',
+};
+
+
+export interface SignupFormProps {
+  lang: AvailableLocale;
+}
+
+export interface Content {
+  countries: CountryOptionProps[];
+  validatioErrorMessage: string;
+  roles: RoleOptionProps[];
+  fields: {
+    firstname: {
+      label: string;
+      placeholder: string;
+    }
+    lastname: {
+      label: string;
+      placeholder: string;
+    }
+    email: {
+      label: string;
+      placeholder: string;
+    }
+    role: {
+      label: string;
+    }
+    patientFirstName: {
+      label: string;
+      placeholder: string;
+    }
+    country: {
+      label: string;
+    }
+    region: {
+      label: string;
+      placeholder: string;
+    }
+    streetAdress: {
+      label: string;
+      placeholder: string;
+    }  
+    city: {
+      label: string;
+      placeholder: string;
+    }
+    postCode: {
+      label: string;
+      placeholder: string;
+    }
+    signupButton: string;
+  }
+  parent: {
+    heading: string;
+    text: string;
+  }
+  parentContact: {
+    heading: string;
+    text: string;
+  }
+}
+
+export interface State {
+  content: Content | undefined;
+  i18nRequestResult: 'idle' | 'loading' | 'success' | 'error';
+}
+
+export type Action =
+  | { type: 'setLoading' }
+  | { type: 'setIdle' }
+  | { type: 'setContent'; payload: Content }
+  | { type: 'setError' };
+
+export const reducer = (state: State, action: Action): State => {
+  switch (action.type) {
+    case 'setIdle': {
+      return {
+        ...state,
+        content: undefined,
+        i18nRequestResult: 'idle',
+      };
+    }
+    case 'setLoading': {
+      return {
+        ...state,
+        i18nRequestResult: 'loading',
+      };
+    }
+    case 'setContent': {
+      return {
+        ...state,
+        content: action.payload,
+        i18nRequestResult: 'success',
+      };
+    }
+    case 'setError': {
+      return {
+        ...state,
+        content: undefined,
+        i18nRequestResult: 'error',
+      };
+    }
+    default:
+      throw new Error('Invalid action type');
+  }
+};
+
+export const initialState: State = {
+  content: undefined,
+  i18nRequestResult: 'idle',
+};

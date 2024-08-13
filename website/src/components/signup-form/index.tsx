@@ -2,45 +2,20 @@
 
 import styles from './index.module.scss';
 
-import type { AvailableLocale } from '@i18n/locales';
 import { Option } from '@mui/base/Option';
 import { Select } from '@mui/base/Select';
 import type { MuiEvent } from '@shared/types/mui';
 import { useFormik } from 'formik';
 import { useEffect, useReducer } from 'react';
 import {
-  type CountryOptionProps,
   getValidationSchema,
+  initialState,
+  initialValues,
+  reducer,
   Role,
-  type RoleOptionProps
+  type SignupFormProps,
+  type SignupFormValues
 } from './helper';
-
-interface SignupFormValues {
-  firstname: string;
-  lastname: string;
-  email: string;
-  role: string | Role;
-  patientFirstName?: string;
-  country?: string;
-  region?: string;
-  streetAdress?: string;
-  city?: string;
-  postCode?: string;
-}
-
-const initialValues = {
-  firstname: '',
-  lastname: '',
-  email: '',
-  role: '',
-  patientFirstName: '',
-  country: '',
-  region: '',
-  streetAdress: '',
-  city: '',
-  postCode: '',
-};
-
 
 
 interface ErrorMessageProps {
@@ -51,66 +26,6 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({
   errorMessage = 'This is a mandatory field',
 }) => <p>{errorMessage}</p>;
 
-
-interface SignupFormProps {
-  lang: AvailableLocale;
-}
-
-interface Content {
-  countries: CountryOptionProps[];
-  validatioErrorMessage: string;
-  roles: RoleOptionProps[];
-}
-
-interface State {
-  content: Content | undefined;
-  i18nRequestResult: 'idle' | 'loading' | 'success' | 'error';
-}
-
-type Action =
-  | { type: 'setLoading' }
-  | { type: 'setIdle' }
-  | { type: 'setContent'; payload: Content }
-  | { type: 'setError' };
-
-const reducer = (state: State, action: Action): State => {
-  switch (action.type) {
-    case 'setIdle': {
-      return {
-        ...state,
-        content: undefined,
-        i18nRequestResult: 'idle',
-      };
-    }
-    case 'setLoading': {
-      return {
-        ...state,
-        i18nRequestResult: 'loading',
-      };
-    }
-    case 'setContent': {
-      return {
-        ...state,
-        content: action.payload,
-        i18nRequestResult: 'success',
-      };
-    }
-    case 'setError': {
-      return {
-        ...state,
-        content: undefined,
-        i18nRequestResult: 'error',
-      };
-    }
-    default:
-      throw new Error('Invalid action type');
-  }
-};
-
-const initialState: State = {
-  content: undefined,
-  i18nRequestResult: 'idle',
-};
 
 const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
   const [{ content, i18nRequestResult }, dispatch] = useReducer(
