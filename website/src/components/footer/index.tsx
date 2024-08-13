@@ -2,7 +2,7 @@ import styles from './index.module.scss';
 
 import Contentful from '@components/logos/contentful';
 import MainLogo from '@components/logos/main';
-import Dropdown from './dropdown';
+import SignupForm from '@components/signup-form';
 import SocialMediaLinks from './social-media-links';
 
 const Footer = () => {
@@ -20,48 +20,7 @@ const Footer = () => {
               <p>
                 Sign up to receive news and updates from the NR2F1 Foundation
               </p>
-              <form action="">
-                <div className="row">
-                  <div className="col">
-                    <label htmlFor="firstname">First name</label>
-                    <input
-                      type="text"
-                      id="firstname"
-                      name="firstname"
-                      placeholder="John"
-                    />
-                  </div>
-                  <div className="col">
-                    <label htmlFor="lastname">Last name</label>
-                    <input
-                      type="text"
-                      id="lastname"
-                      name="lastname"
-                      placeholder="Smith"
-                    />
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col">
-                    <label htmlFor="email">Email address</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      placeholder="name@email.com"
-                    />
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col">
-                    <label htmlFor="role">I am a:</label>
-                    <Dropdown />
-                  </div>
-                </div>
-                <button type="submit" className="button button--on-light">
-                  Sign up
-                </button>
-              </form>
+              <SignupForm lang="en" />
             </div>
           </div>
         </div>

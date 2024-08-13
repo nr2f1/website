@@ -1,3 +1,4 @@
+import SignupForm from '@components/signup-form';
 import type { LocaleParamsPath } from '@i18n/locales';
 import type { NextPage } from 'next';
 
@@ -42,6 +43,7 @@ const Page: NextPage<LocaleParamsPath> = async ({ params: { lang } }) => {
       <button type="button" className="button button--accent-on-dark" disabled>
         Donate
       </button>
+      <SignupForm />
     </div>
   );
 };

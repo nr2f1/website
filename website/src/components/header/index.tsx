@@ -9,7 +9,7 @@ import {
   supportUsId,
 } from '@models/navlinks';
 import { Suspense } from 'react';
-import Header, { type HeaderProps } from './layout';
+import Header, { type HeaderProps } from './markup';
 
 const HeaderWithData: React.FC<HeaderProps> = ({ lang }) => {
   return (
