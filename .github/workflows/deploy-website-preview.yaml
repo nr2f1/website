@@ -30,7 +30,6 @@ jobs:
         with:
           token: ${{ secrets.RELEASE_PLEASE_GH_TOKEN }}
           release-type: simple
-      - uses: actions/checkout@v4
       - name: tag major and minor versions
         if: steps.release.outputs.releases_created == 'true'
         run: |
