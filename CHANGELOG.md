@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/nr2f1/website/compare/v1.9.0...v1.10.0) (2024-08-15)
+
+
+### Features
+
+* responsive footer ([2ad0db9](https://github.com/nr2f1/website/commit/2ad0db9a37dee0bfbc7b2cc3144ffdd9854d3c47))
+
 ## [1.9.0](https://github.com/nr2f1/website/compare/v1.8.0...v1.9.0) (2024-08-13)
 
 
