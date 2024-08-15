@@ -15,6 +15,10 @@
     @include medium-screen {
       padding: var(--spacing-12);
     }
+
+    @include small-screen {
+      padding: var(--spacing-8) var(--spacing-6);
+    }
   }
 
   &__top_row {
@@ -25,16 +29,28 @@
     @include medium-screen {
       column-gap: var(--spacing-12);
     }
+
+    @include small-screen {
+      flex-direction: column;
+    }
   }
 
   &__top_column {
     flex: 1 1 100%;
 
     &:first-of-type {
+      @include small-screen {
+        margin-bottom: var(--spacing-6);
+      }
+
       p:first-of-type {
         @include header-1;
         margin-top: 0;
         margin-bottom: var(--spacing-6);
+
+        @include from-small-to-medium-screen {
+          @include header-1__mobile;
+        }
       }
 
       p:last-of-type {
@@ -50,23 +66,6 @@
         margin-top: 0;
         margin-bottom: var(--spacing-4);
       }
-
-      & form label,
-      & form input {
-        display: block;
-        width: 100%;
-      }
-
-      & form div[class="row"] {
-        display: flex;
-        column-gap: var(--spacing-4);
-        margin-bottom: var(--spacing-4);
-      }
-
-      & form div[class="col"] {
-        flex: 1 1 100%;
-      }
-
     }
   }
 
@@ -78,12 +77,20 @@
     @include medium-screen {
       padding: var(--spacing-12);
     }
+
+    @include small-screen {
+      padding: var(--spacing-6);
+    }
   }
 
   &__logo {
     width: 100%;
     max-width: 225px;
     margin-bottom: var(--spacing-8);
+
+    @include small-screen {
+      max-width: 225px;
+    }
 
     & svg {
       display: block;
@@ -95,6 +102,10 @@
     display: flex;
     align-items: flex-start;
     gap: var(--spacing-8);
+
+    @include small-screen {
+      flex-direction: column;
+    }
   }
 
   &__middle_column {
@@ -118,6 +129,10 @@
 
     &:last-of-type {
       max-width: var(--spacing-56);
+
+      @include small-screen {
+        width: 100%;
+      }
 
       p {
         @include header-4;

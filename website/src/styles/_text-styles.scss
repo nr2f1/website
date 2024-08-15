@@ -6,6 +6,14 @@
   line-height: 100%;
 }
 
+@mixin header-1__mobile {
+  color: var(--foreground-primary);
+  font-size: var(--spacing-9);
+  font-style: normal;
+  font-weight: 900;
+  line-height: 111.11%;
+}
+
 @mixin header-2 {
   color: var(--foreground-primary);
   font-size: var(--spacing-6);
