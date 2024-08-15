@@ -1,7 +1,7 @@
 @import "@styles/breakpoints";
-@import "@styles/utils";
 @import "@styles/layout";
 @import "@styles/text-styles";
+@import "@styles/utils";
 
 .footer {
   &__content_wrapper {
@@ -11,12 +11,20 @@
   &__top {
     background-color: var(--background-accent-navy);
     padding: var(--spacing-20) var(--spacing-16) var(--spacing-24);
+
+    @include medium-screen {
+      padding: var(--spacing-12);
+    }
   }
 
   &__top_row {
     display: flex;
     align-items: flex-start;
-    gap: var(--spacing-16);
+    column-gap: var(--spacing-16);
+
+    @include medium-screen {
+      column-gap: var(--spacing-12);
+    }
   }
 
   &__top_column {
@@ -66,6 +74,10 @@
     background-color: var(--background-inverse-primary);
     color: var(--foreground-inverse-primary);
     padding: var(--spacing-12) var(--spacing-16);
+
+    @include medium-screen {
+      padding: var(--spacing-12);
+    }
   }
 
   &__logo {

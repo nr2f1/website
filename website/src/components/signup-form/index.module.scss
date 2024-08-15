@@ -1,6 +1,6 @@
-@import "@styles/text-styles";
-@import "@styles/icons";
 @import "@styles/breakpoints";
+@import "@styles/icons";
+@import "@styles/text-styles";
 
 .select {
   @include button;
@@ -92,12 +92,19 @@
   }
 }
 
-.form {
 
+
+.form {
   &__row {
     display: flex;
     column-gap: var(--spacing-4);
     margin-bottom: var(--spacing-4);
+
+    @include from-small-to-medium-screen {
+      &:first-of-type {
+        flex-direction: column;
+      }
+    }
   }
 
   &__col {
