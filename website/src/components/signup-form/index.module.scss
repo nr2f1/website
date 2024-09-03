@@ -59,6 +59,8 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  max-height: var(--spacing-44);
+  overflow-y: auto;
 }
 
 .option {
@@ -139,5 +141,12 @@
     @include text-base;
     margin: 0;
     margin-bottom: var(--spacing-2);
+  }
+
+  & button[type="submit"] {
+    @include small-screen {
+      display: block;
+      width: 100%;
+    }
   }
 }
