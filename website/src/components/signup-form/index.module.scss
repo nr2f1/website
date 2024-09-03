@@ -39,6 +39,10 @@
 
   &--error {
     border-color: var(--border-error);
+
+    &[aria-expanded="true"] {
+      box-shadow: none;
+    }
   }
 
 }
