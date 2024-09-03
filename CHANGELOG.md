@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.1](https://github.com/nr2f1/website/compare/v1.10.0...v1.10.1) (2024-09-03)
+
+
+### Bug Fixes
+
+* validation color on dropdown ([b2c2946](https://github.com/nr2f1/website/commit/b2c2946bcaac0dc387176573ba59d6afd68e8fd2))
+
 ## [1.10.0](https://github.com/nr2f1/website/compare/v1.9.0...v1.10.0) (2024-08-15)
 
 
