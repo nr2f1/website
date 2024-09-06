@@ -4,6 +4,7 @@ import styles from './index.module.scss';
 
 import { Option } from '@mui/base/Option';
 import { Select } from '@mui/base/Select';
+import { createContact } from '@services/givebutter/create-contact';
 import type { MuiEvent } from '@shared/types/mui';
 import { useFormik } from 'formik';
 import { useEffect, useReducer } from 'react';
@@ -25,14 +26,19 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({ errorMessage }) => (
   <p>{errorMessage}</p>
 );
 
-const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
+const SignupForm: React.FC<SignupFormProps> = ({ lang }) => {
   const [{ content, i18nRequestResult }, dispatch] = useReducer(
     reducer,
     initialState,
   );
 
-  const onSubmit = (values: SignupFormValues) => {
-    console.log('values', values);
+  const onSubmit = async (values: SignupFormValues) => {
+    try {
+      await createContact(values);
+      dispatch({ type: 'setCreateContactSuccess' });
+    } catch (error) {
+      dispatch({ type: 'setCreateContactError' });
+    }
   };
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: Only on mount
@@ -45,11 +51,11 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang = 'es' }) => {
         });
       })
       .catch(() => {
-        dispatch({ type: 'setError' });
+        dispatch({ type: 'setContentError' });
       });
 
     return () => {
-      dispatch({ type: 'setIdle' });
+      dispatch({ type: 'setContentIdle' });
     };
   }, []);
 
