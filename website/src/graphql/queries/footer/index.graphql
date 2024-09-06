@@ -1,0 +1,43 @@
+query GetFooter(
+  $locale: String
+  $stayInTouchId: String!
+  $socialMediaTextId: String!
+  $footerFormId: String!
+  $copyrightId: String!
+  $warningId: String!
+  $contactUsId: String!
+) {
+  stayInTouch: heading(id: $stayInTouchId, locale: $locale) {
+    content
+  }
+
+  socialMediaText: paragraphs(id: $socialMediaTextId, locale: $locale) {
+    content {
+      json
+    }
+  }
+
+  footerForm: paragraphs(id: $footerFormId, locale: $locale) {
+    content {
+      json
+    }
+  }
+
+  copyright: paragraphs(id: $copyrightId, locale: $locale) {
+    content {
+      json
+    }
+  }
+
+  warning: paragraphs(id: $warningId, locale: $locale) {
+    content {
+      json
+    }
+  }
+
+  contactUs: paragraphs(id: $contactUsId, locale: $locale) {
+    content {
+      json
+    }
+  }
+}

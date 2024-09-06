@@ -4,7 +4,7 @@ runs:
   using: composite
   steps:
     - name: Sets the base and head SHAs required for the nx affected
-      uses: nrwl/nx-set-shas@v3
+      uses: nrwl/nx-set-shas@v4
 
     - name: Checkout the code
       shell: bash
