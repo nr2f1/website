@@ -53,11 +53,13 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
           <div className={styles.footer__top_row}>
             <div className={styles.footer__top_column}>
               <p>{stayInTouch?.content}</p>
-              {documentToReactComponents(socialMediaText?.content?.json)}
+              {documentToReactComponents(socialMediaText?.content?.json, {
+                preserveWhitespace: true,
+              })}
               <SocialMediaLinks variant="light" />
             </div>
             <div className={styles.footer__top_column}>
-              <p>{documentToReactComponents(footerForm?.content?.json)}</p>
+              {documentToReactComponents(footerForm?.content?.json)}
               <SignupForm lang={lang} />
             </div>
           </div>
