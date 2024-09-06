@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.11.0](https://github.com/nr2f1/website/compare/v1.10.1...v1.11.0) (2024-09-06)
+
+
+### Features
+
+* footer graphql query ([4b158df](https://github.com/nr2f1/website/commit/4b158dfcb0c1125bacc44fe12a8ccd419b612c01))
+* localised footer ([8bb52a4](https://github.com/nr2f1/website/commit/8bb52a4838823cbc6fb72f578990c9ea569075d0))
+
 ## [1.10.1](https://github.com/nr2f1/website/compare/v1.10.0...v1.10.1) (2024-09-03)
 
 
