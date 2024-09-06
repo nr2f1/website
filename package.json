@@ -62,6 +62,7 @@
   "dependencies": {
     "@apollo/client": "^3.11.4",
     "@apollo/experimental-nextjs-app-support": "^0.11.2",
+    "@contentful/rich-text-react-renderer": "^15.22.10",
     "@formatjs/intl-localematcher": "^0.5.4",
     "@mui/base": "5.0.0-beta.40",
     "formik": "^2.4.6",

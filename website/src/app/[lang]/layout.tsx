@@ -38,7 +38,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({
         <ApolloWrapper>
           <Header lang={lang} />
           <main>{children}</main>
-          <Footer />
+          <Footer lang={lang} />
         </ApolloWrapper>
       </body>
     </html>
