@@ -248,6 +248,10 @@
       "placeholder": "Código postal"
     }
   },
+  "formHeading": "Regístrate para recibir noticias y actualizaciones de la Fundación NR2F1",
+  "formSuccessHeadingDefault": "¡Gracias por suscribirte!",
+  "formSuccessHeadingParentPatient": "¡Gracias por registrarte!",
+  "formSuccessMessage": "Esta atento a su bandeja de entrada para recibir noticias y actualizaciones de la Fundación NR2F1.",
   "parent": {
     "heading": "Ayúdanos con nuestra misión",
     "text": "Si eres un padre de BBSOAS, ¿podrías compartir el nombre y la dirección de tu hijo con BBSOAS con nosotros? Usamos esto para llevar un registro del número de diagnósticos en todo el mundo."

@@ -12,7 +12,6 @@ import { stayInTouchId } from '@models/headings';
 import {
   contactUsId,
   copyrightId,
-  footerFormId,
   socialMediaTextId,
   warningId,
 } from '@models/paragraphs';
@@ -24,14 +23,7 @@ export interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ lang }) => {
   const {
-    data: {
-      stayInTouch,
-      socialMediaText,
-      footerForm,
-      copyright,
-      warning,
-      contactUs,
-    },
+    data: { stayInTouch, socialMediaText, copyright, warning, contactUs },
     // TODO: Handle error
     error,
   } = useGetFooterSuspenseQuery({
@@ -39,7 +31,6 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
       locale: lang,
       stayInTouchId,
       socialMediaTextId,
-      footerFormId,
       copyrightId,
       warningId,
       contactUsId,
@@ -59,7 +50,6 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
               <SocialMediaLinks variant="light" />
             </div>
             <div className={styles.footer__top_column}>
-              {documentToReactComponents(footerForm?.content?.json)}
               <SignupForm lang={lang} />
             </div>
           </div>

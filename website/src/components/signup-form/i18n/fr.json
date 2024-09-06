@@ -230,6 +230,7 @@
       "value": "specialist"
     }
   ],
+
   "fields": {
     "firstname": {
       "label": "Prénom",
@@ -270,6 +271,10 @@
       "placeholder": "Code postal"
     }
   },
+  "formHeading": "Inscrivez-vous pour recevoir des nouvelles et des mises à jour de la Fondation NR2F1",
+  "formSuccessHeadingDefault": "Merci de vous être abonné !",
+  "formSuccessHeadingParentPatient": "Merci de votre inscription !",
+  "formSuccessMessage": "Gardez un œil sur votre boîte de réception pour les nouvelles et les mises à jour de la Fondation NR2F1.",
   "parent": {
     "heading": "Aidez-nous dans notre mission",
     "text": "Si vous êtes un parent de BBSOAS, pourriez-vous partager avec nous le prénom et l'adresse de votre enfant atteint de BBSOAS ? Nous utilisons ces informations pour suivre le nombre de diagnostics dans le monde entier."

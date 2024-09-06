@@ -341,6 +341,10 @@ export interface Content {
     };
     signupButton: string;
   };
+  formHeading: string;
+  formSuccessHeadingDefault: string;
+  formSuccessHeadingParentPatient: string;
+  formSuccessMessage: string;
   parent: {
     heading: string;
     text: string;

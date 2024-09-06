@@ -98,8 +98,6 @@
   }
 }
 
-
-
 .form {
   &__row {
     display: flex;
@@ -152,5 +150,17 @@
       display: block;
       width: 100%;
     }
+  }
+}
+
+.form-intro {
+  &__heading {
+    @include header-4;
+    margin-top: 0;
+    margin-bottom: var(--spacing-4);
+  }
+
+  &__text {
+    @include text-base;
   }
 }
