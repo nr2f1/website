@@ -19,8 +19,6 @@ jobs:
   prepare:
     name: Prepare
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: true    
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
@@ -31,8 +29,6 @@ jobs:
   conventional-commits:
     name: Conventional Commits
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: true    
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
@@ -48,8 +44,6 @@ jobs:
   lint-format:
     name: Linting and formatting
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: true    
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
@@ -58,7 +52,7 @@ jobs:
 
       - name: Set environment and install dependencies
         uses: ./.github/actions/prepare
-        
+
       - name: Get affected files
         uses: ./.github/actions/get-affected-files
 
@@ -68,8 +62,6 @@ jobs:
   unit-tests:
     name: Unit tests
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: true    
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
@@ -78,7 +70,7 @@ jobs:
 
       - name: Set environment and install dependencies
         uses: ./.github/actions/prepare
-        
+
       - name: Get affected files
         uses: ./.github/actions/get-affected-files
 
@@ -87,11 +79,9 @@ jobs:
 
   ci-validation:
     name: CI validation
-    needs: [prepare, conventional-commits, lint-format, unit-tests] 
+    needs: [prepare, conventional-commits, lint-format, unit-tests]
     if: ${{ always() }}
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: true
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4

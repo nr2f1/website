@@ -5,18 +5,18 @@ import styles from './index.module.scss';
 import Contentful from '@components/logos/contentful';
 import MainLogo from '@components/logos/main';
 import SignupForm from '@components/signup-form';
-import SocialMediaLinks from './social-media-links';
-import type { AvailableLocale } from '@i18n/locales';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { useGetFooterSuspenseQuery } from '@graphql/queries/footer/index.generated';
+import type { AvailableLocale } from '@i18n/locales';
 import { stayInTouchId } from '@models/headings';
 import {
-  socialMediaTextId,
-  footerFormId,
-  copyrightId,
-  warningId,
   contactUsId,
+  copyrightId,
+  footerFormId,
+  socialMediaTextId,
+  warningId,
 } from '@models/paragraphs';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import SocialMediaLinks from './social-media-links';
 
 export interface FooterProps {
   lang: AvailableLocale;

@@ -1,16 +1,16 @@
 import type { HeaderProps } from '@components/header/markup';
 import { PreloadQuery } from '@graphql/client';
 import { GetFooterDocument } from '@graphql/queries/footer/index.generated';
-import { Suspense } from 'react';
-import Footer from './markup';
 import { stayInTouchId } from '@models/headings';
 import {
-  socialMediaTextId,
-  footerFormId,
-  copyrightId,
-  warningId,
   contactUsId,
+  copyrightId,
+  footerFormId,
+  socialMediaTextId,
+  warningId,
 } from '@models/paragraphs';
+import { Suspense } from 'react';
+import Footer from './markup';
 
 const FooterWithData: React.FC<HeaderProps> = ({ lang }) => {
   return (
