@@ -104,8 +104,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang }) => {
 
   // conditional rendering
   const showExtraFields = values.role === Role.ParentPatient;
-  const shouldRenderForm =
-    i18nRequestResult === 'success' && createContactResult === 'idle';
+  const shouldRenderForm = i18nRequestResult === 'success';
 
   const shouldRenderDefaultCreateContactSucess =
     createContactResult === 'success' && values.role !== Role.ParentPatient;
