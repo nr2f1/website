@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.12.0](https://github.com/nr2f1/website/compare/v1.11.0...v1.12.0) (2024-09-07)
+
+
+### Features
+
+* create contact in givebutter ([eb1aea8](https://github.com/nr2f1/website/commit/eb1aea83afd2fef4561b977d767dd53a3dbe3fed))
+* signup success confirmation ([10691e7](https://github.com/nr2f1/website/commit/10691e7f9d2207fb422551a72b07d2ce970f1a4f))
+* signup success confirmation ([edea988](https://github.com/nr2f1/website/commit/edea9882482974489af7646fd54edc3bfccc9fd9))
+
+
+### Bug Fixes
+
+* rich text react warning ([391e9e8](https://github.com/nr2f1/website/commit/391e9e891f51141cb11fd29f7d8f2590ee6dde07))
+
+
+### Performance Improvements
+
+* abstract form heading into sign up form ([50269c8](https://github.com/nr2f1/website/commit/50269c835e93f0fa6c3097842a541106dff0875a))
+
 ## [1.11.0](https://github.com/nr2f1/website/compare/v1.10.1...v1.11.0) (2024-09-06)
 
 
