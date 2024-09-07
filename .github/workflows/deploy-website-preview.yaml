@@ -7,8 +7,8 @@ on:
       - main
     paths:
       - .github/workflows/deploy-website-preview.yaml
-      - '!CHANGELOG.md'         
-      - website/**         
+      - '!CHANGELOG.md'
+      - website/**
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
@@ -24,7 +24,7 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0      
+          fetch-depth: 0
       - uses: googleapis/release-please-action@v4
         id: release
         with:
@@ -68,13 +68,14 @@ jobs:
         env:
           NEXT_PUBLIC_CONTENTFUL_SPACE_ID: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_SPACE_ID }}
           NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN }}
+          NEXT_PUBLIC_GIVEBUTTER_API_KEY: ${{ secrets.NEXT_PUBLIC_GIVEBUTTER_API_KEY }}
 
       - name: Deploy project artifacts to Vercel
         id: deploy
         run: echo "url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})" >> $GITHUB_OUTPUT
   ci-validation:
     name: CI validation
-    needs: [release-please, deploy-fewd-to-vercel-preview] 
+    needs: [release-please, deploy-fewd-to-vercel-preview]
     if: ${{ always() }}
     runs-on: ubuntu-latest
     strategy:
@@ -89,4 +90,4 @@ jobs:
           script: |
             const checkJobsForErrors = require('./.github/workflows/js/check-for-errors.js');
             const jobs = ${{ toJSON(needs) }};
-            checkJobsForErrors({ core, jobs });        
+            checkJobsForErrors({ core, jobs });

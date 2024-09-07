@@ -2,7 +2,6 @@ query GetFooter(
   $locale: String
   $stayInTouchId: String!
   $socialMediaTextId: String!
-  $footerFormId: String!
   $copyrightId: String!
   $warningId: String!
   $contactUsId: String!
@@ -12,12 +11,6 @@ query GetFooter(
   }
 
   socialMediaText: paragraphs(id: $socialMediaTextId, locale: $locale) {
-    content {
-      json
-    }
-  }
-
-  footerForm: paragraphs(id: $footerFormId, locale: $locale) {
     content {
       json
     }

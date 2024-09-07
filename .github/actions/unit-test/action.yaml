@@ -5,4 +5,4 @@ runs:
   steps:
     - name: Unit Testing 🧪
       shell: bash
-      run: pnpm nx affected run-many -t test
+      run: pnpm nx affected run-many -t test --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}

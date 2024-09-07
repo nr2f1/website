@@ -1,4 +1,5 @@
 import type { AvailableLocale } from '@i18n/locales';
+import type { RequestResult } from '@shared/types/request';
 import { object, string } from 'yup';
 
 export enum Role {
@@ -340,6 +341,10 @@ export interface Content {
     };
     signupButton: string;
   };
+  formHeading: string;
+  formSuccessHeadingDefault: string;
+  formSuccessHeadingParentPatient: string;
+  formSuccessMessage: string;
   parent: {
     heading: string;
     text: string;
@@ -354,25 +359,28 @@ export interface Content {
 
 export interface State {
   content: Content | undefined;
-  i18nRequestResult: 'idle' | 'loading' | 'success' | 'error';
+  i18nRequestResult: RequestResult;
+  createContactResult: RequestResult;
 }
 
 export type Action =
-  | { type: 'setLoading' }
-  | { type: 'setIdle' }
+  | { type: 'setContentLoading' }
+  | { type: 'setContentIdle' }
   | { type: 'setContent'; payload: Content }
-  | { type: 'setError' };
+  | { type: 'setContentError' }
+  | { type: 'setCreateContactSuccess' }
+  | { type: 'setCreateContactError' };
 
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
-    case 'setIdle': {
+    case 'setContentIdle': {
       return {
         ...state,
         content: undefined,
         i18nRequestResult: 'idle',
       };
     }
-    case 'setLoading': {
+    case 'setContentLoading': {
       return {
         ...state,
         i18nRequestResult: 'loading',
@@ -385,19 +393,32 @@ export const reducer = (state: State, action: Action): State => {
         i18nRequestResult: 'success',
       };
     }
-    case 'setError': {
+    case 'setContentError': {
       return {
         ...state,
         content: undefined,
         i18nRequestResult: 'error',
       };
     }
+    case 'setCreateContactSuccess': {
+      return {
+        ...state,
+        createContactResult: 'success',
+      };
+    }
+    case 'setCreateContactError': {
+      return {
+        ...state,
+        createContactResult: 'error',
+      };
+    }
     default:
-      throw new Error('Invalid action type');
+      throw new Error(`Invalid action type ${JSON.stringify(action)}`);
   }
 };
 
 export const initialState: State = {
   content: undefined,
   i18nRequestResult: 'idle',
+  createContactResult: 'idle',
 };

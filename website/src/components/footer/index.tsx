@@ -5,7 +5,6 @@ import { stayInTouchId } from '@models/headings';
 import {
   contactUsId,
   copyrightId,
-  footerFormId,
   socialMediaTextId,
   warningId,
 } from '@models/paragraphs';
@@ -21,7 +20,6 @@ const FooterWithData: React.FC<HeaderProps> = ({ lang }) => {
         locale: lang,
         stayInTouchId,
         socialMediaTextId,
-        footerFormId,
         copyrightId,
         warningId,
         contactUsId,

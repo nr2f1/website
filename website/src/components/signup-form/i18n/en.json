@@ -208,6 +208,7 @@
       "value": "specialist"
     }
   ],
+
   "fields": {
     "firstname": {
       "label": "First name",
@@ -248,6 +249,10 @@
       "placeholder": "Postal/zip code"
     }
   },
+  "formHeading": "Sign up to receive news and updates from the NR2F1 Foundation",
+  "formSuccessHeadingDefault": "Thank you for subscribing!",
+  "formSuccessHeadingParentPatient": "Thank you for registering!",
+  "formSuccessMessage": "Keep an eye on your inbox for news and updates from the NR2F1 Foundation.",
   "parent": {
     "heading": "Help us with our mission",
     "text": "If you're a BBSOAS parent, could you share your BBSOAS child's first name and address with us? We use this to keep track of the number of diagnoses worldwide."

@@ -60,14 +60,6 @@
         margin-bottom: var(--spacing-4);
       }
     }
-
-    &:last-of-type {
-      p {
-        @include header-4;
-        margin-top: 0;
-        margin-bottom: var(--spacing-4);
-      }
-    }
   }
 
   &__middle {

@@ -19,6 +19,7 @@ export default defineConfig({
       '@graphql': '/graphql',
       '@i18n': '/i18n',
       '@models': '/models',
+      '@services': '/services',
       '@shared': '/shared',
       '@styles': '/styles',
       '@tests': '/tests',

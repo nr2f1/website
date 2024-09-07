@@ -7,27 +7,21 @@ export type GetFooterQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
   stayInTouchId: Types.Scalars['String']['input'];
   socialMediaTextId: Types.Scalars['String']['input'];
-  footerFormId: Types.Scalars['String']['input'];
   copyrightId: Types.Scalars['String']['input'];
   warningId: Types.Scalars['String']['input'];
   contactUsId: Types.Scalars['String']['input'];
 }>;
 
 
-export type GetFooterQuery = { __typename?: 'Query', stayInTouch?: { __typename?: 'Heading', content?: string | null } | null, socialMediaText?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, footerForm?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, copyright?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, warning?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, contactUs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null };
+export type GetFooterQuery = { __typename?: 'Query', stayInTouch?: { __typename?: 'Heading', content?: string | null } | null, socialMediaText?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, copyright?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, warning?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, contactUs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null };
 
 
 export const GetFooterDocument = gql`
-    query GetFooter($locale: String, $stayInTouchId: String!, $socialMediaTextId: String!, $footerFormId: String!, $copyrightId: String!, $warningId: String!, $contactUsId: String!) {
+    query GetFooter($locale: String, $stayInTouchId: String!, $socialMediaTextId: String!, $copyrightId: String!, $warningId: String!, $contactUsId: String!) {
   stayInTouch: heading(id: $stayInTouchId, locale: $locale) {
     content
   }
   socialMediaText: paragraphs(id: $socialMediaTextId, locale: $locale) {
-    content {
-      json
-    }
-  }
-  footerForm: paragraphs(id: $footerFormId, locale: $locale) {
     content {
       json
     }
@@ -65,7 +59,6 @@ export const GetFooterDocument = gql`
  *      locale: // value for 'locale'
  *      stayInTouchId: // value for 'stayInTouchId'
  *      socialMediaTextId: // value for 'socialMediaTextId'
- *      footerFormId: // value for 'footerFormId'
  *      copyrightId: // value for 'copyrightId'
  *      warningId: // value for 'warningId'
  *      contactUsId: // value for 'contactUsId'

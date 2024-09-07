@@ -3,10 +3,5 @@ description: Check the affected files in the pull request to then tun "nx affect
 runs:
   using: composite
   steps:
-    - name: Sets the base and head SHAs required for the nx affected
+    - name: Derive appropriate SHAs for base and head for `nx affected` commands
       uses: nrwl/nx-set-shas@v4
-
-    - name: Checkout the code
-      shell: bash
-        # This line is needed for nx affected to work when CI is running on a PR
-      run: git branch --track main origin/main
