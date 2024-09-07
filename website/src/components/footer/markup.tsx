@@ -15,6 +15,7 @@ import {
   socialMediaTextId,
   warningId,
 } from '@models/paragraphs';
+import { renderText } from '@shared/utils/rich-text';
 import SocialMediaLinks from './social-media-links';
 
 export interface FooterProps {
@@ -44,9 +45,7 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
           <div className={styles.footer__top_row}>
             <div className={styles.footer__top_column}>
               <p>{stayInTouch?.content}</p>
-              {documentToReactComponents(socialMediaText?.content?.json, {
-                preserveWhitespace: true,
-              })}
+              {documentToReactComponents(socialMediaText?.content?.json)}
               <SocialMediaLinks variant="light" />
             </div>
             <div className={styles.footer__top_column}>
@@ -65,18 +64,15 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
 
               {documentToReactComponents(copyright?.content?.json, {
                 preserveWhitespace: true,
+                renderText,
               })}
 
-              {documentToReactComponents(warning?.content?.json, {
-                preserveWhitespace: true,
-              })}
+              {documentToReactComponents(warning?.content?.json)}
             </div>
             <div className={styles.footer__middle_column}>
               <SocialMediaLinks variant="dark" />
 
-              {documentToReactComponents(contactUs?.content?.json, {
-                preserveWhitespace: true,
-              })}
+              {documentToReactComponents(contactUs?.content?.json)}
 
               <address>
                 NR2F1 Foundation <br /> 416 E. Kenilworth Ave <br />
