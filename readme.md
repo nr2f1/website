@@ -2,7 +2,7 @@
 
 ## Description
 
-A website for the NR2F1 Foundation, a non-profit organization dedicated to helping families living with rare variants on the Nr2f1 gene. 
+A website for the NR2F1 Foundation, a non-profit organization dedicated to helping families living with rare variants on the Nr2f1 gene.
 
 These variants cause a neurodevelopmental disorder called [Bosch-Boonstra-Schaaf optic atrophy syndrome](https://en.wikipedia.org/wiki/Bosch%E2%80%93Boonstra%E2%80%93Schaaf_optic_atrophy_syndrome) (BBSOAS).
 
@@ -24,7 +24,6 @@ To accomplish these goals, the website should have the following features:
 - Handles internationalisation and localisation
 - Is SEO-friendly
 
-
 ## Development
 
 This website is built using [Next.js](https://nextjs.org/), a [React](https://react.dev/) framework. It uses [TypeScript](https://www.typescriptlang.org/) for type-checking, [Sass](https://sass-lang.com/) for styling, [Contenful](https://www.contentful.com/) as a headless CMS, [Give Butter](https://givebutter.com/) for donations, and [Vercel](https://vercel.com) for deployment.
@@ -34,16 +33,19 @@ We are following conventional commits and semantic versioning for the project.
 ### How to install
 
 1. Clone the repository
+
 ```sh
 git clone git@github.com:nr2f1/website.git
 ```
 
 2. Install dependencies
+
 ```sh
 pnpm install
 ```
 
 3. Copy the `.env.example` file in the **website** folder to `.env` and fill in the environment variables
+
 ```sh
 cat ./website/.env.example > ./website/.env
 ```
@@ -57,13 +59,13 @@ pnpm nx dev website
 ### Format
 
 ```sh
-pnpm biome format --write <PATH> 
+pnpm biome format --write <PATH>
 ```
 
 ### Lint
 
-```sh 
-pnpm biome lint  <PATH> 
+```sh
+pnpm biome lint  <PATH>
 ```
 
 ### Build
@@ -74,5 +76,4 @@ pnpm nx build website
 
 ### How to deploy
 
-- A pull request triggers a preview deployment
-- Merging to the `main` branch triggers a production deployment
+We are using conventional commits and semantic versioning for the project. The deployment process is described in the [Deployment](./docs/development/deployment/readme.md) documentation.
