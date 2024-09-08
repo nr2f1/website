@@ -24,9 +24,18 @@ To accomplish these goals, the website should have the following features:
 - Handles internationalisation and localisation
 - Is SEO-friendly
 
+## Project organisation
+
+This is a monorepo and we have the following projects:
+
+- [website](./website/readme.md): built using [Next.js](https://nextjs.org/), a [React](https://react.dev/) framework. It uses [TypeScript](https://www.typescriptlang.org/) for type-checking, [Sass](https://sass-lang.com/) for styling, [Contenful](https://www.contentful.com/) as a headless CMS, [Give Butter](https://givebutter.com/) for donations, and [Vercel](https://vercel.com) for deployment.
+- [website-assets](./website-assets/readme.md): to keep the costs as low as possible, the website assets are stored in this NX project. This way, the assets are deployed to GitHub pages (https://nr2f1.github.io/website/) and can be used in the website
+
 ## Development
 
-This website is built using [Next.js](https://nextjs.org/), a [React](https://react.dev/) framework. It uses [TypeScript](https://www.typescriptlang.org/) for type-checking, [Sass](https://sass-lang.com/) for styling, [Contenful](https://www.contentful.com/) as a headless CMS, [Give Butter](https://givebutter.com/) for donations, and [Vercel](https://vercel.com) for deployment.
+Our backlog is tracked as GitHub issues, feel free to [check them out](https://github.com/nr2f1/website/issues).
+
+This website
 
 We are following conventional commits and semantic versioning for the project.
 
