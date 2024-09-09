@@ -20,7 +20,9 @@ export function middleware(request: NextRequest) {
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
   );
 
-  if (pathnameHasLocale) return;
+  const isApiRoute = pathname.startsWith('/api');
+
+  if (pathnameHasLocale || isApiRoute) return;
 
   // Redirect if there is no locale
   const locale = getLocale(request);
@@ -30,9 +32,9 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
+    // Skip all API routes
+    '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)',
     // Skip all internal paths (_next)
     '/((?!_next).*)',
-    // Optional: only run on root (/) URL
-    // '/',
   ],
 };

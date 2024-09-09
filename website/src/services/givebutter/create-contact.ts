@@ -2,7 +2,7 @@ import type { SignupFormValues } from '@components/signup-form/helper';
 
 export const createContact = async (data: SignupFormValues) => {
   try {
-    const response = await fetch('/api/create-contact', {
+    const response = await fetch(`${window.origin}/api/create-contact`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
