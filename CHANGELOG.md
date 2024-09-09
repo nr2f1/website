@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.12.1](https://github.com/nr2f1/website/compare/v1.12.0...v1.12.1) (2024-09-09)
+
+
+### Bug Fixes
+
+* givebutter API CORS ([e6a70e8](https://github.com/nr2f1/website/commit/e6a70e80e3191772a0cfe836a43ec408575ca965))
+
+
+### Performance Improvements
+
+* set api routes from root (/api) ([38c640a](https://github.com/nr2f1/website/commit/38c640a12248d1cbf425dbd1f48ad0c6eec7163d))
+
 ## [1.12.0](https://github.com/nr2f1/website/compare/v1.11.0...v1.12.0) (2024-09-07)
 
 
