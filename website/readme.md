@@ -1,4 +1,4 @@
-# NR2F1 Foundation Website
+# Website
 
 ## Description
 
@@ -29,33 +29,12 @@ To accomplish these goals, the website should have the following features:
 This is a monorepo and we have the following projects:
 
 - [website](./website/readme.md): built using [Next.js](https://nextjs.org/), a [React](https://react.dev/) framework. It uses [TypeScript](https://www.typescriptlang.org/) for type-checking, [Sass](https://sass-lang.com/) for styling, [Contenful](https://www.contentful.com/) as a headless CMS, [Give Butter](https://givebutter.com/) for donations, and [Vercel](https://vercel.com) for deployment.
-- [website-assets](./website-assets/readme.md): to keep the costs as low as possible, the website assets are stored in this NX project. This way, the assets are deployed to GitHub pages (https://nr2f1.github.io/website/) and can be used in the website
 
 ## Development
 
 Our backlog is tracked as GitHub issues, feel free to [check them out](https://github.com/nr2f1/website/issues).
 
 We are following conventional commits and semantic versioning for the project.
-
-### How to install
-
-1. Clone the repository
-
-```sh
-git clone git@github.com:nr2f1/website.git
-```
-
-2. Install dependencies
-
-```sh
-pnpm install
-```
-
-3. Copy the `.env.example` file in the **website** folder to `.env` and fill in the environment variables
-
-```sh
-cat ./website/.env.example > ./website/.env
-```
 
 ### Local server
 
@@ -81,6 +60,6 @@ pnpm biome lint  <PATH>
 pnpm nx build website
 ```
 
-### How to deploy
+## Deployment
 
-We are using conventional commits and semantic versioning for the project. The deployment process is described in the [Deployment](./docs/development/deployment/readme.md) documentation.
+The website is deployed to Vercel and the process is documented here [Deployment](../docs/development/deployment/readme.md)
