@@ -35,8 +35,6 @@ This is a monorepo and we have the following projects:
 
 Our backlog is tracked as GitHub issues, feel free to [check them out](https://github.com/nr2f1/website/issues).
 
-This website
-
 We are following conventional commits and semantic versioning for the project.
 
 ### How to install
