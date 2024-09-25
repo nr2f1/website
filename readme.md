@@ -2,7 +2,7 @@
 
 ## Description
 
-A website for the NR2F1 Foundation, a non-profit organization dedicated to helping families living with rare variants on the Nr2f1 gene.
+This is the source code for the website of the NR2F1 Foundation, a non-profit organisation dedicated to helping families living with rare variants of the Nr2f1 gene.
 
 These variants cause a neurodevelopmental disorder called [Bosch-Boonstra-Schaaf optic atrophy syndrome](https://en.wikipedia.org/wiki/Bosch%E2%80%93Boonstra%E2%80%93Schaaf_optic_atrophy_syndrome) (BBSOAS).
 
@@ -26,14 +26,18 @@ To accomplish these goals, the website should have the following features:
 
 ## Project organisation
 
-This is a monorepo and we have the following projects:
+This is a monorepo, and we have the following projects:
 
 - [website](./website/readme.md): built using [Next.js](https://nextjs.org/), a [React](https://react.dev/) framework. It uses [TypeScript](https://www.typescriptlang.org/) for type-checking, [Sass](https://sass-lang.com/) for styling, [Contenful](https://www.contentful.com/) as a headless CMS, [Give Butter](https://givebutter.com/) for donations, and [Vercel](https://vercel.com) for deployment.
 - [website-assets](./website-assets/readme.md): to keep the costs as low as possible, the website assets are stored in this NX project. This way, the assets are deployed to GitHub pages (https://nr2f1.github.io/website/) and can be used in the website
 
 ## Development
 
-Our backlog is tracked as GitHub issues, feel free to [check them out](https://github.com/nr2f1/website/issues).
+### First timer
+
+We wrote some guidance for first-time contributors [check it out](https://github.com/nr2f1/website/blob/main/CONTRIBUTING.md).
+
+Our backlog is tracked as GitHub issues; feel free to [check them out](https://github.com/nr2f1/website/issues).
 
 We are following conventional commits and semantic versioning for the project.
 
