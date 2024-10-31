@@ -1,7 +1,9 @@
 import type { LocaleParamsPath } from '@i18n/locales';
 import type { NextPage } from 'next';
 
-const Page: NextPage<LocaleParamsPath> = async ({ params: { lang } }) => {
+const Page: NextPage<LocaleParamsPath> = async ({ params }) => {
+  const { lang } = await params;
+
   return (
     <div className="content-wrapper">
       <h1>Hola</h1>

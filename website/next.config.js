@@ -21,6 +21,9 @@ const nextConfig = {
       },
     ],
   },
+  sassOptions: {
+    silenceDeprecations: ['legacy-js-api'],
+  },
 };
 
 const plugins = [

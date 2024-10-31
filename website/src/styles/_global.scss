@@ -1,3 +1,5 @@
+@use 'text-styles';
+
 * {
   box-sizing: border-box;
 }
@@ -21,7 +23,6 @@ body {
   }
 }
 
-
 picture,
 video,
 img,
@@ -37,11 +38,11 @@ object {
 }
 
 label {
-  @include text-base;
+  @include text-styles.text-base;
   margin-bottom: var(--spacing-1);
 
   & span.optional {
-    color: var(--foreground-secondary)
+    color: var(--foreground-secondary);
   }
 
   &.error {
@@ -50,7 +51,7 @@ label {
 }
 
 input {
-  @include text-base;
+  @include text-styles.text-base;
   background: var(--white);
   border-radius: var(--border-radius-lg);
   border: 1px solid var(--grey-300);
@@ -75,13 +76,11 @@ input {
 
   &.error {
     border: 1px solid var(--red-500);
-    color: var(--foreground-error)
+    color: var(--foreground-error);
   }
 
   &:disabled,
   &::placeholder {
     color: var(--foreground-disabled);
   }
-
-
 }
