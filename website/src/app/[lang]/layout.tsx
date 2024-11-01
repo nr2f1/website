@@ -28,10 +28,8 @@ interface RootLayoutProps extends LocaleParamsPath {
   children: React.ReactNode;
 }
 
-const RootLayout: React.FC<RootLayoutProps> = ({
-  children,
-  params: { lang },
-}) => {
+const RootLayout: React.FC<RootLayoutProps> = async ({ children, params }) => {
+  const { lang } = await params;
   return (
     <html lang={lang} className={nunitoSans.variable}>
       <body>

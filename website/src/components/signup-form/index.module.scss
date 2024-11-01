@@ -1,12 +1,12 @@
-@import "@styles/breakpoints";
-@import "@styles/icons";
-@import "@styles/text-styles";
+@use '@styles/breakpoints';
+@use '@styles/icons';
+@use '@styles/text-styles';
 
 .select {
-  @include button;
+  @include text-styles.button;
   appearance: none;
   background-color: var(--background-primary);
-  background-image: url($chevron-down);
+  background-image: url(icons.$chevron-down);
   background-position-x: calc(100% - var(--spacing-3));
   background-position-y: var(--spacing-3);
   background-repeat: no-repeat;
@@ -33,26 +33,27 @@
     box-shadow: 0 0 0 4px var(--navy-200);
   }
 
-  &[aria-expanded="true"] {
-    background-image: url($chevron-up);
+  &[aria-expanded='true'] {
+    background-image: url(icons.$chevron-up);
     box-shadow: 0 0 0 4px var(--navy-200);
   }
 
   &--error {
     border-color: var(--border-error);
 
-    &[aria-expanded="true"] {
+    &[aria-expanded='true'] {
       box-shadow: none;
     }
   }
-
 }
 
 .popup {
   background-color: var(--background-primary);
   border-radius: var(--border-radius-lg);
   border: var(--spacing-0) solid var(--gray-300);
-  box-shadow: 0 12px 16px -4px rgba(16, 24, 40, 0.08), 0 4px 6px -2px rgba(16, 24, 40, 0.03);
+  box-shadow:
+    0 12px 16px -4px rgba(16, 24, 40, 0.08),
+    0 4px 6px -2px rgba(16, 24, 40, 0.03);
   // It is important because styles are inlined
   top: var(--spacing-1) !important;
   z-index: 10;
@@ -69,7 +70,7 @@
 }
 
 .option {
-  @include button;
+  @include text-styles.button;
   color: var(--foreground-primary);
   font-size: 1.125rem;
   font-weight: 400;
@@ -90,8 +91,8 @@
     background-color: var(--navy-100);
   }
 
-  &[aria-selected="true"] {
-    background-image: url($check);
+  &[aria-selected='true'] {
+    background-image: url(icons.$check);
     background-position-x: calc(100% - var(--spacing-3));
     background-position-y: var(--spacing-3);
     background-repeat: no-repeat;
@@ -105,7 +106,7 @@
     column-gap: var(--spacing-4);
     margin-bottom: var(--spacing-4);
 
-    @include from-small-to-medium-screen {
+    @include breakpoints.from-small-to-medium-screen {
       &:first-of-type {
         flex-direction: column;
       }
@@ -135,19 +136,19 @@
   }
 
   &__heading {
-    @include header-3;
+    @include text-styles.header-3;
     margin: 0;
     margin-bottom: var(--spacing-3);
   }
 
   &__text {
-    @include text-base;
+    @include text-styles.text-base;
     margin: 0;
     margin-bottom: var(--spacing-2);
   }
 
-  & button[type="submit"] {
-    @include small-screen {
+  & button[type='submit'] {
+    @include breakpoints.small-screen {
       display: block;
       width: 100%;
     }
@@ -156,12 +157,12 @@
 
 .form-intro {
   &__heading {
-    @include header-4;
+    @include text-styles.header-4;
     margin-top: 0;
     margin-bottom: var(--spacing-4);
   }
 
   &__text {
-    @include text-base;
+    @include text-styles.text-base;
   }
 }

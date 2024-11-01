@@ -1,26 +1,25 @@
-@import "@styles/text-styles";
-@import "@styles/icons";
-@import "@styles/breakpoints";
+@use '@styles/text-styles';
+@use '@styles/icons';
+@use '@styles/breakpoints';
 
 .details {
-  @include button;
+  @include text-styles.button;
   appearance: none;
   border-radius: var(--border-radius-xl);
   flex: 1 auto;
   position: relative;
   z-index: 1;
 
-  @include from-small-to-medium-screen {
+  @include breakpoints.from-small-to-medium-screen {
     border-radius: unset;
   }
 
   &[open] summary {
-
     &::after {
-      background-image: url($chevron-up-on-dark);
+      background-image: url(icons.$chevron-up-on-dark);
 
-      @include from-small-to-medium-screen {
-        background-image: url($chevron-up);
+      @include breakpoints.from-small-to-medium-screen {
+        background-image: url(icons.$chevron-up);
       }
     }
   }
@@ -44,19 +43,19 @@
 
     &::after {
       aspect-ratio: 1 / 1;
-      background-image: url($chevron-down-on-dark);
+      background-image: url(icons.$chevron-down-on-dark);
       background-position: center;
       background-size: contain;
-      content: "";
+      content: '';
       display: block;
       width: var(--spacing-5);
 
-      @include from-small-to-medium-screen {
-        background-image: url($chevron-down);
+      @include breakpoints.from-small-to-medium-screen {
+        background-image: url(icons.$chevron-down);
       }
     }
 
-    @include from-small-to-medium-screen {
+    @include breakpoints.from-small-to-medium-screen {
       border-radius: unset;
       justify-content: space-between;
       padding: 0 var(--spacing-3);
@@ -67,7 +66,7 @@
     &:focus {
       background-color: var(--background-button-primary-hover);
 
-      @include from-small-to-medium-screen {
+      @include breakpoints.from-small-to-medium-screen {
         background-color: var(--background-interactive-hover);
       }
     }
@@ -75,13 +74,14 @@
     &:active {
       background-color: var(--background-button-primary-press_active);
     }
-
   }
 
   & ul {
     background-color: var(--background-primary);
     border-radius: var(--border-radius-lg);
-    box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+    box-shadow:
+      0px 12px 16px -4px rgba(16, 24, 40, 0.08),
+      0px 4px 6px -2px rgba(16, 24, 40, 0.03);
     list-style: none;
     margin: 0;
     min-width: var(--spacing-72);
@@ -90,7 +90,7 @@
     width: 100%;
     border: var(--spacing-0) solid var(--grey-300);
 
-    @include from-small-to-medium-screen {
+    @include breakpoints.from-small-to-medium-screen {
       position: static;
       box-shadow: none;
     }
@@ -103,7 +103,7 @@
       border-top-left-radius: var(--border-radius-xl);
       border-top-right-radius: var(--border-radius-xl);
 
-      @include from-small-to-medium-screen {
+      @include breakpoints.from-small-to-medium-screen {
         border-top-left-radius: unset;
         border-top-right-radius: unset;
       }
@@ -113,7 +113,7 @@
       border-bottom-left-radius: var(--border-radius-xl);
       border-bottom-right-radius: var(--border-radius-xl);
 
-      @include from-small-to-medium-screen {
+      @include breakpoints.from-small-to-medium-screen {
         border-bottom-left-radius: unset;
         border-bottom-right-radius: unset;
       }
@@ -129,7 +129,7 @@
     }
 
     & a {
-      @include text-base;
+      @include text-styles.text-base;
       text-decoration: none;
     }
   }

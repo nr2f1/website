@@ -78,8 +78,7 @@ jobs:
     needs: [release-please, deploy-fewd-to-vercel-preview]
     if: ${{ always() }}
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: true
+
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4

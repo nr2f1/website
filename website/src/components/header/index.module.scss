@@ -1,6 +1,6 @@
-@import "@styles/breakpoints";
-@import "@styles/utils";
-@import "@styles/layout";
+@use '@styles/breakpoints';
+@use '@styles/utils';
+@use '@styles/layout';
 
 $hambuguer-button: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2 4.75C2 4.33579 2.33579 4 2.75 4H17.25C17.6642 4 18 4.33579 18 4.75C18 5.16421 17.6642 5.5 17.25 5.5H2.75C2.33579 5.5 2 5.16421 2 4.75ZM2 10C2 9.58579 2.33579 9.25 2.75 9.25H17.25C17.6642 9.25 18 9.58579 18 10C18 10.4142 17.6642 10.75 17.25 10.75H2.75C2.33579 10.75 2 10.4142 2 10ZM2 15.25C2 14.8358 2.33579 14.5 2.75 14.5H17.25C17.6642 14.5 18 14.8358 18 15.25C18 15.6642 17.6642 16 17.25 16H2.75C2.33579 16 2 15.6642 2 15.25Z' fill='white'/%3E%3C/svg%3E";
 
@@ -10,13 +10,12 @@ $hambuguer-button: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
   display: block;
 
   &__content_wrapper {
-    @include content-max-width;
+    @include layout.content-max-width;
   }
 
-  @include from-small-to-medium-screen {
+  @include breakpoints.from-small-to-medium-screen {
     position: relative;
   }
-
 
   &__top {
     padding: var(--spacing-5) var(--spacing-6);
@@ -26,7 +25,6 @@ $hambuguer-button: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
       align-items: center;
       display: flex;
     }
-
 
     & nav ul {
       display: flex;
@@ -42,12 +40,12 @@ $hambuguer-button: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
       column-gap: var(--spacing-4);
     }
 
-    & button[title="hambuguer-button"] {
+    & button[title='hambuguer-button'] {
       display: none;
     }
 
-    @include from-small-to-medium-screen {
-      & button[title="hambuguer-button"] {
+    @include breakpoints.from-small-to-medium-screen {
+      & button[title='hambuguer-button'] {
         display: block;
         width: 100%;
         max-width: var(--spacing-11);
@@ -58,8 +56,8 @@ $hambuguer-button: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
         background-repeat: no-repeat;
       }
 
-      & nav[title="primary"],
-      & [role="combobox"] {
+      & nav[title='primary'],
+      & [role='combobox'] {
         display: none;
       }
     }
@@ -69,7 +67,7 @@ $hambuguer-button: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
     max-width: 206px;
     flex-basis: 100%;
 
-    &>a {
+    & > a {
       display: block;
     }
   }
@@ -77,16 +75,16 @@ $hambuguer-button: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
   &__bottom {
     background-color: var(--background-inverse-primary);
 
-    @include from-small-to-medium-screen {
+    @include breakpoints.from-small-to-medium-screen {
       border-top: 1px solid var(--grey-300);
       padding: var(--spacing-5) var(--spacing-6);
-      @include visibility-hidden(true);
+      @include utils.visibility-hidden(true);
     }
 
     & nav {
       display: flex;
 
-      @include from-small-to-medium-screen {
+      @include breakpoints.from-small-to-medium-screen {
         flex-direction: column;
         padding: 0;
         padding-bottom: var(--spacing-4);
@@ -96,7 +94,7 @@ $hambuguer-button: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
     }
 
     &_medium_screen {
-      @include visibility-hidden(true);
+      @include utils.visibility-hidden(true);
 
       ul {
         margin: 0;
@@ -122,15 +120,15 @@ $hambuguer-button: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
   &--menu-open & {
     display: block;
 
-    @include from-small-to-medium-screen {
+    @include breakpoints.from-small-to-medium-screen {
       &__bottom {
-        @include visibility-hidden(false);
+        @include utils.visibility-hidden(false);
         position: absolute;
         background-color: var(--white);
         width: 100%;
 
         &_medium_screen {
-          @include visibility-hidden(false);
+          @include utils.visibility-hidden(false);
         }
       }
     }

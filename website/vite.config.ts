@@ -6,6 +6,14 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   root: __dirname,
   plugins: [nxViteTsPaths(), react()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern',
+        silenceDeprecations: ['legacy-js-api'],
+      },
+    },
+  },
   test: {
     reporters: ['default'],
     environment: 'jsdom',
