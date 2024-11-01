@@ -6,8 +6,8 @@ on:
       - main
     paths:
       - .github/workflows/release.yaml
-      - 'CHANGELOG.md'         
-      
+      - 'CHANGELOG.md'
+
 permissions:
   contents: write
   pull-requests: write
@@ -19,7 +19,7 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0      
+          fetch-depth: 0
       - uses: googleapis/release-please-action@v4
         id: release
         with:
@@ -42,11 +42,9 @@ jobs:
           git push origin v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}
   ci-validation:
     name: CI validation
-    needs: [release-please] 
+    needs: [release-please]
     if: ${{ always() }}
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: true
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
@@ -57,4 +55,4 @@ jobs:
           script: |
             const checkJobsForErrors = require('./.github/workflows/js/check-for-errors.js');
             const jobs = ${{ toJSON(needs) }};
-            checkJobsForErrors({ core, jobs });          
+            checkJobsForErrors({ core, jobs });
