@@ -4,10 +4,12 @@ import {
   GetBoardMembersDocument,
   type GetBoardMembersQuery,
 } from '@graphql/queries/board-members/index.generated';
-import type { LocaleParamsPath } from '@i18n/locales';
+import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { NextPage } from 'next';
 
-const Page: NextPage<LocaleParamsPath> = async ({ params: { lang } }) => {
+const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
+  const { lang } = await params;
+
   const { query } = getClient();
 
   const {
