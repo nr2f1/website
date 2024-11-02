@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.12.2](https://github.com/nr2f1/website/compare/v1.12.1...v1.12.2) (2024-11-02)
+
+
+### Bug Fixes
+
+* build ([c187580](https://github.com/nr2f1/website/commit/c187580e30c95fbb6f03af1549a2d50e090d2431))
+* deprecations ([99034c7](https://github.com/nr2f1/website/commit/99034c71a5a0d1f13d1b636232c4b2827c4a17ed))
+
 ## [1.12.1](https://github.com/nr2f1/website/compare/v1.12.0...v1.12.1) (2024-09-09)
 
 
