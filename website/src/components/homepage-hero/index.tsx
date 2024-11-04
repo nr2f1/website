@@ -11,8 +11,8 @@ const HomePageHero: React.FC<HomePageHeroProps> = ({ lang }) => {
     <div className={styles.hero}>
       <div className={styles.hero__content_wrapper}>
         <div className={styles.hero__row}>
-          <div className="col">
-            <section>
+          <div className={styles.hero__col}>
+            <section className={styles.hero__what_are_we}>
               <h2>It's a rare diagnosis, but you're not alone</h2>
               <p>
                 We're a non-profit organization that supports families and
@@ -48,7 +48,7 @@ const HomePageHero: React.FC<HomePageHeroProps> = ({ lang }) => {
               </nav>
             </section>
           </div>
-          <div className="col">
+          <div className={styles.hero__col}>
             <img
               src="https://pataruco.s3.amazonaws.com/public/hero-image.png"
               alt="a woman pointing to the horizon with a girl sitting on her lap"
