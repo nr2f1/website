@@ -25,7 +25,7 @@ const HomePageHero: React.FC<HomePageHeroProps> = ({ lang }) => {
                 Learn more about BBSOAS
               </a>
             </section>
-            <section>
+            <section className={styles.hero__how_can_we_help}>
               <h3>How can we help you?</h3>
               <nav>
                 <ul>
@@ -55,6 +55,28 @@ const HomePageHero: React.FC<HomePageHeroProps> = ({ lang }) => {
             />
           </div>
         </div>
+        <section className={styles.hero__how_can_we_help_tablet}>
+          <h3>How can we help you?</h3>
+          <nav>
+            <ul>
+              <li>
+                <a href="/" className="signpost-item">
+                  I’m a family member of a newly diagnosed patient
+                </a>
+              </li>
+              <li>
+                <a href="/" className="signpost-item">
+                  I’m a scientific researcher
+                </a>
+              </li>
+              <li>
+                <a href="/" className="signpost-item">
+                  I’m a medical professional
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </section>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 @use '@styles/text-styles';
 @use '@styles/layout';
 @use '@styles/buttons';
+@use '@styles/breakpoints';
 
 .hero {
   background-image: linear-gradient(75deg, #fff0f2, #f3f7fc);
@@ -43,6 +44,9 @@
   &__row {
     display: flex;
     align-items: center;
+    @include breakpoints.from-small-to-medium-screen {
+      border-block-end: 1px solid var(--grey-300);
+    }
   }
 
   &__col {
@@ -51,14 +55,34 @@
 
     &:first-of-type {
       padding: var(--spacing-16) 0 var(--spacing-20) var(--spacing-16);
+      @include breakpoints.from-small-to-medium-screen {
+        padding: var(--spacing-12) 0 var(--spacing-12) var(--spacing-12);
+      }
     }
 
     &:last-of-type {
       padding-inline-start: var(--spacing-16);
+      @include breakpoints.from-small-to-medium-screen {
+        padding-inline-start: var(--spacing-12);
+      }
     }
   }
 
   &__what_are_we {
     margin-block-end: var(--spacing-14);
+  }
+
+  &__row &__how_can_we_help {
+    @include breakpoints.from-small-to-medium-screen {
+      display: none;
+    }
+  }
+
+  &__how_can_we_help_tablet {
+    display: none;
+    @include breakpoints.from-small-to-medium-screen {
+      display: block;
+      padding: var(--spacing-10) var(--spacing-12);
+    }
   }
 }

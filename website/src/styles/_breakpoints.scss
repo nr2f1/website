@@ -10,13 +10,13 @@ $max-large-width: 1279px;
 $min-extra-large-width: 1280px;
 
 @mixin small-screen {
-  @media (max-width: $max-small-width) {
+  @media screen and (max-width: $max-small-width) {
     @content;
   }
 }
 
 @mixin medium-screen {
-  @media (min-width: $min-medium-width) and (max-width: $max-medium-width) {
+  @media screen and (min-width: $min-medium-width) and (max-width: $max-medium-width) {
     @content;
   }
 }
@@ -28,7 +28,7 @@ $min-extra-large-width: 1280px;
 }
 
 @mixin large-screen {
-  @media (min-width: $min-large-width) and (max-width: $max-large-width) {
+  @media screen and (min-width: $min-large-width) and (max-width: $max-large-width) {
     @content;
   }
 }
@@ -40,7 +40,7 @@ $min-extra-large-width: 1280px;
 }
 
 @mixin extra-large-screen {
-  @media (min-width: $min-extra-large-width) {
+  @media screen and (min-width: $min-extra-large-width) {
     @content;
   }
 }
