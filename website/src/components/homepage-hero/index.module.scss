@@ -1,0 +1,35 @@
+@use '@styles/text-styles';
+@use '@styles/layout';
+@use '@styles/buttons';
+
+.hero {
+  h2 {
+    @include text-styles.header-1;
+  }
+  h3 {
+    @include text-styles.header-2;
+  }
+
+  p {
+    @include text-styles.text-base;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    li a {
+      margin-bottom: var(--spacing-4);
+      display: inline-block;
+    }
+  }
+
+  &__content_wrapper {
+    @include layout.content-max-width;
+  }
+
+  &__row {
+    display: flex;
+  }
+}
