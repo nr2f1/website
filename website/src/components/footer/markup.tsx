@@ -24,6 +24,7 @@ export interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ lang }) => {
   const {
+    // @ts-ignore
     data: { stayInTouch, socialMediaText, copyright, warning, contactUs },
     // TODO: Handle error
     error,
