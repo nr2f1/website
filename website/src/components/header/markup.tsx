@@ -59,12 +59,19 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
 
   const {
     data: {
+      // @ts-ignore
       registerPatient,
+      // @ts-ignore
       donate,
+      // @ts-ignore
       aboutBbsoas,
+      // @ts-ignore
       livingWithBbsoas,
+      // @ts-ignore
       research,
+      // @ts-ignore
       aboutUs,
+      // @ts-ignore
       supportUs,
     },
     // TODO: Handle error

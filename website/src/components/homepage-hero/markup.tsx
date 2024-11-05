@@ -17,6 +17,7 @@ export interface HomePageHeroProps {
 
 const HomePageHero: React.FC<HomePageHeroProps> = ({ lang }) => {
   const {
+    // @ts-ignore
     data: { heroCta, heroHeading, heroNavigationList, heroParagraph },
     error,
   } = useGetHomePageHeroSuspenseQuery({
