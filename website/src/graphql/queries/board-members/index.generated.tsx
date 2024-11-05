@@ -53,8 +53,8 @@ export function useGetBoardMembersLazyQuery(baseOptions?: Apollo.LazyQueryHookOp
           const options = {...defaultOptions, ...baseOptions}
           return Apollo.useLazyQuery<GetBoardMembersQuery, GetBoardMembersQueryVariables>(GetBoardMembersDocument, options);
         }
-export function useGetBoardMembersSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<GetBoardMembersQuery, GetBoardMembersQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
+export function useGetBoardMembersSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetBoardMembersQuery, GetBoardMembersQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
           return Apollo.useSuspenseQuery<GetBoardMembersQuery, GetBoardMembersQueryVariables>(GetBoardMembersDocument, options);
         }
 export type GetBoardMembersQueryHookResult = ReturnType<typeof useGetBoardMembersQuery>;
