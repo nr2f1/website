@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.0](https://github.com/nr2f1/website/compare/v1.12.2...v1.13.0) (2024-11-05)
+
+
+### Features
+
+* scaffold homepage hero ([1da18af](https://github.com/nr2f1/website/commit/1da18af33095891c2bdb9d315088dcc1ab3dd703))
+
 ## [1.12.2](https://github.com/nr2f1/website/compare/v1.12.1...v1.12.2) (2024-11-02)
 
 
