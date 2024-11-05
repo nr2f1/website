@@ -19,7 +19,11 @@ query GetHomePageHero(
     content
   }
 
-  heroNavigationList: navigationList(id: $heroNavigationListId) {
+  heroNavigationList: navigationList(
+    id: $heroNavigationListId
+    locale: $locale
+  ) {
+    name
     linksCollection {
       items {
         content

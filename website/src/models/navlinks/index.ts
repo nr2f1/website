@@ -4,4 +4,4 @@ export const researchId = '2TeHhRlvLTOomJiHaxNPUP';
 export const aboutUsId = '4Oi8Hm5OZH7kK8F6WgLOgg';
 export const supportUsId = 'Lw95NJKD8APWY3EJRdTkD';
 // homepage hero
-export const heroNavigationList = '5zga52plXos8ZGZhYRuDWg';
+export const heroNavigationListId = '5zga52plXos8ZGZhYRuDWg';

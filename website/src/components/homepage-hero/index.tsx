@@ -1,80 +1,31 @@
-import styles from './index.module.scss';
+import { PreloadQuery } from '@graphql/client';
+import { GetHomePageHeroDocument } from '@graphql/queries/homepage-hero/index.generated';
+import { heroHeadingId } from '@models/headings';
+import { heroCtaId } from '@models/links';
+import { heroNavigationListId } from '@models/navlinks';
+import { heroParagraphId } from '@models/paragraphs';
+import { Suspense } from 'react';
+import HomePageHero, { type HomePageHeroProps } from './markup';
 
-import type { AvailableLocale } from '@i18n/locales';
-
-interface HomePageHeroProps {
-  lang: AvailableLocale;
-}
-
-const HomePageHero: React.FC<HomePageHeroProps> = ({ lang }) => {
+const HomePageHeroWithData: React.FC<HomePageHeroProps> = ({ lang }) => {
   return (
-    <div className={styles.hero}>
-      <div className={styles.hero__content_wrapper}>
-        <div className={styles.hero__row}>
-          <div className={styles.hero__col}>
-            <section className={styles.hero__what_are_we}>
-              <h2>It's a rare diagnosis, but you're not alone</h2>
-              <p>
-                We're a non-profit organization that supports families and
-                individuals around the world living with rare NR2F1 gene
-                variants. These gene variants cause a neurodevelopmental
-                disorder called Bosch-Boonstra-Schaaf Optic Atrophy Syndrome
-                (BBSOAS).
-              </p>
-              <a href="/" className="button button--on-light">
-                Learn more about BBSOAS
-              </a>
-            </section>
-            <section className={styles.hero__how_can_we_help}>
-              <h3>How can we help you?</h3>
-              <nav>
-                <ul>
-                  <li>
-                    <a href="/" className="signpost-item">
-                      I’m a family member of a newly diagnosed patient
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/" className="signpost-item">
-                      I’m a scientific researcher
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/" className="signpost-item">
-                      I’m a medical professional
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </section>
-          </div>
-          <div className={styles.hero__col} />
-        </div>
-        <section className={styles.hero__how_can_we_help_tablet}>
-          <h3>How can we help you?</h3>
-          <nav>
-            <ul>
-              <li>
-                <a href="/" className="signpost-item">
-                  I’m a family member of a newly diagnosed patient
-                </a>
-              </li>
-              <li>
-                <a href="/" className="signpost-item">
-                  I’m a scientific researcher
-                </a>
-              </li>
-              <li>
-                <a href="/" className="signpost-item">
-                  I’m a medical professional
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </section>
-      </div>
-    </div>
+    <PreloadQuery
+      // @ts-ignore
+      query={GetHomePageHeroDocument}
+      variables={{
+        heroCtaId,
+        heroHeadingId,
+        heroNavigationListId,
+        heroParagraphId,
+        locale: lang,
+      }}
+    >
+      {/* TODO: handle loading */}
+      <Suspense fallback={<span>loading</span>}>
+        <HomePageHero lang={lang} />
+      </Suspense>
+    </PreloadQuery>
   );
 };
 
-export default HomePageHero;
+export default HomePageHeroWithData;
