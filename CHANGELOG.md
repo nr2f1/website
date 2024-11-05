@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.0](https://github.com/nr2f1/website/compare/v1.13.0...v1.14.0) (2024-11-05)
+
+
+### Features
+
+* localised homepage hero ([e36ba24](https://github.com/nr2f1/website/commit/e36ba24ee48efad59ae1321142a1bcc248261aa9))
+
 ## [1.13.0](https://github.com/nr2f1/website/compare/v1.12.2...v1.13.0) (2024-11-05)
 
 
