@@ -73,8 +73,8 @@ export function useGetFooterLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<
           const options = {...defaultOptions, ...baseOptions}
           return Apollo.useLazyQuery<GetFooterQuery, GetFooterQueryVariables>(GetFooterDocument, options);
         }
-export function useGetFooterSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<GetFooterQuery, GetFooterQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
+export function useGetFooterSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetFooterQuery, GetFooterQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
           return Apollo.useSuspenseQuery<GetFooterQuery, GetFooterQueryVariables>(GetFooterDocument, options);
         }
 export type GetFooterQueryHookResult = ReturnType<typeof useGetFooterQuery>;

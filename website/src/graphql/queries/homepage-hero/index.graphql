@@ -1,0 +1,34 @@
+query GetHomePageHero(
+  $locale: String
+  $heroHeadingId: String!
+  $heroParagraphId: String!
+  $heroCtaId: String!
+  $heroNavigationListId: String!
+) {
+  heroHeading: heading(id: $heroHeadingId, locale: $locale) {
+    content
+  }
+
+  heroParagraph: paragraphs(id: $heroParagraphId, locale: $locale) {
+    content {
+      json
+    }
+  }
+
+  heroCta: link(id: $heroCtaId, locale: $locale) {
+    content
+  }
+
+  heroNavigationList: navigationList(
+    id: $heroNavigationListId
+    locale: $locale
+  ) {
+    name
+    linksCollection {
+      items {
+        content
+        href
+      }
+    }
+  }
+}
