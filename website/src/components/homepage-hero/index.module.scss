@@ -43,9 +43,11 @@
 
   &__row {
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    column-gap: var(--spacing-16);
     @include breakpoints.from-small-to-medium-screen {
       border-block-end: 1px solid var(--grey-300);
+      column-gap: var(--spacing-12);
     }
   }
 
@@ -58,18 +60,27 @@
       @include breakpoints.from-small-to-medium-screen {
         padding: var(--spacing-12) 0 var(--spacing-12) var(--spacing-12);
       }
+      @include breakpoints.small-screen {
+        padding: var(--spacing-6);
+      }
     }
 
     &:last-of-type {
-      padding-inline-start: var(--spacing-16);
-      @include breakpoints.from-small-to-medium-screen {
-        padding-inline-start: var(--spacing-12);
+      background-image: url('https://pataruco.s3.amazonaws.com/public/hero-image.png');
+      background-repeat: no-repeat;
+      background-position-y: center;
+      background-size: cover;
+      @include breakpoints.small-screen {
+        display: none;
       }
     }
   }
 
   &__what_are_we {
     margin-block-end: var(--spacing-14);
+    @include breakpoints.small-screen {
+      margin-block-end: 0;
+    }
   }
 
   &__row &__how_can_we_help {
@@ -83,6 +94,10 @@
     @include breakpoints.from-small-to-medium-screen {
       display: block;
       padding: var(--spacing-10) var(--spacing-12);
+    }
+
+    @include breakpoints.small-screen {
+      padding: var(--spacing-4) var(--spacing-6) var(--spacing-6);
     }
   }
 }

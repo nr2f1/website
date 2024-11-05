@@ -48,12 +48,7 @@ const HomePageHero: React.FC<HomePageHeroProps> = ({ lang }) => {
               </nav>
             </section>
           </div>
-          <div className={styles.hero__col}>
-            <img
-              src="https://pataruco.s3.amazonaws.com/public/hero-image.png"
-              alt="a woman pointing to the horizon with a girl sitting on her lap"
-            />
-          </div>
+          <div className={styles.hero__col} />
         </div>
         <section className={styles.hero__how_can_we_help_tablet}>
           <h3>How can we help you?</h3>
