@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.15.0](https://github.com/nr2f1/website/compare/v1.14.0...v1.15.0) (2024-11-06)
+
+
+### Features
+
+* hero image from CMS ([4a774bf](https://github.com/nr2f1/website/commit/4a774bf5b066994fe5cd04ffeb211e00decd307e))
+
+
+### Bug Fixes
+
+* build ([649a183](https://github.com/nr2f1/website/commit/649a1832dded399acba0afea84f18767854d2b35))
+
+
+### Performance Improvements
+
+* remove TS ignore and fail early in client compoents ([08c25ac](https://github.com/nr2f1/website/commit/08c25acaf892696dff14f2264bc08129666af19c))
+
 ## [1.14.0](https://github.com/nr2f1/website/compare/v1.13.0...v1.14.0) (2024-11-05)
 
 
