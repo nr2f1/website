@@ -1,0 +1,23 @@
+@use '@styles/text-styles';
+@use '@styles/layout';
+
+.what_we_do {
+  padding: var(--spacing-20) var(--spacing-16) var(--spacing-24);
+  h2,
+  h3 p {
+    margin: 0;
+  }
+
+  h2 {
+    @include text-styles.header-1;
+    text-align: center;
+    margin-block-end: var(--spacing-8);
+  }
+
+  p {
+    @include text-styles.text-base;
+    @include layout.content-max-width-2x1;
+    margin-block-end: var(--spacing-8);
+    text-align: center;
+  }
+}
