@@ -4,6 +4,7 @@ query GetHomePageHero(
   $heroParagraphId: String!
   $heroCtaId: String!
   $heroNavigationListId: String!
+  $heroImageId: String!
 ) {
   heroHeading: heading(id: $heroHeadingId, locale: $locale) {
     content
@@ -17,6 +18,7 @@ query GetHomePageHero(
 
   heroCta: link(id: $heroCtaId, locale: $locale) {
     content
+    href
   }
 
   heroNavigationList: navigationList(
@@ -29,6 +31,13 @@ query GetHomePageHero(
         content
         href
       }
+    }
+  }
+
+  heroImage: image(id: $heroImageId, locale: $locale) {
+    altText
+    asset {
+      url
     }
   }
 }

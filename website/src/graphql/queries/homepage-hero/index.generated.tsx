@@ -9,14 +9,15 @@ export type GetHomePageHeroQueryVariables = Types.Exact<{
   heroParagraphId: Types.Scalars['String']['input'];
   heroCtaId: Types.Scalars['String']['input'];
   heroNavigationListId: Types.Scalars['String']['input'];
+  heroImageId: Types.Scalars['String']['input'];
 }>;
 
 
-export type GetHomePageHeroQuery = { __typename?: 'Query', heroHeading?: { __typename?: 'Heading', content?: string | null } | null, heroParagraph?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, heroCta?: { __typename?: 'Link', content?: string | null } | null, heroNavigationList?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', content?: string | null, href?: string | null } | null> } | null } | null };
+export type GetHomePageHeroQuery = { __typename?: 'Query', heroHeading?: { __typename?: 'Heading', content?: string | null } | null, heroParagraph?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, heroCta?: { __typename?: 'Link', content?: string | null, href?: string | null } | null, heroNavigationList?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', content?: string | null, href?: string | null } | null> } | null } | null, heroImage?: { __typename?: 'Image', altText?: string | null, asset?: { __typename?: 'Asset', url?: string | null } | null } | null };
 
 
 export const GetHomePageHeroDocument = gql`
-    query GetHomePageHero($locale: String, $heroHeadingId: String!, $heroParagraphId: String!, $heroCtaId: String!, $heroNavigationListId: String!) {
+    query GetHomePageHero($locale: String, $heroHeadingId: String!, $heroParagraphId: String!, $heroCtaId: String!, $heroNavigationListId: String!, $heroImageId: String!) {
   heroHeading: heading(id: $heroHeadingId, locale: $locale) {
     content
   }
@@ -27,6 +28,7 @@ export const GetHomePageHeroDocument = gql`
   }
   heroCta: link(id: $heroCtaId, locale: $locale) {
     content
+    href
   }
   heroNavigationList: navigationList(id: $heroNavigationListId, locale: $locale) {
     name
@@ -35,6 +37,12 @@ export const GetHomePageHeroDocument = gql`
         content
         href
       }
+    }
+  }
+  heroImage: image(id: $heroImageId, locale: $locale) {
+    altText
+    asset {
+      url
     }
   }
 }
@@ -57,6 +65,7 @@ export const GetHomePageHeroDocument = gql`
  *      heroParagraphId: // value for 'heroParagraphId'
  *      heroCtaId: // value for 'heroCtaId'
  *      heroNavigationListId: // value for 'heroNavigationListId'
+ *      heroImageId: // value for 'heroImageId'
  *   },
  * });
  */
