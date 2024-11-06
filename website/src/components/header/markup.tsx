@@ -58,22 +58,7 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const {
-    data: {
-      // @ts-ignore
-      registerPatient,
-      // @ts-ignore
-      donate,
-      // @ts-ignore
-      aboutBbsoas,
-      // @ts-ignore
-      livingWithBbsoas,
-      // @ts-ignore
-      research,
-      // @ts-ignore
-      aboutUs,
-      // @ts-ignore
-      supportUs,
-    },
+    data,
     // TODO: Handle error
     error,
   } = useGetHeaderSuspenseQuery({
@@ -88,6 +73,20 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
       supportUsId,
     },
   });
+
+  if (!data) {
+    return null;
+  }
+
+  const {
+    registerPatient,
+    donate,
+    aboutBbsoas,
+    livingWithBbsoas,
+    research,
+    aboutUs,
+    supportUs,
+  } = data;
 
   const aboutBbsoasLinkItems = getLocalisedLinkProps(
     aboutBbsoas?.linksCollection?.items,

@@ -24,8 +24,7 @@ export interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ lang }) => {
   const {
-    // @ts-ignore
-    data: { stayInTouch, socialMediaText, copyright, warning, contactUs },
+    data,
     // TODO: Handle error
     error,
   } = useGetFooterSuspenseQuery({
@@ -38,6 +37,12 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
       contactUsId,
     },
   });
+
+  if (!data) {
+    return null;
+  }
+
+  const { stayInTouch, socialMediaText, copyright, warning, contactUs } = data;
 
   return (
     <footer className={styles.footer}>
