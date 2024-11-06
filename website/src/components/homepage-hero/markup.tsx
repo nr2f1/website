@@ -6,6 +6,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { useGetHomePageHeroSuspenseQuery } from '@graphql/queries/homepage-hero/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { heroHeadingId } from '@models/headings';
+import { heroImageId } from '@models/images';
 import { heroCtaId } from '@models/links';
 import { heroNavigationListId } from '@models/navlinks';
 import { heroParagraphId } from '@models/paragraphs';
@@ -16,22 +17,26 @@ export interface HomePageHeroProps {
 }
 
 const HomePageHero: React.FC<HomePageHeroProps> = ({ lang }) => {
-  const {
-    // @ts-ignore
-    data: { heroCta, heroHeading, heroNavigationList, heroParagraph },
-    error,
-  } = useGetHomePageHeroSuspenseQuery({
+  const { data, error } = useGetHomePageHeroSuspenseQuery({
     variables: {
       heroCtaId,
       heroHeadingId,
       heroNavigationListId,
       heroParagraphId,
+      heroImageId,
       locale: lang,
     },
   });
 
+  if (!data) {
+    return null;
+  }
+
+  const { heroCta, heroHeading, heroNavigationList, heroParagraph, heroImage } =
+    data;
+
   const heroNavigationLinkItems = getLocalisedLinkProps(
-    heroNavigationList?.linksCollection.items,
+    heroNavigationList?.linksCollection?.items,
   );
 
   return (
@@ -64,7 +69,10 @@ const HomePageHero: React.FC<HomePageHeroProps> = ({ lang }) => {
               </nav>
             </section>
           </div>
-          <div className={styles.hero__col} />
+          <div
+            className={styles.hero__col}
+            style={{ backgroundImage: `url(${heroImage?.asset?.url ?? ''})` }}
+          />
         </div>
         <section className={styles.hero__how_can_we_help_tablet}>
           <h3>{heroNavigationList?.name}</h3>

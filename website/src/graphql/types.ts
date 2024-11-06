@@ -171,6 +171,7 @@ export type AssetLinkingCollections = {
   __typename?: 'AssetLinkingCollections';
   boardMemberCollection?: Maybe<BoardMemberCollection>;
   entryCollection?: Maybe<EntryCollection>;
+  imageCollection?: Maybe<ImageCollection>;
 };
 
 
@@ -183,6 +184,14 @@ export type AssetLinkingCollectionsBoardMemberCollectionArgs = {
 
 
 export type AssetLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type AssetLinkingCollectionsImageCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
@@ -514,6 +523,87 @@ export enum HeadingOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
+/** image [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/image) */
+export type Image = Entry & _Node & {
+  __typename?: 'Image';
+  _id: Scalars['ID']['output'];
+  altText?: Maybe<Scalars['String']['output']>;
+  asset?: Maybe<Asset>;
+  contentfulMetadata: ContentfulMetadata;
+  description?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<ImageLinkingCollections>;
+  sys: Sys;
+  url?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** image [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/image) */
+export type ImageAltTextArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** image [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/image) */
+export type ImageAssetArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** image [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/image) */
+export type ImageDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** image [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/image) */
+export type ImageLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** image [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/image) */
+export type ImageUrlArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ImageCollection = {
+  __typename?: 'ImageCollection';
+  items: Array<Maybe<Image>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type ImageFilter = {
+  AND?: InputMaybe<Array<InputMaybe<ImageFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<ImageFilter>>>;
+  altText?: InputMaybe<Scalars['String']['input']>;
+  altText_contains?: InputMaybe<Scalars['String']['input']>;
+  altText_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  altText_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  altText_not?: InputMaybe<Scalars['String']['input']>;
+  altText_not_contains?: InputMaybe<Scalars['String']['input']>;
+  altText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  asset_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  description_contains?: InputMaybe<Scalars['String']['input']>;
+  description_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  description_not?: InputMaybe<Scalars['String']['input']>;
+  description_not_contains?: InputMaybe<Scalars['String']['input']>;
+  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  url?: InputMaybe<Scalars['String']['input']>;
+  url_contains?: InputMaybe<Scalars['String']['input']>;
+  url_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  url_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  url_not?: InputMaybe<Scalars['String']['input']>;
+  url_not_contains?: InputMaybe<Scalars['String']['input']>;
+  url_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
 export enum ImageFormat {
   Avif = 'AVIF',
   /** JPG image format. */
@@ -534,6 +624,32 @@ export enum ImageFormat {
   Png8 = 'PNG8',
   /** WebP image format. */
   Webp = 'WEBP'
+}
+
+export type ImageLinkingCollections = {
+  __typename?: 'ImageLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type ImageLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum ImageOrder {
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  UrlAsc = 'url_ASC',
+  UrlDesc = 'url_DESC'
 }
 
 export enum ImageResizeFocus {
@@ -982,6 +1098,8 @@ export type Query = {
   entryCollection?: Maybe<EntryCollection>;
   heading?: Maybe<Heading>;
   headingCollection?: Maybe<HeadingCollection>;
+  image?: Maybe<Image>;
+  imageCollection?: Maybe<ImageCollection>;
   link?: Maybe<Link>;
   linkCollection?: Maybe<LinkCollection>;
   navigationList?: Maybe<NavigationList>;
@@ -1058,6 +1176,23 @@ export type QueryHeadingCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<HeadingFilter>;
+};
+
+
+export type QueryImageArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryImageCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<ImageOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<ImageFilter>;
 };
 
 
