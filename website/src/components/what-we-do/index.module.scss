@@ -1,5 +1,8 @@
 @use '@styles/text-styles';
 @use '@styles/layout';
+@use '@styles/buttons';
+
+$cube_icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='33' height='32' fill='none'%3E%3Cpath fill='%2300ABCF' d='M17.004 2.136a1 1 0 0 0-1.008 0L4.5 8.842l12 7 12-7-11.496-6.706ZM29.5 10.574l-12 7v12l11.504-6.71A1 1 0 0 0 29.5 22V10.574ZM15.5 29.574v-12l-12-7V22a1 1 0 0 0 .496.864l11.504 6.71Z'/%3E%3C/svg%3E";
 
 .what_we_do {
   padding: var(--spacing-20) var(--spacing-16) var(--spacing-24);
@@ -19,5 +22,43 @@
     @include layout.content-max-width-2x1;
     margin-block-end: var(--spacing-8);
     text-align: center;
+  }
+
+  &__row {
+    display: flex;
+    column-gap: var(--spacing-12);
+    align-items: flex-start;
+  }
+}
+
+.card {
+  display: flex;
+  max-width: var(--max-width-2xl);
+  padding: var(--spacing-6);
+  flex-direction: column;
+  align-items: center;
+  flex: 1 0 0;
+
+  border-radius: var(--border-radius-xl);
+  background: var(--background-accent-navy);
+
+  & > div {
+    background-image: url($cube_icon);
+    width: var(--spacing-8);
+    aspect-ratio: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-block-end: var(--spacing-4);
+  }
+
+  & h3 {
+    @include text-styles.header-3;
+    margin: 0;
+    margin-block-end: var(--spacing-3);
+  }
+
+  & p {
+    margin: 0;
+    margin-block-end: var(--spacing-4);
   }
 }
