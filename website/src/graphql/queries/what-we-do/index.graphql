@@ -1,0 +1,68 @@
+query GetWhatWeDo(
+  $locale: String
+  $whatWeDoHeadingId: String!
+  $ourVisionParagraphId: String!
+  $educatePeopleHeadingId: String!
+  $educatePeopleParagraphId: String!
+  $learnMoreCtaId: String!
+  $empowerFamiliesHeadingId: String!
+  $empowerFamiliesParagraphId: String!
+  $driveResearchHeadingId: String!
+  $driveResearchParagraphId: String!
+) {
+  whatWeDoHeading: heading(id: $whatWeDoHeadingId, locale: $locale) {
+    content
+  }
+
+  ourVisionParagraph: paragraphs(id: $ourVisionParagraphId, locale: $locale) {
+    content {
+      json
+    }
+  }
+
+  educatePeopleHeading: heading(id: $educatePeopleHeadingId, locale: $locale) {
+    content
+  }
+
+  educatePeopleParagraph: paragraphs(
+    id: $educatePeopleParagraphId
+    locale: $locale
+  ) {
+    content {
+      json
+    }
+  }
+
+  learnMoreCta: link(id: $learnMoreCtaId, locale: $locale) {
+    content
+  }
+
+  empowerFamiliesHeading: heading(
+    id: $empowerFamiliesHeadingId
+    locale: $locale
+  ) {
+    content
+  }
+
+  empowerFamiliesParagraph: paragraphs(
+    id: $empowerFamiliesParagraphId
+    locale: $locale
+  ) {
+    content {
+      json
+    }
+  }
+
+  driveResearchHeading: heading(id: $driveResearchHeadingId, locale: $locale) {
+    content
+  }
+
+  driveResearchParagraph: paragraphs(
+    id: $driveResearchParagraphId
+    locale: $locale
+  ) {
+    content {
+      json
+    }
+  }
+}
