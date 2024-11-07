@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.17.0](https://github.com/nr2f1/website/compare/v1.16.0...v1.17.0) (2024-11-07)
+
+
+### Features
+
+* graphql request for what we do ([5c556d0](https://github.com/nr2f1/website/commit/5c556d0408e1f71e455f654e3191e57bca095784))
+* what we do content ([48ea904](https://github.com/nr2f1/website/commit/48ea9043997de0233c2a5931278542112f806d68))
+
 ## [1.16.0](https://github.com/nr2f1/website/compare/v1.15.0...v1.16.0) (2024-11-07)
 
 
