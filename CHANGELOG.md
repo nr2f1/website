@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.0](https://github.com/nr2f1/website/compare/v1.15.0...v1.16.0) (2024-11-07)
+
+
+### Features
+
+* markup waht we do ([e372345](https://github.com/nr2f1/website/commit/e37234540ca31fa98cdaebea8f6da53087e408a5))
+
 ## [1.15.0](https://github.com/nr2f1/website/compare/v1.14.0...v1.15.0) (2024-11-06)
 
 
