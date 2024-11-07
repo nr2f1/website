@@ -1,5 +1,6 @@
 $content-max-width: 1152px;
 $content-max-width-7x1: 1280px;
+$content-max-width-2x1: 672px;
 
 .large-content-wrapper {
   max-width: 1400px;
@@ -20,6 +21,12 @@ $content-max-width-7x1: 1280px;
 
 @mixin content-max-width-7x1 {
   max-width: $content-max-width-7x1;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@mixin content-max-width-2x1 {
+  max-width: $content-max-width-2x1;
   margin: 0 auto;
   width: 100%;
 }
