@@ -1,12 +1,27 @@
 @use '@styles/text-styles';
+@use '@styles/breakpoints';
 
 .banner {
   padding: 0 var(--spacing-16) var(--spacing-24);
+
+  @include breakpoints.medium-screen {
+    padding: 0 var(--spacing-12) var(--spacing-12);
+  }
+
+  @include breakpoints.small-screen {
+    padding: 0;
+  }
+
   &__row {
     display: flex;
     align-items: stretch;
     border-radius: var(--border-radius-xl);
     background-color: var(--coral-50);
+
+    @include breakpoints.small-screen {
+      border-radius: 0;
+      flex-direction: column;
+    }
   }
 
   &__col {
@@ -14,7 +29,17 @@
     &:first-of-type {
       padding: var(--spacing-20) var(--spacing-8) var(--spacing-24)
         var(--spacing-16);
+
+      @include breakpoints.medium-screen {
+        padding: var(--spacing-12) var(--spacing-3) var(--spacing-12)
+          var(--spacing-12);
+      }
+
+      @include breakpoints.small-screen {
+        padding: var(--spacing-8) var(--spacing-6);
+      }
     }
+
     &:last-of-type {
       background-size: cover;
       background-position: 50%;
@@ -34,6 +59,19 @@
         left: -1px;
         background-size: contain;
       }
+
+      @include breakpoints.small-screen {
+        order: -1;
+        height: var(--spacing-48);
+        flex-basis: auto;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        &::before {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='59' fill='none'%3E%3Cpath fill='%23FFF0F2' fill-rule='evenodd' d='M671 59V.475c-84.787 21.36-172.243 39.782-266.139 50.61C257.719 68.052 123.379 56.817 0 20.833V59h671Z' clip-rule='evenodd'/%3E%3C/svg%3E");
+          inset: 0;
+          background-position-y: 100%;
+        }
+      }
     }
   }
 
@@ -45,6 +83,10 @@
   h2 {
     @include text-styles.header-1;
     margin-block-end: var(--spacing-6);
+
+    @include breakpoints.medium-screen {
+      @include text-styles.header-1--mobile;
+    }
   }
 
   p {
