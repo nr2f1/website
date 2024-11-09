@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.18.0](https://github.com/nr2f1/website/compare/v1.17.0...v1.18.0) (2024-11-09)
+
+
+### Features
+
+* banner ([f3aad52](https://github.com/nr2f1/website/commit/f3aad5270599a82b2b1c17c38756995281edbdef))
+
+
+### Performance Improvements
+
+* set banner with dynamic content ([ef0c07d](https://github.com/nr2f1/website/commit/ef0c07d09c346bb361a6a52821faf3f633630c91))
+
 ## [1.17.0](https://github.com/nr2f1/website/compare/v1.16.0...v1.17.0) (2024-11-07)
 
 
