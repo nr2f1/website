@@ -1,0 +1,19 @@
+query GetBanner($locale: String, $id: String!) {
+  banner(id: $id) {
+    heading {
+      content
+    }
+    content(locale: $locale) {
+      content {
+        json
+      }
+    }
+    cta(locale: $locale) {
+      content
+      href
+    }
+    image {
+      url
+    }
+  }
+}

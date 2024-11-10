@@ -169,9 +169,18 @@ export type AssetFilter = {
 
 export type AssetLinkingCollections = {
   __typename?: 'AssetLinkingCollections';
+  bannerCollection?: Maybe<BannerCollection>;
   boardMemberCollection?: Maybe<BoardMemberCollection>;
   entryCollection?: Maybe<EntryCollection>;
   imageCollection?: Maybe<ImageCollection>;
+};
+
+
+export type AssetLinkingCollectionsBannerCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
 };
 
 
@@ -219,6 +228,118 @@ export enum AssetOrder {
   UrlDesc = 'url_DESC',
   WidthAsc = 'width_ASC',
   WidthDesc = 'width_DESC'
+}
+
+/** Page banner [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/banner) */
+export type Banner = Entry & _Node & {
+  __typename?: 'Banner';
+  _id: Scalars['ID']['output'];
+  bannerName?: Maybe<Scalars['String']['output']>;
+  content?: Maybe<Paragraphs>;
+  contentfulMetadata: ContentfulMetadata;
+  cta?: Maybe<Link>;
+  heading?: Maybe<Heading>;
+  image?: Maybe<Asset>;
+  linkedFrom?: Maybe<BannerLinkingCollections>;
+  sys: Sys;
+};
+
+
+/** Page banner [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/banner) */
+export type BannerBannerNameArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** Page banner [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/banner) */
+export type BannerContentArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  where?: InputMaybe<ParagraphsFilter>;
+};
+
+
+/** Page banner [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/banner) */
+export type BannerCtaArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  where?: InputMaybe<LinkFilter>;
+};
+
+
+/** Page banner [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/banner) */
+export type BannerHeadingArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  where?: InputMaybe<HeadingFilter>;
+};
+
+
+/** Page banner [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/banner) */
+export type BannerImageArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** Page banner [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/banner) */
+export type BannerLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type BannerCollection = {
+  __typename?: 'BannerCollection';
+  items: Array<Maybe<Banner>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type BannerFilter = {
+  AND?: InputMaybe<Array<InputMaybe<BannerFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<BannerFilter>>>;
+  bannerName?: InputMaybe<Scalars['String']['input']>;
+  bannerName_contains?: InputMaybe<Scalars['String']['input']>;
+  bannerName_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  bannerName_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  bannerName_not?: InputMaybe<Scalars['String']['input']>;
+  bannerName_not_contains?: InputMaybe<Scalars['String']['input']>;
+  bannerName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  content?: InputMaybe<CfParagraphsNestedFilter>;
+  content_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  cta?: InputMaybe<CfLinkNestedFilter>;
+  cta_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  heading?: InputMaybe<CfHeadingNestedFilter>;
+  heading_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  image_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type BannerLinkingCollections = {
+  __typename?: 'BannerLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type BannerLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum BannerOrder {
+  BannerNameAsc = 'bannerName_ASC',
+  BannerNameDesc = 'bannerName_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
 /** Board member title,  position, bio [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/boardMember) */
@@ -499,7 +620,17 @@ export type HeadingFilter = {
 
 export type HeadingLinkingCollections = {
   __typename?: 'HeadingLinkingCollections';
+  bannerCollection?: Maybe<BannerCollection>;
   entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type HeadingLinkingCollectionsBannerCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<HeadingLinkingCollectionsBannerCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
 };
 
 
@@ -509,6 +640,19 @@ export type HeadingLinkingCollectionsEntryCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
 };
+
+export enum HeadingLinkingCollectionsBannerCollectionOrder {
+  BannerNameAsc = 'bannerName_ASC',
+  BannerNameDesc = 'bannerName_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
 
 export enum HeadingOrder {
   ContentAsc = 'content_ASC',
@@ -796,8 +940,18 @@ export type LinkFilter = {
 
 export type LinkLinkingCollections = {
   __typename?: 'LinkLinkingCollections';
+  bannerCollection?: Maybe<BannerCollection>;
   entryCollection?: Maybe<EntryCollection>;
   navigationListCollection?: Maybe<NavigationListCollection>;
+};
+
+
+export type LinkLinkingCollectionsBannerCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<LinkLinkingCollectionsBannerCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
 };
 
 
@@ -816,6 +970,19 @@ export type LinkLinkingCollectionsNavigationListCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
 };
+
+export enum LinkLinkingCollectionsBannerCollectionOrder {
+  BannerNameAsc = 'bannerName_ASC',
+  BannerNameDesc = 'bannerName_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
 
 export enum LinkLinkingCollectionsNavigationListCollectionOrder {
   NameAsc = 'name_ASC',
@@ -1064,7 +1231,17 @@ export type ParagraphsFilter = {
 
 export type ParagraphsLinkingCollections = {
   __typename?: 'ParagraphsLinkingCollections';
+  bannerCollection?: Maybe<BannerCollection>;
   entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type ParagraphsLinkingCollectionsBannerCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<ParagraphsLinkingCollectionsBannerCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
 };
 
 
@@ -1074,6 +1251,19 @@ export type ParagraphsLinkingCollectionsEntryCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
 };
+
+export enum ParagraphsLinkingCollectionsBannerCollectionOrder {
+  BannerNameAsc = 'bannerName_ASC',
+  BannerNameDesc = 'bannerName_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
 
 export enum ParagraphsOrder {
   NameAsc = 'name_ASC',
@@ -1093,6 +1283,8 @@ export type Query = {
   _node?: Maybe<_Node>;
   asset?: Maybe<Asset>;
   assetCollection?: Maybe<AssetCollection>;
+  banner?: Maybe<Banner>;
+  bannerCollection?: Maybe<BannerCollection>;
   boardMember?: Maybe<BoardMember>;
   boardMemberCollection?: Maybe<BoardMemberCollection>;
   entryCollection?: Maybe<EntryCollection>;
@@ -1132,6 +1324,23 @@ export type QueryAssetCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<AssetFilter>;
+};
+
+
+export type QueryBannerArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryBannerCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<BannerOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<BannerFilter>;
 };
 
 
@@ -1389,6 +1598,20 @@ export type _Node = {
   _id: Scalars['ID']['output'];
 };
 
+export type CfHeadingNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfHeadingNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfHeadingNestedFilter>>>;
+  content?: InputMaybe<Scalars['String']['input']>;
+  content_contains?: InputMaybe<Scalars['String']['input']>;
+  content_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  content_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  content_not?: InputMaybe<Scalars['String']['input']>;
+  content_not_contains?: InputMaybe<Scalars['String']['input']>;
+  content_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  sys?: InputMaybe<SysFilter>;
+};
+
 export type CfLinkNestedFilter = {
   AND?: InputMaybe<Array<InputMaybe<CfLinkNestedFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<CfLinkNestedFilter>>>;
@@ -1408,5 +1631,22 @@ export type CfLinkNestedFilter = {
   href_not_contains?: InputMaybe<Scalars['String']['input']>;
   href_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   referenceCollection_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type CfParagraphsNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfParagraphsNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfParagraphsNestedFilter>>>;
+  content_contains?: InputMaybe<Scalars['String']['input']>;
+  content_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  content_not_contains?: InputMaybe<Scalars['String']['input']>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  name_contains?: InputMaybe<Scalars['String']['input']>;
+  name_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  name_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  name_not?: InputMaybe<Scalars['String']['input']>;
+  name_not_contains?: InputMaybe<Scalars['String']['input']>;
+  name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   sys?: InputMaybe<SysFilter>;
 };
