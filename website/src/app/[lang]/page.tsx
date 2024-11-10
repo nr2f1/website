@@ -1,4 +1,5 @@
 import HomePageHero from '@components/homepage-hero';
+import SupportBanner from '@components/support-banner';
 import WhatWeDo from '@components/what-we-do';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { NextPage } from 'next';
@@ -12,6 +13,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
       <HomePageHero lang={lang} />
       <WhatWeDo lang={lang} />
       <HomePageBanner lang={lang} />
+      <SupportBanner lang={lang} />
     </>
   );
 };

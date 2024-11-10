@@ -1,0 +1,71 @@
+@use '@styles/text-styles';
+@use '@styles/layout';
+@use '@styles/breakpoints';
+
+.support-banner {
+  padding: 0 var(--spacing-16) var(--spacing-24);
+
+  @include breakpoints.medium-screen {
+    padding: 0 var(--spacing-12) var(--spacing-12);
+  }
+
+  @include breakpoints.small-screen {
+    padding: 0;
+  }
+
+  h2,
+  p {
+    margin: 0;
+  }
+
+  section {
+    border-radius: var(--border-radius-xl, 16px);
+    padding: var(--spacing-24) var(--spacing-16);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include breakpoints.medium-screen {
+      padding: var(--spacing-12);
+    }
+
+    @include breakpoints.small-screen {
+      padding: var(--spacing-6);
+      border-radius: 0;
+    }
+  }
+
+  h2 {
+    @include text-styles.header-1;
+    color: var(--foreground-inverse-primary);
+    margin-block-end: var(--spacing-6);
+
+    @include breakpoints.medium-screen {
+      @include text-styles.header-1--mobile;
+      color: var(--foreground-inverse-primary);
+    }
+
+    @include breakpoints.small-screen {
+      @include text-styles.header-1--mobile;
+      color: var(--foreground-inverse-primary);
+    }
+  }
+
+  p {
+    @include text-styles.text-base;
+    color: var(--foreground-inverse-primary);
+    margin-block-end: var(--spacing-6);
+    max-width: 576px;
+
+    @include breakpoints.medium-screen {
+      max-width: 672px;
+    }
+  }
+
+  a {
+    @include breakpoints.small-screen {
+      display: flex;
+      width: 100%;
+    }
+  }
+}
