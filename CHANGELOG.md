@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.20.0](https://github.com/nr2f1/website/compare/v1.19.0...v1.20.0) (2024-11-10)
+
+
+### Features
+
+* support banner ([2103555](https://github.com/nr2f1/website/commit/2103555b25aebf9e24972ce9986c6bdb91a82b1b))
+
 ## [1.19.0](https://github.com/nr2f1/website/compare/v1.18.0...v1.19.0) (2024-11-10)
 
 
