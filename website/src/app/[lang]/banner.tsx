@@ -1,25 +1,50 @@
 import Banner from '@components/banner';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { getClient } from '@graphql/client';
+import {
+  GetBannerDocument,
+  type GetBannerQuery,
+} from '@graphql/queries/banner/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
+import { homePageBannerId } from '@models/banners/banner';
 
 interface HomePageBannerProps {
   lang: AvailableLocale;
 }
 
-const HomePageBanner: React.FC<HomePageBannerProps> = ({ lang }) => {
+const HomePageBanner: React.FC<HomePageBannerProps> = async ({ lang }) => {
+  const { query } = getClient();
+
+  const {
+    data: { banner },
+    error,
+  } = await query<GetBannerQuery>({
+    query: GetBannerDocument,
+    variables: {
+      id: homePageBannerId,
+      locale: lang,
+    },
+  });
+
+  if (error || !banner) {
+    return null;
+  }
+
+  const { heading, content, cta, image } = banner;
+
+  const headingContent = heading?.content ?? '';
+  const textContent = documentToReactComponents(content?.content?.json);
+  const ctaContent = cta?.content ?? '';
+  const ctaUrl = cta?.href ?? '/';
+  const imageUrl = image?.url ?? '';
+
   return (
     <Banner
-      headingContent="2024 family conference"
-      textContent={
-        <p>
-          The conference is an integral part of our mission. In April 2024, we
-          brought together 132 attendees (in person and virtually), families and
-          researchers from around the world. We had representation from 11
-          countries and 23 US states.
-        </p>
-      }
-      ctaContent="Learn more"
-      ctaUrl="/"
-      imageUrl="https://pataruco.s3.amazonaws.com/public/banner.jpg"
+      headingContent={headingContent}
+      textContent={textContent}
+      ctaContent={ctaContent}
+      ctaUrl={ctaUrl}
+      imageUrl={imageUrl}
     />
   );
 };

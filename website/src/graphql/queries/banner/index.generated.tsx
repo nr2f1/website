@@ -15,7 +15,7 @@ export type GetBannerQuery = { __typename?: 'Query', banner?: { __typename?: 'Ba
 export const GetBannerDocument = gql`
     query GetBanner($locale: String, $id: String!) {
   banner(id: $id) {
-    heading {
+    heading(locale: $locale) {
       content
     }
     content(locale: $locale) {

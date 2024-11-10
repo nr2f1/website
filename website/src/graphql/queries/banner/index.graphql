@@ -1,6 +1,6 @@
 query GetBanner($locale: String, $id: String!) {
   banner(id: $id) {
-    heading {
+    heading(locale: $locale) {
       content
     }
     content(locale: $locale) {
