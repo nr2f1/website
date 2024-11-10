@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.0](https://github.com/nr2f1/website/compare/v1.18.0...v1.19.0) (2024-11-10)
+
+
+### Features
+
+* localised homepage banner ([e74fa6a](https://github.com/nr2f1/website/commit/e74fa6adcd05f038d93cfe5b9c8dde55dae983e3))
+
 ## [1.18.0](https://github.com/nr2f1/website/compare/v1.17.0...v1.18.0) (2024-11-09)
 
 
