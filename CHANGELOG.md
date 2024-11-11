@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.21.0](https://github.com/nr2f1/website/compare/v1.20.0...v1.21.0) (2024-11-11)
+
+
+### Features
+
+* localised support banner ([1eb8873](https://github.com/nr2f1/website/commit/1eb887368103de55153effa691190700b205096d))
+
 ## [1.20.0](https://github.com/nr2f1/website/compare/v1.19.0...v1.20.0) (2024-11-10)
 
 
