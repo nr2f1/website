@@ -1,0 +1,20 @@
+query GetMembershipPartners($membershipPartnersId: String!, $locale: String) {
+  navigationList(id: $membershipPartnersId, locale: $locale) {
+    name
+    linksCollection {
+      items {
+        href
+        content
+        referenceCollection(limit: 5) {
+          items {
+            ... on Image {
+              asset {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

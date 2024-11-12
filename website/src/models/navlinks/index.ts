@@ -5,3 +5,5 @@ export const aboutUsId = '4Oi8Hm5OZH7kK8F6WgLOgg';
 export const supportUsId = 'Lw95NJKD8APWY3EJRdTkD';
 // homepage hero
 export const heroNavigationListId = '5zga52plXos8ZGZhYRuDWg';
+// membership and partnerships
+export const membershipPartnersId = '5C263idbtU4bYjRfQYlpDb';
