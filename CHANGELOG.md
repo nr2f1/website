@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.22.0](https://github.com/nr2f1/website/compare/v1.21.0...v1.22.0) (2024-11-12)
+
+
+### Features
+
+* membership partners ([3d4c02e](https://github.com/nr2f1/website/commit/3d4c02e8fcbdf8ffc60dc6ed4f99cb8c43114d3e))
+
 ## [1.21.0](https://github.com/nr2f1/website/compare/v1.20.0...v1.21.0) (2024-11-11)
 
 
