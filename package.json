@@ -26,6 +26,7 @@
     "@graphql-codegen/typescript-react-apollo": "^4.3.2",
     "@nx/js": "20.0.6",
     "@nx/next": "20.0.6",
+    "@nx/node": "20.0.6",
     "@nx/vite": "20.0.6",
     "@nx/web": "20.0.6",
     "@swc-node/register": "~1.10.9",
