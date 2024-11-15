@@ -32,5 +32,12 @@
       "unitTestRunner": "none",
       "e2eTestRunner": "none"
     }
+  },
+  "targetDefaults": {
+    "@nx/esbuild:esbuild": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["default", "^default"]
+    }
   }
 }
