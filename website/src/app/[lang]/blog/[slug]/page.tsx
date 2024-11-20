@@ -58,11 +58,17 @@ const Page: NextPage<BlogPagePropsWithLocale> = async ({ params }) => {
     dateStyle: 'long',
   }).format(publishedDate);
 
+  const dateTime = new Intl.DateTimeFormat(lang, {
+    dateStyle: 'short',
+  }).format(publishedDate);
+
   return (
     <section className={styles.post}>
       <div className="content-wrapper">
         <h1>{post?.title}</h1>
-        <p>Published: {publishedString}</p>
+        <p>
+          Published: <time dateTime={dateTime}>{publishedString}</time>
+        </p>
         {documentToReactComponents(post?.body?.json)}
       </div>
     </section>

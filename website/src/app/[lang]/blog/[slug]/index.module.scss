@@ -5,6 +5,10 @@
     @include text-styles.header-1;
   }
 
+  h2 {
+    @include text-styles.header-2;
+  }
+
   p {
     @include text-styles.text-base;
   }
