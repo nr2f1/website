@@ -1,0 +1,15 @@
+@use '@styles/text-styles';
+
+.post {
+  h1 {
+    @include text-styles.header-1;
+  }
+
+  p {
+    @include text-styles.text-base;
+  }
+
+  a {
+    @include text-styles.text-link;
+  }
+}

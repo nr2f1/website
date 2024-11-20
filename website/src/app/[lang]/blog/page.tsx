@@ -1,3 +1,5 @@
+import styles from './index.module.scss';
+
 import { getClient } from '@graphql/client';
 import {
   GetPostsDocument,
@@ -32,15 +34,20 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   }));
 
   return (
-    <nav>
-      <ul>
-        {posts.map(({ content, slug }) => (
-          <li key={crypto.randomUUID()}>
-            <Link href={`/blog/${slug}`}>{content}</Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <section className={styles.blog}>
+      <div className="content-wrapper">
+        <h1>Blog</h1>
+        <nav>
+          <ul>
+            {posts.map(({ content, slug }) => (
+              <li key={crypto.randomUUID()}>
+                <Link href={`/blog/${slug}`}>{content}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </section>
   );
 };
 

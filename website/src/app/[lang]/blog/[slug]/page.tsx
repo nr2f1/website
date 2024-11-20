@@ -1,3 +1,5 @@
+import styles from './index.module.scss';
+
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
 import {
@@ -50,8 +52,6 @@ const Page: NextPage<BlogPagePropsWithLocale> = async ({ params }) => {
 
   const [post] = data.blogPageCollection.items;
 
-  console.log({ post });
-
   const publishedDate = new Date(post?.date);
 
   const publishedString = new Intl.DateTimeFormat(lang, {
@@ -59,13 +59,13 @@ const Page: NextPage<BlogPagePropsWithLocale> = async ({ params }) => {
   }).format(publishedDate);
 
   return (
-    <div className="content-wrapper">
-      <section>
+    <section className={styles.post}>
+      <div className="content-wrapper">
         <h1>{post?.title}</h1>
         <p>Published: {publishedString}</p>
         {documentToReactComponents(post?.body?.json)}
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 
