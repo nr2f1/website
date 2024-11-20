@@ -170,6 +170,7 @@ export type AssetFilter = {
 export type AssetLinkingCollections = {
   __typename?: 'AssetLinkingCollections';
   bannerCollection?: Maybe<BannerCollection>;
+  blogPageCollection?: Maybe<BlogPageCollection>;
   boardMemberCollection?: Maybe<BoardMemberCollection>;
   entryCollection?: Maybe<EntryCollection>;
   imageCollection?: Maybe<ImageCollection>;
@@ -177,6 +178,14 @@ export type AssetLinkingCollections = {
 
 
 export type AssetLinkingCollectionsBannerCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type AssetLinkingCollectionsBlogPageCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
@@ -332,6 +341,145 @@ export type BannerLinkingCollectionsEntryCollectionArgs = {
 export enum BannerOrder {
   BannerNameAsc = 'bannerName_ASC',
   BannerNameDesc = 'bannerName_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+/** Blog page with title, body, image, excerp, slug and date [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/blogPage) */
+export type BlogPage = Entry & _Node & {
+  __typename?: 'BlogPage';
+  _id: Scalars['ID']['output'];
+  body?: Maybe<Scalars['String']['output']>;
+  contentfulMetadata: ContentfulMetadata;
+  date?: Maybe<Scalars['DateTime']['output']>;
+  excerpt?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Asset>;
+  linkedFrom?: Maybe<BlogPageLinkingCollections>;
+  slug?: Maybe<Scalars['String']['output']>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** Blog page with title, body, image, excerp, slug and date [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/blogPage) */
+export type BlogPageBodyArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** Blog page with title, body, image, excerp, slug and date [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/blogPage) */
+export type BlogPageDateArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** Blog page with title, body, image, excerp, slug and date [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/blogPage) */
+export type BlogPageExcerptArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** Blog page with title, body, image, excerp, slug and date [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/blogPage) */
+export type BlogPageImageArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** Blog page with title, body, image, excerp, slug and date [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/blogPage) */
+export type BlogPageLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** Blog page with title, body, image, excerp, slug and date [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/blogPage) */
+export type BlogPageSlugArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** Blog page with title, body, image, excerp, slug and date [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/blogPage) */
+export type BlogPageTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type BlogPageCollection = {
+  __typename?: 'BlogPageCollection';
+  items: Array<Maybe<BlogPage>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type BlogPageFilter = {
+  AND?: InputMaybe<Array<InputMaybe<BlogPageFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<BlogPageFilter>>>;
+  body?: InputMaybe<Scalars['String']['input']>;
+  body_contains?: InputMaybe<Scalars['String']['input']>;
+  body_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  body_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  body_not?: InputMaybe<Scalars['String']['input']>;
+  body_not_contains?: InputMaybe<Scalars['String']['input']>;
+  body_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  date?: InputMaybe<Scalars['DateTime']['input']>;
+  date_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  date_gt?: InputMaybe<Scalars['DateTime']['input']>;
+  date_gte?: InputMaybe<Scalars['DateTime']['input']>;
+  date_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  date_lt?: InputMaybe<Scalars['DateTime']['input']>;
+  date_lte?: InputMaybe<Scalars['DateTime']['input']>;
+  date_not?: InputMaybe<Scalars['DateTime']['input']>;
+  date_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  excerpt?: InputMaybe<Scalars['String']['input']>;
+  excerpt_contains?: InputMaybe<Scalars['String']['input']>;
+  excerpt_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  excerpt_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  excerpt_not?: InputMaybe<Scalars['String']['input']>;
+  excerpt_not_contains?: InputMaybe<Scalars['String']['input']>;
+  excerpt_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  image_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  slug?: InputMaybe<Scalars['String']['input']>;
+  slug_contains?: InputMaybe<Scalars['String']['input']>;
+  slug_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  slug_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  slug_not?: InputMaybe<Scalars['String']['input']>;
+  slug_not_contains?: InputMaybe<Scalars['String']['input']>;
+  slug_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type BlogPageLinkingCollections = {
+  __typename?: 'BlogPageLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type BlogPageLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum BlogPageOrder {
+  DateAsc = 'date_ASC',
+  DateDesc = 'date_DESC',
+  SlugAsc = 'slug_ASC',
+  SlugDesc = 'slug_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',
@@ -1285,6 +1433,8 @@ export type Query = {
   assetCollection?: Maybe<AssetCollection>;
   banner?: Maybe<Banner>;
   bannerCollection?: Maybe<BannerCollection>;
+  blogPage?: Maybe<BlogPage>;
+  blogPageCollection?: Maybe<BlogPageCollection>;
   boardMember?: Maybe<BoardMember>;
   boardMemberCollection?: Maybe<BoardMemberCollection>;
   entryCollection?: Maybe<EntryCollection>;
@@ -1341,6 +1491,23 @@ export type QueryBannerCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<BannerFilter>;
+};
+
+
+export type QueryBlogPageArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryBlogPageCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<BlogPageOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<BlogPageFilter>;
 };
 
 
