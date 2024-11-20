@@ -18,8 +18,8 @@ const NavList = ({ name, items }: NavListProps) => {
       <ul>
         {Array.isArray(items) &&
           items.map(({ href, content }) => (
-            <li key={`${href}-${Math.random()}`}>
-              <Link href="/">{content}</Link>
+            <li key={crypto.randomUUID()}>
+              <Link href={href}>{content}</Link>
             </li>
           ))}
       </ul>

@@ -1,0 +1,8 @@
+query GetPosts($locale: String) {
+  blogPageCollection(order: date_DESC, locale: $locale) {
+    items {
+      title
+      slug
+    }
+  }
+}
