@@ -1,0 +1,12 @@
+query GetPost($locale: String, $slug: String!) {
+  blogPageCollection(locale: $locale, where: { slug: $slug }) {
+    items {
+      title
+      body
+      date
+      image {
+        url
+      }
+    }
+  }
+}
