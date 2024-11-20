@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.23.0](https://github.com/nr2f1/website/compare/v1.22.0...v1.23.0) (2024-11-20)
+
+
+### Features
+
+* get all posts ([d275c3e](https://github.com/nr2f1/website/commit/d275c3eae275504b4e6c1d44fa54be35b5c16f92))
+* render blog post body ([09b5270](https://github.com/nr2f1/website/commit/09b52704079e28d29a75746a063b73812812bf02))
+* render post ([62e1dba](https://github.com/nr2f1/website/commit/62e1dbabb7a727d0259ef94a1b3ef07979dfcd84))
+
 ## [1.22.0](https://github.com/nr2f1/website/compare/v1.21.0...v1.22.0) (2024-11-12)
 
 
