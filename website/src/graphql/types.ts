@@ -355,7 +355,7 @@ export enum BannerOrder {
 export type BlogPage = Entry & _Node & {
   __typename?: 'BlogPage';
   _id: Scalars['ID']['output'];
-  body?: Maybe<Scalars['String']['output']>;
+  body?: Maybe<BlogPageBody>;
   contentfulMetadata: ContentfulMetadata;
   date?: Maybe<Scalars['DateTime']['output']>;
   excerpt?: Maybe<Scalars['String']['output']>;
@@ -409,6 +409,54 @@ export type BlogPageTitleArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type BlogPageBody = {
+  __typename?: 'BlogPageBody';
+  json: Scalars['JSON']['output'];
+  links: BlogPageBodyLinks;
+};
+
+export type BlogPageBodyAssets = {
+  __typename?: 'BlogPageBodyAssets';
+  block: Array<Maybe<Asset>>;
+  hyperlink: Array<Maybe<Asset>>;
+};
+
+export type BlogPageBodyEntries = {
+  __typename?: 'BlogPageBodyEntries';
+  block: Array<Maybe<Entry>>;
+  hyperlink: Array<Maybe<Entry>>;
+  inline: Array<Maybe<Entry>>;
+};
+
+export type BlogPageBodyLinks = {
+  __typename?: 'BlogPageBodyLinks';
+  assets: BlogPageBodyAssets;
+  entries: BlogPageBodyEntries;
+  resources: BlogPageBodyResources;
+};
+
+export type BlogPageBodyResources = {
+  __typename?: 'BlogPageBodyResources';
+  block: Array<BlogPageBodyResourcesBlock>;
+  hyperlink: Array<BlogPageBodyResourcesHyperlink>;
+  inline: Array<BlogPageBodyResourcesInline>;
+};
+
+export type BlogPageBodyResourcesBlock = ResourceLink & {
+  __typename?: 'BlogPageBodyResourcesBlock';
+  sys: ResourceSys;
+};
+
+export type BlogPageBodyResourcesHyperlink = ResourceLink & {
+  __typename?: 'BlogPageBodyResourcesHyperlink';
+  sys: ResourceSys;
+};
+
+export type BlogPageBodyResourcesInline = ResourceLink & {
+  __typename?: 'BlogPageBodyResourcesInline';
+  sys: ResourceSys;
+};
+
 export type BlogPageCollection = {
   __typename?: 'BlogPageCollection';
   items: Array<Maybe<BlogPage>>;
@@ -420,13 +468,9 @@ export type BlogPageCollection = {
 export type BlogPageFilter = {
   AND?: InputMaybe<Array<InputMaybe<BlogPageFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<BlogPageFilter>>>;
-  body?: InputMaybe<Scalars['String']['input']>;
   body_contains?: InputMaybe<Scalars['String']['input']>;
   body_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  body_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  body_not?: InputMaybe<Scalars['String']['input']>;
   body_not_contains?: InputMaybe<Scalars['String']['input']>;
-  body_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
   date?: InputMaybe<Scalars['DateTime']['input']>;
   date_exists?: InputMaybe<Scalars['Boolean']['input']>;

@@ -1,3 +1,4 @@
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
 import {
   GetPostDocument,
@@ -60,8 +61,9 @@ const Page: NextPage<BlogPagePropsWithLocale> = async ({ params }) => {
   return (
     <div className="content-wrapper">
       <section>
-        <h2>{post?.title}</h2>
+        <h1>{post?.title}</h1>
         <p>Published: {publishedString}</p>
+        {documentToReactComponents(post?.body?.json)}
       </section>
     </div>
   );
