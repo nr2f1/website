@@ -1,6 +1,6 @@
-@use '@styles/text-styles';
 @use '@styles/breakpoints';
 @use '@styles/buttons';
+@use '@styles/text-styles';
 
 .news {
   padding: 0 var(--spacing-16) var(--spacing-24);
@@ -15,6 +15,7 @@
 
   h2 {
     @include text-styles.header-1;
+
     margin: 0;
     margin-block-end: var(--spacing-12);
     text-align: center;
@@ -67,11 +68,17 @@
     text-decoration: none;
   }
 
-  & img {
+  &__img {
     border-top-left-radius: var(--border-radius-xl);
     border-top-right-radius: var(--border-radius-xl);
-    max-height: 380px;
-    width: auto;
+    height: var(--spacing-56);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include breakpoints.small-screen {
+      height: var(--spacing-40);
+    }
   }
 
   & > div {

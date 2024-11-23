@@ -12,12 +12,13 @@ const LatestNews = () => {
           <li className={styles.article}>
             <Link href="/">
               <article className={styles.article}>
-                <picture>
-                  <img
-                    src="https://pataruco.s3.amazonaws.com/public/latest-news.png"
-                    alt=""
-                  />
-                </picture>
+                <div
+                  className={styles.article__img}
+                  style={{
+                    backgroundImage:
+                      'url(https://pataruco.s3.amazonaws.com/public/latest-news.png)',
+                  }}
+                />
                 <div>
                   <p className={styles.article__label}>Blog post</p>
                   <h3>
@@ -33,12 +34,13 @@ const LatestNews = () => {
           <li className={styles.article}>
             <Link href="/">
               <article className={styles.article}>
-                <picture>
-                  <img
-                    src="https://pataruco.s3.amazonaws.com/public/latest-news.png"
-                    alt=""
-                  />
-                </picture>
+                <div
+                  className={styles.article__img}
+                  style={{
+                    backgroundImage:
+                      'url(https://pataruco.s3.amazonaws.com/public/latest-news.png)',
+                  }}
+                />
                 <div>
                   <p className={styles.article__label}>Blog post</p>
                   <h3>
@@ -54,12 +56,13 @@ const LatestNews = () => {
           <li className={styles.article}>
             <Link href="/">
               <article className={styles.article}>
-                <picture>
-                  <img
-                    src="https://pataruco.s3.amazonaws.com/public/latest-news.png"
-                    alt=""
-                  />
-                </picture>
+                <div
+                  className={styles.article__img}
+                  style={{
+                    backgroundImage:
+                      'url(https://pataruco.s3.amazonaws.com/public/latest-news.png)',
+                  }}
+                />
                 <div>
                   <p className={styles.article__label}>Blog post</p>
                   <h3>
@@ -75,12 +78,13 @@ const LatestNews = () => {
           <li className={styles.article}>
             <Link href="/">
               <article className={styles.article}>
-                <picture>
-                  <img
-                    src="https://pataruco.s3.amazonaws.com/public/latest-news.png"
-                    alt=""
-                  />
-                </picture>
+                <div
+                  className={styles.article__img}
+                  style={{
+                    backgroundImage:
+                      'url(https://pataruco.s3.amazonaws.com/public/latest-news.png)',
+                  }}
+                />
                 <div>
                   <p className={styles.article__label}>Blog post</p>
                   <h3>
@@ -96,12 +100,13 @@ const LatestNews = () => {
           <li className={styles.article}>
             <Link href="/">
               <article className={styles.article}>
-                <picture>
-                  <img
-                    src="https://pataruco.s3.amazonaws.com/public/latest-news.png"
-                    alt=""
-                  />
-                </picture>
+                <div
+                  className={styles.article__img}
+                  style={{
+                    backgroundImage:
+                      'url(https://pataruco.s3.amazonaws.com/public/latest-news.png)',
+                  }}
+                />
                 <div>
                   <p className={styles.article__label}>Blog post</p>
                   <h3>
@@ -117,12 +122,13 @@ const LatestNews = () => {
           <li className={styles.article}>
             <Link href="/">
               <article className={styles.article}>
-                <picture>
-                  <img
-                    src="https://pataruco.s3.amazonaws.com/public/latest-news.png"
-                    alt=""
-                  />
-                </picture>
+                <div
+                  className={styles.article__img}
+                  style={{
+                    backgroundImage:
+                      'url(https://pataruco.s3.amazonaws.com/public/latest-news.png)',
+                  }}
+                />
                 <div>
                   <p className={styles.article__label}>Blog post</p>
                   <h3>
