@@ -1,84 +1,150 @@
+import styles from './index.module.scss';
+
+import Link from 'next/link';
+
 const LatestNews = () => {
   return (
-    <section>
+    <section className={styles.news}>
       <div className="content-wrapper">
         <h2>Latest News</h2>
-        <div className="articles">
-          <article>
-            <picture>
-              <img src="https://picsum.photos/368/380" alt="" />
-            </picture>
-            <p>
-              <a href="/">Blog post</a>
-            </p>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-            <p>
-              <time dateTime="24/05/2024">May 24, 2024</time>
-            </p>
-          </article>
-          <article>
-            <picture>
-              <img src="https://picsum.photos/368/380" alt="" />
-            </picture>
-            <p>
-              <a href="/">Blog post</a>
-            </p>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-            <p>
-              <time dateTime="24/05/2024">May 24, 2024</time>
-            </p>
-          </article>
-          <article>
-            <picture>
-              <img src="https://picsum.photos/368/380" alt="" />
-            </picture>
-            <p>
-              <a href="/">Blog post</a>
-            </p>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-            <p>
-              <time dateTime="24/05/2024">May 24, 2024</time>
-            </p>
-          </article>
-          <article>
-            <picture>
-              <img src="https://picsum.photos/368/380" alt="" />
-            </picture>
-            <p>
-              <a href="/">Blog post</a>
-            </p>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-            <p>
-              <time dateTime="24/05/2024">May 24, 2024</time>
-            </p>
-          </article>
-          <article>
-            <picture>
-              <img src="https://picsum.photos/368/380" alt="" />
-            </picture>
-            <p>
-              <a href="/">Blog post</a>
-            </p>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-            <p>
-              <time dateTime="24/05/2024">May 24, 2024</time>
-            </p>
-          </article>
-          <article>
-            <picture>
-              <img src="https://picsum.photos/368/380" alt="" />
-            </picture>
-            <p>
-              <a href="/">Blog post</a>
-            </p>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-            <p>
-              <time dateTime="24/05/2024">May 24, 2024</time>
-            </p>
-          </article>
-        </div>
-        <a href="/">View all updates</a>
+
+        <ul className={styles.news__articles}>
+          <li className={styles.article}>
+            <Link href="/">
+              <article className={styles.article}>
+                <picture>
+                  <img
+                    src="https://pataruco.s3.amazonaws.com/public/latest-news.png"
+                    alt=""
+                  />
+                </picture>
+                <div>
+                  <p className={styles.article__label}>Blog post</p>
+                  <h3>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </h3>
+                  <p className={styles.article__date}>
+                    <time dateTime="24/05/2024">May 24, 2024</time>
+                  </p>
+                </div>
+              </article>
+            </Link>
+          </li>
+          <li className={styles.article}>
+            <Link href="/">
+              <article className={styles.article}>
+                <picture>
+                  <img
+                    src="https://pataruco.s3.amazonaws.com/public/latest-news.png"
+                    alt=""
+                  />
+                </picture>
+                <div>
+                  <p className={styles.article__label}>Blog post</p>
+                  <h3>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </h3>
+                  <p className={styles.article__date}>
+                    <time dateTime="24/05/2024">May 24, 2024</time>
+                  </p>
+                </div>
+              </article>
+            </Link>
+          </li>
+          <li className={styles.article}>
+            <Link href="/">
+              <article className={styles.article}>
+                <picture>
+                  <img
+                    src="https://pataruco.s3.amazonaws.com/public/latest-news.png"
+                    alt=""
+                  />
+                </picture>
+                <div>
+                  <p className={styles.article__label}>Blog post</p>
+                  <h3>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </h3>
+                  <p className={styles.article__date}>
+                    <time dateTime="24/05/2024">May 24, 2024</time>
+                  </p>
+                </div>
+              </article>
+            </Link>
+          </li>
+          <li className={styles.article}>
+            <Link href="/">
+              <article className={styles.article}>
+                <picture>
+                  <img
+                    src="https://pataruco.s3.amazonaws.com/public/latest-news.png"
+                    alt=""
+                  />
+                </picture>
+                <div>
+                  <p className={styles.article__label}>Blog post</p>
+                  <h3>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </h3>
+                  <p className={styles.article__date}>
+                    <time dateTime="24/05/2024">May 24, 2024</time>
+                  </p>
+                </div>
+              </article>
+            </Link>
+          </li>
+          <li className={styles.article}>
+            <Link href="/">
+              <article className={styles.article}>
+                <picture>
+                  <img
+                    src="https://pataruco.s3.amazonaws.com/public/latest-news.png"
+                    alt=""
+                  />
+                </picture>
+                <div>
+                  <p className={styles.article__label}>Blog post</p>
+                  <h3>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </h3>
+                  <p className={styles.article__date}>
+                    <time dateTime="24/05/2024">May 24, 2024</time>
+                  </p>
+                </div>
+              </article>
+            </Link>
+          </li>
+          <li className={styles.article}>
+            <Link href="/">
+              <article className={styles.article}>
+                <picture>
+                  <img
+                    src="https://pataruco.s3.amazonaws.com/public/latest-news.png"
+                    alt=""
+                  />
+                </picture>
+                <div>
+                  <p className={styles.article__label}>Blog post</p>
+                  <h3>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  </h3>
+                  <p className={styles.article__date}>
+                    <time dateTime="24/05/2024">May 24, 2024</time>
+                  </p>
+                </div>
+              </article>
+            </Link>
+          </li>
+        </ul>
+        <Link
+          href="/"
+          className={`${styles.news__more} button button--on-light`}
+        >
+          View all updates
+        </Link>
       </div>
     </section>
   );
 };
+
+export default LatestNews;
