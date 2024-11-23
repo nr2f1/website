@@ -65,17 +65,17 @@
 
 @mixin text-small {
   color: var(--foreground-primary);
-  font-size: #{spacing(4)};
+  font-size: 1rem;
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
 }
 
 @mixin text-link-small {
-  color: var(--foreground-primary);
-  font-size: #{spacing(4)};
+  color: var(--foreground-interactive-default);
+  font-size: 1rem;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 150%;
   text-decoration-line: underline;
 }

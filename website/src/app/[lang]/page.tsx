@@ -1,4 +1,5 @@
 import HomePageHero from '@components/homepage-hero';
+import LatestNews from '@components/latest-news';
 import MembershipsPartners from '@components/memberships-partners';
 import SupportBanner from '@components/support-banner';
 import WhatWeDo from '@components/what-we-do';
@@ -15,6 +16,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
       <WhatWeDo lang={lang} />
       <HomePageBanner lang={lang} />
       <SupportBanner lang={lang} />
+      <LatestNews />
       <MembershipsPartners lang={lang} />
     </>
   );

@@ -63,7 +63,7 @@ const Page: NextPage<BlogPagePropsWithLocale> = async ({ params }) => {
   }).format(publishedDate);
 
   return (
-    <section className={styles.post}>
+    <article className={styles.post}>
       <div className="content-wrapper">
         <h1>{post?.title}</h1>
         <p>
@@ -71,7 +71,7 @@ const Page: NextPage<BlogPagePropsWithLocale> = async ({ params }) => {
         </p>
         {documentToReactComponents(post?.body?.json)}
       </div>
-    </section>
+    </article>
   );
 };
 
