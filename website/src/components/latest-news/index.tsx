@@ -8,6 +8,7 @@ import {
 import type { AvailableLocale } from '@i18n/locales';
 import { latestNewsTitleId } from '@models/headings';
 import { latestNewsCtaId } from '@models/links';
+import { getIntlDateStrings } from '@shared/utils/intl-date';
 import Link from 'next/link';
 
 interface LatestNewsProps {
@@ -23,15 +24,10 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ title, date, imageUrl, lang, slug }) => {
-  const publishedDate = new Date(date);
-
-  const publishedString = new Intl.DateTimeFormat(lang, {
-    dateStyle: 'long',
-  }).format(publishedDate);
-
-  const dateTime = new Intl.DateTimeFormat(lang, {
-    dateStyle: 'short',
-  }).format(publishedDate);
+  const { dateTime, publishedString } = getIntlDateStrings({
+    date,
+    locale: lang,
+  });
 
   return (
     <li className={styles.article}>
