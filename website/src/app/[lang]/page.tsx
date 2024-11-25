@@ -16,7 +16,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
       <WhatWeDo lang={lang} />
       <HomePageBanner lang={lang} />
       <SupportBanner lang={lang} />
-      <LatestNews />
+      <LatestNews lang={lang} />
       <MembershipsPartners lang={lang} />
     </>
   );

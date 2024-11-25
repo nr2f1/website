@@ -11,6 +11,7 @@ import {
   type GetPostsQuery,
 } from '@graphql/queries/posts/index.generated';
 import type { BlogPagePropsWithLocale } from '@shared/types/page-with-locale-params';
+import { getIntlDateStrings } from '@shared/utils/intl-date';
 import type { NextPage } from 'next';
 
 const { query } = getClient();
@@ -52,15 +53,10 @@ const Page: NextPage<BlogPagePropsWithLocale> = async ({ params }) => {
 
   const [post] = data.blogPageCollection.items;
 
-  const publishedDate = new Date(post?.date);
-
-  const publishedString = new Intl.DateTimeFormat(lang, {
-    dateStyle: 'long',
-  }).format(publishedDate);
-
-  const dateTime = new Intl.DateTimeFormat(lang, {
-    dateStyle: 'short',
-  }).format(publishedDate);
+  const { dateTime, publishedString } = getIntlDateStrings({
+    date: post?.date ?? '',
+    locale: lang,
+  });
 
   return (
     <article className={styles.post}>
