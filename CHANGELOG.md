@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.24.0](https://github.com/nr2f1/website/compare/v1.23.0...v1.24.0) (2024-11-25)
+
+
+### Features
+
+* latest-news ([c688901](https://github.com/nr2f1/website/commit/c688901378eef05e4f399437db8c52cdcb94ee09))
+* localised latest news ([d7678b1](https://github.com/nr2f1/website/commit/d7678b1a65cd4f8fd0a16c8ac89b428acb1f8529))
+
+
+### Performance Improvements
+
+* abstract date string i18n ([80d4ed2](https://github.com/nr2f1/website/commit/80d4ed26b8c8c7ff504a066680fd8c73fdcdd513))
+
 ## [1.23.0](https://github.com/nr2f1/website/compare/v1.22.0...v1.23.0) (2024-11-20)
 
 
