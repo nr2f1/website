@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.25.0](https://github.com/nr2f1/website/compare/v1.24.0...v1.25.0) (2024-11-28)
+
+
+### Features
+
+* embed YT videos from rich text ([e7334da](https://github.com/nr2f1/website/commit/e7334dad368a7fd084120a33bab2904cf2bc8dd5))
+
 ## [1.24.0](https://github.com/nr2f1/website/compare/v1.23.0...v1.24.0) (2024-11-25)
 
 
