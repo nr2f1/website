@@ -19,7 +19,6 @@ export const renderText = (text: string) => {
 export const renderNode: RenderNode = {
   // If the node is a link
   [INLINES.HYPERLINK]: (node) => {
-    console.log({ node });
     // Only process youtube links
     if (node.data.uri.includes('youtube.com')) {
       // Extract videoId from the URL
