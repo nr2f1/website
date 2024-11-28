@@ -12,6 +12,7 @@ import {
 } from '@graphql/queries/posts/index.generated';
 import type { BlogPagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
+import { renderNode } from '@shared/utils/rich-text';
 import type { NextPage } from 'next';
 
 const { query } = getClient();
@@ -65,7 +66,7 @@ const Page: NextPage<BlogPagePropsWithLocale> = async ({ params }) => {
         <p>
           Published: <time dateTime={dateTime}>{publishedString}</time>
         </p>
-        {documentToReactComponents(post?.body?.json)}
+        {documentToReactComponents(post?.body?.json, { renderNode })}
       </div>
     </article>
   );
