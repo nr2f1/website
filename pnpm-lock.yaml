@@ -63,6 +63,9 @@ importers:
       '@commitlint/types':
         specifier: ^19.5.0
         version: 19.5.0
+      '@contentful/rich-text-types':
+        specifier: ^17.0.0
+        version: 17.0.0
       '@graphql-codegen/cli':
         specifier: ^5.0.3
         version: 5.0.3(@parcel/watcher@2.4.1)(@types/node@22.8.5)(enquirer@2.4.1)(graphql@16.9.0)(typescript@5.6.3)
