@@ -24,7 +24,11 @@ const Banner: React.FC<BannerProps> = ({
             <h2>{headingContent}</h2>
             {textContent}
 
-            <a href={ctaUrl} className="button button--on-light">
+            <a
+              href={ctaUrl}
+              className="button button--on-light"
+              title={ctaContent}
+            >
               {ctaContent}
             </a>
           </div>
