@@ -14,6 +14,7 @@ import type { BlogPagePropsWithLocale } from '@shared/types/page-with-locale-par
 import { getIntlDateStrings } from '@shared/utils/intl-date';
 import { renderNode } from '@shared/utils/rich-text';
 import type { NextPage } from 'next';
+import type { Blog, WithContext } from 'schema-dts';
 
 const { query } = getClient();
 
@@ -59,8 +60,22 @@ const Page: NextPage<BlogPagePropsWithLocale> = async ({ params }) => {
     locale: lang,
   });
 
+  const jsonLd: WithContext<Blog> = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    headline: post?.title ?? '',
+    datePublished: publishedString,
+    url: `https://nr2f1.org/blog/${slug}`,
+    abstract: post?.excerpt ?? '',
+  };
+
   return (
     <article className={styles.post}>
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="content-wrapper">
         <h1>{post?.title}</h1>
         <p>

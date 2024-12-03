@@ -3,6 +3,7 @@ query GetPosts($locale: String) {
     items {
       title
       slug
+      excerpt
     }
   }
 }

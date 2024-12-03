@@ -4,6 +4,7 @@ import MembershipsPartners from '@components/memberships-partners';
 import SupportBanner from '@components/support-banner';
 import WhatWeDo from '@components/what-we-do';
 import { getClient } from '@graphql/client';
+
 import {
   GetMetadataDocument,
   type GetMetadataQuery,
@@ -11,6 +12,7 @@ import {
 import { homepageMetadataId } from '@models/metadata';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
+import type { Graph } from 'schema-dts';
 import HomePageBanner from './banner';
 
 export async function generateMetadata({
@@ -51,8 +53,40 @@ export async function generateMetadata({
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { lang } = await params;
 
+  const { query } = getClient();
+  const { data } = await query<GetMetadataQuery>({
+    query: GetMetadataDocument,
+    variables: {
+      locale: lang,
+      id: homepageMetadataId,
+    },
+  });
+
+  const jsonLd: Graph = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        url: 'https://nr2f1.org',
+        name: data?.htmlHeadMetadata?.title || 'NR2F1 Foundation',
+        inLanguage: lang,
+      },
+      {
+        '@type': 'Organization',
+        url: 'https://nr2f1.org',
+        name: data?.htmlHeadMetadata?.title || 'NR2F1 Foundation',
+        description: data?.htmlHeadMetadata?.description || '',
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <HomePageHero lang={lang} />
       <WhatWeDo lang={lang} />
       <HomePageBanner lang={lang} />
