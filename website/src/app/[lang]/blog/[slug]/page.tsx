@@ -13,10 +13,41 @@ import {
 import type { BlogPagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
 import { renderNode } from '@shared/utils/rich-text';
-import type { NextPage } from 'next';
+import type { Metadata, NextPage } from 'next';
 import type { Blog, WithContext } from 'schema-dts';
 
 const { query } = getClient();
+
+export async function generateMetadata({
+  params,
+}: BlogPagePropsWithLocale): Promise<Metadata> {
+  const { lang, slug } = await params;
+
+  const { query } = getClient();
+  const { data } = await query<GetPostQuery>({
+    query: GetPostDocument,
+    variables: { locale: lang, slug },
+  });
+
+  const title = data?.blogPageCollection?.items[0]?.title ?? '';
+  const description = data?.blogPageCollection?.items[0]?.excerpt ?? '';
+  const imgUrl = data?.blogPageCollection?.items[0]?.image?.url ?? '';
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      url: `https://nr2f1.org/${lang}/blog/${slug}`,
+      locale: lang,
+      images: {
+        url: imgUrl,
+      },
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const { data } = await query<GetPostsQuery>({
