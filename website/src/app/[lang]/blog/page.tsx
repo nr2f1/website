@@ -6,8 +6,14 @@ import {
   type GetPostsQuery,
 } from '@graphql/queries/posts/index.generated';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
-import type { NextPage } from 'next';
+import type { Metadata, NextPage } from 'next';
 import Link from 'next/link';
+import type { CollectionPage, WithContext } from 'schema-dts';
+
+export const metadata: Metadata = {
+  title: 'NR2F1 Foundation | Blog',
+  description: 'Blog',
+};
 
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { lang } = await params;
@@ -31,10 +37,27 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const posts = blogPageCollection.items.map((item) => ({
     content: item?.title ?? '',
     slug: item?.slug ?? '',
+    excerpt: item?.excerpt ?? '',
   }));
+
+  const jsonLd: WithContext<CollectionPage> = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    mainEntity: posts.map(({ content, slug, excerpt }) => ({
+      '@type': 'BlogPosting',
+      headline: content,
+      url: `https://nr2f1.org/${lang}/blog/${slug}`,
+      abstract: excerpt,
+    })),
+  };
 
   return (
     <section className={styles.blog}>
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="content-wrapper">
         <h1>Blog</h1>
         <nav>

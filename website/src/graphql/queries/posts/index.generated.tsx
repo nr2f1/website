@@ -8,7 +8,7 @@ export type GetPostsQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetPostsQuery = { __typename?: 'Query', blogPageCollection?: { __typename?: 'BlogPageCollection', items: Array<{ __typename?: 'BlogPage', title?: string | null, slug?: string | null } | null> } | null };
+export type GetPostsQuery = { __typename?: 'Query', blogPageCollection?: { __typename?: 'BlogPageCollection', items: Array<{ __typename?: 'BlogPage', title?: string | null, slug?: string | null, excerpt?: string | null } | null> } | null };
 
 
 export const GetPostsDocument = gql`
@@ -17,6 +17,7 @@ export const GetPostsDocument = gql`
     items {
       title
       slug
+      excerpt
     }
   }
 }

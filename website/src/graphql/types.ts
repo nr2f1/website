@@ -173,6 +173,7 @@ export type AssetLinkingCollections = {
   blogPageCollection?: Maybe<BlogPageCollection>;
   boardMemberCollection?: Maybe<BoardMemberCollection>;
   entryCollection?: Maybe<EntryCollection>;
+  htmlHeadMetadataCollection?: Maybe<HtmlHeadMetadataCollection>;
   imageCollection?: Maybe<ImageCollection>;
 };
 
@@ -202,6 +203,14 @@ export type AssetLinkingCollectionsBoardMemberCollectionArgs = {
 
 
 export type AssetLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type AssetLinkingCollectionsHtmlHeadMetadataCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
@@ -859,6 +868,218 @@ export enum HeadingOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
+/** All HTML head metadata [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/htmlHeadMetadata) */
+export type HtmlHeadMetadata = Entry & _Node & {
+  __typename?: 'HtmlHeadMetadata';
+  _id: Scalars['ID']['output'];
+  author?: Maybe<Scalars['String']['output']>;
+  canonicalUrl?: Maybe<Scalars['String']['output']>;
+  contentfulMetadata: ContentfulMetadata;
+  description?: Maybe<Scalars['String']['output']>;
+  keywords?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<HtmlHeadMetadataLinkingCollections>;
+  ogDescription?: Maybe<Scalars['String']['output']>;
+  ogImage?: Maybe<Asset>;
+  ogTitle?: Maybe<Scalars['String']['output']>;
+  robots?: Maybe<Scalars['String']['output']>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']['output']>;
+  twitterDescription?: Maybe<Scalars['String']['output']>;
+  twitterImage?: Maybe<Asset>;
+  twitterTitle?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** All HTML head metadata [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/htmlHeadMetadata) */
+export type HtmlHeadMetadataAuthorArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** All HTML head metadata [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/htmlHeadMetadata) */
+export type HtmlHeadMetadataCanonicalUrlArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** All HTML head metadata [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/htmlHeadMetadata) */
+export type HtmlHeadMetadataDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** All HTML head metadata [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/htmlHeadMetadata) */
+export type HtmlHeadMetadataKeywordsArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** All HTML head metadata [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/htmlHeadMetadata) */
+export type HtmlHeadMetadataLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** All HTML head metadata [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/htmlHeadMetadata) */
+export type HtmlHeadMetadataOgDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** All HTML head metadata [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/htmlHeadMetadata) */
+export type HtmlHeadMetadataOgImageArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** All HTML head metadata [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/htmlHeadMetadata) */
+export type HtmlHeadMetadataOgTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** All HTML head metadata [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/htmlHeadMetadata) */
+export type HtmlHeadMetadataRobotsArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** All HTML head metadata [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/htmlHeadMetadata) */
+export type HtmlHeadMetadataTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** All HTML head metadata [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/htmlHeadMetadata) */
+export type HtmlHeadMetadataTwitterDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** All HTML head metadata [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/htmlHeadMetadata) */
+export type HtmlHeadMetadataTwitterImageArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** All HTML head metadata [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/htmlHeadMetadata) */
+export type HtmlHeadMetadataTwitterTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type HtmlHeadMetadataCollection = {
+  __typename?: 'HtmlHeadMetadataCollection';
+  items: Array<Maybe<HtmlHeadMetadata>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type HtmlHeadMetadataFilter = {
+  AND?: InputMaybe<Array<InputMaybe<HtmlHeadMetadataFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<HtmlHeadMetadataFilter>>>;
+  author?: InputMaybe<Scalars['String']['input']>;
+  author_contains?: InputMaybe<Scalars['String']['input']>;
+  author_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  author_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  author_not?: InputMaybe<Scalars['String']['input']>;
+  author_not_contains?: InputMaybe<Scalars['String']['input']>;
+  author_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  canonicalUrl?: InputMaybe<Scalars['String']['input']>;
+  canonicalUrl_contains?: InputMaybe<Scalars['String']['input']>;
+  canonicalUrl_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  canonicalUrl_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  canonicalUrl_not?: InputMaybe<Scalars['String']['input']>;
+  canonicalUrl_not_contains?: InputMaybe<Scalars['String']['input']>;
+  canonicalUrl_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  description_contains?: InputMaybe<Scalars['String']['input']>;
+  description_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  description_not?: InputMaybe<Scalars['String']['input']>;
+  description_not_contains?: InputMaybe<Scalars['String']['input']>;
+  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  keywords?: InputMaybe<Scalars['String']['input']>;
+  keywords_contains?: InputMaybe<Scalars['String']['input']>;
+  keywords_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  keywords_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  keywords_not?: InputMaybe<Scalars['String']['input']>;
+  keywords_not_contains?: InputMaybe<Scalars['String']['input']>;
+  keywords_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  ogDescription?: InputMaybe<Scalars['String']['input']>;
+  ogDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  ogDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  ogDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  ogDescription_not?: InputMaybe<Scalars['String']['input']>;
+  ogDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  ogDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  ogImage_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  ogTitle?: InputMaybe<Scalars['String']['input']>;
+  ogTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  ogTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  ogTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  ogTitle_not?: InputMaybe<Scalars['String']['input']>;
+  ogTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  ogTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  robots?: InputMaybe<Scalars['String']['input']>;
+  robots_contains?: InputMaybe<Scalars['String']['input']>;
+  robots_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  robots_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  robots_not?: InputMaybe<Scalars['String']['input']>;
+  robots_not_contains?: InputMaybe<Scalars['String']['input']>;
+  robots_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  twitterDescription?: InputMaybe<Scalars['String']['input']>;
+  twitterDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  twitterDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  twitterDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  twitterDescription_not?: InputMaybe<Scalars['String']['input']>;
+  twitterDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  twitterDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  twitterImage_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  twitterTitle?: InputMaybe<Scalars['String']['input']>;
+  twitterTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  twitterTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  twitterTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  twitterTitle_not?: InputMaybe<Scalars['String']['input']>;
+  twitterTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  twitterTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type HtmlHeadMetadataLinkingCollections = {
+  __typename?: 'HtmlHeadMetadataLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type HtmlHeadMetadataLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum HtmlHeadMetadataOrder {
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
 /** image [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/image) */
 export type Image = Entry & _Node & {
   __typename?: 'Image';
@@ -1484,6 +1705,8 @@ export type Query = {
   entryCollection?: Maybe<EntryCollection>;
   heading?: Maybe<Heading>;
   headingCollection?: Maybe<HeadingCollection>;
+  htmlHeadMetadata?: Maybe<HtmlHeadMetadata>;
+  htmlHeadMetadataCollection?: Maybe<HtmlHeadMetadataCollection>;
   image?: Maybe<Image>;
   imageCollection?: Maybe<ImageCollection>;
   link?: Maybe<Link>;
@@ -1596,6 +1819,23 @@ export type QueryHeadingCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<HeadingFilter>;
+};
+
+
+export type QueryHtmlHeadMetadataArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryHtmlHeadMetadataCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<HtmlHeadMetadataOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<HtmlHeadMetadataFilter>;
 };
 
 
