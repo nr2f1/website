@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.26.0](https://github.com/nr2f1/website/compare/v1.25.0...v1.26.0) (2024-12-03)
+
+
+### Features
+
+* dynamic meyadata in blog posts ([a93ae08](https://github.com/nr2f1/website/commit/a93ae089ec960b7aa93e07559a5e94b682d3e83d))
+* favicon ([7d0a265](https://github.com/nr2f1/website/commit/7d0a265143b288a2840944b6320237c1c5d93f9e))
+* microdata ([b42023c](https://github.com/nr2f1/website/commit/b42023c3d70d115c32675a3f7a56e240eb17c938))
+
 ## [1.25.0](https://github.com/nr2f1/website/compare/v1.24.0...v1.25.0) (2024-11-28)
 
 
