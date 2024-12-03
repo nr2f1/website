@@ -9,7 +9,7 @@ export type GetMembershipPartnersQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetMembershipPartnersQuery = { __typename?: 'Query', navigationList?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', href?: string | null, content?: string | null, referenceCollection?: { __typename?: 'LinkReferenceCollection', items: Array<{ __typename?: 'Banner' } | { __typename?: 'BlogPage' } | { __typename?: 'BoardMember' } | { __typename?: 'Heading' } | { __typename?: 'HtmlHeadMetadata' } | { __typename?: 'Image', asset?: { __typename?: 'Asset', url?: string | null } | null } | { __typename?: 'Link' } | { __typename?: 'NavigationList' } | { __typename?: 'Paragraphs' } | { __typename?: 'Volunteer' } | null> } | null } | null> } | null } | null };
+export type GetMembershipPartnersQuery = { __typename?: 'Query', navigationList?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', href?: string | null, content?: string | null, referenceCollection?: { __typename?: 'LinkReferenceCollection', items: Array<{ __typename?: 'Banner' } | { __typename?: 'BlogPage' } | { __typename?: 'BoardMember' } | { __typename?: 'Heading' } | { __typename?: 'HtmlHeadMetadata' } | { __typename?: 'Image', asset?: { __typename?: 'Asset', url?: string | null } | null } | { __typename?: 'Link' } | { __typename?: 'NavigationList' } | { __typename?: 'PageHeader' } | { __typename?: 'Paragraphs' } | { __typename?: 'Volunteer' } | null> } | null } | null> } | null } | null };
 
 
 export const GetMembershipPartnersDocument = gql`

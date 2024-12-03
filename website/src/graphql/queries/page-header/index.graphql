@@ -1,0 +1,9 @@
+query GetPageHeader($id: String!, $locale: String) {
+  pageHeader(id: $id, locale: $locale) {
+    title
+    subTitle
+    image {
+      url
+    }
+  }
+}

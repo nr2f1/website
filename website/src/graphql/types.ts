@@ -175,6 +175,7 @@ export type AssetLinkingCollections = {
   entryCollection?: Maybe<EntryCollection>;
   htmlHeadMetadataCollection?: Maybe<HtmlHeadMetadataCollection>;
   imageCollection?: Maybe<ImageCollection>;
+  pageHeaderCollection?: Maybe<PageHeaderCollection>;
 };
 
 
@@ -219,6 +220,14 @@ export type AssetLinkingCollectionsHtmlHeadMetadataCollectionArgs = {
 
 
 export type AssetLinkingCollectionsImageCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type AssetLinkingCollectionsPageHeaderCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
@@ -1540,6 +1549,101 @@ export enum NavigationListOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
+/** Page header [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/pageHeader) */
+export type PageHeader = Entry & _Node & {
+  __typename?: 'PageHeader';
+  _id: Scalars['ID']['output'];
+  contentfulMetadata: ContentfulMetadata;
+  image?: Maybe<Asset>;
+  linkedFrom?: Maybe<PageHeaderLinkingCollections>;
+  subTitle?: Maybe<Scalars['String']['output']>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** Page header [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/pageHeader) */
+export type PageHeaderImageArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** Page header [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/pageHeader) */
+export type PageHeaderLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** Page header [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/pageHeader) */
+export type PageHeaderSubTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** Page header [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/pageHeader) */
+export type PageHeaderTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type PageHeaderCollection = {
+  __typename?: 'PageHeaderCollection';
+  items: Array<Maybe<PageHeader>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type PageHeaderFilter = {
+  AND?: InputMaybe<Array<InputMaybe<PageHeaderFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<PageHeaderFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  image_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  subTitle?: InputMaybe<Scalars['String']['input']>;
+  subTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  subTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  subTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  subTitle_not?: InputMaybe<Scalars['String']['input']>;
+  subTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  subTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type PageHeaderLinkingCollections = {
+  __typename?: 'PageHeaderLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type PageHeaderLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum PageHeaderOrder {
+  SubTitleAsc = 'subTitle_ASC',
+  SubTitleDesc = 'subTitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
 /** Paragraphs as rich content [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/paragraphs) */
 export type Paragraphs = Entry & _Node & {
   __typename?: 'Paragraphs';
@@ -1713,6 +1817,8 @@ export type Query = {
   linkCollection?: Maybe<LinkCollection>;
   navigationList?: Maybe<NavigationList>;
   navigationListCollection?: Maybe<NavigationListCollection>;
+  pageHeader?: Maybe<PageHeader>;
+  pageHeaderCollection?: Maybe<PageHeaderCollection>;
   paragraphs?: Maybe<Paragraphs>;
   paragraphsCollection?: Maybe<ParagraphsCollection>;
   volunteer?: Maybe<Volunteer>;
@@ -1887,6 +1993,23 @@ export type QueryNavigationListCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<NavigationListFilter>;
+};
+
+
+export type QueryPageHeaderArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryPageHeaderCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<PageHeaderOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<PageHeaderFilter>;
 };
 
 
