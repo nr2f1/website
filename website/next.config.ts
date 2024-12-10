@@ -9,6 +9,11 @@ const nextConfig: WithNxOptions = {
         hostname: 'nr2f1.github.io',
         pathname: '/website/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+        pathname: '/9j9d6tsmuyzl/**',
+      },
     ],
   },
   sassOptions: {
