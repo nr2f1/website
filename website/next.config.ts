@@ -1,12 +1,7 @@
-//@ts-check
+import { composePlugins, withNx } from '@nx/next';
+import type { WithNxOptions } from '@nx/next/plugins/with-nx';
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { composePlugins, withNx } = require('@nx/next');
-
-/**
- * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
- **/
-const nextConfig = {
+const nextConfig: WithNxOptions = {
   images: {
     remotePatterns: [
       {
@@ -26,4 +21,4 @@ const plugins = [
   withNx,
 ];
 
-module.exports = composePlugins(...plugins)(nextConfig);
+export default composePlugins(...plugins)(nextConfig);
