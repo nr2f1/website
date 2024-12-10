@@ -1,6 +1,17 @@
+import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern',
+        silenceDeprecations: ['legacy-js-api'],
+      },
+    },
+  },
+  // @ts-ignore
+  plugins: [react()],
   test: {
     reporters: ['default'],
     environment: 'jsdom',
