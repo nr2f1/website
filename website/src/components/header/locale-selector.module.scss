@@ -99,5 +99,14 @@
     background-position-y: var(--spacing-3);
     background-repeat: no-repeat;
     background-size: var(--spacing-5);
+    background-color: var(--background-primary);
+
+    &:hover {
+      background-color: var(--navy-50);
+    }
+
+    &:active {
+      background-color: var(--navy-100);
+    }
   }
 }
