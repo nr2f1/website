@@ -67,6 +67,10 @@ $hambuguer-button: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
     max-width: 206px;
     flex-basis: 100%;
 
+    @include breakpoints.from-small-to-medium-screen {
+      max-width: 137.33px;
+    }
+
     & > a {
       display: block;
     }

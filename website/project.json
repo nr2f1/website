@@ -13,7 +13,7 @@
     "test": {
       "executor": "@nx/vite:test",
       "options": {
-        "config": "website/vite.config.ts"
+        "config": "website/vitest.config.ts"
       }
     },
     "graphql-generate": {

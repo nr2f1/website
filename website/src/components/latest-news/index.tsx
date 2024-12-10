@@ -32,7 +32,7 @@ const Card: React.FC<CardProps> = ({ title, date, imageUrl, lang, slug }) => {
   return (
     <li className={styles.article}>
       <Link href={`/blog/${slug}`}>
-        <article className={styles.article}>
+        <article>
           <div
             className={styles.article__img}
             style={{

@@ -85,7 +85,7 @@
     list-style: none;
     margin: 0;
     min-width: var(--spacing-72);
-    padding: 0;
+    padding: var(--spacing-1) 0;
     position: absolute;
     width: 100%;
     border: var(--spacing-0) solid var(--grey-300);
@@ -98,26 +98,6 @@
 
   & li {
     padding: var(--spacing-2) var(--spacing-3);
-
-    &:first-of-type {
-      border-top-left-radius: var(--border-radius-xl);
-      border-top-right-radius: var(--border-radius-xl);
-
-      @include breakpoints.from-small-to-medium-screen {
-        border-top-left-radius: unset;
-        border-top-right-radius: unset;
-      }
-    }
-
-    &:last-of-type {
-      border-bottom-left-radius: var(--border-radius-xl);
-      border-bottom-right-radius: var(--border-radius-xl);
-
-      @include breakpoints.from-small-to-medium-screen {
-        border-bottom-left-radius: unset;
-        border-bottom-right-radius: unset;
-      }
-    }
 
     &:hover,
     &:focus {

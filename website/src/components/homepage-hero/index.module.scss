@@ -9,6 +9,9 @@
     @include text-styles.header-1;
     margin: 0;
     margin-block-end: var(--spacing-6);
+    @include breakpoints.from-small-to-medium-screen {
+      @include text-styles.header-1--mobile;
+    }
   }
   h3 {
     @include text-styles.header-2;
@@ -29,10 +32,24 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--spacing-4);
+    @include breakpoints.from-small-to-medium-screen {
+      flex-wrap: unset;
+      flex-direction: column;
+      align-items: flex-start;
+      align-self: stretch;
+    }
 
     li {
+      @include breakpoints.from-small-to-medium-screen {
+        width: 100%;
+      }
+
       a {
         display: inline-block;
+        @include breakpoints.from-small-to-medium-screen {
+          display: block;
+          text-wrap: wrap;
+        }
       }
     }
   }
