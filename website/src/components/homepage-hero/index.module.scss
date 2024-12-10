@@ -9,6 +9,9 @@
     @include text-styles.header-1;
     margin: 0;
     margin-block-end: var(--spacing-6);
+    @include breakpoints.from-small-to-medium-screen {
+      @include text-styles.header-1--mobile;
+    }
   }
   h3 {
     @include text-styles.header-2;
