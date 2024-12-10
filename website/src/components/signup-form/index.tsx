@@ -288,6 +288,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang }) => {
                         onChange={handleSelectCountryOnChange}
                         slotProps={{
                           popup: {
+                            disablePortal: true,
                             className: styles.popup,
                           },
                           listbox: {
