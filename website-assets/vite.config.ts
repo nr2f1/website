@@ -28,14 +28,4 @@ export default defineConfig({
       transformMixedEsModules: true,
     },
   },
-
-  test: {
-    globals: true,
-    cache: {
-      dir: '../node_modules/.vitest',
-    },
-    environment: 'jsdom',
-    exclude: ['website/src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-    reporters: ['default'],
-  },
 });
