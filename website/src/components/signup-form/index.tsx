@@ -204,6 +204,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang }) => {
                     onChange={handleSelectRoleOnChange}
                     slotProps={{
                       popup: {
+                        disablePortal: true,
                         className: styles.popup,
                       },
                       listbox: {

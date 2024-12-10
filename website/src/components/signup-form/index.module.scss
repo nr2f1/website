@@ -51,6 +51,7 @@
   // It is important because styles are inlined
   top: var(--spacing-1) !important;
   z-index: 10;
+  width: 100%;
 }
 
 .listbox {
@@ -122,6 +123,7 @@
   }
 
   &__field {
+    position: relative;
     & p {
       color: var(--foreground-error);
       margin-top: var(--spacing-1);
