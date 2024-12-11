@@ -232,9 +232,9 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang }) => {
               <div className={styles.form__extra_fields}>
                 <div className={styles.form__row}>
                   <div className={styles.form__col}>
-                    <p className={styles.form__heading}>
+                    <h3 className={styles.form__heading}>
                       {content?.parent.heading}
-                    </p>
+                    </h3>
                     <p className={styles.form__text}>{content?.parent.text}</p>
                   </div>
                 </div>
@@ -263,9 +263,9 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang }) => {
                 </div>
                 <div className={styles.form__row}>
                   <div className={styles.form__col}>
-                    <p className={styles.form__heading}>
+                    <h4 className={styles.form__subheading}>
                       {content?.parentContact.heading}
-                    </p>
+                    </h4>
                     <p className={styles.form__text}>
                       {content?.parentContact.text}
                     </p>
