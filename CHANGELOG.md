@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.26.1](https://github.com/nr2f1/website/compare/v1.26.0...v1.26.1) (2024-12-11)
+
+
+### Bug Fixes
+
+* dropdown border and padding ([0be6674](https://github.com/nr2f1/website/commit/0be667452ac082a9fdeca6b33645ca8f998c68f9))
+* dropdown border and padding on form ([28e26a1](https://github.com/nr2f1/website/commit/28e26a155400878eff6813057e99ddd54ee40f9f))
+* dropdown border and padding on nav items ([db98b23](https://github.com/nr2f1/website/commit/db98b23552207e45293331afdee68f052bce8d5d))
+* dropdown in form width ([4666e55](https://github.com/nr2f1/website/commit/4666e55ad6dd92a3d0496e4d4decae9ca88549c4))
+* dropdown menu hover state ([389b33a](https://github.com/nr2f1/website/commit/389b33a8d231ddabc49d5af4320a2f9bccf489a3))
+* latest news ([2d9ddb8](https://github.com/nr2f1/website/commit/2d9ddb84769f5d559e2379d88e5d28399e7cf10d))
+* logo height on mobile ([9ebef7c](https://github.com/nr2f1/website/commit/9ebef7c1faf66850433a9f46345c433b156a51e4))
+* markup and vertical spacing in signup form ([0e35b1d](https://github.com/nr2f1/website/commit/0e35b1d831b51fdcd481a2cadaebfd1aae2f98dd))
+* select padding ([ac40318](https://github.com/nr2f1/website/commit/ac403183dbbaffc6ddba07707a05e16f8ef4a102))
+* set different overlays per breakpoint for the support banner ([39c5e65](https://github.com/nr2f1/website/commit/39c5e65be6e158b6bc1b29c294dba145c4d2d10e))
+* stanadarise padding in fills and dropdowns ([9dac52d](https://github.com/nr2f1/website/commit/9dac52db1e80a6cb1ab38df69d1d2ccc37334946))
+* vertical spacing in medium size for partners ([d5dcf72](https://github.com/nr2f1/website/commit/d5dcf72be1f4f0e936258c75771ad59e5966a520))
+* wrappung text in buttons ([f69e11f](https://github.com/nr2f1/website/commit/f69e11fcd86898d87c013fa26e2e74bdfcc4e38d))
+
 ## [1.26.0](https://github.com/nr2f1/website/compare/v1.25.0...v1.26.0) (2024-12-03)
 
 
