@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.26.3](https://github.com/nr2f1/website/compare/v1.26.2...v1.26.3) (2024-12-11)
+
+
+### Bug Fixes
+
+* donate buttons ([b961ed0](https://github.com/nr2f1/website/commit/b961ed05d90db6fe92f913a7029fd83ba09236fc))
+
 ## [1.26.2](https://github.com/nr2f1/website/compare/v1.26.1...v1.26.2) (2024-12-11)
 
 
