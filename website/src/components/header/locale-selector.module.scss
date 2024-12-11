@@ -17,8 +17,8 @@
   color: var(--foreground-primary);
   font-size: 1.125rem;
   font-weight: 400;
-  padding: var(--spacing-2) var(--spacing-5);
-  padding-right: calc((var(--spacing-5) * 2) + var(--spacing-2));
+  padding: var(--spacing-2) var(--spacing-3);
+  padding-right: calc((var(--spacing-3) * 2) + var(--spacing-2));
 
   &:hover,
   &:focus {
@@ -44,12 +44,6 @@
 }
 
 .popup {
-  background-color: var(--background-primary);
-  border-radius: var(--border-radius-lg);
-  border: var(--spacing-0) solid var(--gray-300);
-  box-shadow:
-    0 12px 16px -4px rgba(16, 24, 40, 0.08),
-    0 4px 6px -2px rgba(16, 24, 40, 0.03);
   // It is important because styles are inlined
   top: var(--spacing-1) !important;
   z-index: 10;
@@ -64,11 +58,16 @@
 }
 
 .listbox {
+  background-color: var(--background-primary);
   border-radius: var(--border-radius-lg);
+  border: var(--spacing-0) solid var(--grey-300);
+  box-shadow:
+    0 12px 16px -4px rgba(16, 24, 40, 0.08),
+    0 4px 6px -2px rgba(16, 24, 40, 0.03);
   color: var(--foreground-inverse-primary);
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: var(--spacing-1) 0;
 }
 
 .option {
@@ -76,13 +75,8 @@
   color: var(--foreground-primary);
   font-size: 1.125rem;
   font-weight: 400;
-  padding: var(--spacing-2) var(--spacing-5);
-  padding-right: calc((var(--spacing-5) * 2) + var(--spacing-2));
-
-  &:first-of-type {
-    border-top-left-radius: var(--border-radius-lg);
-    border-top-right-radius: var(--border-radius-lg);
-  }
+  padding: var(--spacing-2) var(--spacing-3);
+  padding-right: calc((var(--spacing-3) * 2) + var(--spacing-2));
 
   &:hover,
   &:focus {
@@ -99,5 +93,14 @@
     background-position-y: var(--spacing-3);
     background-repeat: no-repeat;
     background-size: var(--spacing-5);
+    background-color: var(--background-primary);
+
+    &:hover {
+      background-color: var(--navy-50);
+    }
+
+    &:active {
+      background-color: var(--navy-100);
+    }
   }
 }

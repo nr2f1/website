@@ -6,7 +6,7 @@
   padding: 0 var(--spacing-16) var(--spacing-24);
 
   @include breakpoints.medium-screen {
-    padding: 0 var(--spacing-12);
+    padding: 0 var(--spacing-12) var(--spacing-12);
   }
 
   @include breakpoints.small-screen {
@@ -23,6 +23,9 @@
     @include breakpoints.medium-screen {
       @include text-styles.header-1--mobile;
     }
+    @include breakpoints.small-screen {
+      @include text-styles.header-1--mobile;
+    }
   }
 
   &__articles {
@@ -36,6 +39,11 @@
     margin: 0;
     padding: 0;
     margin-block-end: var(--spacing-12);
+    @include breakpoints.small-screen {
+      flex-wrap: unset;
+      align-items: center;
+      flex-direction: column;
+    }
 
     /* Last two */
     & li:nth-last-of-type(-n + 2) {
@@ -63,14 +71,17 @@
   border: 1px solid var(--grey-300);
   min-width: 300px;
   flex: 1 0 0;
+  overflow: hidden;
+
+  @include breakpoints.small-screen {
+    min-width: 100%;
+  }
 
   & a {
     text-decoration: none;
   }
 
   &__img {
-    border-top-left-radius: var(--border-radius-xl);
-    border-top-right-radius: var(--border-radius-xl);
     height: var(--spacing-56);
     background-size: cover;
     background-repeat: no-repeat;
@@ -81,7 +92,7 @@
     }
   }
 
-  & > div {
+  & div {
     padding: var(--spacing-4);
   }
 

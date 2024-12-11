@@ -88,6 +88,10 @@
     @include breakpoints.medium-screen {
       @include text-styles.header-1--mobile;
     }
+
+    @include breakpoints.small-screen {
+      @include text-styles.header-1--mobile;
+    }
   }
 
   p {

@@ -16,12 +16,6 @@
     },
     "format": {
       "command": "pnpm biome format website"
-    },
-    "test": {
-      "executor": "@nx/vite:test",
-      "options": {
-        "config": "website/vite.config.ts"
-      }
     }
   }
 }

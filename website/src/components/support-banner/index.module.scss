@@ -24,12 +24,30 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-image: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.6) 36.61%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      var(--bg-image);
 
     @include breakpoints.medium-screen {
+      background-image: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.6) 0%,
+          rgba(0, 0, 0, 0.6) 100%
+        ),
+        var(--bg-image);
       padding: var(--spacing-12);
     }
 
     @include breakpoints.small-screen {
+      background-image: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.6) 0%,
+          rgba(0, 0, 0, 0.6) 100%
+        ),
+        var(--bg-image);
       padding: var(--spacing-6);
       border-radius: 0;
     }

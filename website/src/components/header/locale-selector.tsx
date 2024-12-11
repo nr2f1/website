@@ -52,6 +52,7 @@ const LocaleSelector: React.FC<LocaleSelectorProps> = ({
       }
       slotProps={{
         popup: {
+          disablePortal: true,
           className: isMobile
             ? `${styles.popup} ${styles['popup--mobile']}`
             : styles.popup,
