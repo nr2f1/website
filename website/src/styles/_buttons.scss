@@ -62,7 +62,7 @@ $disabled-heart: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' f
     border: var(--border-width-1) solid var(--coral-300);
     color: var(--foreground-primary);
     display: inline-flex;
-    padding: 0 var(--spacing-5) 0 var(--spacing-4);
+    padding: 0.4375rem var(--spacing-5) 0.4375rem var(--spacing-4);
     justify-content: center;
     align-items: center;
     gap: var(--spacing-2);
@@ -109,7 +109,7 @@ $disabled-heart: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' f
     border-radius: var(--border-radius-lg);
     color: var(--foreground-primary);
     display: inline-flex;
-    padding: 0 var(--spacing-5) 0 var(--spacing-4);
+    padding: var(--spacing-2) var(--spacing-5) var(--spacing-2) var(--spacing-4);
     justify-content: center;
     align-items: center;
     gap: var(--spacing-2);
