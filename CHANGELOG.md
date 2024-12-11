@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.26.2](https://github.com/nr2f1/website/compare/v1.26.1...v1.26.2) (2024-12-11)
+
+
+### Bug Fixes
+
+* header height ([18cddf0](https://github.com/nr2f1/website/commit/18cddf06032d804ffec956dc8fabcaeeeb50db79))
+* wrap text in buttons ([a64eacb](https://github.com/nr2f1/website/commit/a64eacb31e6c1c122a193a10aab5739578892394))
+
 ## [1.26.1](https://github.com/nr2f1/website/compare/v1.26.0...v1.26.1) (2024-12-11)
 
 
