@@ -42,10 +42,14 @@ const SupportBanner: React.FC<SupportBannerProps> = async ({ lang }) => {
   return (
     <div className={styles['support-banner']}>
       <div className="content-wrapper">
+        {/* Note: we are injecting the background image url in this way
+            to deal with the different overlast per breakpoitns */}
         <section
-          style={{
-            backgroundImage: `url(${imageUrl}), linear-gradient(90deg, rgba(0, 0, 0, 0.60) 36.61%, rgba(0, 0, 0, 0.00) 100%)`,
-          }}
+          style={
+            {
+              '--bg-image': `url(${imageUrl})`,
+            } as React.CSSProperties
+          }
         >
           <h2>{headingContent}</h2>
           {textContent}
