@@ -6,7 +6,7 @@
   padding: 0 var(--spacing-16) var(--spacing-24);
 
   @include breakpoints.medium-screen {
-    padding: 0 var(--spacing-12);
+    padding: 0 var(--spacing-12) var(--spacing-12);
   }
 
   @include breakpoints.small-screen {
