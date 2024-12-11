@@ -12,9 +12,9 @@ $disabled-heart: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' f
   border: none;
   display: inline-block;
   font-family: var(--font-nunito-sans), sans-serif;
-  height: var(--spacing-11);
   padding: var(--spacing-2) var(--spacing-5);
   text-decoration: none;
+  text-wrap: wrap;
 
   &:disabled {
     background-color: var(--background-disabled);

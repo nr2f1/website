@@ -45,6 +45,10 @@ $hambuguer-button: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
     }
 
     @include breakpoints.from-small-to-medium-screen {
+      & {
+        padding: var(--spacing-4) var(--spacing-6);
+      }
+
       & button[title='hambuguer-button'] {
         display: block;
         width: 100%;
