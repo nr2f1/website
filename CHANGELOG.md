@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.27.1](https://github.com/nr2f1/website/compare/v1.27.0...v1.27.1) (2024-12-12)
+
+
+### Bug Fixes
+
+* loading button height ([e7c6082](https://github.com/nr2f1/website/commit/e7c60823e7fb4e71deff3103cfde8d1252d571de))
+
 ## [1.27.0](https://github.com/nr2f1/website/compare/v1.26.3...v1.27.0) (2024-12-12)
 
 
