@@ -152,6 +152,18 @@
   }
 
   & button[type='submit'] {
+    min-width: var(--spacing-24);
+    & > span {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      max-width: var(--spacing-6);
+
+      & svg {
+        width: 100%;
+      }
+    }
+
     @include breakpoints.small-screen {
       display: block;
       width: 100%;

@@ -368,6 +368,7 @@ export type Action =
   | { type: 'setContentIdle' }
   | { type: 'setContent'; payload: Content }
   | { type: 'setContentError' }
+  | { type: 'setCreateContactLoading' }
   | { type: 'setCreateContactSuccess' }
   | { type: 'setCreateContactError' };
 
@@ -398,6 +399,12 @@ export const reducer = (state: State, action: Action): State => {
         ...state,
         content: undefined,
         i18nRequestResult: 'error',
+      };
+    }
+    case 'setCreateContactLoading': {
+      return {
+        ...state,
+        createContactResult: 'loading',
       };
     }
     case 'setCreateContactSuccess': {

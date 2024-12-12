@@ -2,6 +2,7 @@
 
 import styles from './index.module.scss';
 
+import Spinner from '@components/icons/spinner';
 import { Option } from '@mui/base/Option';
 import { Select } from '@mui/base/Select';
 import { createContact } from '@services/givebutter/create-contact';
@@ -32,6 +33,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang }) => {
 
   const onSubmit = async (values: SignupFormValues) => {
     try {
+      dispatch({ type: 'setCreateContactLoading' });
       await createContact(values);
       dispatch({ type: 'setCreateContactSuccess' });
     } catch (error) {
@@ -103,9 +105,11 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang }) => {
   const postCodeError = touched.postCode && errors.postCode;
 
   // conditional rendering
+  const showSpinner = createContactResult === 'loading';
   const showExtraFields = values.role === Role.ParentPatient;
   const shouldRenderForm =
-    i18nRequestResult === 'success' && createContactResult === 'idle';
+    (i18nRequestResult === 'success' && createContactResult === 'idle') ||
+    (i18nRequestResult === 'success' && showSpinner);
   const shouldRenderDefaultCreateContactSucess =
     createContactResult === 'success' && values.role !== Role.ParentPatient;
   const shouldRenderCreateContactSucessParentPatient =
@@ -403,7 +407,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang }) => {
               </div>
             )}
             <button type="submit" className="button button--on-light">
-              {content?.signupButton}
+              {showSpinner ? <Spinner /> : content?.signupButton}
             </button>
           </form>
         </>
