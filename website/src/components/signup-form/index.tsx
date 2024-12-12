@@ -407,7 +407,13 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang }) => {
               </div>
             )}
             <button type="submit" className="button button--on-light">
-              {showSpinner ? <Spinner /> : content?.signupButton}
+              {showSpinner ? (
+                <span>
+                  <Spinner />
+                </span>
+              ) : (
+                content?.signupButton
+              )}
             </button>
           </form>
         </>
