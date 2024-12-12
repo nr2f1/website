@@ -7,7 +7,7 @@ interface RegisterPageHeaderProps {
 const RegisterPageHeader: React.FC<RegisterPageHeaderProps> = ({ lang }) => {
   return (
     <div>
-      <div className="container-wrapper"></div>
+      <div className="container-wrapper">{lang}</div>
     </div>
   );
 };
