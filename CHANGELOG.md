@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.27.0](https://github.com/nr2f1/website/compare/v1.26.3...v1.27.0) (2024-12-12)
+
+
+### Features
+
+* set loading state ([ce088cc](https://github.com/nr2f1/website/commit/ce088cc7a67c392fb0135ea1366d05cf8a0bc372))
+
 ## [1.26.3](https://github.com/nr2f1/website/compare/v1.26.2...v1.26.3) (2024-12-11)
 
 
