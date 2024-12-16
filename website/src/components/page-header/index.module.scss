@@ -10,7 +10,7 @@ $mobile-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fil
     margin: 0;
   }
 
-  &__background {
+  /* &__background {
     background-color: var(--background-accent-navy);
     background-size: 50% auto;
     background-repeat: no-repeat;
@@ -18,6 +18,13 @@ $mobile-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fil
     background-position-y: center;
     position: relative;
     padding: var(--spacing-12) var(--spacing-16);
+    background-image: url($desktop-curve), var(--page-header-bg-img);
+
+    @include breakpoints.from-small-to-medium-screen {
+      padding: var(--spacing-12);
+      padding-block-end: var(--spacing-16);
+    }
+
     &::after {
       background-image: url($desktop-curve);
       background-repeat: no-repeat;
@@ -28,37 +35,21 @@ $mobile-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fil
       left: calc(50% - 1px);
       position: absolute;
     }
-  }
+  } */
 
-  section {
-    max-width: 50%;
-    p {
-      @include text-styles.text-small;
-      margin-bottom: var(--spacing-4);
+  &__background {
+    background-color: var(--background-accent-navy);
+    display: flex;
+
+    & > * {
+      flex: 100% 0 0;
     }
 
-    h1 {
-      @include text-styles.header-1;
-
-      @include breakpoints.from-small-to-medium-screen {
-        @include text-styles.header-1--mobile;
-      }
-    }
-
-    /* display: flex; */
-    /* @include breakpoints.small-screen {
+    & > section {
+      padding: var(--spacing-12) var(--spacing-16);
+      display: flex;
       flex-direction: column;
-    } */
-
-    /* & > div:first-of-type {
-      background-color: var(--background-accent-navy);
-      flex: 1 0 0;
-      padding: var(--spacing-12) 0 var(--spacing-16) var(--spacing-16);
-
-      @include breakpoints.small-screen {
-        padding: var(--spacing-2) var(--spacing-6) var(--spacing-8);
-        order: 1;
-      }
+      align-content: flex-end;
 
       p {
         @include text-styles.text-small;
@@ -72,16 +63,79 @@ $mobile-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fil
           @include text-styles.header-1--mobile;
         }
       }
-    } */
 
-    /* & > div:last-of-type {
-      flex: 1 0 0;
-      background-color: var(--background-accent-navy);
+      & > div {
+        max-width: calc(576px - var(--spacing-8));
+        align-self: flex-end;
+      }
+
+      /* display: flex; */
+      /* @include breakpoints.small-screen {
+        flex-direction: column;
+      } */
+
+      /* & > div:first-of-type {
+        background-color: var(--background-accent-navy);
+        flex: 1 0 0;
+        padding: var(--spacing-12) 0 var(--spacing-16) var(--spacing-16);
+
+        @include breakpoints.small-screen {
+          padding: var(--spacing-2) var(--spacing-6) var(--spacing-8);
+          order: 1;
+        }
+
+        p {
+          @include text-styles.text-small;
+          margin-bottom: var(--spacing-4);
+        }
+
+        h1 {
+          @include text-styles.header-1;
+
+          @include breakpoints.from-small-to-medium-screen {
+            @include text-styles.header-1--mobile;
+          }
+        }
+      } */
+
+      /* & > div:last-of-type {
+        flex: 1 0 0;
+        background-color: var(--background-accent-navy);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+
+        &::before {
+          background-image: url($desktop-curve);
+          background-repeat: no-repeat;
+          background-size: contain;
+          content: ' ';
+          display: block;
+          inset: 0;
+          left: -1px;
+          position: absolute;
+          width: 100%;
+        }
+
+        @include breakpoints.small-screen {
+          min-height: var(--spacing-40);
+
+          &::before {
+            background-image: url($mobile-curve);
+            background-position-y: bottom;
+            inset: 0;
+            bottom: -1px;
+          }
+        }
+      } */
+    }
+
+    & > div {
+      background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-size: cover;
       position: relative;
-
       &::before {
         background-image: url($desktop-curve);
         background-repeat: no-repeat;
@@ -91,24 +145,17 @@ $mobile-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fil
         inset: 0;
         left: -1px;
         position: absolute;
-        width: 100%;
       }
-
-      @include breakpoints.small-screen {
-        min-height: var(--spacing-40);
-
-        &::before {
-          background-image: url($mobile-curve);
-          background-position-y: bottom;
-          inset: 0;
-          bottom: -1px;
-        }
-      }
-    } */
+    }
   }
 
   &__last-updated {
     padding: var(--spacing-2) var(--spacing-16);
+
+    @include breakpoints.medium-screen {
+      padding: var(--spacing-2) var(--spacing-12);
+    }
+
     @include breakpoints.small-screen {
       padding: var(--spacing-2) var(--spacing-6);
     }
