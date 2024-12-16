@@ -38,18 +38,22 @@ const PageHeader: React.FC<PageHeaderProps> = ({
     case haveImageUrl: {
       return (
         <div className={styles['page-header']}>
-          <section>
-            <div>
-              <p>{sectionTitle}</p>
-              <h1>{pageTitle}</h1>
+          <div
+            className={styles['page-header__background']}
+            style={{
+              backgroundImage: `url(${imageUrl})`,
+            }}
+          >
+            <div className="content-wrapper">
+              <section>
+                <div>
+                  <p>{sectionTitle}</p>
+                  <h1>{pageTitle}</h1>
+                </div>
+              </section>
             </div>
-            <div
-              style={{
-                backgroundImage: `url(${imageUrl})`,
-              }}
-            />
-          </section>
-          <div>
+          </div>
+          <div className={styles['page-header__last-updated']}>
             <div className="content-wrapper">
               <p>
                 {lastUpdatedI18n[lang]}:{' '}
@@ -62,7 +66,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
     }
     default: {
       return (
-        <div className={styles['page-header--mobile']}>
+        <div className={styles['page-header--no-image']}>
           <section>
             <p>{sectionTitle}</p>
             <h1>{pageTitle}</h1>

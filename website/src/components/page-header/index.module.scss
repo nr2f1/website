@@ -10,13 +10,47 @@ $mobile-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fil
     margin: 0;
   }
 
+  &__background {
+    background-color: var(--background-accent-navy);
+    background-size: 50% auto;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+    position: relative;
+    padding: var(--spacing-12) var(--spacing-16);
+    &::after {
+      background-image: url($desktop-curve);
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: ' ';
+      display: block;
+      inset: 0;
+      left: calc(50% - 1px);
+      position: absolute;
+    }
+  }
+
   section {
-    display: flex;
-    @include breakpoints.small-screen {
-      flex-direction: column;
+    max-width: 50%;
+    p {
+      @include text-styles.text-small;
+      margin-bottom: var(--spacing-4);
     }
 
-    & > div:first-of-type {
+    h1 {
+      @include text-styles.header-1;
+
+      @include breakpoints.from-small-to-medium-screen {
+        @include text-styles.header-1--mobile;
+      }
+    }
+
+    /* display: flex; */
+    /* @include breakpoints.small-screen {
+      flex-direction: column;
+    } */
+
+    /* & > div:first-of-type {
       background-color: var(--background-accent-navy);
       flex: 1 0 0;
       padding: var(--spacing-12) 0 var(--spacing-16) var(--spacing-16);
@@ -38,9 +72,9 @@ $mobile-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fil
           @include text-styles.header-1--mobile;
         }
       }
-    }
+    } */
 
-    & > div:last-of-type {
+    /* & > div:last-of-type {
       flex: 1 0 0;
       background-color: var(--background-accent-navy);
       background-position: center;
@@ -70,10 +104,10 @@ $mobile-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fil
           bottom: -1px;
         }
       }
-    }
+    } */
   }
 
-  & > div {
+  &__last-updated {
     padding: var(--spacing-2) var(--spacing-16);
     @include breakpoints.small-screen {
       padding: var(--spacing-2) var(--spacing-6);
@@ -85,7 +119,7 @@ $mobile-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fil
     }
   }
 
-  &--mobile {
+  &--no-image {
     h1,
     p {
       margin: 0;
