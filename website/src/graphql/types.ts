@@ -1549,39 +1549,46 @@ export enum NavigationListOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
-/** Page header [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/pageHeader) */
+/** Set the page header [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/pageHeader) */
 export type PageHeader = Entry & _Node & {
   __typename?: 'PageHeader';
   _id: Scalars['ID']['output'];
   contentfulMetadata: ContentfulMetadata;
   image?: Maybe<Asset>;
+  lastUpdated?: Maybe<Scalars['DateTime']['output']>;
   linkedFrom?: Maybe<PageHeaderLinkingCollections>;
-  subTitle?: Maybe<Scalars['String']['output']>;
+  sectionTitle?: Maybe<Scalars['String']['output']>;
   sys: Sys;
   title?: Maybe<Scalars['String']['output']>;
 };
 
 
-/** Page header [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/pageHeader) */
+/** Set the page header [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/pageHeader) */
 export type PageHeaderImageArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
-/** Page header [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/pageHeader) */
+/** Set the page header [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/pageHeader) */
+export type PageHeaderLastUpdatedArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** Set the page header [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/pageHeader) */
 export type PageHeaderLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 
-/** Page header [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/pageHeader) */
-export type PageHeaderSubTitleArgs = {
+/** Set the page header [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/pageHeader) */
+export type PageHeaderSectionTitleArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** Page header [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/pageHeader) */
+/** Set the page header [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/pageHeader) */
 export type PageHeaderTitleArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
@@ -1599,13 +1606,22 @@ export type PageHeaderFilter = {
   OR?: InputMaybe<Array<InputMaybe<PageHeaderFilter>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
   image_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  subTitle?: InputMaybe<Scalars['String']['input']>;
-  subTitle_contains?: InputMaybe<Scalars['String']['input']>;
-  subTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  subTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  subTitle_not?: InputMaybe<Scalars['String']['input']>;
-  subTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
-  subTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  lastUpdated?: InputMaybe<Scalars['DateTime']['input']>;
+  lastUpdated_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  lastUpdated_gt?: InputMaybe<Scalars['DateTime']['input']>;
+  lastUpdated_gte?: InputMaybe<Scalars['DateTime']['input']>;
+  lastUpdated_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  lastUpdated_lt?: InputMaybe<Scalars['DateTime']['input']>;
+  lastUpdated_lte?: InputMaybe<Scalars['DateTime']['input']>;
+  lastUpdated_not?: InputMaybe<Scalars['DateTime']['input']>;
+  lastUpdated_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  sectionTitle?: InputMaybe<Scalars['String']['input']>;
+  sectionTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  sectionTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  sectionTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sectionTitle_not?: InputMaybe<Scalars['String']['input']>;
+  sectionTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  sectionTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   sys?: InputMaybe<SysFilter>;
   title?: InputMaybe<Scalars['String']['input']>;
   title_contains?: InputMaybe<Scalars['String']['input']>;
@@ -1630,8 +1646,10 @@ export type PageHeaderLinkingCollectionsEntryCollectionArgs = {
 };
 
 export enum PageHeaderOrder {
-  SubTitleAsc = 'subTitle_ASC',
-  SubTitleDesc = 'subTitle_DESC',
+  LastUpdatedAsc = 'lastUpdated_ASC',
+  LastUpdatedDesc = 'lastUpdated_DESC',
+  SectionTitleAsc = 'sectionTitle_ASC',
+  SectionTitleDesc = 'sectionTitle_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',

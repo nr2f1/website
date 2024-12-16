@@ -84,4 +84,46 @@ $mobile-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fil
       color: var(--foreground-secondary);
     }
   }
+
+  &--mobile {
+    h1,
+    p {
+      margin: 0;
+    }
+
+    section {
+      background-color: var(--background-accent-navy);
+      padding: var(--spacing-12, 48px) 0px var(--spacing-16, 64px)
+        var(--spacing-16, 64px);
+
+      @include breakpoints.small-screen {
+        padding: var(--spacing-2) var(--spacing-6) var(--spacing-8);
+      }
+
+      p {
+        @include text-styles.text-small;
+        margin-bottom: var(--spacing-4);
+      }
+
+      h1 {
+        @include text-styles.header-1;
+
+        @include breakpoints.from-small-to-medium-screen {
+          @include text-styles.header-1--mobile;
+        }
+      }
+    }
+
+    & > div {
+      padding: var(--spacing-2) var(--spacing-16);
+      @include breakpoints.small-screen {
+        padding: var(--spacing-2) var(--spacing-6);
+      }
+
+      & p {
+        @include text-styles.text-small;
+        color: var(--foreground-secondary);
+      }
+    }
+  }
 }
