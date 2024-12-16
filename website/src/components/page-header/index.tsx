@@ -1,4 +1,4 @@
-import styles from './index.module.css';
+import styles from './index.module.scss';
 
 import type { AvailableLocale } from '@i18n/locales';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
