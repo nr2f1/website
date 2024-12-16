@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.28.0](https://github.com/nr2f1/website/compare/v1.27.1...v1.28.0) (2024-12-16)
+
+
+### Features
+
+* page header markup ([b22314a](https://github.com/nr2f1/website/commit/b22314a28507166cfc291834b494ce5912dc23e7))
+
 ## [1.27.1](https://github.com/nr2f1/website/compare/v1.27.0...v1.27.1) (2024-12-12)
 
 
