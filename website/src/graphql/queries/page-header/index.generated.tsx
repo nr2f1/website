@@ -9,14 +9,15 @@ export type GetPageHeaderQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetPageHeaderQuery = { __typename?: 'Query', pageHeader?: { __typename?: 'PageHeader', title?: string | null, subTitle?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null };
+export type GetPageHeaderQuery = { __typename?: 'Query', pageHeader?: { __typename?: 'PageHeader', title?: string | null, sectionTitle?: string | null, lastUpdated?: any | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null };
 
 
 export const GetPageHeaderDocument = gql`
     query GetPageHeader($id: String!, $locale: String) {
   pageHeader(id: $id, locale: $locale) {
     title
-    subTitle
+    sectionTitle
+    lastUpdated
     image {
       url
     }
