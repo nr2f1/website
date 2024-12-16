@@ -112,6 +112,11 @@
 
   &__col {
     flex: 1 1 100%;
+    @include breakpoints.from-small-to-medium-screen {
+      &:has(input[name='firstname']) {
+        margin-bottom: var(--spacing-4);
+      }
+    }
   }
 
   & label,
