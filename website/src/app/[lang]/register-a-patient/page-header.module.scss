@@ -1,0 +1,63 @@
+@use '@styles/text-styles';
+@use '@styles/breakpoints';
+
+$desktop-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 51 248'%3E%3Cpath fill='%23F3F7FC' fill-rule='evenodd' d='M.196 0a803.785 803.785 0 0 1 14.431 28.791c17.093 35.927 30.877 72.918 34.976 112.96 3.884 37.98-3.349 73.264-20.217 106.249H0V0h.196Z' clip-rule='evenodd'/%3E%3C/svg%3E%0A";
+
+.page-header {
+  h1,
+  p {
+    margin: 0;
+  }
+
+  section {
+    display: flex;
+
+    & > div:first-of-type {
+      background-color: var(--background-accent-navy);
+      flex: 1 0 0;
+      padding: var(--spacing-12) 0 var(--spacing-16) var(--spacing-16);
+
+      p {
+        @include text-styles.text-small;
+        margin-bottom: var(--spacing-4);
+      }
+
+      h1 {
+        @include text-styles.header-1;
+
+        @include breakpoints.from-small-to-medium-screen {
+          @include text-styles.header-1--mobile;
+        }
+      }
+    }
+
+    & > div:last-of-type {
+      flex: 1 0 0;
+      background-color: var(--background-accent-navy);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+
+      &::before {
+        background-image: url($desktop-curve);
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: ' ';
+        display: block;
+        inset: 0;
+        left: -1px;
+        position: absolute;
+        width: 100%;
+      }
+    }
+  }
+
+  & > div {
+    padding: var(--spacing-2) var(--spacing-16);
+    & p {
+      @include text-styles.text-small;
+      color: var(--foreground-secondary);
+    }
+  }
+}
