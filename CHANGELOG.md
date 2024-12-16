@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.29.0](https://github.com/nr2f1/website/compare/v1.28.0...v1.29.0) (2024-12-16)
+
+
+### Features
+
+* page header localised ([9daa4f4](https://github.com/nr2f1/website/commit/9daa4f44158ad9fcfeba440f084f98e7671f1818))
+* page header withour image ([abe10e7](https://github.com/nr2f1/website/commit/abe10e7ac6befa0ee386cfc4031d598ae506aba5))
+
 ## [1.28.0](https://github.com/nr2f1/website/compare/v1.27.1...v1.28.0) (2024-12-16)
 
 
