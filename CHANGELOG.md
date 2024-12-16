@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.29.1](https://github.com/nr2f1/website/compare/v1.29.0...v1.29.1) (2024-12-16)
+
+
+### Bug Fixes
+
+* page header desktop ([972ce4c](https://github.com/nr2f1/website/commit/972ce4c7ee90a2b154b986923eef7ffd42a02848))
+* page header mobile ([10e06aa](https://github.com/nr2f1/website/commit/10e06aad74b8a5cf7572af32be1245eb30fa5496))
+* page header padding ([e295b66](https://github.com/nr2f1/website/commit/e295b662cf21fa84c794da33039ef924514ec4ae))
+* signup form vertical spacing in mobile ([66bf46f](https://github.com/nr2f1/website/commit/66bf46f826daedcc50c3baa0ed22cb7f7d547563))
+* social media buttons ([bc67244](https://github.com/nr2f1/website/commit/bc672442170db79432d69e33cf74c36fa0903b41))
+
 ## [1.29.0](https://github.com/nr2f1/website/compare/v1.28.0...v1.29.0) (2024-12-16)
 
 
