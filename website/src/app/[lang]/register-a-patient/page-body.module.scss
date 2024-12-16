@@ -1,0 +1,28 @@
+@use '@styles/layout';
+
+.page-layout {
+  padding: var(--spacing-6) var(--spacing-16) var(--spacing-24);
+
+  &__row {
+    @include layout.content-max-width;
+    display: flex;
+    column-gap: var(--spacing-12);
+  }
+}
+
+.page-contents {
+  flex-basis: var(--spacing-56);
+
+  h3 {
+    margin: 0;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.page-body {
+  max-width: @include layout.$content-max-width-2xl;
+}
