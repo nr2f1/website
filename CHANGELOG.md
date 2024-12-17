@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.30.0](https://github.com/nr2f1/website/compare/v1.29.1...v1.30.0) (2024-12-17)
+
+
+### Features
+
+* add support banner to register patient page ([8efa875](https://github.com/nr2f1/website/commit/8efa8756c23a696fc4f0c48c43be3aac401546a7))
+* internal page three columns layout ([41fe864](https://github.com/nr2f1/website/commit/41fe86405a95d1a5397064587055d501f2e8a4ea))
+* page content component ([f55d92c](https://github.com/nr2f1/website/commit/f55d92ceb376bc71c5752e84d22c39cf6dce0df2))
+* page latest news ([c8f2bdc](https://github.com/nr2f1/website/commit/c8f2bdc627941743d93d7383d058bee83e71e1bc))
+
 ## [1.29.1](https://github.com/nr2f1/website/compare/v1.29.0...v1.29.1) (2024-12-16)
 
 
