@@ -55,12 +55,6 @@
 }
 
 .latest-news {
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
   @include breakpoints.large-screen {
     grid-column: 1;
     grid-row: 2;
