@@ -2,6 +2,7 @@ import PageContents from '@components/page-contents';
 import styles from './page-body.module.scss';
 
 import PageLatestNews from '@components/page-latest-news';
+import SignupForm from '@components/signup-form';
 import type { AvailableLocale } from '@i18n/locales';
 
 interface RegisterPageBodyProps {
@@ -34,14 +35,17 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
               <a href="/">Register for a Clinical Research ID</a>
             </li>
           </ul>
-          <h2>Register with us</h2>
-          <p>
-            We want to keep track of the number of diagnosed cases around the
-            world, so that we can share this with you and our community of
-            scientists and researchers. If you are a newly diagnosed family,
-            please also share your location. By registering with us, you will
-            also receive communications from the NR2F1 Foundation.
-          </p>
+          <section>
+            <h2>Register with us</h2>
+            <p>
+              We want to keep track of the number of diagnosed cases around the
+              world, so that we can share this with you and our community of
+              scientists and researchers. If you are a newly diagnosed family,
+              please also share your location. By registering with us, you will
+              also receive communications from the NR2F1 Foundation.
+            </p>
+            <SignupForm lang={lang} />
+          </section>
         </article>
         <aside className={styles['latest-news']}>
           <PageLatestNews lang={lang} />
