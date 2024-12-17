@@ -92,6 +92,25 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
               Login
             </a>
           </section>
+          <section>
+            <h2>Register for a Clinical Research ID</h2>
+            <p>
+              The Clinical Research ID (CRID) is a free patient-generated
+              service specifically for use in clinical research. The parent or
+              carer of the patient or the patient themselves decides who to
+              share it with. With a CRID, you can gain visibility into the
+              research studies you’re enrolled in.
+            </p>
+            <p>Anyone around the world can register for a CRID.</p>
+            <a
+              href="https://thecrid.org/"
+              target="_blank"
+              rel="noreferrer"
+              title="Register for CRID"
+            >
+              Register now
+            </a>
+          </section>
         </article>
         <aside className={styles['latest-news']}>
           <PageLatestNews lang={lang} />
