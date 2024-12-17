@@ -27,7 +27,7 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({ errorMessage }) => (
   <p>{errorMessage}</p>
 );
 
-const SignupForm: React.FC<SignupFormProps> = ({ lang }) => {
+const SignupForm: React.FC<SignupFormProps> = ({ lang, registerPatient }) => {
   const [{ content, i18nRequestResult, createContactResult }, dispatch] =
     useReducer(reducer, initialState);
 
@@ -59,6 +59,11 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang }) => {
     };
   }, []);
 
+  const registerPatientInitialValues = {
+    ...initialValues,
+    role: Role.ParentPatient,
+  };
+
   const {
     errors,
     handleBlur,
@@ -68,7 +73,9 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang }) => {
     touched,
     values,
   } = useFormik({
-    initialValues,
+    initialValues: registerPatient
+      ? registerPatientInitialValues
+      : initialValues,
     onSubmit,
     validationSchema: getValidationSchema(lang),
   });
@@ -114,16 +121,20 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang }) => {
     createContactResult === 'success' && values.role !== Role.ParentPatient;
   const shouldRenderCreateContactSucessParentPatient =
     createContactResult === 'success' && values.role === Role.ParentPatient;
+  const shouldRenderHeading = Boolean(registerPatient) === false;
 
   switch (true) {
     case shouldRenderForm:
       return (
         <>
-          <div>
-            <p className={styles['form-intro__heading']}>
-              {content?.formHeading}
-            </p>
-          </div>
+          {shouldRenderHeading ? (
+            <div>
+              <p className={styles['form-intro__heading']}>
+                {content?.formHeading}
+              </p>
+            </div>
+          ) : null}
+
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.form__row}>
               <div className={styles.form__col}>

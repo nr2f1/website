@@ -61,6 +61,10 @@
   font-weight: 600;
   line-height: 155.556%;
   text-decoration-line: underline;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
 }
 
 @mixin text-small {
