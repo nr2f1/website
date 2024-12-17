@@ -1,6 +1,13 @@
 import styles from './index.module.scss';
 
+import { getClient } from '@graphql/client';
+import {
+  GetPageLatestNewsDocument,
+  type GetPageLatestNewsQuery,
+} from '@graphql/queries/page-latest-news/index.generated';
 import type { AvailableLocale, LocalisedString } from '@i18n/locales';
+import { getIntlDateStrings } from '@shared/utils/intl-date';
+import Link from 'next/link';
 
 interface PageLatestNewsProps {
   lang: AvailableLocale;
@@ -13,34 +20,75 @@ const latestNewsTitle: LocalisedString = {
   de: 'Neueste Nachrichten',
 };
 
-const PageLatestNews: React.FC<PageLatestNewsProps> = ({ lang }) => {
+interface BlogPostCardsProps {
+  title: string;
+  slug: string;
+  published: string;
+  lang: AvailableLocale;
+}
+
+const BlogPostCards: React.FC<BlogPostCardsProps> = ({
+  title,
+  slug,
+  published,
+  lang,
+}) => {
+  const { publishedString, dateTime } = getIntlDateStrings({
+    locale: lang,
+    date: published,
+  });
+
+  return (
+    <article>
+      <p>Blog</p>
+      <h4>
+        <Link href={`/${lang}/blog/${slug}`}>{title}</Link>
+      </h4>
+      <p>
+        <time dateTime={dateTime}>{publishedString}</time>
+      </p>
+    </article>
+  );
+};
+
+const PageLatestNews: React.FC<PageLatestNewsProps> = async ({ lang }) => {
   const latestNewsTitleText = latestNewsTitle[lang];
+
+  const { query } = getClient();
+
+  const {
+    data: { blogPageCollection },
+    error,
+  } = await query<GetPageLatestNewsQuery>({
+    query: GetPageLatestNewsDocument,
+    variables: {
+      locale: lang,
+    },
+  });
+
+  if (error || !blogPageCollection || !blogPageCollection?.items) {
+    return null;
+  }
+
+  const posts = blogPageCollection.items.map((item) => ({
+    title: item?.title ?? '',
+    slug: item?.slug ?? '',
+    published: (item?.date ?? '') as string,
+  }));
 
   return (
     <div className={styles['latest-news-content']}>
       <h3>{latestNewsTitleText}</h3>
 
-      <article>
-        <p>Blog</p>
-        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
-        <p>
-          <time dateTime="">May 24, 2024</time>
-        </p>
-      </article>
-      <article>
-        <p>Blog</p>
-        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
-        <p>
-          <time dateTime="">May 24, 2024</time>
-        </p>
-      </article>
-      <article>
-        <p>Blog</p>
-        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
-        <p>
-          <time dateTime="">May 24, 2024</time>
-        </p>
-      </article>
+      {posts.map(({ title, slug, published }) => (
+        <BlogPostCards
+          title={title}
+          slug={slug}
+          published={published}
+          lang={lang}
+          key={crypto.randomUUID()}
+        />
+      ))}
     </div>
   );
 };

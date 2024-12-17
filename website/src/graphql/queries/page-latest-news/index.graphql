@@ -1,0 +1,9 @@
+query GetPageLatestNews($locale: String) {
+  blogPageCollection(locale: $locale, order: date_DESC, limit: 3) {
+    items {
+      title
+      date
+      slug
+    }
+  }
+}
