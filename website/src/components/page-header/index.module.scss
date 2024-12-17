@@ -10,33 +10,6 @@ $mobile-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fil
     margin: 0;
   }
 
-  /* &__background {
-    background-color: var(--background-accent-navy);
-    background-size: 50% auto;
-    background-repeat: no-repeat;
-    background-position-x: right;
-    background-position-y: center;
-    position: relative;
-    padding: var(--spacing-12) var(--spacing-16);
-    background-image: url($desktop-curve), var(--page-header-bg-img);
-
-    @include breakpoints.from-small-to-medium-screen {
-      padding: var(--spacing-12);
-      padding-block-end: var(--spacing-16);
-    }
-
-    &::after {
-      background-image: url($desktop-curve);
-      background-repeat: no-repeat;
-      background-size: contain;
-      content: ' ';
-      display: block;
-      inset: 0;
-      left: calc(50% - 1px);
-      position: absolute;
-    }
-  } */
-
   &__background {
     background-color: var(--background-accent-navy);
     display: flex;

@@ -11,20 +11,22 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
     <div className={styles['page-layout']}>
       <div className={styles['page-layout__row']}>
         <aside className={styles['page-contents']}>
-          <h3>Page contents</h3>
-          <nav>
-            <ul>
-              <li>
-                <a href="/">Register with us</a>
-              </li>
-              <li>
-                <a href="/">Register with the NR2F1 Patient Registry</a>
-              </li>
-              <li>
-                <a href="/">Register for a Clinical Research ID</a>
-              </li>
-            </ul>
-          </nav>
+          <details open>
+            <summary>Page contents</summary>
+            <nav>
+              <ul>
+                <li>
+                  <a href="/">Register with us</a>
+                </li>
+                <li>
+                  <a href="/">Register with the NR2F1 Patient Registry</a>
+                </li>
+                <li>
+                  <a href="/">Register for a Clinical Research ID</a>
+                </li>
+              </ul>
+            </nav>
+          </details>
         </aside>
         <article className={styles['page-body']}>
           <p>
@@ -54,7 +56,7 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
             also receive communications from the NR2F1 Foundation.
           </p>
         </article>
-        <aside>
+        <aside className={styles['latest-news']}>
           <h3>Latest news</h3>
           <ul>
             <li>
