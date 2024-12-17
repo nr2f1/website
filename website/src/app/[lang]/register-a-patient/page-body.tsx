@@ -1,6 +1,7 @@
 import PageContents from '@components/page-contents';
 import styles from './page-body.module.scss';
 
+import PageLatestNews from '@components/page-latest-news';
 import type { AvailableLocale } from '@i18n/locales';
 
 interface RegisterPageBodyProps {
@@ -43,30 +44,7 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
           </p>
         </article>
         <aside className={styles['latest-news']}>
-          <h3>Latest news</h3>
-          <ul>
-            <li>
-              <p>Blog</p>
-              <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
-              <p>
-                <time dateTime="">May 24, 2024</time>
-              </p>
-            </li>
-            <li>
-              <p>Blog</p>
-              <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
-              <p>
-                <time dateTime="">May 24, 2024</time>
-              </p>
-            </li>
-            <li>
-              <p>Blog</p>
-              <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
-              <p>
-                <time dateTime="">May 24, 2024</time>
-              </p>
-            </li>
-          </ul>
+          <PageLatestNews lang={lang} />
         </aside>
       </div>
     </div>

@@ -2,11 +2,16 @@
 @use '@styles/icons';
 
 .page-contents {
-  padding: var(--spacing-4);
-  border-radius: var(--spacing-2);
-  background-color: var(--background-accent-coral);
   container-type: inline-size;
   container-name: page-contents;
+
+  & > div {
+    padding: var(--spacing-4);
+    border-radius: var(--spacing-2);
+    background-color: var(--background-accent-coral);
+    margin-block-end: var(--spacing-12);
+  }
+
   details {
     display: none;
   }
@@ -51,6 +56,10 @@
 
     details {
       display: block;
+      padding: var(--spacing-4);
+      border-radius: var(--spacing-2);
+      background-color: var(--background-accent-coral);
+      margin-block-end: var(--spacing-6);
     }
 
     &[open] summary {
