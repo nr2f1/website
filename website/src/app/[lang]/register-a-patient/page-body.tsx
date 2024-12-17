@@ -1,3 +1,4 @@
+import PageContents from '@components/page-contents';
 import styles from './page-body.module.scss';
 
 import type { AvailableLocale } from '@i18n/locales';
@@ -11,22 +12,7 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
     <div className={styles['page-layout']}>
       <div className={styles['page-layout__row']}>
         <aside className={styles['page-contents']}>
-          <details open>
-            <summary>Page contents</summary>
-            <nav>
-              <ul>
-                <li>
-                  <a href="/">Register with us</a>
-                </li>
-                <li>
-                  <a href="/">Register with the NR2F1 Patient Registry</a>
-                </li>
-                <li>
-                  <a href="/">Register for a Clinical Research ID</a>
-                </li>
-              </ul>
-            </nav>
-          </details>
+          <PageContents lang={lang} />
         </aside>
         <article className={styles['page-body']}>
           <p>

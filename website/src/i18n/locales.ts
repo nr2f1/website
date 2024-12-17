@@ -42,3 +42,5 @@ export interface LocaleParamsPath {
     lang: AvailableLocale;
   };
 }
+
+export type LocalisedString = Record<AvailableLocale, string>;

@@ -1,0 +1,66 @@
+@use '@styles/text-styles';
+@use '@styles/icons';
+
+.page-contents {
+  padding: var(--spacing-4);
+  border-radius: var(--spacing-2);
+  background-color: var(--background-accent-coral);
+  container-type: inline-size;
+  container-name: page-contents;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  summary {
+    @include text-styles.header-4;
+    color: var(--black);
+    margin-block-end: var(--spacing-4);
+    &::marker,
+    &::-webkit-details-marker {
+      display: none;
+      content: '';
+    }
+  }
+
+  li:not(:last-of-type) {
+    margin-block-end: var(--spacing-4);
+  }
+
+  a {
+    @include text-styles.text-link-small;
+    color: var(--black);
+  }
+
+  @container page-contents (width >  229px) {
+    &[open] summary {
+      &::after {
+        background-image: url(icons.$chevron-up-navy);
+      }
+    }
+
+    summary {
+      margin-block-end: 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &::after {
+        aspect-ratio: 1 / 1;
+        background-image: url(icons.$chevron-down-navy);
+        background-position: center;
+        background-size: contain;
+        content: '';
+        display: block;
+        width: var(--spacing-5);
+      }
+    }
+
+    li:first-of-type {
+      margin-block-start: var(--spacing-4);
+    }
+  }
+}
