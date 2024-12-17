@@ -40,7 +40,7 @@ $cube_icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width=
 
   p {
     @include text-styles.text-base;
-    @include layout.content-max-width-2x1;
+    @include layout.content-max-width-2xl;
     margin-block-end: var(--spacing-8);
     text-align: center;
 

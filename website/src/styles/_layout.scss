@@ -1,6 +1,6 @@
 $content-max-width: 1152px;
-$content-max-width-7x1: 1280px;
-$content-max-width-2x1: 672px;
+$content-max-width-7xl: 1280px;
+$content-max-width-2xl: 672px;
 $content-max-width-xl: 672px;
 
 .large-content-wrapper {
@@ -20,14 +20,14 @@ $content-max-width-xl: 672px;
   width: 100%;
 }
 
-@mixin content-max-width-7x1 {
-  max-width: $content-max-width-7x1;
+@mixin content-max-width-7xl {
+  max-width: $content-max-width-7xl;
   margin: 0 auto;
   width: 100%;
 }
 
-@mixin content-max-width-2x1 {
-  max-width: $content-max-width-2x1;
+@mixin content-max-width-2xl {
+  max-width: $content-max-width-2xl;
   margin: 0 auto;
   width: 100%;
 }
