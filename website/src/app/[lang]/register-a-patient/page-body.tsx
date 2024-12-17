@@ -44,7 +44,7 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
               please also share your location. By registering with us, you will
               also receive communications from the NR2F1 Foundation.
             </p>
-            <SignupForm lang={lang} />
+            <SignupForm lang={lang} registerPatient />
           </section>
         </article>
         <aside className={styles['latest-news']}>

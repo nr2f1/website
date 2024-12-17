@@ -294,6 +294,7 @@ export const initialValues = {
 
 export interface SignupFormProps {
   lang: AvailableLocale;
+  registerPatient?: boolean;
 }
 
 export interface Content {

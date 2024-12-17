@@ -62,9 +62,7 @@
 
   p {
     margin: 0;
-    &:not(:last-of-type) {
-      margin-block-end: var(--spacing-4);
-    }
+    margin-block-end: var(--spacing-4);
   }
 
   a {
@@ -83,6 +81,10 @@
 
   section {
     margin-block-start: var(--spacing-12);
+  }
+
+  form {
+    margin-block-start: var(--spacing-6);
   }
 }
 
