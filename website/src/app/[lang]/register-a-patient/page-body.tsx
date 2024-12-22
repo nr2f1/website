@@ -91,7 +91,80 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
             >
               Login
             </a>
+            <details className={styles.accordion}>
+              <summary>Who will have access to the data?</summary>
+              <div>
+                <p>
+                  Only a few study administrators have access to patient
+                  identifying data. The patient or carer owns their own data.
+                  They can share it with whoever they want, including doctors,
+                  teachers, other carers, etc. if useful.
+                </p>
+                <p>Anonymous data is accessed by:</p>
+                <ul>
+                  <li>
+                    The NR2F1 Foundation - limited to whose working on Patient
+                    Registry 
+                  </li>
+                  <li>COMBINEDBrain - our scientific partner</li>
+                  <li>
+                    Subject to approval by the NR2F1 Foundation - researchers
+                    and industry who are working on BBSOAS studies
+                  </li>
+                  <li>Matrix - the company behind the Patient Registry tool</li>
+                </ul>
+              </div>
+            </details>
+            <details className={styles.accordion}>
+              <summary>Who will have access to the data?</summary>
+              <div>
+                <p>
+                  Only a few study administrators have access to patient
+                  identifying data. The patient or carer owns their own data.
+                  They can share it with whoever they want, including doctors,
+                  teachers, other carers, etc. if useful.
+                </p>
+                <p>Anonymous data is accessed by:</p>
+                <ul>
+                  <li>
+                    The NR2F1 Foundation - limited to whose working on Patient
+                    Registry 
+                  </li>
+                  <li>COMBINEDBrain - our scientific partner</li>
+                  <li>
+                    Subject to approval by the NR2F1 Foundation - researchers
+                    and industry who are working on BBSOAS studies
+                  </li>
+                  <li>Matrix - the company behind the Patient Registry tool</li>
+                </ul>
+              </div>
+            </details>
+            <details className={styles.accordion}>
+              <summary>Who will have access to the data?</summary>
+              <div>
+                <p>
+                  Only a few study administrators have access to patient
+                  identifying data. The patient or carer owns their own data.
+                  They can share it with whoever they want, including doctors,
+                  teachers, other carers, etc. if useful.
+                </p>
+                <p>Anonymous data is accessed by:</p>
+                <ul>
+                  <li>
+                    The NR2F1 Foundation - limited to whose working on Patient
+                    Registry 
+                  </li>
+                  <li>COMBINEDBrain - our scientific partner</li>
+                  <li>
+                    Subject to approval by the NR2F1 Foundation - researchers
+                    and industry who are working on BBSOAS studies
+                  </li>
+                  <li>Matrix - the company behind the Patient Registry tool</li>
+                </ul>
+              </div>
+            </details>
           </section>
+
           <section>
             <h2>Register for a Clinical Research ID</h2>
             <p>

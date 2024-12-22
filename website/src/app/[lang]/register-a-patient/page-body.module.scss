@@ -102,3 +102,21 @@
     display: none;
   }
 }
+
+.accordion {
+  background-color: var(--background-accent-navy);
+  padding: 0 var(--spacing-6);
+
+  &:not(:last-of-type) summary {
+    border-block-end: 1px solid var(--border-default);
+  }
+
+  summary {
+    @include text-styles.header-3;
+    padding: var(--spacing-6) 0;
+  }
+
+  & > div {
+    padding-block-end: var(--spacing-6);
+  }
+}
