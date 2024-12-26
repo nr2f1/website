@@ -79,6 +79,7 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
               title="Natural history study registry signup"
               target="_blank"
               rel="noreferrer"
+              className="button button--on-light-open-new-tab"
             >
               Register now
             </a>
@@ -88,6 +89,7 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
               title="Natural history study registry login"
               target="_blank"
               rel="noreferrer"
+              className="button button--on-light-open-new-tab"
             >
               Login
             </a>
@@ -180,6 +182,7 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
               target="_blank"
               rel="noreferrer"
               title="Register for CRID"
+              className="button button--on-light-open-new-tab"
             >
               Register now
             </a>

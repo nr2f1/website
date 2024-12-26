@@ -66,7 +66,7 @@
     margin-block-end: var(--spacing-4);
   }
 
-  a {
+  a:not([target='_blank']) {
     @include text-styles.text-link;
   }
 
