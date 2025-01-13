@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.31.0](https://github.com/nr2f1/website/compare/v1.30.0...v1.31.0) (2025-01-13)
+
+
+### Features
+
+* scaffold an accordion ([11b2d16](https://github.com/nr2f1/website/commit/11b2d16078a716a0e1b7cfdb1b4ad53980ad3a6a))
+
+
+### Bug Fixes
+
+* form into register patient ([594765d](https://github.com/nr2f1/website/commit/594765d3652fc73272f484daf68e3d30adfab715))
+* mobile menu on medium screen and padding on page header ([495253c](https://github.com/nr2f1/website/commit/495253c5aed9ae42cc839d03c8e061ee78b008d3))
+* page contents layout ([ef19e5c](https://github.com/nr2f1/website/commit/ef19e5cc33b1f114de1fe53034d9f2acf9a281c9))
+* page contents links ([ab530eb](https://github.com/nr2f1/website/commit/ab530eb027a3c625e9bae4df210209d99aad6d7e))
+
 ## [1.30.0](https://github.com/nr2f1/website/compare/v1.29.1...v1.30.0) (2024-12-17)
 
 
