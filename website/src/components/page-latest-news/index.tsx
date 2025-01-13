@@ -39,15 +39,15 @@ const BlogPostCards: React.FC<BlogPostCardsProps> = ({
   });
 
   return (
-    <article>
-      <p>Blog</p>
-      <h4>
-        <Link href={`/${lang}/blog/${slug}`}>{title}</Link>
-      </h4>
-      <p>
-        <time dateTime={dateTime}>{publishedString}</time>
-      </p>
-    </article>
+    <Link href={`/${lang}/blog/${slug}`}>
+      <article>
+        <p>Blog</p>
+        <h4>{title}</h4>
+        <p>
+          <time dateTime={dateTime}>{publishedString}</time>
+        </p>
+      </article>
+    </Link>
   );
 };
 
@@ -80,15 +80,18 @@ const PageLatestNews: React.FC<PageLatestNewsProps> = async ({ lang }) => {
     <div className={styles['latest-news-content']}>
       <h3>{latestNewsTitleText}</h3>
 
-      {posts.map(({ title, slug, published }) => (
-        <BlogPostCards
-          title={title}
-          slug={slug}
-          published={published}
-          lang={lang}
-          key={crypto.randomUUID()}
-        />
-      ))}
+      <ul>
+        {posts.map(({ title, slug, published }) => (
+          <li key={crypto.randomUUID()}>
+            <BlogPostCards
+              title={title}
+              slug={slug}
+              published={published}
+              lang={lang}
+            />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

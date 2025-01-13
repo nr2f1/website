@@ -73,6 +73,15 @@
   flex: 1 0 0;
   overflow: hidden;
 
+  &:hover,
+  &:focus {
+    background-color: var(--background-interactive-hover);
+  }
+
+  &:active {
+    background-color: var(--background-interactive-press_active);
+  }
+
   @include breakpoints.small-screen {
     min-width: 100%;
   }
