@@ -153,7 +153,6 @@
   &__text {
     @include text-styles.text-base;
     margin: 0;
-    margin-bottom: var(--spacing-2);
   }
 
   & button[type='submit'] {

@@ -61,7 +61,7 @@
     @include text-styles.text-base;
   }
 
-  p {
+  p:not(form p) {
     margin: 0;
     margin-block-end: var(--spacing-4);
   }

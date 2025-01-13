@@ -55,7 +55,7 @@
 }
 
 @mixin text-link {
-  color: var(--foreground-primary);
+  color: var(--foreground-interactive-default);
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 600;
