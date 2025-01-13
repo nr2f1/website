@@ -82,6 +82,7 @@ $hambuguer-button: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
 
   &__bottom {
     background-color: var(--background-inverse-primary);
+    z-index: 10;
 
     @include breakpoints.from-small-to-medium-screen {
       border-top: 1px solid var(--grey-300);
