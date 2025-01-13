@@ -46,7 +46,6 @@
 
   a {
     @include text-styles.text-link-small;
-    color: var(--black);
   }
 
   @container page-contents (width >  229px) {
