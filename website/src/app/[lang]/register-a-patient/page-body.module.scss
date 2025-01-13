@@ -21,7 +21,7 @@
     grid-template-columns: var(--spacing-56) minmax(38rem, 42rem) var(
         --spacing-56
       );
-    grid-auto-rows: auto;
+    grid-template-rows: repeat(3, min-content);
 
     @include breakpoints.large-screen {
       grid-template-columns: var(--spacing-56) minmax(auto, 42rem);
@@ -39,21 +39,21 @@
 
 .page-contents {
   grid-column: 1;
-  grid-row: 1;
+  grid-row: 1 / 2;
 }
 
 .page-body {
   /* Layout */
-  grid-row: 1 / 3;
+  grid-row: 1 / 4;
 
   @include breakpoints.medium-screen {
     grid-column: 1;
-    grid-row: 2 / 3;
+    grid-row: 2 / 4;
   }
 
   @include breakpoints.small-screen {
     grid-column: 1;
-    grid-row: 2 / 3;
+    grid-row: 2 / 4;
   }
 
   /* Text styles */
