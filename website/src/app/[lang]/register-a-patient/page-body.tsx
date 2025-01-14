@@ -94,27 +94,13 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
               Login
             </a>
             <details className={styles.accordion}>
-              <summary>Who will have access to the data?</summary>
+              <summary>Who can take part?</summary>
               <div>
                 <p>
-                  Only a few study administrators have access to patient
-                  identifying data. The patient or carer owns their own data.
-                  They can share it with whoever they want, including doctors,
-                  teachers, other carers, etc. if useful.
+                  Parents or carers of a confirmed BBSOAS patient or BBSOAS
+                  patients themselves. By confirmed we mean with a genetic
+                  report showing the diagnosis.
                 </p>
-                <p>Anonymous data is accessed by:</p>
-                <ul>
-                  <li>
-                    The NR2F1 Foundation - limited to whose working on Patient
-                    Registry 
-                  </li>
-                  <li>COMBINEDBrain - our scientific partner</li>
-                  <li>
-                    Subject to approval by the NR2F1 Foundation - researchers
-                    and industry who are working on BBSOAS studies
-                  </li>
-                  <li>Matrix - the company behind the Patient Registry tool</li>
-                </ul>
               </div>
             </details>
             <details className={styles.accordion}>
@@ -142,27 +128,45 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
               </div>
             </details>
             <details className={styles.accordion}>
-              <summary>Who will have access to the data?</summary>
+              <summary>
+                Other than filling out surveys, how else can I use Patient
+                Registry?
+              </summary>
               <div>
                 <p>
-                  Only a few study administrators have access to patient
-                  identifying data. The patient or carer owns their own data.
-                  They can share it with whoever they want, including doctors,
-                  teachers, other carers, etc. if useful.
+                  Patient Registry can also be used as a personal health
+                  monitoring tool. It has features that make managing daily
+                  medical care easier.
                 </p>
-                <p>Anonymous data is accessed by:</p>
-                <ul>
-                  <li>
-                    The NR2F1 Foundation - limited to whose working on Patient
-                    Registry 
-                  </li>
-                  <li>COMBINEDBrain - our scientific partner</li>
-                  <li>
-                    Subject to approval by the NR2F1 Foundation - researchers
-                    and industry who are working on BBSOAS studies
-                  </li>
-                  <li>Matrix - the company behind the Patient Registry tool</li>
-                </ul>
+              </div>
+            </details>
+            <details className={styles.accordion}>
+              <summary>
+                What languages is Matrix and the surveys available in?
+              </summary>
+              <div>
+                <p>
+                  Matrix is available in English, Spanish, Italian, French,
+                  German, Portuguese and Korean. Surveys are available in
+                  English, Spanish, Italian, French and German. Coming soon:
+                  Portuguese, Korean and Hebrew.
+                </p>
+              </div>
+            </details>
+            <details className={styles.accordion}>
+              <summary>
+                Who can I contact about the Patient Registry for more help or
+                answers?
+              </summary>
+              <div>
+                <p>
+                  Email{' '}
+                  <a href="mailto:patientregistry@nr2f1.org">
+                    patientregistry@nr2f1.org
+                  </a>{' '}
+                  and we can help or offer a Zoom meeting to help you get
+                  registered.
+                </p>
               </div>
             </details>
           </section>
