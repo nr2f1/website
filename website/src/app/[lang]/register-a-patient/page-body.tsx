@@ -1,9 +1,10 @@
-import PageContents from '@components/page-contents';
 import styles from './page-body.module.scss';
 
+import PageContents from '@components/page-contents';
 import PageLatestNews from '@components/page-latest-news';
 import SignupForm from '@components/signup-form';
 import type { AvailableLocale } from '@i18n/locales';
+import { createHashLink } from '@shared/utils/hash-links';
 
 interface RegisterPageBodyProps {
   lang: AvailableLocale;
@@ -36,7 +37,7 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
             </li>
           </ul>
           <section>
-            <h2>Register with us</h2>
+            <h2 id={createHashLink('Register with us')}>Register with us</h2>
             <p>
               We want to keep track of the number of diagnosed cases around the
               world, so that we can share this with you and our community of
@@ -47,7 +48,9 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
             <SignupForm lang={lang} registerPatient />
           </section>
           <section>
-            <h2>Register with the NR2F1 Patient Registry</h2>
+            <h2 id={createHashLink('Register with the NR2F1 Patient Registry')}>
+              Register with the NR2F1 Patient Registry
+            </h2>
             <p>
               The Patient Registry collects information through surveys on how a
               disease affects a person over a lifetime to better understand
@@ -172,7 +175,9 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
           </section>
 
           <section>
-            <h2>Register for a Clinical Research ID</h2>
+            <h2 id={createHashLink('Register for a Clinical Research ID')}>
+              Register for a Clinical Research ID
+            </h2>
             <p>
               The Clinical Research ID (CRID) is a free patient-generated
               service specifically for use in clinical research. The parent or

@@ -1,3 +1,4 @@
+import { createHashLink } from '@shared/utils/hash-links';
 import styles from './index.module.scss';
 
 import type { AvailableLocale, LocalisedString } from '@i18n/locales';
@@ -23,13 +24,23 @@ const PageContents: React.FC<PageContentsProps> = ({ lang }) => {
         <nav>
           <ul>
             <li>
-              <a href="/">Register with us</a>
+              <a href={`#${createHashLink('Register with us')}`}>
+                Register with us
+              </a>
             </li>
             <li>
-              <a href="/">Register with the NR2F1 Patient Registry</a>
+              <a
+                href={`#${createHashLink('Register with the NR2F1 Patient Registry')}`}
+              >
+                Register with the NR2F1 Patient Registry
+              </a>
             </li>
             <li>
-              <a href="/">Register for a Clinical Research ID</a>
+              <a
+                href={`#${createHashLink('Register for a Clinical Research ID')}`}
+              >
+                Register for a Clinical Research ID
+              </a>
             </li>
           </ul>
         </nav>
@@ -39,13 +50,23 @@ const PageContents: React.FC<PageContentsProps> = ({ lang }) => {
         <nav>
           <ul>
             <li>
-              <a href="/">Register with us</a>
+              <a href={`#${createHashLink('Register with us')}`}>
+                Register with us
+              </a>
             </li>
             <li>
-              <a href="/">Register with the NR2F1 Patient Registry</a>
+              <a
+                href={`#${createHashLink('Register with the NR2F1 Patient Registry')}`}
+              >
+                Register with the NR2F1 Patient Registry
+              </a>
             </li>
             <li>
-              <a href="/">Register for a Clinical Research ID</a>
+              <a
+                href={`#${createHashLink('Register for a Clinical Research ID')}`}
+              >
+                Register for a Clinical Research ID
+              </a>
             </li>
           </ul>
         </nav>

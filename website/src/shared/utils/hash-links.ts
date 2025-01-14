@@ -1,4 +1,4 @@
-const createHashLink = (text: string): string => {
+export const createHashLink = (text: string): string => {
   return text
     .toLowerCase()
     .replace(/ /g, '-')
