@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.32.0](https://github.com/nr2f1/website/compare/v1.31.0...v1.32.0) (2025-01-14)
+
+
+### Features
+
+* add page contents navigation ([be2a509](https://github.com/nr2f1/website/commit/be2a509ea015aa5c769e5de5b56c0cd0ce17b43d))
+* create an utility hash links ([690c69b](https://github.com/nr2f1/website/commit/690c69bc88ab42b292b9ae169a96d5dcb56b96d6))
+
+
+### Bug Fixes
+
+* layout max-width ([9a9c011](https://github.com/nr2f1/website/commit/9a9c0116f327c10c60f788078bc64baeb5712f12))
+
 ## [1.31.0](https://github.com/nr2f1/website/compare/v1.30.0...v1.31.0) (2025-01-13)
 
 
