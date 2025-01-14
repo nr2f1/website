@@ -79,7 +79,7 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
               title="Natural history study registry signup"
               target="_blank"
               rel="noreferrer"
-              className={`button button--on-light-open-new-tab ${styles['open-new-tab']}`}
+              className="button button--on-light-open-new-tab mbe--4"
             >
               Register now
             </a>
@@ -89,7 +89,7 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
               title="Natural history study registry login"
               target="_blank"
               rel="noreferrer"
-              className={`button button--on-light-open-new-tab ${styles['open-new-tab']}`}
+              className="button button--on-light-open-new-tab mbe--6"
             >
               Login
             </a>
