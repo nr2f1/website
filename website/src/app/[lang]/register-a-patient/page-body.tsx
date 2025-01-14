@@ -1,9 +1,10 @@
-import PageContents from '@components/page-contents';
 import styles from './page-body.module.scss';
 
+import PageContents from '@components/page-contents';
 import PageLatestNews from '@components/page-latest-news';
 import SignupForm from '@components/signup-form';
 import type { AvailableLocale } from '@i18n/locales';
+import { createHashLink } from '@shared/utils/hash-links';
 
 interface RegisterPageBodyProps {
   lang: AvailableLocale;
@@ -36,7 +37,7 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
             </li>
           </ul>
           <section>
-            <h2>Register with us</h2>
+            <h2 id={createHashLink('Register with us')}>Register with us</h2>
             <p>
               We want to keep track of the number of diagnosed cases around the
               world, so that we can share this with you and our community of
@@ -47,7 +48,9 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
             <SignupForm lang={lang} registerPatient />
           </section>
           <section>
-            <h2>Register with the NR2F1 Patient Registry</h2>
+            <h2 id={createHashLink('Register with the NR2F1 Patient Registry')}>
+              Register with the NR2F1 Patient Registry
+            </h2>
             <p>
               The Patient Registry collects information through surveys on how a
               disease affects a person over a lifetime to better understand
@@ -79,7 +82,7 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
               title="Natural history study registry signup"
               target="_blank"
               rel="noreferrer"
-              className={`button button--on-light-open-new-tab ${styles['open-new-tab']}`}
+              className="button button--on-light-open-new-tab mbe--4"
             >
               Register now
             </a>
@@ -89,32 +92,18 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
               title="Natural history study registry login"
               target="_blank"
               rel="noreferrer"
-              className={`button button--on-light-open-new-tab ${styles['open-new-tab']}`}
+              className="button button--on-light-open-new-tab mbe--6"
             >
               Login
             </a>
             <details className={styles.accordion}>
-              <summary>Who will have access to the data?</summary>
+              <summary>Who can take part?</summary>
               <div>
                 <p>
-                  Only a few study administrators have access to patient
-                  identifying data. The patient or carer owns their own data.
-                  They can share it with whoever they want, including doctors,
-                  teachers, other carers, etc. if useful.
+                  Parents or carers of a confirmed BBSOAS patient or BBSOAS
+                  patients themselves. By confirmed we mean with a genetic
+                  report showing the diagnosis.
                 </p>
-                <p>Anonymous data is accessed by:</p>
-                <ul>
-                  <li>
-                    The NR2F1 Foundation - limited to whose working on Patient
-                    Registry 
-                  </li>
-                  <li>COMBINEDBrain - our scientific partner</li>
-                  <li>
-                    Subject to approval by the NR2F1 Foundation - researchers
-                    and industry who are working on BBSOAS studies
-                  </li>
-                  <li>Matrix - the company behind the Patient Registry tool</li>
-                </ul>
               </div>
             </details>
             <details className={styles.accordion}>
@@ -142,33 +131,53 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
               </div>
             </details>
             <details className={styles.accordion}>
-              <summary>Who will have access to the data?</summary>
+              <summary>
+                Other than filling out surveys, how else can I use Patient
+                Registry?
+              </summary>
               <div>
                 <p>
-                  Only a few study administrators have access to patient
-                  identifying data. The patient or carer owns their own data.
-                  They can share it with whoever they want, including doctors,
-                  teachers, other carers, etc. if useful.
+                  Patient Registry can also be used as a personal health
+                  monitoring tool. It has features that make managing daily
+                  medical care easier.
                 </p>
-                <p>Anonymous data is accessed by:</p>
-                <ul>
-                  <li>
-                    The NR2F1 Foundation - limited to whose working on Patient
-                    Registry 
-                  </li>
-                  <li>COMBINEDBrain - our scientific partner</li>
-                  <li>
-                    Subject to approval by the NR2F1 Foundation - researchers
-                    and industry who are working on BBSOAS studies
-                  </li>
-                  <li>Matrix - the company behind the Patient Registry tool</li>
-                </ul>
+              </div>
+            </details>
+            <details className={styles.accordion}>
+              <summary>
+                What languages is Matrix and the surveys available in?
+              </summary>
+              <div>
+                <p>
+                  Matrix is available in English, Spanish, Italian, French,
+                  German, Portuguese and Korean. Surveys are available in
+                  English, Spanish, Italian, French and German. Coming soon:
+                  Portuguese, Korean and Hebrew.
+                </p>
+              </div>
+            </details>
+            <details className={styles.accordion}>
+              <summary>
+                Who can I contact about the Patient Registry for more help or
+                answers?
+              </summary>
+              <div>
+                <p>
+                  Email{' '}
+                  <a href="mailto:patientregistry@nr2f1.org">
+                    patientregistry@nr2f1.org
+                  </a>{' '}
+                  and we can help or offer a Zoom meeting to help you get
+                  registered.
+                </p>
               </div>
             </details>
           </section>
 
           <section>
-            <h2>Register for a Clinical Research ID</h2>
+            <h2 id={createHashLink('Register for a Clinical Research ID')}>
+              Register for a Clinical Research ID
+            </h2>
             <p>
               The Clinical Research ID (CRID) is a free patient-generated
               service specifically for use in clinical research. The parent or

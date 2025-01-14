@@ -18,7 +18,7 @@
     @include layout.content-max-width;
     display: grid;
     grid-column-gap: var(--spacing-12);
-    grid-template-columns: var(--spacing-56) minmax(38rem, 42rem) var(
+    grid-template-columns: var(--spacing-56) minmax(auto, 42rem) var(
         --spacing-56
       );
     grid-template-rows: repeat(3, min-content);
@@ -161,8 +161,4 @@
       margin-block-end: 0;
     }
   }
-}
-
-.open-new-tab {
-  margin-block-end: var(--spacing-4);
 }
