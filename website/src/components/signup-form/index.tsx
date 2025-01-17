@@ -281,9 +281,6 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang, registerPatient }) => {
                     <h4 className={styles.form__subheading}>
                       {content?.parentContact.heading}
                     </h4>
-                    <p className={styles.form__text}>
-                      {content?.parentContact.text}
-                    </p>
                   </div>
                 </div>
                 <div className={styles.form__row}>

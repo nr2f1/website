@@ -257,8 +257,7 @@
     "text": "Si eres un padre de BBSOAS, ¿podrías compartir el nombre y la dirección de tu hijo con BBSOAS con nosotros? Usamos esto para llevar un registro del número de diagnósticos en todo el mundo."
   },
   "parentContact": {
-    "heading": "Detalles de contacto del padre/cuidador o paciente con BBSOAS",
-    "text": "(Frase para explicar por qué necesitamos estos datos y para qué los usaremos.)"
+    "heading": "Detalles de contacto del padre/cuidador o paciente con BBSOAS"
   },
   "signupButton": "Regístrate",
   "optional": "opcional"

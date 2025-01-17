@@ -280,8 +280,7 @@
     "text": "Si vous êtes un parent de BBSOAS, pourriez-vous partager avec nous le prénom et l'adresse de votre enfant atteint de BBSOAS ? Nous utilisons ces informations pour suivre le nombre de diagnostics dans le monde entier."
   },
   "parentContact": {
-    "heading": "Coordonnées du parent/tuteur ou du patient BBSOAS",
-    "text": "(Phrase pour expliquer pourquoi nous avons besoin de ces informations et à quoi elles serviront.)"
+    "heading": "Coordonnées du parent/tuteur ou du patient BBSOAS"
   },
   "signupButton": "S'inscrire",
   "optional": "optionnel"
