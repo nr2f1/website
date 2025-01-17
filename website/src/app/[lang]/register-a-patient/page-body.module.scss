@@ -71,6 +71,9 @@
   }
 
   li:not(:last-of-type) {
+    & p {
+      margin: 0;
+    }
     margin-block-end: var(--spacing-2);
   }
 

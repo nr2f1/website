@@ -3,15 +3,17 @@ import styles from './page-body.module.scss';
 import PageContents from '@components/page-contents';
 import PageLatestNews from '@components/page-latest-news';
 import SignupForm from '@components/signup-form';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
 import {
   GetRegisterPatientPageDocument,
   type GetRegisterPatientPageQuery,
 } from '@graphql/queries/register-patient-page/index.generated';
-import type { AvailableLocale } from '@i18n/locales';
+import type { AvailableLocale, LocalisedString } from '@i18n/locales';
 import {
   matrixLanguagesAccordionId,
   otherThanFillSurveysAccordionId,
+  whoCanTakePartAccordionId,
   whoContactAccordionId,
   whoWillHaveAccessAccordionId,
 } from '@models/accordions';
@@ -39,8 +41,34 @@ interface RegisterPageBodyProps {
 
 const { query } = getClient();
 
+const alreadyRegister: LocalisedString = {
+  en: 'Already registered?',
+  es: '¿Ya estás registrado?',
+  fr: 'Déjà enregistré?',
+  de: 'Bereits registriert?',
+};
+
 const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
-  const { data, error } = await query<GetRegisterPatientPageQuery>({
+  const {
+    data: {
+      intro,
+      registerWithUsHeading,
+      registerPatientRegistryHeading,
+      registerClinicalIdHeading,
+      registerPatientRegistryLoginLink,
+      registerWithUsContent,
+      registerPatientRegistryContent,
+      registerPatientRegistrySignUpLink,
+      whoCanTakePartAccordion,
+      whoWillHaveAccessAccordion,
+      otherThanFillSurveysAccordion,
+      matrixLanguagesAccordion,
+      whoContactAccordion,
+      registerClinicalIdContent,
+      registerContentIdLink,
+    },
+    error,
+  } = await query<GetRegisterPatientPageQuery>({
     query: GetRegisterPatientPageDocument,
     variables: {
       locale: lang,
@@ -52,16 +80,19 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
       registerWithUsContentId,
       registerPatientRegistryContentId,
       registerPatientRegistrySignUpLinkId,
-      whoContactAccordionId,
+      whoCanTakePartAccordionId,
       whoWillHaveAccessAccordionId,
       otherThanFillSurveysAccordionId,
       matrixLanguagesAccordionId,
+      whoContactAccordionId,
       registerClinicalIdContentId,
       registerContentIdLinkId,
     },
   });
 
-  console.log({ data });
+  if (error) {
+    return null;
+  }
 
   return (
     <div className={styles['page-layout']}>
@@ -70,83 +101,77 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
           <PageContents lang={lang} />
         </aside>
         <article className={styles['page-body']}>
-          <p>
-            We believe there is power in numbers. This is why every new
-            diagnosis is important to us. By registering BBSOAS patients, our
-            community decides what's important to study and learn about BBSOAS.{' '}
-          </p>
-          <p>There are three actions for newly diagnosed patients:</p>
-
-          <ul>
+          {documentToReactComponents(intro?.content?.json)}
+          <ol>
             <li>
-              <a href="/">Register with us</a>
+              <a
+                href={`#${createHashLink(registerWithUsHeading?.content ?? '')}`}
+              >
+                {registerWithUsHeading?.content}
+              </a>
             </li>
             <li>
-              <a href="/">Register with the NR2F1 Patient Registry</a>
+              <a
+                href={`#${createHashLink(registerPatientRegistryHeading?.content ?? '')}`}
+              >
+                {registerPatientRegistryHeading?.content}
+              </a>
             </li>
             <li>
-              <a href="/">Register for a Clinical Research ID</a>
+              <a
+                href={`#${createHashLink(registerClinicalIdHeading?.content ?? '')}`}
+              >
+                {registerClinicalIdHeading?.content}
+              </a>
             </li>
-          </ul>
+          </ol>
           <section>
-            <h2 id={createHashLink('Register with us')}>Register with us</h2>
-            <p>
-              We want to keep track of the number of diagnosed cases around the
-              world, so that we can share this with you and our community of
-              scientists and researchers. If you are a newly diagnosed family,
-              please also share your location. By registering with us, you will
-              also receive communications from the NR2F1 Foundation.
-            </p>
+            <h2 id={createHashLink(registerWithUsHeading?.content ?? '')}>
+              1. {registerWithUsHeading?.content}
+            </h2>
+
+            {documentToReactComponents(registerWithUsContent?.content?.json)}
+
             <SignupForm lang={lang} registerPatient />
           </section>
           <section>
-            <h2 id={createHashLink('Register with the NR2F1 Patient Registry')}>
-              Register with the NR2F1 Patient Registry
+            <h2
+              id={createHashLink(registerPatientRegistryHeading?.content ?? '')}
+            >
+              2. {registerPatientRegistryHeading?.content}
             </h2>
-            <p>
-              The Patient Registry collects information through surveys on how a
-              disease affects a person over a lifetime to better understand
-              diseases, especially rare ones. The data collected from the
-              surveys will help researchers and families learn more about
-              BBSOAS.
-            </p>
-            <p>
-              The Patient Registry will show how the disease progresses over
-              time. This is why it’s extremely important to complete all the
-              surveys listed in your account. Every year in June, we ask
-              families to go back into the Patient Registry to complete annual
-              surveys.
-            </p>
-            <p>
-              Having our BBSOAS population registered in Patient Registry also
-              means as an organization we are ‘research ready’ for clinical
-              trials or pharmaceutical development.
-            </p>
-            <p>Get started in 4 simple steps:</p>
-            <ol>
-              <li>Create a Patient Registry account in Matrix </li>
-              <li>Upload the genetic report to confirm diagnosis </li>
-              <li>Fill out all the surveys listed in your account </li>
-              <li>Turn on survey notifications</li>
-            </ol>
+
+            {documentToReactComponents(
+              registerPatientRegistryContent?.content?.json,
+            )}
+
             <a
-              href="https://nr2f1x.acrossmatrix.com/en-US/#/user-request"
-              title="Natural history study registry signup"
+              href={
+                registerPatientRegistrySignUpLink?.href ??
+                'https://nr2f1x.acrossmatrix.com/en-US/#/user-request'
+              }
+              title={
+                registerPatientRegistrySignUpLink?.content ??
+                'Natural history study registry signup'
+              }
               target="_blank"
               rel="noreferrer"
               className="button button--on-light-open-new-tab mbe--4"
             >
-              Register now
+              {registerPatientRegistrySignUpLink?.content}
             </a>
-            <p>Already registered?</p>
+            <p>{alreadyRegister[lang]}</p>
             <a
-              href="https://nr2f1.acrossmatrix.com/"
+              href={
+                registerPatientRegistryLoginLink?.href ??
+                'https://nr2f1.acrossmatrix.com/'
+              }
               title="Natural history study registry login"
               target="_blank"
               rel="noreferrer"
               className="button button--on-light-open-new-tab mbe--6"
             >
-              Login
+              {registerPatientRegistryLoginLink?.content}
             </a>
             <details className={styles.accordion}>
               <summary>Who can take part?</summary>
@@ -227,25 +252,22 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
           </section>
 
           <section>
-            <h2 id={createHashLink('Register for a Clinical Research ID')}>
-              Register for a Clinical Research ID
+            <h2 id={createHashLink(registerClinicalIdHeading?.content ?? '')}>
+              3. {registerClinicalIdHeading?.content}
             </h2>
-            <p>
-              The Clinical Research ID (CRID) is a free patient-generated
-              service specifically for use in clinical research. The parent or
-              carer of the patient or the patient themselves decides who to
-              share it with. With a CRID, you can gain visibility into the
-              research studies you’re enrolled in.
-            </p>
-            <p>Anyone around the world can register for a CRID.</p>
+
+            {documentToReactComponents(
+              registerClinicalIdContent?.content?.json,
+            )}
+
             <a
-              href="https://thecrid.org/"
+              href={registerContentIdLink?.href ?? 'https://thecrid.org/'}
               target="_blank"
               rel="noreferrer"
-              title="Register for CRID"
+              title={registerContentIdLink?.content ?? 'Clinical Registry'}
               className="button button--on-light-open-new-tab"
             >
-              Register now
+              {registerContentIdLink?.content}
             </a>
           </section>
         </article>

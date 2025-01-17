@@ -11,7 +11,7 @@ export const empowerFamiliesParagraphId = '3U0YGSxfl4ZU5t07VYkKnc';
 export const educatePeopleParagraphId = '1ZCUxvuFRUu61orqlSoHw5';
 export const ourVisionParagraphId = '4zrbZeSU8XCsk5T1ZVywo3';
 // Register patient page
-export const introId = '2fefGxsEkuAkLi3VF3nhi';
-export const registerWithUsContentId = '2anfbBGcBGJxFYWo6i22H';
+export const introId = '2fefGxsEkuAkLai3VF3nhi';
+export const registerWithUsContentId = '2anfbBGc6BGJxFYWo6i22H';
 export const registerPatientRegistryContentId = '2u126GIcOaJIqQjgbg169l';
 export const registerClinicalIdContentId = '5Y7VVQ0o5PIs1LUk7Sylxm';
