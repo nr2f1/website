@@ -19,6 +19,134 @@ export type Scalars = {
   Quality: { input: any; output: any; }
 };
 
+/** Accordions [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/accordion) */
+export type Accordion = Entry & _Node & {
+  __typename?: 'Accordion';
+  _id: Scalars['ID']['output'];
+  content?: Maybe<AccordionContent>;
+  contentfulMetadata: ContentfulMetadata;
+  linkedFrom?: Maybe<AccordionLinkingCollections>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** Accordions [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/accordion) */
+export type AccordionContentArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** Accordions [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/accordion) */
+export type AccordionLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** Accordions [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/accordion) */
+export type AccordionTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type AccordionCollection = {
+  __typename?: 'AccordionCollection';
+  items: Array<Maybe<Accordion>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type AccordionContent = {
+  __typename?: 'AccordionContent';
+  json: Scalars['JSON']['output'];
+  links: AccordionContentLinks;
+};
+
+export type AccordionContentAssets = {
+  __typename?: 'AccordionContentAssets';
+  block: Array<Maybe<Asset>>;
+  hyperlink: Array<Maybe<Asset>>;
+};
+
+export type AccordionContentEntries = {
+  __typename?: 'AccordionContentEntries';
+  block: Array<Maybe<Entry>>;
+  hyperlink: Array<Maybe<Entry>>;
+  inline: Array<Maybe<Entry>>;
+};
+
+export type AccordionContentLinks = {
+  __typename?: 'AccordionContentLinks';
+  assets: AccordionContentAssets;
+  entries: AccordionContentEntries;
+  resources: AccordionContentResources;
+};
+
+export type AccordionContentResources = {
+  __typename?: 'AccordionContentResources';
+  block: Array<AccordionContentResourcesBlock>;
+  hyperlink: Array<AccordionContentResourcesHyperlink>;
+  inline: Array<AccordionContentResourcesInline>;
+};
+
+export type AccordionContentResourcesBlock = ResourceLink & {
+  __typename?: 'AccordionContentResourcesBlock';
+  sys: ResourceSys;
+};
+
+export type AccordionContentResourcesHyperlink = ResourceLink & {
+  __typename?: 'AccordionContentResourcesHyperlink';
+  sys: ResourceSys;
+};
+
+export type AccordionContentResourcesInline = ResourceLink & {
+  __typename?: 'AccordionContentResourcesInline';
+  sys: ResourceSys;
+};
+
+export type AccordionFilter = {
+  AND?: InputMaybe<Array<InputMaybe<AccordionFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<AccordionFilter>>>;
+  content_contains?: InputMaybe<Scalars['String']['input']>;
+  content_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  content_not_contains?: InputMaybe<Scalars['String']['input']>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type AccordionLinkingCollections = {
+  __typename?: 'AccordionLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type AccordionLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum AccordionOrder {
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
 /** Represents a binary file in a space. An asset can be any file type. */
 export type Asset = {
   __typename?: 'Asset';
@@ -1816,6 +1944,8 @@ export enum ParagraphsOrder {
 export type Query = {
   __typename?: 'Query';
   _node?: Maybe<_Node>;
+  accordion?: Maybe<Accordion>;
+  accordionCollection?: Maybe<AccordionCollection>;
   asset?: Maybe<Asset>;
   assetCollection?: Maybe<AssetCollection>;
   banner?: Maybe<Banner>;
@@ -1848,6 +1978,23 @@ export type Query_NodeArgs = {
   id: Scalars['ID']['input'];
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryAccordionArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryAccordionCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<AccordionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<AccordionFilter>;
 };
 
 
