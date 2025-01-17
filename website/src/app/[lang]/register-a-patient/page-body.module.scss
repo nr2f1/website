@@ -78,6 +78,14 @@
     @include text-styles.header-2;
     margin: 0;
     margin-block-end: var(--spacing-4);
+
+    @include breakpoints.small-screen {
+      @include text-styles.header-2__mobile;
+    }
+
+    @include breakpoints.medium-screen {
+      @include text-styles.header-2__mobile;
+    }
   }
 
   section {
