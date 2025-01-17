@@ -7,3 +7,7 @@ export const heroCtaId = '4pwc4e2bvRxUAzXKzftn6N';
 export const learnMoreCtaId = '7263K1eR6vR5DYd3nRY5hQ';
 // Latest news
 export const latestNewsCtaId = '5kWxWSZyTvYZn1iXiKgA1E';
+// Register patient page
+export const registerPatientRegistryLoginLinkId = '6ZoUDDQsuOvt8dgE5jqMif';
+export const registerPatientRegistrySignUpLinkId = '6rYsvNOGRKn1CElKIOQGIf';
+export const registerContentIdLinkId = '4Kb6OkWbG6YIfu6aW2dFg9';

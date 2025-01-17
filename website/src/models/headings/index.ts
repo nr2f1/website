@@ -8,3 +8,7 @@ export const empowerFamiliesHeadingId = '5suGsoVge3LvQ7cLtAWyo2';
 export const driveResearchHeadingId = '5nXf25IVMjhU2FFLID6ydG';
 // Latest news
 export const latestNewsTitleId = '1ylyjtePqtkFwXBfZUaL7n';
+// Regsiter patient page
+export const registerWithUsHeadingId = '2C3o4BDN7MSjpEwYi7rLXM';
+export const registerPatientRegistryHeadingId = '6juU9IL2M4aWq4hkohifYN';
+export const registerClinicalIdHeadingId = '3SxkzaMqsMEpLrYJrrYNmj';
