@@ -81,8 +81,8 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
               {documentToReactComponents(contactUs?.content?.json)}
 
               <address>
-                NR2F1 Foundation <br /> 416 E. Kenilworth Ave <br />
-                Royal Oak, MI 48067
+                NR2F1 Foundation <br /> PO Box 0588 <br />
+                Pflugerville, TX 78691-058
               </address>
               <a href="mailto:info@nr2f1.org" title="info@nr2f1.org">
                 info@nr2f1.org
