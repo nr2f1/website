@@ -13,5 +13,5 @@ export const ourVisionParagraphId = '4zrbZeSU8XCsk5T1ZVywo3';
 // Register patient page
 export const introId = '2fefGxsEkuAkLi3VF3nhi';
 export const registerWithUsContentId = '2anfbBGcBGJxFYWo6i22H';
-export const registerPatientRegistryContentd = '2u126GIcOaJIqQjgbg169l';
+export const registerPatientRegistryContentId = '2u126GIcOaJIqQjgbg169l';
 export const registerClinicalIdContentId = '5Y7VVQ0o5PIs1LUk7Sylxm';

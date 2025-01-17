@@ -3,14 +3,66 @@ import styles from './page-body.module.scss';
 import PageContents from '@components/page-contents';
 import PageLatestNews from '@components/page-latest-news';
 import SignupForm from '@components/signup-form';
+import { getClient } from '@graphql/client';
+import {
+  GetRegisterPatientPageDocument,
+  type GetRegisterPatientPageQuery,
+} from '@graphql/queries/register-patient-page/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
+import {
+  matrixLanguagesAccordionId,
+  otherThanFillSurveysAccordionId,
+  whoContactAccordionId,
+  whoWillHaveAccessAccordionId,
+} from '@models/accordions';
+import {
+  registerClinicalIdHeadingId,
+  registerPatientRegistryHeadingId,
+  registerWithUsHeadingId,
+} from '@models/headings';
+import {
+  registerContentIdLinkId,
+  registerPatientRegistryLoginLinkId,
+  registerPatientRegistrySignUpLinkId,
+} from '@models/links';
+import {
+  introId,
+  registerClinicalIdContentId,
+  registerPatientRegistryContentId,
+  registerWithUsContentId,
+} from '@models/paragraphs';
 import { createHashLink } from '@shared/utils/hash-links';
 
 interface RegisterPageBodyProps {
   lang: AvailableLocale;
 }
 
-const RegisterPageBody: React.FC<RegisterPageBodyProps> = ({ lang }) => {
+const { query } = getClient();
+
+const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
+  const { data, error } = await query<GetRegisterPatientPageQuery>({
+    query: GetRegisterPatientPageDocument,
+    variables: {
+      locale: lang,
+      introId,
+      registerWithUsHeadingId,
+      registerPatientRegistryHeadingId,
+      registerClinicalIdHeadingId,
+      registerPatientRegistryLoginLinkId,
+      registerWithUsContentId,
+      registerPatientRegistryContentId,
+      registerPatientRegistrySignUpLinkId,
+      whoContactAccordionId,
+      whoWillHaveAccessAccordionId,
+      otherThanFillSurveysAccordionId,
+      matrixLanguagesAccordionId,
+      registerClinicalIdContentId,
+      registerContentIdLinkId,
+    },
+  });
+
+  console.log({ data });
+
   return (
     <div className={styles['page-layout']}>
       <div className={styles['page-layout__row']}>
