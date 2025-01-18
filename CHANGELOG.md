@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.33.0](https://github.com/nr2f1/website/compare/v1.32.0...v1.33.0) (2025-01-18)
+
+
+### Features
+
+* add accordion component ([c7e3cdf](https://github.com/nr2f1/website/commit/c7e3cdf366bd9cf601310eb1e9d8bef36116af2b))
+* add headings to page contents ([7c9ea47](https://github.com/nr2f1/website/commit/7c9ea47e0afcc4ba7855239700db2e8c92013e8b))
+* add rich text rendering to register patient page ([0e06f99](https://github.com/nr2f1/website/commit/0e06f99ca15dceb8eb0eecba4a839a9ae878a5f3))
+
+
+### Bug Fixes
+
+* ci ([2cb4a97](https://github.com/nr2f1/website/commit/2cb4a97a5aa613740f225d6ac78843b41708f803))
+
 ## [1.32.0](https://github.com/nr2f1/website/compare/v1.31.0...v1.32.0) (2025-01-14)
 
 
