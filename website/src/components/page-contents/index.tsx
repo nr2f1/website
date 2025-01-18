@@ -3,7 +3,11 @@ import styles from './index.module.scss';
 
 import type { AvailableLocale, LocalisedString } from '@i18n/locales';
 
-interface PageContentsProps {
+interface HeadingsProps {
+  headings: string[];
+}
+
+interface PageContentsProps extends HeadingsProps {
   lang: AvailableLocale;
 }
 
@@ -14,62 +18,32 @@ const summary: LocalisedString = {
   de: 'Seiteninhalt',
 };
 
-const PageContents: React.FC<PageContentsProps> = ({ lang }) => {
+const Headings: React.FC<HeadingsProps> = ({ headings }) => {
+  return (
+    <nav>
+      <ul>
+        {headings.map((heading) => (
+          <li key={crypto.randomUUID()}>
+            <a href={`#${createHashLink(heading)}`}>{heading}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
+
+const PageContents: React.FC<PageContentsProps> = ({ lang, headings }) => {
   const summaryText = summary[lang];
 
   return (
     <div className={styles['page-contents']}>
       <details>
         <summary>{summaryText}</summary>
-        <nav>
-          <ul>
-            <li>
-              <a href={`#${createHashLink('Register with us')}`}>
-                Register with us
-              </a>
-            </li>
-            <li>
-              <a
-                href={`#${createHashLink('Register with the NR2F1 Patient Registry')}`}
-              >
-                Register with the NR2F1 Patient Registry
-              </a>
-            </li>
-            <li>
-              <a
-                href={`#${createHashLink('Register for a Clinical Research ID')}`}
-              >
-                Register for a Clinical Research ID
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <Headings headings={headings} />
       </details>
       <div>
         <h3>{summaryText}</h3>
-        <nav>
-          <ul>
-            <li>
-              <a href={`#${createHashLink('Register with us')}`}>
-                Register with us
-              </a>
-            </li>
-            <li>
-              <a
-                href={`#${createHashLink('Register with the NR2F1 Patient Registry')}`}
-              >
-                Register with the NR2F1 Patient Registry
-              </a>
-            </li>
-            <li>
-              <a
-                href={`#${createHashLink('Register for a Clinical Research ID')}`}
-              >
-                Register for a Clinical Research ID
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <Headings headings={headings} />
       </div>
     </div>
   );

@@ -95,11 +95,17 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
     return null;
   }
 
+  const headings = [
+    registerWithUsHeading?.content ?? '',
+    registerPatientRegistryHeading?.content ?? '',
+    registerClinicalIdHeading?.content ?? '',
+  ];
+
   return (
     <div className={styles['page-layout']}>
       <div className={styles['page-layout__row']}>
         <aside className={styles['page-contents']}>
-          <PageContents lang={lang} />
+          <PageContents lang={lang} headings={headings} />
         </aside>
         <article className={styles['page-body']}>
           {documentToReactComponents(intro?.content?.json)}
