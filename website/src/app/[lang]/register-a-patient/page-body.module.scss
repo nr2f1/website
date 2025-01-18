@@ -1,7 +1,6 @@
 @use '@styles/layout';
 @use '@styles/breakpoints';
 @use '@styles/text-styles';
-@use '@styles/icons';
 
 .page-layout {
   padding: var(--spacing-6) var(--spacing-16) var(--spacing-24);
@@ -112,64 +111,5 @@
 
   @include breakpoints.small-screen {
     display: none;
-  }
-}
-
-.accordion {
-  background-color: var(--background-accent-navy);
-  padding: 0 var(--spacing-6);
-
-  &:first-of-type {
-    border-top-right-radius: var(--border-radius-xl);
-    border-top-left-radius: var(--border-radius-xl);
-  }
-
-  &:last-of-type {
-    border-bottom-right-radius: var(--border-radius-xl);
-    border-bottom-left-radius: var(--border-radius-xl);
-  }
-
-  &:not(:first-of-type) summary {
-    border-block-start: 1px solid var(--border-default);
-  }
-
-  &[open] summary {
-    &::after {
-      background-image: url(icons.$chevron-up-navy);
-    }
-  }
-
-  summary {
-    @include text-styles.header-3;
-    padding: var(--spacing-6) 0;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    &::marker,
-    &::-webkit-details-marker {
-      display: none;
-      content: '';
-    }
-
-    &::after {
-      aspect-ratio: 1 / 1;
-      background-image: url(icons.$chevron-down-navy);
-      background-position: center;
-      background-size: contain;
-      content: '';
-      display: block;
-      width: var(--spacing-5);
-    }
-  }
-
-  & > div {
-    padding-block-end: var(--spacing-6);
-    & p:last-of-type {
-      margin-block-end: 0;
-    }
-    & li:last-of-type {
-      margin-block-end: 0;
-    }
   }
 }
