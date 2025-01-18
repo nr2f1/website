@@ -16,6 +16,14 @@
 
 @mixin header-2 {
   color: var(--foreground-primary);
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 120%;
+}
+
+@mixin header-2__mobile {
+  color: var(--foreground-primary);
   font-size: var(--spacing-6);
   font-style: normal;
   font-weight: 800;

@@ -1,0 +1,126 @@
+query GetRegisterPatientPage(
+  $locale: String
+  $introId: String!
+  $registerWithUsHeadingId: String!
+  $registerPatientRegistryHeadingId: String!
+  $registerClinicalIdHeadingId: String!
+  $registerWithUsContentId: String!
+  $registerPatientRegistryContentId: String!
+  $registerPatientRegistrySignUpLinkId: String!
+  $registerPatientRegistryLoginLinkId: String!
+  $whoCanTakePartAccordionId: String!
+  $whoWillHaveAccessAccordionId: String!
+  $otherThanFillSurveysAccordionId: String!
+  $matrixLanguagesAccordionId: String!
+  $whoContactAccordionId: String!
+  $registerClinicalIdContentId: String!
+  $registerContentIdLinkId: String!
+) {
+  intro: paragraphs(locale: $locale, id: $introId) {
+    content {
+      json
+    }
+  }
+  registerWithUsHeading: heading(
+    locale: $locale
+    id: $registerWithUsHeadingId
+  ) {
+    content
+  }
+  registerPatientRegistryHeading: heading(
+    locale: $locale
+    id: $registerPatientRegistryHeadingId
+  ) {
+    content
+  }
+  registerClinicalIdHeading: heading(
+    locale: $locale
+    id: $registerClinicalIdHeadingId
+  ) {
+    content
+  }
+  registerWithUsContent: paragraphs(
+    locale: $locale
+    id: $registerWithUsContentId
+  ) {
+    content {
+      json
+    }
+  }
+  registerPatientRegistryContent: paragraphs(
+    locale: $locale
+    id: $registerPatientRegistryContentId
+  ) {
+    content {
+      json
+    }
+  }
+  registerPatientRegistrySignUpLink: link(
+    locale: $locale
+    id: $registerPatientRegistrySignUpLinkId
+  ) {
+    content
+    href
+  }
+  registerPatientRegistryLoginLink: link(
+    locale: $locale
+    id: $registerPatientRegistryLoginLinkId
+  ) {
+    content
+    href
+  }
+  whoCanTakePartAccordion: accordion(
+    locale: $locale
+    id: $whoCanTakePartAccordionId
+  ) {
+    title
+    content {
+      json
+    }
+  }
+  whoWillHaveAccessAccordion: accordion(
+    locale: $locale
+    id: $whoWillHaveAccessAccordionId
+  ) {
+    title
+    content {
+      json
+    }
+  }
+  otherThanFillSurveysAccordion: accordion(
+    locale: $locale
+    id: $otherThanFillSurveysAccordionId
+  ) {
+    title
+    content {
+      json
+    }
+  }
+  matrixLanguagesAccordion: accordion(
+    locale: $locale
+    id: $matrixLanguagesAccordionId
+  ) {
+    title
+    content {
+      json
+    }
+  }
+  whoContactAccordion: accordion(locale: $locale, id: $whoContactAccordionId) {
+    title
+    content {
+      json
+    }
+  }
+  registerClinicalIdContent: paragraphs(
+    locale: $locale
+    id: $registerClinicalIdContentId
+  ) {
+    content {
+      json
+    }
+  }
+  registerContentIdLink: link(locale: $locale, id: $registerContentIdLinkId) {
+    content
+    href
+  }
+}

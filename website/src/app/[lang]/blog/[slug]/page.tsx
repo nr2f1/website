@@ -23,7 +23,6 @@ export async function generateMetadata({
 }: BlogPagePropsWithLocale): Promise<Metadata> {
   const { lang, slug } = await params;
 
-  const { query } = getClient();
   const { data } = await query<GetPostQuery>({
     query: GetPostDocument,
     variables: { locale: lang, slug },

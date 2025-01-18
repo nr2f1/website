@@ -258,8 +258,7 @@
     "text": "If you're a BBSOAS parent, could you share your BBSOAS child's first name and address with us? We use this to keep track of the number of diagnoses worldwide."
   },
   "parentContact": {
-    "heading": "BBSOAS parent/carer or patient's contact details",
-    "text": "(Sentence to explain why we need these and what we will use them for.)"
+    "heading": "BBSOAS parent/carer or patient's contact details"
   },
   "signupButton": "Sign up",
   "optional": "optional"

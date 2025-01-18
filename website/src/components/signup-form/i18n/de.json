@@ -257,8 +257,7 @@
     "text": "Wenn Sie ein BBSOAS-Elternteil sind, könnten Sie uns den Vornamen und die Adresse Ihres BBSOAS-Kindes mitteilen? Wir verwenden diese Informationen, um die Anzahl der Diagnosen weltweit zu verfolgen."
   },
   "parentContact": {
-    "heading": "Kontaktdaten des BBSOAS-Elternteils/Betreuers oder Patienten",
-    "text": "(Satz zur Erklärung, warum wir diese Informationen benötigen und wofür wir sie verwenden werden.)"
+    "heading": "Kontaktdaten des BBSOAS-Elternteils/Betreuers oder Patienten"
   },
   "signupButton": "Anmelden",
   "optional": "optional"
