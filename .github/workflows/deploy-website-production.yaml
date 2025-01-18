@@ -16,37 +16,40 @@ env:
 
 jobs:
   deploy-fewd-to-vercel-production:
-      runs-on: ubuntu-latest
-      environment:
-        name: production
-        url: ${{ steps.deploy.outputs.url }}
-      outputs:
-        url: ${{ steps.deploy.outputs.url }}
-      steps:
-        - name: Checkout 🛎️
-          uses: actions/checkout@v4
-          with:
-            fetch-depth: 0
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: ${{ steps.deploy.outputs.url }}
+    outputs:
+      url: ${{ steps.deploy.outputs.url }}
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-        - name: checkout tag
-          run: git checkout ${{ github.event.inputs.tag }}
+      - name: checkout tag
+        run: git checkout ${{ github.event.inputs.tag }}
 
-        - name: Set environment and install dependencies
-          uses: ./.github/actions/prepare
+      - name: Set environment and install dependencies
+        uses: ./.github/actions/prepare
 
-        - name: Pull Vercel environment information
-          run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Install Vercel CLI
+        uses: ./.github/actions/install-vercel-cli
 
-        - name: Build project artifacts
-          run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-          env:
-            NEXT_PUBLIC_CONTENTFUL_SPACE_ID: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_SPACE_ID }}
-            NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN }}
-            NEXT_PUBLIC_GIVEBUTTER_API_KEY: ${{ secrets.NEXT_PUBLIC_GIVEBUTTER_API_KEY }}
+      - name: Pull Vercel environment information
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
-        - name: Deploy project artifacts to Vercel
-          id: deploy
-          run: echo "url=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }})" >> $GITHUB_OUTPUT
+      - name: Build project artifacts
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          NEXT_PUBLIC_CONTENTFUL_SPACE_ID: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_SPACE_ID }}
+          NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN }}
+          NEXT_PUBLIC_GIVEBUTTER_API_KEY: ${{ secrets.NEXT_PUBLIC_GIVEBUTTER_API_KEY }}
+
+      - name: Deploy project artifacts to Vercel
+        id: deploy
+        run: echo "url=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }})" >> $GITHUB_OUTPUT
   ci-validation:
     name: CI validation
     needs: [deploy-fewd-to-vercel-production]
