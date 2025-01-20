@@ -9,7 +9,7 @@ export type GetMetadataQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetMetadataQuery = { __typename?: 'Query', htmlHeadMetadata?: { __typename?: 'HtmlHeadMetadata', title?: string | null, description?: string | null } | null };
+export type GetMetadataQuery = { __typename?: 'Query', htmlHeadMetadata?: { __typename?: 'HtmlHeadMetadata', title?: string | null, description?: string | null, keywords?: string | null } | null };
 
 
 export const GetMetadataDocument = gql`
@@ -17,6 +17,7 @@ export const GetMetadataDocument = gql`
   htmlHeadMetadata(id: $id, locale: $locale) {
     title
     description
+    keywords
   }
 }
     `;
