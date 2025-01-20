@@ -1,8 +1,5 @@
-import styles from './page-body.module.scss';
-
 import Accordion from '@components/accordion';
-import PageContents from '@components/page-contents';
-import PageLatestNews from '@components/page-latest-news';
+import PageBody from '@components/page-body';
 import SignupForm from '@components/signup-form';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
@@ -102,148 +99,132 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
   ];
 
   return (
-    <div className={styles['page-layout']}>
-      <div className={styles['page-layout__row']}>
-        <aside className={styles['page-contents']}>
-          <PageContents lang={lang} headings={headings} />
-        </aside>
-        <article className={styles['page-body']}>
-          {documentToReactComponents(intro?.content?.json)}
-          <ol>
-            <li>
-              <a
-                href={`#${createHashLink(registerWithUsHeading?.content ?? '')}`}
-              >
-                {registerWithUsHeading?.content}
-              </a>
-            </li>
-            <li>
-              <a
-                href={`#${createHashLink(registerPatientRegistryHeading?.content ?? '')}`}
-              >
-                {registerPatientRegistryHeading?.content}
-              </a>
-            </li>
-            <li>
-              <a
-                href={`#${createHashLink(registerClinicalIdHeading?.content ?? '')}`}
-              >
-                {registerClinicalIdHeading?.content}
-              </a>
-            </li>
-          </ol>
-          <section>
-            <h2 id={createHashLink(registerWithUsHeading?.content ?? '')}>
-              1. {registerWithUsHeading?.content}
-            </h2>
+    <PageBody lang={lang} headings={headings}>
+      {documentToReactComponents(intro?.content?.json)}
+      <ol>
+        <li>
+          <a href={`#${createHashLink(registerWithUsHeading?.content ?? '')}`}>
+            {registerWithUsHeading?.content}
+          </a>
+        </li>
+        <li>
+          <a
+            href={`#${createHashLink(registerPatientRegistryHeading?.content ?? '')}`}
+          >
+            {registerPatientRegistryHeading?.content}
+          </a>
+        </li>
+        <li>
+          <a
+            href={`#${createHashLink(registerClinicalIdHeading?.content ?? '')}`}
+          >
+            {registerClinicalIdHeading?.content}
+          </a>
+        </li>
+      </ol>
+      <section>
+        <h2 id={createHashLink(registerWithUsHeading?.content ?? '')}>
+          1. {registerWithUsHeading?.content}
+        </h2>
 
-            {documentToReactComponents(registerWithUsContent?.content?.json)}
+        {documentToReactComponents(registerWithUsContent?.content?.json)}
 
-            <SignupForm lang={lang} registerPatient />
-          </section>
-          <section>
-            <h2
-              id={createHashLink(registerPatientRegistryHeading?.content ?? '')}
-            >
-              2. {registerPatientRegistryHeading?.content}
-            </h2>
+        <SignupForm lang={lang} registerPatient />
+      </section>
+      <section>
+        <h2 id={createHashLink(registerPatientRegistryHeading?.content ?? '')}>
+          2. {registerPatientRegistryHeading?.content}
+        </h2>
 
-            {documentToReactComponents(
-              registerPatientRegistryContent?.content?.json,
-            )}
+        {documentToReactComponents(
+          registerPatientRegistryContent?.content?.json,
+        )}
 
-            <a
-              href={
-                registerPatientRegistrySignUpLink?.href ??
-                'https://nr2f1x.acrossmatrix.com/en-US/#/user-request'
-              }
-              title={
-                registerPatientRegistrySignUpLink?.content ??
-                'Natural history study registry signup'
-              }
-              target="_blank"
-              rel="noreferrer"
-              className="button button--on-light-open-new-tab mbe--4"
-            >
-              {registerPatientRegistrySignUpLink?.content}
-            </a>
-            <p>{alreadyRegister[lang]}</p>
-            <a
-              href={
-                registerPatientRegistryLoginLink?.href ??
-                'https://nr2f1.acrossmatrix.com/'
-              }
-              title="Natural history study registry login"
-              target="_blank"
-              rel="noreferrer"
-              className="button button--on-light-open-new-tab mbe--6"
-            >
-              {registerPatientRegistryLoginLink?.content}
-            </a>
+        <a
+          href={
+            registerPatientRegistrySignUpLink?.href ??
+            'https://nr2f1x.acrossmatrix.com/en-US/#/user-request'
+          }
+          title={
+            registerPatientRegistrySignUpLink?.content ??
+            'Natural history study registry signup'
+          }
+          target="_blank"
+          rel="noreferrer"
+          className="button button--on-light-open-new-tab mbe--4"
+        >
+          {registerPatientRegistrySignUpLink?.content}
+        </a>
+        <p>{alreadyRegister[lang]}</p>
+        <a
+          href={
+            registerPatientRegistryLoginLink?.href ??
+            'https://nr2f1.acrossmatrix.com/'
+          }
+          title="Natural history study registry login"
+          target="_blank"
+          rel="noreferrer"
+          className="button button--on-light-open-new-tab mbe--6"
+        >
+          {registerPatientRegistryLoginLink?.content}
+        </a>
 
-            <Accordion
-              title={whoContactAccordion?.title ?? ''}
-              content={documentToReactComponents(
-                whoContactAccordion?.content?.json,
-              )}
-            />
-            <Accordion
-              title={whoCanTakePartAccordion?.title ?? ''}
-              content={documentToReactComponents(
-                whoCanTakePartAccordion?.content?.json,
-              )}
-            />
-            <Accordion
-              title={whoWillHaveAccessAccordion?.title ?? ''}
-              content={documentToReactComponents(
-                whoWillHaveAccessAccordion?.content?.json,
-              )}
-            />
-            <Accordion
-              title={otherThanFillSurveysAccordion?.title ?? ''}
-              content={documentToReactComponents(
-                otherThanFillSurveysAccordion?.content?.json,
-              )}
-            />
-            <Accordion
-              title={matrixLanguagesAccordion?.title ?? ''}
-              content={documentToReactComponents(
-                matrixLanguagesAccordion?.content?.json,
-              )}
-            />
-            <Accordion
-              title={whoCanTakePartAccordion?.title ?? ''}
-              content={documentToReactComponents(
-                whoCanTakePartAccordion?.content?.json,
-              )}
-            />
-          </section>
+        <Accordion
+          title={whoContactAccordion?.title ?? ''}
+          content={documentToReactComponents(
+            whoContactAccordion?.content?.json,
+          )}
+        />
+        <Accordion
+          title={whoCanTakePartAccordion?.title ?? ''}
+          content={documentToReactComponents(
+            whoCanTakePartAccordion?.content?.json,
+          )}
+        />
+        <Accordion
+          title={whoWillHaveAccessAccordion?.title ?? ''}
+          content={documentToReactComponents(
+            whoWillHaveAccessAccordion?.content?.json,
+          )}
+        />
+        <Accordion
+          title={otherThanFillSurveysAccordion?.title ?? ''}
+          content={documentToReactComponents(
+            otherThanFillSurveysAccordion?.content?.json,
+          )}
+        />
+        <Accordion
+          title={matrixLanguagesAccordion?.title ?? ''}
+          content={documentToReactComponents(
+            matrixLanguagesAccordion?.content?.json,
+          )}
+        />
+        <Accordion
+          title={whoCanTakePartAccordion?.title ?? ''}
+          content={documentToReactComponents(
+            whoCanTakePartAccordion?.content?.json,
+          )}
+        />
+      </section>
 
-          <section>
-            <h2 id={createHashLink(registerClinicalIdHeading?.content ?? '')}>
-              3. {registerClinicalIdHeading?.content}
-            </h2>
+      <section>
+        <h2 id={createHashLink(registerClinicalIdHeading?.content ?? '')}>
+          3. {registerClinicalIdHeading?.content}
+        </h2>
 
-            {documentToReactComponents(
-              registerClinicalIdContent?.content?.json,
-            )}
+        {documentToReactComponents(registerClinicalIdContent?.content?.json)}
 
-            <a
-              href={registerContentIdLink?.href ?? 'https://thecrid.org/'}
-              target="_blank"
-              rel="noreferrer"
-              title={registerContentIdLink?.content ?? 'Clinical Registry'}
-              className="button button--on-light-open-new-tab"
-            >
-              {registerContentIdLink?.content}
-            </a>
-          </section>
-        </article>
-        <aside className={styles['latest-news']}>
-          <PageLatestNews lang={lang} />
-        </aside>
-      </div>
-    </div>
+        <a
+          href={registerContentIdLink?.href ?? 'https://thecrid.org/'}
+          target="_blank"
+          rel="noreferrer"
+          title={registerContentIdLink?.content ?? 'Clinical Registry'}
+          className="button button--on-light-open-new-tab"
+        >
+          {registerContentIdLink?.content}
+        </a>
+      </section>
+    </PageBody>
   );
 };
 
