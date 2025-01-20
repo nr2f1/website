@@ -1,0 +1,29 @@
+query GetPublications {
+  patient: publicationCollection(
+    where: { typeOfResearch: "Patient" }
+    order: dateOfPublication_DESC
+  ) {
+    items {
+      title
+      dateOfPublication
+      asset {
+        url
+      }
+      link
+    }
+  }
+
+  gene: publicationCollection(
+    where: { typeOfResearch: "Gene" }
+    order: dateOfPublication_DESC
+  ) {
+    items {
+      title
+      dateOfPublication
+      asset {
+        url
+      }
+      link
+    }
+  }
+}

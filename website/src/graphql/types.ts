@@ -304,6 +304,7 @@ export type AssetLinkingCollections = {
   htmlHeadMetadataCollection?: Maybe<HtmlHeadMetadataCollection>;
   imageCollection?: Maybe<ImageCollection>;
   pageHeaderCollection?: Maybe<PageHeaderCollection>;
+  publicationCollection?: Maybe<PublicationCollection>;
 };
 
 
@@ -356,6 +357,14 @@ export type AssetLinkingCollectionsImageCollectionArgs = {
 
 
 export type AssetLinkingCollectionsPageHeaderCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type AssetLinkingCollectionsPublicationCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
@@ -1941,6 +1950,135 @@ export enum ParagraphsOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
+/** PDFs and links about NR2F1 research [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/publication) */
+export type Publication = Entry & _Node & {
+  __typename?: 'Publication';
+  _id: Scalars['ID']['output'];
+  asset?: Maybe<Asset>;
+  contentfulMetadata: ContentfulMetadata;
+  dateOfPublication?: Maybe<Scalars['DateTime']['output']>;
+  link?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<PublicationLinkingCollections>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']['output']>;
+  typeOfResearch?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** PDFs and links about NR2F1 research [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/publication) */
+export type PublicationAssetArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** PDFs and links about NR2F1 research [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/publication) */
+export type PublicationDateOfPublicationArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** PDFs and links about NR2F1 research [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/publication) */
+export type PublicationLinkArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** PDFs and links about NR2F1 research [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/publication) */
+export type PublicationLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** PDFs and links about NR2F1 research [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/publication) */
+export type PublicationTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** PDFs and links about NR2F1 research [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/publication) */
+export type PublicationTypeOfResearchArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type PublicationCollection = {
+  __typename?: 'PublicationCollection';
+  items: Array<Maybe<Publication>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type PublicationFilter = {
+  AND?: InputMaybe<Array<InputMaybe<PublicationFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<PublicationFilter>>>;
+  asset_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  dateOfPublication?: InputMaybe<Scalars['DateTime']['input']>;
+  dateOfPublication_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  dateOfPublication_gt?: InputMaybe<Scalars['DateTime']['input']>;
+  dateOfPublication_gte?: InputMaybe<Scalars['DateTime']['input']>;
+  dateOfPublication_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  dateOfPublication_lt?: InputMaybe<Scalars['DateTime']['input']>;
+  dateOfPublication_lte?: InputMaybe<Scalars['DateTime']['input']>;
+  dateOfPublication_not?: InputMaybe<Scalars['DateTime']['input']>;
+  dateOfPublication_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  link?: InputMaybe<Scalars['String']['input']>;
+  link_contains?: InputMaybe<Scalars['String']['input']>;
+  link_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  link_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  link_not?: InputMaybe<Scalars['String']['input']>;
+  link_not_contains?: InputMaybe<Scalars['String']['input']>;
+  link_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  typeOfResearch?: InputMaybe<Scalars['String']['input']>;
+  typeOfResearch_contains?: InputMaybe<Scalars['String']['input']>;
+  typeOfResearch_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  typeOfResearch_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  typeOfResearch_not?: InputMaybe<Scalars['String']['input']>;
+  typeOfResearch_not_contains?: InputMaybe<Scalars['String']['input']>;
+  typeOfResearch_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type PublicationLinkingCollections = {
+  __typename?: 'PublicationLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type PublicationLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum PublicationOrder {
+  DateOfPublicationAsc = 'dateOfPublication_ASC',
+  DateOfPublicationDesc = 'dateOfPublication_DESC',
+  LinkAsc = 'link_ASC',
+  LinkDesc = 'link_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
+  TypeOfResearchAsc = 'typeOfResearch_ASC',
+  TypeOfResearchDesc = 'typeOfResearch_DESC'
+}
+
 export type Query = {
   __typename?: 'Query';
   _node?: Maybe<_Node>;
@@ -1969,6 +2107,8 @@ export type Query = {
   pageHeaderCollection?: Maybe<PageHeaderCollection>;
   paragraphs?: Maybe<Paragraphs>;
   paragraphsCollection?: Maybe<ParagraphsCollection>;
+  publication?: Maybe<Publication>;
+  publicationCollection?: Maybe<PublicationCollection>;
   volunteer?: Maybe<Volunteer>;
   volunteerCollection?: Maybe<VolunteerCollection>;
 };
@@ -2192,6 +2332,23 @@ export type QueryParagraphsCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<ParagraphsFilter>;
+};
+
+
+export type QueryPublicationArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryPublicationCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<PublicationOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<PublicationFilter>;
 };
 
 
