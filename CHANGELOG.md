@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.34.0](https://github.com/nr2f1/website/compare/v1.33.0...v1.34.0) (2025-01-20)
+
+
+### Features
+
+* add metadata to register a patient page ([e91f3f4](https://github.com/nr2f1/website/commit/e91f3f4c576aa5ccb78de0cb922b055dd706e28b))
+* add microdata to register a patient page ([4d567ef](https://github.com/nr2f1/website/commit/4d567efc7423b8e215f1bd45d7decde3c1eaaa9e))
+
 ## [1.33.0](https://github.com/nr2f1/website/compare/v1.32.0...v1.33.0) (2025-01-18)
 
 
