@@ -2,5 +2,6 @@ query GetMetadata($id: String!, $locale: String) {
   htmlHeadMetadata(id: $id, locale: $locale) {
     title
     description
+    keywords
   }
 }

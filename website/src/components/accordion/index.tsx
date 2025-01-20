@@ -9,9 +9,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
   return (
     <details className={styles.accordion}>
       <summary>{title}</summary>
-      <div>
-        <p>{content}</p>
-      </div>
+      <div>{content}</div>
     </details>
   );
 };
