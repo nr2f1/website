@@ -90,7 +90,7 @@
     }
   }
 
-  section {
+  section:not(:first-of-type) {
     margin-block-start: var(--spacing-12);
   }
 
