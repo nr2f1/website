@@ -14,4 +14,4 @@ export const registerPatientRegistryHeadingId = '6juU9IL2M4aWq4hkohifYN';
 export const registerClinicalIdHeadingId = '3SxkzaMqsMEpLrYJrrYNmj';
 // Publications page
 export const patientResearchHeadingId = '5LLDk0ie1jxRttKrY0BxDG';
-export const geneResearchHeadingId = '5XHqzIOZPMvUZ6P3XsXnvs';
+export const geneResearchHeadingId = '2WAdQ4v5HeW0GNqIwRLU5e';
