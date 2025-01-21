@@ -1,0 +1,56 @@
+query GetPublicationsPage(
+  $locale: String
+  $patientResearchHeadingId: String!
+  $patientResearchContentId: String!
+  $geneResearchHeadingId: String!
+  $geneResearchContentId: String!
+) {
+  patientResearchHeading: heading(
+    locale: $locale
+    id: $patientResearchHeadingId
+  ) {
+    content
+  }
+  patientResearchContent: paragraphs(
+    locale: $locale
+    id: $patientResearchContentId
+  ) {
+    content {
+      json
+    }
+  }
+  patientPublications: publicationCollection(
+    where: { typeOfResearch: "Patient" }
+    order: dateOfPublication_DESC
+  ) {
+    items {
+      title
+      dateOfPublication
+      asset {
+        url
+      }
+      link
+    }
+  }
+  geneResearchHeading: heading(locale: $locale, id: $geneResearchHeadingId) {
+    content
+  }
+  geneResearchContent: paragraphs(locale: $locale, id: $geneResearchContentId) {
+    content {
+      json
+    }
+  }
+  genePublications: publicationCollection(
+    where: { typeOfResearch: "Gene" }
+    order: dateOfPublication_DESC
+  ) {
+    items {
+      title
+      dateOfPublication
+      asset {
+        url
+      }
+      link
+    }
+  }
+}
