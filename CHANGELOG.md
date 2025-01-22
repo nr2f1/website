@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.35.0](https://github.com/nr2f1/website/compare/v1.34.0...v1.35.0) (2025-01-22)
+
+
+### Features
+
+* add publications by year component ([8c055bb](https://github.com/nr2f1/website/commit/8c055bbca15b290d67277c65d417e9b481ca8bec))
+* add publications page header ([cda1e81](https://github.com/nr2f1/website/commit/cda1e81932ce1747abecfced15117b6ccd1bf681))
+* group publications by year ([57981ab](https://github.com/nr2f1/website/commit/57981ab35a50ad25115f5bcf9803193ba15a64ef))
+
 ## [1.34.0](https://github.com/nr2f1/website/compare/v1.33.0...v1.34.0) (2025-01-20)
 
 
