@@ -1,0 +1,11 @@
+.publications {
+  ul {
+    margin: 0;
+    padding: 0;
+    padding-inline-start: var(--spacing-8);
+  }
+
+  &__by-year:not(:last-of-type) {
+    margin-block-end: var(--spacing-6);
+  }
+}

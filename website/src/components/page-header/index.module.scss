@@ -53,6 +53,7 @@ $mobile-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fil
       & > div {
         align-self: flex-end;
         max-width: calc(592px);
+        width: 100%;
 
         @include breakpoints.small-screen {
           max-width: unset;
@@ -74,6 +75,7 @@ $mobile-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fil
         display: block;
         inset: 0;
         left: -1px;
+        bottom: -1px;
         position: absolute;
       }
 

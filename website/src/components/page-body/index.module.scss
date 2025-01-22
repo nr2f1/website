@@ -90,7 +90,13 @@
     }
   }
 
-  section {
+  h3 {
+    @include text-styles.header-3;
+    margin: 0;
+    margin-block-end: var(--spacing-3);
+  }
+
+  section:not(:first-of-type) {
     margin-block-start: var(--spacing-12);
   }
 

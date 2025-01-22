@@ -15,3 +15,6 @@ export const introId = '2fefGxsEkuAkLai3VF3nhi';
 export const registerWithUsContentId = '2anfbBGc6BGJxFYWo6i22H';
 export const registerPatientRegistryContentId = '2u126GIcOaJIqQjgbg169l';
 export const registerClinicalIdContentId = '5Y7VVQ0o5PIs1LUk7Sylxm';
+// Publications page
+export const patientResearchContentId = '2wBhQhIazKXl2yJRbHy3qZ';
+export const geneResearchContentId = '5XHqzIOZPMvUZ6P3XsXnvs';
