@@ -64,6 +64,31 @@ const getPublicationsByYear = (
   return acc;
 };
 
+interface PublicationsByYearProps {
+  publications: CleanedPublication[];
+}
+
+const PublicationsByYear: React.FC<PublicationsByYearProps> = ({
+  publications,
+}) => {
+  const publicationsByYear = publications
+    .map(getPublicationWithLink)
+    .reduce(getPublicationsByYear, {} as GroupedPublicationsByYear);
+
+  return Object.entries(publicationsByYear).map(([year, publications]) => (
+    <div key={crypto.randomUUID()}>
+      <h3>{year}</h3>
+      <ul>
+        {publications.map(({ title, link }) => (
+          <li key={crypto.randomUUID()}>
+            <a href={link}>{title}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ));
+};
+
 const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
   const {
     data: {
@@ -108,12 +133,18 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
           {patientResearchHeading?.content}
         </h2>
         {documentToReactComponents(patientResearchContent?.content?.json)}
+        <PublicationsByYear
+          publications={patientPublications?.items as CleanedPublication[]}
+        />
       </section>
       <section>
         <h2 id={createHashLink(geneResearchHeading?.content ?? '')}>
           {geneResearchHeading?.content}
         </h2>
         {documentToReactComponents(geneResearchContent?.content?.json)}
+        <PublicationsByYear
+          publications={genePublications?.items as CleanedPublication[]}
+        />
       </section>
     </PageBody>
   );
