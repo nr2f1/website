@@ -8,11 +8,17 @@ interface PageBodyProps {
   lang: AvailableLocale;
   headings: string[];
   children: React.ReactNode;
+  className?: string;
 }
 
-const PageBody: React.FC<PageBodyProps> = ({ lang, headings, children }) => {
+const PageBody: React.FC<PageBodyProps> = ({
+  lang,
+  headings,
+  children,
+  className,
+}) => {
   return (
-    <div className={styles['page-layout']}>
+    <div className={`${styles['page-layout']} ${className ?? ''}`}>
       <div className={styles['page-layout__row']}>
         <aside className={styles['page-contents']}>
           <PageContents lang={lang} headings={headings} />

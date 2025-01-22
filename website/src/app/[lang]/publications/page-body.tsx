@@ -1,3 +1,5 @@
+import styles from './page-body.module.scss';
+
 import PageBody from '@components/page-body';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
@@ -44,14 +46,12 @@ interface PublicationsByYear {
   publications: PublicationWithLink[];
 }
 
-type GroupedPublicationsByYear = Record<number, PublicationWithLink[]>;
-
 const getPublicationWithLink = (
   publication: CleanedPublication,
 ): PublicationWithLink => {
   const { title, dateOfPublication, link, asset } = publication;
   return {
-    title: title ?? '',
+    title: title,
     year: new Date(dateOfPublication).getFullYear(),
     link: link ?? asset?.url ?? '',
   };
@@ -92,7 +92,7 @@ const PublicationsByYear: React.FC<PublicationsByYearProps> = ({
     .sort(sortByYear);
 
   return publicationsByYear.map(({ year, publications }) => (
-    <div key={crypto.randomUUID()}>
+    <div className={styles['publications__by-year']} key={crypto.randomUUID()}>
       <h3>{year}</h3>
       <ul>
         {publications.map(({ title, link }) => (
@@ -137,7 +137,7 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
   ];
 
   return (
-    <PageBody lang={lang} headings={headings}>
+    <PageBody lang={lang} headings={headings} className={styles.publications}>
       <section>
         <h2 id={createHashLink(patientResearchHeading?.content ?? '')}>
           {patientResearchHeading?.content}
