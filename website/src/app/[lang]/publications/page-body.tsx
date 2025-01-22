@@ -5,7 +5,6 @@ import {
   GetPublicationsPageDocument,
   type GetPublicationsPageQuery,
 } from '@graphql/queries/publications-page/index.generated';
-import type { Maybe } from '@graphql/types';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   geneResearchHeadingId,
@@ -23,25 +22,46 @@ interface RegisterPageBodyProps {
 
 const { query } = getClient();
 
-type PublicationWithLink = {
-  __typename?: 'Publication';
-  title?: string | null;
-  // biome-ignore lint/suspicious/noExplicitAny: that is how is auto generated
-  dateOfPublication?: any | null;
-  link?: string | null;
-  asset?: { __typename?: 'Asset'; url?: string | null } | null;
-} | null;
+interface CleanedPublication {
+  __typename: 'Publication';
+  title: string;
+  dateOfPublication: string;
+  link: string | null;
+  asset: {
+    __typename: 'Asset';
+    url: string;
+  } | null;
+}
 
-const publicationWithLink = (publication: Maybe<PublicationWithLink>) => {
-  if (!publication) {
-    return;
-  }
+interface PublicationWithLink {
+  title: string;
+  year: number;
+  link: string;
+}
+
+type GroupedPublicationsByYear = Record<number, PublicationWithLink[]>;
+
+const getPublicationWithLink = (
+  publication: CleanedPublication,
+): PublicationWithLink => {
   const { title, dateOfPublication, link, asset } = publication;
   return {
     title: title ?? '',
     year: new Date(dateOfPublication).getFullYear(),
     link: link ?? asset?.url ?? '',
   };
+};
+
+const getPublicationsByYear = (
+  acc: GroupedPublicationsByYear,
+  { title, year, link }: PublicationWithLink,
+) => {
+  if (!acc[year]) {
+    acc[year] = [];
+  }
+
+  acc[year].push({ title, link, year });
+  return acc;
 };
 
 const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
@@ -75,9 +95,11 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
     geneResearchHeading?.content ?? '',
   ];
 
-  const patientResearchContentWithLinks = patientPublications?.items
-    .map(publicationWithLink)
-    .filter(Boolean);
+  const patientResearchContentGroupByYear = (
+    patientPublications?.items as CleanedPublication[]
+  )
+    .map(getPublicationWithLink)
+    .reduce(getPublicationsByYear, {} as GroupedPublicationsByYear);
 
   return (
     <PageBody lang={lang} headings={headings}>
