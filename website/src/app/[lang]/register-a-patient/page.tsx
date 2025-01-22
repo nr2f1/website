@@ -48,6 +48,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     '@type': 'WebPage',
     url: `https://nr2f1.org/${lang}/register-a-patient`,
     name: title,
+    description,
     inLanguage: lang,
   };
 

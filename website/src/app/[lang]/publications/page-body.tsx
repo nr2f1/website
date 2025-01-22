@@ -17,6 +17,7 @@ import {
   patientResearchContentId,
 } from '@models/paragraphs';
 import { createHashLink } from '@shared/utils/hash-links';
+import type { ScholarlyArticle, WithContext } from 'schema-dts';
 
 interface RegisterPageBodyProps {
   lang: AvailableLocale;
@@ -95,11 +96,27 @@ const PublicationsByYear: React.FC<PublicationsByYearProps> = ({
     <div className={styles['publications__by-year']} key={crypto.randomUUID()}>
       <h3>{year}</h3>
       <ul>
-        {publications.map(({ title, link }) => (
-          <li key={crypto.randomUUID()}>
-            <a href={link}>{title}</a>
-          </li>
-        ))}
+        {publications.map(({ title, link }) => {
+          const scholaryArticle: WithContext<ScholarlyArticle> = {
+            '@context': 'https://schema.org',
+            '@type': 'ScholarlyArticle',
+            name: title,
+            url: link,
+          };
+
+          return (
+            <li key={crypto.randomUUID()}>
+              <script
+                type="application/ld+json"
+                // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify(scholaryArticle),
+                }}
+              />
+              <a href={link}>{title}</a>
+            </li>
+          );
+        })}
       </ul>
     </div>
   ));

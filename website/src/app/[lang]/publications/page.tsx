@@ -4,10 +4,10 @@ import {
   GetMetadataDocument,
   type GetMetadataQuery,
 } from '@graphql/queries/metadata/index.generated';
-import { registerPatientPageMetadataId } from '@models/metadata';
+import { publicationsPageMetadataId } from '@models/metadata';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
-import type { Graph, MedicalStudy, WebPage, WithContext } from 'schema-dts';
+import type { Graph, WebPage, WithContext } from 'schema-dts';
 import RegisterPageBody from './page-body';
 import PublicationsPageHeader from './page-header';
 
@@ -26,36 +26,22 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     query: GetMetadataDocument,
     variables: {
       locale: lang,
-      id: registerPatientPageMetadataId,
+      id: publicationsPageMetadataId,
     },
   });
 
-  const medicalStudy: WithContext<MedicalStudy> = {
-    '@context': 'https://schema.org',
-    '@type': 'MedicalStudy',
-    name: title,
-    description,
-    potentialAction: [
-      {
-        '@type': 'RegisterAction',
-        target: `https://nr2f1.org/${lang}/register-patient`,
-        name: title,
-      },
-    ],
-  };
-
-  // TODO: Change schema
   const webPage: WithContext<WebPage> = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: `https://nr2f1.org/${lang}/register-a-patient`,
+    url: `https://nr2f1.org/${lang}/publications`,
     name: title,
+    description,
     inLanguage: lang,
   };
 
   const jsonLd: Graph = {
     '@context': 'https://schema.org',
-    '@graph': [medicalStudy, webPage],
+    '@graph': [webPage],
   };
 
   return (
@@ -90,7 +76,7 @@ export async function generateMetadata({
     query: GetMetadataDocument,
     variables: {
       locale: lang,
-      id: registerPatientPageMetadataId,
+      id: publicationsPageMetadataId,
     },
   });
 
