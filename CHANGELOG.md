@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.36.0](https://github.com/nr2f1/website/compare/v1.35.0...v1.36.0) (2025-01-22)
+
+
+### Features
+
+* add schema.org metadata to publications page ([e3bf993](https://github.com/nr2f1/website/commit/e3bf993af553443810f03f1f6fbfde36b9800f86))
+
 ## [1.35.0](https://github.com/nr2f1/website/compare/v1.34.0...v1.35.0) (2025-01-22)
 
 
