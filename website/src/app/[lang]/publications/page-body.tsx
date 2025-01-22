@@ -39,6 +39,11 @@ interface PublicationWithLink {
   link: string;
 }
 
+interface PublicationsByYear {
+  year: number;
+  publications: PublicationWithLink[];
+}
+
 type GroupedPublicationsByYear = Record<number, PublicationWithLink[]>;
 
 const getPublicationWithLink = (
@@ -53,15 +58,25 @@ const getPublicationWithLink = (
 };
 
 const getPublicationsByYear = (
-  acc: GroupedPublicationsByYear,
+  acc: PublicationsByYear[],
   { title, year, link }: PublicationWithLink,
 ) => {
-  if (!acc[year]) {
-    acc[year] = [];
+  const existingYear = acc.find((publication) => publication.year === year);
+
+  if (existingYear) {
+    existingYear.publications.push({ title, link, year });
+  } else {
+    acc.push({ year, publications: [{ title, link, year }] });
   }
 
-  acc[year].push({ title, link, year });
   return acc;
+};
+
+const sortByYear = (
+  { year: yearA }: PublicationsByYear,
+  { year: yearB }: PublicationsByYear,
+) => {
+  return yearB - yearA;
 };
 
 interface PublicationsByYearProps {
@@ -73,9 +88,10 @@ const PublicationsByYear: React.FC<PublicationsByYearProps> = ({
 }) => {
   const publicationsByYear = publications
     .map(getPublicationWithLink)
-    .reduce(getPublicationsByYear, {} as GroupedPublicationsByYear);
+    .reduce(getPublicationsByYear, [] as PublicationsByYear[])
+    .sort(sortByYear);
 
-  return Object.entries(publicationsByYear).map(([year, publications]) => (
+  return publicationsByYear.map(({ year, publications }) => (
     <div key={crypto.randomUUID()}>
       <h3>{year}</h3>
       <ul>
@@ -119,12 +135,6 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
     patientResearchHeading?.content ?? '',
     geneResearchHeading?.content ?? '',
   ];
-
-  const patientResearchContentGroupByYear = (
-    patientPublications?.items as CleanedPublication[]
-  )
-    .map(getPublicationWithLink)
-    .reduce(getPublicationsByYear, {} as GroupedPublicationsByYear);
 
   return (
     <PageBody lang={lang} headings={headings}>
