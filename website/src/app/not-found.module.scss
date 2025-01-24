@@ -1,0 +1,38 @@
+@use '@styles/text-styles';
+@use '@styles/layout';
+@use '@styles/buttons';
+@use '@styles/breakpoints';
+
+.notfound {
+  &__content_wrapper {
+    @include layout.content-max-width-7xl;
+    padding: var(--spacing-20) var(--spacing-16) var(--spacing-24);
+
+    @include breakpoints.medium-screen {
+      padding: var(--spacing-6) var(--spacing-12) var(--spacing-12);
+    }
+
+    @include breakpoints.small-screen {
+      padding: var(--spacing-6) var(--spacing-6) var(--spacing-8);
+    }
+  }
+
+  h1 {
+    @include text-styles.header-1;
+    margin: 0;
+    margin-block-end: var(--spacing-6);
+    @include breakpoints.from-small-to-medium-screen {
+      @include text-styles.header-1--mobile;
+    }
+  }
+
+  p {
+    @include text-styles.text-base;
+    margin: 0;
+    margin-block-end: var(--spacing-4);
+
+    & > span {
+      @include text-styles.header-4;
+    }
+  }
+}

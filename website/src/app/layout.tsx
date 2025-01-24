@@ -1,4 +1,11 @@
+import { match } from '@formatjs/intl-localematcher';
+import {
+  AVAILABLE_LOCALES,
+  type AvailableLocale,
+  DEFAULT_LOCALE,
+} from '@i18n/locales';
 import { Nunito_Sans } from 'next/font/google';
+import { headers } from 'next/headers';
 
 const nunitoSans = Nunito_Sans({
   display: 'swap',
@@ -13,7 +20,6 @@ import '@styles/main.scss';
 import { ApolloWrapper } from '@app/apollo-wrapper';
 import Footer from '@components/footer';
 import Header from '@components/header';
-import { AVAILABLE_LOCALES } from '@i18n/locales';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 
 export const metadata = {
@@ -39,7 +45,19 @@ interface RootLayoutProps extends PagePropsWithLocale {
 }
 
 const RootLayout: React.FC<RootLayoutProps> = async ({ children, params }) => {
-  const { lang } = await params;
+  let { lang } = await params;
+
+  if (!lang) {
+    const headersList = await headers();
+    const acceptLanguagesHeader = headersList.get('accept-language');
+
+    lang = match(
+      (acceptLanguagesHeader ?? '').split(', '),
+      AVAILABLE_LOCALES,
+      DEFAULT_LOCALE,
+    ) as AvailableLocale;
+  }
+
   return (
     <html lang={lang} className={nunitoSans.variable}>
       <body>
