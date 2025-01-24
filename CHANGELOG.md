@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.37.0](https://github.com/nr2f1/website/compare/v1.36.0...v1.37.0) (2025-01-24)
+
+
+### Features
+
+* add not found page ([9a6bb8b](https://github.com/nr2f1/website/commit/9a6bb8bd973dea32a957f89d6ebf038c5b2c64bd))
+* chore localised 404 page ([9ebeecb](https://github.com/nr2f1/website/commit/9ebeecb364e64b08d814fdf0b5c5b8a59042044e))
+
 ## [1.36.0](https://github.com/nr2f1/website/compare/v1.35.0...v1.36.0) (2025-01-22)
 
 
