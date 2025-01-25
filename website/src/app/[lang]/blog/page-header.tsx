@@ -28,8 +28,6 @@ const BlogPageHeader: React.FC<BlogPageHeaderProps> = async ({ lang }) => {
 
   const { title, sectionTitle, lastUpdated } = data.pageHeader;
 
-  console.log({ title, sectionTitle, lastUpdated });
-
   return (
     <PageHeader
       lang={lang}

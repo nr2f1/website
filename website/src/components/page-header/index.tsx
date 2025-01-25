@@ -66,8 +66,10 @@ const PageHeader: React.FC<PageHeaderProps> = ({
       return (
         <div className={styles['page-header--no-image']}>
           <section>
-            <p>{sectionTitle}</p>
-            <h1>{pageTitle}</h1>
+            <div className="content-wrapper">
+              <p>{sectionTitle}</p>
+              <h1>{pageTitle}</h1>
+            </div>
           </section>
           <div>
             <div className="content-wrapper">
