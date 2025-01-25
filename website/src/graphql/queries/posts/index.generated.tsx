@@ -5,15 +5,17 @@ import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
 export type GetPostsQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
+  skip: Types.Scalars['Int']['input'];
 }>;
 
 
-export type GetPostsQuery = { __typename?: 'Query', blogPageCollection?: { __typename?: 'BlogPageCollection', items: Array<{ __typename?: 'BlogPage', title?: string | null, slug?: string | null, excerpt?: string | null } | null> } | null };
+export type GetPostsQuery = { __typename?: 'Query', blogPageCollection?: { __typename?: 'BlogPageCollection', total: number, items: Array<{ __typename?: 'BlogPage', title?: string | null, slug?: string | null, excerpt?: string | null } | null> } | null };
 
 
 export const GetPostsDocument = gql`
-    query GetPosts($locale: String) {
-  blogPageCollection(order: date_DESC, locale: $locale) {
+    query GetPosts($locale: String, $skip: Int!) {
+  blogPageCollection(order: date_DESC, locale: $locale, limit: 12, skip: $skip) {
+    total
     items {
       title
       slug
@@ -36,10 +38,11 @@ export const GetPostsDocument = gql`
  * const { data, loading, error } = useGetPostsQuery({
  *   variables: {
  *      locale: // value for 'locale'
+ *      skip: // value for 'skip'
  *   },
  * });
  */
-export function useGetPostsQuery(baseOptions?: Apollo.QueryHookOptions<GetPostsQuery, GetPostsQueryVariables>) {
+export function useGetPostsQuery(baseOptions: Apollo.QueryHookOptions<GetPostsQuery, GetPostsQueryVariables> & ({ variables: GetPostsQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
         return Apollo.useQuery<GetPostsQuery, GetPostsQueryVariables>(GetPostsDocument, options);
       }

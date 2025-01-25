@@ -9,6 +9,7 @@ import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params'
 import type { Metadata, NextPage } from 'next';
 import Link from 'next/link';
 import type { CollectionPage, WithContext } from 'schema-dts';
+import BlogPageHeader from './page-header';
 
 export const metadata: Metadata = {
   title: 'NR2F1 Foundation | Blog',
@@ -27,12 +28,16 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     query: GetPostsDocument,
     variables: {
       locale: lang,
+      skip: 0,
     },
   });
 
   if (error || !blogPageCollection || !blogPageCollection?.items) {
     return null;
   }
+
+  const { total } = blogPageCollection;
+  console.log(`Total posts: ${total}`);
 
   const posts = blogPageCollection.items.map((item) => ({
     content: item?.title ?? '',
@@ -52,25 +57,27 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   };
 
   return (
-    <section className={styles.blog}>
-      <script
-        type="application/ld+json"
-        // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <div className="content-wrapper">
-        <h1>Blog</h1>
-        <nav>
-          <ul>
-            {posts.map(({ content, slug }) => (
-              <li key={crypto.randomUUID()}>
-                <Link href={`/blog/${slug}`}>{content}</Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-    </section>
+    <>
+      <BlogPageHeader lang={lang} />
+      <section className={styles.blog}>
+        <script
+          type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <div className="content-wrapper">
+          <nav>
+            <ul>
+              {posts.map(({ content, slug }) => (
+                <li key={crypto.randomUUID()}>
+                  <Link href={`/blog/${slug}`}>{content}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </section>
+    </>
   );
 };
 

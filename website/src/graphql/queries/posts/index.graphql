@@ -1,5 +1,11 @@
-query GetPosts($locale: String) {
-  blogPageCollection(order: date_DESC, locale: $locale) {
+query GetPosts($locale: String, $skip: Int!) {
+  blogPageCollection(
+    order: date_DESC
+    locale: $locale
+    limit: 12
+    skip: $skip
+  ) {
+    total
     items {
       title
       slug
