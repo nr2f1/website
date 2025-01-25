@@ -1,3 +1,4 @@
+import NewsCard from '@components/news-card';
 import styles from './index.module.scss';
 
 import { getClient } from '@graphql/client';
@@ -8,49 +9,11 @@ import {
 import type { AvailableLocale } from '@i18n/locales';
 import { latestNewsTitleId } from '@models/headings';
 import { latestNewsCtaId } from '@models/links';
-import { getIntlDateStrings } from '@shared/utils/intl-date';
 import Link from 'next/link';
 
 interface LatestNewsProps {
   lang: AvailableLocale;
 }
-
-interface CardProps {
-  date: string;
-  imageUrl: string;
-  lang: AvailableLocale;
-  slug: string;
-  title: string;
-}
-
-const Card: React.FC<CardProps> = ({ title, date, imageUrl, lang, slug }) => {
-  const { dateTime, publishedString } = getIntlDateStrings({
-    date,
-    locale: lang,
-  });
-
-  return (
-    <li className={styles.article}>
-      <Link href={`/blog/${slug}`}>
-        <article>
-          <div
-            className={styles.article__img}
-            style={{
-              backgroundImage: `url(${imageUrl})`,
-            }}
-          />
-          <div>
-            <p className={styles.article__label}>Blog post</p>
-            <h3>{title}</h3>
-            <p className={styles.article__date}>
-              <time dateTime={dateTime}>{publishedString}</time>
-            </p>
-          </div>
-        </article>
-      </Link>
-    </li>
-  );
-};
 
 const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
   const { query } = getClient();
@@ -81,7 +44,7 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
 
         <ul className={styles.news__articles}>
           {posts.items.map((post) => (
-            <Card
+            <NewsCard
               date={post?.date ?? ''}
               imageUrl={post?.image?.url ?? ''}
               key={crypto.randomUUID()}

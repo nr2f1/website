@@ -1,15 +1,19 @@
-query GetPosts($locale: String, $skip: Int!) {
+query GetPosts($locale: String, $limit: Int!, $skip: Int!) {
   blogPageCollection(
     order: date_DESC
     locale: $locale
-    limit: 12
+    limit: $limit
     skip: $skip
   ) {
     total
     items {
       title
       slug
+      date
       excerpt
+      image {
+        url
+      }
     }
   }
 }

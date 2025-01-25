@@ -1,14 +1,6 @@
-import styles from './index.module.scss';
-
-import { getClient } from '@graphql/client';
-import {
-  GetPostsDocument,
-  type GetPostsQuery,
-} from '@graphql/queries/posts/index.generated';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
-import Link from 'next/link';
-import type { CollectionPage, WithContext } from 'schema-dts';
+import BlogPageBody from './page-body';
 import BlogPageHeader from './page-header';
 
 export const metadata: Metadata = {
@@ -19,64 +11,10 @@ export const metadata: Metadata = {
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { lang } = await params;
 
-  const { query } = getClient();
-
-  const {
-    data: { blogPageCollection },
-    error,
-  } = await query<GetPostsQuery>({
-    query: GetPostsDocument,
-    variables: {
-      locale: lang,
-      skip: 0,
-    },
-  });
-
-  if (error || !blogPageCollection || !blogPageCollection?.items) {
-    return null;
-  }
-
-  const { total } = blogPageCollection;
-  console.log(`Total posts: ${total}`);
-
-  const posts = blogPageCollection.items.map((item) => ({
-    content: item?.title ?? '',
-    slug: item?.slug ?? '',
-    excerpt: item?.excerpt ?? '',
-  }));
-
-  const jsonLd: WithContext<CollectionPage> = {
-    '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    mainEntity: posts.map(({ content, slug, excerpt }) => ({
-      '@type': 'BlogPosting',
-      headline: content,
-      url: `https://nr2f1.org/${lang}/blog/${slug}`,
-      abstract: excerpt,
-    })),
-  };
-
   return (
     <>
       <BlogPageHeader lang={lang} />
-      <section className={styles.blog}>
-        <script
-          type="application/ld+json"
-          // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <div className="content-wrapper">
-          <nav>
-            <ul>
-              {posts.map(({ content, slug }) => (
-                <li key={crypto.randomUUID()}>
-                  <Link href={`/blog/${slug}`}>{content}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      </section>
+      <BlogPageBody lang={lang} />
     </>
   );
 };
