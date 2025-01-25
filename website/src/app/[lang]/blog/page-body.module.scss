@@ -1,9 +1,8 @@
 @use '@styles/text-styles';
+@use '@styles/breakpoints';
 
 .blog {
-  h1 {
-    @include text-styles.header-1;
-  }
+  padding: var(--spacing-6) var(--spacing-16) var(--spacing-24);
 
   ul {
     padding: 0;
@@ -11,11 +10,34 @@
     list-style: none;
   }
 
-  li:not(:last-of-type) {
-    margin-bottom: var(--spacing-4);
-  }
+  &__articles {
+    align-content: flex-start;
+    align-items: flex-start;
+    align-self: stretch;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-6);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-block-end: var(--spacing-12);
+    @include breakpoints.small-screen {
+      flex-wrap: unset;
+      align-items: center;
+      flex-direction: column;
+    }
 
-  a {
-    @include text-styles.text-link;
+    /* Last two */
+    & li:nth-last-of-type(-n + 2) {
+      @include breakpoints.medium-screen {
+        display: none;
+      }
+    }
+    /* Last three */
+    & li:nth-last-of-type(-n + 3) {
+      @include breakpoints.small-screen {
+        display: none;
+      }
+    }
   }
 }

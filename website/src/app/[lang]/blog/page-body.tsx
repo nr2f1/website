@@ -1,3 +1,4 @@
+import NewsCard from '@components/news-card';
 import styles from './page-body.module.scss';
 
 import { getClient } from '@graphql/client';
@@ -6,7 +7,6 @@ import {
   type GetPostsQuery,
 } from '@graphql/queries/posts/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
-import Link from 'next/link';
 import type { CollectionPage, WithContext } from 'schema-dts';
 
 interface BlogPageBodyProps {
@@ -62,11 +62,16 @@ const BlogPageBody: React.FC<BlogPageBodyProps> = async ({ lang }) => {
       />
       <div className="content-wrapper">
         <nav>
-          <ul>
-            {posts.map(({ title, slug, date, excerpt, imageUrl }) => (
-              <li key={crypto.randomUUID()}>
-                <Link href={`/blog/${slug}`}>{title}</Link>
-              </li>
+          <ul className={styles.blog__articles}>
+            {posts.map(({ title, slug, date, imageUrl }) => (
+              <NewsCard
+                date={date}
+                imageUrl={imageUrl}
+                key={crypto.randomUUID()}
+                lang={lang}
+                slug={slug}
+                title={title}
+              />
             ))}
           </ul>
         </nav>
