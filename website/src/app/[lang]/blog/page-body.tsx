@@ -1,6 +1,7 @@
 import NewsCard from '@components/news-card';
 import styles from './page-body.module.scss';
 
+import Pagination from '@components/pagination';
 import { getClient } from '@graphql/client';
 import {
   GetPostsDocument,
@@ -11,7 +12,7 @@ import type { CollectionPage, WithContext } from 'schema-dts';
 
 interface BlogPageBodyProps {
   lang: AvailableLocale;
-  page?: string;
+  page?: string | string[] | undefined;
 }
 const { query } = getClient();
 
@@ -92,6 +93,15 @@ const BlogPageBody: React.FC<BlogPageBodyProps> = async ({ lang, page }) => {
             ))}
           </ul>
         </nav>
+
+        <Pagination
+          totalCount={total}
+          currentPage={page ? Number(page) : 0}
+          pageSize={LIMIT}
+          siblingCount={0}
+        />
+
+        {/* https://www.freecodecamp.org/news/build-a-custom-pagination-component-in-react/ */}
       </div>
     </section>
   );

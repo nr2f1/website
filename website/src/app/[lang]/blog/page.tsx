@@ -12,6 +12,8 @@ interface BlogPageProps extends PagePropsWithLocale {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
+// todo: create getStaticProps
+
 const Page: NextPage<BlogPageProps> = async ({ params, searchParams }) => {
   const { lang } = await params;
   const { page } = await searchParams;

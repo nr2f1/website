@@ -1,0 +1,9 @@
+.pagination {
+  &__item {
+    &--dots {
+    }
+    &--selected {
+      background-color: lightgreen;
+    }
+  }
+}
