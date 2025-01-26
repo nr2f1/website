@@ -23,8 +23,22 @@
       color: var(--foreground-primary);
     }
 
-    &--dots {
+    &:hover,
+    &:focus {
+      /*   --background-button-primary-hover: var(--navy-700);
+        --background-button-primary-press_active: var(--navy-600); */
+      background-color: var(--navy-50);
     }
+
+    &:active {
+      background-color: var(--background-button-primary-press_active);
+      background-color: var(--navy-100);
+    }
+
+    &--dots {
+      border: 1px solid transparent;
+    }
+
     &--selected {
       a {
         color: var(--foreground-inverse-primary);
