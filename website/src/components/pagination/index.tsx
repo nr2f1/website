@@ -1,5 +1,7 @@
 import styles from './index.module.scss';
 
+import ArrowLeft from '@components/icons/arrow-left';
+import ArrowRight from '@components/icons/arrow-right';
 import Link from 'next/link';
 import { DOTS, type PaginationProps, getPaginationRange } from './helpers';
 
@@ -33,7 +35,9 @@ const Pagination: React.FC<PaginationProps> = ({
   return (
     <ul className={styles.pagination}>
       <li className={styles.pagination__item}>
-        <Link href={`/blog?page=${getPreviousPage()}`}>Arrow left</Link>
+        <Link href={`/blog?page=${getPreviousPage()}`} title="previous">
+          <ArrowLeft />
+        </Link>
       </li>
       {paginationRange.map((pageNumber) => {
         if (pageNumber === DOTS) {
@@ -42,7 +46,7 @@ const Pagination: React.FC<PaginationProps> = ({
               className={`${styles.pagination__item} ${styles['pagination__item--dots']}`}
               key={crypto.randomUUID()}
             >
-              &#8230;
+              {DOTS}
             </li>
           );
         }
@@ -56,12 +60,19 @@ const Pagination: React.FC<PaginationProps> = ({
                 : styles.pagination__item
             }
           >
-            <Link href={`/blog?page=${pageNumber}`}> {pageNumber}</Link>
+            <Link
+              href={`/blog?page=${pageNumber}`}
+              title={`page ${pageNumber}`}
+            >
+              {pageNumber}
+            </Link>
           </li>
         );
       })}
       <li className={styles.pagination__item}>
-        <Link href={`/blog?page=${getNextPage()}`}>Arrow right</Link>
+        <Link href={`/blog?page=${getNextPage()}`} title="next">
+          <ArrowRight />
+        </Link>
       </li>
     </ul>
   );

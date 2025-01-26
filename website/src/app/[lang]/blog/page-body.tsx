@@ -100,8 +100,6 @@ const BlogPageBody: React.FC<BlogPageBodyProps> = async ({ lang, page }) => {
           pageSize={LIMIT}
           siblingCount={0}
         />
-
-        {/* https://www.freecodecamp.org/news/build-a-custom-pagination-component-in-react/ */}
       </div>
     </section>
   );

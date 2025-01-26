@@ -10,7 +10,7 @@
     list-style: none;
   }
 
-  &__articles {
+  &__articles:is(ul) {
     align-content: flex-start;
     align-items: flex-start;
     align-self: stretch;
