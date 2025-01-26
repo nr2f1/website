@@ -8,13 +8,18 @@ export const metadata: Metadata = {
   description: 'Blog',
 };
 
-const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
+interface BlogPageProps extends PagePropsWithLocale {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+const Page: NextPage<BlogPageProps> = async ({ params, searchParams }) => {
   const { lang } = await params;
+  const { page } = await searchParams;
 
   return (
     <>
       <BlogPageHeader lang={lang} />
-      <BlogPageBody lang={lang} />
+      <BlogPageBody lang={lang} page={page} />
     </>
   );
 };

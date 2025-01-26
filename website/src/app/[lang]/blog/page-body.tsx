@@ -11,10 +11,27 @@ import type { CollectionPage, WithContext } from 'schema-dts';
 
 interface BlogPageBodyProps {
   lang: AvailableLocale;
+  page?: string;
 }
 const { query } = getClient();
 
-const BlogPageBody: React.FC<BlogPageBodyProps> = async ({ lang }) => {
+const getSkipPagination = (page: BlogPageBodyProps['page'], limit: number) => {
+  if (!page) {
+    return 0;
+  }
+
+  const pageNumber = Number(page) - 1;
+
+  if (pageNumber < 0) {
+    return 0;
+  }
+
+  return pageNumber * limit;
+};
+
+const BlogPageBody: React.FC<BlogPageBodyProps> = async ({ lang, page }) => {
+  const LIMIT = 12;
+
   const {
     data: { blogPageCollection },
     error,
@@ -22,8 +39,8 @@ const BlogPageBody: React.FC<BlogPageBodyProps> = async ({ lang }) => {
     query: GetPostsDocument,
     variables: {
       locale: lang,
-      skip: 0,
-      limit: 12,
+      skip: page ? getSkipPagination(page, LIMIT) : 0,
+      limit: LIMIT,
     },
   });
 
