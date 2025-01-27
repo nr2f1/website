@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.38.1](https://github.com/nr2f1/website/compare/v1.38.0...v1.38.1) (2025-01-27)
+
+
+### Bug Fixes
+
+* add missing dependency for locale matcher ([3c13b86](https://github.com/nr2f1/website/commit/3c13b86ac9bcdd1c85ae47c6184aba3e5013c638))
+
 ## [1.38.0](https://github.com/nr2f1/website/compare/v1.37.0...v1.38.0) (2025-01-27)
 
 
