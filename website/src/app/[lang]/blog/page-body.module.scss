@@ -26,18 +26,5 @@
       align-items: center;
       flex-direction: column;
     }
-
-    /* Last two */
-    & li:nth-last-of-type(-n + 2) {
-      @include breakpoints.medium-screen {
-        display: none;
-      }
-    }
-    /* Last three */
-    & li:nth-last-of-type(-n + 3) {
-      @include breakpoints.small-screen {
-        display: none;
-      }
-    }
   }
 }
