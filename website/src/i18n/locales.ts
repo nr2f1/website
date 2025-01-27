@@ -44,3 +44,5 @@ export interface LocaleParamsPath {
 }
 
 export type LocalisedString = Record<AvailableLocale, string>;
+
+export const changeLocaleFormat = (locale: string) => locale.replace('_', '-');
