@@ -8,3 +8,19 @@ query GetPageHeader($id: String!, $locale: String) {
     }
   }
 }
+
+query GetBlogPageHeader($id: String!, $locale: String) {
+  pageHeader(id: $id, locale: $locale) {
+    title
+    sectionTitle
+    image {
+      url
+    }
+  }
+
+  lastUpdated: blogPageCollection(limit: 1, order: date_DESC) {
+    items {
+      date
+    }
+  }
+}

@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.39.0](https://github.com/nr2f1/website/compare/v1.38.2...v1.39.0) (2025-01-27)
+
+
+### Features
+
+* add last updated date to blog page header ([8895d52](https://github.com/nr2f1/website/commit/8895d52f4613b634c1a3b594425a34cc47113726))
+
+## [1.38.2](https://github.com/nr2f1/website/compare/v1.38.1...v1.38.2) (2025-01-27)
+
+
+### Bug Fixes
+
+* locale negotiation ([919e171](https://github.com/nr2f1/website/commit/919e1716a8ff7c4c30648df7eba40b82f0d7958c))
+
 ## [1.38.1](https://github.com/nr2f1/website/compare/v1.38.0...v1.38.1) (2025-01-27)
 
 
