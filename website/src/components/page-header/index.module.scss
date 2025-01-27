@@ -123,8 +123,7 @@ $mobile-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fil
 
     section {
       background-color: var(--background-accent-navy);
-      padding: var(--spacing-12, 48px) 0px var(--spacing-16, 64px)
-        var(--spacing-16, 64px);
+      padding: var(--spacing-12) var(--spacing-16) var(--spacing-16);
 
       @include breakpoints.small-screen {
         padding: var(--spacing-2) var(--spacing-6) var(--spacing-8);

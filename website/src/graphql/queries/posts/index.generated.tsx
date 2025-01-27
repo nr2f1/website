@@ -5,19 +5,31 @@ import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
 export type GetPostsQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
+  limit: Types.Scalars['Int']['input'];
+  skip: Types.Scalars['Int']['input'];
 }>;
 
 
-export type GetPostsQuery = { __typename?: 'Query', blogPageCollection?: { __typename?: 'BlogPageCollection', items: Array<{ __typename?: 'BlogPage', title?: string | null, slug?: string | null, excerpt?: string | null } | null> } | null };
+export type GetPostsQuery = { __typename?: 'Query', blogPageCollection?: { __typename?: 'BlogPageCollection', total: number, items: Array<{ __typename?: 'BlogPage', title?: string | null, slug?: string | null, date?: any | null, excerpt?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null };
 
 
 export const GetPostsDocument = gql`
-    query GetPosts($locale: String) {
-  blogPageCollection(order: date_DESC, locale: $locale) {
+    query GetPosts($locale: String, $limit: Int!, $skip: Int!) {
+  blogPageCollection(
+    order: date_DESC
+    locale: $locale
+    limit: $limit
+    skip: $skip
+  ) {
+    total
     items {
       title
       slug
+      date
       excerpt
+      image {
+        url
+      }
     }
   }
 }
@@ -36,10 +48,12 @@ export const GetPostsDocument = gql`
  * const { data, loading, error } = useGetPostsQuery({
  *   variables: {
  *      locale: // value for 'locale'
+ *      limit: // value for 'limit'
+ *      skip: // value for 'skip'
  *   },
  * });
  */
-export function useGetPostsQuery(baseOptions?: Apollo.QueryHookOptions<GetPostsQuery, GetPostsQueryVariables>) {
+export function useGetPostsQuery(baseOptions: Apollo.QueryHookOptions<GetPostsQuery, GetPostsQueryVariables> & ({ variables: GetPostsQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
         return Apollo.useQuery<GetPostsQuery, GetPostsQueryVariables>(GetPostsDocument, options);
       }

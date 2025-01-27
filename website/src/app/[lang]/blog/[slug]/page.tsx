@@ -6,10 +6,6 @@ import {
   GetPostDocument,
   type GetPostQuery,
 } from '@graphql/queries/post/index.generated';
-import {
-  GetPostsDocument,
-  type GetPostsQuery,
-} from '@graphql/queries/posts/index.generated';
 import type { BlogPagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
 import { renderNode } from '@shared/utils/rich-text';
@@ -46,25 +42,6 @@ export async function generateMetadata({
       },
     },
   };
-}
-
-export async function generateStaticParams() {
-  const { data } = await query<GetPostsQuery>({
-    query: GetPostsDocument,
-  });
-
-  if (
-    !data ||
-    !data?.blogPageCollection ||
-    !data?.blogPageCollection?.items ||
-    !data?.blogPageCollection?.items.length
-  ) {
-    return [];
-  }
-
-  return data.blogPageCollection.items.map((post) => ({
-    slug: post?.slug ?? '',
-  }));
 }
 
 const Page: NextPage<BlogPagePropsWithLocale> = async ({ params }) => {
