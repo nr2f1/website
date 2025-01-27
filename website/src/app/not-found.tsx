@@ -1,15 +1,8 @@
 import styles from './not-found.module.scss';
 
 import SupportBanner from '@components/support-banner';
-import { match } from '@formatjs/intl-localematcher';
-import {
-  AVAILABLE_LOCALES,
-  type AvailableLocale,
-  DEFAULT_LOCALE,
-  changeLocaleFormat,
-} from '@i18n/locales';
-import Negotiator from 'negotiator';
-import { headers } from 'next/headers';
+import type { AvailableLocale } from '@i18n/locales';
+import { getLocale } from '@shared/utils/get-locale';
 import Link from 'next/link';
 
 const translations: Record<AvailableLocale, Record<string, string>> = {
@@ -40,22 +33,7 @@ const translations: Record<AvailableLocale, Record<string, string>> = {
 };
 
 export default async function NotFound() {
-  const headersList = await headers();
-  const acceptLanguagesHeader = headersList.get('accept-language');
-
-  const negotiator = new Negotiator({
-    headers: {
-      'accept-language': acceptLanguagesHeader ?? '',
-    },
-  });
-
-  const userLocales = negotiator.languages().map(changeLocaleFormat);
-
-  const lang = match(
-    userLocales,
-    AVAILABLE_LOCALES,
-    DEFAULT_LOCALE,
-  ) as AvailableLocale;
+  const lang = await getLocale();
 
   return (
     <div className={styles.notfound}>
