@@ -10,6 +10,7 @@ import {
   AVAILABLE_LOCALES,
   type AvailableLocale,
   DEFAULT_LOCALE,
+  changeLocaleFormat,
 } from '@i18n/locales';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import Negotiator from 'negotiator';
@@ -45,8 +46,6 @@ export async function generateStaticParams() {
 interface RootLayoutProps extends PagePropsWithLocale {
   children: React.ReactNode;
 }
-
-const changeLocaleFormat = (locale: string) => locale.replace('_', '-');
 
 const RootLayout: React.FC<RootLayoutProps> = async ({ children, params }) => {
   let { lang } = await params;

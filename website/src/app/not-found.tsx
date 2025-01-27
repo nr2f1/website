@@ -6,12 +6,11 @@ import {
   AVAILABLE_LOCALES,
   type AvailableLocale,
   DEFAULT_LOCALE,
+  changeLocaleFormat,
 } from '@i18n/locales';
 import Negotiator from 'negotiator';
 import { headers } from 'next/headers';
 import Link from 'next/link';
-
-const changeLocaleFormat = (locale: string) => locale.replace('_', '-');
 
 const translations: Record<AvailableLocale, Record<string, string>> = {
   en: {
