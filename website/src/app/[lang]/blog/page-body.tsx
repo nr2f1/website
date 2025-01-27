@@ -31,7 +31,7 @@ const getSkipPagination = (page: BlogPageBodyProps['page'], limit: number) => {
 };
 
 const BlogPageBody: React.FC<BlogPageBodyProps> = async ({ lang, page }) => {
-  const LIMIT = 12;
+  const LIMIT = 6;
 
   const {
     data: { blogPageCollection },
@@ -98,7 +98,8 @@ const BlogPageBody: React.FC<BlogPageBodyProps> = async ({ lang, page }) => {
           totalCount={total}
           currentPage={page ? Number(page) : 0}
           pageSize={LIMIT}
-          siblingCount={0}
+          siblingCount={1}
+          lang={lang}
         />
       </div>
     </section>

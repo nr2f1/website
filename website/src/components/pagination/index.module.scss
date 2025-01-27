@@ -25,18 +25,19 @@
 
     &:hover,
     &:focus {
-      /*   --background-button-primary-hover: var(--navy-700);
-        --background-button-primary-press_active: var(--navy-600); */
       background-color: var(--navy-50);
     }
 
     &:active {
-      background-color: var(--background-button-primary-press_active);
       background-color: var(--navy-100);
     }
 
     &--dots {
       border: 1px solid transparent;
+      &:hover,
+      &:focus {
+        background-color: var(--white);
+      }
     }
 
     &--selected {
@@ -44,6 +45,15 @@
         color: var(--foreground-inverse-primary);
       }
       background-color: var(--background-inverse-primary);
+
+      &:hover,
+      &:focus,
+      &:active {
+        a {
+          color: var(--foreground-inverse-primary);
+        }
+        background-color: var(--background-inverse-primary);
+      }
     }
   }
 }

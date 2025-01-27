@@ -1,8 +1,11 @@
+import type { AvailableLocale } from '@i18n/locales';
+
 export interface PaginationProps {
   totalCount: number;
   currentPage: number;
   pageSize: number;
   siblingCount: number;
+  lang: AvailableLocale;
 }
 
 export const DOTS = '...';
@@ -21,7 +24,7 @@ export const getPaginationRange = ({
   currentPage,
   pageSize,
   siblingCount,
-}: PaginationProps) => {
+}: Omit<PaginationProps, 'lang'>) => {
   const totalPageCount = Math.ceil(totalCount / pageSize);
 
   // Pages count is determined as siblingCount + firstPage + lastPage + currentPage + 2*DOTS

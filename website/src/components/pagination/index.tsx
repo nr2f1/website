@@ -2,14 +2,45 @@ import styles from './index.module.scss';
 
 import ArrowLeft from '@components/icons/arrow-left';
 import ArrowRight from '@components/icons/arrow-right';
+import type { AvailableLocale } from '@i18n/locales';
 import Link from 'next/link';
 import { DOTS, type PaginationProps, getPaginationRange } from './helpers';
+
+interface PaginationLocale {
+  previous: string;
+  next: string;
+  page: string;
+}
+
+const paginationLocales: Record<AvailableLocale, PaginationLocale> = {
+  en: {
+    previous: 'previous',
+    next: 'next',
+    page: 'page',
+  },
+  es: {
+    previous: 'anterior',
+    next: 'siguiente',
+    page: 'página',
+  },
+  fr: {
+    previous: 'précédent',
+    next: 'suivant',
+    page: 'page',
+  },
+  de: {
+    previous: 'vorherige',
+    next: 'nächste',
+    page: 'seite',
+  },
+};
 
 const Pagination: React.FC<PaginationProps> = ({
   totalCount,
   currentPage,
   pageSize,
   siblingCount = 0,
+  lang,
 }) => {
   const realCurrentPage = currentPage < 1 ? 1 : currentPage;
 
@@ -35,8 +66,8 @@ const Pagination: React.FC<PaginationProps> = ({
   return (
     <ul className={styles.pagination}>
       <li className={styles.pagination__item}>
-        <Link href={`/blog?page=${getPreviousPage()}`} title="previous">
-          <ArrowLeft />
+        <Link href={`/blog?page=${getPreviousPage()}`}>
+          <ArrowLeft title={paginationLocales[lang].previous} />
         </Link>
       </li>
       {paginationRange.map((pageNumber) => {
@@ -62,7 +93,7 @@ const Pagination: React.FC<PaginationProps> = ({
           >
             <Link
               href={`/blog?page=${pageNumber}`}
-              title={`page ${pageNumber}`}
+              title={`${paginationLocales[lang].page} ${pageNumber}`}
             >
               {pageNumber}
             </Link>
@@ -71,7 +102,7 @@ const Pagination: React.FC<PaginationProps> = ({
       })}
       <li className={styles.pagination__item}>
         <Link href={`/blog?page=${getNextPage()}`} title="next">
-          <ArrowRight />
+          <ArrowRight title={paginationLocales[lang].next} />
         </Link>
       </li>
     </ul>

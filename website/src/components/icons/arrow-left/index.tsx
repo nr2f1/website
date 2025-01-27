@@ -1,4 +1,8 @@
-const ArrowLeft: React.FC<React.SVGProps<SVGElement>> = () => (
+interface ArrowLeftProps {
+  title: string;
+}
+
+const ArrowLeft: React.FC<ArrowLeftProps> = ({ title }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -6,7 +10,7 @@ const ArrowLeft: React.FC<React.SVGProps<SVGElement>> = () => (
     fill="none"
     viewBox="0 0 24 24"
   >
-    <title>Arrow Left</title>
+    <title>{title}</title>
     <path
       fill="#17375F"
       fillRule="evenodd"
