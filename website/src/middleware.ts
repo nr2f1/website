@@ -1,4 +1,5 @@
 import '@formatjs/intl-getcanonicallocales/polyfill';
+import '@formatjs/intl-locale/polyfill';
 import { match } from '@formatjs/intl-localematcher';
 import { AVAILABLE_LOCALES, DEFAULT_LOCALE } from '@i18n/locales';
 import Negotiator from 'negotiator';
