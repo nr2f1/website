@@ -1,5 +1,3 @@
-import '@formatjs/intl-getcanonicallocales/polyfill';
-import '@formatjs/intl-locale/polyfill';
 import { match } from '@formatjs/intl-localematcher';
 import {
   AVAILABLE_LOCALES,

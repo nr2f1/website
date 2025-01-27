@@ -3,8 +3,6 @@ import '@styles/main.scss';
 import { ApolloWrapper } from '@app/apollo-wrapper';
 import Footer from '@components/footer';
 import Header from '@components/header';
-import '@formatjs/intl-getcanonicallocales/polyfill';
-import '@formatjs/intl-locale/polyfill';
 import { match } from '@formatjs/intl-localematcher';
 import {
   AVAILABLE_LOCALES,
