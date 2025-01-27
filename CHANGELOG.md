@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.38.0](https://github.com/nr2f1/website/compare/v1.37.0...v1.38.0) (2025-01-27)
+
+
+### Features
+
+* add blog page header ([1d699ab](https://github.com/nr2f1/website/commit/1d699aba349c2597d417daf24bee58382f797f4c))
+* add pagination component ([b23ea69](https://github.com/nr2f1/website/commit/b23ea69822a9b408217f4530e0a6439330b90941))
+
+
+### Bug Fixes
+
+* add missing polyfill for formatjs ([4830d43](https://github.com/nr2f1/website/commit/4830d4310d9cb2c93325c0ac288b42ee4b2336a1))
+* blog page header padding ([7365b39](https://github.com/nr2f1/website/commit/7365b397b24df9610f9404a92a056f506887d8d4))
+
 ## [1.37.0](https://github.com/nr2f1/website/compare/v1.36.0...v1.37.0) (2025-01-24)
 
 
