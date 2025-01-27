@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.38.2](https://github.com/nr2f1/website/compare/v1.38.1...v1.38.2) (2025-01-27)
+
+
+### Bug Fixes
+
+* locale negotiation ([919e171](https://github.com/nr2f1/website/commit/919e1716a8ff7c4c30648df7eba40b82f0d7958c))
+
 ## [1.38.1](https://github.com/nr2f1/website/compare/v1.38.0...v1.38.1) (2025-01-27)
 
 
