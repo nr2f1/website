@@ -7,8 +7,11 @@ import {
   type AvailableLocale,
   DEFAULT_LOCALE,
 } from '@i18n/locales';
+import Negotiator from 'negotiator';
 import { headers } from 'next/headers';
 import Link from 'next/link';
+
+const changeLocaleFormat = (locale: string) => locale.replace('_', '-');
 
 const translations: Record<AvailableLocale, Record<string, string>> = {
   en: {
@@ -41,8 +44,16 @@ export default async function NotFound() {
   const headersList = await headers();
   const acceptLanguagesHeader = headersList.get('accept-language');
 
+  const negotiator = new Negotiator({
+    headers: {
+      'accept-language': acceptLanguagesHeader ?? '',
+    },
+  });
+
+  const userLocales = negotiator.languages().map(changeLocaleFormat);
+
   const lang = match(
-    (acceptLanguagesHeader ?? '').split(', '),
+    userLocales,
     AVAILABLE_LOCALES,
     DEFAULT_LOCALE,
   ) as AvailableLocale;

@@ -1,9 +1,18 @@
+import '@styles/main.scss';
+
+import { ApolloWrapper } from '@app/apollo-wrapper';
+import Footer from '@components/footer';
+import Header from '@components/header';
+import '@formatjs/intl-getcanonicallocales/polyfill';
+import '@formatjs/intl-locale/polyfill';
 import { match } from '@formatjs/intl-localematcher';
 import {
   AVAILABLE_LOCALES,
   type AvailableLocale,
   DEFAULT_LOCALE,
 } from '@i18n/locales';
+import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
+import Negotiator from 'negotiator';
 import { Nunito_Sans } from 'next/font/google';
 import { headers } from 'next/headers';
 
@@ -14,13 +23,6 @@ const nunitoSans = Nunito_Sans({
   adjustFontFallback: false,
   preload: true,
 });
-
-import '@styles/main.scss';
-
-import { ApolloWrapper } from '@app/apollo-wrapper';
-import Footer from '@components/footer';
-import Header from '@components/header';
-import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 
 export const metadata = {
   title: 'NR2F1 Foundation',
@@ -44,15 +46,26 @@ interface RootLayoutProps extends PagePropsWithLocale {
   children: React.ReactNode;
 }
 
+const changeLocaleFormat = (locale: string) => locale.replace('_', '-');
+
 const RootLayout: React.FC<RootLayoutProps> = async ({ children, params }) => {
   let { lang } = await params;
 
   if (!lang) {
     const headersList = await headers();
+
     const acceptLanguagesHeader = headersList.get('accept-language');
 
+    const negotiator = new Negotiator({
+      headers: {
+        'accept-language': acceptLanguagesHeader ?? '',
+      },
+    });
+
+    const userLocales = negotiator.languages().map(changeLocaleFormat);
+
     lang = match(
-      (acceptLanguagesHeader ?? '').split(', '),
+      userLocales,
       AVAILABLE_LOCALES,
       DEFAULT_LOCALE,
     ) as AvailableLocale;
