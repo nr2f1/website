@@ -31,7 +31,7 @@ const getSkipPagination = (page: BlogPageBodyProps['page'], limit: number) => {
 };
 
 const BlogPageBody: React.FC<BlogPageBodyProps> = async ({ lang, page }) => {
-  const LIMIT = 6;
+  const LIMIT = 12;
 
   const {
     data: { blogPageCollection },
