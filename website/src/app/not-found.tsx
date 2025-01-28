@@ -1,6 +1,5 @@
 import styles from './not-found.module.scss';
 
-import SupportBanner from '@components/support-banner';
 import type { AvailableLocale } from '@i18n/locales';
 import { getLocale } from '@shared/utils/get-locale';
 import Link from 'next/link';
@@ -50,7 +49,6 @@ export default async function NotFound() {
           </Link>
         </article>
       </div>
-      <SupportBanner lang={lang} />
     </div>
   );
 }
