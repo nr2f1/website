@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.41.0](https://github.com/nr2f1/website/compare/v1.40.0...v1.41.0) (2025-01-28)
+
+
+### Features
+
+* increase blog pagination limit to 12 ([5ea35a0](https://github.com/nr2f1/website/commit/5ea35a04f3e9308832c4cab2544a593ea23f6e46))
+
 ## [1.40.0](https://github.com/nr2f1/website/compare/v1.39.0...v1.40.0) (2025-01-28)
 
 
