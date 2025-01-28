@@ -6,14 +6,14 @@
 .notfound {
   &__content_wrapper {
     @include layout.content-max-width-7xl;
-    padding: var(--spacing-20) var(--spacing-16) var(--spacing-24);
+    padding: var(--spacing-20) var(--spacing-16) var(--spacing-32);
 
     @include breakpoints.medium-screen {
-      padding: var(--spacing-6) var(--spacing-12) var(--spacing-12);
+      padding: var(--spacing-6) var(--spacing-12) var(--spacing-20);
     }
 
     @include breakpoints.small-screen {
-      padding: var(--spacing-6) var(--spacing-6) var(--spacing-8);
+      padding: var(--spacing-6) var(--spacing-6) var(--spacing-10);
     }
   }
 
