@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.40.0](https://github.com/nr2f1/website/compare/v1.39.0...v1.40.0) (2025-01-28)
+
+
+### Features
+
+* remove support banner from  not found page ([4c31367](https://github.com/nr2f1/website/commit/4c313678d9fc0a0b372e873b171d48baabaab577))
+
 ## [1.39.0](https://github.com/nr2f1/website/compare/v1.38.2...v1.39.0) (2025-01-27)
 
 
