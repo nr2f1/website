@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.42.0](https://github.com/nr2f1/website/compare/v1.41.0...v1.42.0) (2025-02-01)
+
+
+### Features
+
+* add news and newsletter to the website ([83d5b29](https://github.com/nr2f1/website/commit/83d5b290307420954bd4d0e0d4c73b2cd761d3b7))
+* add newsletter to latest news ([587cad7](https://github.com/nr2f1/website/commit/587cad7c8e7196bdf7e9d38ba9674e90415e1d60))
+* change the order of the news in the latest news section ([7f1c1de](https://github.com/nr2f1/website/commit/7f1c1de7bd2d557cd48024508c5d853f711aed85))
+* update news query to use entryCollection ([d3421c0](https://github.com/nr2f1/website/commit/d3421c090a4146e9ccc6d702f58e4f219cc29676))
+
 ## [1.41.0](https://github.com/nr2f1/website/compare/v1.40.0...v1.41.0) (2025-01-28)
 
 
