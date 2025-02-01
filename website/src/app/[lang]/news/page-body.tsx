@@ -10,13 +10,13 @@ import {
 import type { AvailableLocale } from '@i18n/locales';
 import type { CollectionPage, WithContext } from 'schema-dts';
 
-interface BlogPageBodyProps {
+interface NewsPageBodyProps {
   lang: AvailableLocale;
   page?: string | string[] | undefined;
 }
 const { query } = getClient();
 
-const getSkipPagination = (page: BlogPageBodyProps['page'], limit: number) => {
+const getSkipPagination = (page: NewsPageBodyProps['page'], limit: number) => {
   if (!page) {
     return 0;
   }
@@ -30,7 +30,7 @@ const getSkipPagination = (page: BlogPageBodyProps['page'], limit: number) => {
   return pageNumber * limit;
 };
 
-const BlogPageBody: React.FC<BlogPageBodyProps> = async ({ lang, page }) => {
+const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
   const LIMIT = 12;
 
   const {
@@ -72,7 +72,7 @@ const BlogPageBody: React.FC<BlogPageBodyProps> = async ({ lang, page }) => {
   };
 
   return (
-    <section className={styles.blog}>
+    <section className={styles.news}>
       <script
         type="application/ld+json"
         // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
@@ -80,7 +80,7 @@ const BlogPageBody: React.FC<BlogPageBodyProps> = async ({ lang, page }) => {
       />
       <div className="content-wrapper">
         <nav>
-          <ul className={styles.blog__articles}>
+          <ul className={styles.news__articles}>
             {posts.map(({ title, slug, date, imageUrl }) => (
               <NewsCard
                 date={date}
@@ -106,4 +106,4 @@ const BlogPageBody: React.FC<BlogPageBodyProps> = async ({ lang, page }) => {
   );
 };
 
-export default BlogPageBody;
+export default NewsPageBody;

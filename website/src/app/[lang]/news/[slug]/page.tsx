@@ -6,7 +6,7 @@ import {
   GetPostDocument,
   type GetPostQuery,
 } from '@graphql/queries/post/index.generated';
-import type { BlogPagePropsWithLocale } from '@shared/types/page-with-locale-params';
+import type { NewsPagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
 import { renderNode } from '@shared/utils/rich-text';
 import type { Metadata, NextPage } from 'next';
@@ -16,7 +16,7 @@ const { query } = getClient();
 
 export async function generateMetadata({
   params,
-}: BlogPagePropsWithLocale): Promise<Metadata> {
+}: NewsPagePropsWithLocale): Promise<Metadata> {
   const { lang, slug } = await params;
 
   const { data } = await query<GetPostQuery>({
@@ -44,7 +44,7 @@ export async function generateMetadata({
   };
 }
 
-const Page: NextPage<BlogPagePropsWithLocale> = async ({ params }) => {
+const Page: NextPage<NewsPagePropsWithLocale> = async ({ params }) => {
   const { lang, slug } = await params;
 
   const { data } = await query<GetPostQuery>({
