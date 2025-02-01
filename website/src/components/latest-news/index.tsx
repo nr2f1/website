@@ -1,14 +1,16 @@
-import NewsCard from '@components/news-card';
 import styles from './index.module.scss';
 
+import NewsCard from '@components/news-card';
 import { getClient } from '@graphql/client';
 import {
   GetLatestNewsDocument,
   type GetLatestNewsQuery,
 } from '@graphql/queries/latest-news/index.generated';
+import type { BlogPageCollection, NewsletterCollection } from '@graphql/types';
 import type { AvailableLocale } from '@i18n/locales';
 import { latestNewsTitleId } from '@models/headings';
 import { latestNewsCtaId } from '@models/links';
+import { fromBlogNewsletterToNews } from '@shared/utils/from-blog-newsletter-to-news';
 import Link from 'next/link';
 
 interface LatestNewsProps {
@@ -31,26 +33,32 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
     return null;
   }
 
-  const { title, cta, posts } = data;
+  const { title, cta, posts, newsletters } = data;
 
-  if (!posts.items) {
+  if (!posts.items || !newsletters?.items) {
     return null;
   }
+
+  const news = fromBlogNewsletterToNews({
+    posts: posts.items as BlogPageCollection['items'],
+    newsletters: newsletters.items as NewsletterCollection['items'],
+    limit: 6,
+  });
 
   return (
     <section className={styles.news}>
       <div className="content-wrapper">
         <h2>{title.content}</h2>
-
         <ul className={styles.news__articles}>
-          {posts.items.map((post) => (
+          {news.map((news) => (
             <NewsCard
-              date={post?.date ?? ''}
-              imageUrl={post?.image?.url ?? ''}
+              date={news.date ?? ''}
+              imageUrl={news.imageUrl}
               key={crypto.randomUUID()}
               lang={lang}
-              title={post?.title ?? ''}
-              slug={post?.slug ?? ''}
+              title={news?.title}
+              url={news.url}
+              type={news.type}
             />
           ))}
         </ul>

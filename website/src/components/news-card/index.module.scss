@@ -1,6 +1,7 @@
 @use '@styles/breakpoints';
 @use '@styles/buttons';
 @use '@styles/text-styles';
+@use '@styles/icons';
 
 .article {
   border-radius: var(--border-radius-xl);
@@ -31,6 +32,18 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    @include breakpoints.small-screen {
+      height: var(--spacing-40);
+    }
+  }
+
+  &__newsletter_img {
+    height: var(--spacing-56);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(icons.$newsletter);
 
     @include breakpoints.small-screen {
       height: var(--spacing-40);

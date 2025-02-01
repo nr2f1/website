@@ -1,0 +1,32 @@
+query GetNews($locale: String) {
+  entryCollection(
+    where: {
+      contentfulMetadata: {
+        tags_exists: true
+        tags: { id_contains_some: ["blog", "newsletter"] }
+      }
+    }
+    locale: $locale
+  ) {
+    total
+    items {
+      ... on BlogPage {
+        __typename
+        title
+        slug
+        date
+        excerpt
+        image {
+          url
+        }
+      }
+      ... on Newsletter {
+        __typename
+        date
+        newsletterContent {
+          url
+        }
+      }
+    }
+  }
+}

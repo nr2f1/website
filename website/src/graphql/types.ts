@@ -303,6 +303,7 @@ export type AssetLinkingCollections = {
   entryCollection?: Maybe<EntryCollection>;
   htmlHeadMetadataCollection?: Maybe<HtmlHeadMetadataCollection>;
   imageCollection?: Maybe<ImageCollection>;
+  newsletterCollection?: Maybe<NewsletterCollection>;
   pageHeaderCollection?: Maybe<PageHeaderCollection>;
   publicationCollection?: Maybe<PublicationCollection>;
 };
@@ -349,6 +350,14 @@ export type AssetLinkingCollectionsHtmlHeadMetadataCollectionArgs = {
 
 
 export type AssetLinkingCollectionsImageCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type AssetLinkingCollectionsNewsletterCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
@@ -1686,6 +1695,103 @@ export enum NavigationListOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
+/** Represents the content send via email monthly [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/newsletter) */
+export type Newsletter = Entry & _Node & {
+  __typename?: 'Newsletter';
+  _id: Scalars['ID']['output'];
+  contentfulMetadata: ContentfulMetadata;
+  date?: Maybe<Scalars['DateTime']['output']>;
+  linkedFrom?: Maybe<NewsletterLinkingCollections>;
+  newsletterContent?: Maybe<Asset>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** Represents the content send via email monthly [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/newsletter) */
+export type NewsletterDateArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** Represents the content send via email monthly [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/newsletter) */
+export type NewsletterLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** Represents the content send via email monthly [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/newsletter) */
+export type NewsletterNewsletterContentArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** Represents the content send via email monthly [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/newsletter) */
+export type NewsletterTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type NewsletterCollection = {
+  __typename?: 'NewsletterCollection';
+  items: Array<Maybe<Newsletter>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type NewsletterFilter = {
+  AND?: InputMaybe<Array<InputMaybe<NewsletterFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<NewsletterFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  date?: InputMaybe<Scalars['DateTime']['input']>;
+  date_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  date_gt?: InputMaybe<Scalars['DateTime']['input']>;
+  date_gte?: InputMaybe<Scalars['DateTime']['input']>;
+  date_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  date_lt?: InputMaybe<Scalars['DateTime']['input']>;
+  date_lte?: InputMaybe<Scalars['DateTime']['input']>;
+  date_not?: InputMaybe<Scalars['DateTime']['input']>;
+  date_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  newsletterContent_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type NewsletterLinkingCollections = {
+  __typename?: 'NewsletterLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type NewsletterLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum NewsletterOrder {
+  DateAsc = 'date_ASC',
+  DateDesc = 'date_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
 /** Set the page header [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/pageHeader) */
 export type PageHeader = Entry & _Node & {
   __typename?: 'PageHeader';
@@ -2103,6 +2209,8 @@ export type Query = {
   linkCollection?: Maybe<LinkCollection>;
   navigationList?: Maybe<NavigationList>;
   navigationListCollection?: Maybe<NavigationListCollection>;
+  newsletter?: Maybe<Newsletter>;
+  newsletterCollection?: Maybe<NewsletterCollection>;
   pageHeader?: Maybe<PageHeader>;
   pageHeaderCollection?: Maybe<PageHeaderCollection>;
   paragraphs?: Maybe<Paragraphs>;
@@ -2298,6 +2406,23 @@ export type QueryNavigationListCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<NavigationListFilter>;
+};
+
+
+export type QueryNewsletterArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryNewsletterCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<NewsletterOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<NewsletterFilter>;
 };
 
 
