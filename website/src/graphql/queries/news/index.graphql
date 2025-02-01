@@ -1,28 +1,31 @@
-query GetNews($locale: String, $limit: Int!, $skip: Int!) {
-  posts: blogPageCollection(
-    order: date_DESC
+query GetNews($locale: String) {
+  entryCollection(
+    where: {
+      contentfulMetadata: {
+        tags_exists: true
+        tags: { id_contains_some: ["blog", "newsletter"] }
+      }
+    }
     locale: $locale
-    limit: $limit
-    skip: $skip
   ) {
     total
     items {
-      title
-      slug
-      date
-      excerpt
-      image {
-        url
+      ... on BlogPage {
+        __typename
+        title
+        slug
+        date
+        excerpt
+        image {
+          url
+        }
       }
-    }
-  }
-
-  newsletters: newsletterCollection(order: date_DESC) {
-    total
-    items {
-      date
-      newsletterContent {
-        url
+      ... on Newsletter {
+        __typename
+        date
+        newsletterContent {
+          url
+        }
       }
     }
   }

@@ -5,39 +5,36 @@ import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
 export type GetNewsQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
-  limit: Types.Scalars['Int']['input'];
-  skip: Types.Scalars['Int']['input'];
 }>;
 
 
-export type GetNewsQuery = { __typename?: 'Query', posts?: { __typename?: 'BlogPageCollection', total: number, items: Array<{ __typename?: 'BlogPage', title?: string | null, slug?: string | null, date?: any | null, excerpt?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null, newsletters?: { __typename?: 'NewsletterCollection', total: number, items: Array<{ __typename?: 'Newsletter', date?: any | null, newsletterContent?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null };
+export type GetNewsQuery = { __typename?: 'Query', entryCollection?: { __typename?: 'EntryCollection', total: number, items: Array<{ __typename?: 'Accordion' } | { __typename?: 'Banner' } | { __typename: 'BlogPage', title?: string | null, slug?: string | null, date?: any | null, excerpt?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | { __typename?: 'BoardMember' } | { __typename?: 'Heading' } | { __typename?: 'HtmlHeadMetadata' } | { __typename?: 'Image' } | { __typename?: 'Link' } | { __typename?: 'NavigationList' } | { __typename: 'Newsletter', date?: any | null, newsletterContent?: { __typename?: 'Asset', url?: string | null } | null } | { __typename?: 'PageHeader' } | { __typename?: 'Paragraphs' } | { __typename?: 'Publication' } | { __typename?: 'Volunteer' } | null> } | null };
 
 
 export const GetNewsDocument = gql`
-    query GetNews($locale: String, $limit: Int!, $skip: Int!) {
-  posts: blogPageCollection(
-    order: date_DESC
+    query GetNews($locale: String) {
+  entryCollection(
+    where: {contentfulMetadata: {tags_exists: true, tags: {id_contains_some: ["blog", "newsletter"]}}}
     locale: $locale
-    limit: $limit
-    skip: $skip
   ) {
     total
     items {
-      title
-      slug
-      date
-      excerpt
-      image {
-        url
+      ... on BlogPage {
+        __typename
+        title
+        slug
+        date
+        excerpt
+        image {
+          url
+        }
       }
-    }
-  }
-  newsletters: newsletterCollection(order: date_DESC) {
-    total
-    items {
-      date
-      newsletterContent {
-        url
+      ... on Newsletter {
+        __typename
+        date
+        newsletterContent {
+          url
+        }
       }
     }
   }
@@ -57,12 +54,10 @@ export const GetNewsDocument = gql`
  * const { data, loading, error } = useGetNewsQuery({
  *   variables: {
  *      locale: // value for 'locale'
- *      limit: // value for 'limit'
- *      skip: // value for 'skip'
  *   },
  * });
  */
-export function useGetNewsQuery(baseOptions: Apollo.QueryHookOptions<GetNewsQuery, GetNewsQueryVariables> & ({ variables: GetNewsQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetNewsQuery(baseOptions?: Apollo.QueryHookOptions<GetNewsQuery, GetNewsQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
         return Apollo.useQuery<GetNewsQuery, GetNewsQueryVariables>(GetNewsDocument, options);
       }
