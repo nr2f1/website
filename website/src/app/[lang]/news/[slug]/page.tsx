@@ -35,7 +35,7 @@ export async function generateMetadata({
       title,
       description,
       type: 'article',
-      url: `https://nr2f1.org/${lang}/blog/${slug}`,
+      url: `https://nr2f1.org/${lang}/news/${slug}`,
       locale: lang,
       images: {
         url: imgUrl,
@@ -72,7 +72,7 @@ const Page: NextPage<BlogPagePropsWithLocale> = async ({ params }) => {
     '@type': 'Blog',
     headline: post?.title ?? '',
     datePublished: publishedString,
-    url: `https://nr2f1.org/blog/${slug}`,
+    url: `https://nr2f1.org/news/${slug}`,
     abstract: post?.excerpt ?? '',
   };
 

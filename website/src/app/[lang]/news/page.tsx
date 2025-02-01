@@ -4,8 +4,9 @@ import BlogPageBody from './page-body';
 import BlogPageHeader from './page-header';
 
 export const metadata: Metadata = {
-  title: 'NR2F1 Foundation | Blog',
-  description: 'Blog',
+  // Todo: update i18n title and description
+  title: 'NR2F1 Foundation | News',
+  description: 'News',
 };
 
 interface BlogPageProps extends PagePropsWithLocale {

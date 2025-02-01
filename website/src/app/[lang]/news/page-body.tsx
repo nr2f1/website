@@ -65,7 +65,7 @@ const BlogPageBody: React.FC<BlogPageBodyProps> = async ({ lang, page }) => {
     mainEntity: posts.map(({ title, slug, excerpt, imageUrl }) => ({
       '@type': 'BlogPosting',
       headline: title,
-      url: `https://nr2f1.org/${lang}/blog/${slug}`,
+      url: `https://nr2f1.org/${lang}/news/${slug}`,
       abstract: excerpt,
       image: imageUrl,
     })),
