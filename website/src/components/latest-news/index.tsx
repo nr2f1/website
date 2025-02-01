@@ -1,15 +1,16 @@
-import NewsCard, { type NewsCardProps } from '@components/news-card';
 import styles from './index.module.scss';
 
+import NewsCard from '@components/news-card';
 import { getClient } from '@graphql/client';
 import {
   GetLatestNewsDocument,
   type GetLatestNewsQuery,
 } from '@graphql/queries/latest-news/index.generated';
+import type { BlogPageCollection, NewsletterCollection } from '@graphql/types';
 import type { AvailableLocale } from '@i18n/locales';
 import { latestNewsTitleId } from '@models/headings';
 import { latestNewsCtaId } from '@models/links';
-import { News } from '@shared/types/news';
+import { fromBlogNewsletterToNews } from '@shared/utils/from-blog-newsletter-to-news';
 import Link from 'next/link';
 
 interface LatestNewsProps {
@@ -38,35 +39,16 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
     return null;
   }
 
-  type NewsCard = Omit<NewsCardProps, 'lang'>;
-
-  const blogPostsAsNews: NewsCard[] = posts.items.map((post) => ({
-    date: post?.date ?? ('' as string),
-    imageUrl: post?.image?.url,
-    title: post?.title ?? '',
-    url: post?.slug ?? '',
-    type: News.BLOG,
-  }));
-
-  const newslettersAsNews: NewsCard[] = newsletters.items.map((newsletter) => ({
-    date: newsletter?.date ?? ('' as string),
-    title: newsletter?.date ?? '',
-    url: newsletter?.newsletterContent?.url ?? '',
-    type: News.NEWSLETTER,
-  }));
-
-  const allNewsSorted = [...blogPostsAsNews, ...newslettersAsNews].sort(
-    (newsA, newsB) =>
-      new Date(newsB.date).getTime() - new Date(newsA.date).getTime(),
-  );
-
-  const news = allNewsSorted.slice(0, 6);
+  const news = fromBlogNewsletterToNews({
+    posts: posts.items as BlogPageCollection['items'],
+    newsletters: newsletters.items as NewsletterCollection['items'],
+    limit: 6,
+  });
 
   return (
     <section className={styles.news}>
       <div className="content-wrapper">
         <h2>{title.content}</h2>
-
         <ul className={styles.news__articles}>
           {news.map((news) => (
             <NewsCard

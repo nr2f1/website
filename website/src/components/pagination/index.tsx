@@ -66,7 +66,7 @@ const Pagination: React.FC<PaginationProps> = ({
   return (
     <ul className={styles.pagination}>
       <li className={styles.pagination__item}>
-        <Link href={`/blog?page=${getPreviousPage()}`}>
+        <Link href={`/news?page=${getPreviousPage()}`}>
           <ArrowLeft title={paginationLocales[lang].previous} />
         </Link>
       </li>
@@ -92,7 +92,7 @@ const Pagination: React.FC<PaginationProps> = ({
             }
           >
             <Link
-              href={`/blog?page=${pageNumber}`}
+              href={`/news?page=${pageNumber}`}
               title={`${paginationLocales[lang].page} ${pageNumber}`}
             >
               {pageNumber}
@@ -101,7 +101,7 @@ const Pagination: React.FC<PaginationProps> = ({
         );
       })}
       <li className={styles.pagination__item}>
-        <Link href={`/blog?page=${getNextPage()}`} title="next">
+        <Link href={`/news?page=${getNextPage()}`} title="next">
           <ArrowRight title={paginationLocales[lang].next} />
         </Link>
       </li>

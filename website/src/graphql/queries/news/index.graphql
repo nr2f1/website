@@ -1,0 +1,29 @@
+query GetNews($locale: String, $limit: Int!, $skip: Int!) {
+  posts: blogPageCollection(
+    order: date_DESC
+    locale: $locale
+    limit: $limit
+    skip: $skip
+  ) {
+    total
+    items {
+      title
+      slug
+      date
+      excerpt
+      image {
+        url
+      }
+    }
+  }
+
+  newsletters: newsletterCollection(order: date_DESC) {
+    total
+    items {
+      date
+      newsletterContent {
+        url
+      }
+    }
+  }
+}
