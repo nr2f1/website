@@ -1,10 +1,10 @@
 import styles from './index.module.scss';
 
 import type { AvailableLocale } from '@i18n/locales';
-import Link from 'next/link';
-
 import { News } from '@shared/types/news';
+import { firstLetterCapital } from '@shared/utils/first-letter-capital';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
+import Link from 'next/link';
 
 export interface NewsCardProps {
   date: string;
@@ -23,10 +23,36 @@ interface GetNewsLetterTitleProps {
 const getNewsLetterTitle = ({ date, lang }: GetNewsLetterTitleProps) => {
   const dateObj = new Date(date);
 
-  return new Intl.DateTimeFormat(lang, {
-    month: 'long',
-    year: 'numeric',
-  }).format(dateObj);
+  return firstLetterCapital(
+    new Intl.DateTimeFormat(lang, {
+      month: 'long',
+      year: 'numeric',
+    }).format(dateObj),
+  );
+};
+
+interface NewsType {
+  [News.BLOG]: string;
+  [News.NEWSLETTER]: string;
+}
+
+const newsTypeLocale: Record<AvailableLocale, NewsType> = {
+  en: {
+    blog: 'Blog post',
+    newsletter: 'Newsletter',
+  },
+  fr: {
+    blog: 'Article de blog',
+    newsletter: "Bulletin d'information",
+  },
+  de: {
+    blog: 'Blogbeitrag',
+    newsletter: 'Newsletter',
+  },
+  es: {
+    blog: 'Entrada de blog',
+    newsletter: 'Boletín informativo',
+  },
 };
 
 const NewsCard: React.FC<NewsCardProps> = ({
@@ -50,7 +76,9 @@ const NewsCard: React.FC<NewsCardProps> = ({
             <article>
               <div className={styles.article__newsletter_img} />
               <div>
-                <p className={styles.article__label}>Newsletter</p>
+                <p className={styles.article__label}>
+                  {newsTypeLocale[lang][News.NEWSLETTER]}
+                </p>
                 <h3>{getNewsLetterTitle({ date: title, lang })}</h3>
                 <p className={styles.article__date}>
                   <time dateTime={dateTime}>{publishedString}</time>
@@ -72,7 +100,9 @@ const NewsCard: React.FC<NewsCardProps> = ({
                 }}
               />
               <div>
-                <p className={styles.article__label}>Blog post</p>
+                <p className={styles.article__label}>
+                  {newsTypeLocale[lang][News.BLOG]}
+                </p>
                 <h3>{title}</h3>
                 <p className={styles.article__date}>
                   <time dateTime={dateTime}>{publishedString}</time>

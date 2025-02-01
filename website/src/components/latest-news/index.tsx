@@ -57,7 +57,7 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
 
   const allNewsSorted = [...blogPostsAsNews, ...newslettersAsNews].sort(
     (newsA, newsB) =>
-      new Date(newsA.date).getTime() - new Date(newsB.date).getTime(),
+      new Date(newsB.date).getTime() - new Date(newsA.date).getTime(),
   );
 
   const news = allNewsSorted.slice(0, 6);
