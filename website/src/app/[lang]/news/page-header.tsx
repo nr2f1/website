@@ -7,13 +7,13 @@ import {
 import type { AvailableLocale } from '@i18n/locales';
 import { blogsPageHeaderId } from '@models/page-header';
 
-interface BlogPageHeaderProps {
+interface NewsPageHeaderProps {
   lang: AvailableLocale;
 }
 
 const { query } = getClient();
 
-const BlogPageHeader: React.FC<BlogPageHeaderProps> = async ({ lang }) => {
+const NewsPageHeader: React.FC<NewsPageHeaderProps> = async ({ lang }) => {
   const { data, error } = await query<GetBlogPageHeaderQuery>({
     query: GetBlogPageHeaderDocument,
     variables: {
@@ -43,4 +43,4 @@ const BlogPageHeader: React.FC<BlogPageHeaderProps> = async ({ lang }) => {
   );
 };
 
-export default BlogPageHeader;
+export default NewsPageHeader;

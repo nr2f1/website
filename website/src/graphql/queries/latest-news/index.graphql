@@ -18,6 +18,15 @@ query GetLatestNews(
     }
   }
 
+  newsletters: newsletterCollection(limit: 6, order: date_DESC) {
+    items {
+      date
+      newsletterContent {
+        url
+      }
+    }
+  }
+
   cta: link(id: $latestNewsCtaId, locale: $locale) {
     href
     content

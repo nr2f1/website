@@ -1,27 +1,28 @@
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
-import BlogPageBody from './page-body';
-import BlogPageHeader from './page-header';
+import NewsPageBody from './page-body';
+import NewsPageHeader from './page-header';
 
 export const metadata: Metadata = {
-  title: 'NR2F1 Foundation | Blog',
-  description: 'Blog',
+  // Todo: update i18n title and description
+  title: 'NR2F1 Foundation | News',
+  description: 'News',
 };
 
-interface BlogPageProps extends PagePropsWithLocale {
+interface NewsPageProps extends PagePropsWithLocale {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
 // todo: create getStaticProps
 
-const Page: NextPage<BlogPageProps> = async ({ params, searchParams }) => {
+const Page: NextPage<NewsPageProps> = async ({ params, searchParams }) => {
   const { lang } = await params;
   const { page } = await searchParams;
 
   return (
     <>
-      <BlogPageHeader lang={lang} />
-      <BlogPageBody lang={lang} page={page} />
+      <NewsPageHeader lang={lang} />
+      <NewsPageBody lang={lang} page={page} />
     </>
   );
 };
