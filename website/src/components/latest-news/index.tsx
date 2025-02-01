@@ -1,4 +1,4 @@
-import NewsCard from '@components/news-card';
+import NewsCard, { type NewsCardProps } from '@components/news-card';
 import styles from './index.module.scss';
 
 import { getClient } from '@graphql/client';
@@ -9,6 +9,7 @@ import {
 import type { AvailableLocale } from '@i18n/locales';
 import { latestNewsTitleId } from '@models/headings';
 import { latestNewsCtaId } from '@models/links';
+import { News } from '@shared/types/news';
 import Link from 'next/link';
 
 interface LatestNewsProps {
@@ -31,11 +32,35 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
     return null;
   }
 
-  const { title, cta, posts } = data;
+  const { title, cta, posts, newsletters } = data;
 
-  if (!posts.items) {
+  if (!posts.items || !newsletters?.items) {
     return null;
   }
+
+  type NewsCard = Omit<NewsCardProps, 'lang'>;
+
+  const blogPostsAsNews: NewsCard[] = posts.items.map((post) => ({
+    date: post?.date ?? ('' as string),
+    imageUrl: post?.image?.url,
+    title: post?.title ?? '',
+    url: post?.slug ?? '',
+    type: News.BLOG,
+  }));
+
+  const newslettersAsNews: NewsCard[] = newsletters.items.map((newsletter) => ({
+    date: newsletter?.date ?? ('' as string),
+    title: newsletter?.date ?? '',
+    url: newsletter?.newsletterContent?.url ?? '',
+    type: News.NEWSLETTER,
+  }));
+
+  const allNewsSorted = [...blogPostsAsNews, ...newslettersAsNews].sort(
+    (newsA, newsB) =>
+      new Date(newsA.date).getTime() - new Date(newsB.date).getTime(),
+  );
+
+  const news = allNewsSorted.slice(0, 6);
 
   return (
     <section className={styles.news}>
@@ -43,14 +68,15 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
         <h2>{title.content}</h2>
 
         <ul className={styles.news__articles}>
-          {posts.items.map((post) => (
+          {news.map((news) => (
             <NewsCard
-              date={post?.date ?? ''}
-              imageUrl={post?.image?.url ?? ''}
+              date={news.date ?? ''}
+              imageUrl={news.imageUrl}
               key={crypto.randomUUID()}
               lang={lang}
-              title={post?.title ?? ''}
-              slug={post?.slug ?? ''}
+              title={news?.title}
+              url={news.url}
+              type={news.type}
             />
           ))}
         </ul>
