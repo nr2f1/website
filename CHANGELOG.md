@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.42.1](https://github.com/nr2f1/website/compare/v1.42.0...v1.42.1) (2025-02-02)
+
+
+### Bug Fixes
+
+* change blog to news in news card link ([8154c9b](https://github.com/nr2f1/website/commit/8154c9bf757e100fa0cb59f0fe7351a435137042))
+
 ## [1.42.0](https://github.com/nr2f1/website/compare/v1.41.0...v1.42.0) (2025-02-01)
 
 
