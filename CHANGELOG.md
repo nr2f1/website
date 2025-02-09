@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.42.2](https://github.com/nr2f1/website/compare/v1.42.1...v1.42.2) (2025-02-09)
+
+
+### Bug Fixes
+
+* not found and language locale ([c8939cf](https://github.com/nr2f1/website/commit/c8939cffa4f96d719ed3e325a691b27cc66b2fca))
+
 ## [1.42.1](https://github.com/nr2f1/website/compare/v1.42.0...v1.42.1) (2025-02-02)
 
 
