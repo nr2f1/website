@@ -73,6 +73,19 @@
   text-decoration-thickness: auto;
   text-underline-offset: auto;
   text-underline-position: from-font;
+
+  &:hover {
+    color: var(--foreground-interactive-hover);
+  }
+
+  &:hover,
+  focus {
+    color: var(--foreground-interactive-hover);
+  }
+
+  &:active {
+    color: var(--foreground-interactive-press_active);
+  }
 }
 
 @mixin text-small {
