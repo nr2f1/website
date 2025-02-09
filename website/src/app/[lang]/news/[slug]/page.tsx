@@ -113,7 +113,7 @@ const Page: NextPage<NewsPagePropsWithLocale> = async ({ params }) => {
         </div>
       </div>
 
-      <SupportBanner lang={lang}/>
+      <SupportBanner lang={lang} />
     </article>
   );
 };

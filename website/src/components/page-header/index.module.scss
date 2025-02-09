@@ -70,12 +70,11 @@ $mobile-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fil
       &::before {
         background-image: url($desktop-curve);
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: contain !important;
         content: ' ';
         display: block;
         inset: 0;
         left: -1px;
-        bottom: -1px;
         position: absolute;
       }
 

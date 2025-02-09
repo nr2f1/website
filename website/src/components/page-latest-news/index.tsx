@@ -92,6 +92,12 @@ const PageLatestNews: React.FC<PageLatestNewsProps> = async ({ lang }) => {
           </li>
         ))}
       </ul>
+      <Link
+        href={`/${lang}/news`}
+        className={styles['latest-news-content__see-all']}
+      >
+        See all
+      </Link>
     </div>
   );
 };
