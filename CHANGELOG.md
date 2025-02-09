@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.43.0](https://github.com/nr2f1/website/compare/v1.42.2...v1.43.0) (2025-02-09)
+
+
+### Features
+
+* add see all link to latest news section ([bc8bd50](https://github.com/nr2f1/website/commit/bc8bd5041315293a033bae766c56be37a84f62b1))
+* blog page layout ([390c99b](https://github.com/nr2f1/website/commit/390c99b54b0580b53f64a27ea0cef0ef77b7dcea))
+
 ## [1.42.2](https://github.com/nr2f1/website/compare/v1.42.1...v1.42.2) (2025-02-09)
 
 
