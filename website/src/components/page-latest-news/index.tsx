@@ -39,7 +39,7 @@ const BlogPostCards: React.FC<BlogPostCardsProps> = ({
   });
 
   return (
-    <Link href={`/${lang}/blog/${slug}`}>
+    <Link href={`/${lang}/news/${slug}`}>
       <article>
         <p>Blog</p>
         <h4>{title}</h4>

@@ -3,6 +3,10 @@ $content-max-width-7xl: 1280px;
 $content-max-width-2xl: 672px;
 $content-max-width-xl: 672px;
 
+@mixin max-width-xl {
+  max-width: $content-max-width-2xl;
+}
+
 .large-content-wrapper {
   max-width: 1400px;
   margin: 0 auto;

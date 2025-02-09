@@ -1,11 +1,15 @@
+import PageHeader from '@components/page-header';
 import styles from './index.module.scss';
 
+import PageLatestNews from '@components/page-latest-news';
+import SupportBanner from '@components/support-banner';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
 import {
   GetPostDocument,
   type GetPostQuery,
 } from '@graphql/queries/post/index.generated';
+import type { AvailableLocale } from '@i18n/locales';
 import type { NewsPagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
 import { renderNode } from '@shared/utils/rich-text';
@@ -43,6 +47,13 @@ export async function generateMetadata({
     },
   };
 }
+
+const blogPostLoale: Record<AvailableLocale, string> = {
+  en: 'Blog post',
+  es: 'Entrada de blog',
+  fr: 'Article de blog',
+  de: 'Blogbeitrag',
+};
 
 const Page: NextPage<NewsPagePropsWithLocale> = async ({ params }) => {
   const { lang, slug } = await params;
@@ -83,13 +94,26 @@ const Page: NextPage<NewsPagePropsWithLocale> = async ({ params }) => {
         // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="content-wrapper">
-        <h1>{post?.title}</h1>
-        <p>
-          Published: <time dateTime={dateTime}>{publishedString}</time>
-        </p>
-        {documentToReactComponents(post?.body?.json, { renderNode })}
+      <PageHeader
+        pageTitle={post?.title ?? ''}
+        imageUrl={post?.image?.url ?? undefined}
+        lang={lang}
+        lastUpdated={post?.date ?? ''}
+        sectionTitle={blogPostLoale[lang]}
+      />
+
+      <div className={styles.post__layout}>
+        <div className={styles.post__row}>
+          <div className={styles.post__content}>
+            {documentToReactComponents(post?.body?.json, { renderNode })}
+          </div>
+          <div className={styles.post__aside}>
+            <PageLatestNews lang={lang} />
+          </div>
+        </div>
       </div>
+
+      <SupportBanner lang={lang}/>
     </article>
   );
 };
