@@ -1,5 +1,7 @@
 import styles from './not-found.module.scss';
 
+import Footer from '@components/footer';
+import Header from '@components/header';
 import type { AvailableLocale } from '@i18n/locales';
 import { getLocale } from '@shared/utils/get-locale';
 import Link from 'next/link';
@@ -31,24 +33,44 @@ const translations: Record<AvailableLocale, Record<string, string>> = {
   },
 };
 
+import { Nunito_Sans } from 'next/font/google';
+
+const nunitoSans = Nunito_Sans({
+  display: 'swap',
+  subsets: ['latin'],
+  variable: '--font-nunito-sans',
+  adjustFontFallback: false,
+  preload: true,
+});
+
 export default async function NotFound() {
   const lang = await getLocale();
 
+  // TODO: remove lang selector from header
+
   return (
-    <div className={styles.notfound}>
-      <div className={styles.notfound__content_wrapper}>
-        <article>
-          <h1>{translations[lang].title}</h1>
+    <html lang={lang} className={nunitoSans.variable}>
+      <body>
+        <Header lang={lang} />
+        <main>
+          <div className={styles.notfound}>
+            <div className={styles.notfound__content_wrapper}>
+              <article>
+                <h1>{translations[lang].title}</h1>
 
-          <p>
-            <span>404 error</span>: {translations[lang].description}
-          </p>
+                <p>
+                  <span>404 error</span>: {translations[lang].description}
+                </p>
 
-          <Link href={`/${lang}`} className="button button--on-light">
-            {translations[lang].cta}
-          </Link>
-        </article>
-      </div>
-    </div>
+                <Link href={`/${lang}`} className="button button--on-light">
+                  {translations[lang].cta}
+                </Link>
+              </article>
+            </div>
+          </div>
+        </main>
+        <Footer lang={lang} />
+      </body>
+    </html>
   );
 }
