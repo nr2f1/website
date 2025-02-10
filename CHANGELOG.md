@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.43.1](https://github.com/nr2f1/website/compare/v1.43.0...v1.43.1) (2025-02-10)
+
+
+### Bug Fixes
+
+* link states ([7272ecd](https://github.com/nr2f1/website/commit/7272ecda7973c782f1deac8d6e63602879f70726))
+
 ## [1.43.0](https://github.com/nr2f1/website/compare/v1.42.2...v1.43.0) (2025-02-09)
 
 
