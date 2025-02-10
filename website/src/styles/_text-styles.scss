@@ -108,4 +108,25 @@
   text-decoration-thickness: auto;
   text-underline-offset: auto;
   text-underline-position: from-font;
+
+  &:hover {
+    color: var(--foreground-interactive-hover);
+  }
+
+  &:hover,
+  focus {
+    color: var(--foreground-interactive-hover);
+  }
+
+  &:active {
+    color: var(--foreground-interactive-press_active);
+  }
+}
+
+@mixin no-text-decoration {
+  text-decoration-line: none;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: unset;
+  text-underline-offset: unset;
+  text-underline-position: unset;
 }
