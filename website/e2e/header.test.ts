@@ -84,4 +84,19 @@ test('locale selector', async ({ page }) => {
   ).toBeVisible();
 });
 
-// test('navigation', async ({ page }) => {});
+test('navigation', async ({ page }) => {
+  await page.getByText('Living with BBSOAS', { exact: true }).click();
+
+  await expect(
+    page.getByRole('link', { name: 'Register a patient' }).nth(1),
+  ).toBeVisible();
+
+  await page.getByText('Research', { exact: true }).click();
+
+  await expect(
+    page.getByRole('navigation', { name: 'secondary' }).getByRole('listitem'),
+  ).toBeVisible();
+
+  await page.getByText('About us').click();
+  await expect(page.getByRole('link', { name: 'News' })).toBeVisible();
+});
