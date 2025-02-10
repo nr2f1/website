@@ -51,6 +51,9 @@ importers:
         specifier: ^1.6.1
         version: 1.6.1
     devDependencies:
+      '@axe-core/playwright':
+        specifier: ^4.10.1
+        version: 4.10.1(playwright-core@1.50.1)
       '@axe-core/react':
         specifier: ^4.10.1
         version: 4.10.1
@@ -249,6 +252,11 @@ packages:
 
   '@asamuzakjp/css-color@2.8.3':
     resolution: {integrity: sha512-GIc76d9UI1hCvOATjZPyHFmE5qhRccp3/zGfMPapK3jBi+yocEzp6BBB0UnfRYP9NP4FANqUZYb0hnfs3TM3hw==}
+
+  '@axe-core/playwright@4.10.1':
+    resolution: {integrity: sha512-EV5t39VV68kuAfMKqb/RL+YjYKhfuGim9rgIaQ6Vntb2HgaCaau0h98Y3WEUqW1+PbdzxDtDNjFAipbtZuBmEA==}
+    peerDependencies:
+      playwright-core: '>= 1.0.0'
 
   '@axe-core/react@4.10.1':
     resolution: {integrity: sha512-GRGx/3Gbce9WQYXgY0iZzqOaHIRXBNGyV+zoUhJzBuDeoTL+XoeY3u/9PzdIVyH0pbNs1n1RChfsmWBy6hzKPg==}
@@ -7583,6 +7591,11 @@ snapshots:
       '@csstools/css-parser-algorithms': 3.0.4(@csstools/css-tokenizer@3.0.3)
       '@csstools/css-tokenizer': 3.0.3
       lru-cache: 10.4.3
+
+  '@axe-core/playwright@4.10.1(playwright-core@1.50.1)':
+    dependencies:
+      axe-core: 4.10.2
+      playwright-core: 1.50.1
 
   '@axe-core/react@4.10.1':
     dependencies:
