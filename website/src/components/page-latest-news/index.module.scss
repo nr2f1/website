@@ -12,8 +12,8 @@
     margin-block-end: var(--spacing-4);
   }
 
-  a {
-    text-decoration: none;
+  li a {
+    text-decoration: none !important;
   }
 
   h3 {
