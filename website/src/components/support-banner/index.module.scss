@@ -81,6 +81,8 @@
   }
 
   a {
+    text-decoration: none !important;
+
     @include breakpoints.small-screen {
       display: flex;
       width: 100%;
