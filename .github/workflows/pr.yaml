@@ -77,6 +77,24 @@ jobs:
       - name: Run unit tests
         uses: ./.github/actions/unit-test
 
+  e2e:
+    name: End to end test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set environment and install dependencies
+        uses: ./.github/actions/prepare
+
+      - name: Run e2e test
+        run: pnpm nx e2e website --reporter=github
+        env:
+          NEXT_PUBLIC_CONTENTFUL_SPACE_ID: ${{secrets.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}}
+          NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN: ${{secrets.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}}
+          NEXT_PUBLIC_GIVEBUTTER_API_KEY: ${{ secrets.NEXT_PUBLIC_GIVEBUTTER_API_KEY }}
+
   ci-validation:
     name: CI validation
     needs: [prepare, conventional-commits, lint-format, unit-tests]
