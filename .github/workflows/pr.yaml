@@ -88,6 +88,9 @@ jobs:
       - name: Set environment and install dependencies
         uses: ./.github/actions/prepare
 
+      - name: 🎭 Install Playwright
+        run: pnpm exec playwright install
+
       - name: Run e2e test
         run: pnpm nx e2e website --reporter=github
         env:
