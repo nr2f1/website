@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.43.2](https://github.com/nr2f1/website/compare/v1.43.1...v1.43.2) (2025-02-10)
+
+
+### Bug Fixes
+
+* support banner link ([06b5a63](https://github.com/nr2f1/website/commit/06b5a633540d82a2e9d9dc6ef32d43ad7397f2dd))
+
 ## [1.43.1](https://github.com/nr2f1/website/compare/v1.43.0...v1.43.1) (2025-02-10)
 
 
