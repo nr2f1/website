@@ -19,7 +19,7 @@ test('hero', async ({ page }) => {
   ).toBeVisible();
 });
 
-test('"What we do"', async ({ page }) => {
+test('What we do', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'What we do' })).toBeVisible();
 
   await expect(
@@ -49,4 +49,47 @@ test('"What we do"', async ({ page }) => {
   ).toBeVisible();
 
   await expect(page.getByText('So much about BBSOAS remains')).toBeVisible();
+});
+
+test('Support us banner', async ({ page }) => {
+  await expect(
+    page.getByRole('heading', { name: 'Support our work' }),
+  ).toBeVisible();
+  await expect(page.getByText('There are plenty of ways to')).toBeVisible();
+
+  await expect(page.getByRole('link', { name: 'Support us' })).toBeVisible();
+});
+
+test('Latest news', async ({ page }) => {
+  await expect(
+    page.getByRole('heading', { name: 'Latest News' }),
+  ).toBeVisible();
+
+  await expect(
+    page.getByRole('link', { name: 'View all updates' }),
+  ).toBeVisible();
+});
+
+test('Memberships & partners', async ({ page }) => {
+  await expect(
+    page.getByRole('heading', { name: 'Memberships & partners' }),
+  ).toBeVisible();
+
+  await expect(
+    page.getByRole('link', { name: 'candid guidestar' }),
+  ).toBeVisible();
+
+  await expect(page.getByRole('link', { name: 'Global genes' })).toBeVisible();
+
+  await expect(
+    page.getByRole('link', { name: 'The Consortium for Outcome' }),
+  ).toBeVisible();
+
+  await expect(
+    page.getByRole('link', { name: 'Rare epilepsy network' }),
+  ).toBeVisible();
+
+  await expect(
+    page.getByRole('link', { name: 'National organization for' }),
+  ).toBeVisible();
 });
