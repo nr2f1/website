@@ -12,9 +12,28 @@ permissions:
   contents: write
   pull-requests: write
 
+env:
+  NEXT_PUBLIC_CONTENTFUL_SPACE_ID: ${{secrets.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}}
+  NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN: ${{secrets.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}}
+
 jobs:
+  e2e:
+    name: End to end test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set environment and install dependencies
+        uses: ./.github/actions/prepare
+
+      - name: Run e2e test
+        run: pnpm nx e2e website --reporter=github
+
   release-please:
     runs-on: ubuntu-latest
+    needs: [e2e]
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
@@ -40,9 +59,10 @@ jobs:
           git tag -a v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} -m "Release v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}"
           git push origin v${{ steps.release.outputs.major }}
           git push origin v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}
+          exit 0
   ci-validation:
     name: CI validation
-    needs: [release-please]
+    needs: [e2e, release-please]
     if: ${{ always() }}
     runs-on: ubuntu-latest
     steps:

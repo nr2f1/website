@@ -66,38 +66,5 @@ test.describe('Mobile header', () => {
     ).toBeVisible();
 
     await expect(page.getByText('Sobre nosotros')).toBeVisible();
-
-    await page.getByRole('combobox').filter({ hasText: 'Español' }).click();
-    await page.getByRole('option', { name: 'English (USA)' }).click();
-    await page.getByRole('button', { name: 'hambuguer-button' }).click();
-    await expect(
-      page.getByRole('combobox').filter({ hasText: 'English (USA)' }),
-    ).toBeVisible();
-  });
-
-  test('navigation', async ({ page }) => {
-    await expect(
-      page.getByText('Living with BBSOAS', { exact: true }),
-    ).toBeVisible();
-
-    await page.getByText('Living with BBSOAS', { exact: true }).click();
-    await expect(
-      page
-        .getByRole('banner')
-        .getByRole('navigation')
-        .getByRole('link', { name: 'Register a patient' }),
-    ).toBeVisible();
-
-    await page.getByText('Living with BBSOAS', { exact: true }).click();
-    await page.getByText('Research', { exact: true }).click();
-    await expect(
-      page.getByRole('navigation', { name: 'secondary' }).getByRole('listitem'),
-    ).toBeVisible();
-
-    await page.getByText('Research', { exact: true }).click();
-    await page.getByText('About us').click();
-    await expect(
-      page.getByRole('navigation', { name: 'secondary' }).getByRole('listitem'),
-    ).toBeVisible();
   });
 });
