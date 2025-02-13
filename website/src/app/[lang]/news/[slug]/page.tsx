@@ -73,7 +73,7 @@ const Page: NextPage<NewsPagePropsWithLocale> = async ({ params }) => {
 
   const [post] = data.blogPageCollection.items;
 
-  const { dateTime, publishedString } = getIntlDateStrings({
+  const { publishedString } = getIntlDateStrings({
     date: post?.date ?? '',
     locale: lang,
   });
@@ -88,7 +88,7 @@ const Page: NextPage<NewsPagePropsWithLocale> = async ({ params }) => {
   };
 
   return (
-    <article className={styles.post}>
+    <>
       <script
         type="application/ld+json"
         // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
@@ -101,20 +101,20 @@ const Page: NextPage<NewsPagePropsWithLocale> = async ({ params }) => {
         lastUpdated={post?.date ?? ''}
         sectionTitle={blogPostLoale[lang]}
       />
-
-      <div className={styles.post__layout}>
-        <div className={styles.post__row}>
-          <div className={styles.post__content}>
-            {documentToReactComponents(post?.body?.json, { renderNode })}
-          </div>
-          <div className={styles.post__aside}>
-            <PageLatestNews lang={lang} />
+      <article className={styles.post}>
+        <div className={styles.post__layout}>
+          <div className={styles.post__row}>
+            <div className={styles.post__content}>
+              {documentToReactComponents(post?.body?.json, { renderNode })}
+            </div>
+            <div className={styles.post__aside}>
+              <PageLatestNews lang={lang} />
+            </div>
           </div>
         </div>
-      </div>
-
+      </article>
       <SupportBanner lang={lang} />
-    </article>
+    </>
   );
 };
 
