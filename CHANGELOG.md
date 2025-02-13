@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.43.3](https://github.com/nr2f1/website/compare/v1.43.2...v1.43.3) (2025-02-13)
+
+
+### Bug Fixes
+
+* markup in blog post page ([60c56d2](https://github.com/nr2f1/website/commit/60c56d247399430636e37e2fd6f0605a9faed3a1))
+
 ## [1.43.2](https://github.com/nr2f1/website/compare/v1.43.1...v1.43.2) (2025-02-10)
 
 
