@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('Mobile header', () => {
   test.use({ viewport: { width: 428, height: 926 } });
-  test('UI elements', async ({ page }) => {
+  test('UI elements', { tag: '@mobile' }, async ({ page }) => {
     await expect(
       page.getByRole('button', { name: 'hambuguer-button' }),
     ).toBeVisible();
@@ -41,7 +41,7 @@ test.describe('Mobile header', () => {
     ).toBeVisible();
   });
 
-  test('locale selector', async ({ page }) => {
+  test('locale selector', { tag: '@mobile' }, async ({ page }) => {
     await expect(
       page.getByRole('button', { name: 'hambuguer-button' }),
     ).toBeVisible();
