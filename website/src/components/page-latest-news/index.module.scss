@@ -9,7 +9,7 @@
   }
 
   li:not(:last-of-type) {
-    margin-block-end: var(--spacing-4);
+    margin-block-end: var(--spacing-4) !important;
   }
 
   li a {
