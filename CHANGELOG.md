@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.43.4](https://github.com/nr2f1/website/compare/v1.43.3...v1.43.4) (2025-02-13)
+
+
+### Bug Fixes
+
+* add important to the vertical spacing of the latest news list items ([8e25ecf](https://github.com/nr2f1/website/commit/8e25ecf6ff720ce4b9492263844982f3e1f94db9))
+
 ## [1.43.3](https://github.com/nr2f1/website/compare/v1.43.2...v1.43.3) (2025-02-13)
 
 
