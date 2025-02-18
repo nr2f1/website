@@ -39,5 +39,12 @@
       "e2eTestRunner": "none"
     }
   },
-  "nxCloudId": "67b4f813dcc3cecb27ff0b17"
+  "nxCloudId": "67b4f813dcc3cecb27ff0b17",
+  "namedInputs": {
+    "sharedGlobals": [
+      "{workspaceRoot}/.github/workflows/pr.yaml",
+      "{workspaceRoot}/.github/workflows/release.yaml"
+    ],
+    "default": ["sharedGlobals"]
+  }
 }
