@@ -1,18 +1,22 @@
 import AxeBuilder from '@axe-core/playwright';
-import { test } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 import { english } from '../src/i18n/locales';
+import { a11yRules } from '../src/tests/a11y/config';
 
 test.beforeEach(async ({ page }) => {
   await page.goto(`/${english}`);
 });
 
 test.describe('Homepage /en', () => {
-  // FIXME:
-  test.fixme(
+  test(
     'should not have any automatically detectable accessibility issues',
     { tag: '@a11y' },
     async ({ page }) => {
-      const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+      const accessibilityScanResults = await new AxeBuilder({ page })
+        .options({
+          runOnly: a11yRules,
+        })
+        .analyze();
       expect(accessibilityScanResults.violations).toEqual([]);
     },
   );
