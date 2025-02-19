@@ -227,6 +227,11 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang, registerPatient }) => {
                       },
                     }}
                     value={values.role}
+                    title={
+                      values.role.length > 0
+                        ? values.role
+                        : content?.fields.role.label
+                    }
                   >
                     {content?.roles.map(({ label, value }) => (
                       <Option

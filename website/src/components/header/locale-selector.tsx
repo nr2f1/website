@@ -45,6 +45,7 @@ const LocaleSelector: React.FC<LocaleSelectorProps> = ({
     <Select
       value={locale}
       onChange={handleOnChange}
+      title={locale}
       className={
         isMobile
           ? `${styles.select} ${styles['select--mobile']}`

@@ -16,42 +16,20 @@
         "name": "next"
       }
     ],
-    "types": [
-      "jest",
-      "node"
-    ],
+    "types": ["jest", "node"],
     "paths": {
-      "@app/*": [
-        "website/src/app/*"
-      ],
-      "@components/*": [
-        "website/src/components/*"
-      ],
-      "@config/*": [
-        "website/src/config/*"
-      ],
-      "@graphql/*": [
-        "website/src/graphql/*"
-      ],
-      "@i18n/*": [
-        "website/src/i18n/*"
-      ],
-      "@models/*": [
-        "website/src/models/*"
-      ],
-      "@services/*": [
-        "website/src/services/*"
-      ],
-      "@shared/*": [
-        "website/src/shared/*"
-      ],
-      "@styles/*": [
-        "website/src/styles/*"
-      ],
-      "@tests/*": [
-        "website/src/tests/*"
-      ],
-    },
+      "@app/*": ["website/src/app/*"],
+      "@components/*": ["website/src/components/*"],
+      "@config/*": ["website/src/config/*"],
+      "@graphql/*": ["website/src/graphql/*"],
+      "@i18n/*": ["website/src/i18n/*"],
+      "@models/*": ["website/src/models/*"],
+      "@services/*": ["website/src/services/*"],
+      "@shared/*": ["website/src/shared/*"],
+      "@styles/*": ["website/src/styles/*"],
+      "@tests/*": ["website/src/tests/*"],
+      "@routes/*": ["website/src/routes/*"]
+    }
   },
   "include": [
     "**/*.ts",
@@ -63,10 +41,5 @@
     "next-env.d.ts",
     ".next/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules",
-    "jest.config.ts",
-    "**/*.spec.ts",
-    "**/*.test.ts"
-  ]
+  "exclude": ["node_modules", "jest.config.ts", "**/*.spec.ts", "**/*.test.ts"]
 }
