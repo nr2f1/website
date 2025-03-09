@@ -7,11 +7,13 @@ import {
 import type { AvailableLocale } from '@i18n/locales';
 import { whatIsBbsoasPageHeaderId } from '@models/page-header';
 
-interface WhatIsBbsoasProps {
+interface WhatIsBbsoasHeaderProps {
   lang: AvailableLocale;
 }
 
-const WhatIsBbsoas: React.FC<WhatIsBbsoasProps> = async ({ lang }) => {
+const WhatIsBbsoasHeader: React.FC<WhatIsBbsoasHeaderProps> = async ({
+  lang,
+}) => {
   const { query } = getClient();
 
   const { data, error } = await query<GetPageHeaderQuery>({
@@ -51,4 +53,4 @@ const WhatIsBbsoas: React.FC<WhatIsBbsoasProps> = async ({ lang }) => {
   );
 };
 
-export default WhatIsBbsoas;
+export default WhatIsBbsoasHeader;

@@ -1,0 +1,237 @@
+query GetWhatIsBbsoasPage(
+  $locale: String
+  $introId: String!
+  $whatCausesBbsoasHeadingId: String!
+  $whatCausesBbsoasParagraphsId: String!
+  $symptomsOfBbsoasHeadingId: String!
+  $symptomsOfBbsoasParagraphsId: String!
+  $developmentDelayAccordionId: String!
+  $disabilityAccordionId: String!
+  $visualImpairmentAccordionId: String!
+  $alacrimaAccordionId: String!
+  $nystagmusAccordionId: String!
+  $repetitiveBehaviourAccordionId: String!
+  $autismAccordionId: String!
+  $speechDelayAccordionId: String!
+  $swallingAccordionId: String!
+  $hypotoniaAccordionId: String!
+  $epilepsyAccordionId: String!
+  $adhdAccordionId: String!
+  $hearingAccordionId: String!
+  $symptomsVaryHeadingId: String!
+  $symptomsVaryParagraphsId: String!
+  $inheritanceHeadingId: String!
+  $inheritanceParagraphsId: String!
+  $diagnosisHeadingId: String!
+  $diagnosisParagraphsId: String!
+  $prevalenceHeadingId: String!
+  $prevalenceParagraphsId: String!
+  $incidenceHeadingId: String!
+  $incidenceParagraphsId: String!
+  $managementHeadingId: String!
+  $managementParagraphsId: String!
+  $researchHeadingId: String!
+  $researchParagraphsId: String!
+  $lifeHeadingId: String!
+  $lifeParagraphsId: String!
+) {
+  intro: paragraphs(locale: $locale, id: $introId) {
+    content {
+      json
+    }
+  }
+  whatCausesBbsoasHeading: heading(
+    locale: $locale
+    id: $whatCausesBbsoasHeadingId
+  ) {
+    content
+  }
+  whatCausesBbsoasParagraphs: paragraphs(
+    locale: $locale
+    id: $whatCausesBbsoasParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  symptomsOfBbsoasHeading: heading(
+    locale: $locale
+    id: $symptomsOfBbsoasHeadingId
+  ) {
+    content
+  }
+  symptomsOfBbsoasParagraphs: paragraphs(
+    locale: $locale
+    id: $symptomsOfBbsoasParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  developmentDelayAccordion: accordion(
+    locale: $locale
+    id: $developmentDelayAccordionId
+  ) {
+    title
+    content {
+      json
+    }
+  }
+  disabilityAccordion: accordion(locale: $locale, id: $disabilityAccordionId) {
+    title
+    content {
+      json
+    }
+  }
+  visualImpairmentAccordion: accordion(
+    locale: $locale
+    id: $visualImpairmentAccordionId
+  ) {
+    title
+    content {
+      json
+    }
+  }
+  alacrimaAccordion: accordion(locale: $locale, id: $alacrimaAccordionId) {
+    title
+    content {
+      json
+    }
+  }
+  nystagmusAccordion: accordion(locale: $locale, id: $nystagmusAccordionId) {
+    title
+    content {
+      json
+    }
+  }
+  repetitiveBehaviourAccordion: accordion(
+    locale: $locale
+    id: $repetitiveBehaviourAccordionId
+  ) {
+    title
+    content {
+      json
+    }
+  }
+  autismAccordion: accordion(locale: $locale, id: $autismAccordionId) {
+    title
+    content {
+      json
+    }
+  }
+  speechDelayAccordion: accordion(
+    locale: $locale
+    id: $speechDelayAccordionId
+  ) {
+    title
+    content {
+      json
+    }
+  }
+  swallingAccordion: accordion(locale: $locale, id: $swallingAccordionId) {
+    title
+    content {
+      json
+    }
+  }
+  hypotoniaAccordion: accordion(locale: $locale, id: $hypotoniaAccordionId) {
+    title
+    content {
+      json
+    }
+  }
+  epilepsyAccordion: accordion(locale: $locale, id: $epilepsyAccordionId) {
+    title
+    content {
+      json
+    }
+  }
+  adhdAccordion: accordion(locale: $locale, id: $adhdAccordionId) {
+    title
+    content {
+      json
+    }
+  }
+  hearingAccordion: accordion(locale: $locale, id: $hearingAccordionId) {
+    title
+    content {
+      json
+    }
+  }
+  symptomsVaryHeading: heading(locale: $locale, id: $symptomsVaryHeadingId) {
+    content
+  }
+  symptomsVaryParagraphs: paragraphs(
+    locale: $locale
+    id: $symptomsVaryParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  inheritanceHeading: heading(locale: $locale, id: $inheritanceHeadingId) {
+    content
+  }
+  inheritanceParagraphs: paragraphs(
+    locale: $locale
+    id: $inheritanceParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  diagnosisHeading: heading(locale: $locale, id: $diagnosisHeadingId) {
+    content
+  }
+  diagnosisParagraphs: paragraphs(locale: $locale, id: $diagnosisParagraphsId) {
+    content {
+      json
+    }
+  }
+  prevalenceHeading: heading(locale: $locale, id: $prevalenceHeadingId) {
+    content
+  }
+  prevalenceParagraphs: paragraphs(
+    locale: $locale
+    id: $prevalenceParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  incidenceHeading: heading(locale: $locale, id: $incidenceHeadingId) {
+    content
+  }
+  incidenceParagraphs: paragraphs(locale: $locale, id: $incidenceParagraphsId) {
+    content {
+      json
+    }
+  }
+  managementHeading: heading(locale: $locale, id: $managementHeadingId) {
+    content
+  }
+  managementParagraphs: paragraphs(
+    locale: $locale
+    id: $managementParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  researchHeading: heading(locale: $locale, id: $researchHeadingId) {
+    content
+  }
+  researchParagraphs: paragraphs(locale: $locale, id: $researchParagraphsId) {
+    content {
+      json
+    }
+  }
+  lifeHeading: heading(locale: $locale, id: $lifeHeadingId) {
+    content
+  }
+  lifeParagraphs: paragraphs(locale: $locale, id: $lifeParagraphsId) {
+    content {
+      json
+    }
+  }
+}
