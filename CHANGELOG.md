@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.44.0](https://github.com/nr2f1/website/compare/v1.43.4...v1.44.0) (2025-03-09)
+
+
+### Features
+
+* **nx-cloud:** set up nx workspace ([fe767f7](https://github.com/nr2f1/website/commit/fe767f71c266785ed4eb2936b490b648a4c474b4))
+
+
+### Bug Fixes
+
+* a11y in signup form role select ([ed6e91d](https://github.com/nr2f1/website/commit/ed6e91d602857a378a16cfcc2aae5b4aeb9c54fb))
+* a11y on header ([8e202fc](https://github.com/nr2f1/website/commit/8e202fc25513ec134784face9a98de743d322ff1))
+* homepage accessibility issues ([7af8954](https://github.com/nr2f1/website/commit/7af8954368cc80a29fa537b8e9f836655d0b9b7f))
+
 ## [1.43.4](https://github.com/nr2f1/website/compare/v1.43.3...v1.43.4) (2025-02-13)
 
 
