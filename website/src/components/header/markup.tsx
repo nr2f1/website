@@ -114,6 +114,7 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
         isMenuOpen ? styles['header--menu-open'] : ''
       }`}
     >
+      <h1>NR2F1 Foundation</h1>
       <div className={styles.header__top}>
         <div className={styles.header__content_wrapper}>
           <div className={styles.header__logo}>

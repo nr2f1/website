@@ -29,6 +29,7 @@ export default defineConfig({
       '@shared': '/shared',
       '@styles': '/styles',
       '@tests': '/tests',
+      '@routes': '/routes',
     },
   },
 });

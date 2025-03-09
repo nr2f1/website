@@ -1,8 +1,9 @@
 import { expect, test } from '@playwright/test';
 import { english } from '../src/i18n/locales';
+import { routes } from '../src/routes';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto(`/${english}`);
+  await page.goto(routes.homepage(english));
 });
 
 test.describe('header', () => {
