@@ -18,3 +18,15 @@ export const registerClinicalIdContentId = '5Y7VVQ0o5PIs1LUk7Sylxm';
 // Publications page
 export const patientResearchContentId = '2wBhQhIazKXl2yJRbHy3qZ';
 export const geneResearchContentId = '5XHqzIOZPMvUZ6P3XsXnvs';
+// What is bbsoas? page
+export const whatIsBbsoasintroId = '79EsF0hIK2E9gioo8ONBIL';
+export const whatCausesBbsoasParagraphsId = '4xgb4gNK4kRaZmJwrc3Qcl';
+export const symptomsOfBbsoasParagraphsId = '4IVVWcwaFk4hnPacuex9pG';
+export const symptomsVaryParagraphsId = '47uR4QhAjxUhccDUqykfNj';
+export const inheritanceParagraphsId = '6I0WAISEnchQyQGhxt5OYg';
+export const diagnosisParagraphsId = '7aEEuiWeSFKjG2mi4FiFT1';
+export const prevalenceParagraphsId = '3ZP0aAatNeyw68RqQOjkW0';
+export const incidenceParagraphsId = '4xkzsmXZ86FbcKE3OU0qm0';
+export const managementParagraphsId = '1jT7SenPyfX83YCqjOsuHp';
+export const researchParagraphsId = '1qmHLJHGT3iQ1luApccVhw';
+export const lifeParagraphsId = '3pPQvGt9WQ2CtfvxQRHG9z';

@@ -15,3 +15,14 @@ export const registerClinicalIdHeadingId = '3SxkzaMqsMEpLrYJrrYNmj';
 // Publications page
 export const patientResearchHeadingId = '5LLDk0ie1jxRttKrY0BxDG';
 export const geneResearchHeadingId = '2WAdQ4v5HeW0GNqIwRLU5e';
+// What is BBSOAs Page
+export const whatCausesBbsoasHeadingId = '6MYrhdL3dFf8I9a4rGribG';
+export const symptomsOfBbsoasHeadingId = '3LIosdHOn2E6AGH6GQI1Tn';
+export const symptomsVaryHeadingId = '6T50XpUlyRUWRvmZ8jB1Sw';
+export const inheritanceHeadingId = '26KXpOBoLBjKSuRDgTPqHw';
+export const diagnosisHeadingId = '3sVr4biV0gk5YkvMgVFLoe';
+export const prevalenceHeadingId = '6M871l9rR2dgCkRNMQnbm9';
+export const incidenceHeadingId = '2JX6qX6vGsPPBkErQV3ImN';
+export const managementHeadingId = '3oHI8nO9ZyzlmwmnsVGQcn';
+export const researchHeadingId = 'AulBpJKxu7Kl5uYvEsHTa';
+export const lifeHeadingId = 'Zxr1cFo4EasHOVqsQxExV';

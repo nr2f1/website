@@ -6,7 +6,8 @@ type RouteProperty =
   | 'homepage'
   | 'news'
   | 'publications'
-  | 'register-a-patient';
+  | 'register-a-patient'
+  | 'what-is-bbsoas';
 
 export const routes: Record<RouteProperty, LocalisedRoute> = {
   homepage(locale: AvailableLocale) {
@@ -20,4 +21,5 @@ export const routes: Record<RouteProperty, LocalisedRoute> = {
   },
   'register-a-patient': (locale: AvailableLocale) =>
     `/${locale}/register-a-patient`,
+  'what-is-bbsoas': (locale: AvailableLocale) => `/${locale}/'what-is-bbsoas'`,
 };
