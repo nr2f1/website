@@ -48,6 +48,7 @@ import {
   whatIsBbsoasintroId,
 } from '@models/paragraphs';
 import { createHashLink } from '@shared/utils/hash-links';
+import type { MedicalCondition, WithContext } from 'schema-dts';
 
 interface RegisterPageBodyProps {
   lang: AvailableLocale;
@@ -152,8 +153,59 @@ const WhatIsBbsoasBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
     lifeHeading?.content ?? '',
   ];
 
+  const associatedAnatomyLocale: Record<
+    AvailableLocale,
+    MedicalCondition['associatedAnatomy']
+  > = {
+    en: [
+      { '@type': 'AnatomicalStructure', name: 'NR2F1 gene' },
+      { '@type': 'AnatomicalStructure', name: 'Chromosome 5q15' },
+      { '@type': 'AnatomicalStructure', name: 'Brain' },
+      { '@type': 'AnatomicalStructure', name: 'Visual system' },
+    ],
+    fr: [
+      { '@type': 'AnatomicalStructure', name: 'Gène NR2F1' },
+      { '@type': 'AnatomicalStructure', name: 'Chromosome 5q15' },
+      { '@type': 'AnatomicalStructure', name: 'Cerveau' },
+      { '@type': 'AnatomicalStructure', name: 'Système visuel' },
+    ],
+    de: [
+      { '@type': 'AnatomicalStructure', name: 'NR2F1 Gene' },
+      { '@type': 'AnatomicalStructure', name: 'Chromosome 5q15' },
+      { '@type': 'AnatomicalStructure', name: 'Hirn' },
+      { '@type': 'AnatomicalStructure', name: 'Visuelles System' },
+    ],
+    es: [
+      { '@type': 'AnatomicalStructure', name: 'Gen NR2F1' },
+      { '@type': 'AnatomicalStructure', name: 'Cromosoma 5q15' },
+      { '@type': 'AnatomicalStructure', name: 'Cerebro' },
+      { '@type': 'AnatomicalStructure', name: 'Sistema visual' },
+    ],
+  };
+
+  const description = intro?.content?.json?.content[0]?.content[0]?.value;
+  const signOrSymptom = headings.map((heading) => ({
+    '@type': 'MedicalSignOrSymptom',
+    name: heading,
+  })) as MedicalCondition['signOrSymptom'];
+
+  const jsonLd: WithContext<MedicalCondition> = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalCondition',
+    name: 'Bosch-Boonstra-Schaaf Optic Atrophy Syndrome (BBSOAS)',
+    alternateName: 'BBSOAS',
+    description,
+    associatedAnatomy: associatedAnatomyLocale[lang],
+    signOrSymptom,
+  };
+
   return (
     <PageBody lang={lang} headings={headings}>
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section>{documentToReactComponents(intro?.content?.json)}</section>
       <section>
         <h2 id={createHashLink(whatCausesBbsoasHeading?.content ?? '')}>

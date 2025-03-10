@@ -1,3 +1,4 @@
+import SupportBanner from '@components/support-banner';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { NextPage } from 'next';
 import WhatIsBbsoasBody from './page-body';
@@ -10,6 +11,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     <>
       <WhatIsBbsoas lang={lang} />
       <WhatIsBbsoasBody lang={lang} />
+      <SupportBanner lang={lang} />
     </>
   );
 };
