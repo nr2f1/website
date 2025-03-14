@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.44.0](https://github.com/nr2f1/website/compare/v1.43.4...v1.44.0) (2025-03-14)
+
+
+### Features
+
+* create what causes bbsoas page ([4315b42](https://github.com/nr2f1/website/commit/4315b420461d2ccd81f6c9f0d35ce3bf746bda99))
+* create what-is-bbsoas page header ([c56ec1f](https://github.com/nr2f1/website/commit/c56ec1fece6ef6fcfffd34f881e4d7321356486c))
+* **nx-cloud:** set up nx workspace ([fe767f7](https://github.com/nr2f1/website/commit/fe767f71c266785ed4eb2936b490b648a4c474b4))
+* what-is-bbsoas page ([fa4fdfd](https://github.com/nr2f1/website/commit/fa4fdfddddbaf290e4ff82418bea138c072e3c18))
+
+
+### Bug Fixes
+
+* a11 on news ([5ca0e72](https://github.com/nr2f1/website/commit/5ca0e72e016ea0b805e3292ee1a0e4bb1af9fbcb))
+* a11 on register-patient ([f50ea9e](https://github.com/nr2f1/website/commit/f50ea9eaafa6bd0fa185a4cfe8ed0d67522a71b7))
+* a11y in signup form role select ([ed6e91d](https://github.com/nr2f1/website/commit/ed6e91d602857a378a16cfcc2aae5b4aeb9c54fb))
+* a11y on header ([8e202fc](https://github.com/nr2f1/website/commit/8e202fc25513ec134784face9a98de743d322ff1))
+* a11y on what-is-bbsoas ([2999797](https://github.com/nr2f1/website/commit/2999797415ee16a167f8a862f29401911777c884))
+* homepage accessibility issues ([7af8954](https://github.com/nr2f1/website/commit/7af8954368cc80a29fa537b8e9f836655d0b9b7f))
+* page header ([d7222da](https://github.com/nr2f1/website/commit/d7222dad06cd9d598c67de0516edd493b032a557))
+
 ## [1.43.4](https://github.com/nr2f1/website/compare/v1.43.3...v1.43.4) (2025-02-13)
 
 
