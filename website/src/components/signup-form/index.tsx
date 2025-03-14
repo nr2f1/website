@@ -301,6 +301,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang, registerPatient }) => {
                             : styles.select
                         }
                         id="country"
+                        title={content?.fields.country.label}
                         onBlur={handleBlur}
                         onChange={handleSelectCountryOnChange}
                         slotProps={{
