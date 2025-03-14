@@ -79,7 +79,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
                 <p className={styles.article__label}>
                   {newsTypeLocale[lang][News.NEWSLETTER]}
                 </p>
-                <h3>{getNewsLetterTitle({ date: title, lang })}</h3>
+                <h2>{getNewsLetterTitle({ date: title, lang })}</h2>
                 <p className={styles.article__date}>
                   <time dateTime={dateTime}>{publishedString}</time>
                 </p>
@@ -103,7 +103,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
                 <p className={styles.article__label}>
                   {newsTypeLocale[lang][News.BLOG]}
                 </p>
-                <h3>{title}</h3>
+                <h2>{title}</h2>
                 <p className={styles.article__date}>
                   <time dateTime={dateTime}>{publishedString}</time>
                 </p>
