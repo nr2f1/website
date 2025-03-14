@@ -33,7 +33,7 @@
     "@nx/vite": "20.4.2",
     "@nx/web": "20.4.2",
     "@playwright/test": "^1.51.0",
-    "@swc-node/register": "~1.10.9",
+    "@swc-node/register": "~1.10.10",
     "@swc/core": "~1.10.18",
     "@swc/helpers": "~0.5.15",
     "@testing-library/jest-dom": "^6.6.3",
@@ -67,15 +67,15 @@
     "targets": {}
   },
   "dependencies": {
-    "@apollo/client": "^3.13.3",
-    "@apollo/experimental-nextjs-app-support": "^0.11.10",
+    "@apollo/client": "^3.13.4",
+    "@apollo/experimental-nextjs-app-support": "^0.11.11",
     "@contentful/rich-text-react-renderer": "^16.0.1",
     "@formatjs/intl-localematcher": "^0.6.0",
     "@mui/base": "5.0.0-beta.69",
     "formik": "^2.4.6",
     "graphql": "^16.10.0",
     "negotiator": "^1.0.0",
-    "next": "^15.2.1",
+    "next": "^15.2.2",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "schema-dts": "^1.1.5",
@@ -85,6 +85,9 @@
   "packageManager": "pnpm@10.6.1+sha512.40ee09af407fa9fbb5fbfb8e1cb40fbb74c0af0c3e10e9224d7b53c7658528615b2c92450e74cfad91e3a2dcafe3ce4050d80bda71d757756d2ce2b66213e9a3",
   "pnpm": {
     "ignoredBuiltDependencies": [
+      "nx"
+    ],
+    "onlyBuiltDependencies": [
       "nx"
     ]
   }
