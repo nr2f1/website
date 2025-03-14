@@ -86,6 +86,9 @@
   "pnpm": {
     "ignoredBuiltDependencies": [
       "nx"
+    ],
+    "onlyBuiltDependencies": [
+      "nx"
     ]
   }
 }
