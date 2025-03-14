@@ -11,7 +11,7 @@ interface PageContentsProps extends HeadingsProps {
   lang: AvailableLocale;
 }
 
-const summary: LocalisedString = {
+export const pageContents: LocalisedString = {
   en: 'Page contents',
   es: 'Contenido de la página',
   fr: 'Contenu de la page',
@@ -33,16 +33,16 @@ const Headings: React.FC<HeadingsProps> = ({ headings }) => {
 };
 
 const PageContents: React.FC<PageContentsProps> = ({ lang, headings }) => {
-  const summaryText = summary[lang];
+  const pageContextText = pageContents[lang];
 
   return (
     <div className={styles['page-contents']}>
       <details>
-        <summary>{summaryText}</summary>
+        <summary>{pageContextText}</summary>
         <Headings headings={headings} />
       </details>
       <div>
-        <h3>{summaryText}</h3>
+        <h2>{pageContextText}</h2>
         <Headings headings={headings} />
       </div>
     </div>
