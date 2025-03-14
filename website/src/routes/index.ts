@@ -21,5 +21,5 @@ export const routes: Record<RouteProperty, LocalisedRoute> = {
   },
   'register-a-patient': (locale: AvailableLocale) =>
     `/${locale}/register-a-patient`,
-  'what-is-bbsoas': (locale: AvailableLocale) => `/${locale}/'what-is-bbsoas'`,
+  'what-is-bbsoas': (locale: AvailableLocale) => `/${locale}/what-is-bbsoas`,
 };
