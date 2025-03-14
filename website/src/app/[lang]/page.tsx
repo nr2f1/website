@@ -1,3 +1,5 @@
+import styles from './index.module.scss';
+
 import HomePageHero from '@components/homepage-hero';
 import LatestNews from '@components/latest-news';
 import MembershipsPartners from '@components/memberships-partners';
@@ -87,6 +89,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
         // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <h1 className={styles['visibility-hidden']}>NR2F1 Foundation</h1>
       <HomePageHero lang={lang} />
       <WhatWeDo lang={lang} />
       <HomePageBanner lang={lang} />
