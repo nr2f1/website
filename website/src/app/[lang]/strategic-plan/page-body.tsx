@@ -1,3 +1,5 @@
+import styles from './index.module.scss';
+
 import PageBody from '@components/page-body';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
@@ -81,7 +83,7 @@ const StrategicPlanBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
           {advocacyHeading?.content}
         </h2>
         {documentToReactComponents(advocacyParagraphs?.content?.json)}
-        <div>
+        <div className={styles.progress}>
           {documentToReactComponents(advocacyProgressParagraphs?.content?.json)}
         </div>
       </section>
