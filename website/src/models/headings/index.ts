@@ -30,3 +30,4 @@ export const lifeHeadingId = 'Zxr1cFo4EasHOVqsQxExV';
 export const ourObjectivesHeadingId = '7IbgvfDbWCIvFP7gyb43K1';
 export const educationHeadingId = '7fMTyQ01QtJkAGTplH0m3P';
 export const advocacyHeadingId = '7FScWy3UVuJjXtNx3a8LOH';
+export const strategicResearchHeadingId = '5klKhABZz8ru77y2prZrJc';

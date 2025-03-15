@@ -13,6 +13,7 @@ import {
   advocacyHeadingId,
   educationHeadingId,
   ourObjectivesHeadingId,
+  strategicResearchHeadingId,
 } from '@models/headings';
 import {
   advocacyParagraphsId,
@@ -38,6 +39,7 @@ const StrategicPlanBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
       advocacyHeading,
       advocacyParagraphs,
       advocacyProgressParagraphs,
+      researchHeading,
     },
     error,
   } = await query<GetStrategicPlanPageQuery>({
@@ -51,6 +53,7 @@ const StrategicPlanBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
       advocacyHeadingId,
       advocacyParagraphsId,
       advocacyProgressParagraphsId,
+      researchHeadingId: strategicResearchHeadingId,
     },
   });
 
@@ -62,6 +65,7 @@ const StrategicPlanBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
     ourObjectivesHeading?.content ?? '',
     educationHeading?.content ?? '',
     advocacyHeading?.content ?? '',
+    researchHeading?.content ?? '',
   ];
 
   return (
@@ -72,13 +76,13 @@ const StrategicPlanBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
         </h2>
         {documentToReactComponents(ourObjectivesParagraphs?.content?.json)}
       </section>
-      <section>
+      <section className={styles.section}>
         <h2 id={createHashLink(educationHeading?.content ?? '')}>
           {educationHeading?.content}
         </h2>
         {documentToReactComponents(educationParagraphs?.content?.json)}
       </section>
-      <section>
+      <section className={styles.section}>
         <h2 id={createHashLink(advocacyHeading?.content ?? '')}>
           {advocacyHeading?.content}
         </h2>
@@ -86,6 +90,15 @@ const StrategicPlanBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
         <div className={styles.progress}>
           {documentToReactComponents(advocacyProgressParagraphs?.content?.json)}
         </div>
+      </section>
+      <section className={styles.section}>
+        <h2 id={createHashLink(researchHeading?.content ?? '')}>
+          {researchHeading?.content}
+        </h2>
+        {/* {documentToReactComponents(advocacyParagraphs?.content?.json)}
+        <div className={styles.progress}>
+          {documentToReactComponents(advocacyProgressParagraphs?.content?.json)}
+        </div> */}
       </section>
     </PageBody>
   );
