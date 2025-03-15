@@ -26,3 +26,7 @@ export const incidenceHeadingId = '2JX6qX6vGsPPBkErQV3ImN';
 export const managementHeadingId = '3oHI8nO9ZyzlmwmnsVGQcn';
 export const researchHeadingId = 'AulBpJKxu7Kl5uYvEsHTa';
 export const lifeHeadingId = 'Zxr1cFo4EasHOVqsQxExV';
+// Strategic Plan Page
+export const ourObjectivesHeadingId = '7IbgvfDbWCIvFP7gyb43K1';
+export const educationHeadingId = '7fMTyQ01QtJkAGTplH0m3P';
+export const advocacyHeadingId = '7FScWy3UVuJjXtNx3a8LOH';
