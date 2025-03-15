@@ -85,6 +85,12 @@ pnpm biome lint  <PATH>
 pnpm nx build website
 ```
 
+### End-to-end tests
+
+```sh
+pnpm nx e2e website
+```
+
 ### How to deploy
 
 We are using conventional commits and semantic versioning for the project. The deployment process is described in the [Deployment](./docs/development/deployment/readme.md) documentation.
