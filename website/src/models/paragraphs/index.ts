@@ -30,3 +30,8 @@ export const incidenceParagraphsId = '4xkzsmXZ86FbcKE3OU0qm0';
 export const managementParagraphsId = '1jT7SenPyfX83YCqjOsuHp';
 export const researchParagraphsId = '1qmHLJHGT3iQ1luApccVhw';
 export const lifeParagraphsId = '3pPQvGt9WQ2CtfvxQRHG9z';
+// Strategic plan page
+export const ourObjectivesParagraphsId = '2E4N2a6tG5hh6NsCziJl6K';
+export const educationParagraphsId = '6pAMZzPt6JKqLZDV8AsfsX';
+export const advocacyParagraphsId = '2hfBd3LRCLgEgWxvAg2xqX';
+export const advocacyProgressParagraphsId = '6gDKY18CDkpik6Uc9GJgk0';

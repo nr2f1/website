@@ -7,19 +7,21 @@ type RouteProperty =
   | 'news'
   | 'publications'
   | 'register-a-patient'
+  | 'strategic-plan'
   | 'what-is-bbsoas';
 
 export const routes: Record<RouteProperty, LocalisedRoute> = {
-  homepage(locale: AvailableLocale) {
+  homepage: (locale: AvailableLocale) => {
     return `/${locale}`;
   },
-  news(locale: AvailableLocale) {
+  news: (locale: AvailableLocale) => {
     return `/${locale}/news`;
   },
-  publications(locale: AvailableLocale) {
+  publications: (locale: AvailableLocale) => {
     return `/${locale}/publications`;
   },
   'register-a-patient': (locale: AvailableLocale) =>
     `/${locale}/register-a-patient`,
+  'strategic-plan': (locale: AvailableLocale) => `/${locale}/strategic-plan`,
   'what-is-bbsoas': (locale: AvailableLocale) => `/${locale}/what-is-bbsoas`,
 };

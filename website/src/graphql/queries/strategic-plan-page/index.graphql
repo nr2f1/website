@@ -1,0 +1,46 @@
+query GetStrategicPlanPage(
+  $locale: String
+  $ourObjectivesHeadingId: String!
+  $ourObjectivesParagraphsId: String!
+  $educationHeadingId: String!
+  $educationParagraphsId: String!
+  $advocacyHeadingId: String!
+  $advocacyParagraphsId: String!
+  $advocacyProgressParagraphsId: String!
+) {
+  ourObjectivesHeading: heading(locale: $locale, id: $ourObjectivesHeadingId) {
+    content
+  }
+  ourObjectivesParagraphs: paragraphs(
+    locale: $locale
+    id: $ourObjectivesParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  educationHeading: heading(locale: $locale, id: $educationHeadingId) {
+    content
+  }
+  educationParagraphs: paragraphs(locale: $locale, id: $educationParagraphsId) {
+    content {
+      json
+    }
+  }
+  advocacyHeading: heading(locale: $locale, id: $advocacyHeadingId) {
+    content
+  }
+  advocacyParagraphs: paragraphs(locale: $locale, id: $advocacyParagraphsId) {
+    content {
+      json
+    }
+  }
+  advocacyProgressParagraphs: paragraphs(
+    locale: $locale
+    id: $advocacyProgressParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+}
