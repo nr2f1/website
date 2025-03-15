@@ -7,6 +7,9 @@ query GetStrategicPlanPage(
   $advocacyHeadingId: String!
   $advocacyParagraphsId: String!
   $advocacyProgressParagraphsId: String!
+  $researchHeadingId: String!
+  $researchParagraphsId: String!
+  $researchProgressParagraphsId: String!
 ) {
   ourObjectivesHeading: heading(locale: $locale, id: $ourObjectivesHeadingId) {
     content
@@ -38,6 +41,22 @@ query GetStrategicPlanPage(
   advocacyProgressParagraphs: paragraphs(
     locale: $locale
     id: $advocacyProgressParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  researchHeading: heading(locale: $locale, id: $researchHeadingId) {
+    content
+  }
+  researchParagraphs: paragraphs(locale: $locale, id: $researchParagraphsId) {
+    content {
+      json
+    }
+  }
+  researchProgressParagraphs: paragraphs(
+    locale: $locale
+    id: $researchProgressParagraphsId
   ) {
     content {
       json

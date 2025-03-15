@@ -46,3 +46,14 @@
     margin: 0 !important;
   }
 }
+
+.section {
+  h3 {
+    margin: var(--spacing-6) 0 !important;
+  }
+
+  ol {
+    margin: 0;
+    margin-block-end: var(--spacing-6);
+  }
+}

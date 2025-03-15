@@ -12,14 +12,17 @@ export type GetStrategicPlanPageQueryVariables = Types.Exact<{
   advocacyHeadingId: Types.Scalars['String']['input'];
   advocacyParagraphsId: Types.Scalars['String']['input'];
   advocacyProgressParagraphsId: Types.Scalars['String']['input'];
+  researchHeadingId: Types.Scalars['String']['input'];
+  researchParagraphsId: Types.Scalars['String']['input'];
+  researchProgressParagraphsId: Types.Scalars['String']['input'];
 }>;
 
 
-export type GetStrategicPlanPageQuery = { __typename?: 'Query', ourObjectivesHeading?: { __typename?: 'Heading', content?: string | null } | null, ourObjectivesParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, educationHeading?: { __typename?: 'Heading', content?: string | null } | null, educationParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, advocacyHeading?: { __typename?: 'Heading', content?: string | null } | null, advocacyParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, advocacyProgressParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null };
+export type GetStrategicPlanPageQuery = { __typename?: 'Query', ourObjectivesHeading?: { __typename?: 'Heading', content?: string | null } | null, ourObjectivesParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, educationHeading?: { __typename?: 'Heading', content?: string | null } | null, educationParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, advocacyHeading?: { __typename?: 'Heading', content?: string | null } | null, advocacyParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, advocacyProgressParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, researchHeading?: { __typename?: 'Heading', content?: string | null } | null, researchParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, researchProgressParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null };
 
 
 export const GetStrategicPlanPageDocument = gql`
-    query GetStrategicPlanPage($locale: String, $ourObjectivesHeadingId: String!, $ourObjectivesParagraphsId: String!, $educationHeadingId: String!, $educationParagraphsId: String!, $advocacyHeadingId: String!, $advocacyParagraphsId: String!, $advocacyProgressParagraphsId: String!) {
+    query GetStrategicPlanPage($locale: String, $ourObjectivesHeadingId: String!, $ourObjectivesParagraphsId: String!, $educationHeadingId: String!, $educationParagraphsId: String!, $advocacyHeadingId: String!, $advocacyParagraphsId: String!, $advocacyProgressParagraphsId: String!, $researchHeadingId: String!, $researchParagraphsId: String!, $researchProgressParagraphsId: String!) {
   ourObjectivesHeading: heading(locale: $locale, id: $ourObjectivesHeadingId) {
     content
   }
@@ -55,6 +58,22 @@ export const GetStrategicPlanPageDocument = gql`
       json
     }
   }
+  researchHeading: heading(locale: $locale, id: $researchHeadingId) {
+    content
+  }
+  researchParagraphs: paragraphs(locale: $locale, id: $researchParagraphsId) {
+    content {
+      json
+    }
+  }
+  researchProgressParagraphs: paragraphs(
+    locale: $locale
+    id: $researchProgressParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
 }
     `;
 
@@ -78,6 +97,9 @@ export const GetStrategicPlanPageDocument = gql`
  *      advocacyHeadingId: // value for 'advocacyHeadingId'
  *      advocacyParagraphsId: // value for 'advocacyParagraphsId'
  *      advocacyProgressParagraphsId: // value for 'advocacyProgressParagraphsId'
+ *      researchHeadingId: // value for 'researchHeadingId'
+ *      researchParagraphsId: // value for 'researchParagraphsId'
+ *      researchProgressParagraphsId: // value for 'researchProgressParagraphsId'
  *   },
  * });
  */
