@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.44.1](https://github.com/nr2f1/website/compare/v1.44.0...v1.44.1) (2025-03-28)
+
+
+### Bug Fixes
+
+* accordion padding ([9b3009b](https://github.com/nr2f1/website/commit/9b3009bd12827ad02d57eec7ea90a36a95371339))
+* accordion padding ([41517c8](https://github.com/nr2f1/website/commit/41517c8c2e42769f8dea26e123cb25f38401a43c))
+
 ## [1.44.0](https://github.com/nr2f1/website/compare/v1.43.4...v1.44.0) (2025-03-14)
 
 
