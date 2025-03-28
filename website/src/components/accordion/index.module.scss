@@ -20,6 +20,7 @@
   }
 
   &[open] summary {
+    padding-block-end: var(--spacing-4);
     &::after {
       background-image: url(icons.$chevron-up-navy);
     }
