@@ -37,3 +37,5 @@ export const advocacyParagraphsId = '2hfBd3LRCLgEgWxvAg2xqX';
 export const advocacyProgressParagraphsId = '6gDKY18CDkpik6Uc9GJgk0';
 export const strategicResearchParagraphsId = '5WtSXfSkSm09wvf2yMv8cQ';
 export const researchProgressParagraphsId = 'cpobeAKhR67748RlcNVjt';
+export const getThereParagraphsId = 'mebVTadq1HoOHAsrNkjXP';
+export const getThereProgressParagraphsId = '37rq0IsDt30hdUZqWuSrqJ';

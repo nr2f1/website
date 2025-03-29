@@ -31,3 +31,5 @@ export const ourObjectivesHeadingId = '7IbgvfDbWCIvFP7gyb43K1';
 export const educationHeadingId = '7fMTyQ01QtJkAGTplH0m3P';
 export const advocacyHeadingId = '7FScWy3UVuJjXtNx3a8LOH';
 export const strategicResearchHeadingId = '5klKhABZz8ru77y2prZrJc';
+export const getThereHeadingId = 'kSayII3GbUz97BOQ9LAlt';
+export const fiveYearsHeadingId = '5jmLHjpPfEaAK905agk3mr';

@@ -3,7 +3,7 @@ import * as Types from '../../types';
 import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
-export type GetStrategicPlanPageQueryVariables = Types.Exact<{
+export type GetStrategicPlanUpperPageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
   ourObjectivesHeadingId: Types.Scalars['String']['input'];
   ourObjectivesParagraphsId: Types.Scalars['String']['input'];
@@ -15,14 +15,26 @@ export type GetStrategicPlanPageQueryVariables = Types.Exact<{
   researchHeadingId: Types.Scalars['String']['input'];
   researchParagraphsId: Types.Scalars['String']['input'];
   researchProgressParagraphsId: Types.Scalars['String']['input'];
+  getThereHeadingId: Types.Scalars['String']['input'];
+  fiveYearsHeadingId: Types.Scalars['String']['input'];
 }>;
 
 
-export type GetStrategicPlanPageQuery = { __typename?: 'Query', ourObjectivesHeading?: { __typename?: 'Heading', content?: string | null } | null, ourObjectivesParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, educationHeading?: { __typename?: 'Heading', content?: string | null } | null, educationParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, advocacyHeading?: { __typename?: 'Heading', content?: string | null } | null, advocacyParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, advocacyProgressParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, researchHeading?: { __typename?: 'Heading', content?: string | null } | null, researchParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, researchProgressParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null };
+export type GetStrategicPlanUpperPageQuery = { __typename?: 'Query', ourObjectivesHeading?: { __typename?: 'Heading', content?: string | null } | null, ourObjectivesParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, educationHeading?: { __typename?: 'Heading', content?: string | null } | null, educationParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, advocacyHeading?: { __typename?: 'Heading', content?: string | null } | null, advocacyParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, advocacyProgressParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, researchHeading?: { __typename?: 'Heading', content?: string | null } | null, researchParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, researchProgressParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, getThereHeading?: { __typename?: 'Heading', content?: string | null } | null, fiveYearsHeading?: { __typename?: 'Heading', content?: string | null } | null };
+
+export type GetStrategicPlanMiddlePageQueryVariables = Types.Exact<{
+  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
+  getThereHeadingId: Types.Scalars['String']['input'];
+  getThereParagraphsId: Types.Scalars['String']['input'];
+  getThereProgressParagraphsId: Types.Scalars['String']['input'];
+}>;
 
 
-export const GetStrategicPlanPageDocument = gql`
-    query GetStrategicPlanPage($locale: String, $ourObjectivesHeadingId: String!, $ourObjectivesParagraphsId: String!, $educationHeadingId: String!, $educationParagraphsId: String!, $advocacyHeadingId: String!, $advocacyParagraphsId: String!, $advocacyProgressParagraphsId: String!, $researchHeadingId: String!, $researchParagraphsId: String!, $researchProgressParagraphsId: String!) {
+export type GetStrategicPlanMiddlePageQuery = { __typename?: 'Query', getThereHeading?: { __typename?: 'Heading', content?: string | null } | null, getThereParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, getThereProgressParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null };
+
+
+export const GetStrategicPlanUpperPageDocument = gql`
+    query GetStrategicPlanUpperPage($locale: String, $ourObjectivesHeadingId: String!, $ourObjectivesParagraphsId: String!, $educationHeadingId: String!, $educationParagraphsId: String!, $advocacyHeadingId: String!, $advocacyParagraphsId: String!, $advocacyProgressParagraphsId: String!, $researchHeadingId: String!, $researchParagraphsId: String!, $researchProgressParagraphsId: String!, $getThereHeadingId: String!, $fiveYearsHeadingId: String!) {
   ourObjectivesHeading: heading(locale: $locale, id: $ourObjectivesHeadingId) {
     content
   }
@@ -74,20 +86,26 @@ export const GetStrategicPlanPageDocument = gql`
       json
     }
   }
+  getThereHeading: heading(locale: $locale, id: $getThereHeadingId) {
+    content
+  }
+  fiveYearsHeading: heading(locale: $locale, id: $fiveYearsHeadingId) {
+    content
+  }
 }
     `;
 
 /**
- * __useGetStrategicPlanPageQuery__
+ * __useGetStrategicPlanUpperPageQuery__
  *
- * To run a query within a React component, call `useGetStrategicPlanPageQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetStrategicPlanPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useGetStrategicPlanUpperPageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetStrategicPlanUpperPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useGetStrategicPlanPageQuery({
+ * const { data, loading, error } = useGetStrategicPlanUpperPageQuery({
  *   variables: {
  *      locale: // value for 'locale'
  *      ourObjectivesHeadingId: // value for 'ourObjectivesHeadingId'
@@ -100,22 +118,80 @@ export const GetStrategicPlanPageDocument = gql`
  *      researchHeadingId: // value for 'researchHeadingId'
  *      researchParagraphsId: // value for 'researchParagraphsId'
  *      researchProgressParagraphsId: // value for 'researchProgressParagraphsId'
+ *      getThereHeadingId: // value for 'getThereHeadingId'
+ *      fiveYearsHeadingId: // value for 'fiveYearsHeadingId'
  *   },
  * });
  */
-export function useGetStrategicPlanPageQuery(baseOptions: Apollo.QueryHookOptions<GetStrategicPlanPageQuery, GetStrategicPlanPageQueryVariables> & ({ variables: GetStrategicPlanPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetStrategicPlanUpperPageQuery(baseOptions: Apollo.QueryHookOptions<GetStrategicPlanUpperPageQuery, GetStrategicPlanUpperPageQueryVariables> & ({ variables: GetStrategicPlanUpperPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetStrategicPlanPageQuery, GetStrategicPlanPageQueryVariables>(GetStrategicPlanPageDocument, options);
+        return Apollo.useQuery<GetStrategicPlanUpperPageQuery, GetStrategicPlanUpperPageQueryVariables>(GetStrategicPlanUpperPageDocument, options);
       }
-export function useGetStrategicPlanPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetStrategicPlanPageQuery, GetStrategicPlanPageQueryVariables>) {
+export function useGetStrategicPlanUpperPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetStrategicPlanUpperPageQuery, GetStrategicPlanUpperPageQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetStrategicPlanPageQuery, GetStrategicPlanPageQueryVariables>(GetStrategicPlanPageDocument, options);
+          return Apollo.useLazyQuery<GetStrategicPlanUpperPageQuery, GetStrategicPlanUpperPageQueryVariables>(GetStrategicPlanUpperPageDocument, options);
         }
-export function useGetStrategicPlanPageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetStrategicPlanPageQuery, GetStrategicPlanPageQueryVariables>) {
+export function useGetStrategicPlanUpperPageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetStrategicPlanUpperPageQuery, GetStrategicPlanUpperPageQueryVariables>) {
           const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetStrategicPlanPageQuery, GetStrategicPlanPageQueryVariables>(GetStrategicPlanPageDocument, options);
+          return Apollo.useSuspenseQuery<GetStrategicPlanUpperPageQuery, GetStrategicPlanUpperPageQueryVariables>(GetStrategicPlanUpperPageDocument, options);
         }
-export type GetStrategicPlanPageQueryHookResult = ReturnType<typeof useGetStrategicPlanPageQuery>;
-export type GetStrategicPlanPageLazyQueryHookResult = ReturnType<typeof useGetStrategicPlanPageLazyQuery>;
-export type GetStrategicPlanPageSuspenseQueryHookResult = ReturnType<typeof useGetStrategicPlanPageSuspenseQuery>;
-export type GetStrategicPlanPageQueryResult = Apollo.QueryResult<GetStrategicPlanPageQuery, GetStrategicPlanPageQueryVariables>;
+export type GetStrategicPlanUpperPageQueryHookResult = ReturnType<typeof useGetStrategicPlanUpperPageQuery>;
+export type GetStrategicPlanUpperPageLazyQueryHookResult = ReturnType<typeof useGetStrategicPlanUpperPageLazyQuery>;
+export type GetStrategicPlanUpperPageSuspenseQueryHookResult = ReturnType<typeof useGetStrategicPlanUpperPageSuspenseQuery>;
+export type GetStrategicPlanUpperPageQueryResult = Apollo.QueryResult<GetStrategicPlanUpperPageQuery, GetStrategicPlanUpperPageQueryVariables>;
+export const GetStrategicPlanMiddlePageDocument = gql`
+    query GetStrategicPlanMiddlePage($locale: String, $getThereHeadingId: String!, $getThereParagraphsId: String!, $getThereProgressParagraphsId: String!) {
+  getThereHeading: heading(locale: $locale, id: $getThereHeadingId) {
+    content
+  }
+  getThereParagraphs: paragraphs(locale: $locale, id: $getThereParagraphsId) {
+    content {
+      json
+    }
+  }
+  getThereProgressParagraphs: paragraphs(
+    locale: $locale
+    id: $getThereProgressParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetStrategicPlanMiddlePageQuery__
+ *
+ * To run a query within a React component, call `useGetStrategicPlanMiddlePageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetStrategicPlanMiddlePageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetStrategicPlanMiddlePageQuery({
+ *   variables: {
+ *      locale: // value for 'locale'
+ *      getThereHeadingId: // value for 'getThereHeadingId'
+ *      getThereParagraphsId: // value for 'getThereParagraphsId'
+ *      getThereProgressParagraphsId: // value for 'getThereProgressParagraphsId'
+ *   },
+ * });
+ */
+export function useGetStrategicPlanMiddlePageQuery(baseOptions: Apollo.QueryHookOptions<GetStrategicPlanMiddlePageQuery, GetStrategicPlanMiddlePageQueryVariables> & ({ variables: GetStrategicPlanMiddlePageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetStrategicPlanMiddlePageQuery, GetStrategicPlanMiddlePageQueryVariables>(GetStrategicPlanMiddlePageDocument, options);
+      }
+export function useGetStrategicPlanMiddlePageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetStrategicPlanMiddlePageQuery, GetStrategicPlanMiddlePageQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetStrategicPlanMiddlePageQuery, GetStrategicPlanMiddlePageQueryVariables>(GetStrategicPlanMiddlePageDocument, options);
+        }
+export function useGetStrategicPlanMiddlePageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetStrategicPlanMiddlePageQuery, GetStrategicPlanMiddlePageQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetStrategicPlanMiddlePageQuery, GetStrategicPlanMiddlePageQueryVariables>(GetStrategicPlanMiddlePageDocument, options);
+        }
+export type GetStrategicPlanMiddlePageQueryHookResult = ReturnType<typeof useGetStrategicPlanMiddlePageQuery>;
+export type GetStrategicPlanMiddlePageLazyQueryHookResult = ReturnType<typeof useGetStrategicPlanMiddlePageLazyQuery>;
+export type GetStrategicPlanMiddlePageSuspenseQueryHookResult = ReturnType<typeof useGetStrategicPlanMiddlePageSuspenseQuery>;
+export type GetStrategicPlanMiddlePageQueryResult = Apollo.QueryResult<GetStrategicPlanMiddlePageQuery, GetStrategicPlanMiddlePageQueryVariables>;

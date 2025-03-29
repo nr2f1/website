@@ -1,4 +1,4 @@
-query GetStrategicPlanPage(
+query GetStrategicPlanUpperPage(
   $locale: String
   $ourObjectivesHeadingId: String!
   $ourObjectivesParagraphsId: String!
@@ -10,6 +10,8 @@ query GetStrategicPlanPage(
   $researchHeadingId: String!
   $researchParagraphsId: String!
   $researchProgressParagraphsId: String!
+  $getThereHeadingId: String!
+  $fiveYearsHeadingId: String!
 ) {
   ourObjectivesHeading: heading(locale: $locale, id: $ourObjectivesHeadingId) {
     content
@@ -57,6 +59,36 @@ query GetStrategicPlanPage(
   researchProgressParagraphs: paragraphs(
     locale: $locale
     id: $researchProgressParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  getThereHeading: heading(locale: $locale, id: $getThereHeadingId) {
+    content
+  }
+  fiveYearsHeading: heading(locale: $locale, id: $fiveYearsHeadingId) {
+    content
+  }
+}
+
+query GetStrategicPlanMiddlePage(
+  $locale: String
+  $getThereHeadingId: String!
+  $getThereParagraphsId: String!
+  $getThereProgressParagraphsId: String!
+) {
+  getThereHeading: heading(locale: $locale, id: $getThereHeadingId) {
+    content
+  }
+  getThereParagraphs: paragraphs(locale: $locale, id: $getThereParagraphsId) {
+    content {
+      json
+    }
+  }
+  getThereProgressParagraphs: paragraphs(
+    locale: $locale
+    id: $getThereProgressParagraphsId
   ) {
     content {
       json

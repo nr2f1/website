@@ -4,14 +4,15 @@ import PageBody from '@components/page-body';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
 import {
-  GetStrategicPlanPageDocument,
-  type GetStrategicPlanPageQuery,
+  GetStrategicPlanUpperPageDocument,
+  type GetStrategicPlanUpperPageQuery,
 } from '@graphql/queries/strategic-plan-page/index.generated';
-
 import type { AvailableLocale } from '@i18n/locales';
 import {
   advocacyHeadingId,
   educationHeadingId,
+  fiveYearsHeadingId,
+  getThereHeadingId,
   ourObjectivesHeadingId,
   strategicResearchHeadingId,
 } from '@models/headings';
@@ -46,10 +47,12 @@ const StrategicPlanUpperBody: React.FC<RegisterPageBodyProps> = async ({
       researchHeading,
       researchParagraphs,
       researchProgressParagraphs,
+      getThereHeading,
+      fiveYearsHeading,
     },
     error,
-  } = await query<GetStrategicPlanPageQuery>({
-    query: GetStrategicPlanPageDocument,
+  } = await query<GetStrategicPlanUpperPageQuery>({
+    query: GetStrategicPlanUpperPageDocument,
     variables: {
       locale: lang,
       ourObjectivesHeadingId,
@@ -62,6 +65,8 @@ const StrategicPlanUpperBody: React.FC<RegisterPageBodyProps> = async ({
       researchHeadingId: strategicResearchHeadingId,
       researchParagraphsId: strategicResearchParagraphsId,
       researchProgressParagraphsId,
+      getThereHeadingId,
+      fiveYearsHeadingId,
     },
   });
 
@@ -74,6 +79,8 @@ const StrategicPlanUpperBody: React.FC<RegisterPageBodyProps> = async ({
     educationHeading?.content ?? '',
     advocacyHeading?.content ?? '',
     researchHeading?.content ?? '',
+    getThereHeading?.content ?? '',
+    fiveYearsHeading?.content ?? '',
   ];
 
   return (
