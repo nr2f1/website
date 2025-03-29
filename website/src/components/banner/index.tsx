@@ -7,6 +7,7 @@ interface BannerProps {
   ctaContent: string;
   ctaUrl: string;
   imageUrl: string;
+  theme?: 'pink' | 'navy';
 }
 
 const Banner: React.FC<BannerProps> = ({
@@ -15,9 +16,12 @@ const Banner: React.FC<BannerProps> = ({
   ctaContent,
   ctaUrl,
   imageUrl,
+  theme = 'pink',
 }) => {
   return (
-    <div className={styles.banner}>
+    <div
+      className={`${styles.banner} ${theme === 'pink' ? '' : styles['banner--navy']}`}
+    >
       <div className="content-wrapper">
         <section className={styles.banner__row}>
           <div className={styles.banner__col}>

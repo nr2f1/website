@@ -31,7 +31,9 @@ interface RegisterPageBodyProps {
 
 const { query } = getClient();
 
-const StrategicPlanBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
+const StrategicPlanUpperBody: React.FC<RegisterPageBodyProps> = async ({
+  lang,
+}) => {
   const {
     data: {
       ourObjectivesHeading,
@@ -110,4 +112,4 @@ const StrategicPlanBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
   );
 };
 
-export default StrategicPlanBody;
+export default StrategicPlanUpperBody;
