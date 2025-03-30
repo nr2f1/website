@@ -32,6 +32,15 @@ export type GetStrategicPlanMiddlePageQueryVariables = Types.Exact<{
 
 export type GetStrategicPlanMiddlePageQuery = { __typename?: 'Query', getThereHeading?: { __typename?: 'Heading', content?: string | null } | null, getThereParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, getThereProgressParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null };
 
+export type GetStrategicPlanBottomPageQueryVariables = Types.Exact<{
+  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
+  fiveYearsHeadingId: Types.Scalars['String']['input'];
+  fiveYearsParagraphsId: Types.Scalars['String']['input'];
+}>;
+
+
+export type GetStrategicPlanBottomPageQuery = { __typename?: 'Query', fiveYearsHeading?: { __typename?: 'Heading', content?: string | null } | null, fiveYearsParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null };
+
 
 export const GetStrategicPlanUpperPageDocument = gql`
     query GetStrategicPlanUpperPage($locale: String, $ourObjectivesHeadingId: String!, $ourObjectivesParagraphsId: String!, $educationHeadingId: String!, $educationParagraphsId: String!, $advocacyHeadingId: String!, $advocacyParagraphsId: String!, $advocacyProgressParagraphsId: String!, $researchHeadingId: String!, $researchParagraphsId: String!, $researchProgressParagraphsId: String!, $getThereHeadingId: String!, $fiveYearsHeadingId: String!) {
@@ -195,3 +204,50 @@ export type GetStrategicPlanMiddlePageQueryHookResult = ReturnType<typeof useGet
 export type GetStrategicPlanMiddlePageLazyQueryHookResult = ReturnType<typeof useGetStrategicPlanMiddlePageLazyQuery>;
 export type GetStrategicPlanMiddlePageSuspenseQueryHookResult = ReturnType<typeof useGetStrategicPlanMiddlePageSuspenseQuery>;
 export type GetStrategicPlanMiddlePageQueryResult = Apollo.QueryResult<GetStrategicPlanMiddlePageQuery, GetStrategicPlanMiddlePageQueryVariables>;
+export const GetStrategicPlanBottomPageDocument = gql`
+    query GetStrategicPlanBottomPage($locale: String, $fiveYearsHeadingId: String!, $fiveYearsParagraphsId: String!) {
+  fiveYearsHeading: heading(locale: $locale, id: $fiveYearsHeadingId) {
+    content
+  }
+  fiveYearsParagraphs: paragraphs(locale: $locale, id: $fiveYearsParagraphsId) {
+    content {
+      json
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetStrategicPlanBottomPageQuery__
+ *
+ * To run a query within a React component, call `useGetStrategicPlanBottomPageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetStrategicPlanBottomPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetStrategicPlanBottomPageQuery({
+ *   variables: {
+ *      locale: // value for 'locale'
+ *      fiveYearsHeadingId: // value for 'fiveYearsHeadingId'
+ *      fiveYearsParagraphsId: // value for 'fiveYearsParagraphsId'
+ *   },
+ * });
+ */
+export function useGetStrategicPlanBottomPageQuery(baseOptions: Apollo.QueryHookOptions<GetStrategicPlanBottomPageQuery, GetStrategicPlanBottomPageQueryVariables> & ({ variables: GetStrategicPlanBottomPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetStrategicPlanBottomPageQuery, GetStrategicPlanBottomPageQueryVariables>(GetStrategicPlanBottomPageDocument, options);
+      }
+export function useGetStrategicPlanBottomPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetStrategicPlanBottomPageQuery, GetStrategicPlanBottomPageQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetStrategicPlanBottomPageQuery, GetStrategicPlanBottomPageQueryVariables>(GetStrategicPlanBottomPageDocument, options);
+        }
+export function useGetStrategicPlanBottomPageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetStrategicPlanBottomPageQuery, GetStrategicPlanBottomPageQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetStrategicPlanBottomPageQuery, GetStrategicPlanBottomPageQueryVariables>(GetStrategicPlanBottomPageDocument, options);
+        }
+export type GetStrategicPlanBottomPageQueryHookResult = ReturnType<typeof useGetStrategicPlanBottomPageQuery>;
+export type GetStrategicPlanBottomPageLazyQueryHookResult = ReturnType<typeof useGetStrategicPlanBottomPageLazyQuery>;
+export type GetStrategicPlanBottomPageSuspenseQueryHookResult = ReturnType<typeof useGetStrategicPlanBottomPageSuspenseQuery>;
+export type GetStrategicPlanBottomPageQueryResult = Apollo.QueryResult<GetStrategicPlanBottomPageQuery, GetStrategicPlanBottomPageQueryVariables>;

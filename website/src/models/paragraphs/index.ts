@@ -39,3 +39,4 @@ export const strategicResearchParagraphsId = '5WtSXfSkSm09wvf2yMv8cQ';
 export const researchProgressParagraphsId = 'cpobeAKhR67748RlcNVjt';
 export const getThereParagraphsId = 'mebVTadq1HoOHAsrNkjXP';
 export const getThereProgressParagraphsId = '37rq0IsDt30hdUZqWuSrqJ';
+export const fiveYearsParagraphsId = '411HwHNJwyS9qgLPPGkMkT';

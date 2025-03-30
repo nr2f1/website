@@ -95,3 +95,18 @@ query GetStrategicPlanMiddlePage(
     }
   }
 }
+
+query GetStrategicPlanBottomPage(
+  $locale: String
+  $fiveYearsHeadingId: String!
+  $fiveYearsParagraphsId: String!
+) {
+  fiveYearsHeading: heading(locale: $locale, id: $fiveYearsHeadingId) {
+    content
+  }
+  fiveYearsParagraphs: paragraphs(locale: $locale, id: $fiveYearsParagraphsId) {
+    content {
+      json
+    }
+  }
+}
