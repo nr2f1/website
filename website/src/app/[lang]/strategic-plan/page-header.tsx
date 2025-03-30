@@ -28,7 +28,6 @@ const StrategicPlanHeader: React.FC<StrategicPlanHeaderProps> = async ({
     error ||
     !data.pageHeader ||
     !data.pageHeader.title ||
-    !data.pageHeader.sectionTitle ||
     !data.pageHeader.lastUpdated ||
     !data.pageHeader.image
   ) {
@@ -37,7 +36,6 @@ const StrategicPlanHeader: React.FC<StrategicPlanHeaderProps> = async ({
 
   const {
     title,
-    sectionTitle,
     lastUpdated,
     image: { url },
   } = data.pageHeader;
@@ -46,7 +44,6 @@ const StrategicPlanHeader: React.FC<StrategicPlanHeaderProps> = async ({
     <PageHeader
       lang={lang}
       pageTitle={title}
-      sectionTitle={sectionTitle}
       lastUpdated={lastUpdated}
       imageUrl={url ?? ''}
     />

@@ -1800,7 +1800,6 @@ export type PageHeader = Entry & _Node & {
   image?: Maybe<Asset>;
   lastUpdated?: Maybe<Scalars['DateTime']['output']>;
   linkedFrom?: Maybe<PageHeaderLinkingCollections>;
-  sectionTitle?: Maybe<Scalars['String']['output']>;
   sys: Sys;
   title?: Maybe<Scalars['String']['output']>;
 };
@@ -1822,12 +1821,6 @@ export type PageHeaderLastUpdatedArgs = {
 /** Set the page header [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/pageHeader) */
 export type PageHeaderLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-
-/** Set the page header [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/pageHeader) */
-export type PageHeaderSectionTitleArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
@@ -1858,13 +1851,6 @@ export type PageHeaderFilter = {
   lastUpdated_lte?: InputMaybe<Scalars['DateTime']['input']>;
   lastUpdated_not?: InputMaybe<Scalars['DateTime']['input']>;
   lastUpdated_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  sectionTitle?: InputMaybe<Scalars['String']['input']>;
-  sectionTitle_contains?: InputMaybe<Scalars['String']['input']>;
-  sectionTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  sectionTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  sectionTitle_not?: InputMaybe<Scalars['String']['input']>;
-  sectionTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
-  sectionTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   sys?: InputMaybe<SysFilter>;
   title?: InputMaybe<Scalars['String']['input']>;
   title_contains?: InputMaybe<Scalars['String']['input']>;
@@ -1891,8 +1877,6 @@ export type PageHeaderLinkingCollectionsEntryCollectionArgs = {
 export enum PageHeaderOrder {
   LastUpdatedAsc = 'lastUpdated_ASC',
   LastUpdatedDesc = 'lastUpdated_DESC',
-  SectionTitleAsc = 'sectionTitle_ASC',
-  SectionTitleDesc = 'sectionTitle_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',

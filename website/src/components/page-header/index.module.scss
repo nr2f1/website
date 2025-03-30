@@ -2,7 +2,7 @@
 @use '@styles/breakpoints';
 
 $desktop-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 51 248'%3E%3Cpath fill='%23F3F7FC' fill-rule='evenodd' d='M.196 0a803.785 803.785 0 0 1 14.431 28.791c17.093 35.927 30.877 72.918 34.976 112.96 3.884 37.98-3.349 73.264-20.217 106.249H0V0h.196Z' clip-rule='evenodd'/%3E%3C/svg%3E%0A";
-$mobile-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 671 82'%3E%3Cpath fill='%23F3F7FC' fill-rule='evenodd' d='M0 63.506c82.459-28.469 167.308-49.4 255.893-58.468C404.033-10.112 541.911 17.064 671 81.06V82H0V63.506Z' clip-rule='evenodd'/%3E%3C/svg%3E%0A";
+$mobile-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='27' viewBox='0 0 320 27' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 26.9997C40.8375 15.8931 82.5909 7.6807 125.549 3.28803C193.213 -3.62382 257.942 1.55581 320 17.8425L320 27L0 27L0 26.9997Z' fill='%23F3F7FC'/%3E%3C/svg%3E";
 
 .page-header {
   h1,
@@ -23,7 +23,7 @@ $mobile-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fil
     }
 
     & > section {
-      padding: var(--spacing-12) 0 var(--spacing-16) var(--spacing-16);
+      padding: var(--spacing-16) 0 var(--spacing-16) var(--spacing-16);
       display: flex;
       flex-direction: column;
       align-content: flex-end;
@@ -79,7 +79,7 @@ $mobile-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fil
 
       @include breakpoints.medium-screen {
         &::before {
-          background-size: auto 217px;
+          background-size: auto calc(100% + 1px);
         }
       }
 

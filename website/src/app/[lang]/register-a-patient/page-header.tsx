@@ -28,7 +28,6 @@ const RegisterPageHeader: React.FC<RegisterPageHeaderProps> = async ({
     error ||
     !data.pageHeader ||
     !data.pageHeader.title ||
-    !data.pageHeader.sectionTitle ||
     !data.pageHeader.lastUpdated ||
     !data.pageHeader.image
   ) {
@@ -37,7 +36,7 @@ const RegisterPageHeader: React.FC<RegisterPageHeaderProps> = async ({
 
   const {
     title,
-    sectionTitle,
+
     lastUpdated,
     image: { url },
   } = data.pageHeader;
@@ -46,7 +45,6 @@ const RegisterPageHeader: React.FC<RegisterPageHeaderProps> = async ({
     <PageHeader
       lang={lang}
       pageTitle={title}
-      sectionTitle={sectionTitle}
       lastUpdated={lastUpdated}
       imageUrl={url ?? ''}
     />
