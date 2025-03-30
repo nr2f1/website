@@ -1,5 +1,5 @@
 name: Deploy NR2F1 website to Vercel production
-run-name: ${{ github.actor }} is deploying FEWD to vercel production
+run-name: ${{ github.actor }} is deploying to vercel production
 
 on:
   workflow_dispatch:
