@@ -40,3 +40,6 @@ export const researchProgressParagraphsId = 'cpobeAKhR67748RlcNVjt';
 export const getThereParagraphsId = 'mebVTadq1HoOHAsrNkjXP';
 export const getThereProgressParagraphsId = '37rq0IsDt30hdUZqWuSrqJ';
 export const fiveYearsParagraphsId = '411HwHNJwyS9qgLPPGkMkT';
+// Living with bbsoas page
+export const testAndTherapiesParagraphsId = '1UCQaPUg5NPv223wNlXXM7';
+export const registerPatientParagraphsId = '6Cjcs2urmD7rF6gk31BIie';
