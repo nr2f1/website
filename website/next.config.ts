@@ -16,6 +16,11 @@ const nextConfig: WithNxOptions = {
       },
     ],
   },
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  },
   sassOptions: {
     silenceDeprecations: ['legacy-js-api'],
   },
