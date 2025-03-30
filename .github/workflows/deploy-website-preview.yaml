@@ -1,5 +1,5 @@
 name: Deploy NR2F1 website to Vercel preview
-run-name: ${{ github.actor }} is deploying NR2F1 website to vercel preview
+run-name: ${{ github.actor }} is deploying website to vercel preview
 
 on:
   push:
