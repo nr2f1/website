@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.46.0](https://github.com/nr2f1/website/compare/v1.45.0...v1.46.0) (2025-03-30)
+
+
+### Features
+
+* remove subtitle from page-header ([a51a366](https://github.com/nr2f1/website/commit/a51a366c492ebbfa6cd2cce3ca8779b76bccdc88))
+* remove subtitle from page-header ([acbbca8](https://github.com/nr2f1/website/commit/acbbca88501e0b1024b47ff8c227626fe6c78d45))
+
 ## [1.45.0](https://github.com/nr2f1/website/compare/v1.44.1...v1.45.0) (2025-03-30)
 
 
