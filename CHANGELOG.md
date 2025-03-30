@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.45.0](https://github.com/nr2f1/website/compare/v1.44.1...v1.45.0) (2025-03-30)
+
+
+### Features
+
+* strategic page ([cd9ff7e](https://github.com/nr2f1/website/commit/cd9ff7e1cf9bde509bb542638ceb87fec8420870))
+* strategic plan page ([03a5d5c](https://github.com/nr2f1/website/commit/03a5d5ca20c28ef358607562559c7669f4bd8c83))
+
 ## [1.44.1](https://github.com/nr2f1/website/compare/v1.44.0...v1.44.1) (2025-03-28)
 
 
