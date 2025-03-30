@@ -1,0 +1,112 @@
+query GetStrategicPlanUpperPage(
+  $locale: String
+  $ourObjectivesHeadingId: String!
+  $ourObjectivesParagraphsId: String!
+  $educationHeadingId: String!
+  $educationParagraphsId: String!
+  $advocacyHeadingId: String!
+  $advocacyParagraphsId: String!
+  $advocacyProgressParagraphsId: String!
+  $researchHeadingId: String!
+  $researchParagraphsId: String!
+  $researchProgressParagraphsId: String!
+  $getThereHeadingId: String!
+  $fiveYearsHeadingId: String!
+) {
+  ourObjectivesHeading: heading(locale: $locale, id: $ourObjectivesHeadingId) {
+    content
+  }
+  ourObjectivesParagraphs: paragraphs(
+    locale: $locale
+    id: $ourObjectivesParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  educationHeading: heading(locale: $locale, id: $educationHeadingId) {
+    content
+  }
+  educationParagraphs: paragraphs(locale: $locale, id: $educationParagraphsId) {
+    content {
+      json
+    }
+  }
+  advocacyHeading: heading(locale: $locale, id: $advocacyHeadingId) {
+    content
+  }
+  advocacyParagraphs: paragraphs(locale: $locale, id: $advocacyParagraphsId) {
+    content {
+      json
+    }
+  }
+  advocacyProgressParagraphs: paragraphs(
+    locale: $locale
+    id: $advocacyProgressParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  researchHeading: heading(locale: $locale, id: $researchHeadingId) {
+    content
+  }
+  researchParagraphs: paragraphs(locale: $locale, id: $researchParagraphsId) {
+    content {
+      json
+    }
+  }
+  researchProgressParagraphs: paragraphs(
+    locale: $locale
+    id: $researchProgressParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  getThereHeading: heading(locale: $locale, id: $getThereHeadingId) {
+    content
+  }
+  fiveYearsHeading: heading(locale: $locale, id: $fiveYearsHeadingId) {
+    content
+  }
+}
+
+query GetStrategicPlanMiddlePage(
+  $locale: String
+  $getThereHeadingId: String!
+  $getThereParagraphsId: String!
+  $getThereProgressParagraphsId: String!
+) {
+  getThereHeading: heading(locale: $locale, id: $getThereHeadingId) {
+    content
+  }
+  getThereParagraphs: paragraphs(locale: $locale, id: $getThereParagraphsId) {
+    content {
+      json
+    }
+  }
+  getThereProgressParagraphs: paragraphs(
+    locale: $locale
+    id: $getThereProgressParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+}
+
+query GetStrategicPlanBottomPage(
+  $locale: String
+  $fiveYearsHeadingId: String!
+  $fiveYearsParagraphsId: String!
+) {
+  fiveYearsHeading: heading(locale: $locale, id: $fiveYearsHeadingId) {
+    content
+  }
+  fiveYearsParagraphs: paragraphs(locale: $locale, id: $fiveYearsParagraphsId) {
+    content {
+      json
+    }
+  }
+}
