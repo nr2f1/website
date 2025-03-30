@@ -9,7 +9,7 @@ export type GetPageHeaderQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetPageHeaderQuery = { __typename?: 'Query', pageHeader?: { __typename?: 'PageHeader', title?: string | null, sectionTitle?: string | null, lastUpdated?: any | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null };
+export type GetPageHeaderQuery = { __typename?: 'Query', pageHeader?: { __typename?: 'PageHeader', title?: string | null, lastUpdated?: any | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null };
 
 export type GetBlogPageHeaderQueryVariables = Types.Exact<{
   id: Types.Scalars['String']['input'];
@@ -17,14 +17,13 @@ export type GetBlogPageHeaderQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetBlogPageHeaderQuery = { __typename?: 'Query', pageHeader?: { __typename?: 'PageHeader', title?: string | null, sectionTitle?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null, lastUpdated?: { __typename?: 'BlogPageCollection', items: Array<{ __typename?: 'BlogPage', date?: any | null } | null> } | null };
+export type GetBlogPageHeaderQuery = { __typename?: 'Query', pageHeader?: { __typename?: 'PageHeader', title?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null, lastUpdated?: { __typename?: 'BlogPageCollection', items: Array<{ __typename?: 'BlogPage', date?: any | null } | null> } | null };
 
 
 export const GetPageHeaderDocument = gql`
     query GetPageHeader($id: String!, $locale: String) {
   pageHeader(id: $id, locale: $locale) {
     title
-    sectionTitle
     lastUpdated
     image {
       url
@@ -70,7 +69,6 @@ export const GetBlogPageHeaderDocument = gql`
     query GetBlogPageHeader($id: String!, $locale: String) {
   pageHeader(id: $id, locale: $locale) {
     title
-    sectionTitle
     image {
       url
     }

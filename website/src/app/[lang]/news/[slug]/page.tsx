@@ -48,13 +48,6 @@ export async function generateMetadata({
   };
 }
 
-const blogPostLoale: Record<AvailableLocale, string> = {
-  en: 'Blog post',
-  es: 'Entrada de blog',
-  fr: 'Article de blog',
-  de: 'Blogbeitrag',
-};
-
 const Page: NextPage<NewsPagePropsWithLocale> = async ({ params }) => {
   const { lang, slug } = await params;
 
@@ -99,7 +92,6 @@ const Page: NextPage<NewsPagePropsWithLocale> = async ({ params }) => {
         imageUrl={post?.image?.url ?? undefined}
         lang={lang}
         lastUpdated={post?.date ?? ''}
-        sectionTitle={blogPostLoale[lang]}
       />
       <article className={styles.post}>
         <div className={styles.post__layout}>

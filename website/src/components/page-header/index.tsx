@@ -8,7 +8,6 @@ interface PageHeaderProps {
   lang: AvailableLocale;
   lastUpdated: string;
   pageTitle: string;
-  sectionTitle: string;
 }
 
 type LastUpdated = Record<AvailableLocale, string>;
@@ -25,7 +24,6 @@ const PageHeader: React.FC<PageHeaderProps> = ({
   lang,
   lastUpdated,
   pageTitle,
-  sectionTitle,
 }) => {
   const { publishedString, dateTime } = getIntlDateStrings({
     date: lastUpdated,
@@ -41,7 +39,6 @@ const PageHeader: React.FC<PageHeaderProps> = ({
           <div className={styles['page-header__background']}>
             <section>
               <div>
-                <p>{sectionTitle}</p>
                 <h1>{pageTitle}</h1>
               </div>
             </section>
@@ -67,7 +64,6 @@ const PageHeader: React.FC<PageHeaderProps> = ({
         <div className={styles['page-header--no-image']}>
           <section>
             <div className="content-wrapper">
-              <p>{sectionTitle}</p>
               <h1>{pageTitle}</h1>
             </div>
           </section>

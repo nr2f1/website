@@ -1,7 +1,6 @@
 query GetPageHeader($id: String!, $locale: String) {
   pageHeader(id: $id, locale: $locale) {
     title
-    sectionTitle
     lastUpdated
     image {
       url
@@ -12,7 +11,6 @@ query GetPageHeader($id: String!, $locale: String) {
 query GetBlogPageHeader($id: String!, $locale: String) {
   pageHeader(id: $id, locale: $locale) {
     title
-    sectionTitle
     image {
       url
     }

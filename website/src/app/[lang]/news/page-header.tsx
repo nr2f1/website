@@ -27,7 +27,7 @@ const NewsPageHeader: React.FC<NewsPageHeaderProps> = async ({ lang }) => {
   }
 
   const {
-    pageHeader: { title, sectionTitle },
+    pageHeader: { title },
     lastUpdated: { items },
   } = data;
 
@@ -37,7 +37,6 @@ const NewsPageHeader: React.FC<NewsPageHeaderProps> = async ({ lang }) => {
     <PageHeader
       lang={lang}
       pageTitle={title ?? ''}
-      sectionTitle={sectionTitle ?? ''}
       lastUpdated={lastUpdated ?? ''}
     />
   );
