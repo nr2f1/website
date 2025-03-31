@@ -11,14 +11,15 @@ export type GetLivingWithBbsoasUpperPageQueryVariables = Types.Exact<{
   registerPatientParagraphsId: Types.Scalars['String']['input'];
   registerPatientLinkId: Types.Scalars['String']['input'];
   understandingBbsoasHeadingId: Types.Scalars['String']['input'];
+  understandingBbsoasParagraphsId: Types.Scalars['String']['input'];
 }>;
 
 
-export type GetLivingWithBbsoasUpperPageQuery = { __typename?: 'Query', testAndTherapiesHeading?: { __typename?: 'Heading', content?: string | null } | null, testAndTherapiesParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerPatientHeading?: { __typename?: 'Heading', content?: string | null } | null, registerPatientParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerPatientCta?: { __typename?: 'Link', content?: string | null, href?: string | null } | null, understandingBbsoasHeading?: { __typename?: 'Heading', content?: string | null } | null };
+export type GetLivingWithBbsoasUpperPageQuery = { __typename?: 'Query', testAndTherapiesHeading?: { __typename?: 'Heading', content?: string | null } | null, testAndTherapiesParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerPatientHeading?: { __typename?: 'Heading', content?: string | null } | null, registerPatientParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerPatientCta?: { __typename?: 'Link', content?: string | null, href?: string | null } | null, understandingBbsoasHeading?: { __typename?: 'Heading', content?: string | null } | null, understandingBbsoasParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null };
 
 
 export const GetLivingWithBbsoasUpperPageDocument = gql`
-    query GetLivingWithBbsoasUpperPage($locale: String, $testAndTherapiesHeadingId: String!, $testAndTherapiesParagraphsId: String!, $registerPatientHeadingId: String!, $registerPatientParagraphsId: String!, $registerPatientLinkId: String!, $understandingBbsoasHeadingId: String!) {
+    query GetLivingWithBbsoasUpperPage($locale: String, $testAndTherapiesHeadingId: String!, $testAndTherapiesParagraphsId: String!, $registerPatientHeadingId: String!, $registerPatientParagraphsId: String!, $registerPatientLinkId: String!, $understandingBbsoasHeadingId: String!, $understandingBbsoasParagraphsId: String!) {
   testAndTherapiesHeading: heading(
     locale: $locale
     id: $testAndTherapiesHeadingId
@@ -54,6 +55,14 @@ export const GetLivingWithBbsoasUpperPageDocument = gql`
   ) {
     content
   }
+  understandingBbsoasParagraphs: paragraphs(
+    locale: $locale
+    id: $understandingBbsoasParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
 }
     `;
 
@@ -76,6 +85,7 @@ export const GetLivingWithBbsoasUpperPageDocument = gql`
  *      registerPatientParagraphsId: // value for 'registerPatientParagraphsId'
  *      registerPatientLinkId: // value for 'registerPatientLinkId'
  *      understandingBbsoasHeadingId: // value for 'understandingBbsoasHeadingId'
+ *      understandingBbsoasParagraphsId: // value for 'understandingBbsoasParagraphsId'
  *   },
  * });
  */

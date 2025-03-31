@@ -15,6 +15,7 @@ import { registerPatientLinkId } from '@models/links';
 import {
   registerPatientParagraphsId,
   testAndTherapiesParagraphsId,
+  understandingBbsoasParagraphsId,
 } from '@models/paragraphs';
 import { createHashLink } from '@shared/utils/hash-links';
 import Link from 'next/link';
@@ -36,6 +37,7 @@ const LivingWithBbsoasUpperBody: React.FC<RegisterPageBodyProps> = async ({
       registerPatientParagraphs,
       registerPatientCta,
       understandingBbsoasHeading,
+      understandingBbsoasParagraphs,
     },
     error,
   } = await query<GetLivingWithBbsoasUpperPageQuery>({
@@ -48,6 +50,7 @@ const LivingWithBbsoasUpperBody: React.FC<RegisterPageBodyProps> = async ({
       registerPatientParagraphsId,
       registerPatientLinkId,
       understandingBbsoasHeadingId,
+      understandingBbsoasParagraphsId,
     },
   });
 
@@ -85,7 +88,9 @@ const LivingWithBbsoasUpperBody: React.FC<RegisterPageBodyProps> = async ({
         <h2 id={createHashLink(understandingBbsoasHeading?.content ?? '')}>
           {understandingBbsoasHeading?.content}
         </h2>
-        {/* {documentToReactComponents(testAndTherapiesParagraphs?.content?.json)} */}
+        {documentToReactComponents(
+          understandingBbsoasParagraphs?.content?.json,
+        )}
       </section>
     </PageBody>
   );

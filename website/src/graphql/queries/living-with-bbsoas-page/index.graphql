@@ -6,6 +6,7 @@ query GetLivingWithBbsoasUpperPage(
   $registerPatientParagraphsId: String!
   $registerPatientLinkId: String!
   $understandingBbsoasHeadingId: String!
+  $understandingBbsoasParagraphsId: String!
 ) {
   testAndTherapiesHeading: heading(
     locale: $locale
@@ -44,5 +45,13 @@ query GetLivingWithBbsoasUpperPage(
     id: $understandingBbsoasHeadingId
   ) {
     content
+  }
+  understandingBbsoasParagraphs: paragraphs(
+    locale: $locale
+    id: $understandingBbsoasParagraphsId
+  ) {
+    content {
+      json
+    }
   }
 }

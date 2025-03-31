@@ -11,6 +11,7 @@ import type { Metadata, NextPage } from 'next';
 import type { WebPage, WithContext } from 'schema-dts';
 import LivingWithBbsoasHeader from './page-header';
 import LivingWithBbsoasUpperBody from './page-upper-body';
+import SupportGroupBanner from './support-group-banner';
 
 const { query } = getClient();
 
@@ -49,6 +50,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
       />
       <LivingWithBbsoasHeader lang={lang} />
       <LivingWithBbsoasUpperBody lang={lang} />
+      <SupportGroupBanner lang={lang} />
       <SupportBanner lang={lang} />
     </>
   );
