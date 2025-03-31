@@ -1,5 +1,5 @@
+import mainStyles from '@styles/page-body-sectioned.module.scss';
 import progressStyles from './index.module.scss';
-import mainStyles from './page-body.module.scss';
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
