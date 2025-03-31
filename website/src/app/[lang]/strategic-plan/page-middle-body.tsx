@@ -1,6 +1,6 @@
-import mainStyles from '@styles/page-body-sectioned.module.scss';
 import progressStyles from './index.module.scss';
 
+import PageBodySection from '@components/page-body-section';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
 import {
@@ -42,23 +42,17 @@ const StrategicPlanMiddleBody: React.FC<StrategicPlanMiddleBodyProps> = async ({
   }
 
   return (
-    <section className={mainStyles['page-body']}>
-      <div className="content-wrapper">
-        <div className={mainStyles['page-body__content']}>
-          <section>
-            <h2 id={createHashLink(getThereHeading?.content ?? '')}>
-              {getThereHeading?.content}
-            </h2>
-            {documentToReactComponents(getThereParagraphs?.content?.json)}
-            <div className={progressStyles.progress}>
-              {documentToReactComponents(
-                getThereProgressParagraphs?.content?.json,
-              )}
-            </div>
-          </section>
+    <PageBodySection>
+      <section>
+        <h2 id={createHashLink(getThereHeading?.content ?? '')}>
+          {getThereHeading?.content}
+        </h2>
+        {documentToReactComponents(getThereParagraphs?.content?.json)}
+        <div className={progressStyles.progress}>
+          {documentToReactComponents(getThereProgressParagraphs?.content?.json)}
         </div>
-      </div>
-    </section>
+      </section>
+    </PageBodySection>
   );
 };
 
