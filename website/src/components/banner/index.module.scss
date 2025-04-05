@@ -25,7 +25,7 @@
 
       @include breakpoints.small-screen {
         &::before {
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='59' viewBox='0 0 320 59' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M320 58.9981V0.472656C279.565 21.8322 237.857 40.255 193.078 51.0827C122.906 68.0502 58.8392 56.815 0 20.8308V58.9981L320 58.9981Z' fill='%23F3F7FC'/%3E%3C/svg%3E");
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='59' fill='none'%3E%3Cpath fill='%23F3F7FC' fill-rule='evenodd' d='M671 59V.475c-84.787 21.36-172.243 39.782-266.139 50.61C257.719 68.052 123.379 56.817 0 20.833V59h671Z' clip-rule='evenodd'/%3E%3C/svg%3E");
         }
       }
     }
