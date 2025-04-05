@@ -11,3 +11,5 @@ export const latestNewsCtaId = '5kWxWSZyTvYZn1iXiKgA1E';
 export const registerPatientRegistryLoginLinkId = '6ZoUDDQsuOvt8dgE5jqMif';
 export const registerPatientRegistrySignUpLinkId = '6rYsvNOGRKn1CElKIOQGIf';
 export const registerContentIdLinkId = '4Kb6OkWbG6YIfu6aW2dFg9';
+// Living with BBsoas page
+export const registerPatientLinkId = '4vzuri32sfC0FupqNm5SvZ';

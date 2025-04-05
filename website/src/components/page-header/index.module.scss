@@ -88,7 +88,7 @@ $mobile-curve: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wid
         &::before {
           background-image: url($mobile-curve);
           inset: 0;
-          bottom: -1px;
+
           background-position-y: 100%;
           background-size: contain;
         }
