@@ -7,6 +7,8 @@ import {
 } from '@graphql/queries/living-with-bbsoas-page/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
+  bbsoasClinicHeadingId,
+  handingLettersHeadingId,
   registerPatientHeadingId,
   testAndTherapiesHeadingId,
   understandingBbsoasHeadingId,
@@ -38,6 +40,8 @@ const LivingWithBbsoasUpperBody: React.FC<RegisterPageBodyProps> = async ({
       registerPatientCta,
       understandingBbsoasHeading,
       understandingBbsoasParagraphs,
+      handingLettersHeading,
+      bbsoasClinicHeading,
     },
     error,
   } = await query<GetLivingWithBbsoasUpperPageQuery>({
@@ -51,6 +55,8 @@ const LivingWithBbsoasUpperBody: React.FC<RegisterPageBodyProps> = async ({
       registerPatientLinkId,
       understandingBbsoasHeadingId,
       understandingBbsoasParagraphsId,
+      handingLettersHeadingId,
+      bbsoasClinicHeadingId,
     },
   });
 
@@ -62,6 +68,8 @@ const LivingWithBbsoasUpperBody: React.FC<RegisterPageBodyProps> = async ({
     testAndTherapiesHeading?.content ?? '',
     registerPatientHeading?.content ?? '',
     understandingBbsoasHeading?.content ?? '',
+    handingLettersHeading?.content ?? '',
+    bbsoasClinicHeading?.content ?? '',
   ];
 
   return (

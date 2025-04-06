@@ -7,6 +7,8 @@ query GetLivingWithBbsoasUpperPage(
   $registerPatientLinkId: String!
   $understandingBbsoasHeadingId: String!
   $understandingBbsoasParagraphsId: String!
+  $handingLettersHeadingId: String!
+  $bbsoasClinicHeadingId: String!
 ) {
   testAndTherapiesHeading: heading(
     locale: $locale
@@ -49,6 +51,49 @@ query GetLivingWithBbsoasUpperPage(
   understandingBbsoasParagraphs: paragraphs(
     locale: $locale
     id: $understandingBbsoasParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  handingLettersHeading: heading(
+    locale: $locale
+    id: $handingLettersHeadingId
+  ) {
+    content
+  }
+  bbsoasClinicHeading: heading(locale: $locale, id: $bbsoasClinicHeadingId) {
+    content
+  }
+}
+
+query GetLivingWithBbsoasBottomPage(
+  $locale: String
+  $handingLettersHeadingId: String!
+  $handingLettersParagraphsId: String!
+  $bbsoasClinicHeadingId: String!
+  $bbsoasClinicParagraphsId: String!
+) {
+  handingLettersHeading: heading(
+    locale: $locale
+    id: $handingLettersHeadingId
+  ) {
+    content
+  }
+  handingLettersParagraphs: paragraphs(
+    locale: $locale
+    id: $handingLettersParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  bbsoasClinicHeading: heading(locale: $locale, id: $bbsoasClinicHeadingId) {
+    content
+  }
+  bbsoasClinicParagraphs: paragraphs(
+    locale: $locale
+    id: $bbsoasClinicParagraphsId
   ) {
     content {
       json
