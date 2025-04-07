@@ -1,3 +1,5 @@
+import styles from './index.module.scss';
+
 import PageBody from '@components/page-body';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
@@ -80,7 +82,7 @@ const LivingWithBbsoasUpperBody: React.FC<RegisterPageBodyProps> = async ({
         </h2>
         {documentToReactComponents(testAndTherapiesParagraphs?.content?.json)}
       </section>
-      <section>
+      <section className={styles.register}>
         <h2 id={createHashLink(registerPatientHeading?.content ?? '')}>
           {registerPatientHeading?.content}
         </h2>
@@ -88,6 +90,7 @@ const LivingWithBbsoasUpperBody: React.FC<RegisterPageBodyProps> = async ({
         <Link
           href={registerPatientCta?.href ?? ''}
           className="button button--on-light"
+          id="button"
         >
           {registerPatientCta?.content ?? ''}
         </Link>
