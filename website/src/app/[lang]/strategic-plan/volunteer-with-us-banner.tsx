@@ -47,6 +47,7 @@ const VolunteerWithUsBanner: React.FC<VolunteerWithUsBannerProps> = async ({
       ctaContent={ctaContent}
       ctaUrl={ctaUrl}
       imageUrl={imageUrl}
+      openNewTab
     />
   );
 };

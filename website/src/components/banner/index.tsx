@@ -8,6 +8,7 @@ interface BannerProps {
   ctaUrl: string;
   imageUrl: string;
   theme?: 'pink' | 'navy';
+  openNewTab?: boolean;
 }
 
 const Banner: React.FC<BannerProps> = ({
@@ -17,6 +18,7 @@ const Banner: React.FC<BannerProps> = ({
   ctaUrl,
   imageUrl,
   theme = 'pink',
+  openNewTab = false,
 }) => {
   return (
     <div
@@ -30,7 +32,7 @@ const Banner: React.FC<BannerProps> = ({
 
             <a
               href={ctaUrl}
-              className="button button--on-light"
+              className={`button ${openNewTab ? ' button--on-light-open-new-tab' : 'button--on-light'}`}
               title={ctaContent}
             >
               {ctaContent}
