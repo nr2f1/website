@@ -89,7 +89,7 @@ const LivingWithBbsoasUpperBody: React.FC<RegisterPageBodyProps> = async ({
         {documentToReactComponents(registerPatientParagraphs?.content?.json)}
         <Link
           href={registerPatientCta?.href ?? ''}
-          className="button button--on-light"
+          className={`button button--on-light ${styles.register__button}`}
           id="button"
         >
           {registerPatientCta?.content ?? ''}

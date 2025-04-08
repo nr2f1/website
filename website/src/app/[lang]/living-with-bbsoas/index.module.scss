@@ -1,5 +1,5 @@
-@use '@styles/text-styles';
 @use '@styles/breakpoints';
+@use '@styles/text-styles';
 
 @layer override {
   .register {
@@ -7,9 +7,10 @@
     background-color: var(--background-accent-navy);
     border-radius: var(--border-radius-xl);
 
-    & a {
-      text-decoration: none;
-      color: var(--foreground-inverse-primary);
+    &__button:is(a) {
+      @include text-styles.button;
+      text-decoration: none !important;
+      color: var(--foreground-inverse-primary) !important;
     }
   }
 }
