@@ -1,10 +1,30 @@
+@use 'sass:meta';
+
 @use 'normalize';
 @use 'colors';
 @use 'spacing';
 @use 'text-styles';
-@use 'breakpoints';
 @use 'layout';
+@use 'breakpoints';
 @use 'border';
 @use 'buttons';
 @use 'helpers';
 @use 'global';
+
+@layer reset {
+  @include meta.load-css('normalize');
+}
+
+@layer base {
+  @include meta.load-css('colors');
+  @include meta.load-css('spacing');
+  @include meta.load-css('text-styles');
+  @include meta.load-css('layout');
+  @include meta.load-css('breakpoints');
+  @include meta.load-css('border');
+  @include meta.load-css('buttons');
+  @include meta.load-css('helpers');
+  @include meta.load-css('global');
+}
+
+@layer reset, base, override;

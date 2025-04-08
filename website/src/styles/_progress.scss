@@ -9,12 +9,11 @@
 
   ul {
     margin: 0;
-    padding: 0 !important;
+    padding: 0;
     list-style: none;
   }
 
   h3 {
-    margin: 0;
     margin-block-end: var(--spacing-4);
   }
 
@@ -49,6 +48,10 @@
 }
 
 .section {
+  h3 {
+    margin: var(--spacing-6) 0 !important;
+  }
+
   ol {
     margin: 0;
     margin-block-end: var(--spacing-6);

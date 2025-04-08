@@ -6,15 +6,15 @@ import {
   type GetBannerQuery,
 } from '@graphql/queries/banner/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
-import { volunteerWithUsBannerId } from '@models/banners/banner';
+import { researchBannerId, supportGroupBannerId } from '@models/banners/banner';
 
-interface VolunteerWithUsBannerProps {
+interface SupportGroupBannerProps {
   lang: AvailableLocale;
 }
 
 const { query } = getClient();
 
-const VolunteerWithUsBanner: React.FC<VolunteerWithUsBannerProps> = async ({
+const SupportGroupBanner: React.FC<SupportGroupBannerProps> = async ({
   lang,
 }) => {
   const {
@@ -23,7 +23,7 @@ const VolunteerWithUsBanner: React.FC<VolunteerWithUsBannerProps> = async ({
   } = await query<GetBannerQuery>({
     query: GetBannerDocument,
     variables: {
-      id: volunteerWithUsBannerId,
+      id: supportGroupBannerId,
       locale: lang,
     },
   });
@@ -47,9 +47,8 @@ const VolunteerWithUsBanner: React.FC<VolunteerWithUsBannerProps> = async ({
       ctaContent={ctaContent}
       ctaUrl={ctaUrl}
       imageUrl={imageUrl}
-      openNewTab
     />
   );
 };
 
-export default VolunteerWithUsBanner;
+export default SupportGroupBanner;

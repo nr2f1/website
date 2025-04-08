@@ -33,3 +33,9 @@ export const advocacyHeadingId = '7FScWy3UVuJjXtNx3a8LOH';
 export const strategicResearchHeadingId = '5klKhABZz8ru77y2prZrJc';
 export const getThereHeadingId = 'kSayII3GbUz97BOQ9LAlt';
 export const fiveYearsHeadingId = '5jmLHjpPfEaAK905agk3mr';
+// Living with BBSOA Page
+export const testAndTherapiesHeadingId = '2cF1MafIfmgqzK0VnWuGIE';
+export const registerPatientHeadingId = '7tY3DHsMTKB3qMqVtEXDpj';
+export const understandingBbsoasHeadingId = '7mTLUb8yYuMvLBULv0Fnwq';
+export const handingLettersHeadingId = '4fNygnKyxywrTRra2ypCis';
+export const bbsoasClinicHeadingId = '1WUmMDhEv00JGddzeiwfog';

@@ -1,0 +1,16 @@
+@use '@styles/breakpoints';
+@use '@styles/text-styles';
+
+@layer override {
+  .register {
+    padding: var(--spacing-6);
+    background-color: var(--background-accent-navy);
+    border-radius: var(--border-radius-xl);
+
+    &__button:is(a) {
+      @include text-styles.button;
+      text-decoration: none !important;
+      color: var(--foreground-inverse-primary) !important;
+    }
+  }
+}

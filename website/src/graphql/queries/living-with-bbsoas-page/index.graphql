@@ -1,0 +1,102 @@
+query GetLivingWithBbsoasUpperPage(
+  $locale: String
+  $testAndTherapiesHeadingId: String!
+  $testAndTherapiesParagraphsId: String!
+  $registerPatientHeadingId: String!
+  $registerPatientParagraphsId: String!
+  $registerPatientLinkId: String!
+  $understandingBbsoasHeadingId: String!
+  $understandingBbsoasParagraphsId: String!
+  $handingLettersHeadingId: String!
+  $bbsoasClinicHeadingId: String!
+) {
+  testAndTherapiesHeading: heading(
+    locale: $locale
+    id: $testAndTherapiesHeadingId
+  ) {
+    content
+  }
+  testAndTherapiesParagraphs: paragraphs(
+    locale: $locale
+    id: $testAndTherapiesParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  registerPatientHeading: heading(
+    locale: $locale
+    id: $registerPatientHeadingId
+  ) {
+    content
+  }
+  registerPatientParagraphs: paragraphs(
+    locale: $locale
+    id: $registerPatientParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  registerPatientCta: link(locale: $locale, id: $registerPatientLinkId) {
+    content
+    href
+  }
+  understandingBbsoasHeading: heading(
+    locale: $locale
+    id: $understandingBbsoasHeadingId
+  ) {
+    content
+  }
+  understandingBbsoasParagraphs: paragraphs(
+    locale: $locale
+    id: $understandingBbsoasParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  handingLettersHeading: heading(
+    locale: $locale
+    id: $handingLettersHeadingId
+  ) {
+    content
+  }
+  bbsoasClinicHeading: heading(locale: $locale, id: $bbsoasClinicHeadingId) {
+    content
+  }
+}
+
+query GetLivingWithBbsoasBottomPage(
+  $locale: String
+  $handingLettersHeadingId: String!
+  $handingLettersParagraphsId: String!
+  $bbsoasClinicHeadingId: String!
+  $bbsoasClinicParagraphsId: String!
+) {
+  handingLettersHeading: heading(
+    locale: $locale
+    id: $handingLettersHeadingId
+  ) {
+    content
+  }
+  handingLettersParagraphs: paragraphs(
+    locale: $locale
+    id: $handingLettersParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  bbsoasClinicHeading: heading(locale: $locale, id: $bbsoasClinicHeadingId) {
+    content
+  }
+  bbsoasClinicParagraphs: paragraphs(
+    locale: $locale
+    id: $bbsoasClinicParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+}
