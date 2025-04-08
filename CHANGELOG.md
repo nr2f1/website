@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.47.0](https://github.com/nr2f1/website/compare/v1.46.0...v1.47.0) (2025-04-08)
+
+
+### Features
+
+* living with bbsoas page ([54af2eb](https://github.com/nr2f1/website/commit/54af2ebce9fafc234e38df3becdeb82a0bd2091a))
+* open in new tab banner ([f882c49](https://github.com/nr2f1/website/commit/f882c49534207ca7d792520c8777ff5c5175264b))
+* support group banner ([2cf99ac](https://github.com/nr2f1/website/commit/2cf99acec1a210fc8c43cf7bb88c3d3562e47c40))
+
+
+### Bug Fixes
+
+* vectors on page headers and banner ([137952a](https://github.com/nr2f1/website/commit/137952a6254b9dd37a009b1ef0ac89fad1fca7f1))
+
 ## [1.46.0](https://github.com/nr2f1/website/compare/v1.45.0...v1.46.0) (2025-03-30)
 
 
