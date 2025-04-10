@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.47.1](https://github.com/nr2f1/website/compare/v1.47.0...v1.47.1) (2025-04-10)
+
+
+### Bug Fixes
+
+* e2e ([f4ccb25](https://github.com/nr2f1/website/commit/f4ccb25a623ad1d94be6a912bff0307012568dea))
+* e2e ([e1c735f](https://github.com/nr2f1/website/commit/e1c735fad1c4f3c03f833efea50ed2308e66dd2e))
+
 ## [1.47.0](https://github.com/nr2f1/website/compare/v1.46.0...v1.47.0) (2025-04-08)
 
 
