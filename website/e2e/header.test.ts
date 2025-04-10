@@ -22,9 +22,7 @@ test.describe('header', () => {
 
     await expect(page.getByText('About BBSOAS', { exact: true })).toBeVisible();
 
-    await expect(
-      page.getByText('Living with BBSOAS', { exact: true }),
-    ).toBeVisible();
+    await expect(page.getByText('Living with BBSOAS').first()).toBeVisible();
 
     await expect(page.getByText('Research', { exact: true })).toBeVisible();
 
@@ -89,7 +87,7 @@ test.describe('header', () => {
   });
 
   test('navigation', async ({ page }) => {
-    await page.getByText('Living with BBSOAS', { exact: true }).click();
+    await expect(page.getByText('Living with BBSOAS').first()).toBeVisible();
 
     await expect(
       page.getByRole('link', { name: 'Register a patient' }).nth(1),

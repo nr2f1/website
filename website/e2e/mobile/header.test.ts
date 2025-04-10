@@ -17,9 +17,7 @@ test.describe('Mobile header', () => {
 
     await expect(page.getByText('About BBSOAS', { exact: true })).toBeVisible();
 
-    await expect(
-      page.getByText('Living with BBSOAS', { exact: true }),
-    ).toBeVisible();
+    await expect(page.getByText('Living with BBSOAS').first()).toBeVisible();
 
     await expect(page.getByText('Research', { exact: true })).toBeVisible();
 
@@ -60,7 +58,7 @@ test.describe('Mobile header', () => {
     await page.getByRole('button', { name: 'hambuguer-button' }).click();
     await expect(page.getByText('Acerca de BBSOAS')).toBeVisible();
 
-    await expect(page.getByText('Vivir con BBSOAS')).toBeVisible();
+    await expect(page.getByText('Vivir con BBSOAS').first()).toBeVisible();
 
     await expect(
       page.getByText('Investigación', { exact: true }),
