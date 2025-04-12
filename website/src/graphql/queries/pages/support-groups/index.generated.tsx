@@ -6,18 +6,84 @@ const defaultOptions = {} as const;
 export type GetSupportGroupsPageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
   supportGroupsIntroParagraphsId: Types.Scalars['String']['input'];
+  virtualParentsHeadingId: Types.Scalars['String']['input'];
+  virtualParentsParagraphsId: Types.Scalars['String']['input'];
+  dadsHeadingId: Types.Scalars['String']['input'];
+  dadsParagraphsId: Types.Scalars['String']['input'];
+  caregiversHeadingId: Types.Scalars['String']['input'];
+  spanishParentsHeadingId: Types.Scalars['String']['input'];
+  caregiverParagraphsId: Types.Scalars['String']['input'];
+  spanishParentsParagraphsId: Types.Scalars['String']['input'];
+  facebookHeadingId: Types.Scalars['String']['input'];
+  facebookParagraphsId: Types.Scalars['String']['input'];
+  dadsUkHeadingId: Types.Scalars['String']['input'];
+  dadsUkParagraphsId: Types.Scalars['String']['input'];
 }>;
 
 
-export type GetSupportGroupsPageQuery = { __typename?: 'Query', intropParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null };
+export type GetSupportGroupsPageQuery = { __typename?: 'Query', intropParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, virtualParentsHeading?: { __typename?: 'Heading', content?: string | null } | null, virtualParentsParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, dadsHeading?: { __typename?: 'Heading', content?: string | null } | null, dadsParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, caregiversHeading?: { __typename?: 'Heading', content?: string | null } | null, caregiverParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, spanishParentsHeading?: { __typename?: 'Heading', content?: string | null } | null, spanishParentsParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, facebookHeading?: { __typename?: 'Heading', content?: string | null } | null, facebookParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, dadsUkHeading?: { __typename?: 'Heading', content?: string | null } | null, dadsUkParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null };
 
 
 export const GetSupportGroupsPageDocument = gql`
-    query GetSupportGroupsPage($locale: String, $supportGroupsIntroParagraphsId: String!) {
+    query GetSupportGroupsPage($locale: String, $supportGroupsIntroParagraphsId: String!, $virtualParentsHeadingId: String!, $virtualParentsParagraphsId: String!, $dadsHeadingId: String!, $dadsParagraphsId: String!, $caregiversHeadingId: String!, $spanishParentsHeadingId: String!, $caregiverParagraphsId: String!, $spanishParentsParagraphsId: String!, $facebookHeadingId: String!, $facebookParagraphsId: String!, $dadsUkHeadingId: String!, $dadsUkParagraphsId: String!) {
   intropParagraphs: paragraphs(
     locale: $locale
     id: $supportGroupsIntroParagraphsId
   ) {
+    content {
+      json
+    }
+  }
+  virtualParentsHeading: heading(locale: $locale, id: $virtualParentsHeadingId) {
+    content
+  }
+  virtualParentsParagraphs: paragraphs(
+    locale: $locale
+    id: $virtualParentsParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  dadsHeading: heading(locale: $locale, id: $dadsHeadingId) {
+    content
+  }
+  dadsParagraphs: paragraphs(locale: $locale, id: $dadsParagraphsId) {
+    content {
+      json
+    }
+  }
+  caregiversHeading: heading(locale: $locale, id: $caregiversHeadingId) {
+    content
+  }
+  caregiverParagraphs: paragraphs(locale: $locale, id: $caregiverParagraphsId) {
+    content {
+      json
+    }
+  }
+  spanishParentsHeading: heading(locale: $locale, id: $spanishParentsHeadingId) {
+    content
+  }
+  spanishParentsParagraphs: paragraphs(
+    locale: $locale
+    id: $spanishParentsParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  facebookHeading: heading(locale: $locale, id: $facebookHeadingId) {
+    content
+  }
+  facebookParagraphs: paragraphs(locale: $locale, id: $facebookParagraphsId) {
+    content {
+      json
+    }
+  }
+  dadsUkHeading: heading(locale: $locale, id: $dadsUkHeadingId) {
+    content
+  }
+  dadsUkParagraphs: paragraphs(locale: $locale, id: $dadsUkParagraphsId) {
     content {
       json
     }
@@ -39,6 +105,18 @@ export const GetSupportGroupsPageDocument = gql`
  *   variables: {
  *      locale: // value for 'locale'
  *      supportGroupsIntroParagraphsId: // value for 'supportGroupsIntroParagraphsId'
+ *      virtualParentsHeadingId: // value for 'virtualParentsHeadingId'
+ *      virtualParentsParagraphsId: // value for 'virtualParentsParagraphsId'
+ *      dadsHeadingId: // value for 'dadsHeadingId'
+ *      dadsParagraphsId: // value for 'dadsParagraphsId'
+ *      caregiversHeadingId: // value for 'caregiversHeadingId'
+ *      spanishParentsHeadingId: // value for 'spanishParentsHeadingId'
+ *      caregiverParagraphsId: // value for 'caregiverParagraphsId'
+ *      spanishParentsParagraphsId: // value for 'spanishParentsParagraphsId'
+ *      facebookHeadingId: // value for 'facebookHeadingId'
+ *      facebookParagraphsId: // value for 'facebookParagraphsId'
+ *      dadsUkHeadingId: // value for 'dadsUkHeadingId'
+ *      dadsUkParagraphsId: // value for 'dadsUkParagraphsId'
  *   },
  * });
  */

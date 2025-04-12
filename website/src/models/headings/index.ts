@@ -39,3 +39,10 @@ export const registerPatientHeadingId = '7tY3DHsMTKB3qMqVtEXDpj';
 export const understandingBbsoasHeadingId = '7mTLUb8yYuMvLBULv0Fnwq';
 export const handingLettersHeadingId = '4fNygnKyxywrTRra2ypCis';
 export const bbsoasClinicHeadingId = '1WUmMDhEv00JGddzeiwfog';
+// Support groups
+export const virtualParentsHeadingId = '2BzWbEEzTQVsbvkvdBSV6I';
+export const dadsHeadingId = '50ipBuzDNq1djevjUgID1v';
+export const caregiversHeadingId = 'NNPd8kps37xi2Fzo3py6E';
+export const spanishParentsHeadingId = '2hqfhNwabkTfRjeRFcCAXn';
+export const facebookHeadingId = '1yEoxHYS8lqWAyCuvQ4mUB';
+export const dadsUkHeadingId = '2sz8PsmabEkSUNmc9ccZ5M';

@@ -49,3 +49,9 @@ export const bbsoasClinicParagraphsId = '7bM5xp9op763zPV5NVxsqC';
 
 // Support groups page
 export const supportGroupsIntroParagraphsId = '5KnIaHGiPebNQnd5mDVIyq';
+export const virtualParentsParagraphsId = '7bgrxobOUd2SrMXTmNRbhY';
+export const dadsParagraphsId = 'WuaP33lko3gek67uagBjg';
+export const caregiverParagraphsId = '7mpLhPURZVHhsuVaw7pWkx';
+export const spanishParentsParagraphsId = 'dXg5ZnpmCk6BcplE5DNq2';
+export const facebookParagraphsId = '3eS7KUuCHBmgJXh83ZYQ7e';
+export const dadsUkParagraphsId = '6urRWGur1VUWjNE7jyuv24';

@@ -1,4 +1,6 @@
 import PageBody from '@components/page-body';
+
+import SupportBanner from '@components/support-banner';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
 import {
@@ -9,10 +11,27 @@ import {
   GetSupportGroupsPageDocument,
   type GetSupportGroupsPageQuery,
 } from '@graphql/queries/pages/support-groups/index.generated';
+import {
+  caregiversHeadingId,
+  dadsHeadingId,
+  dadsUkHeadingId,
+  facebookHeadingId,
+  spanishParentsHeadingId,
+  virtualParentsHeadingId,
+} from '@models/headings';
 import { supportGroupsPageMetadataId } from '@models/metadata';
-import { supportGroupsIntroParagraphsId } from '@models/paragraphs';
+import {
+  caregiverParagraphsId,
+  dadsParagraphsId,
+  dadsUkParagraphsId,
+  facebookParagraphsId,
+  spanishParentsParagraphsId,
+  supportGroupsIntroParagraphsId,
+  virtualParentsParagraphsId,
+} from '@models/paragraphs';
 import { routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
+import { createHashLink } from '@shared/utils/hash-links';
 import type { NextPage } from 'next';
 import type { WebPage, WithContext } from 'schema-dts';
 import SupportGroupsHeader from './page-header';
@@ -46,13 +65,39 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   };
 
   const {
-    data: { intropParagraphs },
+    data: {
+      intropParagraphs,
+      virtualParentsHeading,
+      virtualParentsParagraphs,
+      dadsHeading,
+      dadsParagraphs,
+      caregiversHeading,
+      caregiverParagraphs,
+      spanishParentsHeading,
+      spanishParentsParagraphs,
+      facebookHeading,
+      facebookParagraphs,
+      dadsUkHeading,
+      dadsUkParagraphs,
+    },
     error,
   } = await query<GetSupportGroupsPageQuery>({
     query: GetSupportGroupsPageDocument,
     variables: {
       locale: lang,
       supportGroupsIntroParagraphsId,
+      virtualParentsHeadingId,
+      virtualParentsParagraphsId,
+      dadsHeadingId,
+      dadsParagraphsId,
+      caregiversHeadingId,
+      caregiverParagraphsId,
+      spanishParentsHeadingId,
+      spanishParentsParagraphsId,
+      facebookHeadingId,
+      facebookParagraphsId,
+      dadsUkHeadingId,
+      dadsUkParagraphsId,
     },
   });
 
@@ -61,9 +106,12 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   }
 
   const headings = [
-    'Support Groups',
-    'Find a Support Group',
-    'Start a Support Group',
+    virtualParentsHeading?.content ?? '',
+    dadsHeading?.content ?? '',
+    caregiversHeading?.content ?? '',
+    spanishParentsHeading?.content ?? '',
+    facebookHeading?.content ?? '',
+    dadsUkHeading?.content ?? '',
   ];
 
   return (
@@ -78,7 +126,44 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
         <section>
           {documentToReactComponents(intropParagraphs?.content?.json)}
         </section>
+        <section>
+          <h2 id={createHashLink(virtualParentsHeading?.content ?? '')}>
+            {virtualParentsHeading?.content}
+          </h2>
+          {documentToReactComponents(virtualParentsParagraphs?.content?.json)}
+        </section>
+        <section>
+          <h2 id={createHashLink(dadsHeading?.content ?? '')}>
+            {dadsHeading?.content}
+          </h2>
+          {documentToReactComponents(dadsParagraphs?.content?.json)}
+        </section>
+        <section>
+          <h2 id={createHashLink(caregiversHeading?.content ?? '')}>
+            {caregiversHeading?.content}
+          </h2>
+          {documentToReactComponents(caregiverParagraphs?.content?.json)}
+        </section>
+        <section>
+          <h2 id={createHashLink(spanishParentsHeading?.content ?? '')}>
+            {spanishParentsHeading?.content}
+          </h2>
+          {documentToReactComponents(spanishParentsParagraphs?.content?.json)}
+        </section>
+        <section>
+          <h2 id={createHashLink(facebookHeading?.content ?? '')}>
+            {facebookHeading?.content}
+          </h2>
+          {documentToReactComponents(facebookParagraphs?.content?.json)}
+        </section>
+        <section>
+          <h2 id={createHashLink(dadsUkHeading?.content ?? '')}>
+            {dadsUkHeading?.content}
+          </h2>
+          {documentToReactComponents(dadsUkParagraphs?.content?.json)}
+        </section>
       </PageBody>
+      <SupportBanner lang={lang} />
     </>
   );
 };
