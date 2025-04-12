@@ -1,0 +1,13 @@
+query GetSupportGroupsPage(
+  $locale: String
+  $supportGroupsIntroParagraphsId: String!
+) {
+  intropParagraphs: paragraphs(
+    locale: $locale
+    id: $supportGroupsIntroParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+}
