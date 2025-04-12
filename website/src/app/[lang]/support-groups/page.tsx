@@ -32,7 +32,7 @@ import {
 import { routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { createHashLink } from '@shared/utils/hash-links';
-import type { NextPage } from 'next';
+import type { Metadata, NextPage } from 'next';
 import type { WebPage, WithContext } from 'schema-dts';
 import SupportGroupsHeader from './page-header';
 
@@ -167,5 +167,30 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     </>
   );
 };
+
+export async function generateMetadata({
+  params,
+}: PagePropsWithLocale): Promise<Metadata> {
+  const { lang } = await params;
+
+  const {
+    data: {
+      // @ts-ignore
+      htmlHeadMetadata: { title, description, keywords },
+    },
+  } = await query<GetMetadataQuery>({
+    query: GetMetadataDocument,
+    variables: {
+      locale: lang,
+      id: supportGroupsPageMetadataId,
+    },
+  });
+
+  return {
+    title: `NR2F1 Foundation | ${title}`,
+    description,
+    keywords,
+  };
+}
 
 export default Page;
