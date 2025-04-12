@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.48.1](https://github.com/nr2f1/website/compare/v1.48.0...v1.48.1) (2025-04-12)
+
+
+### Bug Fixes
+
+* support groups page metadata ([044e448](https://github.com/nr2f1/website/commit/044e4482758cef07e4d00903ab2990fe626c2be6))
+* support groups page metadata ([#229](https://github.com/nr2f1/website/issues/229)) ([3715ea5](https://github.com/nr2f1/website/commit/3715ea5a004b8cb8b553efefd8ed89bda6f38c32))
+
 ## [1.48.0](https://github.com/nr2f1/website/compare/v1.47.1...v1.48.0) (2025-04-12)
 
 
