@@ -6,7 +6,7 @@ import { getClient } from '@graphql/client';
 import {
   GetStrategicPlanUpperPageDocument,
   type GetStrategicPlanUpperPageQuery,
-} from '@graphql/queries/strategic-plan-page/index.generated';
+} from '@graphql/queries/pages/strategic-plan/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   advocacyHeadingId,

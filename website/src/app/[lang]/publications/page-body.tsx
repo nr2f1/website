@@ -6,7 +6,7 @@ import { getClient } from '@graphql/client';
 import {
   GetPublicationsPageDocument,
   type GetPublicationsPageQuery,
-} from '@graphql/queries/publications-page/index.generated';
+} from '@graphql/queries/pages/publications/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   geneResearchHeadingId,
