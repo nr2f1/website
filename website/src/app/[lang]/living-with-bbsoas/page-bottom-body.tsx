@@ -4,20 +4,17 @@ import { getClient } from '@graphql/client';
 import {
   GetLivingWithBbsoasBottomPageDocument,
   type GetLivingWithBbsoasBottomPageQuery,
-} from '@graphql/queries/living-with-bbsoas-page/index.generated';
+} from '@graphql/queries/pages/living-with-bbsoas/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   bbsoasClinicHeadingId,
   handingLettersHeadingId,
 } from '@models/headings';
-import { registerPatientLinkId } from '@models/links';
 import {
   bbsoasClinicParagraphsId,
   handingLettersParagraphsId,
 } from '@models/paragraphs';
 import { createHashLink } from '@shared/utils/hash-links';
-import { renderNode } from '@shared/utils/rich-text';
-import Link from 'next/link';
 
 interface LivingWithBbsoasBottomBodyProps {
   lang: AvailableLocale;

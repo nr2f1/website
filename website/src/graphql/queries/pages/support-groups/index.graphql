@@ -1,0 +1,85 @@
+query GetSupportGroupsPage(
+  $locale: String
+  $supportGroupsIntroParagraphsId: String!
+  $virtualParentsHeadingId: String!
+  $virtualParentsParagraphsId: String!
+  $dadsHeadingId: String!
+  $dadsParagraphsId: String!
+  $caregiversHeadingId: String!
+  $spanishParentsHeadingId: String!
+  $caregiverParagraphsId: String!
+  $spanishParentsParagraphsId: String!
+  $facebookHeadingId: String!
+  $facebookParagraphsId: String!
+  $dadsUkHeadingId: String!
+  $dadsUkParagraphsId: String!
+) {
+  intropParagraphs: paragraphs(
+    locale: $locale
+    id: $supportGroupsIntroParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  virtualParentsHeading: heading(
+    locale: $locale
+    id: $virtualParentsHeadingId
+  ) {
+    content
+  }
+  virtualParentsParagraphs: paragraphs(
+    locale: $locale
+    id: $virtualParentsParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  dadsHeading: heading(locale: $locale, id: $dadsHeadingId) {
+    content
+  }
+  dadsParagraphs: paragraphs(locale: $locale, id: $dadsParagraphsId) {
+    content {
+      json
+    }
+  }
+  caregiversHeading: heading(locale: $locale, id: $caregiversHeadingId) {
+    content
+  }
+  caregiverParagraphs: paragraphs(locale: $locale, id: $caregiverParagraphsId) {
+    content {
+      json
+    }
+  }
+  spanishParentsHeading: heading(
+    locale: $locale
+    id: $spanishParentsHeadingId
+  ) {
+    content
+  }
+  spanishParentsParagraphs: paragraphs(
+    locale: $locale
+    id: $spanishParentsParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  facebookHeading: heading(locale: $locale, id: $facebookHeadingId) {
+    content
+  }
+  facebookParagraphs: paragraphs(locale: $locale, id: $facebookParagraphsId) {
+    content {
+      json
+    }
+  }
+  dadsUkHeading: heading(locale: $locale, id: $dadsUkHeadingId) {
+    content
+  }
+  dadsUkParagraphs: paragraphs(locale: $locale, id: $dadsUkParagraphsId) {
+    content {
+      json
+    }
+  }
+}

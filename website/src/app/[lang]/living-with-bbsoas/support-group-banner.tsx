@@ -6,7 +6,7 @@ import {
   type GetBannerQuery,
 } from '@graphql/queries/banner/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
-import { researchBannerId, supportGroupBannerId } from '@models/banners/banner';
+import { supportGroupBannerId } from '@models/banners/banner';
 
 interface SupportGroupBannerProps {
   lang: AvailableLocale;

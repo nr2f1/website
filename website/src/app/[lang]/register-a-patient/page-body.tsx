@@ -6,7 +6,7 @@ import { getClient } from '@graphql/client';
 import {
   GetRegisterPatientPageDocument,
   type GetRegisterPatientPageQuery,
-} from '@graphql/queries/register-patient-page/index.generated';
+} from '@graphql/queries/pages/register-patient/index.generated';
 import type { AvailableLocale, LocalisedString } from '@i18n/locales';
 import {
   matrixLanguagesAccordionId,

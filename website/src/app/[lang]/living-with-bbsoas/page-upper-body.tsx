@@ -6,7 +6,7 @@ import { getClient } from '@graphql/client';
 import {
   GetLivingWithBbsoasUpperPageDocument,
   type GetLivingWithBbsoasUpperPageQuery,
-} from '@graphql/queries/living-with-bbsoas-page/index.generated';
+} from '@graphql/queries/pages/living-with-bbsoas/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   bbsoasClinicHeadingId,

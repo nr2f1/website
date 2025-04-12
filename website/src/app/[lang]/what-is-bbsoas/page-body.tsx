@@ -5,7 +5,7 @@ import { getClient } from '@graphql/client';
 import {
   GetWhatIsBbsoasPageDocument,
   type GetWhatIsBbsoasPageQuery,
-} from '@graphql/queries/what-is-bbsoas-page/index.generated';
+} from '@graphql/queries/pages/what-is-bbsoas/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   adhdAccordionId,

@@ -4,7 +4,7 @@ import { getClient } from '@graphql/client';
 import {
   GetStrategicPlanBottomPageDocument,
   type GetStrategicPlanBottomPageQuery,
-} from '@graphql/queries/strategic-plan-page/index.generated';
+} from '@graphql/queries/pages/strategic-plan/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { fiveYearsHeadingId } from '@models/headings';
 import { fiveYearsParagraphsId } from '@models/paragraphs';
