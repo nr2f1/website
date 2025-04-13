@@ -3,8 +3,14 @@ import type { LocalisedLinkProps } from '@shared/types/link';
 export type GetLocalisedProps = Array<
   | {
       __typename?: 'Link';
-      content?: string | null;
-      href?: string | null;
+      target?: {
+        __typename?: 'Hyperlink';
+        url?: string | null;
+      } | null;
+      text?: {
+        __typename?: 'LinkContent';
+        content?: string | null;
+      } | null;
     }
   | undefined
   | null
@@ -15,11 +21,11 @@ export const getLocalisedLinkProps = (
 ): LocalisedLinkProps[] => {
   if (!items) return [];
   return items.map((item) => {
-    if (item?.content && item.href) {
-      const { href, content } = item;
+    if (item?.text && item.target) {
+      const { text, target } = item;
       return {
-        href,
-        content,
+        href: target?.url || '',
+        content: text?.content || '',
       };
     }
     return {

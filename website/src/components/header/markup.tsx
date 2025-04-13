@@ -127,14 +127,14 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
               <ul>
                 <li>
                   <RegisterPatientButton
-                    content={registerPatient?.content ?? ''}
-                    href={registerPatient?.href ?? ''}
+                    content={registerPatient?.text?.content ?? ''}
+                    href={registerPatient?.target?.url ?? ''}
                   />
                 </li>
                 <li>
                   <DonateButton
-                    content={donate?.content ?? ''}
-                    href={donate?.href ?? ''}
+                    content={donate?.text?.content ?? ''}
+                    href={donate?.target?.url ?? ''}
                   />
                 </li>
               </ul>
@@ -164,15 +164,15 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
             <ul>
               <li>
                 <RegisterPatientButton
-                  content={registerPatient?.content ?? ''}
-                  href={registerPatient?.href ?? ''}
+                  content={registerPatient?.text?.content ?? ''}
+                  href={registerPatient?.target?.url ?? ''}
                   isMobile
                 />
               </li>
               <li>
                 <DonateButton
-                  content={donate?.content ?? ''}
-                  href={donate?.href ?? ''}
+                  content={donate?.text?.content ?? ''}
+                  href={donate?.target?.url ?? ''}
                   isMobile
                 />
               </li>

@@ -10,7 +10,7 @@ export type GetLatestNewsQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetLatestNewsQuery = { __typename?: 'Query', title?: { __typename?: 'Heading', content?: string | null } | null, posts?: { __typename?: 'BlogPageCollection', items: Array<{ __typename?: 'BlogPage', title?: string | null, date?: any | null, slug?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null, newsletters?: { __typename?: 'NewsletterCollection', items: Array<{ __typename?: 'Newsletter', date?: any | null, newsletterContent?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null, cta?: { __typename?: 'Link', href?: string | null, content?: string | null } | null };
+export type GetLatestNewsQuery = { __typename?: 'Query', title?: { __typename?: 'Heading', content?: string | null } | null, posts?: { __typename?: 'BlogPageCollection', items: Array<{ __typename?: 'BlogPage', title?: string | null, date?: any | null, slug?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null, newsletters?: { __typename?: 'NewsletterCollection', items: Array<{ __typename?: 'Newsletter', date?: any | null, newsletterContent?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null, cta?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null };
 
 
 export const GetLatestNewsDocument = gql`
@@ -37,8 +37,12 @@ export const GetLatestNewsDocument = gql`
     }
   }
   cta: link(id: $latestNewsCtaId, locale: $locale) {
-    href
-    content
+    target {
+      url
+    }
+    text {
+      content
+    }
   }
 }
     `;

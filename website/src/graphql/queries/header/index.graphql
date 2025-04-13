@@ -9,21 +9,33 @@ query GetHeader(
   $supportUsId: String!
 ) {
   registerPatient: link(id: $registerPatientId, locale: $locale) {
-    content
-    href
+    target {
+      url
+    }
+    text {
+      content
+    }
   }
 
   donate: link(id: $donateId, locale: $locale) {
-    content
-    href
+    target {
+      url
+    }
+    text {
+      content
+    }
   }
 
   aboutBbsoas: navigationList(id: $aboutBbsoasId, locale: $locale) {
     name
     linksCollection(locale: $locale) {
       items {
-        content
-        href
+        target {
+          url
+        }
+        text {
+          content
+        }
       }
     }
   }
@@ -32,8 +44,12 @@ query GetHeader(
     name
     linksCollection(locale: $locale) {
       items {
-        content
-        href
+        target {
+          url
+        }
+        text {
+          content
+        }
       }
     }
   }
@@ -42,8 +58,12 @@ query GetHeader(
     name
     linksCollection(locale: $locale) {
       items {
-        content
-        href
+        target {
+          url
+        }
+        text {
+          content
+        }
       }
     }
   }
@@ -52,8 +72,12 @@ query GetHeader(
     name
     linksCollection(locale: $locale) {
       items {
-        content
-        href
+        target {
+          url
+        }
+        text {
+          content
+        }
       }
     }
   }
@@ -62,8 +86,12 @@ query GetHeader(
     name
     linksCollection(locale: $locale) {
       items {
-        content
-        href
+        target {
+          url
+        }
+        text {
+          content
+        }
       }
     }
   }

@@ -13,7 +13,7 @@ export type GetHomePageHeroQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetHomePageHeroQuery = { __typename?: 'Query', heroHeading?: { __typename?: 'Heading', content?: string | null } | null, heroParagraph?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, heroCta?: { __typename?: 'Link', content?: string | null, href?: string | null } | null, heroNavigationList?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', content?: string | null, href?: string | null } | null> } | null } | null, heroImage?: { __typename?: 'Image', altText?: string | null, asset?: { __typename?: 'Asset', url?: string | null } | null } | null };
+export type GetHomePageHeroQuery = { __typename?: 'Query', heroHeading?: { __typename?: 'Heading', content?: string | null } | null, heroParagraph?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, heroCta?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null, heroNavigationList?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null> } | null } | null, heroImage?: { __typename?: 'Image', altText?: string | null, asset?: { __typename?: 'Asset', url?: string | null } | null } | null };
 
 
 export const GetHomePageHeroDocument = gql`
@@ -27,15 +27,23 @@ export const GetHomePageHeroDocument = gql`
     }
   }
   heroCta: link(id: $heroCtaId, locale: $locale) {
-    content
-    href
+    target {
+      url
+    }
+    text {
+      content
+    }
   }
   heroNavigationList: navigationList(id: $heroNavigationListId, locale: $locale) {
     name
     linksCollection {
       items {
-        content
-        href
+        text {
+          content
+        }
+        target {
+          url
+        }
       }
     }
   }

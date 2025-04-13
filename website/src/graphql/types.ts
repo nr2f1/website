@@ -1235,6 +1235,99 @@ export enum HtmlHeadMetadataOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
+/** The URL that the hyperlink points to [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/hyperlink) */
+export type Hyperlink = Entry & _Node & {
+  __typename?: 'Hyperlink';
+  _id: Scalars['ID']['output'];
+  contentfulMetadata: ContentfulMetadata;
+  linkedFrom?: Maybe<HyperlinkLinkingCollections>;
+  sys: Sys;
+  url?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** The URL that the hyperlink points to [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/hyperlink) */
+export type HyperlinkLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** The URL that the hyperlink points to [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/hyperlink) */
+export type HyperlinkUrlArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type HyperlinkCollection = {
+  __typename?: 'HyperlinkCollection';
+  items: Array<Maybe<Hyperlink>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type HyperlinkFilter = {
+  AND?: InputMaybe<Array<InputMaybe<HyperlinkFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<HyperlinkFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  sys?: InputMaybe<SysFilter>;
+  url?: InputMaybe<Scalars['String']['input']>;
+  url_contains?: InputMaybe<Scalars['String']['input']>;
+  url_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  url_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  url_not?: InputMaybe<Scalars['String']['input']>;
+  url_not_contains?: InputMaybe<Scalars['String']['input']>;
+  url_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type HyperlinkLinkingCollections = {
+  __typename?: 'HyperlinkLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+  linkCollection?: Maybe<LinkCollection>;
+};
+
+
+export type HyperlinkLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type HyperlinkLinkingCollectionsLinkCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<HyperlinkLinkingCollectionsLinkCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum HyperlinkLinkingCollectionsLinkCollectionOrder {
+  ContentAsc = 'content_ASC',
+  ContentDesc = 'content_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+export enum HyperlinkOrder {
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  UrlAsc = 'url_ASC',
+  UrlDesc = 'url_DESC'
+}
+
 /** image [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/image) */
 export type Image = Entry & _Node & {
   __typename?: 'Image';
@@ -1443,21 +1536,16 @@ export type Link = Entry & _Node & {
   _id: Scalars['ID']['output'];
   content?: Maybe<Scalars['String']['output']>;
   contentfulMetadata: ContentfulMetadata;
-  href?: Maybe<Scalars['String']['output']>;
   linkedFrom?: Maybe<LinkLinkingCollections>;
   referenceCollection?: Maybe<LinkReferenceCollection>;
   sys: Sys;
+  target?: Maybe<Hyperlink>;
+  text?: Maybe<LinkContent>;
 };
 
 
 /** A localised link [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/link) */
 export type LinkContentArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-/** A localised link [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/link) */
-export type LinkHrefArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -1476,6 +1564,22 @@ export type LinkReferenceCollectionArgs = {
   skip?: InputMaybe<Scalars['Int']['input']>;
 };
 
+
+/** A localised link [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/link) */
+export type LinkTargetArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  where?: InputMaybe<HyperlinkFilter>;
+};
+
+
+/** A localised link [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/link) */
+export type LinkTextArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  where?: InputMaybe<LinkContentFilter>;
+};
+
 export type LinkCollection = {
   __typename?: 'LinkCollection';
   items: Array<Maybe<Link>>;
@@ -1483,6 +1587,99 @@ export type LinkCollection = {
   skip: Scalars['Int']['output'];
   total: Scalars['Int']['output'];
 };
+
+/** content of a link [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/linkContent) */
+export type LinkContent = Entry & _Node & {
+  __typename?: 'LinkContent';
+  _id: Scalars['ID']['output'];
+  content?: Maybe<Scalars['String']['output']>;
+  contentfulMetadata: ContentfulMetadata;
+  linkedFrom?: Maybe<LinkContentLinkingCollections>;
+  sys: Sys;
+};
+
+
+/** content of a link [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/linkContent) */
+export type LinkContentContentArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** content of a link [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/linkContent) */
+export type LinkContentLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type LinkContentCollection = {
+  __typename?: 'LinkContentCollection';
+  items: Array<Maybe<LinkContent>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type LinkContentFilter = {
+  AND?: InputMaybe<Array<InputMaybe<LinkContentFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<LinkContentFilter>>>;
+  content?: InputMaybe<Scalars['String']['input']>;
+  content_contains?: InputMaybe<Scalars['String']['input']>;
+  content_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  content_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  content_not?: InputMaybe<Scalars['String']['input']>;
+  content_not_contains?: InputMaybe<Scalars['String']['input']>;
+  content_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type LinkContentLinkingCollections = {
+  __typename?: 'LinkContentLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+  linkCollection?: Maybe<LinkCollection>;
+};
+
+
+export type LinkContentLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type LinkContentLinkingCollectionsLinkCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<LinkContentLinkingCollectionsLinkCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum LinkContentLinkingCollectionsLinkCollectionOrder {
+  ContentAsc = 'content_ASC',
+  ContentDesc = 'content_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+export enum LinkContentOrder {
+  ContentAsc = 'content_ASC',
+  ContentDesc = 'content_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
 
 export type LinkFilter = {
   AND?: InputMaybe<Array<InputMaybe<LinkFilter>>>;
@@ -1495,15 +1692,12 @@ export type LinkFilter = {
   content_not_contains?: InputMaybe<Scalars['String']['input']>;
   content_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  href?: InputMaybe<Scalars['String']['input']>;
-  href_contains?: InputMaybe<Scalars['String']['input']>;
-  href_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  href_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  href_not?: InputMaybe<Scalars['String']['input']>;
-  href_not_contains?: InputMaybe<Scalars['String']['input']>;
-  href_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   referenceCollection_exists?: InputMaybe<Scalars['Boolean']['input']>;
   sys?: InputMaybe<SysFilter>;
+  target?: InputMaybe<CfHyperlinkNestedFilter>;
+  target_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  text?: InputMaybe<CfLinkContentNestedFilter>;
+  text_exists?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 export type LinkLinkingCollections = {
@@ -1568,8 +1762,6 @@ export enum LinkLinkingCollectionsNavigationListCollectionOrder {
 export enum LinkOrder {
   ContentAsc = 'content_ASC',
   ContentDesc = 'content_DESC',
-  HrefAsc = 'href_ASC',
-  HrefDesc = 'href_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',
@@ -1670,8 +1862,6 @@ export type NavigationListLinksCollection = {
 export enum NavigationListLinksCollectionOrder {
   ContentAsc = 'content_ASC',
   ContentDesc = 'content_DESC',
-  HrefAsc = 'href_ASC',
-  HrefDesc = 'href_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',
@@ -2188,10 +2378,14 @@ export type Query = {
   headingCollection?: Maybe<HeadingCollection>;
   htmlHeadMetadata?: Maybe<HtmlHeadMetadata>;
   htmlHeadMetadataCollection?: Maybe<HtmlHeadMetadataCollection>;
+  hyperlink?: Maybe<Hyperlink>;
+  hyperlinkCollection?: Maybe<HyperlinkCollection>;
   image?: Maybe<Image>;
   imageCollection?: Maybe<ImageCollection>;
   link?: Maybe<Link>;
   linkCollection?: Maybe<LinkCollection>;
+  linkContent?: Maybe<LinkContent>;
+  linkContentCollection?: Maybe<LinkContentCollection>;
   navigationList?: Maybe<NavigationList>;
   navigationListCollection?: Maybe<NavigationListCollection>;
   newsletter?: Maybe<Newsletter>;
@@ -2350,6 +2544,23 @@ export type QueryHtmlHeadMetadataCollectionArgs = {
 };
 
 
+export type QueryHyperlinkArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryHyperlinkCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<HyperlinkOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<HyperlinkFilter>;
+};
+
+
 export type QueryImageArgs = {
   id: Scalars['String']['input'];
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -2381,6 +2592,23 @@ export type QueryLinkCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<LinkFilter>;
+};
+
+
+export type QueryLinkContentArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryLinkContentCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<LinkContentOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<LinkContentFilter>;
 };
 
 
@@ -2625,6 +2853,34 @@ export type CfHeadingNestedFilter = {
   sys?: InputMaybe<SysFilter>;
 };
 
+export type CfHyperlinkNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfHyperlinkNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfHyperlinkNestedFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  sys?: InputMaybe<SysFilter>;
+  url?: InputMaybe<Scalars['String']['input']>;
+  url_contains?: InputMaybe<Scalars['String']['input']>;
+  url_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  url_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  url_not?: InputMaybe<Scalars['String']['input']>;
+  url_not_contains?: InputMaybe<Scalars['String']['input']>;
+  url_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type CfLinkContentNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfLinkContentNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfLinkContentNestedFilter>>>;
+  content?: InputMaybe<Scalars['String']['input']>;
+  content_contains?: InputMaybe<Scalars['String']['input']>;
+  content_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  content_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  content_not?: InputMaybe<Scalars['String']['input']>;
+  content_not_contains?: InputMaybe<Scalars['String']['input']>;
+  content_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  sys?: InputMaybe<SysFilter>;
+};
+
 export type CfLinkNestedFilter = {
   AND?: InputMaybe<Array<InputMaybe<CfLinkNestedFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<CfLinkNestedFilter>>>;
@@ -2636,15 +2892,10 @@ export type CfLinkNestedFilter = {
   content_not_contains?: InputMaybe<Scalars['String']['input']>;
   content_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  href?: InputMaybe<Scalars['String']['input']>;
-  href_contains?: InputMaybe<Scalars['String']['input']>;
-  href_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  href_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  href_not?: InputMaybe<Scalars['String']['input']>;
-  href_not_contains?: InputMaybe<Scalars['String']['input']>;
-  href_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   referenceCollection_exists?: InputMaybe<Scalars['Boolean']['input']>;
   sys?: InputMaybe<SysFilter>;
+  target_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  text_exists?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 export type CfParagraphsNestedFilter = {

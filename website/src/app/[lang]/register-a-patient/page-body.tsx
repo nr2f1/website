@@ -142,23 +142,23 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
 
         <a
           href={
-            registerPatientRegistrySignUpLink?.href ??
+            registerPatientRegistrySignUpLink?.target?.url ??
             'https://nr2f1x.acrossmatrix.com/en-US/#/user-request'
           }
           title={
-            registerPatientRegistrySignUpLink?.content ??
+            registerPatientRegistrySignUpLink?.text?.content ??
             'Natural history study registry signup'
           }
           target="_blank"
           rel="noreferrer"
           className="button button--on-light-open-new-tab mbe--4"
         >
-          {registerPatientRegistrySignUpLink?.content}
+          {registerPatientRegistrySignUpLink?.text?.content}
         </a>
         <p>{alreadyRegister[lang]}</p>
         <a
           href={
-            registerPatientRegistryLoginLink?.href ??
+            registerPatientRegistryLoginLink?.target?.url ??
             'https://nr2f1.acrossmatrix.com/'
           }
           title="Natural history study registry login"
@@ -166,7 +166,7 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
           rel="noreferrer"
           className="button button--on-light-open-new-tab mbe--6"
         >
-          {registerPatientRegistryLoginLink?.content}
+          {registerPatientRegistryLoginLink?.text?.content}
         </a>
 
         <Accordion
@@ -215,13 +215,13 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
         {documentToReactComponents(registerClinicalIdContent?.content?.json)}
 
         <a
-          href={registerContentIdLink?.href ?? 'https://thecrid.org/'}
+          href={registerContentIdLink?.target?.url ?? 'https://thecrid.org/'}
           target="_blank"
           rel="noreferrer"
-          title={registerContentIdLink?.content ?? 'Clinical Registry'}
+          title={registerContentIdLink?.text?.content ?? 'Clinical Registry'}
           className="button button--on-light-open-new-tab"
         >
-          {registerContentIdLink?.content}
+          {registerContentIdLink?.text?.content}
         </a>
       </section>
     </PageBody>

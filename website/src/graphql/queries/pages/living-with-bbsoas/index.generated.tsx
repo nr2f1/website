@@ -17,7 +17,7 @@ export type GetLivingWithBbsoasUpperPageQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetLivingWithBbsoasUpperPageQuery = { __typename?: 'Query', testAndTherapiesHeading?: { __typename?: 'Heading', content?: string | null } | null, testAndTherapiesParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerPatientHeading?: { __typename?: 'Heading', content?: string | null } | null, registerPatientParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerPatientCta?: { __typename?: 'Link', content?: string | null, href?: string | null } | null, understandingBbsoasHeading?: { __typename?: 'Heading', content?: string | null } | null, understandingBbsoasParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, handingLettersHeading?: { __typename?: 'Heading', content?: string | null } | null, bbsoasClinicHeading?: { __typename?: 'Heading', content?: string | null } | null };
+export type GetLivingWithBbsoasUpperPageQuery = { __typename?: 'Query', testAndTherapiesHeading?: { __typename?: 'Heading', content?: string | null } | null, testAndTherapiesParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerPatientHeading?: { __typename?: 'Heading', content?: string | null } | null, registerPatientParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerPatientCta?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null, understandingBbsoasHeading?: { __typename?: 'Heading', content?: string | null } | null, understandingBbsoasParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, handingLettersHeading?: { __typename?: 'Heading', content?: string | null } | null, bbsoasClinicHeading?: { __typename?: 'Heading', content?: string | null } | null };
 
 export type GetLivingWithBbsoasBottomPageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -59,8 +59,12 @@ export const GetLivingWithBbsoasUpperPageDocument = gql`
     }
   }
   registerPatientCta: link(locale: $locale, id: $registerPatientLinkId) {
-    content
-    href
+    target {
+      url
+    }
+    text {
+      content
+    }
   }
   understandingBbsoasHeading: heading(
     locale: $locale

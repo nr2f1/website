@@ -12,7 +12,6 @@ import { heroImageId } from '@models/images';
 import { heroCtaId } from '@models/links';
 import { heroNavigationListId } from '@models/navlinks';
 import { heroParagraphId } from '@models/paragraphs';
-import { getLocalisedLinkProps } from '@shared/utils/link';
 
 interface HomePageHeroProps {
   lang: AvailableLocale;
@@ -42,9 +41,18 @@ const HomePageHero: React.FC<HomePageHeroProps> = async ({ lang }) => {
     },
   });
 
-  const heroNavigationLinkItems = getLocalisedLinkProps(
-    heroNavigationList?.linksCollection?.items,
-  );
+  const heroNavigationLinkItems =
+    heroNavigationList?.linksCollection?.items.map((item) => {
+      if (!item)
+        return {
+          href: '#',
+          content: 'Missing Link',
+        };
+      return {
+        href: item.target?.url ?? '#',
+        content: item.text?.content ?? 'Missing Text',
+      };
+    }) ?? [];
 
   return (
     <div className={styles.hero}>
@@ -55,10 +63,10 @@ const HomePageHero: React.FC<HomePageHeroProps> = async ({ lang }) => {
               <h2>{heroHeading?.content}</h2>
               {documentToReactComponents(heroParagraph?.content?.json)}
               <a
-                href={heroCta?.href ?? '/'}
+                href={heroCta?.target?.url ?? '/'}
                 className="button button--on-light"
               >
-                {heroCta?.content}
+                {heroCta?.text?.content}
               </a>
             </section>
             <section className={styles.hero__how_can_we_help}>

@@ -15,25 +15,37 @@ export type GetHeaderQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetHeaderQuery = { __typename?: 'Query', registerPatient?: { __typename?: 'Link', content?: string | null, href?: string | null } | null, donate?: { __typename?: 'Link', content?: string | null, href?: string | null } | null, aboutBbsoas?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', content?: string | null, href?: string | null } | null> } | null } | null, livingWithBbsoas?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', content?: string | null, href?: string | null } | null> } | null } | null, research?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', content?: string | null, href?: string | null } | null> } | null } | null, aboutUs?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', content?: string | null, href?: string | null } | null> } | null } | null, supportUs?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', content?: string | null, href?: string | null } | null> } | null } | null };
+export type GetHeaderQuery = { __typename?: 'Query', registerPatient?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null, donate?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null, aboutBbsoas?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null> } | null } | null, livingWithBbsoas?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null> } | null } | null, research?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null> } | null } | null, aboutUs?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null> } | null } | null, supportUs?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null> } | null } | null };
 
 
 export const GetHeaderDocument = gql`
     query GetHeader($locale: String, $registerPatientId: String!, $donateId: String!, $aboutBbsoasId: String!, $livingWithBbsoasId: String!, $researchId: String!, $aboutUsId: String!, $supportUsId: String!) {
   registerPatient: link(id: $registerPatientId, locale: $locale) {
-    content
-    href
+    target {
+      url
+    }
+    text {
+      content
+    }
   }
   donate: link(id: $donateId, locale: $locale) {
-    content
-    href
+    target {
+      url
+    }
+    text {
+      content
+    }
   }
   aboutBbsoas: navigationList(id: $aboutBbsoasId, locale: $locale) {
     name
     linksCollection(locale: $locale) {
       items {
-        content
-        href
+        target {
+          url
+        }
+        text {
+          content
+        }
       }
     }
   }
@@ -41,8 +53,12 @@ export const GetHeaderDocument = gql`
     name
     linksCollection(locale: $locale) {
       items {
-        content
-        href
+        target {
+          url
+        }
+        text {
+          content
+        }
       }
     }
   }
@@ -50,8 +66,12 @@ export const GetHeaderDocument = gql`
     name
     linksCollection(locale: $locale) {
       items {
-        content
-        href
+        target {
+          url
+        }
+        text {
+          content
+        }
       }
     }
   }
@@ -59,8 +79,12 @@ export const GetHeaderDocument = gql`
     name
     linksCollection(locale: $locale) {
       items {
-        content
-        href
+        target {
+          url
+        }
+        text {
+          content
+        }
       }
     }
   }
@@ -68,8 +92,12 @@ export const GetHeaderDocument = gql`
     name
     linksCollection(locale: $locale) {
       items {
-        content
-        href
+        target {
+          url
+        }
+        text {
+          content
+        }
       }
     }
   }
