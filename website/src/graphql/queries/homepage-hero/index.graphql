@@ -9,18 +9,19 @@ query GetHomePageHero(
   heroHeading: heading(id: $heroHeadingId, locale: $locale) {
     content
   }
-
   heroParagraph: paragraphs(id: $heroParagraphId, locale: $locale) {
     content {
       json
     }
   }
-
   heroCta: link(id: $heroCtaId, locale: $locale) {
-    content
-    href
+    target {
+      url
+    }
+    text {
+      content
+    }
   }
-
   heroNavigationList: navigationList(
     id: $heroNavigationListId
     locale: $locale
@@ -28,12 +29,15 @@ query GetHomePageHero(
     name
     linksCollection {
       items {
-        content
-        href
+        text {
+          content
+        }
+        target {
+          url
+        }
       }
     }
   }
-
   heroImage: image(id: $heroImageId, locale: $locale) {
     altText
     asset {
