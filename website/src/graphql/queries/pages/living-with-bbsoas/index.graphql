@@ -39,8 +39,12 @@ query GetLivingWithBbsoasUpperPage(
     }
   }
   registerPatientCta: link(locale: $locale, id: $registerPatientLinkId) {
-    content
-    href
+    target {
+      url
+    }
+    text {
+      content
+    }
   }
   understandingBbsoasHeading: heading(
     locale: $locale

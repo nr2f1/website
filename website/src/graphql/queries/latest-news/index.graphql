@@ -28,7 +28,11 @@ query GetLatestNews(
   }
 
   cta: link(id: $latestNewsCtaId, locale: $locale) {
-    href
-    content
+    target {
+      url
+    }
+    text {
+      content
+    }
   }
 }

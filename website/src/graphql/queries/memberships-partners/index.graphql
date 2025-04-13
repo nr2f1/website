@@ -3,8 +3,12 @@ query GetMembershipPartners($membershipPartnersId: String!, $locale: String) {
     name
     linksCollection {
       items {
-        href
-        content
+        target {
+          url
+        }
+        text {
+          content
+        }
         referenceCollection(limit: 5) {
           items {
             ... on Image {

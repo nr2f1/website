@@ -23,7 +23,7 @@ export type GetRegisterPatientPageQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetRegisterPatientPageQuery = { __typename?: 'Query', intro?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerWithUsHeading?: { __typename?: 'Heading', content?: string | null } | null, registerPatientRegistryHeading?: { __typename?: 'Heading', content?: string | null } | null, registerClinicalIdHeading?: { __typename?: 'Heading', content?: string | null } | null, registerWithUsContent?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerPatientRegistryContent?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerPatientRegistrySignUpLink?: { __typename?: 'Link', content?: string | null, href?: string | null } | null, registerPatientRegistryLoginLink?: { __typename?: 'Link', content?: string | null, href?: string | null } | null, whoCanTakePartAccordion?: { __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null, whoWillHaveAccessAccordion?: { __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null, otherThanFillSurveysAccordion?: { __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null, matrixLanguagesAccordion?: { __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null, whoContactAccordion?: { __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null, registerClinicalIdContent?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerContentIdLink?: { __typename?: 'Link', content?: string | null, href?: string | null } | null };
+export type GetRegisterPatientPageQuery = { __typename?: 'Query', intro?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerWithUsHeading?: { __typename?: 'Heading', content?: string | null } | null, registerPatientRegistryHeading?: { __typename?: 'Heading', content?: string | null } | null, registerClinicalIdHeading?: { __typename?: 'Heading', content?: string | null } | null, registerWithUsContent?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerPatientRegistryContent?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerPatientRegistrySignUpLink?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null, registerPatientRegistryLoginLink?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null, whoCanTakePartAccordion?: { __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null, whoWillHaveAccessAccordion?: { __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null, otherThanFillSurveysAccordion?: { __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null, matrixLanguagesAccordion?: { __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null, whoContactAccordion?: { __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null, registerClinicalIdContent?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerContentIdLink?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null };
 
 
 export const GetRegisterPatientPageDocument = gql`
@@ -65,15 +65,23 @@ export const GetRegisterPatientPageDocument = gql`
     locale: $locale
     id: $registerPatientRegistrySignUpLinkId
   ) {
-    content
-    href
+    target {
+      url
+    }
+    text {
+      content
+    }
   }
   registerPatientRegistryLoginLink: link(
     locale: $locale
     id: $registerPatientRegistryLoginLinkId
   ) {
-    content
-    href
+    target {
+      url
+    }
+    text {
+      content
+    }
   }
   whoCanTakePartAccordion: accordion(
     locale: $locale
@@ -126,8 +134,12 @@ export const GetRegisterPatientPageDocument = gql`
     }
   }
   registerContentIdLink: link(locale: $locale, id: $registerContentIdLinkId) {
-    content
-    href
+    target {
+      url
+    }
+    text {
+      content
+    }
   }
 }
     `;

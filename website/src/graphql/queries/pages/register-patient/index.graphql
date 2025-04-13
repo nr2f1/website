@@ -59,15 +59,23 @@ query GetRegisterPatientPage(
     locale: $locale
     id: $registerPatientRegistrySignUpLinkId
   ) {
-    content
-    href
+    target {
+      url
+    }
+    text {
+      content
+    }
   }
   registerPatientRegistryLoginLink: link(
     locale: $locale
     id: $registerPatientRegistryLoginLinkId
   ) {
-    content
-    href
+    target {
+      url
+    }
+    text {
+      content
+    }
   }
   whoCanTakePartAccordion: accordion(
     locale: $locale
@@ -120,7 +128,11 @@ query GetRegisterPatientPage(
     }
   }
   registerContentIdLink: link(locale: $locale, id: $registerContentIdLinkId) {
-    content
-    href
+    target {
+      url
+    }
+    text {
+      content
+    }
   }
 }

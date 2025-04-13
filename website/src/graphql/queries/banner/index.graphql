@@ -9,8 +9,12 @@ query GetBanner($locale: String, $id: String!) {
       }
     }
     cta(locale: $locale) {
-      content
-      href
+      target {
+        url
+      }
+      text {
+        content
+      }
     }
     image {
       url
