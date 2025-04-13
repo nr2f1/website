@@ -34,8 +34,8 @@ const HomePageBanner: React.FC<HomePageBannerProps> = async ({ lang }) => {
 
   const headingContent = heading?.content ?? '';
   const textContent = documentToReactComponents(content?.content?.json);
-  const ctaContent = cta?.content ?? '';
-  const ctaUrl = cta?.href ?? '/';
+  const ctaContent = cta?.text?.content ?? '';
+  const ctaUrl = cta?.target?.url ?? '/';
   const imageUrl = image?.url ?? '';
 
   return (

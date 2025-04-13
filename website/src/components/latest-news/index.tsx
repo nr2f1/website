@@ -63,10 +63,10 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
           ))}
         </ul>
         <Link
-          href={cta.href ?? '/'}
+          href={cta.target?.url ?? '/'}
           className={`${styles.news__more} button button--on-light`}
         >
-          {cta.content}
+          {cta.text?.content}
         </Link>
       </div>
     </section>

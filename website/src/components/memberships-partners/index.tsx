@@ -34,8 +34,8 @@ const MembershipsPartners: React.FC<MembershipsPartnersProps> = async ({
 
   const membershipPartnersAssets = navigationList.linksCollection.items.map(
     (item) => ({
-      href: item?.href ?? '/',
-      alt: item?.content ?? '',
+      href: item?.target?.url ?? '/',
+      alt: item?.text?.content ?? '',
       // @ts-ignore
       imageUrl: item?.referenceCollection?.items?.[0]?.asset?.url ?? '',
     }),
