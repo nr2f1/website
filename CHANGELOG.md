@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.0.0](https://github.com/nr2f1/website/compare/v1.48.1...v2.0.0) (2025-04-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* change link schema
+* link
+
+### Features
+
+* change link schema ([38d8575](https://github.com/nr2f1/website/commit/38d8575cc8fa423be6a9e6506ff9fe532ecaf6a1))
+
+
+### Code Refactoring
+
+* link ([590e248](https://github.com/nr2f1/website/commit/590e248f04567a582b8b11a85f49e60b4f284168))
+
 ## [1.48.1](https://github.com/nr2f1/website/compare/v1.48.0...v1.48.1) (2025-04-12)
 
 
