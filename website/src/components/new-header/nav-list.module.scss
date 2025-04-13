@@ -1,0 +1,112 @@
+@use '@styles/text-styles';
+@use '@styles/icons';
+@use '@styles/breakpoints';
+
+.details {
+  @include text-styles.button;
+  appearance: none;
+  flex: 1 auto;
+  position: relative;
+  z-index: 1;
+
+  &[open] summary {
+    position: relative;
+    &::after {
+      background-image: url(icons.$chevron-up-navy);
+    }
+
+    & span {
+      position: absolute;
+      border-bottom: var(--spacing-1) solid var(--foreground-primary);
+      width: 100%;
+    }
+  }
+
+  & summary {
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    align-items: center;
+    color: var(--foreground-primary);
+    cursor: pointer;
+    display: flex;
+    flex: 1 0 0;
+    column-gap: var(--spacing-2);
+    height: var(--spacing-12);
+    justify-content: center;
+    list-style: none;
+    padding: 0 var(--spacing-4);
+
+    &::after {
+      aspect-ratio: 1 / 1;
+      background-image: url(icons.$chevron-down-navy);
+      background-position: center;
+      background-size: contain;
+      content: '';
+      display: block;
+      width: var(--spacing-5);
+
+      @include breakpoints.from-small-to-medium-screen {
+        background-image: url(icons.$chevron-down);
+      }
+    }
+
+    @include breakpoints.from-small-to-medium-screen {
+      justify-content: space-between;
+      padding: 0 var(--spacing-3);
+      color: var(--foreground-primary);
+    }
+
+    &:hover {
+      background-color: var(--background-interactive-hover);
+
+      @include breakpoints.from-small-to-medium-screen {
+        background-color: var(--background-interactive-hover);
+      }
+    }
+
+    &:active {
+      background-color: var(--background-interactive-press_active);
+    }
+  }
+
+  & ul {
+    background-color: var(--background-primary);
+    border-radius: var(--border-radius-lg);
+    box-shadow:
+      0px 12px 16px -4px rgba(16, 24, 40, 0.08),
+      0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+    list-style: none;
+    margin: 0;
+    margin-top: 1px;
+    min-width: var(--spacing-72);
+    padding: var(--spacing-1) 0;
+    position: absolute;
+    width: 100%;
+    border: var(--spacing-0) solid var(--grey-300);
+
+    @include breakpoints.from-small-to-medium-screen {
+      position: static;
+      box-shadow: none;
+    }
+  }
+
+  & li {
+    padding: var(--spacing-2) var(--spacing-3);
+
+    &:hover,
+    &:focus {
+      background-color: var(--background-accent-navy);
+    }
+
+    &:active {
+      background-color: var(--navy-100);
+    }
+
+    & a {
+      @include text-styles.text-base;
+      text-decoration: none;
+    }
+  }
+}
