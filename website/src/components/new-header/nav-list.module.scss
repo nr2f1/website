@@ -9,24 +9,25 @@
   position: relative;
   z-index: 1;
 
-  &[open] summary {
+  &[open] summary span {
     position: relative;
-    &::after {
-      background-image: url(icons.$chevron-up-navy);
+
+    &::before {
+      width: 100%;
+      height: var(--spacing-1);
+      background: var(--foreground-primary);
+      display: block;
+      content: '';
+      position: absolute;
+      bottom: calc(-0.75rem + 1px);
     }
 
-    & span {
-      position: absolute;
-      border-bottom: var(--spacing-1) solid var(--foreground-primary);
-      width: 100%;
+    &::after {
+      background-image: url(icons.$chevron-up-navy);
     }
   }
 
   & summary {
-    &::-webkit-details-marker {
-      display: none;
-    }
-
     align-items: center;
     color: var(--foreground-primary);
     cursor: pointer;
@@ -38,17 +39,27 @@
     list-style: none;
     padding: 0 var(--spacing-4);
 
-    &::after {
-      aspect-ratio: 1 / 1;
-      background-image: url(icons.$chevron-down-navy);
-      background-position: center;
-      background-size: contain;
-      content: '';
-      display: block;
-      width: var(--spacing-5);
+    &::-webkit-details-marker {
+      display: none;
+    }
 
-      @include breakpoints.from-small-to-medium-screen {
-        background-image: url(icons.$chevron-down);
+    & span {
+      display: flex;
+      column-gap: var(--spacing-2);
+      align-items: center;
+
+      &::after {
+        aspect-ratio: 1 / 1;
+        background-image: url(icons.$chevron-down-navy);
+        background-position: center;
+        background-size: contain;
+        content: '';
+        display: block;
+        width: var(--spacing-5);
+
+        @include breakpoints.from-small-to-medium-screen {
+          background-image: url(icons.$chevron-down);
+        }
       }
     }
 

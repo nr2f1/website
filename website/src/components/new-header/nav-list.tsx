@@ -15,8 +15,7 @@ const NavList = ({ name, items }: NavListProps) => {
     // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
     <details name="nav" className={styles.details}>
       <summary>
-        {name}
-        {/* <span /> */}
+        <span>{name}</span>
       </summary>
       <ul>
         {Array.isArray(items) &&
