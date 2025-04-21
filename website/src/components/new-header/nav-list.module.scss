@@ -48,6 +48,11 @@
       column-gap: var(--spacing-2);
       align-items: center;
 
+      @include breakpoints.from-small-to-medium-screen {
+        width: 100%;
+        justify-content: space-between;
+      }
+
       &::after {
         aspect-ratio: 1 / 1;
         background-image: url(icons.$chevron-down-navy);
@@ -65,8 +70,9 @@
 
     @include breakpoints.from-small-to-medium-screen {
       justify-content: space-between;
-      padding: 0 var(--spacing-3);
+      padding: 0;
       color: var(--foreground-primary);
+      border-bottom: var(--spacing-0) solid var(--grey-300);
     }
 
     &:hover {
@@ -100,11 +106,17 @@
     @include breakpoints.from-small-to-medium-screen {
       position: static;
       box-shadow: none;
+      border-radius: unset;
+      border: unset;
+      border-bottom: var(--spacing-0) solid var(--grey-300);
     }
   }
 
   & li {
     padding: var(--spacing-2) var(--spacing-3);
+    @include breakpoints.from-small-to-medium-screen {
+      padding: var(--spacing-2) 0;
+    }
 
     &:hover,
     &:focus {

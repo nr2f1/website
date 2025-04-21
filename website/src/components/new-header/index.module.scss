@@ -98,8 +98,6 @@ $hambuguer-button: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
         flex-direction: column;
         padding: 0;
         padding-bottom: var(--spacing-4);
-        margin-bottom: var(--spacing-4);
-        border-bottom: var(--border-width-1) solid var(--border-default);
       }
     }
 
@@ -136,6 +134,9 @@ $hambuguer-button: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
         position: absolute;
         background-color: var(--white);
         width: 100%;
+        padding: var(--spacing-6);
+        padding-top: 0;
+        min-height: 100vh;
 
         &_medium_screen {
           @include utils.visibility-hidden(false);
