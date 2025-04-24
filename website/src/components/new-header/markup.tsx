@@ -16,7 +16,7 @@ import {
 import type { LocalisedLinkProps } from '@shared/types/link';
 import { getLocalisedLinkProps } from '@shared/utils/link';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import LocaleSelector from './locale-selector';
 import NavList from './nav-list';
 
@@ -56,6 +56,14 @@ export interface HeaderProps {
 
 const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+  }, [isMenuOpen]);
 
   const {
     data,

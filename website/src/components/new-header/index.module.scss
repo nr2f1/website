@@ -136,7 +136,8 @@ $hambuguer-button: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
         width: 100%;
         padding: var(--spacing-6);
         padding-top: 0;
-        min-height: 100vh;
+        min-height: calc(100vh - 4.5rem);
+        overflow-y: scroll;
 
         &_medium_screen {
           @include utils.visibility-hidden(false);

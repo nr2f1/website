@@ -1,4 +1,5 @@
 @use 'text-styles';
+@use '@styles/breakpoints';
 
 * {
   box-sizing: border-box;
@@ -21,6 +22,12 @@ body {
 
   & main {
     flex: 1 auto;
+  }
+
+  @include breakpoints.from-small-to-medium-screen {
+    &.menu-open {
+      overflow-y: hidden;
+    }
   }
 }
 
