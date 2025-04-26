@@ -159,14 +159,86 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
       <div className={styles.header__bottom}>
         <div className={styles.header__content_wrapper}>
           <nav title="secondary">
-            <NavList name={aboutBbsoas?.name} items={aboutBbsoasLinkItems} />
-            <NavList
-              name={livingWithBbsoas?.name}
-              items={livingWithBbsoasLinkItems}
-            />
-            <NavList name={research?.name} items={researchLinkItems} />
-            <NavList name={aboutUs?.name} items={aboutUsLinkItems} />
-            <NavList name={supportUs?.name} items={supportUsLinkItems} />
+            <NavList name="About us" nested>
+              <ul>
+                <li>
+                  <span>{'who we are'.toLocaleUpperCase()}</span>
+                  <ul>
+                    <li>
+                      <Link href="/">Organization</Link>
+                    </li>
+                    <li>
+                      <Link href="/">Our strategy</Link>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <span>{'what we do'.toLocaleUpperCase()}</span>
+                  <ul>
+                    <li>
+                      <Link href="/">News and updates</Link>
+                    </li>
+                    <li>
+                      <Link href="/">Financials</Link>
+                    </li>
+                    <li>
+                      <Link href="/">Partnerships</Link>
+                    </li>
+                    <li>
+                      <Link href="/">NR2F1 Family & Scientific Conference</Link>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </NavList>
+            <Link href="/">
+              <span>What is BBSOAS?</span>
+            </Link>
+            <NavList name="Living with BBSOAS">
+              <ul>
+                <li>
+                  <Link href="/">Living with BBSOAS</Link>
+                </li>
+                <li>
+                  <Link href="/">Register a BBSOAS patient</Link>
+                </li>
+                <li>
+                  <Link href="/">Support groups</Link>
+                </li>
+              </ul>
+            </NavList>
+            <NavList name="Research">
+              <ul>
+                <li>
+                  <Link href="/">Research</Link>
+                </li>
+                <li>
+                  <Link href="/">Publications</Link>
+                </li>
+                <li>
+                  <Link href="/">For researchers</Link>
+                </li>
+              </ul>
+            </NavList>
+            <NavList name="Support us">
+              <ul>
+                <li>
+                  <Link href="/">Support us</Link>
+                </li>
+                <li>
+                  <Link href="/">Donate</Link>
+                </li>
+                <li>
+                  <Link href="/">Volunteer</Link>
+                </li>
+                <li>
+                  <Link href="/">Shop</Link>
+                </li>
+              </ul>
+            </NavList>
+            <Link href="/">
+              <span>Contact us</span>
+            </Link>
           </nav>
           <div className={styles.header__bottom_medium_screen}>
             <ul>

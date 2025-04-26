@@ -5,7 +5,7 @@
 .details {
   @include text-styles.button;
   appearance: none;
-  flex: 1 auto;
+  /* flex: 1 auto; */
   position: relative;
   z-index: 1;
 
@@ -88,7 +88,13 @@
     }
   }
 
-  & ul {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  & > ul {
     background-color: var(--background-primary);
     border-radius: var(--border-radius-lg);
     box-shadow:
@@ -130,6 +136,63 @@
     & a {
       @include text-styles.text-base;
       text-decoration: none;
+    }
+  }
+
+  &__nested {
+    & li {
+      padding: 0;
+
+      @include breakpoints.from-small-to-medium-screen {
+        padding: 0;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: unset;
+      }
+
+      &:active {
+        background-color: unset;
+      }
+
+      &:first-of-type ul {
+        margin-block-end: var(--spacing-3);
+      }
+
+      & > span {
+        color: var(--grey-500);
+        font-size: 0.875rem;
+        font-weight: 800;
+        line-height: 200%;
+        letter-spacing: 0.04375rem;
+        text-transform: uppercase;
+        padding: var(--spacing-2) var(--spacing-3);
+        @include breakpoints.from-small-to-medium-screen {
+          padding: var(--spacing-2);
+        }
+      }
+
+      & > ul > li {
+        padding: var(--spacing-2) var(--spacing-3);
+        @include breakpoints.from-small-to-medium-screen {
+          padding: var(--spacing-2);
+        }
+
+        &:hover,
+        &:focus {
+          background-color: var(--background-accent-navy);
+        }
+
+        &:active {
+          background-color: var(--navy-100);
+        }
+
+        & a {
+          @include text-styles.text-base;
+          text-decoration: none;
+        }
+      }
     }
   }
 }

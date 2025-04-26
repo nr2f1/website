@@ -1,30 +1,28 @@
 import styles from './nav-list.module.scss';
 
-import type { LocalisedLinkProps } from '@shared/types/link';
-import Link from 'next/link';
-
 interface NavListProps {
-  name?: string | null;
-  items?: LocalisedLinkProps[];
+  name: string | null;
+  children: React.ReactNode;
+  nested?: boolean;
 }
 
-const NavList = ({ name, items }: NavListProps) => {
+const NavList = ({ name, children, nested = false }: NavListProps) => {
   return (
     // @ts-ignore
     // name it is a valid attribute for details:
     // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
-    <details name="nav" className={styles.details}>
+    <details
+      name="nav"
+      className={
+        nested
+          ? [styles.details, styles.details__nested].join(' ')
+          : styles.details
+      }
+    >
       <summary>
         <span>{name}</span>
       </summary>
-      <ul>
-        {Array.isArray(items) &&
-          items.map(({ href, content }) => (
-            <li key={crypto.randomUUID()}>
-              <Link href={href}>{content}</Link>
-            </li>
-          ))}
-      </ul>
+      {children}
     </details>
   );
 };
