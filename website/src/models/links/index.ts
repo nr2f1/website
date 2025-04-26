@@ -13,3 +13,11 @@ export const registerPatientRegistrySignUpLinkId = '6rYsvNOGRKn1CElKIOQGIf';
 export const registerContentIdLinkId = '4Kb6OkWbG6YIfu6aW2dFg9';
 // Living with BBsoas page
 export const registerPatientLinkId = '4vzuri32sfC0FupqNm5SvZ';
+// Nav
+export const aboutUsLinkOrganisationId = 'vjixxHFE5qHsRjmJq7xZn';
+export const aboutUsLinkOurStrategyId = '1BjKiPS4AnSTsQ7gfz1yCA';
+export const aboutUsLinkOurNewsId = 'o2uN9vU5Qs3jLD9PGDIjT';
+export const aboutUsLinkFinancialsId = '4oeMk0zrairsWD2wb7jmRk';
+export const aboutUsLinkParnershipsId = 'HkOfLpglgaCDqrREtNryE';
+export const aboutUsLinkConferenceId = 'gBePO5trM77SSijE5FGsf';
+export const whatIsBbsoasLinkId = '77ExLdPLJqyl4F2fx7wuql';

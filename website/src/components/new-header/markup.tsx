@@ -3,18 +3,21 @@
 import styles from './index.module.scss';
 
 import MainOnLight from '@components/logos/main-on-light';
-import { useGetHeaderSuspenseQuery } from '@graphql/queries/header/index.generated';
+import { useGetNewHeaderSuspenseQuery } from '@graphql/queries/header/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
-import { donateId, registerPatientId } from '@models/links';
 import {
-  aboutBbsoasId,
-  aboutUsId,
-  livingWithBbsoasId,
-  researchId,
-  supportUsId,
-} from '@models/navlinks';
+  aboutUsLinkConferenceId,
+  aboutUsLinkFinancialsId,
+  aboutUsLinkOrganisationId,
+  aboutUsLinkOurNewsId,
+  aboutUsLinkOurStrategyId,
+  aboutUsLinkParnershipsId,
+  donateId,
+  registerPatientId,
+  whatIsBbsoasLinkId,
+} from '@models/links';
+import { aboutCopiesId } from '@models/resource-sets';
 import type { LocalisedLinkProps } from '@shared/types/link';
-import { getLocalisedLinkProps } from '@shared/utils/link';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import LocaleSelector from './locale-selector';
@@ -69,52 +72,41 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
     data,
     // TODO: Handle error
     error,
-  } = useGetHeaderSuspenseQuery({
+  } = useGetNewHeaderSuspenseQuery({
     variables: {
       locale: lang,
       registerPatientId,
       donateId,
-      aboutBbsoasId,
-      livingWithBbsoasId,
-      researchId,
-      aboutUsId,
-      supportUsId,
+      aboutCopiesId,
+      aboutUsLinkOrganisationId,
+      aboutUsLinkOurStrategyId,
+      aboutUsLinkOurNewsId,
+      aboutUsLinkFinancialsId,
+      aboutUsLinkParnershipsId,
+      aboutUsLinkConferenceId,
+      whatIsBbsoasLinkId,
     },
   });
 
-  if (!data) {
+  if (!data || error) {
     return null;
   }
 
   const {
     registerPatient,
     donate,
-    aboutBbsoas,
-    livingWithBbsoas,
-    research,
-    aboutUs,
-    supportUs,
+    aboutUsCopies,
+    aboutUsLinkOrganisation,
+    aboutUsLinkOurStrategy,
+    aboutUsLinkOurNews,
+    aboutUsFinancials,
+    aboutUsParnerships,
+    aboutUsConference,
+    whatIsBbsoas,
   } = data;
 
-  const aboutBbsoasLinkItems = getLocalisedLinkProps(
-    aboutBbsoas?.linksCollection?.items,
-  );
-
-  const livingWithBbsoasLinkItems = getLocalisedLinkProps(
-    livingWithBbsoas?.linksCollection?.items,
-  );
-
-  const researchLinkItems = getLocalisedLinkProps(
-    research?.linksCollection?.items,
-  );
-
-  const aboutUsLinkItems = getLocalisedLinkProps(
-    aboutUs?.linksCollection?.items,
-  );
-
-  const supportUsLinkItems = getLocalisedLinkProps(
-    supportUs?.linksCollection?.items,
-  );
+  const [title, whoWeAre, whatWeDo] =
+    aboutUsCopies?.resourcesCollection?.items ?? [];
 
   return (
     <header
@@ -159,40 +151,52 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
       <div className={styles.header__bottom}>
         <div className={styles.header__content_wrapper}>
           <nav title="secondary">
-            <NavList name="About us" nested>
+            <NavList name={title?.value ?? ''} nested>
               <ul>
                 <li>
-                  <span>{'who we are'.toLocaleUpperCase()}</span>
+                  <span>{whoWeAre?.value ?? ''}</span>
                   <ul>
                     <li>
-                      <Link href="/">Organization</Link>
+                      <Link href={aboutUsLinkOrganisation?.target?.url ?? '/'}>
+                        {aboutUsLinkOrganisation?.text?.content ?? ''}
+                      </Link>
                     </li>
                     <li>
-                      <Link href="/">Our strategy</Link>
+                      <Link href={aboutUsLinkOurStrategy?.target?.url ?? '/'}>
+                        {aboutUsLinkOurStrategy?.text?.content ?? ''}
+                      </Link>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <span>{'what we do'.toLocaleUpperCase()}</span>
+                  <span>{whatWeDo?.value ?? ''}</span>
                   <ul>
                     <li>
-                      <Link href="/">News and updates</Link>
+                      <Link href={aboutUsLinkOurNews?.target?.url ?? '/'}>
+                        {aboutUsLinkOurNews?.text?.content ?? ''}
+                      </Link>
                     </li>
                     <li>
-                      <Link href="/">Financials</Link>
+                      <Link href={aboutUsFinancials?.target?.url ?? '/'}>
+                        {aboutUsFinancials?.text?.content ?? ''}
+                      </Link>
                     </li>
                     <li>
-                      <Link href="/">Partnerships</Link>
+                      <Link href={aboutUsParnerships?.target?.url ?? '/'}>
+                        {aboutUsParnerships?.text?.content ?? ''}
+                      </Link>
                     </li>
                     <li>
-                      <Link href="/">NR2F1 Family & Scientific Conference</Link>
+                      <Link href={aboutUsConference?.target?.url ?? '/'}>
+                        {aboutUsConference?.text?.content ?? ''}
+                      </Link>
                     </li>
                   </ul>
                 </li>
               </ul>
             </NavList>
-            <Link href="/">
-              <span>What is BBSOAS?</span>
+            <Link href={whatIsBbsoas?.target?.url ?? '/'}>
+              <span>{whatIsBbsoas?.text?.content ?? ''}</span>
             </Link>
             <NavList name="Living with BBSOAS">
               <ul>

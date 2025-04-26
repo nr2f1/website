@@ -7,6 +7,7 @@ query GetHeader(
   $researchId: String!
   $aboutUsId: String!
   $supportUsId: String!
+  $aboutUsParnershipsId: String!
 ) {
   registerPatient: link(id: $registerPatientId, locale: $locale) {
     target {
@@ -93,6 +94,105 @@ query GetHeader(
           content
         }
       }
+    }
+  }
+}
+
+query GetNewHeader(
+  $locale: String
+  $registerPatientId: String!
+  $donateId: String!
+  $aboutCopiesId: String!
+  $aboutUsLinkOrganisationId: String!
+  $aboutUsLinkOurStrategyId: String!
+  $aboutUsLinkOurNewsId: String!
+  $aboutUsLinkFinancialsId: String!
+  $aboutUsLinkParnershipsId: String!
+  $aboutUsLinkConferenceId: String!
+  $whatIsBbsoasLinkId: String!
+) {
+  registerPatient: link(locale: $locale, id: $registerPatientId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  donate: link(locale: $locale, id: $donateId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  aboutUsCopies: resourceSet(locale: $locale, id: $aboutCopiesId) {
+    resourcesCollection {
+      items {
+        key
+        value
+      }
+    }
+  }
+  aboutUsLinkOrganisation: link(
+    locale: $locale
+    id: $aboutUsLinkOrganisationId
+  ) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  aboutUsLinkOurStrategy: link(locale: $locale, id: $aboutUsLinkOurStrategyId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  aboutUsLinkOurNews: link(locale: $locale, id: $aboutUsLinkOurNewsId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  aboutUsFinancials: link(locale: $locale, id: $aboutUsLinkFinancialsId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  aboutUsParnerships: link(locale: $locale, id: $aboutUsLinkParnershipsId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  aboutUsConference: link(locale: $locale, id: $aboutUsLinkConferenceId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+
+  whatIsBbsoas: link(locale: $locale, id: $whatIsBbsoasLinkId) {
+    text {
+      content
+    }
+    target {
+      url
     }
   }
 }
