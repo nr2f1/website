@@ -110,6 +110,7 @@ query GetNewHeader(
   $aboutUsLinkParnershipsId: String!
   $aboutUsLinkConferenceId: String!
   $whatIsBbsoasLinkId: String!
+  $contactUsLinkId: String!
 ) {
   registerPatient: link(locale: $locale, id: $registerPatientId) {
     text {
@@ -188,6 +189,15 @@ query GetNewHeader(
   }
 
   whatIsBbsoas: link(locale: $locale, id: $whatIsBbsoasLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+
+  contactUs: link(locale: $locale, id: $contactUsLinkId) {
     text {
       content
     }

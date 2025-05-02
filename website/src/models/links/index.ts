@@ -21,3 +21,4 @@ export const aboutUsLinkFinancialsId = '4oeMk0zrairsWD2wb7jmRk';
 export const aboutUsLinkParnershipsId = 'HkOfLpglgaCDqrREtNryE';
 export const aboutUsLinkConferenceId = 'gBePO5trM77SSijE5FGsf';
 export const whatIsBbsoasLinkId = '77ExLdPLJqyl4F2fx7wuql';
+export const contactUsLinkId = '7zlG9xJl2zFDZtJnb035vi';

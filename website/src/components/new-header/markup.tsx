@@ -12,6 +12,7 @@ import {
   aboutUsLinkOurNewsId,
   aboutUsLinkOurStrategyId,
   aboutUsLinkParnershipsId,
+  contactUsLinkId,
   donateId,
   registerPatientId,
   whatIsBbsoasLinkId,
@@ -85,6 +86,7 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
       aboutUsLinkParnershipsId,
       aboutUsLinkConferenceId,
       whatIsBbsoasLinkId,
+      contactUsLinkId,
     },
   });
 
@@ -103,6 +105,7 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
     aboutUsParnerships,
     aboutUsConference,
     whatIsBbsoas,
+    contactUs,
   } = data;
 
   const [title, whoWeAre, whatWeDo] =
@@ -240,8 +243,8 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
                 </li>
               </ul>
             </NavList>
-            <Link href="/">
-              <span>Contact us</span>
+            <Link href={contactUs?.text?.content ?? ''}>
+              <span>{contactUs?.target?.url ?? ''}</span>
             </Link>
           </nav>
           <div className={styles.header__bottom_medium_screen}>
