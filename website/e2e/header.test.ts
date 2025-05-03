@@ -20,17 +20,39 @@ test.describe('header', () => {
       page.getByRole('link', { name: 'Donate' }).first(),
     ).toBeVisible();
 
-    await expect(page.getByText('About BBSOAS', { exact: true })).toBeVisible();
+    await expect(
+      page.locator('summary').filter({ hasText: 'About us' }),
+    ).toBeVisible();
 
-    await expect(page.getByText('Living with BBSOAS').first()).toBeVisible();
-
-    await expect(page.getByText('Research', { exact: true })).toBeVisible();
-
-    await expect(page.getByText('About us')).toBeVisible();
+    await page.locator('summary').filter({ hasText: 'About us' }).click();
 
     await expect(
-      page.getByRole('banner').getByText('Support us'),
+      page.getByRole('banner').getByText('What we do'),
     ).toBeVisible();
+
+    await expect(
+      page.getByRole('banner').getByText('Who we are'),
+    ).toBeVisible();
+
+    await expect(
+      page.getByRole('link', { name: 'What is BBSOAS?' }),
+    ).toBeVisible();
+
+    await expect(
+      page.locator('summary').filter({ hasText: 'Living with BBSOAS' }),
+    ).toBeVisible();
+
+    await expect(
+      page.locator('summary').filter({ hasText: 'Research' }),
+    ).toBeVisible();
+
+    await expect(
+      page.locator('summary').filter({ hasText: 'Support us' }),
+    ).toBeVisible();
+
+    await expect(page.getByRole('link', { name: 'Contact us' })).toBeVisible();
+
+    // await page.locator('summary').filter({ hasText: 'Support us' }).click();
   });
 
   test('locale selector', async ({ page }) => {
@@ -84,22 +106,5 @@ test.describe('header', () => {
         })
         .getByRole('combobox'),
     ).toBeVisible();
-  });
-
-  test('navigation', async ({ page }) => {
-    await expect(page.getByText('Living with BBSOAS').first()).toBeVisible();
-
-    await expect(
-      page.getByRole('link', { name: 'Register a patient' }).nth(1),
-    ).toBeVisible();
-
-    await page.getByText('Research', { exact: true }).click();
-
-    await expect(
-      page.getByRole('navigation', { name: 'secondary' }).getByRole('listitem'),
-    ).toBeVisible();
-
-    await page.getByText('About us').click();
-    await expect(page.getByRole('link', { name: 'News' })).toBeVisible();
   });
 });
