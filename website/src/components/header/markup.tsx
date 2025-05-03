@@ -3,7 +3,7 @@
 import styles from './index.module.scss';
 
 import MainOnLight from '@components/logos/main-on-light';
-import { useGetNewHeaderSuspenseQuery } from '@graphql/queries/header/index.generated';
+import { useGetHeaderSuspenseQuery } from '@graphql/queries/header/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   aboutUsLinkConferenceId,
@@ -87,7 +87,7 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
     data,
     // TODO: Handle error
     error,
-  } = useGetNewHeaderSuspenseQuery({
+  } = useGetHeaderSuspenseQuery({
     variables: {
       locale: lang,
       registerPatientId,
