@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.0](https://github.com/nr2f1/website/compare/v2.0.0...v2.1.0) (2025-05-03)
+
+
+### Features
+
+* add new heeader ([211a313](https://github.com/nr2f1/website/commit/211a3132630e26bf43f8b5bd6168a7e13086d3c8))
+* new header ([#231](https://github.com/nr2f1/website/issues/231)) ([8b81dc0](https://github.com/nr2f1/website/commit/8b81dc094566f9e4677d5af2be2be44cff75b9a1))
+
 ## [2.0.0](https://github.com/nr2f1/website/compare/v1.48.1...v2.0.0) (2025-04-13)
 
 
