@@ -111,6 +111,10 @@ query GetNewHeader(
   $aboutUsLinkConferenceId: String!
   $whatIsBbsoasLinkId: String!
   $contactUsLinkId: String!
+  $livingWithBbsoasMicrocopyId: String!
+  $livingWithBbsoasLinkId: String!
+  $registerABbsoasPatientLinkId: String!
+  $supportGroupsLinkId: String!
 ) {
   registerPatient: link(locale: $locale, id: $registerPatientId) {
     text {
@@ -198,6 +202,39 @@ query GetNewHeader(
   }
 
   contactUs: link(locale: $locale, id: $contactUsLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+
+  livingWithBbsoasMicrocopy: microcopyResource(locale: $locale, id: $livingWithBbsoasMicrocopyId) {
+    value
+  }
+
+  livingWithBbsoasLink: link(locale: $locale id: $livingWithBbsoasLinkId) {
+    text {
+      content
+    }
+
+    target {
+      url
+    }
+  }
+
+  registerABbsoasPatientLink: link(locale: $locale id: $registerABbsoasPatientLinkId) {
+    text {
+      content
+    }
+
+    target {
+      url
+    }
+  }
+
+  supportGroupsLink: link(locale: $locale, id: $supportGroupsLinkId) {
     text {
       content
     }

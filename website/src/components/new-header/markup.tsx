@@ -14,9 +14,13 @@ import {
   aboutUsLinkParnershipsId,
   contactUsLinkId,
   donateId,
+  livingWithBbsoasLinkId,
+  registerABbsoasPatientLinkId,
   registerPatientId,
+  supportGroupsLinkId,
   whatIsBbsoasLinkId,
 } from '@models/links';
+import { livingWithBbsoasMicrocopyId } from '@models/resource';
 import { aboutCopiesId } from '@models/resource-sets';
 import type { LocalisedLinkProps } from '@shared/types/link';
 import Link from 'next/link';
@@ -87,6 +91,10 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
       aboutUsLinkConferenceId,
       whatIsBbsoasLinkId,
       contactUsLinkId,
+      livingWithBbsoasMicrocopyId,
+      livingWithBbsoasLinkId,
+      registerABbsoasPatientLinkId,
+      supportGroupsLinkId,
     },
   });
 
@@ -106,6 +114,10 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
     aboutUsConference,
     whatIsBbsoas,
     contactUs,
+    livingWithBbsoasMicrocopy,
+    livingWithBbsoasLink,
+    registerABbsoasPatientLink,
+    supportGroupsLink,
   } = data;
 
   const [title, whoWeAre, whatWeDo] =
@@ -201,16 +213,22 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
             <Link href={whatIsBbsoas?.target?.url ?? '/'}>
               <span>{whatIsBbsoas?.text?.content ?? ''}</span>
             </Link>
-            <NavList name="Living with BBSOAS">
+            <NavList name={livingWithBbsoasMicrocopy?.value ?? ''}>
               <ul>
                 <li>
-                  <Link href="/">Living with BBSOAS</Link>
+                  <Link href={livingWithBbsoasLink?.target?.url ?? '/'}>
+                    {livingWithBbsoasLink?.text?.content ?? ''}
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/">Register a BBSOAS patient</Link>
+                  <Link href={registerABbsoasPatientLink?.target?.url ?? '/'}>
+                    {registerABbsoasPatientLink?.text?.content ?? ''}
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/">Support groups</Link>
+                  <Link href={supportGroupsLink?.target?.url ?? '/'}>
+                    {supportGroupsLink?.text?.content ?? ''}
+                  </Link>
                 </li>
               </ul>
             </NavList>
@@ -243,8 +261,8 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
                 </li>
               </ul>
             </NavList>
-            <Link href={contactUs?.text?.content ?? ''}>
-              <span>{contactUs?.target?.url ?? ''}</span>
+            <Link href={contactUs?.target?.url ?? ''}>
+              <span>{contactUs?.text?.content ?? ''}</span>
             </Link>
           </nav>
           <div className={styles.header__bottom_medium_screen}>
