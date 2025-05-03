@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.1](https://github.com/nr2f1/website/compare/v2.1.0...v2.1.1) (2025-05-03)
+
+
+### Bug Fixes
+
+* update header mobile ([3b9cf5b](https://github.com/nr2f1/website/commit/3b9cf5b1dcbeb62ded5d99f8ea7defbbf9490235))
+
 ## [2.1.0](https://github.com/nr2f1/website/compare/v2.0.0...v2.1.0) (2025-05-03)
 
 
