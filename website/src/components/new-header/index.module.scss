@@ -101,12 +101,19 @@ $hambuguer-button: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
         display: flex;
         align-items: center;
         cursor: pointer;
-        min-height: var(--spacing-12);
         text-decoration: none;
-        padding: 0 var(--spacing-4);
+        padding: var(--spacing-2) var(--spacing-4);
+
+        &:hover {
+          background-color: var(--background-interactive-hover);
+        }
+
+        &:active {
+          background-color: var(--background-interactive-press_active);
+        }
 
         @include breakpoints.from-small-to-medium-screen {
-          padding: 0 var(--spacing-2);
+          padding: var(--spacing-2);
           border-bottom: 1px solid var(--grey-300);
         }
       }
