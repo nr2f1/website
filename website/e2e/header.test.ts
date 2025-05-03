@@ -51,8 +51,6 @@ test.describe('header', () => {
     ).toBeVisible();
 
     await expect(page.getByRole('link', { name: 'Contact us' })).toBeVisible();
-
-    // await page.locator('summary').filter({ hasText: 'Support us' }).click();
   });
 
   test('locale selector', async ({ page }) => {
