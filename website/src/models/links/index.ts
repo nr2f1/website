@@ -28,3 +28,6 @@ export const supportGroupsLinkId = 'IKD704qiG5a5ulCGLFgZc';
 export const researchLinkId = '4hAFfmRSjOSF6a0DfX1m9r';
 export const publicationsLinkId = '5V8x3yb4RE1613k7l8xh3o';
 export const forResearchersLinkId = '3zEOmyg8ZvDWnBq5mq0L8u';
+export const supportUsLinkId = '5SRoXh7o51CaK92GkkjVPV';
+export const volunteerLinkId = '4x61I4JOzWOSf9iCr1HcPj';
+export const shopLinkId = '75AvABQHLwuepqRLvpii8C';

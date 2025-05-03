@@ -20,12 +20,16 @@ import {
   registerABbsoasPatientLinkId,
   registerPatientId,
   researchLinkId,
+  shopLinkId,
   supportGroupsLinkId,
+  supportUsLinkId,
+  volunteerLinkId,
   whatIsBbsoasLinkId,
 } from '@models/links';
 import {
   livingWithBbsoasMicrocopyId,
   researchMicrocopyId,
+  supportUsMicrocopyId,
 } from '@models/resource';
 import { aboutCopiesId } from '@models/resource-sets';
 import type { LocalisedLinkProps } from '@shared/types/link';
@@ -105,6 +109,10 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
       researchLinkId,
       publicationsLinkId,
       forResearchersLinkId,
+      supportUsMicrocopyId,
+      supportUsLinkId,
+      volunteerLinkId,
+      shopLinkId,
     },
   });
 
@@ -132,6 +140,10 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
     researchLink,
     publicationsLink,
     forResearchersLink,
+    supportUsMicrocopy,
+    supportUsLink,
+    volunteerLink,
+    shopLink,
   } = data;
 
   const [title, whoWeAre, whatWeDo] =
@@ -265,19 +277,27 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
                 </li>
               </ul>
             </NavList>
-            <NavList name="Support us">
+            <NavList name={supportUsMicrocopy?.value ?? ''}>
               <ul>
                 <li>
-                  <Link href="/">Support us</Link>
+                  <Link href={supportUsLink?.target?.url ?? '/'}>
+                    {supportUsLink?.text?.content ?? ''}
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/">Donate</Link>
+                  <Link href={donate?.target?.url ?? '/'}>
+                    {donate?.text?.content ?? ''}
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/">Volunteer</Link>
+                  <Link href={volunteerLink?.target?.url ?? '/'}>
+                    {volunteerLink?.text?.content ?? ''}
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/">Shop</Link>
+                  <Link href={shopLink?.target?.url ?? '/'}>
+                    {shopLink?.text?.content ?? ''}
+                  </Link>
                 </li>
               </ul>
             </NavList>
