@@ -1,5 +1,5 @@
 import Footer from '@components/footer';
-import NewHeader from '@components/new-header';
+import Header from '@components/header';
 import { AVAILABLE_LOCALES } from '@i18n/locales';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { Nunito_Sans } from 'next/font/google';
@@ -40,7 +40,7 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children, params }) => {
   return (
     <html lang={lang} className={nunitoSans.variable}>
       <body>
-        <NewHeader lang={lang} />
+        <Header lang={lang} />
         <main>{children}</main>
         <Footer lang={lang} />
       </body>

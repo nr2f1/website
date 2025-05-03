@@ -3,20 +3,38 @@
 import styles from './index.module.scss';
 
 import MainOnLight from '@components/logos/main-on-light';
-import { useGetHeaderSuspenseQuery } from '@graphql/queries/header/index.generated';
+import { useGetNewHeaderSuspenseQuery } from '@graphql/queries/header/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
-import { donateId, registerPatientId } from '@models/links';
 import {
-  aboutBbsoasId,
-  aboutUsId,
-  livingWithBbsoasId,
-  researchId,
-  supportUsId,
-} from '@models/navlinks';
+  aboutUsLinkConferenceId,
+  aboutUsLinkFinancialsId,
+  aboutUsLinkOrganisationId,
+  aboutUsLinkOurNewsId,
+  aboutUsLinkOurStrategyId,
+  aboutUsLinkParnershipsId,
+  contactUsLinkId,
+  donateId,
+  forResearchersLinkId,
+  livingWithBbsoasLinkId,
+  publicationsLinkId,
+  registerABbsoasPatientLinkId,
+  registerPatientId,
+  researchLinkId,
+  shopLinkId,
+  supportGroupsLinkId,
+  supportUsLinkId,
+  volunteerLinkId,
+  whatIsBbsoasLinkId,
+} from '@models/links';
+import {
+  livingWithBbsoasMicrocopyId,
+  researchMicrocopyId,
+  supportUsMicrocopyId,
+} from '@models/resource';
+import { aboutCopiesId } from '@models/resource-sets';
 import type { LocalisedLinkProps } from '@shared/types/link';
-import { getLocalisedLinkProps } from '@shared/utils/link';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import LocaleSelector from './locale-selector';
 import NavList from './nav-list';
 
@@ -54,59 +72,82 @@ export interface HeaderProps {
   lang: AvailableLocale;
 }
 
-const Header: React.FC<HeaderProps> = ({ lang }) => {
+const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+  }, [isMenuOpen]);
 
   const {
     data,
     // TODO: Handle error
     error,
-  } = useGetHeaderSuspenseQuery({
+  } = useGetNewHeaderSuspenseQuery({
     variables: {
       locale: lang,
       registerPatientId,
       donateId,
-      aboutBbsoasId,
-      livingWithBbsoasId,
-      researchId,
-      aboutUsId,
-      supportUsId,
+      aboutCopiesId,
+      aboutUsLinkOrganisationId,
+      aboutUsLinkOurStrategyId,
+      aboutUsLinkOurNewsId,
+      aboutUsLinkFinancialsId,
+      aboutUsLinkParnershipsId,
+      aboutUsLinkConferenceId,
+      whatIsBbsoasLinkId,
+      contactUsLinkId,
+      livingWithBbsoasMicrocopyId,
+      livingWithBbsoasLinkId,
+      registerABbsoasPatientLinkId,
+      supportGroupsLinkId,
+      researchMicrocopyId,
+      researchLinkId,
+      publicationsLinkId,
+      forResearchersLinkId,
+      supportUsMicrocopyId,
+      supportUsLinkId,
+      volunteerLinkId,
+      shopLinkId,
     },
   });
 
-  if (!data) {
+  if (!data || error) {
     return null;
   }
 
   const {
     registerPatient,
     donate,
-    aboutBbsoas,
-    livingWithBbsoas,
-    research,
-    aboutUs,
-    supportUs,
+    aboutUsCopies,
+    aboutUsLinkOrganisation,
+    aboutUsLinkOurStrategy,
+    aboutUsLinkOurNews,
+    aboutUsFinancials,
+    aboutUsParnerships,
+    aboutUsConference,
+    whatIsBbsoas,
+    contactUs,
+    livingWithBbsoasMicrocopy,
+    livingWithBbsoasLink,
+    registerABbsoasPatientLink,
+    supportGroupsLink,
+    researchMicrocopy,
+    researchLink,
+    publicationsLink,
+    forResearchersLink,
+    supportUsMicrocopy,
+    supportUsLink,
+    volunteerLink,
+    shopLink,
   } = data;
 
-  const aboutBbsoasLinkItems = getLocalisedLinkProps(
-    aboutBbsoas?.linksCollection?.items,
-  );
-
-  const livingWithBbsoasLinkItems = getLocalisedLinkProps(
-    livingWithBbsoas?.linksCollection?.items,
-  );
-
-  const researchLinkItems = getLocalisedLinkProps(
-    research?.linksCollection?.items,
-  );
-
-  const aboutUsLinkItems = getLocalisedLinkProps(
-    aboutUs?.linksCollection?.items,
-  );
-
-  const supportUsLinkItems = getLocalisedLinkProps(
-    supportUs?.linksCollection?.items,
-  );
+  const [title, whoWeAre, whatWeDo] =
+    aboutUsCopies?.resourcesCollection?.items ?? [];
 
   return (
     <header
@@ -151,14 +192,118 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
       <div className={styles.header__bottom}>
         <div className={styles.header__content_wrapper}>
           <nav title="secondary">
-            <NavList name={aboutBbsoas?.name} items={aboutBbsoasLinkItems} />
-            <NavList
-              name={livingWithBbsoas?.name}
-              items={livingWithBbsoasLinkItems}
-            />
-            <NavList name={research?.name} items={researchLinkItems} />
-            <NavList name={aboutUs?.name} items={aboutUsLinkItems} />
-            <NavList name={supportUs?.name} items={supportUsLinkItems} />
+            <NavList name={title?.value ?? ''} nested>
+              <ul>
+                <li>
+                  <span>{whoWeAre?.value ?? ''}</span>
+                  <ul>
+                    <li>
+                      <Link href={aboutUsLinkOrganisation?.target?.url ?? '/'}>
+                        {aboutUsLinkOrganisation?.text?.content ?? ''}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={aboutUsLinkOurStrategy?.target?.url ?? '/'}>
+                        {aboutUsLinkOurStrategy?.text?.content ?? ''}
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <span>{whatWeDo?.value ?? ''}</span>
+                  <ul>
+                    <li>
+                      <Link href={aboutUsLinkOurNews?.target?.url ?? '/'}>
+                        {aboutUsLinkOurNews?.text?.content ?? ''}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={aboutUsFinancials?.target?.url ?? '/'}>
+                        {aboutUsFinancials?.text?.content ?? ''}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={aboutUsParnerships?.target?.url ?? '/'}>
+                        {aboutUsParnerships?.text?.content ?? ''}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={aboutUsConference?.target?.url ?? '/'}>
+                        {aboutUsConference?.text?.content ?? ''}
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </NavList>
+            <Link href={whatIsBbsoas?.target?.url ?? '/'}>
+              <span>{whatIsBbsoas?.text?.content ?? ''}</span>
+            </Link>
+            <NavList name={livingWithBbsoasMicrocopy?.value ?? ''}>
+              <ul>
+                <li>
+                  <Link href={livingWithBbsoasLink?.target?.url ?? '/'}>
+                    {livingWithBbsoasLink?.text?.content ?? ''}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={registerABbsoasPatientLink?.target?.url ?? '/'}>
+                    {registerABbsoasPatientLink?.text?.content ?? ''}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={supportGroupsLink?.target?.url ?? '/'}>
+                    {supportGroupsLink?.text?.content ?? ''}
+                  </Link>
+                </li>
+              </ul>
+            </NavList>
+            <NavList name={researchMicrocopy?.value ?? ''}>
+              <ul>
+                <li>
+                  <Link href={researchLink?.target?.url ?? '/'}>
+                    {researchLink?.text?.content ?? ''}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={publicationsLink?.target?.url ?? '/'}>
+                    {publicationsLink?.text?.content ?? ''}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={forResearchersLink?.target?.url ?? '/'}>
+                    {forResearchersLink?.text?.content ?? ''}
+                  </Link>
+                </li>
+              </ul>
+            </NavList>
+            <NavList name={supportUsMicrocopy?.value ?? ''}>
+              <ul>
+                <li>
+                  <Link href={supportUsLink?.target?.url ?? '/'}>
+                    {supportUsLink?.text?.content ?? ''}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={donate?.target?.url ?? '/'}>
+                    {donate?.text?.content ?? ''}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={volunteerLink?.target?.url ?? '/'}>
+                    {volunteerLink?.text?.content ?? ''}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={shopLink?.target?.url ?? '/'}>
+                    {shopLink?.text?.content ?? ''}
+                  </Link>
+                </li>
+              </ul>
+            </NavList>
+            <Link href={contactUs?.target?.url ?? ''}>
+              <span>{contactUs?.text?.content ?? ''}</span>
+            </Link>
           </nav>
           <div className={styles.header__bottom_medium_screen}>
             <ul>
@@ -185,4 +330,4 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
   );
 };
 
-export default Header;
+export default NewHeader;
