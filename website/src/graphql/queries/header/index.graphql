@@ -2,97 +2,217 @@ query GetHeader(
   $locale: String
   $registerPatientId: String!
   $donateId: String!
-  $aboutBbsoasId: String!
-  $livingWithBbsoasId: String!
-  $researchId: String!
-  $aboutUsId: String!
-  $supportUsId: String!
+  $aboutCopiesId: String!
+  $aboutUsLinkOrganisationId: String!
+  $aboutUsLinkOurStrategyId: String!
+  $aboutUsLinkOurNewsId: String!
+  $aboutUsLinkFinancialsId: String!
+  $aboutUsLinkParnershipsId: String!
+  $aboutUsLinkConferenceId: String!
+  $whatIsBbsoasLinkId: String!
+  $contactUsLinkId: String!
+  $livingWithBbsoasMicrocopyId: String!
+  $livingWithBbsoasLinkId: String!
+  $registerABbsoasPatientLinkId: String!
+  $supportGroupsLinkId: String!
+  $researchMicrocopyId: String!
+  $researchLinkId: String!
+  $publicationsLinkId: String!
+  $forResearchersLinkId: String!
+  $supportUsMicrocopyId: String!
+  $supportUsLinkId: String!
+  $volunteerLinkId: String!
+  $shopLinkId: String!
 ) {
-  registerPatient: link(id: $registerPatientId, locale: $locale) {
-    target {
-      url
-    }
+  registerPatient: link(locale: $locale, id: $registerPatientId) {
     text {
       content
     }
-  }
-
-  donate: link(id: $donateId, locale: $locale) {
     target {
       url
     }
+  }
+  donate: link(locale: $locale, id: $donateId) {
     text {
       content
     }
+    target {
+      url
+    }
   }
-
-  aboutBbsoas: navigationList(id: $aboutBbsoasId, locale: $locale) {
-    name
-    linksCollection(locale: $locale) {
+  aboutUsCopies: resourceSet(locale: $locale, id: $aboutCopiesId) {
+    resourcesCollection {
       items {
-        target {
-          url
-        }
-        text {
-          content
-        }
+        key
+        value
       }
     }
   }
-
-  livingWithBbsoas: navigationList(id: $livingWithBbsoasId, locale: $locale) {
-    name
-    linksCollection(locale: $locale) {
-      items {
-        target {
-          url
-        }
-        text {
-          content
-        }
-      }
+  aboutUsLinkOrganisation: link(
+    locale: $locale
+    id: $aboutUsLinkOrganisationId
+  ) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  aboutUsLinkOurStrategy: link(locale: $locale, id: $aboutUsLinkOurStrategyId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  aboutUsLinkOurNews: link(locale: $locale, id: $aboutUsLinkOurNewsId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  aboutUsFinancials: link(locale: $locale, id: $aboutUsLinkFinancialsId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  aboutUsParnerships: link(locale: $locale, id: $aboutUsLinkParnershipsId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  aboutUsConference: link(locale: $locale, id: $aboutUsLinkConferenceId) {
+    text {
+      content
+    }
+    target {
+      url
     }
   }
 
-  research: navigationList(id: $researchId, locale: $locale) {
-    name
-    linksCollection(locale: $locale) {
-      items {
-        target {
-          url
-        }
-        text {
-          content
-        }
-      }
+  whatIsBbsoas: link(locale: $locale, id: $whatIsBbsoasLinkId) {
+    text {
+      content
+    }
+    target {
+      url
     }
   }
 
-  aboutUs: navigationList(id: $aboutUsId, locale: $locale) {
-    name
-    linksCollection(locale: $locale) {
-      items {
-        target {
-          url
-        }
-        text {
-          content
-        }
-      }
+  contactUs: link(locale: $locale, id: $contactUsLinkId) {
+    text {
+      content
+    }
+    target {
+      url
     }
   }
 
-  supportUs: navigationList(id: $supportUsId, locale: $locale) {
-    name
-    linksCollection(locale: $locale) {
-      items {
-        target {
-          url
-        }
-        text {
-          content
-        }
-      }
+  livingWithBbsoasMicrocopy: microcopyResource(locale: $locale, id: $livingWithBbsoasMicrocopyId) {
+    value
+  }
+
+  livingWithBbsoasLink: link(locale: $locale id: $livingWithBbsoasLinkId) {
+    text {
+      content
+    }
+
+    target {
+      url
     }
   }
+
+  registerABbsoasPatientLink: link(locale: $locale id: $registerABbsoasPatientLinkId) {
+    text {
+      content
+    }
+
+    target {
+      url
+    }
+  }
+
+  supportGroupsLink: link(locale: $locale, id: $supportGroupsLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+
+  researchMicrocopy: microcopyResource(locale: $locale, id: $researchMicrocopyId) {
+     value
+   }
+
+   researchLink: link(locale: $locale, id: $researchLinkId) {
+     text {
+       content
+     }
+     target {
+       url
+     }
+   }
+
+   publicationsLink: link(locale: $locale, id: $publicationsLinkId) {
+     text {
+       content
+     }
+     target {
+       url
+     }
+   }
+
+   forResearchersLink: link(locale: $locale, id: $forResearchersLinkId) {
+     text {
+       content
+     }
+     target {
+       url
+     }
+   }
+
+   supportUsMicrocopy: microcopyResource(locale: $locale, id: $supportUsMicrocopyId) {
+     value
+   }
+
+   supportUsLink: link(locale: $locale, id: $supportUsLinkId) {
+     text {
+       content
+     }
+
+     target {
+       url
+     }
+   }
+
+   volunteerLink: link(locale: $locale, id: $volunteerLinkId ) {
+     text {
+       content
+     }
+
+     target {
+       url
+     }
+   }
+
+   shopLink: link(locale: $locale, id: $shopLinkId) {
+     text {
+       content
+     }
+
+     target {
+       url
+     }
+   }
 }

@@ -1780,6 +1780,115 @@ export type LinkReferenceCollection = {
   total: Scalars['Int']['output'];
 };
 
+/** microcopy resource [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/microcopyResource) */
+export type MicrocopyResource = Entry & _Node & {
+  __typename?: 'MicrocopyResource';
+  _id: Scalars['ID']['output'];
+  contentfulMetadata: ContentfulMetadata;
+  key?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<MicrocopyResourceLinkingCollections>;
+  sys: Sys;
+  value?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** microcopy resource [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/microcopyResource) */
+export type MicrocopyResourceKeyArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** microcopy resource [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/microcopyResource) */
+export type MicrocopyResourceLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** microcopy resource [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/microcopyResource) */
+export type MicrocopyResourceValueArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MicrocopyResourceCollection = {
+  __typename?: 'MicrocopyResourceCollection';
+  items: Array<Maybe<MicrocopyResource>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type MicrocopyResourceFilter = {
+  AND?: InputMaybe<Array<InputMaybe<MicrocopyResourceFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<MicrocopyResourceFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  key?: InputMaybe<Scalars['String']['input']>;
+  key_contains?: InputMaybe<Scalars['String']['input']>;
+  key_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  key_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  key_not?: InputMaybe<Scalars['String']['input']>;
+  key_not_contains?: InputMaybe<Scalars['String']['input']>;
+  key_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  value?: InputMaybe<Scalars['String']['input']>;
+  value_contains?: InputMaybe<Scalars['String']['input']>;
+  value_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  value_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  value_not?: InputMaybe<Scalars['String']['input']>;
+  value_not_contains?: InputMaybe<Scalars['String']['input']>;
+  value_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type MicrocopyResourceLinkingCollections = {
+  __typename?: 'MicrocopyResourceLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+  resourceSetCollection?: Maybe<ResourceSetCollection>;
+};
+
+
+export type MicrocopyResourceLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type MicrocopyResourceLinkingCollectionsResourceSetCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<MicrocopyResourceLinkingCollectionsResourceSetCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum MicrocopyResourceLinkingCollectionsResourceSetCollectionOrder {
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+export enum MicrocopyResourceOrder {
+  KeyAsc = 'key_ASC',
+  KeyDesc = 'key_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  ValueAsc = 'value_ASC',
+  ValueDesc = 'value_DESC'
+}
+
 /** It is a navigation menu [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/navigationList) */
 export type NavigationList = Entry & _Node & {
   __typename?: 'NavigationList';
@@ -2386,6 +2495,8 @@ export type Query = {
   linkCollection?: Maybe<LinkCollection>;
   linkContent?: Maybe<LinkContent>;
   linkContentCollection?: Maybe<LinkContentCollection>;
+  microcopyResource?: Maybe<MicrocopyResource>;
+  microcopyResourceCollection?: Maybe<MicrocopyResourceCollection>;
   navigationList?: Maybe<NavigationList>;
   navigationListCollection?: Maybe<NavigationListCollection>;
   newsletter?: Maybe<Newsletter>;
@@ -2396,6 +2507,8 @@ export type Query = {
   paragraphsCollection?: Maybe<ParagraphsCollection>;
   publication?: Maybe<Publication>;
   publicationCollection?: Maybe<PublicationCollection>;
+  resourceSet?: Maybe<ResourceSet>;
+  resourceSetCollection?: Maybe<ResourceSetCollection>;
   volunteer?: Maybe<Volunteer>;
   volunteerCollection?: Maybe<VolunteerCollection>;
 };
@@ -2612,6 +2725,23 @@ export type QueryLinkContentCollectionArgs = {
 };
 
 
+export type QueryMicrocopyResourceArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryMicrocopyResourceCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<MicrocopyResourceOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<MicrocopyResourceFilter>;
+};
+
+
 export type QueryNavigationListArgs = {
   id: Scalars['String']['input'];
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -2697,6 +2827,23 @@ export type QueryPublicationCollectionArgs = {
 };
 
 
+export type QueryResourceSetArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryResourceSetCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<ResourceSetOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<ResourceSetFilter>;
+};
+
+
 export type QueryVolunteerArgs = {
   id: Scalars['String']['input'];
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -2716,6 +2863,113 @@ export type QueryVolunteerCollectionArgs = {
 export type ResourceLink = {
   sys: ResourceSys;
 };
+
+/** A collection of microcopies resources [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/resourceSet) */
+export type ResourceSet = Entry & _Node & {
+  __typename?: 'ResourceSet';
+  _id: Scalars['ID']['output'];
+  contentfulMetadata: ContentfulMetadata;
+  linkedFrom?: Maybe<ResourceSetLinkingCollections>;
+  name?: Maybe<Scalars['String']['output']>;
+  resourcesCollection?: Maybe<ResourceSetResourcesCollection>;
+  sys: Sys;
+};
+
+
+/** A collection of microcopies resources [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/resourceSet) */
+export type ResourceSetLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** A collection of microcopies resources [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/resourceSet) */
+export type ResourceSetNameArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** A collection of microcopies resources [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/resourceSet) */
+export type ResourceSetResourcesCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<ResourceSetResourcesCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<MicrocopyResourceFilter>;
+};
+
+export type ResourceSetCollection = {
+  __typename?: 'ResourceSetCollection';
+  items: Array<Maybe<ResourceSet>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type ResourceSetFilter = {
+  AND?: InputMaybe<Array<InputMaybe<ResourceSetFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<ResourceSetFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  name_contains?: InputMaybe<Scalars['String']['input']>;
+  name_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  name_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  name_not?: InputMaybe<Scalars['String']['input']>;
+  name_not_contains?: InputMaybe<Scalars['String']['input']>;
+  name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  resources?: InputMaybe<CfMicrocopyResourceNestedFilter>;
+  resourcesCollection_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type ResourceSetLinkingCollections = {
+  __typename?: 'ResourceSetLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type ResourceSetLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum ResourceSetOrder {
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+export type ResourceSetResourcesCollection = {
+  __typename?: 'ResourceSetResourcesCollection';
+  items: Array<Maybe<MicrocopyResource>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export enum ResourceSetResourcesCollectionOrder {
+  KeyAsc = 'key_ASC',
+  KeyDesc = 'key_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  ValueAsc = 'value_ASC',
+  ValueDesc = 'value_DESC'
+}
 
 export type ResourceSys = {
   __typename?: 'ResourceSys';
@@ -2896,6 +3150,27 @@ export type CfLinkNestedFilter = {
   sys?: InputMaybe<SysFilter>;
   target_exists?: InputMaybe<Scalars['Boolean']['input']>;
   text_exists?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type CfMicrocopyResourceNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfMicrocopyResourceNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfMicrocopyResourceNestedFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  key?: InputMaybe<Scalars['String']['input']>;
+  key_contains?: InputMaybe<Scalars['String']['input']>;
+  key_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  key_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  key_not?: InputMaybe<Scalars['String']['input']>;
+  key_not_contains?: InputMaybe<Scalars['String']['input']>;
+  key_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  value?: InputMaybe<Scalars['String']['input']>;
+  value_contains?: InputMaybe<Scalars['String']['input']>;
+  value_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  value_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  value_not?: InputMaybe<Scalars['String']['input']>;
+  value_not_contains?: InputMaybe<Scalars['String']['input']>;
+  value_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type CfParagraphsNestedFilter = {

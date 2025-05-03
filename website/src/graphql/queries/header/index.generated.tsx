@@ -7,98 +7,211 @@ export type GetHeaderQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
   registerPatientId: Types.Scalars['String']['input'];
   donateId: Types.Scalars['String']['input'];
-  aboutBbsoasId: Types.Scalars['String']['input'];
-  livingWithBbsoasId: Types.Scalars['String']['input'];
-  researchId: Types.Scalars['String']['input'];
-  aboutUsId: Types.Scalars['String']['input'];
-  supportUsId: Types.Scalars['String']['input'];
+  aboutCopiesId: Types.Scalars['String']['input'];
+  aboutUsLinkOrganisationId: Types.Scalars['String']['input'];
+  aboutUsLinkOurStrategyId: Types.Scalars['String']['input'];
+  aboutUsLinkOurNewsId: Types.Scalars['String']['input'];
+  aboutUsLinkFinancialsId: Types.Scalars['String']['input'];
+  aboutUsLinkParnershipsId: Types.Scalars['String']['input'];
+  aboutUsLinkConferenceId: Types.Scalars['String']['input'];
+  whatIsBbsoasLinkId: Types.Scalars['String']['input'];
+  contactUsLinkId: Types.Scalars['String']['input'];
+  livingWithBbsoasMicrocopyId: Types.Scalars['String']['input'];
+  livingWithBbsoasLinkId: Types.Scalars['String']['input'];
+  registerABbsoasPatientLinkId: Types.Scalars['String']['input'];
+  supportGroupsLinkId: Types.Scalars['String']['input'];
+  researchMicrocopyId: Types.Scalars['String']['input'];
+  researchLinkId: Types.Scalars['String']['input'];
+  publicationsLinkId: Types.Scalars['String']['input'];
+  forResearchersLinkId: Types.Scalars['String']['input'];
+  supportUsMicrocopyId: Types.Scalars['String']['input'];
+  supportUsLinkId: Types.Scalars['String']['input'];
+  volunteerLinkId: Types.Scalars['String']['input'];
+  shopLinkId: Types.Scalars['String']['input'];
 }>;
 
 
-export type GetHeaderQuery = { __typename?: 'Query', registerPatient?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null, donate?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null, aboutBbsoas?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null> } | null } | null, livingWithBbsoas?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null> } | null } | null, research?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null> } | null } | null, aboutUs?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null> } | null } | null, supportUs?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null> } | null } | null };
+export type GetHeaderQuery = { __typename?: 'Query', registerPatient?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, donate?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, aboutUsCopies?: { __typename?: 'ResourceSet', resourcesCollection?: { __typename?: 'ResourceSetResourcesCollection', items: Array<{ __typename?: 'MicrocopyResource', key?: string | null, value?: string | null } | null> } | null } | null, aboutUsLinkOrganisation?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, aboutUsLinkOurStrategy?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, aboutUsLinkOurNews?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, aboutUsFinancials?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, aboutUsParnerships?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, aboutUsConference?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, whatIsBbsoas?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, contactUs?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, livingWithBbsoasMicrocopy?: { __typename?: 'MicrocopyResource', value?: string | null } | null, livingWithBbsoasLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, registerABbsoasPatientLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, supportGroupsLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, researchMicrocopy?: { __typename?: 'MicrocopyResource', value?: string | null } | null, researchLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, publicationsLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, forResearchersLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, supportUsMicrocopy?: { __typename?: 'MicrocopyResource', value?: string | null } | null, supportUsLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, volunteerLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, shopLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null };
 
 
 export const GetHeaderDocument = gql`
-    query GetHeader($locale: String, $registerPatientId: String!, $donateId: String!, $aboutBbsoasId: String!, $livingWithBbsoasId: String!, $researchId: String!, $aboutUsId: String!, $supportUsId: String!) {
-  registerPatient: link(id: $registerPatientId, locale: $locale) {
-    target {
-      url
-    }
+    query GetHeader($locale: String, $registerPatientId: String!, $donateId: String!, $aboutCopiesId: String!, $aboutUsLinkOrganisationId: String!, $aboutUsLinkOurStrategyId: String!, $aboutUsLinkOurNewsId: String!, $aboutUsLinkFinancialsId: String!, $aboutUsLinkParnershipsId: String!, $aboutUsLinkConferenceId: String!, $whatIsBbsoasLinkId: String!, $contactUsLinkId: String!, $livingWithBbsoasMicrocopyId: String!, $livingWithBbsoasLinkId: String!, $registerABbsoasPatientLinkId: String!, $supportGroupsLinkId: String!, $researchMicrocopyId: String!, $researchLinkId: String!, $publicationsLinkId: String!, $forResearchersLinkId: String!, $supportUsMicrocopyId: String!, $supportUsLinkId: String!, $volunteerLinkId: String!, $shopLinkId: String!) {
+  registerPatient: link(locale: $locale, id: $registerPatientId) {
     text {
       content
     }
-  }
-  donate: link(id: $donateId, locale: $locale) {
     target {
       url
     }
+  }
+  donate: link(locale: $locale, id: $donateId) {
     text {
       content
     }
+    target {
+      url
+    }
   }
-  aboutBbsoas: navigationList(id: $aboutBbsoasId, locale: $locale) {
-    name
-    linksCollection(locale: $locale) {
+  aboutUsCopies: resourceSet(locale: $locale, id: $aboutCopiesId) {
+    resourcesCollection {
       items {
-        target {
-          url
-        }
-        text {
-          content
-        }
+        key
+        value
       }
     }
   }
-  livingWithBbsoas: navigationList(id: $livingWithBbsoasId, locale: $locale) {
-    name
-    linksCollection(locale: $locale) {
-      items {
-        target {
-          url
-        }
-        text {
-          content
-        }
-      }
+  aboutUsLinkOrganisation: link(locale: $locale, id: $aboutUsLinkOrganisationId) {
+    text {
+      content
+    }
+    target {
+      url
     }
   }
-  research: navigationList(id: $researchId, locale: $locale) {
-    name
-    linksCollection(locale: $locale) {
-      items {
-        target {
-          url
-        }
-        text {
-          content
-        }
-      }
+  aboutUsLinkOurStrategy: link(locale: $locale, id: $aboutUsLinkOurStrategyId) {
+    text {
+      content
+    }
+    target {
+      url
     }
   }
-  aboutUs: navigationList(id: $aboutUsId, locale: $locale) {
-    name
-    linksCollection(locale: $locale) {
-      items {
-        target {
-          url
-        }
-        text {
-          content
-        }
-      }
+  aboutUsLinkOurNews: link(locale: $locale, id: $aboutUsLinkOurNewsId) {
+    text {
+      content
+    }
+    target {
+      url
     }
   }
-  supportUs: navigationList(id: $supportUsId, locale: $locale) {
-    name
-    linksCollection(locale: $locale) {
-      items {
-        target {
-          url
-        }
-        text {
-          content
-        }
-      }
+  aboutUsFinancials: link(locale: $locale, id: $aboutUsLinkFinancialsId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  aboutUsParnerships: link(locale: $locale, id: $aboutUsLinkParnershipsId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  aboutUsConference: link(locale: $locale, id: $aboutUsLinkConferenceId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  whatIsBbsoas: link(locale: $locale, id: $whatIsBbsoasLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  contactUs: link(locale: $locale, id: $contactUsLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  livingWithBbsoasMicrocopy: microcopyResource(
+    locale: $locale
+    id: $livingWithBbsoasMicrocopyId
+  ) {
+    value
+  }
+  livingWithBbsoasLink: link(locale: $locale, id: $livingWithBbsoasLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  registerABbsoasPatientLink: link(
+    locale: $locale
+    id: $registerABbsoasPatientLinkId
+  ) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  supportGroupsLink: link(locale: $locale, id: $supportGroupsLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  researchMicrocopy: microcopyResource(locale: $locale, id: $researchMicrocopyId) {
+    value
+  }
+  researchLink: link(locale: $locale, id: $researchLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  publicationsLink: link(locale: $locale, id: $publicationsLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  forResearchersLink: link(locale: $locale, id: $forResearchersLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  supportUsMicrocopy: microcopyResource(
+    locale: $locale
+    id: $supportUsMicrocopyId
+  ) {
+    value
+  }
+  supportUsLink: link(locale: $locale, id: $supportUsLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  volunteerLink: link(locale: $locale, id: $volunteerLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  shopLink: link(locale: $locale, id: $shopLinkId) {
+    text {
+      content
+    }
+    target {
+      url
     }
   }
 }
@@ -119,11 +232,27 @@ export const GetHeaderDocument = gql`
  *      locale: // value for 'locale'
  *      registerPatientId: // value for 'registerPatientId'
  *      donateId: // value for 'donateId'
- *      aboutBbsoasId: // value for 'aboutBbsoasId'
- *      livingWithBbsoasId: // value for 'livingWithBbsoasId'
- *      researchId: // value for 'researchId'
- *      aboutUsId: // value for 'aboutUsId'
- *      supportUsId: // value for 'supportUsId'
+ *      aboutCopiesId: // value for 'aboutCopiesId'
+ *      aboutUsLinkOrganisationId: // value for 'aboutUsLinkOrganisationId'
+ *      aboutUsLinkOurStrategyId: // value for 'aboutUsLinkOurStrategyId'
+ *      aboutUsLinkOurNewsId: // value for 'aboutUsLinkOurNewsId'
+ *      aboutUsLinkFinancialsId: // value for 'aboutUsLinkFinancialsId'
+ *      aboutUsLinkParnershipsId: // value for 'aboutUsLinkParnershipsId'
+ *      aboutUsLinkConferenceId: // value for 'aboutUsLinkConferenceId'
+ *      whatIsBbsoasLinkId: // value for 'whatIsBbsoasLinkId'
+ *      contactUsLinkId: // value for 'contactUsLinkId'
+ *      livingWithBbsoasMicrocopyId: // value for 'livingWithBbsoasMicrocopyId'
+ *      livingWithBbsoasLinkId: // value for 'livingWithBbsoasLinkId'
+ *      registerABbsoasPatientLinkId: // value for 'registerABbsoasPatientLinkId'
+ *      supportGroupsLinkId: // value for 'supportGroupsLinkId'
+ *      researchMicrocopyId: // value for 'researchMicrocopyId'
+ *      researchLinkId: // value for 'researchLinkId'
+ *      publicationsLinkId: // value for 'publicationsLinkId'
+ *      forResearchersLinkId: // value for 'forResearchersLinkId'
+ *      supportUsMicrocopyId: // value for 'supportUsMicrocopyId'
+ *      supportUsLinkId: // value for 'supportUsLinkId'
+ *      volunteerLinkId: // value for 'volunteerLinkId'
+ *      shopLinkId: // value for 'shopLinkId'
  *   },
  * });
  */
