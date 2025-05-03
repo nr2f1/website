@@ -25,3 +25,6 @@ export const contactUsLinkId = '7zlG9xJl2zFDZtJnb035vi';
 export const livingWithBbsoasLinkId = '26dmwsHAITA0oBAv5RCUHF';
 export const registerABbsoasPatientLinkId = '4SggMyhPX5SboxBjnZy51P';
 export const supportGroupsLinkId = 'IKD704qiG5a5ulCGLFgZc';
+export const researchLinkId = '4hAFfmRSjOSF6a0DfX1m9r';
+export const publicationsLinkId = '5V8x3yb4RE1613k7l8xh3o';
+export const forResearchersLinkId = '3zEOmyg8ZvDWnBq5mq0L8u';

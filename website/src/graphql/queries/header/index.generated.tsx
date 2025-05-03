@@ -35,10 +35,14 @@ export type GetNewHeaderQueryVariables = Types.Exact<{
   livingWithBbsoasLinkId: Types.Scalars['String']['input'];
   registerABbsoasPatientLinkId: Types.Scalars['String']['input'];
   supportGroupsLinkId: Types.Scalars['String']['input'];
+  researchMicrocopyId: Types.Scalars['String']['input'];
+  researchLinkId: Types.Scalars['String']['input'];
+  publicationsLinkId: Types.Scalars['String']['input'];
+  forResearchersLinkId: Types.Scalars['String']['input'];
 }>;
 
 
-export type GetNewHeaderQuery = { __typename?: 'Query', registerPatient?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, donate?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, aboutUsCopies?: { __typename?: 'ResourceSet', resourcesCollection?: { __typename?: 'ResourceSetResourcesCollection', items: Array<{ __typename?: 'MicrocopyResource', key?: string | null, value?: string | null } | null> } | null } | null, aboutUsLinkOrganisation?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, aboutUsLinkOurStrategy?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, aboutUsLinkOurNews?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, aboutUsFinancials?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, aboutUsParnerships?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, aboutUsConference?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, whatIsBbsoas?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, contactUs?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, livingWithBbsoasMicrocopy?: { __typename?: 'MicrocopyResource', value?: string | null } | null, livingWithBbsoasLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, registerABbsoasPatientLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, supportGroupsLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null };
+export type GetNewHeaderQuery = { __typename?: 'Query', registerPatient?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, donate?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, aboutUsCopies?: { __typename?: 'ResourceSet', resourcesCollection?: { __typename?: 'ResourceSetResourcesCollection', items: Array<{ __typename?: 'MicrocopyResource', key?: string | null, value?: string | null } | null> } | null } | null, aboutUsLinkOrganisation?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, aboutUsLinkOurStrategy?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, aboutUsLinkOurNews?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, aboutUsFinancials?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, aboutUsParnerships?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, aboutUsConference?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, whatIsBbsoas?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, contactUs?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, livingWithBbsoasMicrocopy?: { __typename?: 'MicrocopyResource', value?: string | null } | null, livingWithBbsoasLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, registerABbsoasPatientLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, supportGroupsLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, researchMicrocopy?: { __typename?: 'MicrocopyResource', value?: string | null } | null, researchLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, publicationsLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, forResearchersLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null };
 
 
 export const GetHeaderDocument = gql`
@@ -168,7 +172,7 @@ export type GetHeaderLazyQueryHookResult = ReturnType<typeof useGetHeaderLazyQue
 export type GetHeaderSuspenseQueryHookResult = ReturnType<typeof useGetHeaderSuspenseQuery>;
 export type GetHeaderQueryResult = Apollo.QueryResult<GetHeaderQuery, GetHeaderQueryVariables>;
 export const GetNewHeaderDocument = gql`
-    query GetNewHeader($locale: String, $registerPatientId: String!, $donateId: String!, $aboutCopiesId: String!, $aboutUsLinkOrganisationId: String!, $aboutUsLinkOurStrategyId: String!, $aboutUsLinkOurNewsId: String!, $aboutUsLinkFinancialsId: String!, $aboutUsLinkParnershipsId: String!, $aboutUsLinkConferenceId: String!, $whatIsBbsoasLinkId: String!, $contactUsLinkId: String!, $livingWithBbsoasMicrocopyId: String!, $livingWithBbsoasLinkId: String!, $registerABbsoasPatientLinkId: String!, $supportGroupsLinkId: String!) {
+    query GetNewHeader($locale: String, $registerPatientId: String!, $donateId: String!, $aboutCopiesId: String!, $aboutUsLinkOrganisationId: String!, $aboutUsLinkOurStrategyId: String!, $aboutUsLinkOurNewsId: String!, $aboutUsLinkFinancialsId: String!, $aboutUsLinkParnershipsId: String!, $aboutUsLinkConferenceId: String!, $whatIsBbsoasLinkId: String!, $contactUsLinkId: String!, $livingWithBbsoasMicrocopyId: String!, $livingWithBbsoasLinkId: String!, $registerABbsoasPatientLinkId: String!, $supportGroupsLinkId: String!, $researchMicrocopyId: String!, $researchLinkId: String!, $publicationsLinkId: String!, $forResearchersLinkId: String!) {
   registerPatient: link(locale: $locale, id: $registerPatientId) {
     text {
       content
@@ -290,6 +294,33 @@ export const GetNewHeaderDocument = gql`
       url
     }
   }
+  researchMicrocopy: microcopyResource(locale: $locale, id: $researchMicrocopyId) {
+    value
+  }
+  researchLink: link(locale: $locale, id: $researchLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  publicationsLink: link(locale: $locale, id: $publicationsLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  forResearchersLink: link(locale: $locale, id: $forResearchersLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
 }
     `;
 
@@ -321,6 +352,10 @@ export const GetNewHeaderDocument = gql`
  *      livingWithBbsoasLinkId: // value for 'livingWithBbsoasLinkId'
  *      registerABbsoasPatientLinkId: // value for 'registerABbsoasPatientLinkId'
  *      supportGroupsLinkId: // value for 'supportGroupsLinkId'
+ *      researchMicrocopyId: // value for 'researchMicrocopyId'
+ *      researchLinkId: // value for 'researchLinkId'
+ *      publicationsLinkId: // value for 'publicationsLinkId'
+ *      forResearchersLinkId: // value for 'forResearchersLinkId'
  *   },
  * });
  */

@@ -14,13 +14,19 @@ import {
   aboutUsLinkParnershipsId,
   contactUsLinkId,
   donateId,
+  forResearchersLinkId,
   livingWithBbsoasLinkId,
+  publicationsLinkId,
   registerABbsoasPatientLinkId,
   registerPatientId,
+  researchLinkId,
   supportGroupsLinkId,
   whatIsBbsoasLinkId,
 } from '@models/links';
-import { livingWithBbsoasMicrocopyId } from '@models/resource';
+import {
+  livingWithBbsoasMicrocopyId,
+  researchMicrocopyId,
+} from '@models/resource';
 import { aboutCopiesId } from '@models/resource-sets';
 import type { LocalisedLinkProps } from '@shared/types/link';
 import Link from 'next/link';
@@ -95,6 +101,10 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
       livingWithBbsoasLinkId,
       registerABbsoasPatientLinkId,
       supportGroupsLinkId,
+      researchMicrocopyId,
+      researchLinkId,
+      publicationsLinkId,
+      forResearchersLinkId,
     },
   });
 
@@ -118,6 +128,10 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
     livingWithBbsoasLink,
     registerABbsoasPatientLink,
     supportGroupsLink,
+    researchMicrocopy,
+    researchLink,
+    publicationsLink,
+    forResearchersLink,
   } = data;
 
   const [title, whoWeAre, whatWeDo] =
@@ -232,16 +246,22 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
                 </li>
               </ul>
             </NavList>
-            <NavList name="Research">
+            <NavList name={researchMicrocopy?.value ?? ''}>
               <ul>
                 <li>
-                  <Link href="/">Research</Link>
+                  <Link href={researchLink?.target?.url ?? '/'}>
+                    {researchLink?.text?.content ?? ''}
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/">Publications</Link>
+                  <Link href={publicationsLink?.target?.url ?? '/'}>
+                    {publicationsLink?.text?.content ?? ''}
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/">For researchers</Link>
+                  <Link href={forResearchersLink?.target?.url ?? '/'}>
+                    {forResearchersLink?.text?.content ?? ''}
+                  </Link>
                 </li>
               </ul>
             </NavList>

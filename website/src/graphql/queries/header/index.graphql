@@ -115,6 +115,10 @@ query GetNewHeader(
   $livingWithBbsoasLinkId: String!
   $registerABbsoasPatientLinkId: String!
   $supportGroupsLinkId: String!
+  $researchMicrocopyId: String!
+  $researchLinkId: String!
+  $publicationsLinkId: String!
+  $forResearchersLinkId: String!
 ) {
   registerPatient: link(locale: $locale, id: $registerPatientId) {
     text {
@@ -242,4 +246,35 @@ query GetNewHeader(
       url
     }
   }
+
+  researchMicrocopy: microcopyResource(locale: $locale, id: $researchMicrocopyId) {
+     value
+   }
+
+   researchLink: link(locale: $locale, id: $researchLinkId) {
+     text {
+       content
+     }
+     target {
+       url
+     }
+   }
+
+   publicationsLink: link(locale: $locale, id: $publicationsLinkId) {
+     text {
+       content
+     }
+     target {
+       url
+     }
+   }
+
+   forResearchersLink: link(locale: $locale, id: $forResearchersLinkId) {
+     text {
+       content
+     }
+     target {
+       url
+     }
+   }
 }
