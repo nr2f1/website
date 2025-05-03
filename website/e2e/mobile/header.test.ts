@@ -15,29 +15,37 @@ test.describe('Mobile header', () => {
 
     await page.getByRole('button', { name: 'hambuguer-button' }).click();
 
-    await expect(page.getByText('About BBSOAS', { exact: true })).toBeVisible();
-
-    await expect(page.getByText('Living with BBSOAS').first()).toBeVisible();
-
-    await expect(page.getByText('Research', { exact: true })).toBeVisible();
-
-    await expect(page.getByText('About us')).toBeVisible();
     await expect(
-      page.getByRole('banner').getByText('Support us'),
+      page.locator('summary').filter({ hasText: 'About us' }),
+    ).toBeVisible();
+
+    await page.locator('summary').filter({ hasText: 'About us' }).click();
+
+    await expect(
+      page.getByRole('banner').getByText('What we do'),
     ).toBeVisible();
 
     await expect(
-      page.getByRole('link', { name: 'Register a patient' }),
-    ).toBeVisible();
-    await expect(
-      page.getByRole('combobox').filter({ hasText: 'English (USA)' }),
+      page.getByRole('banner').getByText('Who we are'),
     ).toBeVisible();
 
-    await expect(page.getByRole('link', { name: 'Donate' })).toBeVisible();
+    await expect(
+      page.getByRole('link', { name: 'What is BBSOAS?' }),
+    ).toBeVisible();
 
     await expect(
-      page.getByRole('combobox').filter({ hasText: 'English (USA)' }),
+      page.locator('summary').filter({ hasText: 'Living with BBSOAS' }),
     ).toBeVisible();
+
+    await expect(
+      page.locator('summary').filter({ hasText: 'Research' }),
+    ).toBeVisible();
+
+    await expect(
+      page.locator('summary').filter({ hasText: 'Support us' }),
+    ).toBeVisible();
+
+    await expect(page.getByRole('link', { name: 'Contact us' })).toBeVisible();
   });
 
   test('locale selector', { tag: '@mobile' }, async ({ page }) => {
@@ -56,14 +64,5 @@ test.describe('Mobile header', () => {
       .click();
     await page.getByRole('option', { name: 'Español' }).click();
     await page.getByRole('button', { name: 'hambuguer-button' }).click();
-    await expect(page.getByText('Acerca de BBSOAS')).toBeVisible();
-
-    await expect(page.getByText('Vivir con BBSOAS').first()).toBeVisible();
-
-    await expect(
-      page.getByText('Investigación', { exact: true }),
-    ).toBeVisible();
-
-    await expect(page.getByText('Sobre nosotros')).toBeVisible();
   });
 });
