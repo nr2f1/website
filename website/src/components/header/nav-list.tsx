@@ -9,35 +9,17 @@ interface NavListProps {
 }
 
 const NavList = ({ name, children, nested = false }: NavListProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleOnBlur = () => {
-    setIsOpen(false);
-  };
-
-  const handleOnClick = (event: React.MouseEvent) => {
-    event.preventDefault();
-    setIsOpen(!isOpen);
-  };
-
-  const handleOnKeyUp = (event: React.KeyboardEvent) => {
-    setIsOpen(true);
-  };
-
   return (
     // @ts-ignore
     // name it is a valid attribute for details:
     // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
     <details
+      name="dev"
       className={
         nested
           ? [styles.details, styles.details__nested].join(' ')
           : styles.details
       }
-      onBlur={handleOnBlur}
-      onClick={handleOnClick}
-      onKeyUp={handleOnKeyUp}
-      open={isOpen}
     >
       <summary>
         <span>{name}</span>
