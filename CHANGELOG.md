@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.2.0](https://github.com/nr2f1/website/compare/v2.1.1...v2.2.0) (2025-05-16)
+
+
+### Features
+
+* navlist close on blur ([c67a26c](https://github.com/nr2f1/website/commit/c67a26cc959a3a84351eae6d7ecbb979755b902f))
+* navlist close on blur ([#238](https://github.com/nr2f1/website/issues/238)) ([b5a4d48](https://github.com/nr2f1/website/commit/b5a4d486f6562f0e45cbfef72bc9d763623fd525))
+
 ## [2.1.1](https://github.com/nr2f1/website/compare/v2.1.0...v2.1.1) (2025-05-03)
 
 
