@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.2.1](https://github.com/nr2f1/website/compare/v2.2.0...v2.2.1) (2025-05-16)
+
+
+### Bug Fixes
+
+* header navigation ([de5b42d](https://github.com/nr2f1/website/commit/de5b42d01933b8efd8f17529736de439af693e72))
+* header navigation ([#240](https://github.com/nr2f1/website/issues/240)) ([dc751b4](https://github.com/nr2f1/website/commit/dc751b49f4cbb2298dc614e11b1a0a764ba9d2e0))
+
 ## [2.2.0](https://github.com/nr2f1/website/compare/v2.1.1...v2.2.0) (2025-05-16)
 
 
