@@ -166,6 +166,7 @@
         line-height: 200%;
         letter-spacing: 0.04375rem;
         text-transform: uppercase;
+        display: block;
         padding: var(--spacing-2) var(--spacing-3);
         @include breakpoints.from-small-to-medium-screen {
           padding: var(--spacing-2);
