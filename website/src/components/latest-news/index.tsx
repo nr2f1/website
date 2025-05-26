@@ -6,7 +6,11 @@ import {
   GetLatestNewsDocument,
   type GetLatestNewsQuery,
 } from '@graphql/queries/latest-news/index.generated';
-import type { BlogPageCollection, NewsletterCollection } from '@graphql/types';
+import type {
+  BlogPageCollection,
+  NewsletterCollection,
+  PodcastCollection,
+} from '@graphql/types';
 import type { AvailableLocale } from '@i18n/locales';
 import { latestNewsTitleId } from '@models/headings';
 import { latestNewsCtaId } from '@models/links';
@@ -29,11 +33,18 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
     },
   });
 
-  if (error || !data || !data.cta || !data.posts || !data.title) {
+  if (
+    error ||
+    !data ||
+    !data.cta ||
+    !data.posts ||
+    !data.title ||
+    !data.podcasts
+  ) {
     return null;
   }
 
-  const { title, cta, posts, newsletters } = data;
+  const { title, cta, posts, newsletters, podcasts } = data;
 
   if (!posts.items || !newsletters?.items) {
     return null;
@@ -42,6 +53,7 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
   const news = fromBlogNewsletterToNews({
     posts: posts.items as BlogPageCollection['items'],
     newsletters: newsletters.items as NewsletterCollection['items'],
+    podcasts: podcasts.items as PodcastCollection['items'],
     limit: 6,
   });
 

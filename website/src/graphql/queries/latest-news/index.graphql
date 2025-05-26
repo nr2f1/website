@@ -27,6 +27,14 @@ query GetLatestNews(
     }
   }
 
+  podcasts: podcastCollection(limit:6, order: date_ASC) {
+    items {
+      title
+      date
+      url
+    }
+  }
+
   cta: link(id: $latestNewsCtaId, locale: $locale) {
     target {
       url
