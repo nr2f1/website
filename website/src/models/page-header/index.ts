@@ -5,3 +5,4 @@ export const whatIsBbsoasPageHeaderId = '1WpGimhMzoBItRIgTlSUOF';
 export const strategicPlanPageHeaderId = '6PYljX28yh8o6RStnsx5FN';
 export const livingWithBbsoasPageHeaderId = '1zxOsUCWWk5ABV84hYD1EB';
 export const supportGroupsPageHeaderId = '52T3dTQigmpbQWzTkRryWf';
+export const shopPageHeaderId = '6ESGZZzt3v6UNVCPhzE4fR';
