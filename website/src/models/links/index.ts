@@ -31,3 +31,5 @@ export const forResearchersLinkId = '3zEOmyg8ZvDWnBq5mq0L8u';
 export const supportUsLinkId = '5SRoXh7o51CaK92GkkjVPV';
 export const volunteerLinkId = '4x61I4JOzWOSf9iCr1HcPj';
 export const shopLinkId = '75AvABQHLwuepqRLvpii8C';
+// Shop
+export const shopLinkCtaId = '1UWPSsBvmsP8oQ3vVXPQCc';

@@ -1,0 +1,18 @@
+query GetShop($locale: String, $shopHeadingId: String!, $shopParagraphsId: String!, $shopLinkCtaId: String!) {
+  heading(locale: $locale, id: $shopHeadingId) {
+    content
+  }
+  paragraphs(locale: $locale, id: $shopParagraphsId) {
+    content {
+      json
+    }
+  }
+  link(locale: $locale, id: $shopLinkCtaId) {
+    target {
+      url
+    }
+    text {
+      content
+    }
+  }
+}
