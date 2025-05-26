@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.3.0](https://github.com/nr2f1/website/compare/v2.2.1...v2.3.0) (2025-05-26)
+
+
+### Features
+
+* add podcast to latest news in the homepage ([40d579d](https://github.com/nr2f1/website/commit/40d579da2d1a8a88baff047904816e6b052b522e))
+* add podcats to news ([bfd4d68](https://github.com/nr2f1/website/commit/bfd4d68b5b2db181ccdbe7982a8e25b77a02686c))
+* podcast news ([#244](https://github.com/nr2f1/website/issues/244)) ([b3100fb](https://github.com/nr2f1/website/commit/b3100fb9510eb14aa45fa3e16ac887df70315f4e))
+* shop page ([17f7dbd](https://github.com/nr2f1/website/commit/17f7dbdc46522d805c43683007c4f6a72ce86f59))
+* shop page ([#242](https://github.com/nr2f1/website/issues/242)) ([b290780](https://github.com/nr2f1/website/commit/b290780ab9c475c4c71300665cda73722a92a6a5))
+
 ## [2.2.1](https://github.com/nr2f1/website/compare/v2.2.0...v2.2.1) (2025-05-16)
 
 
