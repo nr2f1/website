@@ -1,5 +1,9 @@
 import type { NewsCardProps } from '@components/news-card';
-import type { BlogPageCollection, NewsletterCollection } from '@graphql/types';
+import type {
+  BlogPageCollection,
+  NewsletterCollection,
+  PodcastCollection,
+} from '@graphql/types';
 import { News } from '@shared/types/news';
 
 type NewsCard = Omit<NewsCardProps, 'lang'>;
@@ -7,12 +11,14 @@ type NewsCard = Omit<NewsCardProps, 'lang'>;
 interface FromBlogNewsletterToNews {
   posts: BlogPageCollection['items'];
   newsletters: NewsletterCollection['items'];
+  podcasts: PodcastCollection['items'];
   limit: number;
 }
 
 export const fromBlogNewsletterToNews = ({
   posts,
   newsletters,
+  podcasts,
   limit,
 }: FromBlogNewsletterToNews) => {
   const blogPostsAsNews: NewsCard[] = posts.map((post) => ({
@@ -30,7 +36,18 @@ export const fromBlogNewsletterToNews = ({
     type: News.NEWSLETTER,
   }));
 
-  const allNewsSorted = [...blogPostsAsNews, ...newslettersAsNews].sort(
+  const podcastsAsNews: NewsCard[] = podcasts.map((podcast) => ({
+    date: podcast?.date ?? ('' as string),
+    title: podcast?.title ?? '',
+    url: podcast?.url ?? '',
+    type: News.PODCAST,
+  }));
+
+  const allNewsSorted = [
+    ...blogPostsAsNews,
+    ...newslettersAsNews,
+    ...podcastsAsNews,
+  ].sort(
     (newsA, newsB) =>
       new Date(newsB.date).getTime() - new Date(newsA.date).getTime(),
   );

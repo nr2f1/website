@@ -69,6 +69,23 @@ const NewsCard: React.FC<NewsCardProps> = ({
   });
 
   switch (type) {
+    case News.PODCAST:
+      return (
+        <li className={styles.article}>
+          <a href={url}>
+            <article>
+              <div className={styles.article__newsletter_img} />
+              <div>
+                <p className={styles.article__label}>Podcast</p>
+                <h2>{title}</h2>
+                <p className={styles.article__date}>
+                  <time dateTime={dateTime}>{publishedString}</time>
+                </p>
+              </div>
+            </article>
+          </a>
+        </li>
+      );
     case News.NEWSLETTER:
       return (
         <li className={styles.article}>

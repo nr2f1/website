@@ -8,13 +8,13 @@ export type GetNewsQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetNewsQuery = { __typename?: 'Query', entryCollection?: { __typename?: 'EntryCollection', total: number, items: Array<{ __typename?: 'Accordion' } | { __typename?: 'Banner' } | { __typename: 'BlogPage', title?: string | null, slug?: string | null, date?: any | null, excerpt?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | { __typename?: 'BoardMember' } | { __typename?: 'Heading' } | { __typename?: 'HtmlHeadMetadata' } | { __typename?: 'Hyperlink' } | { __typename?: 'Image' } | { __typename?: 'Link' } | { __typename?: 'LinkContent' } | { __typename?: 'MicrocopyResource' } | { __typename?: 'NavigationList' } | { __typename: 'Newsletter', date?: any | null, newsletterContent?: { __typename?: 'Asset', url?: string | null } | null } | { __typename?: 'PageHeader' } | { __typename?: 'Paragraphs' } | { __typename?: 'Publication' } | { __typename?: 'ResourceSet' } | { __typename?: 'Volunteer' } | null> } | null };
+export type GetNewsQuery = { __typename?: 'Query', entryCollection?: { __typename?: 'EntryCollection', total: number, items: Array<{ __typename?: 'Accordion' } | { __typename?: 'Banner' } | { __typename: 'BlogPage', title?: string | null, slug?: string | null, date?: any | null, excerpt?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | { __typename?: 'BoardMember' } | { __typename?: 'Heading' } | { __typename?: 'HtmlHeadMetadata' } | { __typename?: 'Hyperlink' } | { __typename?: 'Image' } | { __typename?: 'Link' } | { __typename?: 'LinkContent' } | { __typename?: 'MicrocopyResource' } | { __typename?: 'NavigationList' } | { __typename: 'Newsletter', date?: any | null, newsletterContent?: { __typename?: 'Asset', url?: string | null } | null } | { __typename?: 'PageHeader' } | { __typename?: 'Paragraphs' } | { __typename: 'Podcast', date?: any | null, url?: string | null, title?: string | null, name?: string | null } | { __typename?: 'Publication' } | { __typename?: 'ResourceSet' } | { __typename?: 'Volunteer' } | null> } | null };
 
 
 export const GetNewsDocument = gql`
     query GetNews($locale: String) {
   entryCollection(
-    where: {contentfulMetadata: {tags_exists: true, tags: {id_contains_some: ["blog", "newsletter"]}}}
+    where: {contentfulMetadata: {tags_exists: true, tags: {id_contains_some: ["blog", "newsletter", "podcast"]}}}
     locale: $locale
   ) {
     total
@@ -35,6 +35,13 @@ export const GetNewsDocument = gql`
         newsletterContent {
           url
         }
+      }
+      ... on Podcast {
+        __typename
+        date
+        url
+        title
+        name
       }
     }
   }

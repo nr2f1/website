@@ -7,7 +7,11 @@ import {
   GetNewsDocument,
   type GetNewsQuery,
 } from '@graphql/queries/news/index.generated';
-import type { BlogPageCollection, NewsletterCollection } from '@graphql/types';
+import type {
+  BlogPageCollection,
+  NewsletterCollection,
+  PodcastCollection,
+} from '@graphql/types';
 import type { AvailableLocale } from '@i18n/locales';
 import { News } from '@shared/types/news';
 import { fromBlogNewsletterToNews } from '@shared/utils/from-blog-newsletter-to-news';
@@ -58,9 +62,12 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
     (item) => item?.__typename === 'Newsletter',
   );
 
+  const rawPodcast = items.filter((item) => item?.__typename === 'Podcast');
+
   const allNews = fromBlogNewsletterToNews({
     posts: rawPosts as BlogPageCollection['items'],
     newsletters: rawNewsletter as NewsletterCollection['items'],
+    podcasts: rawPodcast as PodcastCollection['items'],
     limit: total,
   });
 

@@ -1,11 +1,6 @@
 query GetNews($locale: String) {
   entryCollection(
-    where: {
-      contentfulMetadata: {
-        tags_exists: true
-        tags: { id_contains_some: ["blog", "newsletter"] }
-      }
-    }
+    where: {contentfulMetadata: {tags_exists: true, tags: {id_contains_some: ["blog", "newsletter", "podcast"]}}}
     locale: $locale
   ) {
     total
@@ -26,6 +21,13 @@ query GetNews($locale: String) {
         newsletterContent {
           url
         }
+      }
+      ... on Podcast {
+        __typename
+        date
+        url
+        title
+        name
       }
     }
   }
