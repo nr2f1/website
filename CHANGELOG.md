@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.3.1](https://github.com/nr2f1/website/compare/v2.3.0...v2.3.1) (2025-05-27)
+
+
+### Bug Fixes
+
+* nav menus will close when the pathname or searchParams change ([b267944](https://github.com/nr2f1/website/commit/b26794489d9b4cd4ff3249c0bf3048076a2c417f))
+* nav menus will close when the pathname or searchParams change ([#245](https://github.com/nr2f1/website/issues/245)) ([cc857fd](https://github.com/nr2f1/website/commit/cc857fd335690131beb861167535511fbd623758))
+
 ## [2.3.0](https://github.com/nr2f1/website/compare/v2.2.1...v2.3.0) (2025-05-26)
 
 
