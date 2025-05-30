@@ -74,11 +74,12 @@ const NewsCard: React.FC<NewsCardProps> = ({
         <li className={styles.article}>
           <a href={url}>
             <article>
-              <div className={styles.article__newsletter_img} />
+              <div className={styles.article__podcast_img} />
               <div>
-                <p className={styles.article__label}>Podcast</p>
                 <h2>{title}</h2>
                 <p className={styles.article__date}>
+                  <span className={styles.article__label}>Podcast</span>
+                  <span className={styles.article__separator}>&#8226;</span>
                   <time dateTime={dateTime}>{publishedString}</time>
                 </p>
               </div>
@@ -93,11 +94,12 @@ const NewsCard: React.FC<NewsCardProps> = ({
             <article>
               <div className={styles.article__newsletter_img} />
               <div>
-                <p className={styles.article__label}>
-                  {newsTypeLocale[lang][News.NEWSLETTER]}
-                </p>
                 <h2>{getNewsLetterTitle({ date: title, lang })}</h2>
                 <p className={styles.article__date}>
+                  <span className={styles.article__label}>
+                    {newsTypeLocale[lang][News.NEWSLETTER]}
+                  </span>
+                  <span className={styles.article__separator}>&#8226;</span>
                   <time dateTime={dateTime}>{publishedString}</time>
                 </p>
               </div>
@@ -117,11 +119,12 @@ const NewsCard: React.FC<NewsCardProps> = ({
                 }}
               />
               <div>
-                <p className={styles.article__label}>
-                  {newsTypeLocale[lang][News.BLOG]}
-                </p>
                 <h2>{title}</h2>
                 <p className={styles.article__date}>
+                  <span className={styles.article__label}>
+                    {newsTypeLocale[lang][News.BLOG]}
+                  </span>
+                  <span className={styles.article__separator}>&#8226;</span>
                   <time dateTime={dateTime}>{publishedString}</time>
                 </p>
               </div>
