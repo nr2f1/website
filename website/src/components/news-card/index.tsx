@@ -110,7 +110,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
     default:
       return (
         <li className={styles.article}>
-          <Link href={`/news/${url}`}>
+          <Link href={`/news/blog/${url}`}>
             <article>
               <div
                 className={styles.article__img}
