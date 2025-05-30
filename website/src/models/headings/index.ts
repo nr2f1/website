@@ -46,5 +46,3 @@ export const caregiversHeadingId = 'NNPd8kps37xi2Fzo3py6E';
 export const spanishParentsHeadingId = '2hqfhNwabkTfRjeRFcCAXn';
 export const facebookHeadingId = '1yEoxHYS8lqWAyCuvQ4mUB';
 export const dadsUkHeadingId = '2sz8PsmabEkSUNmc9ccZ5M';
-// Shop
-export const shopHeadingId = 'ye1aaQIIbO2ZoSvxAsk4h';

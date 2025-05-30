@@ -50,14 +50,27 @@
     }
   }
 
+  &__podcast_img {
+    height: var(--spacing-56);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(icons.$podcast);
+
+    @include breakpoints.small-screen {
+      height: var(--spacing-40);
+    }
+  }
+
   & div {
     padding: var(--spacing-4);
   }
 
   &__label {
-    margin: 0;
     @include text-styles.text-link-small;
-    margin-block-end: var(--spacing-1);
+  }
+  &__separator {
+      margin: 0 var(--spacing-2);
   }
 
   &__date {
