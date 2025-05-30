@@ -7,34 +7,6 @@ query GetLatestNews(
     content
   }
 
-  posts: blogPageCollection(locale: $locale, limit: 6, order: date_DESC) {
-    items {
-      title
-      date
-      image {
-        url
-      }
-      slug
-    }
-  }
-
-  newsletters: newsletterCollection(limit: 6, order: date_DESC) {
-    items {
-      date
-      newsletterContent {
-        url
-      }
-    }
-  }
-
-  podcasts: podcastCollection(limit:6, order: date_ASC) {
-    items {
-      title
-      date
-      url
-    }
-  }
-
   cta: link(id: $latestNewsCtaId, locale: $locale) {
     target {
       url
