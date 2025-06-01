@@ -117,6 +117,7 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
           pageSize={LIMIT}
           siblingCount={1}
           lang={lang}
+          paginationPath={'/news/blog'}
         />
       </div>
     </section>
