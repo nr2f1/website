@@ -32,3 +32,18 @@ query GetNews($locale: String) {
     }
   }
 }
+
+
+query GetBlogPosts($locale: String, $limit: Int!, $skip: Int!) {
+  blogPageCollection(locale: $locale, limit: $limit, skip: $skip) {
+    total
+    items {
+      date
+      title
+      slug
+      image {
+        url
+      }
+    }
+  }
+}

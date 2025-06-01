@@ -10,6 +10,15 @@ export type GetNewsQueryVariables = Types.Exact<{
 
 export type GetNewsQuery = { __typename?: 'Query', entryCollection?: { __typename?: 'EntryCollection', total: number, items: Array<{ __typename?: 'Accordion' } | { __typename?: 'Banner' } | { __typename: 'BlogPage', title?: string | null, slug?: string | null, date?: any | null, excerpt?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | { __typename?: 'BoardMember' } | { __typename?: 'Heading' } | { __typename?: 'HtmlHeadMetadata' } | { __typename?: 'Hyperlink' } | { __typename?: 'Image' } | { __typename?: 'Link' } | { __typename?: 'LinkContent' } | { __typename?: 'MicrocopyResource' } | { __typename?: 'NavigationList' } | { __typename: 'Newsletter', date?: any | null, newsletterContent?: { __typename?: 'Asset', url?: string | null } | null } | { __typename?: 'PageHeader' } | { __typename?: 'Paragraphs' } | { __typename: 'Podcast', date?: any | null, url?: string | null, title?: string | null, name?: string | null } | { __typename?: 'Publication' } | { __typename?: 'ResourceSet' } | { __typename?: 'Volunteer' } | null> } | null };
 
+export type GetBlogPostsQueryVariables = Types.Exact<{
+  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
+  limit: Types.Scalars['Int']['input'];
+  skip: Types.Scalars['Int']['input'];
+}>;
+
+
+export type GetBlogPostsQuery = { __typename?: 'Query', blogPageCollection?: { __typename?: 'BlogPageCollection', total: number, items: Array<{ __typename?: 'BlogPage', date?: any | null, title?: string | null, slug?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null };
+
 
 export const GetNewsDocument = gql`
     query GetNews($locale: String) {
@@ -80,3 +89,53 @@ export type GetNewsQueryHookResult = ReturnType<typeof useGetNewsQuery>;
 export type GetNewsLazyQueryHookResult = ReturnType<typeof useGetNewsLazyQuery>;
 export type GetNewsSuspenseQueryHookResult = ReturnType<typeof useGetNewsSuspenseQuery>;
 export type GetNewsQueryResult = Apollo.QueryResult<GetNewsQuery, GetNewsQueryVariables>;
+export const GetBlogPostsDocument = gql`
+    query GetBlogPosts($locale: String, $limit: Int!, $skip: Int!) {
+  blogPageCollection(locale: $locale, limit: $limit, skip: $skip) {
+    total
+    items {
+      date
+      title
+      slug
+      image {
+        url
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetBlogPostsQuery__
+ *
+ * To run a query within a React component, call `useGetBlogPostsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetBlogPostsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetBlogPostsQuery({
+ *   variables: {
+ *      locale: // value for 'locale'
+ *      limit: // value for 'limit'
+ *      skip: // value for 'skip'
+ *   },
+ * });
+ */
+export function useGetBlogPostsQuery(baseOptions: Apollo.QueryHookOptions<GetBlogPostsQuery, GetBlogPostsQueryVariables> & ({ variables: GetBlogPostsQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetBlogPostsQuery, GetBlogPostsQueryVariables>(GetBlogPostsDocument, options);
+      }
+export function useGetBlogPostsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetBlogPostsQuery, GetBlogPostsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetBlogPostsQuery, GetBlogPostsQueryVariables>(GetBlogPostsDocument, options);
+        }
+export function useGetBlogPostsSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetBlogPostsQuery, GetBlogPostsQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetBlogPostsQuery, GetBlogPostsQueryVariables>(GetBlogPostsDocument, options);
+        }
+export type GetBlogPostsQueryHookResult = ReturnType<typeof useGetBlogPostsQuery>;
+export type GetBlogPostsLazyQueryHookResult = ReturnType<typeof useGetBlogPostsLazyQuery>;
+export type GetBlogPostsSuspenseQueryHookResult = ReturnType<typeof useGetBlogPostsSuspenseQuery>;
+export type GetBlogPostsQueryResult = Apollo.QueryResult<GetBlogPostsQuery, GetBlogPostsQueryVariables>;
