@@ -1,26 +1,15 @@
-import NewsCard from '@components/news-card';
 import styles from './page-body.module.scss';
 
+import NewsCard from '@components/news-card';
 import Pagination from '@components/pagination';
 import { getClient } from '@graphql/client';
 import {
   GetBlogPostsDocument,
   type GetBlogPostsQuery,
-  GetNewsDocument,
-  type GetNewsQuery,
 } from '@graphql/queries/news/index.generated';
-import type {
-  BlogPageCollection,
-  NewsletterCollection,
-  PodcastCollection,
-} from '@graphql/types';
 import type { AvailableLocale } from '@i18n/locales';
 import { News } from '@shared/types/news';
-import {
-  type NewsCard,
-  fromBlogNewsletterToNews,
-  fromBlogPostToNews,
-} from '@shared/utils/from-blog-newsletter-to-news';
+
 import type { CollectionPage, WithContext } from 'schema-dts';
 
 interface NewsPageBodyProps {

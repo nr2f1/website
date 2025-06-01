@@ -72,7 +72,11 @@ const Pagination: React.FC<PaginationProps> = ({
         </Link>
       </li>
       {paginationRange.map((pageNumber) => {
-        if (pageNumber === DOTS) {
+        const isDots = pageNumber === DOTS;
+        const isCurrentPage =
+          pageNumber === currentPage || (pageNumber === 1 && currentPage === 0);
+
+        if (isDots) {
           return (
             <li
               className={`${styles.pagination__item} ${styles['pagination__item--dots']}`}
@@ -87,7 +91,7 @@ const Pagination: React.FC<PaginationProps> = ({
           <li
             key={crypto.randomUUID()}
             className={
-              pageNumber === currentPage
+              isCurrentPage
                 ? `${styles.pagination__item} ${styles['pagination__item--selected']}`
                 : styles.pagination__item
             }
