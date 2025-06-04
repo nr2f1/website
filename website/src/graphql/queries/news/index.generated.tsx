@@ -19,6 +19,15 @@ export type GetBlogPostsQueryVariables = Types.Exact<{
 
 export type GetBlogPostsQuery = { __typename?: 'Query', blogPageCollection?: { __typename?: 'BlogPageCollection', total: number, items: Array<{ __typename?: 'BlogPage', date?: any | null, title?: string | null, slug?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null };
 
+export type GetPodcastsQueryVariables = Types.Exact<{
+  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
+  limit: Types.Scalars['Int']['input'];
+  skip: Types.Scalars['Int']['input'];
+}>;
+
+
+export type GetPodcastsQuery = { __typename?: 'Query', podcastCollection?: { __typename?: 'PodcastCollection', total: number, items: Array<{ __typename?: 'Podcast', date?: any | null, title?: string | null, url?: string | null } | null> } | null };
+
 
 export const GetNewsDocument = gql`
     query GetNews($locale: String) {
@@ -139,3 +148,50 @@ export type GetBlogPostsQueryHookResult = ReturnType<typeof useGetBlogPostsQuery
 export type GetBlogPostsLazyQueryHookResult = ReturnType<typeof useGetBlogPostsLazyQuery>;
 export type GetBlogPostsSuspenseQueryHookResult = ReturnType<typeof useGetBlogPostsSuspenseQuery>;
 export type GetBlogPostsQueryResult = Apollo.QueryResult<GetBlogPostsQuery, GetBlogPostsQueryVariables>;
+export const GetPodcastsDocument = gql`
+    query GetPodcasts($locale: String, $limit: Int!, $skip: Int!) {
+  podcastCollection(locale: $locale, limit: $limit, skip: $skip) {
+    total
+    items {
+      date
+      title
+      url
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetPodcastsQuery__
+ *
+ * To run a query within a React component, call `useGetPodcastsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetPodcastsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetPodcastsQuery({
+ *   variables: {
+ *      locale: // value for 'locale'
+ *      limit: // value for 'limit'
+ *      skip: // value for 'skip'
+ *   },
+ * });
+ */
+export function useGetPodcastsQuery(baseOptions: Apollo.QueryHookOptions<GetPodcastsQuery, GetPodcastsQueryVariables> & ({ variables: GetPodcastsQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetPodcastsQuery, GetPodcastsQueryVariables>(GetPodcastsDocument, options);
+      }
+export function useGetPodcastsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetPodcastsQuery, GetPodcastsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetPodcastsQuery, GetPodcastsQueryVariables>(GetPodcastsDocument, options);
+        }
+export function useGetPodcastsSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetPodcastsQuery, GetPodcastsQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetPodcastsQuery, GetPodcastsQueryVariables>(GetPodcastsDocument, options);
+        }
+export type GetPodcastsQueryHookResult = ReturnType<typeof useGetPodcastsQuery>;
+export type GetPodcastsLazyQueryHookResult = ReturnType<typeof useGetPodcastsLazyQuery>;
+export type GetPodcastsSuspenseQueryHookResult = ReturnType<typeof useGetPodcastsSuspenseQuery>;
+export type GetPodcastsQueryResult = Apollo.QueryResult<GetPodcastsQuery, GetPodcastsQueryVariables>;

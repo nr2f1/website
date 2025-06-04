@@ -6,9 +6,12 @@
 .article {
   border-radius: var(--border-radius-xl);
   border: 1px solid var(--grey-300);
-  min-width: 300px;
+  min-width: 18.75rem;
   flex: 1 0 0;
   overflow: hidden;
+  /* 3 columns - column gap / 2 */
+  max-width: calc(calc(100% / 3) - var(--spacing-3));
+
 
   &:hover,
   &:focus {
@@ -66,8 +69,9 @@
     padding: var(--spacing-4);
   }
 
-  &__label {
+  &__label:is(a){
     @include text-styles.text-link-small;
+    text-decoration: underline;
   }
   &__separator {
       margin: 0 var(--spacing-2);

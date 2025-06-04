@@ -47,3 +47,14 @@ query GetBlogPosts($locale: String, $limit: Int!, $skip: Int!) {
     }
   }
 }
+
+query GetPodcasts($locale: String, $limit: Int!, $skip: Int!) {
+  podcastCollection(locale: $locale, limit: $limit, skip: $skip) {
+    total
+    items {
+      date
+      title
+      url
+    }
+  }
+}

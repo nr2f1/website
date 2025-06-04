@@ -7,3 +7,4 @@ export const livingWithBbsoasPageHeaderId = '1zxOsUCWWk5ABV84hYD1EB';
 export const supportGroupsPageHeaderId = '52T3dTQigmpbQWzTkRryWf';
 export const shopPageHeaderId = '6ESGZZzt3v6UNVCPhzE4fR';
 export const blogIndexPageHeaderId = '4hMF69PRacJ5M9t4hVTUoR';
+export const podcastIndexPageHeaderId = '5svaLK2hRODiLNQtaaLdNy';
