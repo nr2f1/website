@@ -37,3 +37,17 @@ query GetPodcastPageHeader($id: String!, $locale: String) {
     }
   }
 }
+
+query GetNewsletterPageHeader($id: String!, $locale: String) {
+  pageHeader(id: $id, locale: $locale) {
+    title
+    image {
+      url
+    }
+  }
+  lastUpdated: newsletterCollection(limit: 1, order: date_DESC) {
+    items {
+      date
+    }
+  }
+}

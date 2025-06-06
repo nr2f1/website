@@ -28,6 +28,15 @@ export type GetPodcastsQueryVariables = Types.Exact<{
 
 export type GetPodcastsQuery = { __typename?: 'Query', podcastCollection?: { __typename?: 'PodcastCollection', total: number, items: Array<{ __typename?: 'Podcast', date?: any | null, title?: string | null, url?: string | null } | null> } | null };
 
+export type GetNewslettersQueryVariables = Types.Exact<{
+  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
+  limit: Types.Scalars['Int']['input'];
+  skip: Types.Scalars['Int']['input'];
+}>;
+
+
+export type GetNewslettersQuery = { __typename?: 'Query', newsletterCollection?: { __typename?: 'NewsletterCollection', total: number, items: Array<{ __typename?: 'Newsletter', date?: any | null, title?: string | null, newsletterContent?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null };
+
 
 export const GetNewsDocument = gql`
     query GetNews($locale: String) {
@@ -195,3 +204,52 @@ export type GetPodcastsQueryHookResult = ReturnType<typeof useGetPodcastsQuery>;
 export type GetPodcastsLazyQueryHookResult = ReturnType<typeof useGetPodcastsLazyQuery>;
 export type GetPodcastsSuspenseQueryHookResult = ReturnType<typeof useGetPodcastsSuspenseQuery>;
 export type GetPodcastsQueryResult = Apollo.QueryResult<GetPodcastsQuery, GetPodcastsQueryVariables>;
+export const GetNewslettersDocument = gql`
+    query GetNewsletters($locale: String, $limit: Int!, $skip: Int!) {
+  newsletterCollection(locale: $locale, limit: $limit, skip: $skip) {
+    total
+    items {
+      date
+      title
+      newsletterContent(locale: $locale) {
+        url
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetNewslettersQuery__
+ *
+ * To run a query within a React component, call `useGetNewslettersQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetNewslettersQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetNewslettersQuery({
+ *   variables: {
+ *      locale: // value for 'locale'
+ *      limit: // value for 'limit'
+ *      skip: // value for 'skip'
+ *   },
+ * });
+ */
+export function useGetNewslettersQuery(baseOptions: Apollo.QueryHookOptions<GetNewslettersQuery, GetNewslettersQueryVariables> & ({ variables: GetNewslettersQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetNewslettersQuery, GetNewslettersQueryVariables>(GetNewslettersDocument, options);
+      }
+export function useGetNewslettersLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetNewslettersQuery, GetNewslettersQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetNewslettersQuery, GetNewslettersQueryVariables>(GetNewslettersDocument, options);
+        }
+export function useGetNewslettersSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetNewslettersQuery, GetNewslettersQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetNewslettersQuery, GetNewslettersQueryVariables>(GetNewslettersDocument, options);
+        }
+export type GetNewslettersQueryHookResult = ReturnType<typeof useGetNewslettersQuery>;
+export type GetNewslettersLazyQueryHookResult = ReturnType<typeof useGetNewslettersLazyQuery>;
+export type GetNewslettersSuspenseQueryHookResult = ReturnType<typeof useGetNewslettersSuspenseQuery>;
+export type GetNewslettersQueryResult = Apollo.QueryResult<GetNewslettersQuery, GetNewslettersQueryVariables>;

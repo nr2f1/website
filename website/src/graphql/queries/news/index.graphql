@@ -58,3 +58,16 @@ query GetPodcasts($locale: String, $limit: Int!, $skip: Int!) {
     }
   }
 }
+
+query GetNewsletters($locale: String, $limit: Int!, $skip: Int!) {
+  newsletterCollection(locale: $locale, limit: $limit, skip: $skip) {
+    total
+    items {
+      date
+      title
+      newsletterContent(locale: $locale) {
+        url
+      }
+    }
+  }
+}

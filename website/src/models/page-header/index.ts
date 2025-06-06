@@ -8,3 +8,4 @@ export const supportGroupsPageHeaderId = '52T3dTQigmpbQWzTkRryWf';
 export const shopPageHeaderId = '6ESGZZzt3v6UNVCPhzE4fR';
 export const blogIndexPageHeaderId = '4hMF69PRacJ5M9t4hVTUoR';
 export const podcastIndexPageHeaderId = '5svaLK2hRODiLNQtaaLdNy';
+export const newsletterIndexPageHeaderId = '3Hi5eOgyjhnGL1Z9DRTJTA';
