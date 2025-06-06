@@ -101,9 +101,12 @@ const NewsCard: React.FC<NewsCardProps> = ({
               <div>
                 <h2>{getNewsLetterTitle({ date: title, lang })}</h2>
                 <p className={styles.article__date}>
-                  <span className={styles.article__label}>
+                  <Link
+                    className={styles.article__label}
+                    href={`/${lang}/news/newsletter`}
+                  >
                     {newsTypeLocale[lang][News.NEWSLETTER]}
-                  </span>
+                  </Link>
                   <span className={styles.article__separator}>&#8226;</span>
                   <time dateTime={dateTime}>{publishedString}</time>
                 </p>
