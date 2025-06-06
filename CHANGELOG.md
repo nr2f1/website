@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.4.0](https://github.com/nr2f1/website/compare/v2.3.1...v2.4.0) (2025-06-06)
+
+
+### Features
+
+* blog index pagination ([7316b2a](https://github.com/nr2f1/website/commit/7316b2aac9cd42a20bdd14fcc80c8b6276463d50))
+* new cards ([#247](https://github.com/nr2f1/website/issues/247)) ([45f7dbd](https://github.com/nr2f1/website/commit/45f7dbdbebab4c0efe21f99868ec2ea51854dabb))
+* newsletter index page ([a3ba505](https://github.com/nr2f1/website/commit/a3ba5057f09c764e22edeb7cc31c6d2badb10595))
+* podcast index page ([2fd0190](https://github.com/nr2f1/website/commit/2fd0190cb403e64e5792aa23fd76d496fee89830))
+* remove shop page ([f8797fa](https://github.com/nr2f1/website/commit/f8797fa8eae313ab0eb12d8f7082876ed260547a))
+
 ## [2.3.1](https://github.com/nr2f1/website/compare/v2.3.0...v2.3.1) (2025-05-27)
 
 
