@@ -6,6 +6,10 @@ import {
   GetLatestNewsDocument,
   type GetLatestNewsQuery,
 } from '@graphql/queries/latest-news/index.generated';
+import {
+  GetNewsDocument,
+  type GetNewsQuery,
+} from '@graphql/queries/news/index.generated';
 import type {
   BlogPageCollection,
   NewsletterCollection,
@@ -24,7 +28,43 @@ interface LatestNewsProps {
 const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
   const { query } = getClient();
 
-  const { data, error } = await query<GetLatestNewsQuery>({
+  const {
+    data: { entryCollection },
+    error,
+  } = await query<GetNewsQuery>({
+    query: GetNewsDocument,
+    variables: {
+      locale: lang,
+    },
+  });
+
+  if (error || !entryCollection?.items) {
+    return null;
+  }
+
+  const { total, items } = entryCollection;
+
+  const rawPosts = items.filter((item) => item?.__typename === 'BlogPage');
+
+  const rawNewsletter = items.filter(
+    (item) => item?.__typename === 'Newsletter',
+  );
+
+  const rawPodcast = items.filter((item) => item?.__typename === 'Podcast');
+
+  const allNews = fromBlogNewsletterToNews({
+    posts: rawPosts as BlogPageCollection['items'],
+    newsletters: rawNewsletter as NewsletterCollection['items'],
+    podcasts: rawPodcast as PodcastCollection['items'],
+    limit: total,
+  });
+
+  const news = allNews.slice(0, 6);
+
+  const {
+    data: { title, cta },
+    error: getLatestNewsError,
+  } = await query<GetLatestNewsQuery>({
     query: GetLatestNewsDocument,
     variables: {
       locale: lang,
@@ -33,29 +73,9 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
     },
   });
 
-  if (
-    error ||
-    !data ||
-    !data.cta ||
-    !data.posts ||
-    !data.title ||
-    !data.podcasts
-  ) {
+  if (getLatestNewsError || !title || !cta) {
     return null;
   }
-
-  const { title, cta, posts, newsletters, podcasts } = data;
-
-  if (!posts.items || !newsletters?.items) {
-    return null;
-  }
-
-  const news = fromBlogNewsletterToNews({
-    posts: posts.items as BlogPageCollection['items'],
-    newsletters: newsletters.items as NewsletterCollection['items'],
-    podcasts: podcasts.items as PodcastCollection['items'],
-    limit: 6,
-  });
 
   return (
     <section className={styles.news}>

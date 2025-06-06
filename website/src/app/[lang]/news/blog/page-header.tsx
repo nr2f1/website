@@ -5,7 +5,7 @@ import {
   type GetBlogPageHeaderQuery,
 } from '@graphql/queries/page-header/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
-import { newsPageHeaderId } from '@models/page-header';
+import { blogIndexPageHeaderId } from '@models/page-header';
 
 interface NewsPageHeaderProps {
   lang: AvailableLocale;
@@ -18,7 +18,7 @@ const NewsPageHeader: React.FC<NewsPageHeaderProps> = async ({ lang }) => {
     query: GetBlogPageHeaderDocument,
     variables: {
       locale: lang,
-      id: newsPageHeaderId,
+      id: blogIndexPageHeaderId,
     },
   });
 

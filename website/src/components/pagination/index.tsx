@@ -41,6 +41,7 @@ const Pagination: React.FC<PaginationProps> = ({
   pageSize,
   siblingCount = 0,
   lang,
+  paginationPath = '/news',
 }) => {
   const realCurrentPage = currentPage < 1 ? 1 : currentPage;
 
@@ -66,12 +67,16 @@ const Pagination: React.FC<PaginationProps> = ({
   return (
     <ul className={styles.pagination}>
       <li className={styles.pagination__item}>
-        <Link href={`/news?page=${getPreviousPage()}`}>
+        <Link href={`${paginationPath}?page=${getPreviousPage()}`}>
           <ArrowLeft title={paginationLocales[lang].previous} />
         </Link>
       </li>
       {paginationRange.map((pageNumber) => {
-        if (pageNumber === DOTS) {
+        const isDots = pageNumber === DOTS;
+        const isCurrentPage =
+          pageNumber === currentPage || (pageNumber === 1 && currentPage === 0);
+
+        if (isDots) {
           return (
             <li
               className={`${styles.pagination__item} ${styles['pagination__item--dots']}`}
@@ -86,13 +91,13 @@ const Pagination: React.FC<PaginationProps> = ({
           <li
             key={crypto.randomUUID()}
             className={
-              pageNumber === currentPage
+              isCurrentPage
                 ? `${styles.pagination__item} ${styles['pagination__item--selected']}`
                 : styles.pagination__item
             }
           >
             <Link
-              href={`/news?page=${pageNumber}`}
+              href={`${paginationPath}?page=${pageNumber}`}
               title={`${paginationLocales[lang].page} ${pageNumber}`}
             >
               {pageNumber}
@@ -101,7 +106,7 @@ const Pagination: React.FC<PaginationProps> = ({
         );
       })}
       <li className={styles.pagination__item}>
-        <Link href={`/news?page=${getNextPage()}`} title="next">
+        <Link href={`${paginationPath}?page=${getNextPage()}`} title="next">
           <ArrowRight title={paginationLocales[lang].next} />
         </Link>
       </li>

@@ -3,9 +3,12 @@ import type { AvailableLocale } from '@i18n/locales';
 type LocalisedRoute = (locale: AvailableLocale) => string;
 
 type RouteProperty =
+  | 'blog'
   | 'homepage'
   | 'living-with-bbsoas'
   | 'news'
+  | 'newsletter'
+  | 'podcast'
   | 'publications'
   | 'register-a-patient'
   | 'shop'
@@ -14,6 +17,9 @@ type RouteProperty =
   | 'what-is-bbsoas';
 
 export const routes: Record<RouteProperty, LocalisedRoute> = {
+  blog: (locale: AvailableLocale) => {
+    return `/${locale}/news/blog`;
+  },
   homepage: (locale: AvailableLocale) => {
     return `/${locale}`;
   },
@@ -21,6 +27,12 @@ export const routes: Record<RouteProperty, LocalisedRoute> = {
     `/${locale}/living-with-bbsoas`,
   news: (locale: AvailableLocale) => {
     return `/${locale}/news`;
+  },
+  newsletter: (locale: AvailableLocale) => {
+    return `/${locale}/news/newsletter`;
+  },
+  podcast: (locale: AvailableLocale) => {
+    return `/${locale}/news/podcast`;
   },
   publications: (locale: AvailableLocale) => {
     return `/${locale}/publications`;

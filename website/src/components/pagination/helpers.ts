@@ -6,6 +6,7 @@ export interface PaginationProps {
   pageSize: number;
   siblingCount: number;
   lang: AvailableLocale;
+  paginationPath?: string;
 }
 
 export const DOTS = '...';
@@ -24,7 +25,7 @@ export const getPaginationRange = ({
   currentPage,
   pageSize,
   siblingCount,
-}: Omit<PaginationProps, 'lang'>) => {
+}: Omit<PaginationProps, 'lang' | 'paginationPath'>) => {
   const totalPageCount = Math.ceil(totalCount / pageSize);
 
   // Pages count is determined as siblingCount + firstPage + lastPage + currentPage + 2*DOTS

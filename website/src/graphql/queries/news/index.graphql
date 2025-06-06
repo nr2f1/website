@@ -32,3 +32,42 @@ query GetNews($locale: String) {
     }
   }
 }
+
+
+query GetBlogPosts($locale: String, $limit: Int!, $skip: Int!) {
+  blogPageCollection(locale: $locale, limit: $limit, skip: $skip) {
+    total
+    items {
+      date
+      title
+      slug
+      image {
+        url
+      }
+    }
+  }
+}
+
+query GetPodcasts($locale: String, $limit: Int!, $skip: Int!) {
+  podcastCollection(locale: $locale, limit: $limit, skip: $skip) {
+    total
+    items {
+      date
+      title
+      url
+    }
+  }
+}
+
+query GetNewsletters($locale: String, $limit: Int!, $skip: Int!) {
+  newsletterCollection(locale: $locale, limit: $limit, skip: $skip) {
+    total
+    items {
+      date
+      title
+      newsletterContent(locale: $locale) {
+        url
+      }
+    }
+  }
+}

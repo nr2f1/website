@@ -6,9 +6,12 @@
 .article {
   border-radius: var(--border-radius-xl);
   border: 1px solid var(--grey-300);
-  min-width: 300px;
+  min-width: 18.75rem;
   flex: 1 0 0;
   overflow: hidden;
+  /* 3 columns - column gap / 2 */
+  max-width: calc(calc(100% / 3) - var(--spacing-3));
+
 
   &:hover,
   &:focus {
@@ -50,14 +53,28 @@
     }
   }
 
+  &__podcast_img {
+    height: var(--spacing-56);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(icons.$podcast);
+
+    @include breakpoints.small-screen {
+      height: var(--spacing-40);
+    }
+  }
+
   & div {
     padding: var(--spacing-4);
   }
 
-  &__label {
-    margin: 0;
+  &__label:is(a){
     @include text-styles.text-link-small;
-    margin-block-end: var(--spacing-1);
+    text-decoration: underline;
+  }
+  &__separator {
+      margin: 0 var(--spacing-2);
   }
 
   &__date {

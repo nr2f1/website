@@ -1,12 +1,13 @@
 import type { NewsCardProps } from '@components/news-card';
 import type {
+  BlogPage,
   BlogPageCollection,
   NewsletterCollection,
   PodcastCollection,
 } from '@graphql/types';
 import { News } from '@shared/types/news';
 
-type NewsCard = Omit<NewsCardProps, 'lang'>;
+export type NewsCard = Omit<NewsCardProps, 'lang'>;
 
 interface FromBlogNewsletterToNews {
   posts: BlogPageCollection['items'];

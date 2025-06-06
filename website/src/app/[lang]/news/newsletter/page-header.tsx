@@ -1,11 +1,11 @@
 import PageHeader from '@components/page-header';
 import { getClient } from '@graphql/client';
 import {
-  GetBlogPageHeaderDocument,
-  type GetBlogPageHeaderQuery,
+  GetNewsletterPageHeaderDocument,
+  type GetNewsletterPageHeaderQuery,
 } from '@graphql/queries/page-header/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
-import { newsPageHeaderId } from '@models/page-header';
+import { newsletterIndexPageHeaderId } from '@models/page-header';
 
 interface NewsPageHeaderProps {
   lang: AvailableLocale;
@@ -13,12 +13,14 @@ interface NewsPageHeaderProps {
 
 const { query } = getClient();
 
-const NewsPageHeader: React.FC<NewsPageHeaderProps> = async ({ lang }) => {
-  const { data, error } = await query<GetBlogPageHeaderQuery>({
-    query: GetBlogPageHeaderDocument,
+const NewsletterPageHeader: React.FC<NewsPageHeaderProps> = async ({
+  lang,
+}) => {
+  const { data, error } = await query<GetNewsletterPageHeaderQuery>({
+    query: GetNewsletterPageHeaderDocument,
     variables: {
       locale: lang,
-      id: newsPageHeaderId,
+      id: newsletterIndexPageHeaderId,
     },
   });
 
@@ -42,4 +44,4 @@ const NewsPageHeader: React.FC<NewsPageHeaderProps> = async ({ lang }) => {
   );
 };
 
-export default NewsPageHeader;
+export default NewsletterPageHeader;
