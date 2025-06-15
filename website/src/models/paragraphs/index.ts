@@ -55,3 +55,6 @@ export const caregiverParagraphsId = '7mpLhPURZVHhsuVaw7pWkx';
 export const spanishParentsParagraphsId = 'dXg5ZnpmCk6BcplE5DNq2';
 export const facebookParagraphsId = '3eS7KUuCHBmgJXh83ZYQ7e';
 export const dadsUkParagraphsId = '6urRWGur1VUWjNE7jyuv24';
+
+// Partnerships page
+export const partnershipsPageParagraphsId = '6afmGbFikLOXThQxWrxhxG';

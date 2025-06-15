@@ -33,3 +33,8 @@ export const volunteerLinkId = '4x61I4JOzWOSf9iCr1HcPj';
 export const shopLinkId = '3Kp1mLwrO1L1t2GVjLxNvw';
 // Shop
 export const shopLinkCtaId = '1UWPSsBvmsP8oQ3vVXPQCc';
+// Partnerships page
+export const nr2f1FranceLinkId = '6YmIf4kXtzJRNdHuO7bZde';
+export const schaafLaboratoryLinkId = '2azhdt18IBlITwnmWevnoh';
+export const cincinnatiLinkId = '5hOjR36hxkeYfpUgTnlVNs';
+export const valroseLinkId = '1FoQACKHG7eqiX8aoPkOjb';
