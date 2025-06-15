@@ -295,9 +295,14 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link href={shopLink?.target?.url ?? '/'}>
+                  <a
+                    className={styles['open-other-tab']}
+                    href={shopLink?.target?.url ?? '/'}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     {shopLink?.text?.content ?? ''}
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </NavList>
