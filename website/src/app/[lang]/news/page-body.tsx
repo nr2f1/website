@@ -113,13 +113,15 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
           </ul>
         </nav>
 
-        <Pagination
-          totalCount={total}
-          currentPage={page ? Number(page) : 0}
-          pageSize={LIMIT}
-          siblingCount={1}
-          lang={lang}
-        />
+        {total > LIMIT ? (
+          <Pagination
+            totalCount={total}
+            currentPage={page ? Number(page) : 0}
+            pageSize={LIMIT}
+            siblingCount={1}
+            lang={lang}
+          />
+        ) : null}
       </div>
     </section>
   );
