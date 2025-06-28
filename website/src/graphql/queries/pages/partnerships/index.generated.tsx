@@ -16,14 +16,16 @@ export type GetPartnershipsPageQueryVariables = Types.Exact<{
   cincinnatiLinkId: Types.Scalars['String']['input'];
   valroseAssetId: Types.Scalars['String']['input'];
   valroseLinkId: Types.Scalars['String']['input'];
+  combinedBrainAssetId: Types.Scalars['String']['input'];
+  combinedBrainLinkId: Types.Scalars['String']['input'];
 }>;
 
 
-export type GetPartnershipsPageQuery = { __typename?: 'Query', heading?: { __typename?: 'Heading', content?: string | null } | null, paragraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, partnersHeading?: { __typename?: 'Heading', content?: string | null } | null, nr2f1FranceAsset?: { __typename?: 'Asset', url?: string | null } | null, nr2f1FranceLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, schaafLaboratoryAsset?: { __typename?: 'Asset', url?: string | null } | null, schaafLaboratoryLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, cincinnatiAsset?: { __typename?: 'Asset', url?: string | null } | null, cincinnatiLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, valroseAsset?: { __typename?: 'Asset', url?: string | null } | null, valroseLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null };
+export type GetPartnershipsPageQuery = { __typename?: 'Query', heading?: { __typename?: 'Heading', content?: string | null } | null, paragraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, partnersHeading?: { __typename?: 'Heading', content?: string | null } | null, nr2f1FranceAsset?: { __typename?: 'Asset', url?: string | null } | null, nr2f1FranceLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, schaafLaboratoryAsset?: { __typename?: 'Asset', url?: string | null } | null, schaafLaboratoryLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, cincinnatiAsset?: { __typename?: 'Asset', url?: string | null } | null, cincinnatiLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, valroseAsset?: { __typename?: 'Asset', url?: string | null } | null, valroseLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null, combinedBrainAsset?: { __typename?: 'Asset', url?: string | null } | null, combinedBrainLink?: { __typename?: 'Link', text?: { __typename?: 'LinkContent', content?: string | null } | null, target?: { __typename?: 'Hyperlink', url?: string | null } | null } | null };
 
 
 export const GetPartnershipsPageDocument = gql`
-    query GetPartnershipsPage($locale: String, $partnershipsPageheadingId: String!, $partnershipsPageParagraphsId: String!, $partnersHeadingId: String!, $nr2f1FranceAssetId: String!, $nr2f1FranceLinkId: String!, $schaafLaboratoryAssetId: String!, $schaafLaboratoryLinkId: String!, $cincinnatiAssetId: String!, $cincinnatiLinkId: String!, $valroseAssetId: String!, $valroseLinkId: String!) {
+    query GetPartnershipsPage($locale: String, $partnershipsPageheadingId: String!, $partnershipsPageParagraphsId: String!, $partnersHeadingId: String!, $nr2f1FranceAssetId: String!, $nr2f1FranceLinkId: String!, $schaafLaboratoryAssetId: String!, $schaafLaboratoryLinkId: String!, $cincinnatiAssetId: String!, $cincinnatiLinkId: String!, $valroseAssetId: String!, $valroseLinkId: String!, $combinedBrainAssetId: String!, $combinedBrainLinkId: String!) {
   heading(locale: $locale, id: $partnershipsPageheadingId) {
     content
   }
@@ -79,6 +81,17 @@ export const GetPartnershipsPageDocument = gql`
       url
     }
   }
+  combinedBrainAsset: asset(id: $combinedBrainAssetId) {
+    url
+  }
+  combinedBrainLink: link(locale: $locale, id: $combinedBrainLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
 }
     `;
 
@@ -106,6 +119,8 @@ export const GetPartnershipsPageDocument = gql`
  *      cincinnatiLinkId: // value for 'cincinnatiLinkId'
  *      valroseAssetId: // value for 'valroseAssetId'
  *      valroseLinkId: // value for 'valroseLinkId'
+ *      combinedBrainAssetId: // value for 'combinedBrainAssetId'
+ *      combinedBrainLinkId: // value for 'combinedBrainLinkId'
  *   },
  * });
  */

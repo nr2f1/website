@@ -11,6 +11,8 @@ query GetPartnershipsPage(
   $cincinnatiLinkId: String!
   $valroseAssetId: String!
   $valroseLinkId: String!
+  $combinedBrainAssetId: String!
+  $combinedBrainLinkId: String!
 ) {
   heading(locale: $locale, id: $partnershipsPageheadingId) {
     content
@@ -60,6 +62,17 @@ query GetPartnershipsPage(
     url
   }
   valroseLink: link(locale: $locale, id: $valroseLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  combinedBrainAsset: asset(id: $combinedBrainAssetId) {
+    url
+  }
+  combinedBrainLink: link(locale: $locale, id: $combinedBrainLinkId) {
     text {
       content
     }

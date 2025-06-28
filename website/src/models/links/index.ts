@@ -38,3 +38,4 @@ export const nr2f1FranceLinkId = '6YmIf4kXtzJRNdHuO7bZde';
 export const schaafLaboratoryLinkId = '2azhdt18IBlITwnmWevnoh';
 export const cincinnatiLinkId = '5hOjR36hxkeYfpUgTnlVNs';
 export const valroseLinkId = '1FoQACKHG7eqiX8aoPkOjb';
+export const combinedBrainLinkId = '22d0QahxYSxyjtkGZucmk5';

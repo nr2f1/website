@@ -10,12 +10,14 @@ import type { AvailableLocale } from '@i18n/locales';
 import { partnersHeadingId, partnershipsPageheadingId } from '@models/headings';
 import {
   cincinnatiAssetId,
+  combinedBrainAssetId,
   nr2f1FranceAssetId,
   schaafLaboratoryAssetId,
   valroseAssetId,
 } from '@models/images';
 import {
   cincinnatiLinkId,
+  combinedBrainLinkId,
   nr2f1FranceLinkId,
   schaafLaboratoryLinkId,
   valroseLinkId,
@@ -42,6 +44,8 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
       cincinnatiLink,
       valroseAsset,
       valroseLink,
+      combinedBrainAsset,
+      combinedBrainLink,
     },
     error,
   } = await query<GetPartnershipsPageQuery>({
@@ -59,6 +63,8 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
       cincinnatiLinkId,
       valroseAssetId,
       valroseLinkId,
+      combinedBrainAssetId,
+      combinedBrainLinkId,
     },
   });
 
@@ -119,6 +125,17 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
                 </picture>
                 <a href={valroseLink?.target?.url ?? ''}>
                   {valroseLink?.text?.content ?? ''}
+                </a>
+              </li>
+              <li>
+                <picture>
+                  <img
+                    src={combinedBrainAsset?.url ?? ''}
+                    alt={combinedBrainLink?.text?.content ?? ''}
+                  />
+                </picture>
+                <a href={combinedBrainLink?.target?.url ?? ''}>
+                  {combinedBrainLink?.text?.content ?? ''}
                 </a>
               </li>
             </ul>
