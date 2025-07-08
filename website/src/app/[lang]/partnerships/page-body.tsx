@@ -100,7 +100,7 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
           </section>
           <section>
             <h3>{partnersHeading?.content ?? ''}</h3>
-            <ul>
+            <ul className={styles['partners-list']}>
               <li>
                 <picture>
                   <img

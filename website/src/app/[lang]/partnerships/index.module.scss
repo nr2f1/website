@@ -70,3 +70,40 @@
       margin-block-start: var(--spacing-12);
     }
 }
+
+.partners-list {
+    padding: 0;
+    margin: 0;
+    margin-block-start: var(--spacing-6);
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--spacing-6);
+    row-gap: var(--spacing-12);
+    width: 100%;
+
+    li {
+     flex-basis: calc(50% - var(--spacing-6));
+     @include breakpoints.small-screen {
+       flex-basis: 100%;
+     }
+
+
+    }
+
+    picture {
+        padding-inline: var(--spacing-8);
+        margin-block-end: var(--spacing-4);
+    }
+
+    img {
+        @include breakpoints.small-screen {
+            margin: 0 auto;
+        }
+    }
+
+    a {
+        display: block;
+        text-align: center;
+    }
+}
