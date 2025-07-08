@@ -19,7 +19,8 @@
       "!**/.next/**",
       "!**/dist/**",
       "!**/.nx/cache/**",
-      "!**/website/src/graphql/**"
+      "!**/website/src/graphql/**",
+      "!**/.nx/workspace-data/project-graph.json"
     ],
     "indentStyle": "space",
     "indentWidth": 2,
@@ -40,7 +41,8 @@
       "!**/.next/**",
       "!**/dist/**",
       "!**/.nx/cache/**",
-      "!**/website/src/graphql/**"
+      "!**/website/src/graphql/**",
+      "!**/.nx/workspace-data/project-graph.json"
     ],
     "rules": {
       "recommended": true,
