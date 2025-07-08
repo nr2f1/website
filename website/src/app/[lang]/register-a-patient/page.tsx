@@ -83,7 +83,6 @@ export async function generateMetadata({
       // @ts-ignore
       htmlHeadMetadata: { title, description, keywords },
     },
-    error,
   } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {

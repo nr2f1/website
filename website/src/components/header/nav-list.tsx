@@ -1,7 +1,6 @@
-import styles from './nav-list.module.scss';
-
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect, useRef } from 'react';
+import styles from './nav-list.module.scss';
 
 interface NavListProps {
   name: string | null;

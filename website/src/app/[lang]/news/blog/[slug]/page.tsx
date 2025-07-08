@@ -9,7 +9,6 @@ import {
   GetPostDocument,
   type GetPostQuery,
 } from '@graphql/queries/post/index.generated';
-import type { AvailableLocale } from '@i18n/locales';
 import type { NewsPagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
 import { renderNode } from '@shared/utils/rich-text';

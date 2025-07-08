@@ -1,7 +1,5 @@
 'use client';
 
-import styles from './index.module.scss';
-
 import Contentful from '@components/logos/contentful';
 import MainLogo from '@components/logos/main';
 import SignupForm from '@components/signup-form';
@@ -16,6 +14,7 @@ import {
   warningId,
 } from '@models/paragraphs';
 import { renderText } from '@shared/utils/rich-text';
+import styles from './index.module.scss';
 import SocialMediaLinks from './social-media-links';
 
 export interface FooterProps {
@@ -26,15 +25,14 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
   const {
     data,
     // TODO: Handle error
-    error,
   } = useGetFooterSuspenseQuery({
     variables: {
-      locale: lang,
-      stayInTouchId,
-      socialMediaTextId,
-      copyrightId,
-      warningId,
       contactUsId,
+      copyrightId,
+      locale: lang,
+      socialMediaTextId,
+      stayInTouchId,
+      warningId,
     },
   });
 

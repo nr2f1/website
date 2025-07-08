@@ -1,7 +1,5 @@
 'use client';
 
-import styles from './index.module.scss';
-
 import Spinner from '@components/icons/spinner';
 import { Option } from '@mui/base/Option';
 import { Select } from '@mui/base/Select';
@@ -10,14 +8,15 @@ import type { MuiEvent } from '@shared/types/mui';
 import { useFormik } from 'formik';
 import { useEffect, useReducer } from 'react';
 import {
-  Role,
-  type SignupFormProps,
-  type SignupFormValues,
   getValidationSchema,
   initialState,
   initialValues,
+  Role,
   reducer,
+  type SignupFormProps,
+  type SignupFormValues,
 } from './helper';
+import styles from './index.module.scss';
 
 interface ErrorMessageProps {
   errorMessage?: string;
@@ -36,7 +35,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang, registerPatient }) => {
       dispatch({ type: 'setCreateContactLoading' });
       await createContact(values);
       dispatch({ type: 'setCreateContactSuccess' });
-    } catch (error) {
+    } catch (_error) {
       dispatch({ type: 'setCreateContactError' });
     }
   };
@@ -46,8 +45,8 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang, registerPatient }) => {
     import(`./i18n/${lang}.json`)
       .then((module) => {
         dispatch({
-          type: 'setContent',
           payload: module.default,
+          type: 'setContent',
         });
       })
       .catch(() => {
@@ -218,12 +217,12 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang, registerPatient }) => {
                     onBlur={handleBlur}
                     onChange={handleSelectRoleOnChange}
                     slotProps={{
-                      popup: {
-                        disablePortal: true,
-                        className: styles.popup,
-                      },
                       listbox: {
                         className: styles.listbox,
+                      },
+                      popup: {
+                        className: styles.popup,
+                        disablePortal: true,
                       },
                     }}
                     value={values.role}
@@ -305,12 +304,12 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang, registerPatient }) => {
                         onBlur={handleBlur}
                         onChange={handleSelectCountryOnChange}
                         slotProps={{
-                          popup: {
-                            disablePortal: true,
-                            className: styles.popup,
-                          },
                           listbox: {
                             className: styles.listbox,
+                          },
+                          popup: {
+                            className: styles.popup,
+                            disablePortal: true,
                           },
                         }}
                         value={values.country}
