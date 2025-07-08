@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.5.0](https://github.com/nr2f1/website/compare/v2.4.0...v2.5.0) (2025-07-08)
+
+
+### Features
+
+* change shope to store ([0ba036c](https://github.com/nr2f1/website/commit/0ba036c15da02da9ec9ab58c1971df4cd76c315e))
+* partnership page ([ede8e3c](https://github.com/nr2f1/website/commit/ede8e3c62fdb8ab6a951d100da5e363af98b2dfb))
+* partnerships page ([4bf8942](https://github.com/nr2f1/website/commit/4bf8942fddf6a8db345e53ea3acb145c00bf310e))
+* partnerships page ([#249](https://github.com/nr2f1/website/issues/249)) ([6373c69](https://github.com/nr2f1/website/commit/6373c69c43b8d10e7ba3d55780c57bd3a9980bba))
+
+
+### Bug Fixes
+
+* pagination ([031d8cc](https://github.com/nr2f1/website/commit/031d8cc2b3c0690b8763130cb8a350d9315fbe32))
+
 ## [2.4.0](https://github.com/nr2f1/website/compare/v2.3.1...v2.4.0) (2025-06-06)
 
 
