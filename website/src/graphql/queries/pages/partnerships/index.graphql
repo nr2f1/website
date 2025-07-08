@@ -1,0 +1,101 @@
+query GetPartnershipsPage($locale: String, $partnershipsPageheadingId: String!, $partnershipsPageParagraphsId: String!, $partnersHeadingId: String!, $nr2f1FranceAssetId: String!, $nr2f1FranceLinkId: String!, $schaafLaboratoryAssetId: String!, $schaafLaboratoryLinkId: String!, $cincinnatiAssetId: String!, $cincinnatiLinkId: String!, $valroseAssetId: String!, $valroseLinkId: String!, $combinedBrainAssetId: String!, $combinedBrainLinkId: String!, $renAssetId: String!, $renLinkId: String!, $globalGenesAssetId: String!, $globalGenesLinkId: String!, $uniqueAssetId: String!, $uniqueLinkId: String!) {
+  heading(locale: $locale, id: $partnershipsPageheadingId) {
+    content
+  }
+  paragraphs(locale: $locale, id: $partnershipsPageParagraphsId) {
+    content {
+      json
+    }
+  }
+  partnersHeading: heading(locale: $locale, id: $partnersHeadingId) {
+    content
+  }
+  nr2f1FranceAsset: asset(id: $nr2f1FranceAssetId) {
+    url
+  }
+  nr2f1FranceLink: link(locale: $locale, id: $nr2f1FranceLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  schaafLaboratoryAsset: asset(id: $schaafLaboratoryAssetId) {
+    url
+  }
+  schaafLaboratoryLink: link(locale: $locale, id: $schaafLaboratoryLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  cincinnatiAsset: asset(id: $cincinnatiAssetId) {
+    url
+  }
+  cincinnatiLink: link(locale: $locale, id: $cincinnatiLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  valroseAsset: asset(id: $valroseAssetId) {
+    url
+  }
+  valroseLink: link(locale: $locale, id: $valroseLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  combinedBrainAsset: asset(id: $combinedBrainAssetId) {
+    url
+  }
+  combinedBrainLink: link(locale: $locale, id: $combinedBrainLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  renAsset: asset(id: $renAssetId) {
+    url
+  }
+  renLink: link(locale: $locale, id: $renLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  globalGenesAsset: asset(id: $globalGenesAssetId) {
+    url
+  }
+  globalGenesLink: link(locale: $locale, id: $globalGenesLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  uniqueAsset: asset(id: $uniqueAssetId) {
+    url
+  }
+  uniqueLink: link(locale: $locale, id: $uniqueLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+}
