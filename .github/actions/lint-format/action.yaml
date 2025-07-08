@@ -6,4 +6,3 @@ runs:
     - name: Linting 🪮 and Formatting 🖊️
       shell: bash
       run: pnpm nx affected run-many -t lint format --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
-
