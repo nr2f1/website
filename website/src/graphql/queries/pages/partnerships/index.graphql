@@ -1,19 +1,4 @@
-query GetPartnershipsPage(
-  $locale: String
-  $partnershipsPageheadingId: String!
-  $partnershipsPageParagraphsId: String!
-  $partnersHeadingId: String!
-  $nr2f1FranceAssetId: String!
-  $nr2f1FranceLinkId: String!
-  $schaafLaboratoryAssetId: String!
-  $schaafLaboratoryLinkId: String!
-  $cincinnatiAssetId: String!
-  $cincinnatiLinkId: String!
-  $valroseAssetId: String!
-  $valroseLinkId: String!
-  $combinedBrainAssetId: String!
-  $combinedBrainLinkId: String!
-) {
+query GetPartnershipsPage($locale: String, $partnershipsPageheadingId: String!, $partnershipsPageParagraphsId: String!, $partnersHeadingId: String!, $nr2f1FranceAssetId: String!, $nr2f1FranceLinkId: String!, $schaafLaboratoryAssetId: String!, $schaafLaboratoryLinkId: String!, $cincinnatiAssetId: String!, $cincinnatiLinkId: String!, $valroseAssetId: String!, $valroseLinkId: String!, $combinedBrainAssetId: String!, $combinedBrainLinkId: String!, $renAssetId: String!, $renLinkId: String!, $globalGenesAssetId: String!, $globalGenesLinkId: String!, $uniqueAssetId: String!, $uniqueLinkId: String!) {
   heading(locale: $locale, id: $partnershipsPageheadingId) {
     content
   }
@@ -73,6 +58,39 @@ query GetPartnershipsPage(
     url
   }
   combinedBrainLink: link(locale: $locale, id: $combinedBrainLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  renAsset: asset(id: $renAssetId) {
+    url
+  }
+  renLink: link(locale: $locale, id: $renLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  globalGenesAsset: asset(id: $globalGenesAssetId) {
+    url
+  }
+  globalGenesLink: link(locale: $locale, id: $globalGenesLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  uniqueAsset: asset(id: $uniqueAssetId) {
+    url
+  }
+  uniqueLink: link(locale: $locale, id: $uniqueLinkId) {
     text {
       content
     }

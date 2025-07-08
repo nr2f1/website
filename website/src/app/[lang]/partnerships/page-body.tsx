@@ -11,15 +11,21 @@ import { partnersHeadingId, partnershipsPageheadingId } from '@models/headings';
 import {
   cincinnatiAssetId,
   combinedBrainAssetId,
+  globalGenesAssetId,
   nr2f1FranceAssetId,
+  renAssetId,
   schaafLaboratoryAssetId,
+  uniqueAssetId,
   valroseAssetId,
 } from '@models/images';
 import {
   cincinnatiLinkId,
   combinedBrainLinkId,
+  globalGenesLinkId,
   nr2f1FranceLinkId,
+  renLinkId,
   schaafLaboratoryLinkId,
+  uniqueLinkId,
   valroseLinkId,
 } from '@models/links';
 import { partnershipsPageParagraphsId } from '@models/paragraphs';
@@ -46,6 +52,12 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
       valroseLink,
       combinedBrainAsset,
       combinedBrainLink,
+      renAsset,
+      renLink,
+      globalGenesLink,
+      globalGenesAsset,
+      uniqueLink,
+      uniqueAsset,
     },
     error,
   } = await query<GetPartnershipsPageQuery>({
@@ -65,6 +77,12 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
       valroseLinkId,
       combinedBrainAssetId,
       combinedBrainLinkId,
+      renAssetId,
+      renLinkId,
+      globalGenesLinkId,
+      globalGenesAssetId,
+      uniqueLinkId,
+      uniqueAssetId,
     },
   });
 
@@ -136,6 +154,39 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
                 </picture>
                 <a href={combinedBrainLink?.target?.url ?? ''}>
                   {combinedBrainLink?.text?.content ?? ''}
+                </a>
+              </li>
+              <li>
+                <picture>
+                  <img
+                    src={renAsset?.url ?? ''}
+                    alt={renLink?.text?.content ?? ''}
+                  />
+                </picture>
+                <a href={renLink?.target?.url ?? ''}>
+                  {renLink?.text?.content ?? ''}
+                </a>
+              </li>
+              <li>
+                <picture>
+                  <img
+                    src={globalGenesAsset?.url ?? ''}
+                    alt={globalGenesLink?.text?.content ?? ''}
+                  />
+                </picture>
+                <a href={globalGenesLink?.target?.url ?? ''}>
+                  {globalGenesLink?.text?.content ?? ''}
+                </a>
+              </li>
+              <li>
+                <picture>
+                  <img
+                    src={uniqueAsset?.url ?? ''}
+                    alt={uniqueLink?.text?.content ?? ''}
+                  />
+                </picture>
+                <a href={uniqueLink?.target?.url ?? ''}>
+                  {uniqueLink?.text?.content ?? ''}
                 </a>
               </li>
             </ul>

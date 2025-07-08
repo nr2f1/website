@@ -4,3 +4,6 @@ export const schaafLaboratoryAssetId = '6HxCDVMysu94SS8gDLQZjW';
 export const cincinnatiAssetId = '7szFrNbrz7NrINnspGzGJV';
 export const valroseAssetId = '4sghgmhOzpixmCmO8b633Q';
 export const combinedBrainAssetId = '5HJErxIUVAqRKTDIdtwpLV';
+export const renAssetId = 'A7ffHcwQ9AAFDVVe2a2k3';
+export const globalGenesAssetId = '4A2NwsE75ADdk2NG3LwHJc';
+export const uniqueAssetId = '5pz8HGORauJvj4mjbQ3vFJ';

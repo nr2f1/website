@@ -39,3 +39,6 @@ export const schaafLaboratoryLinkId = '2azhdt18IBlITwnmWevnoh';
 export const cincinnatiLinkId = '5hOjR36hxkeYfpUgTnlVNs';
 export const valroseLinkId = '1FoQACKHG7eqiX8aoPkOjb';
 export const combinedBrainLinkId = '22d0QahxYSxyjtkGZucmk5';
+export const renLinkId = '2ZwACMjV3jE2DTNYbiv4te';
+export const globalGenesLinkId = '3p4Z3e7VfVH5WMxbXSsw1U';
+export const uniqueLinkId = '4SvAB0idVYqw7GngdgCow3';
