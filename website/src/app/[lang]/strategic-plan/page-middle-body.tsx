@@ -1,5 +1,3 @@
-import progressStyles from './index.module.scss';
-
 import PageBodySection from '@components/page-body-section';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
@@ -14,6 +12,7 @@ import {
   getThereProgressParagraphsId,
 } from '@models/paragraphs';
 import { createHashLink } from '@shared/utils/hash-links';
+import progressStyles from './index.module.scss';
 
 const { query } = getClient();
 
@@ -30,10 +29,10 @@ const StrategicPlanMiddleBody: React.FC<StrategicPlanMiddleBodyProps> = async ({
   } = await query<GetStrategicPlanMiddlePageQuery>({
     query: GetStrategicPlanMiddlePageDocument,
     variables: {
-      locale: lang,
       getThereHeadingId,
       getThereParagraphsId,
       getThereProgressParagraphsId,
+      locale: lang,
     },
   });
 

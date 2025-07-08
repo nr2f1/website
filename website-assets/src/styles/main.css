@@ -49,21 +49,24 @@ main {
   column-gap: 1.25rem;
   border: 1px solid var(--border-default);
   margin: 1.25rem 0;
-  &.inverse a {
-    background-color: var(--background-inverse-primary);
-    color: white;
-  }
 }
 
-.logos a {
-  display: block;
-  margin-right: 1.25rem;
+.logos li.inverse a {
+  background-color: var(--background-inverse-primary) !important;
+  color: white !important;
 }
 
 .logos a[href="./assets/logos/ga-text-white-white.svg"] picture,
 .logos a[href="./assets/logos/ga-white.svg"] picture {
   background-color: black;
 }
+
+/* biome-ignore lint/style/noDescendingSpecificity: it is ok */
+.logos li a {
+  display: block;
+  margin-right: 1.25rem;
+}
+
 .logos picture {
   width: 250px;
 }

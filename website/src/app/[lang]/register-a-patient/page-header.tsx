@@ -19,8 +19,8 @@ const RegisterPageHeader: React.FC<RegisterPageHeaderProps> = async ({
   const { data, error } = await query<GetPageHeaderQuery>({
     query: GetPageHeaderDocument,
     variables: {
-      locale: lang,
       id: registerPatientPageHeaderId,
+      locale: lang,
     },
   });
 

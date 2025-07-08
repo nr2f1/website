@@ -16,11 +16,10 @@
     "includes": [
       "**",
       "!**/tsconfig.json",
-      "!**/.next",
-      "!**/dist",
-      "!**/.nx/cache",
-      "!**/website/.next",
-      "!**/website/src/graphql"
+      "!**/.next/**",
+      "!**/dist/**",
+      "!**/.nx/cache/**",
+      "!**/website/src/graphql/**"
     ],
     "indentStyle": "space",
     "indentWidth": 2,
@@ -38,11 +37,10 @@
     "includes": [
       "**",
       "!**/tsconfig.json",
-      "!**/.next",
-      "!**/dist",
-      "!**/.nx/cache",
-      "!**/website/.next",
-      "!**/website/src/graphql"
+      "!**/.next/**",
+      "!**/dist/**",
+      "!**/.nx/cache/**",
+      "!**/website/src/graphql/**"
     ],
     "rules": {
       "recommended": true,

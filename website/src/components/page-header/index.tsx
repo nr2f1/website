@@ -1,7 +1,6 @@
-import styles from './index.module.scss';
-
 import type { AvailableLocale } from '@i18n/locales';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
+import styles from './index.module.scss';
 
 interface PageHeaderProps {
   imageUrl?: string;
@@ -13,10 +12,10 @@ interface PageHeaderProps {
 type LastUpdated = Record<AvailableLocale, string>;
 
 const lastUpdatedI18n: LastUpdated = {
+  de: 'Zuletzt aktualisiert',
   en: 'Last updated',
   es: 'Última actualización',
   fr: 'Dernière mise à jour',
-  de: 'Zuletzt aktualisiert',
 };
 
 const PageHeader: React.FC<PageHeaderProps> = ({

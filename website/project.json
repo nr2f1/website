@@ -1,24 +1,24 @@
 {
-  "name": "website",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "website",
+  "name": "website",
   "projectType": "application",
+  "sourceRoot": "website",
+  "tags": [],
   "targets": {
-    "lint": {
-      "command": "pnpm biome check website"
-    },
     "format": {
       "command": "pnpm biome format website"
+    },
+    "graphql-generate": {
+      "command": "pnpm graphql-codegen --config website/src/config/codegen.ts"
+    },
+    "lint": {
+      "command": "pnpm biome check website"
     },
     "test": {
       "executor": "@nx/vite:test",
       "options": {
         "config": "website/vitest.config.ts"
       }
-    },
-    "graphql-generate": {
-      "command": "pnpm graphql-codegen --config website/src/config/codegen.ts"
     }
-  },
-  "tags": []
+  }
 }

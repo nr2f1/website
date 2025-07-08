@@ -19,8 +19,8 @@ const LivingWithBbsoasHeader: React.FC<LivingWithBbsoasHeaderProps> = async ({
   const { data, error } = await query<GetPageHeaderQuery>({
     query: GetPageHeaderDocument,
     variables: {
-      locale: lang,
       id: livingWithBbsoasPageHeaderId,
+      locale: lang,
     },
   });
 

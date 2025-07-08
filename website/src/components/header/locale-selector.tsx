@@ -1,17 +1,16 @@
 'use client';
-import styles from './locale-selector.module.scss';
 
 import {
   AVAILABLE_LOCALES_LABEL_KEYS,
   type AvailableLocale,
   english,
 } from '@i18n/locales';
-
 import { Option } from '@mui/base/Option';
 import { Select } from '@mui/base/Select';
 import type { MuiEvent } from '@shared/types/mui';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import styles from './locale-selector.module.scss';
 
 interface LocaleSelectorProps {
   isMobile?: boolean;
@@ -52,16 +51,16 @@ const LocaleSelector: React.FC<LocaleSelectorProps> = ({
           : styles.select
       }
       slotProps={{
-        popup: {
-          disablePortal: true,
-          className: isMobile
-            ? `${styles.popup} ${styles['popup--mobile']}`
-            : styles.popup,
-        },
         listbox: {
           className: isMobile
             ? `${styles.listbox} ${styles['listbox--mobile']}`
             : styles.listbox,
+        },
+        popup: {
+          className: isMobile
+            ? `${styles.popup} ${styles['popup--mobile']}`
+            : styles.popup,
+          disablePortal: true,
         },
       }}
     >

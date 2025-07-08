@@ -5,14 +5,14 @@ const nextConfig: WithNxOptions = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
         hostname: 'nr2f1.github.io',
         pathname: '/website/**',
+        protocol: 'https',
       },
       {
-        protocol: 'https',
         hostname: 'images.ctfassets.net',
         pathname: '/9j9d6tsmuyzl/**',
+        protocol: 'https',
       },
     ],
   },

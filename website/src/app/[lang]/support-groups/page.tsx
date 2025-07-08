@@ -49,19 +49,19 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
-      locale: lang,
       id: supportGroupsPageMetadataId,
+      locale: lang,
     },
   });
 
   const jsonLd: WithContext<WebPage> = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: `https://nr2f1.org${routes['support-groups'](lang)}`,
-    name: title,
     description,
     inLanguage: lang,
     keywords,
+    name: title,
+    url: `https://nr2f1.org${routes['support-groups'](lang)}`,
   };
 
   const {
@@ -84,20 +84,20 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   } = await query<GetSupportGroupsPageQuery>({
     query: GetSupportGroupsPageDocument,
     variables: {
+      caregiverParagraphsId,
+      caregiversHeadingId,
+      dadsHeadingId,
+      dadsParagraphsId,
+      dadsUkHeadingId,
+      dadsUkParagraphsId,
+      facebookHeadingId,
+      facebookParagraphsId,
       locale: lang,
+      spanishParentsHeadingId,
+      spanishParentsParagraphsId,
       supportGroupsIntroParagraphsId,
       virtualParentsHeadingId,
       virtualParentsParagraphsId,
-      dadsHeadingId,
-      dadsParagraphsId,
-      caregiversHeadingId,
-      caregiverParagraphsId,
-      spanishParentsHeadingId,
-      spanishParentsParagraphsId,
-      facebookHeadingId,
-      facebookParagraphsId,
-      dadsUkHeadingId,
-      dadsUkParagraphsId,
     },
   });
 
@@ -181,15 +181,15 @@ export async function generateMetadata({
   } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
-      locale: lang,
       id: supportGroupsPageMetadataId,
+      locale: lang,
     },
   });
 
   return {
-    title: `NR2F1 Foundation | ${title}`,
     description,
     keywords,
+    title: `NR2F1 Foundation | ${title}`,
   };
 }
 

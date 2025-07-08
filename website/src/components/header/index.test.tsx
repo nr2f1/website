@@ -11,41 +11,36 @@ vi.mock('next/navigation', async (importOriginal) => {
   return {
     // @ts-ignore
     ...actual,
+    usePathname() {
+      return `/${locale}`;
+    },
     useRouter() {
       return {
         push: () => vi.fn(),
       };
-    },
-    usePathname() {
-      return `/${locale}`;
     },
   };
 });
 
 const result = {
   data: {
-    registerPatient: {
-      content: 'Registrar un paciente',
-      href: '/',
+    aboutBbsoas: {
+      linksCollection: {
+        items: [],
+      },
+      name: 'Sobre nosotros',
+    },
+    aboutUs: {
+      linksCollection: {
+        items: [],
+      },
+      name: 'Acerca de BBSOAS',
     },
     donate: {
       content: 'Donar',
       href: '/',
     },
-    aboutBbsoas: {
-      name: 'Sobre nosotros',
-      linksCollection: {
-        items: [],
-      },
-    },
-    aboutUs: {
-      name: 'Acerca de BBSOAS',
-      linksCollection: {
-        items: [],
-      },
-    },
     livingWithBbsoas: {
-      name: 'Vivir con BBSOAS',
       linksCollection: {
         items: [
           {
@@ -58,9 +53,13 @@ const result = {
           },
         ],
       },
+      name: 'Vivir con BBSOAS',
+    },
+    registerPatient: {
+      content: 'Registrar un paciente',
+      href: '/',
     },
     research: {
-      name: 'Investigación',
       linksCollection: {
         items: [
           {
@@ -69,9 +68,9 @@ const result = {
           },
         ],
       },
+      name: 'Investigación',
     },
     supportUs: {
-      name: 'Apoyanos',
       linksCollection: {
         items: [
           {
@@ -80,6 +79,7 @@ const result = {
           },
         ],
       },
+      name: 'Apoyanos',
     },
   },
 };

@@ -1,5 +1,3 @@
-import styles from './index.module.scss';
-
 import NewsCard from '@components/news-card';
 import { getClient } from '@graphql/client';
 import {
@@ -20,6 +18,7 @@ import { latestNewsTitleId } from '@models/headings';
 import { latestNewsCtaId } from '@models/links';
 import { fromBlogNewsletterToNews } from '@shared/utils/from-blog-newsletter-to-news';
 import Link from 'next/link';
+import styles from './index.module.scss';
 
 interface LatestNewsProps {
   lang: AvailableLocale;
@@ -53,10 +52,10 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
   const rawPodcast = items.filter((item) => item?.__typename === 'Podcast');
 
   const allNews = fromBlogNewsletterToNews({
-    posts: rawPosts as BlogPageCollection['items'],
+    limit: total,
     newsletters: rawNewsletter as NewsletterCollection['items'],
     podcasts: rawPodcast as PodcastCollection['items'],
-    limit: total,
+    posts: rawPosts as BlogPageCollection['items'],
   });
 
   const news = allNews.slice(0, 6);
@@ -67,9 +66,9 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
   } = await query<GetLatestNewsQuery>({
     query: GetLatestNewsDocument,
     variables: {
-      locale: lang,
-      latestNewsTitleId,
       latestNewsCtaId,
+      latestNewsTitleId,
+      locale: lang,
     },
   });
 

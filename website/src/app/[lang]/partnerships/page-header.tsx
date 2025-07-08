@@ -19,8 +19,8 @@ const PartnershipsHeader: React.FC<PartnershipsHeaderProps> = async ({
   const { data, error } = await query<GetPageHeaderQuery>({
     query: GetPageHeaderDocument,
     variables: {
-      locale: lang,
       id: partnershipsPageHeaderId,
+      locale: lang,
     },
   });
 

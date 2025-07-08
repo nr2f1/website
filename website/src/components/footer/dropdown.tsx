@@ -1,9 +1,7 @@
-import styles from './dropdown.module.scss';
-
 import { AVAILABLE_LOCALES_LABEL_KEYS } from '@i18n/locales';
-
 import { Option } from '@mui/base/Option';
 import { Select } from '@mui/base/Select';
+import styles from './dropdown.module.scss';
 
 const LocaleSelector = () => {
   return (
@@ -11,11 +9,11 @@ const LocaleSelector = () => {
       id="role"
       className={styles.select}
       slotProps={{
-        popup: {
-          className: styles.popup,
-        },
         listbox: {
           className: styles.listbox,
+        },
+        popup: {
+          className: styles.popup,
         },
       }}
     >

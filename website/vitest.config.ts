@@ -13,11 +13,6 @@ export default defineConfig({
   // @ts-ignore
   plugins: [react()],
   test: {
-    reporters: ['default'],
-    environment: 'jsdom',
-    setupFiles: ['tests/setup.ts'],
-    root: 'website/src',
-    globals: true,
     alias: {
       '@app': '/app',
       '@components': '/components',
@@ -25,11 +20,16 @@ export default defineConfig({
       '@graphql': '/graphql',
       '@i18n': '/i18n',
       '@models': '/models',
+      '@routes': '/routes',
       '@services': '/services',
       '@shared': '/shared',
       '@styles': '/styles',
       '@tests': '/tests',
-      '@routes': '/routes',
     },
+    environment: 'jsdom',
+    globals: true,
+    reporters: ['default'],
+    root: 'website/src',
+    setupFiles: ['tests/setup.ts'],
   },
 });

@@ -1,7 +1,6 @@
+import type { AvailableLocale, LocalisedString } from '@i18n/locales';
 import { createHashLink } from '@shared/utils/hash-links';
 import styles from './index.module.scss';
-
-import type { AvailableLocale, LocalisedString } from '@i18n/locales';
 
 interface HeadingsProps {
   headings: string[];
@@ -12,10 +11,10 @@ interface PageContentsProps extends HeadingsProps {
 }
 
 export const pageContents: LocalisedString = {
+  de: 'Seiteninhalt',
   en: 'Page contents',
   es: 'Contenido de la página',
   fr: 'Contenu de la page',
-  de: 'Seiteninhalt',
 };
 
 const Headings: React.FC<HeadingsProps> = ({ headings }) => {

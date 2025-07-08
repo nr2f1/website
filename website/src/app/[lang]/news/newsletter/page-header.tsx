@@ -19,8 +19,8 @@ const NewsletterPageHeader: React.FC<NewsPageHeaderProps> = async ({
   const { data, error } = await query<GetNewsletterPageHeaderQuery>({
     query: GetNewsletterPageHeaderDocument,
     variables: {
-      locale: lang,
       id: newsletterIndexPageHeaderId,
+      locale: lang,
     },
   });
 

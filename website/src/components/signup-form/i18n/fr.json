@@ -218,7 +218,59 @@
     { "label": "Zambie", "value": "ZMB" },
     { "label": "Zimbabwe", "value": "ZWE" }
   ],
-  "validatioErrorMessage": "Ce champ est obligatoire",
+
+  "fields": {
+    "city": {
+      "label": "Ville",
+      "placeholder": "Nom de la ville"
+    },
+    "country": {
+      "label": "Pays"
+    },
+    "email": {
+      "label": "Adresse e-mail",
+      "placeholder": "name@email.com"
+    },
+    "firstname": {
+      "label": "Prénom",
+      "placeholder": "John"
+    },
+    "lastname": {
+      "label": "Nom de famille",
+      "placeholder": "Smith"
+    },
+    "patientFirstName": {
+      "label": "Prénom du patient BBSOAS",
+      "placeholder": "Sarah"
+    },
+    "postCode": {
+      "label": "Code postal",
+      "placeholder": "Code postal"
+    },
+    "region": {
+      "label": "État/Province/Région",
+      "placeholder": "Nom de la région"
+    },
+    "role": {
+      "label": "Je suis un(e):"
+    },
+    "streetAdress": {
+      "label": "Adresse",
+      "placeholder": "123 Nom de la rue"
+    }
+  },
+  "formHeading": "Inscrivez-vous pour recevoir des nouvelles et des mises à jour de la Fondation NR2F1",
+  "formSuccessHeadingDefault": "Merci de vous être abonné !",
+  "formSuccessHeadingParentPatient": "Merci de votre inscription !",
+  "formSuccessMessage": "Gardez un œil sur votre boîte de réception pour les nouvelles et les mises à jour de la Fondation NR2F1.",
+  "optional": "optionnel",
+  "parent": {
+    "heading": "Aidez-nous dans notre mission",
+    "text": "Si vous êtes un parent de BBSOAS, pourriez-vous partager avec nous le prénom et l'adresse de votre enfant atteint de BBSOAS ? Nous utilisons ces informations pour suivre le nombre de diagnostics dans le monde entier."
+  },
+  "parentContact": {
+    "heading": "Coordonnées du parent/tuteur ou du patient BBSOAS"
+  },
   "roles": [
     {
       "label": "Parent/tuteur ou patient BBSOAS",
@@ -230,58 +282,6 @@
       "value": "specialist"
     }
   ],
-
-  "fields": {
-    "firstname": {
-      "label": "Prénom",
-      "placeholder": "John"
-    },
-    "lastname": {
-      "label": "Nom de famille",
-      "placeholder": "Smith"
-    },
-    "email": {
-      "label": "Adresse e-mail",
-      "placeholder": "name@email.com"
-    },
-    "role": {
-      "label": "Je suis un(e):"
-    },
-    "patientFirstName": {
-      "label": "Prénom du patient BBSOAS",
-      "placeholder": "Sarah"
-    },
-    "country": {
-      "label": "Pays"
-    },
-    "region": {
-      "label": "État/Province/Région",
-      "placeholder": "Nom de la région"
-    },
-    "streetAdress": {
-      "label": "Adresse",
-      "placeholder": "123 Nom de la rue"
-    },
-    "city": {
-      "label": "Ville",
-      "placeholder": "Nom de la ville"
-    },
-    "postCode": {
-      "label": "Code postal",
-      "placeholder": "Code postal"
-    }
-  },
-  "formHeading": "Inscrivez-vous pour recevoir des nouvelles et des mises à jour de la Fondation NR2F1",
-  "formSuccessHeadingDefault": "Merci de vous être abonné !",
-  "formSuccessHeadingParentPatient": "Merci de votre inscription !",
-  "formSuccessMessage": "Gardez un œil sur votre boîte de réception pour les nouvelles et les mises à jour de la Fondation NR2F1.",
-  "parent": {
-    "heading": "Aidez-nous dans notre mission",
-    "text": "Si vous êtes un parent de BBSOAS, pourriez-vous partager avec nous le prénom et l'adresse de votre enfant atteint de BBSOAS ? Nous utilisons ces informations pour suivre le nombre de diagnostics dans le monde entier."
-  },
-  "parentContact": {
-    "heading": "Coordonnées du parent/tuteur ou du patient BBSOAS"
-  },
   "signupButton": "S'inscrire",
-  "optional": "optionnel"
+  "validatioErrorMessage": "Ce champ est obligatoire"
 }

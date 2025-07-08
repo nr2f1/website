@@ -1,5 +1,3 @@
-import styles from './index.module.scss';
-
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
 import {
@@ -8,6 +6,7 @@ import {
 } from '@graphql/queries/banner/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { supportUsBannerId } from '@models/banners/banner';
+import styles from './index.module.scss';
 
 interface SupportBannerProps {
   lang: AvailableLocale;

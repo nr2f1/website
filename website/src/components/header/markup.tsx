@@ -1,7 +1,5 @@
 'use client';
 
-import styles from './index.module.scss';
-
 import MainOnLight from '@components/logos/main-on-light';
 import { useGetHeaderSuspenseQuery } from '@graphql/queries/header/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
@@ -35,6 +33,7 @@ import { aboutCopiesId } from '@models/resource-sets';
 import type { LocalisedLinkProps } from '@shared/types/link';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import styles from './index.module.scss';
 import LocaleSelector from './locale-selector';
 import NavList from './nav-list';
 
@@ -89,30 +88,30 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
     error,
   } = useGetHeaderSuspenseQuery({
     variables: {
-      locale: lang,
-      registerPatientId,
-      donateId,
       aboutCopiesId,
-      aboutUsLinkOrganisationId,
-      aboutUsLinkOurStrategyId,
-      aboutUsLinkOurNewsId,
-      aboutUsLinkFinancialsId,
-      aboutUsLinkParnershipsId,
       aboutUsLinkConferenceId,
-      whatIsBbsoasLinkId,
+      aboutUsLinkFinancialsId,
+      aboutUsLinkOrganisationId,
+      aboutUsLinkOurNewsId,
+      aboutUsLinkOurStrategyId,
+      aboutUsLinkParnershipsId,
       contactUsLinkId,
-      livingWithBbsoasMicrocopyId,
-      livingWithBbsoasLinkId,
-      registerABbsoasPatientLinkId,
-      supportGroupsLinkId,
-      researchMicrocopyId,
-      researchLinkId,
-      publicationsLinkId,
+      donateId,
       forResearchersLinkId,
-      supportUsMicrocopyId,
-      supportUsLinkId,
-      volunteerLinkId,
+      livingWithBbsoasLinkId,
+      livingWithBbsoasMicrocopyId,
+      locale: lang,
+      publicationsLinkId,
+      registerABbsoasPatientLinkId,
+      registerPatientId,
+      researchLinkId,
+      researchMicrocopyId,
       shopLinkId,
+      supportGroupsLinkId,
+      supportUsLinkId,
+      supportUsMicrocopyId,
+      volunteerLinkId,
+      whatIsBbsoasLinkId,
     },
   });
 

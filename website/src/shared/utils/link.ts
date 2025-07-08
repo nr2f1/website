@@ -24,13 +24,13 @@ export const getLocalisedLinkProps = (
     if (item?.text && item.target) {
       const { text, target } = item;
       return {
-        href: target?.url || '',
         content: text?.content || '',
+        href: target?.url || '',
       };
     }
     return {
-      href: '',
       content: '',
+      href: '',
     };
   });
 };

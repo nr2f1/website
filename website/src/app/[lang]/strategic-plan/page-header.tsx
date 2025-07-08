@@ -19,8 +19,8 @@ const StrategicPlanHeader: React.FC<StrategicPlanHeaderProps> = async ({
   const { data, error } = await query<GetPageHeaderQuery>({
     query: GetPageHeaderDocument,
     variables: {
-      locale: lang,
       id: strategicPlanPageHeaderId,
+      locale: lang,
     },
   });
 

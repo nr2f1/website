@@ -4,9 +4,9 @@ import NewsPageBody from './page-body';
 import NewsPageHeader from './page-header';
 
 export const metadata: Metadata = {
+  description: 'News',
   // Todo: update i18n title and description
   title: 'NR2F1 Foundation | News',
-  description: 'News',
 };
 
 interface NewsPageProps extends PagePropsWithLocale {

@@ -14,6 +14,14 @@ interface RoleOptionProps {
 type LocaleRoleOptions = Record<AvailableLocale, RoleOptionProps[]>;
 
 export const roles: LocaleRoleOptions = {
+  de: [
+    {
+      label: 'BBSOAS Elternteil/Betreuer oder Patient',
+      value: Role.ParentPatient,
+    },
+    { label: 'Fan', value: Role.Supporter },
+    { label: 'Forscher, Arzt oder Spezialist', value: Role.Specialist },
+  ],
   en: [
     {
       label: 'BBSOAS parent/carer or patient',
@@ -22,17 +30,6 @@ export const roles: LocaleRoleOptions = {
     { label: 'Supporter', value: Role.Supporter },
     {
       label: 'Researcher, doctor or specialist',
-      value: Role.Specialist,
-    },
-  ],
-  fr: [
-    {
-      label: 'Parent/tuteur ou patient BBSOAS',
-      value: Role.ParentPatient,
-    },
-    { label: 'Supporter', value: Role.Supporter },
-    {
-      label: 'Chercheur, médecin ou spécialiste',
       value: Role.Specialist,
     },
   ],
@@ -47,13 +44,16 @@ export const roles: LocaleRoleOptions = {
       value: Role.Specialist,
     },
   ],
-  de: [
+  fr: [
     {
-      label: 'BBSOAS Elternteil/Betreuer oder Patient',
+      label: 'Parent/tuteur ou patient BBSOAS',
       value: Role.ParentPatient,
     },
-    { label: 'Fan', value: Role.Supporter },
-    { label: 'Forscher, Arzt oder Spezialist', value: Role.Specialist },
+    { label: 'Supporter', value: Role.Supporter },
+    {
+      label: 'Chercheur, médecin ou spécialiste',
+      value: Role.Specialist,
+    },
   ],
 };
 

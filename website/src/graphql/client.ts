@@ -1,11 +1,11 @@
 import { HttpLink } from '@apollo/client';
+import { loadDevMessages, loadErrorMessages } from '@apollo/client/dev';
 import {
   ApolloClient,
   InMemoryCache,
   registerApolloClient,
 } from '@apollo/experimental-nextjs-app-support';
 import { Authorization, CONTENTUL_GRAPHQL_API } from '@config/utils';
-import { loadErrorMessages, loadDevMessages } from '@apollo/client/dev';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -28,10 +28,10 @@ export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
       },
     }),
     link: new HttpLink({
-      uri: CONTENTUL_GRAPHQL_API,
       headers: {
         Authorization,
       },
+      uri: CONTENTUL_GRAPHQL_API,
     }),
   });
 });

@@ -1,5 +1,3 @@
-import styles from './page-body.module.scss';
-
 import PageBody from '@components/page-body';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
@@ -18,6 +16,7 @@ import {
 } from '@models/paragraphs';
 import { createHashLink } from '@shared/utils/hash-links';
 import type { ScholarlyArticle, WithContext } from 'schema-dts';
+import styles from './page-body.module.scss';
 
 interface RegisterPageBodyProps {
   lang: AvailableLocale;
@@ -52,9 +51,9 @@ const getPublicationWithLink = (
 ): PublicationWithLink => {
   const { title, dateOfPublication, link, asset } = publication;
   return {
+    link: link ?? asset?.url ?? '',
     title: title,
     year: new Date(dateOfPublication).getFullYear(),
-    link: link ?? asset?.url ?? '',
   };
 };
 
@@ -65,9 +64,9 @@ const getPublicationsByYear = (
   const existingYear = acc.find((publication) => publication.year === year);
 
   if (existingYear) {
-    existingYear.publications.push({ title, link, year });
+    existingYear.publications.push({ link, title, year });
   } else {
-    acc.push({ year, publications: [{ title, link, year }] });
+    acc.push({ publications: [{ link, title, year }], year });
   }
 
   return acc;
@@ -136,11 +135,11 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
   } = await query<GetPublicationsPageQuery>({
     query: GetPublicationsPageDocument,
     variables: {
-      locale: lang,
-      patientResearchHeadingId,
-      patientResearchContentId,
-      geneResearchHeadingId,
       geneResearchContentId,
+      geneResearchHeadingId,
+      locale: lang,
+      patientResearchContentId,
+      patientResearchHeadingId,
     },
   });
 

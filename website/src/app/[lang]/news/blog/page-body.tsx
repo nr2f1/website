@@ -1,5 +1,3 @@
-import styles from './page-body.module.scss';
-
 import NewsCard from '@components/news-card';
 import Pagination from '@components/pagination';
 import { getClient } from '@graphql/client';
@@ -9,8 +7,8 @@ import {
 } from '@graphql/queries/news/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { News } from '@shared/types/news';
-
 import type { CollectionPage, WithContext } from 'schema-dts';
+import styles from './page-body.module.scss';
 
 interface NewsPageBodyProps {
   lang: AvailableLocale;
@@ -41,8 +39,8 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
   } = await query<GetBlogPostsQuery>({
     query: GetBlogPostsDocument,
     variables: {
-      locale: lang,
       limit: LIMIT,
+      locale: lang,
       skip: getSkipPagination(page, LIMIT),
     },
   });
@@ -60,8 +58,8 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
         date: item?.date ?? ('' as string),
         imageUrl: item?.image?.url,
         title: item?.title ?? '',
-        url: item?.slug ?? '',
         type: News.BLOG,
+        url: item?.slug ?? '',
       };
     });
 
@@ -71,8 +69,8 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
     mainEntity: posts.map(({ title, url, imageUrl }) => ({
       '@type': 'BlogPosting',
       headline: title,
-      url: `https://nr2f1.org/${lang}/news/${url}`,
       image: imageUrl ?? undefined,
+      url: `https://nr2f1.org/${lang}/news/${url}`,
     })),
   };
 

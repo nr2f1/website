@@ -40,10 +40,10 @@ interface RegisterPageBodyProps {
 const { query } = getClient();
 
 const alreadyRegister: LocalisedString = {
+  de: 'Bereits registriert?',
   en: 'Already registered?',
   es: '¿Ya estás registrado?',
   fr: 'Déjà enregistré?',
-  de: 'Bereits registriert?',
 };
 
 const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
@@ -69,22 +69,22 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
   } = await query<GetRegisterPatientPageQuery>({
     query: GetRegisterPatientPageDocument,
     variables: {
-      locale: lang,
       introId,
-      registerWithUsHeadingId,
-      registerPatientRegistryHeadingId,
-      registerClinicalIdHeadingId,
-      registerPatientRegistryLoginLinkId,
-      registerWithUsContentId,
-      registerPatientRegistryContentId,
-      registerPatientRegistrySignUpLinkId,
-      whoCanTakePartAccordionId,
-      whoWillHaveAccessAccordionId,
-      otherThanFillSurveysAccordionId,
+      locale: lang,
       matrixLanguagesAccordionId,
-      whoContactAccordionId,
+      otherThanFillSurveysAccordionId,
       registerClinicalIdContentId,
+      registerClinicalIdHeadingId,
       registerContentIdLinkId,
+      registerPatientRegistryContentId,
+      registerPatientRegistryHeadingId,
+      registerPatientRegistryLoginLinkId,
+      registerPatientRegistrySignUpLinkId,
+      registerWithUsContentId,
+      registerWithUsHeadingId,
+      whoCanTakePartAccordionId,
+      whoContactAccordionId,
+      whoWillHaveAccessAccordionId,
     },
   });
 

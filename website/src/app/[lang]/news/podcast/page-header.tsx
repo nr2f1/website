@@ -17,8 +17,8 @@ const PodcastPageHeader: React.FC<NewsPageHeaderProps> = async ({ lang }) => {
   const { data, error } = await query<GetPodcastPageHeaderQuery>({
     query: GetPodcastPageHeaderDocument,
     variables: {
-      locale: lang,
       id: podcastIndexPageHeaderId,
+      locale: lang,
     },
   });
 

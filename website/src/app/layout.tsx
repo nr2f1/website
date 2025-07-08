@@ -3,17 +3,17 @@ import '@styles/main.scss';
 import { ApolloWrapper } from '@app/apollo-wrapper';
 
 export const metadata = {
-  title: 'NR2F1 Foundation',
-  metadataBase: new URL('https://website-nr2f1.vercel.app'), // TODO: update this once we migrate
   alternates: {
     canonical: '/',
     languages: {
-      en: '/en',
       de: '/de',
+      en: '/en',
       es: '/es',
       fr: '/fr',
     },
   },
+  metadataBase: new URL('https://website-nr2f1.vercel.app'), // TODO: update this once we migrate
+  title: 'NR2F1 Foundation',
 };
 
 interface RootLayoutProps {

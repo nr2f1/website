@@ -1,5 +1,3 @@
-import styles from './page-body.module.scss';
-
 import NewsCard from '@components/news-card';
 import Pagination from '@components/pagination';
 import { getClient } from '@graphql/client';
@@ -9,8 +7,8 @@ import {
 } from '@graphql/queries/news/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { News } from '@shared/types/news';
-
 import type { CollectionPage, WithContext } from 'schema-dts';
+import styles from './page-body.module.scss';
 
 interface NewsPageBodyProps {
   lang: AvailableLocale;
@@ -41,8 +39,8 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
   } = await query<GetPodcastsQuery>({
     query: GetPodcastsDocument,
     variables: {
-      locale: lang,
       limit: LIMIT,
+      locale: lang,
       skip: getSkipPagination(page, LIMIT),
     },
   });
@@ -59,8 +57,8 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
       return {
         date: item?.date ?? ('' as string),
         title: item?.title ?? '',
-        url: item?.url ?? '',
         type: News.PODCAST,
+        url: item?.url ?? '',
       };
     });
 

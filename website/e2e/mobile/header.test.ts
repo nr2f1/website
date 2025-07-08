@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Mobile header', () => {
-  test.use({ viewport: { width: 428, height: 926 } });
+  test.use({ viewport: { height: 926, width: 428 } });
   test('UI elements', { tag: '@mobile' }, async ({ page }) => {
     await expect(
       page.getByRole('button', { name: 'hambuguer-button' }),

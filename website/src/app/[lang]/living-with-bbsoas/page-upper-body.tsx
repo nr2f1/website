@@ -1,5 +1,3 @@
-import styles from './index.module.scss';
-
 import PageBody from '@components/page-body';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
@@ -23,6 +21,7 @@ import {
 } from '@models/paragraphs';
 import { createHashLink } from '@shared/utils/hash-links';
 import Link from 'next/link';
+import styles from './index.module.scss';
 
 interface RegisterPageBodyProps {
   lang: AvailableLocale;
@@ -35,30 +34,30 @@ const LivingWithBbsoasUpperBody: React.FC<RegisterPageBodyProps> = async ({
 }) => {
   const {
     data: {
-      testAndTherapiesHeading,
-      testAndTherapiesParagraphs,
+      bbsoasClinicHeading,
+      handingLettersHeading,
+      registerPatientCta,
       registerPatientHeading,
       registerPatientParagraphs,
-      registerPatientCta,
+      testAndTherapiesHeading,
+      testAndTherapiesParagraphs,
       understandingBbsoasHeading,
       understandingBbsoasParagraphs,
-      handingLettersHeading,
-      bbsoasClinicHeading,
     },
     error,
   } = await query<GetLivingWithBbsoasUpperPageQuery>({
     query: GetLivingWithBbsoasUpperPageDocument,
     variables: {
+      bbsoasClinicHeadingId,
+      handingLettersHeadingId,
       locale: lang,
+      registerPatientHeadingId,
+      registerPatientLinkId,
+      registerPatientParagraphsId,
       testAndTherapiesHeadingId,
       testAndTherapiesParagraphsId,
-      registerPatientHeadingId,
-      registerPatientParagraphsId,
-      registerPatientLinkId,
       understandingBbsoasHeadingId,
       understandingBbsoasParagraphsId,
-      handingLettersHeadingId,
-      bbsoasClinicHeadingId,
     },
   });
 
