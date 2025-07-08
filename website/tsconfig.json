@@ -1,22 +1,13 @@
 {
-  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "jsx": "preserve",
     "allowJs": true,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "types": ["jest", "node"],
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "noEmit": true,
     "paths": {
       "@app/*": ["website/src/app/*"],
       "@components/*": ["website/src/components/*"],
@@ -24,13 +15,23 @@
       "@graphql/*": ["website/src/graphql/*"],
       "@i18n/*": ["website/src/i18n/*"],
       "@models/*": ["website/src/models/*"],
+      "@routes/*": ["website/src/routes/*"],
       "@services/*": ["website/src/services/*"],
       "@shared/*": ["website/src/shared/*"],
       "@styles/*": ["website/src/styles/*"],
-      "@tests/*": ["website/src/tests/*"],
-      "@routes/*": ["website/src/routes/*"]
-    }
+      "@tests/*": ["website/src/tests/*"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "resolveJsonModule": true,
+    "strict": true,
+    "types": ["jest", "node"]
   },
+  "exclude": ["node_modules", "jest.config.ts", "**/*.spec.ts", "**/*.test.ts"],
+  "extends": "../tsconfig.json",
   "include": [
     "**/*.ts",
     "**/*.tsx",
@@ -40,6 +41,5 @@
     "../dist/website/.next/types/**/*.ts",
     "next-env.d.ts",
     ".next/types/**/*.ts"
-  ],
-  "exclude": ["node_modules", "jest.config.ts", "**/*.spec.ts", "**/*.test.ts"]
+  ]
 }

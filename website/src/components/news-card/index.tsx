@@ -1,10 +1,9 @@
-import styles from './index.module.scss';
-
 import type { AvailableLocale } from '@i18n/locales';
 import { News } from '@shared/types/news';
 import { firstLetterCapital } from '@shared/utils/first-letter-capital';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
 import Link from 'next/link';
+import styles from './index.module.scss';
 
 export interface NewsCardProps {
   date: string;
@@ -37,21 +36,21 @@ interface NewsType {
 }
 
 const newsTypeLocale: Record<AvailableLocale, NewsType> = {
-  en: {
-    blog: 'Blog post',
-    newsletter: 'Newsletter',
-  },
-  fr: {
-    blog: 'Article de blog',
-    newsletter: "Bulletin d'information",
-  },
   de: {
     blog: 'Blogbeitrag',
+    newsletter: 'Newsletter',
+  },
+  en: {
+    blog: 'Blog post',
     newsletter: 'Newsletter',
   },
   es: {
     blog: 'Entrada de blog',
     newsletter: 'Boletín informativo',
+  },
+  fr: {
+    blog: 'Article de blog',
+    newsletter: "Bulletin d'information",
   },
 };
 

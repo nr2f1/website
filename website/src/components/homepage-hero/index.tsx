@@ -1,5 +1,3 @@
-import styles from './index.module.scss';
-
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
 import {
@@ -12,6 +10,7 @@ import { heroImageId } from '@models/images';
 import { heroCtaId } from '@models/links';
 import { heroNavigationListId } from '@models/navlinks';
 import { heroParagraphId } from '@models/paragraphs';
+import styles from './index.module.scss';
 
 interface HomePageHeroProps {
   lang: AvailableLocale;
@@ -28,15 +27,14 @@ const HomePageHero: React.FC<HomePageHeroProps> = async ({ lang }) => {
       heroParagraph,
       heroImage,
     },
-    error,
   } = await query<GetHomePageHeroQuery>({
     query: GetHomePageHeroDocument,
     variables: {
       heroCtaId,
       heroHeadingId,
+      heroImageId,
       heroNavigationListId,
       heroParagraphId,
-      heroImageId,
       locale: lang,
     },
   });
@@ -45,12 +43,12 @@ const HomePageHero: React.FC<HomePageHeroProps> = async ({ lang }) => {
     heroNavigationList?.linksCollection?.items.map((item) => {
       if (!item)
         return {
-          href: '#',
           content: 'Missing Link',
+          href: '#',
         };
       return {
-        href: item.target?.url ?? '#',
         content: item.text?.content ?? 'Missing Text',
+        href: item.target?.url ?? '#',
       };
     }) ?? [];
 

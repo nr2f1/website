@@ -1,46 +1,45 @@
-import styles from './not-found.module.scss';
-
 import Footer from '@components/footer';
 import Header from '@components/header';
 import type { AvailableLocale } from '@i18n/locales';
 import { getLocale } from '@shared/utils/get-locale';
 import Link from 'next/link';
+import styles from './not-found.module.scss';
 
 const translations: Record<AvailableLocale, Record<string, string>> = {
-  en: {
-    title: 'Sorry, this page isn’t available',
-    description:
-      'The link you followed may be broken, or the page may have been removed.',
-    cta: 'Back to homepage',
-  },
-  fr: {
-    title: 'Désolé, cette page n’est pas disponible',
-    description:
-      'Le lien que vous avez suivi peut être cassé ou la page a peut-être été supprimée.',
-    cta: 'Retour à la page d’accueil',
-  },
   de: {
-    title: 'Entschuldigung, diese Seite ist nicht verfügbar',
+    cta: 'Zurück zur Startseite',
     description:
       'Der Link, dem Sie gefolgt sind, ist möglicherweise defekt oder die Seite wurde möglicherweise entfernt.',
-    cta: 'Zurück zur Startseite',
+    title: 'Entschuldigung, diese Seite ist nicht verfügbar',
+  },
+  en: {
+    cta: 'Back to homepage',
+    description:
+      'The link you followed may be broken, or the page may have been removed.',
+    title: 'Sorry, this page isn’t available',
   },
   es: {
-    title: 'Lo sentimos, esta página no está disponible',
+    cta: 'Volver a la página de inicio',
     description:
       'El enlace que seguiste puede estar roto o es posible que se haya eliminado la página.',
-    cta: 'Volver a la página de inicio',
+    title: 'Lo sentimos, esta página no está disponible',
+  },
+  fr: {
+    cta: 'Retour à la page d’accueil',
+    description:
+      'Le lien que vous avez suivi peut être cassé ou la page a peut-être été supprimée.',
+    title: 'Désolé, cette page n’est pas disponible',
   },
 };
 
 import { Nunito_Sans } from 'next/font/google';
 
 const nunitoSans = Nunito_Sans({
+  adjustFontFallback: false,
   display: 'swap',
+  preload: true,
   subsets: ['latin'],
   variable: '--font-nunito-sans',
-  adjustFontFallback: false,
-  preload: true,
 });
 
 export default async function NotFound() {

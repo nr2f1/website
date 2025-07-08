@@ -1,5 +1,3 @@
-import styles from './index.module.scss';
-
 import { getClient } from '@graphql/client';
 import {
   GetPageLatestNewsDocument,
@@ -8,16 +6,17 @@ import {
 import type { AvailableLocale, LocalisedString } from '@i18n/locales';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
 import Link from 'next/link';
+import styles from './index.module.scss';
 
 interface PageLatestNewsProps {
   lang: AvailableLocale;
 }
 
 const latestNewsTitle: LocalisedString = {
+  de: 'Neueste Nachrichten',
   en: 'Latest news',
   es: 'Últimas noticias',
   fr: 'Dernières nouvelles',
-  de: 'Neueste Nachrichten',
 };
 
 interface BlogPostCardsProps {
@@ -34,8 +33,8 @@ const BlogPostCards: React.FC<BlogPostCardsProps> = ({
   lang,
 }) => {
   const { publishedString, dateTime } = getIntlDateStrings({
-    locale: lang,
     date: published,
+    locale: lang,
   });
 
   return (
@@ -71,9 +70,9 @@ const PageLatestNews: React.FC<PageLatestNewsProps> = async ({ lang }) => {
   }
 
   const posts = blogPageCollection.items.map((item) => ({
-    title: item?.title ?? '',
-    slug: item?.slug ?? '',
     published: (item?.date ?? '') as string,
+    slug: item?.slug ?? '',
+    title: item?.title ?? '',
   }));
 
   return (

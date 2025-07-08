@@ -1,5 +1,3 @@
-import styles from './index.module.scss';
-
 import { getClient } from '@graphql/client';
 import {
   GetMembershipPartnersDocument,
@@ -7,6 +5,7 @@ import {
 } from '@graphql/queries/memberships-partners/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { membershipPartnersId } from '@models/navlinks';
+import styles from './index.module.scss';
 
 interface MembershipsPartnersProps {
   lang: AvailableLocale;
@@ -23,8 +22,8 @@ const MembershipsPartners: React.FC<MembershipsPartnersProps> = async ({
   } = await query<GetMembershipPartnersQuery>({
     query: GetMembershipPartnersDocument,
     variables: {
-      membershipPartnersId,
       locale: lang,
+      membershipPartnersId,
     },
   });
 
@@ -34,8 +33,8 @@ const MembershipsPartners: React.FC<MembershipsPartnersProps> = async ({
 
   const membershipPartnersAssets = navigationList.linksCollection.items.map(
     (item) => ({
-      href: item?.target?.url ?? '/',
       alt: item?.text?.content ?? '',
+      href: item?.target?.url ?? '/',
       // @ts-ignore
       imageUrl: item?.referenceCollection?.items?.[0]?.asset?.url ?? '',
     }),

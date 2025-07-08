@@ -5,25 +5,25 @@ import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params'
 import { Nunito_Sans } from 'next/font/google';
 
 const nunitoSans = Nunito_Sans({
+  adjustFontFallback: false,
   display: 'swap',
+  preload: true,
   subsets: ['latin'],
   variable: '--font-nunito-sans',
-  adjustFontFallback: false,
-  preload: true,
 });
 
 export const metadata = {
-  title: 'NR2F1 Foundation',
-  metadataBase: new URL('https://website-nr2f1.vercel.app'), // TODO: update this once we migrate
   alternates: {
     canonical: '/',
     languages: {
-      en: '/en',
       de: '/de',
+      en: '/en',
       es: '/es',
       fr: '/fr',
     },
   },
+  metadataBase: new URL('https://website-nr2f1.vercel.app'), // TODO: update this once we migrate
+  title: 'NR2F1 Foundation',
 };
 
 export async function generateStaticParams() {

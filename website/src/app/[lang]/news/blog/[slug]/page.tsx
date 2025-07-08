@@ -1,6 +1,4 @@
 import PageHeader from '@components/page-header';
-import styles from './index.module.scss';
-
 import PageLatestNews from '@components/page-latest-news';
 import SupportBanner from '@components/support-banner';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
@@ -9,12 +7,12 @@ import {
   GetPostDocument,
   type GetPostQuery,
 } from '@graphql/queries/post/index.generated';
-import type { AvailableLocale } from '@i18n/locales';
 import type { NewsPagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
 import { renderNode } from '@shared/utils/rich-text';
 import type { Metadata, NextPage } from 'next';
 import type { Blog, WithContext } from 'schema-dts';
+import styles from './index.module.scss';
 
 const { query } = getClient();
 
@@ -33,18 +31,18 @@ export async function generateMetadata({
   const imgUrl = data?.blogPageCollection?.items[0]?.image?.url ?? '';
 
   return {
-    title,
     description,
     openGraph: {
-      title,
       description,
-      type: 'article',
-      url: `https://nr2f1.org/${lang}/news/${slug}`,
-      locale: lang,
       images: {
         url: imgUrl,
       },
+      locale: lang,
+      title,
+      type: 'article',
+      url: `https://nr2f1.org/${lang}/news/${slug}`,
     },
+    title,
   };
 }
 
@@ -74,10 +72,10 @@ const Page: NextPage<NewsPagePropsWithLocale> = async ({ params }) => {
   const jsonLd: WithContext<Blog> = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    headline: post?.title ?? '',
-    datePublished: publishedString,
-    url: `https://nr2f1.org/news/${slug}`,
     abstract: post?.excerpt ?? '',
+    datePublished: publishedString,
+    headline: post?.title ?? '',
+    url: `https://nr2f1.org/news/${slug}`,
   };
 
   return (

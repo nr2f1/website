@@ -1,6 +1,5 @@
 import type { NewsCardProps } from '@components/news-card';
 import type {
-  BlogPage,
   BlogPageCollection,
   NewsletterCollection,
   PodcastCollection,
@@ -26,22 +25,22 @@ export const fromBlogNewsletterToNews = ({
     date: post?.date ?? ('' as string),
     imageUrl: post?.image?.url,
     title: post?.title ?? '',
-    url: post?.slug ?? '',
     type: News.BLOG,
+    url: post?.slug ?? '',
   }));
 
   const newslettersAsNews: NewsCard[] = newsletters.map((newsletter) => ({
     date: newsletter?.date ?? ('' as string),
     title: newsletter?.date ?? '',
-    url: newsletter?.newsletterContent?.url ?? '',
     type: News.NEWSLETTER,
+    url: newsletter?.newsletterContent?.url ?? '',
   }));
 
   const podcastsAsNews: NewsCard[] = podcasts.map((podcast) => ({
     date: podcast?.date ?? ('' as string),
     title: podcast?.title ?? '',
-    url: podcast?.url ?? '',
     type: News.PODCAST,
+    url: podcast?.url ?? '',
   }));
 
   const allNewsSorted = [

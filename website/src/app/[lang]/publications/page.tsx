@@ -25,18 +25,18 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
-      locale: lang,
       id: publicationsPageMetadataId,
+      locale: lang,
     },
   });
 
   const webPage: WithContext<WebPage> = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: `https://nr2f1.org/${lang}/publications`,
-    name: title,
     description,
     inLanguage: lang,
+    name: title,
+    url: `https://nr2f1.org/${lang}/publications`,
   };
 
   const jsonLd: Graph = {
@@ -71,18 +71,17 @@ export async function generateMetadata({
       // @ts-ignore
       htmlHeadMetadata: { title, description, keywords },
     },
-    error,
   } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
-      locale: lang,
       id: publicationsPageMetadataId,
+      locale: lang,
     },
   });
 
   return {
-    title: `NR2F1 Foundation | ${title}`,
     description,
     keywords,
+    title: `NR2F1 Foundation | ${title}`,
   };
 }

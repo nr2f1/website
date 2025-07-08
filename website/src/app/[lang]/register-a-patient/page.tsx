@@ -24,21 +24,21 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
-      locale: lang,
       id: registerPatientPageMetadataId,
+      locale: lang,
     },
   });
 
   const medicalStudy: WithContext<MedicalStudy> = {
     '@context': 'https://schema.org',
     '@type': 'MedicalStudy',
-    name: title,
     description,
+    name: title,
     potentialAction: [
       {
         '@type': 'RegisterAction',
-        target: `https://nr2f1.org/${lang}/register-patient`,
         name: title,
+        target: `https://nr2f1.org/${lang}/register-patient`,
       },
     ],
   };
@@ -46,10 +46,10 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const webPage: WithContext<WebPage> = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: `https://nr2f1.org/${lang}/register-a-patient`,
-    name: title,
     description,
     inLanguage: lang,
+    name: title,
+    url: `https://nr2f1.org/${lang}/register-a-patient`,
   };
 
   const jsonLd: Graph = {
@@ -83,18 +83,17 @@ export async function generateMetadata({
       // @ts-ignore
       htmlHeadMetadata: { title, description, keywords },
     },
-    error,
   } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
-      locale: lang,
       id: registerPatientPageMetadataId,
+      locale: lang,
     },
   });
 
   return {
-    title: `NR2F1 Foundation | ${title}`,
     description,
     keywords,
+    title: `NR2F1 Foundation | ${title}`,
   };
 }

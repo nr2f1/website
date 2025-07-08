@@ -1,5 +1,3 @@
-import styles from './index.module.scss';
-
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
 import {
@@ -20,6 +18,7 @@ import {
   empowerFamiliesParagraphId,
   ourVisionParagraphId,
 } from '@models/paragraphs';
+import styles from './index.module.scss';
 
 interface WhatWeDoProps {
   lang: AvailableLocale;
@@ -40,20 +39,19 @@ const WhatWeDo: React.FC<WhatWeDoProps> = async ({ lang }) => {
       driveResearchHeading,
       driveResearchParagraph,
     },
-    error,
   } = await query<GetWhatWeDoQuery>({
     query: GetWhatWeDoDocument,
     variables: {
-      locale: lang,
-      whatWeDoHeadingId,
-      ourVisionParagraphId,
-      educatePeopleHeadingId,
-      educatePeopleParagraphId,
-      learnMoreCtaId,
-      empowerFamiliesHeadingId,
-      empowerFamiliesParagraphId,
       driveResearchHeadingId,
       driveResearchParagraphId,
+      educatePeopleHeadingId,
+      educatePeopleParagraphId,
+      empowerFamiliesHeadingId,
+      empowerFamiliesParagraphId,
+      learnMoreCtaId,
+      locale: lang,
+      ourVisionParagraphId,
+      whatWeDoHeadingId,
     },
   });
 

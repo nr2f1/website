@@ -1,5 +1,3 @@
-import styles from './index.module.scss';
-
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
 import {
@@ -29,6 +27,7 @@ import {
   valroseLinkId,
 } from '@models/links';
 import { partnershipsPageParagraphsId } from '@models/paragraphs';
+import styles from './index.module.scss';
 
 interface PartnershipsBodyProps {
   lang: AvailableLocale;
@@ -63,26 +62,26 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
   } = await query<GetPartnershipsPageQuery>({
     query: GetPartnershipsPageDocument,
     variables: {
-      locale: lang,
-      partnershipsPageheadingId,
-      partnershipsPageParagraphsId,
-      partnersHeadingId,
-      nr2f1FranceLinkId,
-      nr2f1FranceAssetId,
-      schaafLaboratoryLinkId,
-      schaafLaboratoryAssetId,
       cincinnatiAssetId,
       cincinnatiLinkId,
-      valroseAssetId,
-      valroseLinkId,
       combinedBrainAssetId,
       combinedBrainLinkId,
+      globalGenesAssetId,
+      globalGenesLinkId,
+      locale: lang,
+      nr2f1FranceAssetId,
+      nr2f1FranceLinkId,
+      partnersHeadingId,
+      partnershipsPageheadingId,
+      partnershipsPageParagraphsId,
       renAssetId,
       renLinkId,
-      globalGenesLinkId,
-      globalGenesAssetId,
-      uniqueLinkId,
+      schaafLaboratoryAssetId,
+      schaafLaboratoryLinkId,
       uniqueAssetId,
+      uniqueLinkId,
+      valroseAssetId,
+      valroseLinkId,
     },
   });
 

@@ -1,5 +1,3 @@
-import styles from './page-body.module.scss';
-
 import NewsCard from '@components/news-card';
 import Pagination from '@components/pagination';
 import { getClient } from '@graphql/client';
@@ -9,8 +7,8 @@ import {
 } from '@graphql/queries/news/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { News } from '@shared/types/news';
-
 import type { CollectionPage, WithContext } from 'schema-dts';
+import styles from './page-body.module.scss';
 
 interface NewslettersPageBodyProps {
   lang: AvailableLocale;
@@ -47,8 +45,8 @@ const NewsPageBody: React.FC<NewslettersPageBodyProps> = async ({
   } = await query<GetNewslettersQuery>({
     query: GetNewslettersDocument,
     variables: {
-      locale: lang,
       limit: LIMIT,
+      locale: lang,
       skip: getSkipPagination(page, LIMIT),
     },
   });
@@ -65,8 +63,8 @@ const NewsPageBody: React.FC<NewslettersPageBodyProps> = async ({
       return {
         date: item?.date ?? ('' as string),
         title: item?.date ?? ('' as string),
-        url: item?.newsletterContent?.url ?? '',
         type: News.NEWSLETTER,
+        url: item?.newsletterContent?.url ?? '',
       };
     });
 

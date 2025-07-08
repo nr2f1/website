@@ -1,32 +1,5 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "plugins": [
-    {
-      "plugin": "@nx/next/plugin",
-      "options": {
-        "buildTargetName": "build",
-        "devTargetName": "dev",
-        "startTargetName": "start",
-        "serveStaticTargetName": "serve-static"
-      }
-    },
-    {
-      "plugin": "@nx/vite/plugin",
-      "options": {
-        "buildTargetName": "build",
-        "previewTargetName": "preview",
-        "testTargetName": "test",
-        "serveTargetName": "serve",
-        "serveStaticTargetName": "serve-static"
-      }
-    },
-    {
-      "plugin": "@nx/playwright/plugin",
-      "options": {
-        "targetName": "e2e"
-      }
-    }
-  ],
   "generators": {
     "@nx/next": {
       "application": {
@@ -34,32 +7,59 @@
       }
     },
     "@nx/web:application": {
+      "e2eTestRunner": "none",
       "style": "css",
-      "unitTestRunner": "none",
-      "e2eTestRunner": "none"
+      "unitTestRunner": "none"
     }
   },
-  "targetDefaults": {
-    "e2e": {
-      "inputs": ["release"],
-      "cache": true
-    },
-    "lint": {
-      "cache": true
-    },
-    "format": {
-      "cache": true
-    },
-    "test": {
-      "inputs": ["unit-test"],
-      "cache": true
-    }
-  },
-  "nxCloudId": "67b4f813dcc3cecb27ff0b17",
   "namedInputs": {
     "default": ["sharedGlobals"],
     "release": ["{workspaceRoot}/.github/workflows/release.yaml"],
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/pr.yaml"],
     "unit-test": ["{workspaceRoot}/.github/workflows/pr.yaml"]
+  },
+  "nxCloudId": "67b4f813dcc3cecb27ff0b17",
+  "plugins": [
+    {
+      "options": {
+        "buildTargetName": "build",
+        "devTargetName": "dev",
+        "serveStaticTargetName": "serve-static",
+        "startTargetName": "start"
+      },
+      "plugin": "@nx/next/plugin"
+    },
+    {
+      "options": {
+        "buildTargetName": "build",
+        "previewTargetName": "preview",
+        "serveStaticTargetName": "serve-static",
+        "serveTargetName": "serve",
+        "testTargetName": "test"
+      },
+      "plugin": "@nx/vite/plugin"
+    },
+    {
+      "options": {
+        "targetName": "e2e"
+      },
+      "plugin": "@nx/playwright/plugin"
+    }
+  ],
+  "targetDefaults": {
+    "e2e": {
+      "cache": true,
+      "inputs": ["release"]
+    },
+    "format": {
+      "cache": true
+    },
+    "lint": {
+      "cache": true
+    },
+    "test": {
+      "cache": true,
+      "inputs": ["unit-test"]
+    }
   }
 }

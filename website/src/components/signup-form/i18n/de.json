@@ -196,7 +196,58 @@
     { "label": "Sambia", "value": "ZMB" },
     { "label": "Simbabwe", "value": "ZWE" }
   ],
-  "validatioErrorMessage": "Dies ist ein Pflichtfeld",
+  "fields": {
+    "city": {
+      "label": "Stadt",
+      "placeholder": "Stadtname"
+    },
+    "country": {
+      "label": "Land"
+    },
+    "email": {
+      "label": "E-Mail-Adresse",
+      "placeholder": "name@email.com"
+    },
+    "firstname": {
+      "label": "Vorname",
+      "placeholder": "John"
+    },
+    "lastname": {
+      "label": "Nachname",
+      "placeholder": "Smith"
+    },
+    "patientFirstName": {
+      "label": "Vorname des BBSOAS-Patienten",
+      "placeholder": "Sarah"
+    },
+    "postCode": {
+      "label": "Postleitzahl",
+      "placeholder": "Postleitzahl"
+    },
+    "region": {
+      "label": "Bundesland/Provinz/Region",
+      "placeholder": "Regionsname"
+    },
+    "role": {
+      "label": "Ich bin ein(e):"
+    },
+    "streetAdress": {
+      "label": "Straßenadresse",
+      "placeholder": "Straßenname 123"
+    }
+  },
+  "formHeading": "Melden Sie sich an, um Neuigkeiten und Updates von der NR2F1 Foundation zu erhalten",
+  "formSuccessHeadingDefault": "Vielen Dank für Ihre Anmeldung!",
+  "formSuccessHeadingParentPatient": "Vielen Dank für Ihre Anmeldung!",
+  "formSuccessMessage": "Behalten Sie Ihren Posteingang im Auge, um Neuigkeiten und Updates von der NR2F1 Foundation zu erhalten.",
+  "optional": "optional",
+  "parent": {
+    "heading": "Helfen Sie uns bei unserer Mission",
+    "text": "Wenn Sie ein BBSOAS-Elternteil sind, könnten Sie uns den Vornamen und die Adresse Ihres BBSOAS-Kindes mitteilen? Wir verwenden diese Informationen, um die Anzahl der Diagnosen weltweit zu verfolgen."
+  },
+  "parentContact": {
+    "heading": "Kontaktdaten des BBSOAS-Elternteils/Betreuers oder Patienten"
+  },
   "roles": [
     {
       "label": "BBSOAS Elternteil/Betreuer oder Patient",
@@ -208,57 +259,6 @@
       "value": "specialist"
     }
   ],
-  "fields": {
-    "firstname": {
-      "label": "Vorname",
-      "placeholder": "John"
-    },
-    "lastname": {
-      "label": "Nachname",
-      "placeholder": "Smith"
-    },
-    "email": {
-      "label": "E-Mail-Adresse",
-      "placeholder": "name@email.com"
-    },
-    "role": {
-      "label": "Ich bin ein(e):"
-    },
-    "patientFirstName": {
-      "label": "Vorname des BBSOAS-Patienten",
-      "placeholder": "Sarah"
-    },
-    "country": {
-      "label": "Land"
-    },
-    "region": {
-      "label": "Bundesland/Provinz/Region",
-      "placeholder": "Regionsname"
-    },
-    "streetAdress": {
-      "label": "Straßenadresse",
-      "placeholder": "Straßenname 123"
-    },
-    "city": {
-      "label": "Stadt",
-      "placeholder": "Stadtname"
-    },
-    "postCode": {
-      "label": "Postleitzahl",
-      "placeholder": "Postleitzahl"
-    }
-  },
-  "formHeading": "Melden Sie sich an, um Neuigkeiten und Updates von der NR2F1 Foundation zu erhalten",
-  "formSuccessHeadingDefault": "Vielen Dank für Ihre Anmeldung!",
-  "formSuccessHeadingParentPatient": "Vielen Dank für Ihre Anmeldung!",
-  "formSuccessMessage": "Behalten Sie Ihren Posteingang im Auge, um Neuigkeiten und Updates von der NR2F1 Foundation zu erhalten.",
-  "parent": {
-    "heading": "Helfen Sie uns bei unserer Mission",
-    "text": "Wenn Sie ein BBSOAS-Elternteil sind, könnten Sie uns den Vornamen und die Adresse Ihres BBSOAS-Kindes mitteilen? Wir verwenden diese Informationen, um die Anzahl der Diagnosen weltweit zu verfolgen."
-  },
-  "parentContact": {
-    "heading": "Kontaktdaten des BBSOAS-Elternteils/Betreuers oder Patienten"
-  },
   "signupButton": "Anmelden",
-  "optional": "optional"
+  "validatioErrorMessage": "Dies ist ein Pflichtfeld"
 }

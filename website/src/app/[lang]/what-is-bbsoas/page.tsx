@@ -25,19 +25,19 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
-      locale: lang,
       id: whatIsBbsoasPageMetadataId,
+      locale: lang,
     },
   });
 
   const jsonLd: WithContext<WebPage> = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    url: `https://nr2f1.org${routes['what-is-bbsoas'](lang)}`,
-    name: title,
     description,
     inLanguage: lang,
     keywords,
+    name: title,
+    url: `https://nr2f1.org${routes['what-is-bbsoas'](lang)}`,
   };
 
   return (
@@ -67,15 +67,15 @@ export async function generateMetadata({
   } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
-      locale: lang,
       id: whatIsBbsoasPageMetadataId,
+      locale: lang,
     },
   });
 
   return {
-    title: `NR2F1 Foundation | ${title}`,
     description,
     keywords,
+    title: `NR2F1 Foundation | ${title}`,
   };
 }
 export default Page;

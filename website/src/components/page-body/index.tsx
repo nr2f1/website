@@ -1,8 +1,7 @@
-import styles from './index.module.scss';
-
 import PageContents, { pageContents } from '@components/page-contents';
 import PageLatestNews from '@components/page-latest-news';
 import type { AvailableLocale } from '@i18n/locales';
+import styles from './index.module.scss';
 
 interface PageBodyProps {
   lang: AvailableLocale;

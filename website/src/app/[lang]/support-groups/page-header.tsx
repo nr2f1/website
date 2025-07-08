@@ -19,8 +19,8 @@ const SupportGroupsHeader: React.FC<SupportGroupsHeaderProps> = async ({
   const { data, error } = await query<GetPageHeaderQuery>({
     query: GetPageHeaderDocument,
     variables: {
-      locale: lang,
       id: supportGroupsPageHeaderId,
+      locale: lang,
     },
   });
 

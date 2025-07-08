@@ -16,10 +16,10 @@ export interface RoleOptionProps {
 type ValidationErrorMessage = Record<AvailableLocale, string>;
 
 export const validatioErrorMessage: ValidationErrorMessage = {
-  en: 'This is a mandatory field',
-  fr: 'Ce champ est obligatoire',
-  es: 'Este campo es obligatorio',
   de: 'Dies ist ein Pflichtfeld',
+  en: 'This is a mandatory field',
+  es: 'Este campo es obligatorio',
+  fr: 'Ce champ est obligatoire',
 };
 
 export interface CountryOptionProps {
@@ -226,16 +226,10 @@ export const getValidationSchema = (lang: AvailableLocale) => {
   const errorMessage = validatioErrorMessage[lang];
 
   return object({
-    firstname: string().required(errorMessage),
-    lastname: string().required(errorMessage),
-    email: string().email().required(errorMessage),
-    role: string()
-      .oneOf([Role.ParentPatient, Role.Specialist, Role.Supporter])
-      .required(errorMessage),
-    patientFirstName: string().when('role', {
+    city: string().when('role', {
       is: Role.ParentPatient,
       // biome-ignore lint/suspicious/noThenProperty: it is a valid method
-      then: (schema) => schema.required(errorMessage),
+      then: (schema) => schema.optional(),
     }),
     country: string().when('role', {
       is: Role.ParentPatient,
@@ -243,22 +237,28 @@ export const getValidationSchema = (lang: AvailableLocale) => {
       then: (schema) =>
         schema.oneOf(allowedIsoCountryCodes).required(errorMessage),
     }),
+    email: string().email().required(errorMessage),
+    firstname: string().required(errorMessage),
+    lastname: string().required(errorMessage),
+    patientFirstName: string().when('role', {
+      is: Role.ParentPatient,
+      // biome-ignore lint/suspicious/noThenProperty: it is a valid method
+      then: (schema) => schema.required(errorMessage),
+    }),
+    postCode: string().when('role', {
+      is: Role.ParentPatient,
+      // biome-ignore lint/suspicious/noThenProperty: it is a valid method
+      then: (schema) => schema.optional(),
+    }),
     region: string().when('role', {
       is: Role.ParentPatient,
       // biome-ignore lint/suspicious/noThenProperty: it is a valid method
       then: (schema) => schema.optional(),
     }),
+    role: string()
+      .oneOf([Role.ParentPatient, Role.Specialist, Role.Supporter])
+      .required(errorMessage),
     streetAdress: string().when('role', {
-      is: Role.ParentPatient,
-      // biome-ignore lint/suspicious/noThenProperty: it is a valid method
-      then: (schema) => schema.optional(),
-    }),
-    city: string().when('role', {
-      is: Role.ParentPatient,
-      // biome-ignore lint/suspicious/noThenProperty: it is a valid method
-      then: (schema) => schema.optional(),
-    }),
-    postCode: string().when('role', {
       is: Role.ParentPatient,
       // biome-ignore lint/suspicious/noThenProperty: it is a valid method
       then: (schema) => schema.optional(),
@@ -280,16 +280,16 @@ export interface SignupFormValues {
 }
 
 export const initialValues = {
+  city: '',
+  country: '',
+  email: '',
   firstname: '',
   lastname: '',
-  email: '',
-  role: '',
   patientFirstName: '',
-  country: '',
-  region: '',
-  streetAdress: '',
-  city: '',
   postCode: '',
+  region: '',
+  role: '',
+  streetAdress: '',
 };
 
 export interface SignupFormProps {
@@ -427,6 +427,6 @@ export const reducer = (state: State, action: Action): State => {
 
 export const initialState: State = {
   content: undefined,
-  i18nRequestResult: 'idle',
   createContactResult: 'idle',
+  i18nRequestResult: 'idle',
 };

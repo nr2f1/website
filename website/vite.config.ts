@@ -1,11 +1,8 @@
-import { defineConfig } from 'vite';
-
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
-  root: __dirname,
-  plugins: [nxViteTsPaths(), react()],
   css: {
     preprocessorOptions: {
       scss: {
@@ -14,4 +11,6 @@ export default defineConfig({
       },
     },
   },
+  plugins: [nxViteTsPaths(), react()],
+  root: __dirname,
 });

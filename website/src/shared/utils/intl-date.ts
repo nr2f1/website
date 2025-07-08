@@ -19,5 +19,5 @@ export const getIntlDateStrings = ({
     dateStyle: 'short',
   }).format(publishedDate);
 
-  return { publishedString, dateTime };
+  return { dateTime, publishedString };
 };

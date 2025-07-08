@@ -1,5 +1,3 @@
-import styles from './index.module.scss';
-
 import PageBody from '@components/page-body';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
@@ -25,6 +23,7 @@ import {
   strategicResearchParagraphsId,
 } from '@models/paragraphs';
 import { createHashLink } from '@shared/utils/hash-links';
+import styles from './index.module.scss';
 
 interface RegisterPageBodyProps {
   lang: AvailableLocale;
@@ -54,19 +53,19 @@ const StrategicPlanUpperBody: React.FC<RegisterPageBodyProps> = async ({
   } = await query<GetStrategicPlanUpperPageQuery>({
     query: GetStrategicPlanUpperPageDocument,
     variables: {
-      locale: lang,
-      ourObjectivesHeadingId,
-      ourObjectivesParagraphsId,
-      educationHeadingId,
-      educationParagraphsId,
       advocacyHeadingId,
       advocacyParagraphsId,
       advocacyProgressParagraphsId,
+      educationHeadingId,
+      educationParagraphsId,
+      fiveYearsHeadingId,
+      getThereHeadingId,
+      locale: lang,
+      ourObjectivesHeadingId,
+      ourObjectivesParagraphsId,
       researchHeadingId: strategicResearchHeadingId,
       researchParagraphsId: strategicResearchParagraphsId,
       researchProgressParagraphsId,
-      getThereHeadingId,
-      fiveYearsHeadingId,
     },
   });
 

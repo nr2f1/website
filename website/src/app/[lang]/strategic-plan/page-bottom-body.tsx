@@ -25,9 +25,9 @@ const StrategicPlanBottomBody: React.FC<StrategicPlanBottomBodyProps> = async ({
   } = await query<GetStrategicPlanBottomPageQuery>({
     query: GetStrategicPlanBottomPageDocument,
     variables: {
-      locale: lang,
       fiveYearsHeadingId,
       fiveYearsParagraphsId,
+      locale: lang,
     },
   });
 

@@ -18,7 +18,7 @@ describe('accordion', () => {
     const { getByRole } = render(<LocaleSelector />);
     const user = userEvent.setup();
 
-    await user.pointer({ target: getByRole('combobox'), keys: '[MouseLeft]' });
+    await user.pointer({ keys: '[MouseLeft]', target: getByRole('combobox') });
 
     const listbox = within(getByRole('listbox'));
 

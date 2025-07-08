@@ -27,20 +27,20 @@ const LivingWithBbsoasBottomBody: React.FC<
 > = async ({ lang }) => {
   const {
     data: {
-      handingLettersHeading,
-      handingLettersParagraphs,
       bbsoasClinicHeading,
       bbsoasClinicParagraphs,
+      handingLettersHeading,
+      handingLettersParagraphs,
     },
     error,
   } = await query<GetLivingWithBbsoasBottomPageQuery>({
     query: GetLivingWithBbsoasBottomPageDocument,
     variables: {
-      locale: lang,
-      handingLettersHeadingId,
-      handingLettersParagraphsId,
       bbsoasClinicHeadingId,
       bbsoasClinicParagraphsId,
+      handingLettersHeadingId,
+      handingLettersParagraphsId,
+      locale: lang,
     },
   });
 

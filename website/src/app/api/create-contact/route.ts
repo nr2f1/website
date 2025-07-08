@@ -1,43 +1,43 @@
 import {
+  allowedIsoCountryCodes,
   Role,
   type SignupFormValues,
-  allowedIsoCountryCodes,
 } from '@components/signup-form/helper';
-import { ValidationError, object, string } from 'yup';
+import { object, string, ValidationError } from 'yup';
 
 const validationSchema = object({
-  firstname: string().required(),
-  lastname: string().required(),
-  email: string().email().required(),
-  role: string()
-    .oneOf([Role.ParentPatient, Role.Specialist, Role.Supporter])
-    .required(),
-  patientFirstName: string().when('role', {
+  city: string().when('role', {
     is: Role.ParentPatient,
     // biome-ignore lint/suspicious/noThenProperty: it is a valid method
-    then: (schema) => schema.required(),
+    then: (schema) => schema.optional(),
   }),
   country: string().when('role', {
     is: Role.ParentPatient,
     // biome-ignore lint/suspicious/noThenProperty: it is a valid method
     then: (schema) => schema.oneOf(allowedIsoCountryCodes).required(),
   }),
+  email: string().email().required(),
+  firstname: string().required(),
+  lastname: string().required(),
+  patientFirstName: string().when('role', {
+    is: Role.ParentPatient,
+    // biome-ignore lint/suspicious/noThenProperty: it is a valid method
+    then: (schema) => schema.required(),
+  }),
+  postCode: string().when('role', {
+    is: Role.ParentPatient,
+    // biome-ignore lint/suspicious/noThenProperty: it is a valid method
+    then: (schema) => schema.optional(),
+  }),
   region: string().when('role', {
     is: Role.ParentPatient,
     // biome-ignore lint/suspicious/noThenProperty: it is a valid method
     then: (schema) => schema.optional(),
   }),
+  role: string()
+    .oneOf([Role.ParentPatient, Role.Specialist, Role.Supporter])
+    .required(),
   streetAdress: string().when('role', {
-    is: Role.ParentPatient,
-    // biome-ignore lint/suspicious/noThenProperty: it is a valid method
-    then: (schema) => schema.optional(),
-  }),
-  city: string().when('role', {
-    is: Role.ParentPatient,
-    // biome-ignore lint/suspicious/noThenProperty: it is a valid method
-    then: (schema) => schema.optional(),
-  }),
-  postCode: string().when('role', {
     is: Role.ParentPatient,
     // biome-ignore lint/suspicious/noThenProperty: it is a valid method
     then: (schema) => schema.optional(),
@@ -62,9 +62,9 @@ export async function POST(request: Request) {
       Boolean(data.postCode);
 
     const dto = {
+      emails: [{ is_primary: true, type: 'personal', value: data.email }],
       first_name: data.firstname,
       last_name: data.lastname,
-      emails: [{ type: 'personal', value: data.email, is_primary: true }],
     };
 
     if (data.role === Role.ParentPatient) {
@@ -89,22 +89,22 @@ export async function POST(request: Request) {
             address_1: data.streetAdress,
             address_2: data.streetAdress,
             city: data.city,
-            state: data.region,
-            zipcode: data.postCode,
             country: data.country,
             is_primary: true,
+            state: data.region,
+            zipcode: data.postCode,
           },
         ],
       });
     }
 
     const response = await fetch('https://api.givebutter.com/v1/contacts', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_GIVEBUTTER_API_KEY}`,
-      },
       body: JSON.stringify(dto),
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_GIVEBUTTER_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
     });
 
     if (!response.ok) {

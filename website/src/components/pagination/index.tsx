@@ -1,10 +1,9 @@
-import styles from './index.module.scss';
-
 import ArrowLeft from '@components/icons/arrow-left';
 import ArrowRight from '@components/icons/arrow-right';
 import type { AvailableLocale } from '@i18n/locales';
 import Link from 'next/link';
-import { DOTS, type PaginationProps, getPaginationRange } from './helpers';
+import { DOTS, getPaginationRange, type PaginationProps } from './helpers';
+import styles from './index.module.scss';
 
 interface PaginationLocale {
   previous: string;
@@ -13,25 +12,25 @@ interface PaginationLocale {
 }
 
 const paginationLocales: Record<AvailableLocale, PaginationLocale> = {
-  en: {
-    previous: 'previous',
-    next: 'next',
-    page: 'page',
-  },
-  es: {
-    previous: 'anterior',
-    next: 'siguiente',
-    page: 'página',
-  },
-  fr: {
-    previous: 'précédent',
-    next: 'suivant',
-    page: 'page',
-  },
   de: {
-    previous: 'vorherige',
     next: 'nächste',
     page: 'seite',
+    previous: 'vorherige',
+  },
+  en: {
+    next: 'next',
+    page: 'page',
+    previous: 'previous',
+  },
+  es: {
+    next: 'siguiente',
+    page: 'página',
+    previous: 'anterior',
+  },
+  fr: {
+    next: 'suivant',
+    page: 'page',
+    previous: 'précédent',
   },
 };
 
@@ -46,10 +45,10 @@ const Pagination: React.FC<PaginationProps> = ({
   const realCurrentPage = currentPage < 1 ? 1 : currentPage;
 
   const paginationRange = getPaginationRange({
-    totalCount,
     currentPage: realCurrentPage,
     pageSize,
     siblingCount,
+    totalCount,
   });
 
   if (!paginationRange) {

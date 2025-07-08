@@ -1,5 +1,3 @@
-import styles from './page-body.module.scss';
-
 import NewsCard from '@components/news-card';
 import Pagination from '@components/pagination';
 import { getClient } from '@graphql/client';
@@ -16,6 +14,7 @@ import type { AvailableLocale } from '@i18n/locales';
 import { News } from '@shared/types/news';
 import { fromBlogNewsletterToNews } from '@shared/utils/from-blog-newsletter-to-news';
 import type { CollectionPage, WithContext } from 'schema-dts';
+import styles from './page-body.module.scss';
 
 interface NewsPageBodyProps {
   lang: AvailableLocale;
@@ -65,10 +64,10 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
   const rawPodcast = items.filter((item) => item?.__typename === 'Podcast');
 
   const allNews = fromBlogNewsletterToNews({
-    posts: rawPosts as BlogPageCollection['items'],
+    limit: total,
     newsletters: rawNewsletter as NewsletterCollection['items'],
     podcasts: rawPodcast as PodcastCollection['items'],
-    limit: total,
+    posts: rawPosts as BlogPageCollection['items'],
   });
 
   const start = getSkipPagination(page, LIMIT);
@@ -84,8 +83,8 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
     mainEntity: newsPosts.map(({ title, url, imageUrl }) => ({
       '@type': 'BlogPosting',
       headline: title,
-      url: `https://nr2f1.org/${lang}/news/${url}`,
       image: imageUrl ?? undefined,
+      url: `https://nr2f1.org/${lang}/news/${url}`,
     })),
   };
 

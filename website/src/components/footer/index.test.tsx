@@ -11,63 +11,37 @@ vi.mock('next/navigation', async (importOriginal) => {
   return {
     // @ts-ignore
     ...actual,
+    usePathname() {
+      return `/${locale}`;
+    },
     useRouter() {
       return {
         push: () => vi.fn(),
       };
-    },
-    usePathname() {
-      return `/${locale}`;
     },
   };
 });
 
 const result = {
   data: {
-    stayInTouch: {
-      content: 'Stay in touch',
-    },
-    socialMediaText: {
+    contactUs: {
       content: {
         json: {
-          data: {},
           content: [
             {
-              data: {},
               content: [
                 {
                   data: {},
                   marks: [],
-                  value: 'Connect with us via our social media channels:',
                   nodeType: 'text',
+                  value: 'contact us',
                 },
               ],
-              nodeType: 'paragraph',
-            },
-          ],
-          nodeType: 'document',
-        },
-      },
-    },
-    footerForm: {
-      content: {
-        json: {
-          data: {},
-          content: [
-            {
               data: {},
-              content: [
-                {
-                  data: {},
-                  marks: [],
-                  value:
-                    'Sign up to receive news and updates from the NR2F1 Foundation',
-                  nodeType: 'text',
-                },
-              ],
               nodeType: 'paragraph',
             },
           ],
+          data: {},
           nodeType: 'document',
         },
       },
@@ -75,65 +49,91 @@ const result = {
     copyright: {
       content: {
         json: {
-          data: {},
           content: [
             {
-              data: {},
               content: [
                 {
                   data: {},
                   marks: [],
-                  value: 'copyright',
                   nodeType: 'text',
+                  value: 'copyright',
                 },
               ],
+              data: {},
               nodeType: 'paragraph',
             },
           ],
+          data: {},
           nodeType: 'document',
         },
       },
+    },
+    footerForm: {
+      content: {
+        json: {
+          content: [
+            {
+              content: [
+                {
+                  data: {},
+                  marks: [],
+                  nodeType: 'text',
+                  value:
+                    'Sign up to receive news and updates from the NR2F1 Foundation',
+                },
+              ],
+              data: {},
+              nodeType: 'paragraph',
+            },
+          ],
+          data: {},
+          nodeType: 'document',
+        },
+      },
+    },
+    socialMediaText: {
+      content: {
+        json: {
+          content: [
+            {
+              content: [
+                {
+                  data: {},
+                  marks: [],
+                  nodeType: 'text',
+                  value: 'Connect with us via our social media channels:',
+                },
+              ],
+              data: {},
+              nodeType: 'paragraph',
+            },
+          ],
+          data: {},
+          nodeType: 'document',
+        },
+      },
+    },
+    stayInTouch: {
+      content: 'Stay in touch',
     },
     warning: {
       content: {
         json: {
-          data: {},
           content: [
             {
-              data: {},
               content: [
                 {
                   data: {},
                   marks: [],
+                  nodeType: 'text',
                   value: 'warning',
-                  nodeType: 'text',
                 },
               ],
-              nodeType: 'paragraph',
-            },
-          ],
-          nodeType: 'document',
-        },
-      },
-    },
-    contactUs: {
-      content: {
-        json: {
-          data: {},
-          content: [
-            {
               data: {},
-              content: [
-                {
-                  data: {},
-                  marks: [],
-                  value: 'contact us',
-                  nodeType: 'text',
-                },
-              ],
               nodeType: 'paragraph',
             },
           ],
+          data: {},
           nodeType: 'document',
         },
       },

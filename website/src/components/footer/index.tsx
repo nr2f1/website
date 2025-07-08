@@ -17,12 +17,12 @@ const FooterWithData: React.FC<HeaderProps> = ({ lang }) => {
       // @ts-ignore
       query={GetFooterDocument}
       variables={{
-        locale: lang,
-        stayInTouchId,
-        socialMediaTextId,
-        copyrightId,
-        warningId,
         contactUsId,
+        copyrightId,
+        locale: lang,
+        socialMediaTextId,
+        stayInTouchId,
+        warningId,
       }}
     >
       {/* TODO: handle loading */}

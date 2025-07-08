@@ -3,11 +3,11 @@ import type { SignupFormValues } from '@components/signup-form/helper';
 export const createContact = async (data: SignupFormValues) => {
   try {
     const response = await fetch(`${window.origin}/api/create-contact`, {
-      method: 'POST',
+      body: JSON.stringify(data),
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data),
+      method: 'POST',
     });
 
     if (!response.ok) {
