@@ -6,10 +6,20 @@
 .article {
   border-radius: var(--border-radius-xl);
   border: 1px solid var(--grey-300);
-  /* flex-basis: 18.75rem; /* 300px */
-  /* width: 100%; */
   flex: 1 0 18.75rem;
   overflow: hidden;
+
+  @include breakpoints.small-screen {
+    min-width: 100%;
+  }
+
+  @include breakpoints.large-screen {
+    max-width: calc(33% - calc(var(--spacing-6) * 2));
+  }
+
+  @include breakpoints.extra-large-screen {
+    max-width: calc(33% - calc(var(--spacing-6) * 2));
+  }
 
   &:hover,
   &:focus {
@@ -18,10 +28,6 @@
 
   &:active {
     background-color: var(--background-interactive-press_active);
-  }
-
-  @include breakpoints.small-screen {
-    min-width: 100%;
   }
 
   & a {

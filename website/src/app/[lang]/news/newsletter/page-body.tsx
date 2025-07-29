@@ -8,7 +8,7 @@ import {
 import type { AvailableLocale } from '@i18n/locales';
 import { News } from '@shared/types/news';
 import type { CollectionPage, WithContext } from 'schema-dts';
-import styles from './page-body.module.scss';
+import styles from '../page-body.module.scss';
 
 interface NewslettersPageBodyProps {
   lang: AvailableLocale;
