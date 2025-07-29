@@ -1,4 +1,4 @@
-name: Deploy NR2F1 website to Vercel preview
+name: Deploy website to preview
 run-name: ${{ github.actor }} is deploying website to vercel preview
 
 on:
@@ -31,7 +31,7 @@ jobs:
           token: ${{ secrets.RELEASE_PLEASE_GH_TOKEN }}
           release-type: simple
 
-  deploy-fewd-to-vercel-preview:
+  deploy-to-preview:
     runs-on: ubuntu-latest
     environment:
       name: preview
@@ -65,7 +65,7 @@ jobs:
         run: echo "url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})" >> $GITHUB_OUTPUT
   ci-validation:
     name: CI validation
-    needs: [release-please, deploy-fewd-to-vercel-preview]
+    needs: [release-please, deploy-to-preview]
     if: ${{ always() }}
     runs-on: ubuntu-latest
 
