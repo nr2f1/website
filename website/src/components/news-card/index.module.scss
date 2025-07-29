@@ -6,12 +6,10 @@
 .article {
   border-radius: var(--border-radius-xl);
   border: 1px solid var(--grey-300);
-  min-width: 18.75rem;
-  flex: 1 0 0;
+  /* flex-basis: 18.75rem; /* 300px */
+  /* width: 100%; */
+  flex: 1 0 18.75rem;
   overflow: hidden;
-  /* 3 columns - column gap / 2 */
-  max-width: calc(calc(100% / 3) - var(--spacing-3));
-
 
   &:hover,
   &:focus {
@@ -69,12 +67,12 @@
     padding: var(--spacing-4);
   }
 
-  &__label:is(a){
+  &__label:is(a) {
     @include text-styles.text-link-small;
     text-decoration: underline;
   }
   &__separator {
-      margin: 0 var(--spacing-2);
+    margin: 0 var(--spacing-2);
   }
 
   &__date {
@@ -83,7 +81,7 @@
     color: var(--foreground-secondary);
   }
 
-  & h2 {
+  & h3 {
     margin: 0;
     @include text-styles.header-3;
     margin-block-end: var(--spacing-4);

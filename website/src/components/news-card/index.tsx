@@ -75,7 +75,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
             <article>
               <div className={styles.article__podcast_img} />
               <div>
-                <h2>{title}</h2>
+                <h3>{title}</h3>
                 <p className={styles.article__date}>
                   <Link
                     className={styles.article__label}
@@ -98,7 +98,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
             <article>
               <div className={styles.article__newsletter_img} />
               <div>
-                <h2>{getNewsLetterTitle({ date: title, lang })}</h2>
+                <h3>{getNewsLetterTitle({ date: title, lang })}</h3>
                 <p className={styles.article__date}>
                   <Link
                     className={styles.article__label}
@@ -126,7 +126,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
                 }}
               />
               <div>
-                <h2>{title}</h2>
+                <h3>{title}</h3>
                 <p className={styles.article__date}>
                   <Link
                     className={styles.article__label}
