@@ -1,7 +1,7 @@
-@use '@styles/text-styles';
-@use '@styles/icons';
+@use "@styles/text-styles";
+@use "@styles/icons";
 
-.page-contents {
+.page-contents-headings {
   container-type: inline-size;
   container-name: page-contents;
 
@@ -10,10 +10,18 @@
     border-radius: var(--spacing-2);
     background-color: var(--background-accent-coral);
     margin-block-end: var(--spacing-12);
+
+    ul {
+      padding: 0;
+    }
   }
 
   details {
     display: none;
+
+    ul {
+      padding: 0;
+    }
   }
 
   ul {
@@ -36,7 +44,7 @@
     &::marker,
     &::-webkit-details-marker {
       display: none;
-      content: '';
+      content: "";
     }
   }
 
@@ -79,7 +87,7 @@
         background-image: url(icons.$chevron-down-navy);
         background-position: center;
         background-size: contain;
-        content: '';
+        content: "";
         display: block;
         width: var(--spacing-5);
       }

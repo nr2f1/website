@@ -79,7 +79,7 @@ const PageLatestNews: React.FC<PageLatestNewsProps> = async ({ lang }) => {
     <div className={styles['latest-news-content']}>
       <h3>{latestNewsTitleText}</h3>
 
-      <ul>
+      <ul className={styles['latest-news-content__list']}>
         {posts.map(({ title, slug, published }) => (
           <li key={crypto.randomUUID()}>
             <BlogPostCards

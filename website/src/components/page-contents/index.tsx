@@ -35,7 +35,7 @@ const PageContents: React.FC<PageContentsProps> = ({ lang, headings }) => {
   const pageContextText = pageContents[lang];
 
   return (
-    <div className={styles['page-contents']}>
+    <div className={styles['page-contents-headings']}>
       <details>
         <summary>{pageContextText}</summary>
         <Headings headings={headings} />
