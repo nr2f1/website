@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.1](https://github.com/nr2f1/website/compare/v2.6.0...v2.6.1) (2025-07-29)
+
+
+### Bug Fixes
+
+* privacy policy table styles ([844d595](https://github.com/nr2f1/website/commit/844d595a4fc38e59e7e0656caeddcfce4f5e8fc6))
+
 ## [2.6.0](https://github.com/nr2f1/website/compare/v2.5.2...v2.6.0) (2025-07-29)
 
 
