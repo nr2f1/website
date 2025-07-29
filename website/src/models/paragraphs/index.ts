@@ -58,3 +58,6 @@ export const dadsUkParagraphsId = '6urRWGur1VUWjNE7jyuv24';
 
 // Partnerships page
 export const partnershipsPageParagraphsId = '6afmGbFikLOXThQxWrxhxG';
+
+// Privacy policy page
+export const privacyPolicyPageParagraphsId = '8R1WuiXREJmGWfWI7XkpA';

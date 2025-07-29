@@ -1,8 +1,7 @@
-import * as Apollo from '@apollo/client';
+import * as Types from '../../../types';
 
 import { gql } from '@apollo/client';
-import type * as Types from '../../../types';
-
+import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
 export type GetLivingWithBbsoasUpperPageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
