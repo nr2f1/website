@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.6.0](https://github.com/nr2f1/website/compare/v2.5.2...v2.6.0) (2025-07-29)
+
+
+### Features
+
+* privacy policy page ([01d2b88](https://github.com/nr2f1/website/commit/01d2b8846bb30c70cc7b70dae3b4f888b4805bab))
+* privacy policy page ([#255](https://github.com/nr2f1/website/issues/255)) ([a8f7bec](https://github.com/nr2f1/website/commit/a8f7becb51e70d822e366123b3b206ce9a51d0a3))
+
 ## [2.5.2](https://github.com/nr2f1/website/compare/v2.5.1...v2.5.2) (2025-07-29)
 
 
