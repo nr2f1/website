@@ -75,6 +75,7 @@
       border-collapse: collapse;
       table-layout: fixed;
       margin-block-end: var(--spacing-6);
+      color: var(--black);
 
       td,
       th {
@@ -87,6 +88,8 @@
       th {
         background: var(--navy-50);
         p {
+          @include text-styles.header-4;
+          color: var(--black);
           margin: 0;
           text-align: start;
         }
