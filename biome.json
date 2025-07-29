@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.1.3/schema.json",
   "assist": {
     "actions": {
       "source": {
@@ -11,20 +11,25 @@
     "enabled": true
   },
   "files": {
-    "includes": ["**", "!**/*.generated.tsx"]
-  },
-  "formatter": {
-    "enabled": true,
-    "formatWithErrors": false,
+    "ignoreUnknown": true,
     "includes": [
-      "**",
+      "**/*.ts",
+      "**/*.tsx",
+      "**/*.js",
+      "**/*.jsx",
+      "**/*.json",
+      "!**/*.generated.tsx",
       "!**/tsconfig.json",
       "!**/.next/**",
       "!**/dist/**",
       "!**/.nx/cache/**",
       "!**/website/src/graphql/**",
       "!**/.nx/workspace-data/project-graph.json"
-    ],
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
     "indentStyle": "space",
     "indentWidth": 2,
     "lineWidth": 80
@@ -38,15 +43,6 @@
   },
   "linter": {
     "enabled": true,
-    "includes": [
-      "**",
-      "!**/tsconfig.json",
-      "!**/.next/**",
-      "!**/dist/**",
-      "!**/.nx/cache/**",
-      "!**/website/src/graphql/**",
-      "!**/.nx/workspace-data/project-graph.json"
-    ],
     "rules": {
       "recommended": true,
       "style": {
@@ -62,5 +58,11 @@
         "useSingleVarDeclarator": "error"
       }
     }
+  },
+  "root": true,
+  "vcs": {
+    "clientKind": "git",
+    "enabled": true,
+    "useIgnoreFile": true
   }
 }

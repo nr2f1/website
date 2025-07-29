@@ -1,6 +1,6 @@
 {
-  "name": "website-assets",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "name": "website-assets",
   "projectType": "application",
   "sourceRoot": "website-assets/src",
   "tags": [],
@@ -11,11 +11,11 @@
         "outputPath": "dist/apps/website-assets"
       }
     },
-    "lint": {
-      "command": "pnpm biome check website"
-    },
     "format": {
       "command": "pnpm biome format website"
+    },
+    "lint": {
+      "command": "pnpm biome check website"
     }
   }
 }

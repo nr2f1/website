@@ -38,16 +38,9 @@ const PrivacyPolicyPageHeader: React.FC<PrivacyPolicyPageHeaderProps> = async ({
     title,
 
     lastUpdated,
-
   } = data.pageHeader;
 
-  return (
-    <PageHeader
-      lang={lang}
-      pageTitle={title}
-      lastUpdated={lastUpdated}
-    />
-  );
+  return <PageHeader lang={lang} pageTitle={title} lastUpdated={lastUpdated} />;
 };
 
 export default PrivacyPolicyPageHeader;
