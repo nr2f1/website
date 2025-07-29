@@ -10,6 +10,9 @@
     },
     "enabled": true
   },
+  "files": {
+    "includes": ["**", "!**/*.generated.tsx"]
+  },
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,

@@ -101,91 +101,107 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
             <h3>{partnersHeading?.content ?? ''}</h3>
             <ul className={styles['partners-list']}>
               <li>
-                <picture>
-                  <img
-                    src={nr2f1FranceAsset?.url ?? ''}
-                    alt={nr2f1FranceLink?.text?.content ?? ''}
-                  />
-                </picture>
                 <a href={nr2f1FranceLink?.target?.url ?? ''}>
-                  {nr2f1FranceLink?.text?.content ?? ''}
+                  <picture>
+                    <img
+                      src={nr2f1FranceAsset?.url ?? ''}
+                      alt=""
+                      // biome-ignore lint/a11y/noRedundantRoles: this is a safe usage
+                      role="presentation"
+                    />
+                  </picture>
+                  <span>{nr2f1FranceLink?.text?.content ?? ''}</span>
                 </a>
               </li>
               <li>
-                <picture>
-                  <img
-                    src={schaafLaboratoryAsset?.url ?? ''}
-                    alt={schaafLaboratoryLink?.text?.content ?? ''}
-                  />
-                </picture>
                 <a href={schaafLaboratoryLink?.target?.url ?? ''}>
-                  {schaafLaboratoryLink?.text?.content ?? ''}
+                  <picture>
+                    <img
+                      src={schaafLaboratoryAsset?.url ?? ''}
+                      alt=""
+                      // biome-ignore lint/a11y/noRedundantRoles: this is a safe usage
+                      role="presentation"
+                    />
+                  </picture>
+                  <span>{schaafLaboratoryLink?.text?.content ?? ''}</span>
                 </a>
               </li>
               <li>
-                <picture>
-                  <img
-                    src={cincinnatiAsset?.url ?? ''}
-                    alt={cincinnatiLink?.text?.content ?? ''}
-                  />
-                </picture>
                 <a href={cincinnatiLink?.target?.url ?? ''}>
-                  {cincinnatiLink?.text?.content ?? ''}
+                  <picture>
+                    <img
+                      src={cincinnatiAsset?.url ?? ''}
+                      alt=""
+                      // biome-ignore lint/a11y/noRedundantRoles: this is a safe usage
+                      role="presentation"
+                    />
+                  </picture>
+                  <span>{cincinnatiLink?.text?.content ?? ''}</span>
                 </a>
               </li>
               <li>
-                <picture>
-                  <img
-                    src={valroseAsset?.url ?? ''}
-                    alt={valroseLink?.text?.content ?? ''}
-                  />
-                </picture>
                 <a href={valroseLink?.target?.url ?? ''}>
-                  {valroseLink?.text?.content ?? ''}
+                  <picture>
+                    <img
+                      src={valroseAsset?.url ?? ''}
+                      alt=""
+                      // biome-ignore lint/a11y/noRedundantRoles: this is a safe usage
+                      role="presentation"
+                    />
+                  </picture>
+                  <span>{valroseLink?.text?.content ?? ''}</span>
                 </a>
               </li>
               <li>
-                <picture>
-                  <img
-                    src={combinedBrainAsset?.url ?? ''}
-                    alt={combinedBrainLink?.text?.content ?? ''}
-                  />
-                </picture>
                 <a href={combinedBrainLink?.target?.url ?? ''}>
-                  {combinedBrainLink?.text?.content ?? ''}
+                  <picture>
+                    <img
+                      src={combinedBrainAsset?.url ?? ''}
+                      alt=""
+                      // biome-ignore lint/a11y/noRedundantRoles: this is a safe usage
+                      role="presentation"
+                    />
+                  </picture>
+                  <span>{combinedBrainLink?.text?.content ?? ''}</span>
                 </a>
               </li>
               <li>
-                <picture>
-                  <img
-                    src={renAsset?.url ?? ''}
-                    alt={renLink?.text?.content ?? ''}
-                  />
-                </picture>
                 <a href={renLink?.target?.url ?? ''}>
-                  {renLink?.text?.content ?? ''}
+                  <picture>
+                    <img
+                      src={renAsset?.url ?? ''}
+                      alt=""
+                      // biome-ignore lint/a11y/noRedundantRoles: this is a safe usage
+                      role="presentation"
+                    />
+                  </picture>
+                  <span>{renLink?.text?.content ?? ''}</span>
                 </a>
               </li>
               <li>
-                <picture>
-                  <img
-                    src={globalGenesAsset?.url ?? ''}
-                    alt={globalGenesLink?.text?.content ?? ''}
-                  />
-                </picture>
                 <a href={globalGenesLink?.target?.url ?? ''}>
-                  {globalGenesLink?.text?.content ?? ''}
+                  <picture>
+                    <img
+                      src={globalGenesAsset?.url ?? ''}
+                      alt=""
+                      // biome-ignore lint/a11y/noRedundantRoles: this is a safe usage
+                      role="presentation"
+                    />
+                  </picture>
+                  <span>{globalGenesLink?.text?.content ?? ''}</span>
                 </a>
               </li>
               <li>
-                <picture>
-                  <img
-                    src={uniqueAsset?.url ?? ''}
-                    alt={uniqueLink?.text?.content ?? ''}
-                  />
-                </picture>
                 <a href={uniqueLink?.target?.url ?? ''}>
-                  {uniqueLink?.text?.content ?? ''}
+                  <picture>
+                    <img
+                      src={uniqueAsset?.url ?? ''}
+                      alt=""
+                      // biome-ignore lint/a11y/noRedundantRoles: this is a safe usage
+                      role="presentation"
+                    />
+                  </picture>
+                  <span>{uniqueLink?.text?.content ?? ''}</span>
                 </a>
               </li>
             </ul>

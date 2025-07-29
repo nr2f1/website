@@ -1,7 +1,7 @@
 import * as Apollo from '@apollo/client';
 
 import { gql } from '@apollo/client';
-import * as Types from '../../../types';
+import type * as Types from '../../../types';
 
 const defaultOptions = {} as const;
 export type GetLivingWithBbsoasUpperPageQueryVariables = Types.Exact<{

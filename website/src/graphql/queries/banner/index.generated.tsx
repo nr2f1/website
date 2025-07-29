@@ -1,5 +1,4 @@
 import * as Apollo from '@apollo/client';
-
 import { gql } from '@apollo/client';
 import * as Types from '../../types';
 

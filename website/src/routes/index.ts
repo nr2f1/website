@@ -12,7 +12,6 @@ type RouteProperty =
   | 'podcast'
   | 'publications'
   | 'register-a-patient'
-  | 'shop'
   | 'strategic-plan'
   | 'support-groups'
   | 'what-is-bbsoas';
@@ -43,7 +42,6 @@ export const routes: Record<RouteProperty, LocalisedRoute> = {
   },
   'register-a-patient': (locale: AvailableLocale) =>
     `/${locale}/register-a-patient`,
-  shop: (locale: AvailableLocale) => `${locale}/shop`,
   'strategic-plan': (locale: AvailableLocale) => `/${locale}/strategic-plan`,
   'support-groups': (locale: AvailableLocale) => `/${locale}/support-groups`,
   'what-is-bbsoas': (locale: AvailableLocale) => `/${locale}/what-is-bbsoas`,
