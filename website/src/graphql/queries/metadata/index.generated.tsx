@@ -1,7 +1,8 @@
-import * as Types from '../../types';
+import * as Apollo from '@apollo/client';
 
 import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
+import * as Types from '../../types';
+
 const defaultOptions = {} as const;
 export type GetMetadataQueryVariables = Types.Exact<{
   id: Types.Scalars['String']['input'];

@@ -106,6 +106,7 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
                     <img
                       src={nr2f1FranceAsset?.url ?? ''}
                       alt=""
+                      // biome-ignore lint/a11y/noRedundantRoles: this is a safe usage
                       role="presentation"
                     />
                   </picture>
@@ -118,6 +119,7 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
                     <img
                       src={schaafLaboratoryAsset?.url ?? ''}
                       alt=""
+                      // biome-ignore lint/a11y/noRedundantRoles: this is a safe usage
                       role="presentation"
                     />
                   </picture>
@@ -130,6 +132,7 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
                     <img
                       src={cincinnatiAsset?.url ?? ''}
                       alt=""
+                      // biome-ignore lint/a11y/noRedundantRoles: this is a safe usage
                       role="presentation"
                     />
                   </picture>
@@ -142,6 +145,7 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
                     <img
                       src={valroseAsset?.url ?? ''}
                       alt=""
+                      // biome-ignore lint/a11y/noRedundantRoles: this is a safe usage
                       role="presentation"
                     />
                   </picture>
@@ -154,6 +158,7 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
                     <img
                       src={combinedBrainAsset?.url ?? ''}
                       alt=""
+                      // biome-ignore lint/a11y/noRedundantRoles: this is a safe usage
                       role="presentation"
                     />
                   </picture>
@@ -166,6 +171,7 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
                     <img
                       src={renAsset?.url ?? ''}
                       alt=""
+                      // biome-ignore lint/a11y/noRedundantRoles: this is a safe usage
                       role="presentation"
                     />
                   </picture>
@@ -178,6 +184,7 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
                     <img
                       src={globalGenesAsset?.url ?? ''}
                       alt=""
+                      // biome-ignore lint/a11y/noRedundantRoles: this is a safe usage
                       role="presentation"
                     />
                   </picture>
@@ -190,6 +197,7 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
                     <img
                       src={uniqueAsset?.url ?? ''}
                       alt=""
+                      // biome-ignore lint/a11y/noRedundantRoles: this is a safe usage
                       role="presentation"
                     />
                   </picture>
