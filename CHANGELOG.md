@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.5.1](https://github.com/nr2f1/website/compare/v2.5.0...v2.5.1) (2025-07-29)
+
+
+### Bug Fixes
+
+* news cards ([#253](https://github.com/nr2f1/website/issues/253)) ([d763298](https://github.com/nr2f1/website/commit/d7632980ff84e00147975c9fc06a18ffd7ca0e15))
+* newsletters cards and page ([4780b6b](https://github.com/nr2f1/website/commit/4780b6ba8e30f88719fe6c0dab3d1906e67dcd23))
+
 ## [2.5.0](https://github.com/nr2f1/website/compare/v2.4.0...v2.5.0) (2025-07-08)
 
 
