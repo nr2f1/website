@@ -6,3 +6,4 @@ export const strategicPageMetadataId = '6adIViwzZOTza9iRDGrr7v';
 export const livingWithBbsoasPageMetadataId = '4G6Fr4FKWRPD1YkaOzuyqr';
 export const supportGroupsPageMetadataId = '7oRc5hgzPo6PdeurFDcrge';
 export const partnershipsPageMetadataId = '4z7eLw9QtGbZ9uLA6alQWm';
+export const privacyPolicyPageMetadataId = '1qyQH5thrgC4dSDB8lxSyf';
