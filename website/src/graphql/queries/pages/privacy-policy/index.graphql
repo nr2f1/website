@@ -1,0 +1,7 @@
+query GetPrivacyPolicyPage($locale: String, $privacyPolicyPageParagraphsId: String!) {
+  mainbody: paragraphs(locale: $locale, id: $privacyPolicyPageParagraphsId) {
+    content {
+      json
+    }
+  }
+}

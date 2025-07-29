@@ -10,3 +10,4 @@ export const blogIndexPageHeaderId = '4hMF69PRacJ5M9t4hVTUoR';
 export const podcastIndexPageHeaderId = '5svaLK2hRODiLNQtaaLdNy';
 export const newsletterIndexPageHeaderId = '3Hi5eOgyjhnGL1Z9DRTJTA';
 export const partnershipsPageHeaderId = '10DwrWCC3uV9ZYz6MUd9WS';
+export const privacyPolicyPageHeaderId = '3B74Szv7YsEWNUKYf3yqNR';
