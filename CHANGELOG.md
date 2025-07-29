@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.5.2](https://github.com/nr2f1/website/compare/v2.5.1...v2.5.2) (2025-07-29)
+
+
+### Bug Fixes
+
+* a11y ([#256](https://github.com/nr2f1/website/issues/256)) ([621d804](https://github.com/nr2f1/website/commit/621d804ce4280075ad0d275d328ad85eaf448fd5))
+* a11y issues ([733ab8d](https://github.com/nr2f1/website/commit/733ab8da0b303ef0cad8e3a584ebecc88347af4c))
+
 ## [2.5.1](https://github.com/nr2f1/website/compare/v2.5.0...v2.5.1) (2025-07-29)
 
 
