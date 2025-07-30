@@ -1,36 +1,36 @@
-@use "@styles/text-styles";
-@use "@styles/layout";
-@use "@styles/buttons";
-@use "@styles/breakpoints";
+@use '@styles/text-styles';
+@use '@styles/layout';
+@use '@styles/buttons';
+@use '@styles/breakpoints';
 
-.privacypolicy {
+.contactUs {
   &__content_wrapper {
     @include layout.content-max-width-7xl;
-    padding: var(--spacing-6) var(--spacing-16) var(--spacing-32);
+    padding: var(--spacing-6) var(--spacing-16) var(--spacing-24);
 
     @include breakpoints.medium-screen {
-      padding: var(--spacing-6) var(--spacing-12) var(--spacing-20);
+      padding: var(--spacing-6) var(--spacing-12) var(--spacing-12);
     }
 
     @include breakpoints.small-screen {
-      padding: var(--spacing-6) var(--spacing-6) var(--spacing-10);
+      padding: var(--spacing-6) var(--spacing-6) var(--spacing-8);
     }
+  }
+
+  &__social_media_links {
+    margin-block-start: var(--spacing-12);
   }
 
   article {
     @include text-styles.text-base;
     max-width: 42rem;
 
-    & > p:first-child {
-      margin-block-end: var(--spacing-12);
-    }
-
     p:not(form p) {
       margin: 0;
       margin-block-end: var(--spacing-4);
     }
 
-    a:not([target="_blank"]) {
+    a:not([target='_blank']) {
       @include text-styles.text-link;
     }
 
@@ -59,54 +59,12 @@
         @include text-styles.header-2__mobile;
       }
     }
-    ol,
-    ul {
-      padding-inline-start: var(--spacing-6);
-    }
 
     h3 {
       @include text-styles.header-3;
       margin: 0;
-      margin-block-end: var(--spacing-3);
-    }
-
-    table {
-      border: 1px solid var(--grey-300);
-      border-collapse: collapse;
-      table-layout: fixed;
-      margin-block-end: var(--spacing-6);
-      color: var(--black);
-
-      td,
-      th {
-        border: 1px solid var(--grey-300);
-        padding: var(--spacing-1) var(--spacing-2);
-        width: 50%;
-        vertical-align: top;
-      }
-
-      th {
-        background: var(--navy-50);
-        p {
-          @include text-styles.header-4;
-          color: var(--black);
-          margin: 0;
-          text-align: start;
-        }
-      }
-
-      tr {
-        td:nth-child(odd) p {
-          padding-inline-start: 0.75rem;
-          &::before {
-            content: "•";
-            margin-inline-end: var(--spacing-2);
-          }
-        }
-        td:nth-child(even) p {
-          margin: 0;
-        }
-      }
+      margin-block-start: var(--spacing-6);
+      margin-block-end: var(--spacing-4);
     }
   }
 }

@@ -1,3 +1,4 @@
+import SupportBanner from '@components/support-banner';
 import { getClient } from '@graphql/client';
 import {
   GetMetadataDocument,
@@ -47,6 +48,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
       />
       <ContactUsHeader lang={lang} />
       <PrivacyPolicyPageBody lang={lang} />
+      <SupportBanner lang={lang} />
     </>
   );
 };

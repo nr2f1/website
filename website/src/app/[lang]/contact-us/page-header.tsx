@@ -11,9 +11,7 @@ interface ContactUsHeaderProps {
   lang: AvailableLocale;
 }
 
-const ContactUsHeader: React.FC<ContactUsHeaderProps> = async ({
-  lang,
-}) => {
+const ContactUsHeader: React.FC<ContactUsHeaderProps> = async ({ lang }) => {
   const { query } = getClient();
 
   // TODO: Change query
@@ -34,10 +32,7 @@ const ContactUsHeader: React.FC<ContactUsHeaderProps> = async ({
     return null;
   }
 
-  const {
-    title,
-    lastUpdated,
-  } = data.pageHeader;
+  const { title, lastUpdated } = data.pageHeader;
 
   return <PageHeader lang={lang} pageTitle={title} lastUpdated={lastUpdated} />;
 };
