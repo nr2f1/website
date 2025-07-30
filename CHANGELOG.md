@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.7.0](https://github.com/nr2f1/website/compare/v2.6.1...v2.7.0) (2025-07-30)
+
+
+### Features
+
+* contact page ([fcb2999](https://github.com/nr2f1/website/commit/fcb29997459b5f5fdaad18a309dd1b682fcff1b7))
+* contact us page ([#261](https://github.com/nr2f1/website/issues/261)) ([7b53feb](https://github.com/nr2f1/website/commit/7b53febf0050e79fe3e49f4d812ef31587bd74fc))
+
 ## [2.6.1](https://github.com/nr2f1/website/compare/v2.6.0...v2.6.1) (2025-07-29)
 
 
