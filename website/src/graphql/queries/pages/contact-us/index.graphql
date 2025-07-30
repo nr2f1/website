@@ -1,0 +1,7 @@
+query GetContactUsPage($locale: String, $contactUsPageParagraphsId: String!) {
+  mainbody: paragraphs(locale: $locale, id: $contactUsPageParagraphsId) {
+    content {
+      json
+    }
+  }
+}
