@@ -1,7 +1,9 @@
+import type { HTMLProps } from 'react';
 import styles from './social-media-links.module.scss';
 
 interface SocialMediaLinksProps {
   variant?: 'light' | 'dark';
+  className?: HTMLProps<HTMLElement>['className'];
 }
 
 interface SocialMediaItem extends SocialMediaLinksProps {
@@ -48,9 +50,10 @@ const SocialMediaItem: React.FC<SocialMediaItem> = ({
 
 const SocialMediaLinks: React.FC<SocialMediaLinksProps> = ({
   variant = 'light',
+  className,
 }) => {
   return (
-    <ul className={styles.social_media_links}>
+    <ul className={`${styles.social_media_links} ${className ?? ''}`}>
       {SocialMediaItems.map((item) => (
         <SocialMediaItem
           {...item}

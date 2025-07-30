@@ -4,6 +4,7 @@ type LocalisedRoute = (locale: AvailableLocale) => string;
 
 type RouteProperty =
   | 'blog'
+  | 'contact-us'
   | 'homepage'
   | 'living-with-bbsoas'
   | 'news'
@@ -20,6 +21,9 @@ type RouteProperty =
 export const routes: Record<RouteProperty, LocalisedRoute> = {
   blog: (locale: AvailableLocale) => {
     return `/${locale}/news/blog`;
+  },
+  'contact-us': (locale: AvailableLocale) => {
+    return `/${locale}/contact-us`;
   },
   homepage: (locale: AvailableLocale) => {
     return `/${locale}`;
