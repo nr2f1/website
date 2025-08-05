@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.9.1](https://github.com/nr2f1/website/compare/v2.9.0...v2.9.1) (2025-08-05)
+
+
+### Bug Fixes
+
+* for researchers page metadata ([4e7b899](https://github.com/nr2f1/website/commit/4e7b89968534b98ec8625dcc36f2eb7bdcd62ffa))
+* for researchers page metadata ([#267](https://github.com/nr2f1/website/issues/267)) ([805f983](https://github.com/nr2f1/website/commit/805f9832f3632fb07ba8711a40633f1e9257a84e))
+
 ## [2.9.0](https://github.com/nr2f1/website/compare/v2.8.0...v2.9.0) (2025-08-05)
 
 
