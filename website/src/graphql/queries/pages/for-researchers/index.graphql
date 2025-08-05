@@ -1,0 +1,125 @@
+query GetForResearchersPage(
+  $locale: String
+  $patientRegistryHeadingId: String!
+  $biorepositoryHeadingId: String!
+  $surveyHeadingId: String!
+  $registerPatientInOurresearchPageParagraphsId: String!
+  $biorepositoryParagraphsBeforeAccordionsId: String!
+  $whatIsBioRepositoryAccordionId: String!
+  $whyBioRepositoryAccordionId: String!
+  $anotherSampleAccordionId: String!
+  $biorepositoryParagraphsAfterAccordionsId: String!
+  $surveyParagraphsBeforeAccordionsId: String!
+  $ortasWhatAccordionId: String!
+  $ortasWhyAccordionId: String!
+  $ortasWhoAccordionId: String!
+  $surveyParagraphsAfterAccordionsId: String!
+) {
+  patientRegistryHeading: heading(
+    locale: $locale
+    id: $patientRegistryHeadingId
+  ) {
+    content
+  }
+
+  patientRegistryParagraphs: paragraphs(
+    locale: $locale
+    id: $registerPatientInOurresearchPageParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+
+  biorepositoryHeading: heading(locale: $locale, id: $biorepositoryHeadingId) {
+    content
+  }
+
+  biorepositoryParagraphsBeforeAccordions: paragraphs(
+    locale: $locale
+    id: $biorepositoryParagraphsBeforeAccordionsId
+  ) {
+    content {
+      json
+    }
+  }
+
+  whatIsBioRepositoryAccordion: accordion(
+    locale: $locale
+    id: $whatIsBioRepositoryAccordionId
+  ) {
+    title
+    content {
+      json
+    }
+  }
+
+  whyBioRepositoryAccordion: accordion(
+    locale: $locale
+    id: $whyBioRepositoryAccordionId
+  ) {
+    title
+    content {
+      json
+    }
+  }
+
+  anotherSampleAccordion: accordion(
+    locale: $locale
+    id: $anotherSampleAccordionId
+  ) {
+    title
+    content {
+      json
+    }
+  }
+
+  biorepositoryParagraphsAfterAccordions: paragraphs(
+    locale: $locale
+    id: $biorepositoryParagraphsAfterAccordionsId
+  ) {
+    content {
+      json
+    }
+  }
+
+  surveyHeading: heading(locale: $locale, id: $surveyHeadingId) {
+    content
+  }
+
+  surveyParagraphsBeforeAccordions: paragraphs(
+    locale: $locale
+    id: $surveyParagraphsBeforeAccordionsId
+  ) {
+    content {
+      json
+    }
+  }
+
+  ortasWhatAccordion: accordion(locale: $locale, id: $ortasWhatAccordionId) {
+    title
+    content {
+      json
+    }
+  }
+  ortasWhyAccordion: accordion(locale: $locale, id: $ortasWhyAccordionId) {
+    title
+    content {
+      json
+    }
+  }
+  ortasWhoAccordion: accordion(locale: $locale, id: $ortasWhoAccordionId) {
+    title
+    content {
+      json
+    }
+  }
+  surveyParagraphsAfterAccordions: paragraphs(
+    locale: $locale
+    id: $surveyParagraphsAfterAccordionsId
+  ) {
+    content {
+      json
+    }
+  }
+}

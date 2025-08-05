@@ -49,3 +49,7 @@ export const dadsUkHeadingId = '2sz8PsmabEkSUNmc9ccZ5M';
 // Partnership page
 export const partnershipsPageheadingId = '2RyON8b0zJvqYwSmKde5AR';
 export const partnersHeadingId = '3kuMjToncLWxAnEOUvo0bi';
+// For research page
+export const patientRegistryHeadingId = '1iX5z8V7u1ddlZfIB4SeZm';
+export const biorepositoryHeadingId = '5ElMw3cfnoq0ifv0JWIzcY';
+export const surveyHeadingId = '333K0Nz0KmNpbrNMbLKryv';
