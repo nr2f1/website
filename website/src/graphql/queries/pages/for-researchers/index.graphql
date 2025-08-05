@@ -1,0 +1,84 @@
+query GetForResearchersPage(
+  $locale: String
+  $patientRegistryHeadingId: String!
+  $biorepositoryHeadingId: String!
+  $surveyHeadingId: String!
+  $registerPatientInOurresearchPageParagraphsId: String!
+  $biorepositoryParagraphsBeforeAccordionsId: String!
+  $whatIsBioRepositoryAccordionId: String!
+  $whyBioRepositoryAccordionId: String!
+  $anotherSampleAccordionId: String!
+  $biorepositoryParagraphsAfterAccordionsId: String!
+) {
+  patientRegistryHeading: heading(
+    locale: $locale
+    id: $patientRegistryHeadingId
+  ) {
+    content
+  }
+
+  patientRegistryParagraphs: paragraphs(
+    locale: $locale
+    id: $registerPatientInOurresearchPageParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+
+  biorepositoryHeading: heading(locale: $locale, id: $biorepositoryHeadingId) {
+    content
+  }
+
+  biorepositoryParagraphsBeforeAccordions: paragraphs(
+    locale: $locale
+    id: $biorepositoryParagraphsBeforeAccordionsId
+  ) {
+    content {
+      json
+    }
+  }
+
+  whatIsBioRepositoryAccordion: accordion(
+    locale: $locale
+    id: $whatIsBioRepositoryAccordionId
+  ) {
+    title
+    content {
+      json
+    }
+  }
+
+  whyBioRepositoryAccordion: accordion(
+    locale: $locale
+    id: $whyBioRepositoryAccordionId
+  ) {
+    title
+    content {
+      json
+    }
+  }
+
+  anotherSampleAccordion: accordion(
+    locale: $locale
+    id: $anotherSampleAccordionId
+  ) {
+    title
+    content {
+      json
+    }
+  }
+
+  biorepositoryParagraphsAfterAccordions: paragraphs(
+    locale: $locale
+    id: $biorepositoryParagraphsAfterAccordionsId
+  ) {
+    content {
+      json
+    }
+  }
+
+  surveyHeading: heading(locale: $locale, id: $surveyHeadingId) {
+    content
+  }
+}

@@ -67,3 +67,11 @@ export const contactUsPageParagraphsId = '3uIIUXFNvUiAvBqQEPQjf4';
 
 // Our financials page
 export const ourFinancialsPageParagraphsId = '4zlDsXcJG3k1XZPclAlVAl';
+
+// Our research page
+export const registerPatientInOurresearchPageParagraphsId =
+  '2WqVxaTWui7lXjhtQDIuuo';
+export const biorepositoryParagraphsBeforeAccordionsId =
+  '299gD1OLuUfvu9H2ITAAKW';
+export const biorepositoryParagraphsAfterAccordionsId =
+  '2nKSO7YOBtOBl0JNZrv58f';
