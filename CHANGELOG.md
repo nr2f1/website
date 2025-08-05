@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.8.0](https://github.com/nr2f1/website/compare/v2.7.0...v2.8.0) (2025-08-05)
+
+
+### Features
+
+* our financials page ([351b6b5](https://github.com/nr2f1/website/commit/351b6b5045c7d529b0171d90e3890e08bd6bba85))
+* our financials page ([#263](https://github.com/nr2f1/website/issues/263)) ([57e4cb5](https://github.com/nr2f1/website/commit/57e4cb5c49c40339e9992dfaafb1db3aa4b2a848))
+
 ## [2.7.0](https://github.com/nr2f1/website/compare/v2.6.1...v2.7.0) (2025-07-30)
 
 
