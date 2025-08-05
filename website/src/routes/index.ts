@@ -9,10 +9,11 @@ type RouteProperty =
   | 'living-with-bbsoas'
   | 'news'
   | 'newsletter'
+  | 'our-financials'
   | 'partnerships'
   | 'podcast'
-  | 'publications'
   | 'privacy-policy'
+  | 'publications'
   | 'register-a-patient'
   | 'strategic-plan'
   | 'support-groups'
@@ -35,6 +36,9 @@ export const routes: Record<RouteProperty, LocalisedRoute> = {
   },
   newsletter: (locale: AvailableLocale) => {
     return `/${locale}/news/newsletter`;
+  },
+  'our-financials': (locale: AvailableLocale) => {
+    return `/${locale}/our-financials`;
   },
   partnerships: (locale: AvailableLocale) => {
     return `/${locale}/partnerships`;

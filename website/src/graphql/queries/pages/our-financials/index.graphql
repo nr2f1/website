@@ -1,0 +1,10 @@
+query GetOurFinancialsPage(
+  $locale: String
+  $ourFinancialsPageParagraphsId: String!
+) {
+  mainbody: paragraphs(locale: $locale, id: $ourFinancialsPageParagraphsId) {
+    content {
+      json
+    }
+  }
+}

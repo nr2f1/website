@@ -64,3 +64,6 @@ export const privacyPolicyPageParagraphsId = '8R1WuiXREJmGWfWI7XkpA';
 
 // Contact us page
 export const contactUsPageParagraphsId = '3uIIUXFNvUiAvBqQEPQjf4';
+
+// Our financials page
+export const ourFinancialsPageParagraphsId = '4zlDsXcJG3k1XZPclAlVAl';
