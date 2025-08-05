@@ -24,3 +24,6 @@ export const hearingAccordionId = '1ScJojPRYG8jhVV1DQJdvQ';
 export const whatIsBioRepositoryAccordionId = '5btkpZjbFkeDcevW1GtCRI';
 export const whyBioRepositoryAccordionId = '61N03SjZru82P6S2WrJTqP';
 export const anotherSampleAccordionId = '4xfOxNUY0hH9Ego2JfnhDu';
+export const ortasWhatAccordionId = '7nuiXUaytsu7bGs6tV9NvN';
+export const ortasWhyAccordionId = '2pgANMWtqKMJL8IlXM1xGf';
+export const ortasWhoAccordionId = 'qhU0hySvQE9ybLS4uirmf';

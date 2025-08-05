@@ -9,6 +9,11 @@ query GetForResearchersPage(
   $whyBioRepositoryAccordionId: String!
   $anotherSampleAccordionId: String!
   $biorepositoryParagraphsAfterAccordionsId: String!
+  $surveyParagraphsBeforeAccordionsId: String!
+  $ortasWhatAccordionId: String!
+  $ortasWhyAccordionId: String!
+  $ortasWhoAccordionId: String!
+  $surveyParagraphsAfterAccordionsId: String!
 ) {
   patientRegistryHeading: heading(
     locale: $locale
@@ -80,5 +85,41 @@ query GetForResearchersPage(
 
   surveyHeading: heading(locale: $locale, id: $surveyHeadingId) {
     content
+  }
+
+  surveyParagraphsBeforeAccordions: paragraphs(
+    locale: $locale
+    id: $surveyParagraphsBeforeAccordionsId
+  ) {
+    content {
+      json
+    }
+  }
+
+  ortasWhatAccordion: accordion(locale: $locale, id: $ortasWhatAccordionId) {
+    title
+    content {
+      json
+    }
+  }
+  ortasWhyAccordion: accordion(locale: $locale, id: $ortasWhyAccordionId) {
+    title
+    content {
+      json
+    }
+  }
+  ortasWhoAccordion: accordion(locale: $locale, id: $ortasWhoAccordionId) {
+    title
+    content {
+      json
+    }
+  }
+  surveyParagraphsAfterAccordions: paragraphs(
+    locale: $locale
+    id: $surveyParagraphsAfterAccordionsId
+  ) {
+    content {
+      json
+    }
   }
 }

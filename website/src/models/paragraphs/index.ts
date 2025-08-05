@@ -75,3 +75,5 @@ export const biorepositoryParagraphsBeforeAccordionsId =
   '299gD1OLuUfvu9H2ITAAKW';
 export const biorepositoryParagraphsAfterAccordionsId =
   '2nKSO7YOBtOBl0JNZrv58f';
+export const surveyParagraphsBeforeAccordionsId = '3ea22q5P45zZfTKtYF34MW';
+export const surveyParagraphsAfterAccordionsId = '3bbldu6OJp82fiKcU6egzl';

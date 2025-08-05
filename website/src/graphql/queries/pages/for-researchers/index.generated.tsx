@@ -14,14 +14,19 @@ export type GetForResearchersPageQueryVariables = Types.Exact<{
   whyBioRepositoryAccordionId: Types.Scalars['String']['input'];
   anotherSampleAccordionId: Types.Scalars['String']['input'];
   biorepositoryParagraphsAfterAccordionsId: Types.Scalars['String']['input'];
+  surveyParagraphsBeforeAccordionsId: Types.Scalars['String']['input'];
+  ortasWhatAccordionId: Types.Scalars['String']['input'];
+  ortasWhyAccordionId: Types.Scalars['String']['input'];
+  ortasWhoAccordionId: Types.Scalars['String']['input'];
+  surveyParagraphsAfterAccordionsId: Types.Scalars['String']['input'];
 }>;
 
 
-export type GetForResearchersPageQuery = { __typename?: 'Query', patientRegistryHeading?: { __typename?: 'Heading', content?: string | null } | null, patientRegistryParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, biorepositoryHeading?: { __typename?: 'Heading', content?: string | null } | null, biorepositoryParagraphsBeforeAccordions?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, whatIsBioRepositoryAccordion?: { __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null, whyBioRepositoryAccordion?: { __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null, anotherSampleAccordion?: { __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null, biorepositoryParagraphsAfterAccordions?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, surveyHeading?: { __typename?: 'Heading', content?: string | null } | null };
+export type GetForResearchersPageQuery = { __typename?: 'Query', patientRegistryHeading?: { __typename?: 'Heading', content?: string | null } | null, patientRegistryParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, biorepositoryHeading?: { __typename?: 'Heading', content?: string | null } | null, biorepositoryParagraphsBeforeAccordions?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, whatIsBioRepositoryAccordion?: { __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null, whyBioRepositoryAccordion?: { __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null, anotherSampleAccordion?: { __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null, biorepositoryParagraphsAfterAccordions?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, surveyHeading?: { __typename?: 'Heading', content?: string | null } | null, surveyParagraphsBeforeAccordions?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, ortasWhatAccordion?: { __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null, ortasWhyAccordion?: { __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null, ortasWhoAccordion?: { __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null, surveyParagraphsAfterAccordions?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null };
 
 
 export const GetForResearchersPageDocument = gql`
-    query GetForResearchersPage($locale: String, $patientRegistryHeadingId: String!, $biorepositoryHeadingId: String!, $surveyHeadingId: String!, $registerPatientInOurresearchPageParagraphsId: String!, $biorepositoryParagraphsBeforeAccordionsId: String!, $whatIsBioRepositoryAccordionId: String!, $whyBioRepositoryAccordionId: String!, $anotherSampleAccordionId: String!, $biorepositoryParagraphsAfterAccordionsId: String!) {
+    query GetForResearchersPage($locale: String, $patientRegistryHeadingId: String!, $biorepositoryHeadingId: String!, $surveyHeadingId: String!, $registerPatientInOurresearchPageParagraphsId: String!, $biorepositoryParagraphsBeforeAccordionsId: String!, $whatIsBioRepositoryAccordionId: String!, $whyBioRepositoryAccordionId: String!, $anotherSampleAccordionId: String!, $biorepositoryParagraphsAfterAccordionsId: String!, $surveyParagraphsBeforeAccordionsId: String!, $ortasWhatAccordionId: String!, $ortasWhyAccordionId: String!, $ortasWhoAccordionId: String!, $surveyParagraphsAfterAccordionsId: String!) {
   patientRegistryHeading: heading(locale: $locale, id: $patientRegistryHeadingId) {
     content
   }
@@ -82,6 +87,40 @@ export const GetForResearchersPageDocument = gql`
   surveyHeading: heading(locale: $locale, id: $surveyHeadingId) {
     content
   }
+  surveyParagraphsBeforeAccordions: paragraphs(
+    locale: $locale
+    id: $surveyParagraphsBeforeAccordionsId
+  ) {
+    content {
+      json
+    }
+  }
+  ortasWhatAccordion: accordion(locale: $locale, id: $ortasWhatAccordionId) {
+    title
+    content {
+      json
+    }
+  }
+  ortasWhyAccordion: accordion(locale: $locale, id: $ortasWhyAccordionId) {
+    title
+    content {
+      json
+    }
+  }
+  ortasWhoAccordion: accordion(locale: $locale, id: $ortasWhoAccordionId) {
+    title
+    content {
+      json
+    }
+  }
+  surveyParagraphsAfterAccordions: paragraphs(
+    locale: $locale
+    id: $surveyParagraphsAfterAccordionsId
+  ) {
+    content {
+      json
+    }
+  }
 }
     `;
 
@@ -107,6 +146,11 @@ export const GetForResearchersPageDocument = gql`
  *      whyBioRepositoryAccordionId: // value for 'whyBioRepositoryAccordionId'
  *      anotherSampleAccordionId: // value for 'anotherSampleAccordionId'
  *      biorepositoryParagraphsAfterAccordionsId: // value for 'biorepositoryParagraphsAfterAccordionsId'
+ *      surveyParagraphsBeforeAccordionsId: // value for 'surveyParagraphsBeforeAccordionsId'
+ *      ortasWhatAccordionId: // value for 'ortasWhatAccordionId'
+ *      ortasWhyAccordionId: // value for 'ortasWhyAccordionId'
+ *      ortasWhoAccordionId: // value for 'ortasWhoAccordionId'
+ *      surveyParagraphsAfterAccordionsId: // value for 'surveyParagraphsAfterAccordionsId'
  *   },
  * });
  */

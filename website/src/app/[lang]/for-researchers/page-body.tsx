@@ -4,52 +4,29 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { getClient } from '@graphql/client';
 import {
   GetForResearchersPageDocument,
-  GetForResearchersPageQuery,
+  type GetForResearchersPageQuery,
 } from '@graphql/queries/pages/for-researchers/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   anotherSampleAccordionId,
+  ortasWhatAccordionId,
+  ortasWhoAccordionId,
+  ortasWhyAccordionId,
   whatIsBioRepositoryAccordionId,
   whyBioRepositoryAccordionId,
 } from '@models/accordions';
-// import {
-//   adhdAccordionId,
-//   alacrimaAccordionId,
-//   autismAccordionId,
-//   developmentDelayAccordionId,
-//   disabilityAccordionId,
-//   epilepsyAccordionId,
-//   hearingAccordionId,
-//   hypotoniaAccordionId,
-//   nystagmusAccordionId,
-//   repetitiveBehaviourAccordionId,
-//   speechDelayAccordionId,
-//   swallingAccordionId,
-//   visualImpairmentAccordionId,
-// } from '@models/accordions';
 import {
-  patientRegistryHeadingId,
   biorepositoryHeadingId,
+  patientRegistryHeadingId,
   surveyHeadingId,
 } from '@models/headings';
 import {
-  registerPatientInOurresearchPageParagraphsId,
-  biorepositoryParagraphsBeforeAccordionsId,
   biorepositoryParagraphsAfterAccordionsId,
+  biorepositoryParagraphsBeforeAccordionsId,
+  registerPatientInOurresearchPageParagraphsId,
+  surveyParagraphsAfterAccordionsId,
+  surveyParagraphsBeforeAccordionsId,
 } from '@models/paragraphs';
-// import {
-//   diagnosisParagraphsId,
-//   incidenceParagraphsId,
-//   inheritanceParagraphsId,
-//   lifeParagraphsId,
-//   managementParagraphsId,
-//   prevalenceParagraphsId,
-//   researchParagraphsId,
-//   symptomsOfBbsoasParagraphsId,
-//   symptomsVaryParagraphsId,
-//   whatCausesBbsoasParagraphsId,
-//   whatIsBbsoasintroId,
-// } from '@models/paragraphs';
 import { createHashLink } from '@shared/utils/hash-links';
 import styles from './index.module.scss';
 
@@ -71,21 +48,31 @@ const WhatIsBbsoasBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
       whyBioRepositoryAccordion,
       anotherSampleAccordion,
       biorepositoryParagraphsAfterAccordions,
+      surveyParagraphsBeforeAccordions,
+      ortasWhatAccordion,
+      ortasWhyAccordion,
+      ortasWhoAccordion,
+      surveyParagraphsAfterAccordions,
     },
     error,
   } = await query<GetForResearchersPageQuery>({
     query: GetForResearchersPageDocument,
     variables: {
-      locale: lang,
-      patientRegistryHeadingId,
+      anotherSampleAccordionId,
       biorepositoryHeadingId,
-      surveyHeadingId,
-      registerPatientInOurresearchPageParagraphsId,
+      biorepositoryParagraphsAfterAccordionsId,
       biorepositoryParagraphsBeforeAccordionsId,
+      locale: lang,
+      ortasWhatAccordionId,
+      ortasWhoAccordionId,
+      ortasWhyAccordionId,
+      patientRegistryHeadingId,
+      registerPatientInOurresearchPageParagraphsId,
+      surveyHeadingId,
+      surveyParagraphsAfterAccordionsId,
+      surveyParagraphsBeforeAccordionsId,
       whatIsBioRepositoryAccordionId,
       whyBioRepositoryAccordionId,
-      anotherSampleAccordionId,
-      biorepositoryParagraphsAfterAccordionsId,
     },
   });
 
@@ -132,7 +119,7 @@ const WhatIsBbsoasBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
             anotherSampleAccordion?.content?.json,
           )}
         />
-        <div className={styles.biorepository}>
+        <div className={styles.override}>
           {documentToReactComponents(
             biorepositoryParagraphsAfterAccordions?.content?.json,
           )}
@@ -142,7 +129,26 @@ const WhatIsBbsoasBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
         <h2 id={createHashLink(surveyHeading?.content ?? '')}>
           {surveyHeading?.content}
         </h2>
-        {/*{documentToReactComponents(symptomsVaryParagraphs?.content?.json)}*/}
+        {documentToReactComponents(
+          surveyParagraphsBeforeAccordions?.content?.json,
+        )}
+        <Accordion
+          title={ortasWhatAccordion?.title ?? ''}
+          content={documentToReactComponents(ortasWhatAccordion?.content?.json)}
+        />
+        <Accordion
+          title={ortasWhyAccordion?.title ?? ''}
+          content={documentToReactComponents(ortasWhyAccordion?.content?.json)}
+        />
+        <Accordion
+          title={ortasWhoAccordion?.title ?? ''}
+          content={documentToReactComponents(ortasWhoAccordion?.content?.json)}
+        />
+        <div className={styles.override}>
+          {documentToReactComponents(
+            surveyParagraphsAfterAccordions?.content?.json,
+          )}
+        </div>
       </section>
     </PageBody>
   );
