@@ -6,6 +6,7 @@ on:
     types: [opened, synchronize, reopened]
     branches:
       - main
+      - '!release-please--branches--**'
     paths-ignore:
       - 'CHANGELOG.md'
   merge_group:

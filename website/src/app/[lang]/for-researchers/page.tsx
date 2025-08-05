@@ -4,7 +4,7 @@ import {
   GetMetadataDocument,
   type GetMetadataQuery,
 } from '@graphql/queries/metadata/index.generated';
-import { whatIsBbsoasPageMetadataId } from '@models/metadata';
+import { forResearchersPageMetadataId } from '@models/metadata';
 import { routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
@@ -25,7 +25,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
-      id: whatIsBbsoasPageMetadataId,
+      id: forResearchersPageMetadataId,
       locale: lang,
     },
   });
@@ -37,7 +37,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     inLanguage: lang,
     keywords,
     name: title,
-    url: `https://nr2f1.org${routes['what-is-bbsoas'](lang)}`,
+    url: `https://nr2f1.org${routes['for-researchers'](lang)}`,
   };
 
   return (
@@ -67,7 +67,7 @@ export async function generateMetadata({
   } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
-      id: whatIsBbsoasPageMetadataId,
+      id: forResearchersPageMetadataId,
       locale: lang,
     },
   });
