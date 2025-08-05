@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.9.0](https://github.com/nr2f1/website/compare/v2.8.0...v2.9.0) (2025-08-05)
+
+
+### Features
+
+* for researcher page ([40203eb](https://github.com/nr2f1/website/commit/40203eb0f5b7ba4390fb933083157e073cc290fc))
+
 ## [2.8.0](https://github.com/nr2f1/website/compare/v2.7.0...v2.8.0) (2025-08-05)
 
 
