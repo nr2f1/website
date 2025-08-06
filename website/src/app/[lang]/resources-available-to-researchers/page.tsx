@@ -4,13 +4,13 @@ import {
   GetMetadataDocument,
   type GetMetadataQuery,
 } from '@graphql/queries/metadata/index.generated';
-import { getInvolvedInBbsoasResearchPageMetadataId } from '@models/metadata';
+import { resourcesAvailableToResearchersPageMetadataId } from '@models/metadata';
 import { routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
 import type { WebPage, WithContext } from 'schema-dts';
 import GetInvolvedInBbsoasResearchBody from './page-body';
-import GetInvolvedInBbsoasResearchHeader from './page-header';
+import ResourcesAvailableToResearchersHeader from './page-header';
 
 const { query } = getClient();
 
@@ -25,7 +25,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
-      id: getInvolvedInBbsoasResearchPageMetadataId,
+      id: resourcesAvailableToResearchersPageMetadataId,
       locale: lang,
     },
   });
@@ -37,7 +37,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     inLanguage: lang,
     keywords,
     name: title,
-    url: `https://nr2f1.org${routes['get-involved-in-bbsoas-research'](lang)}`,
+    url: `https://nr2f1.org${routes['resources-available-to-researchers'](lang)}`,
   };
 
   return (
@@ -47,7 +47,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
         // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <GetInvolvedInBbsoasResearchHeader lang={lang} />
+      <ResourcesAvailableToResearchersHeader lang={lang} />
       <GetInvolvedInBbsoasResearchBody lang={lang} />
       <SupportBanner lang={lang} />
     </>
@@ -67,7 +67,7 @@ export async function generateMetadata({
   } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
-      id: getInvolvedInBbsoasResearchPageMetadataId,
+      id: resourcesAvailableToResearchersPageMetadataId,
       locale: lang,
     },
   });

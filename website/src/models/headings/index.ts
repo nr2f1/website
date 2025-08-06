@@ -53,3 +53,8 @@ export const partnersHeadingId = '3kuMjToncLWxAnEOUvo0bi';
 export const patientRegistryHeadingId = '1iX5z8V7u1ddlZfIB4SeZm';
 export const biorepositoryHeadingId = '5ElMw3cfnoq0ifv0JWIzcY';
 export const surveyHeadingId = '333K0Nz0KmNpbrNMbLKryv';
+// resources available for research
+export const biorepositorySamplesHeadingId = '6rIAv8j5fUIfobo2Csi6PI';
+export const grantsHeadingId = '4dnZo9ZSEObgyIM14m8UVj';
+export const patientRegistryRecordsHeadingId = '4EPkV6YO1SwRF3VY2teTvH';
+export const miceModelsHeadingId = '6SEPsTpBiok8ePzonmOy9Q';

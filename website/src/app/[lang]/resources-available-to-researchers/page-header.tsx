@@ -5,21 +5,21 @@ import {
   type GetPageHeaderQuery,
 } from '@graphql/queries/page-header/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
-import { getInvolvedInBbsoasResearchHeaderPageHeaderId } from '@models/page-header';
+import { resourcesAvailableToResearchersPageHeaderId } from '@models/page-header';
 
-interface GetInvolvedInBbsoasResearchHeaderProps {
+interface ResourcesAvailableToResearchersHeaderProps {
   lang: AvailableLocale;
 }
 
-const GetInvolvedInBbsoasResearchHeader: React.FC<
-  GetInvolvedInBbsoasResearchHeaderProps
+const ResourcesAvailableToResearchersHeader: React.FC<
+  ResourcesAvailableToResearchersHeaderProps
 > = async ({ lang }) => {
   const { query } = getClient();
 
   const { data, error } = await query<GetPageHeaderQuery>({
     query: GetPageHeaderDocument,
     variables: {
-      id: getInvolvedInBbsoasResearchHeaderPageHeaderId,
+      id: resourcesAvailableToResearchersPageHeaderId,
       locale: lang,
     },
   });
@@ -51,4 +51,4 @@ const GetInvolvedInBbsoasResearchHeader: React.FC<
   );
 };
 
-export default GetInvolvedInBbsoasResearchHeader;
+export default ResourcesAvailableToResearchersHeader;

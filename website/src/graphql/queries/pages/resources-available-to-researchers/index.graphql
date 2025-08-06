@@ -1,0 +1,29 @@
+query GetResourcesAvailableToResearchersPage(
+  $locale: String
+  $biorepositorySamplesHeadingId: String!
+  $grantsHeadingId: String!
+  $patientRegistryRecordsHeadingId: String!
+  $miceModelsHeadingId: String!
+) {
+  biorepositorySamplesHeading: heading(
+    locale: $locale
+    id: $biorepositorySamplesHeadingId
+  ) {
+    content
+  }
+
+  grantsHeading: heading(locale: $locale, id: $grantsHeadingId) {
+    content
+  }
+
+  patientRegistryRecordsHeading: heading(
+    locale: $locale
+    id: $patientRegistryRecordsHeadingId
+  ) {
+    content
+  }
+
+  miceModelsHeading: heading(locale: $locale, id: $miceModelsHeadingId) {
+    content
+  }
+}

@@ -1,80 +1,43 @@
-import Accordion from '@components/accordion';
 import PageBody from '@components/page-body';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
 import {
-  GetGetInvolvedInBbsoasResearchPageDocument,
-  GetGetInvolvedInBbsoasResearchPageQuery,
-} from '@graphql/queries/pages/get-involved-in-bbsoas-research/index.generated';
+  GetResourcesAvailableToResearchersPageDocument,
+  type GetResourcesAvailableToResearchersPageQuery,
+} from '@graphql/queries/pages/resources-available-to-researchers/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
-  anotherSampleAccordionId,
-  ortasWhatAccordionId,
-  ortasWhoAccordionId,
-  ortasWhyAccordionId,
-  whatIsBioRepositoryAccordionId,
-  whyBioRepositoryAccordionId,
-} from '@models/accordions';
-import {
-  biorepositoryHeadingId,
-  patientRegistryHeadingId,
-  surveyHeadingId,
+  biorepositorySamplesHeadingId,
+  grantsHeadingId,
+  miceModelsHeadingId,
+  patientRegistryRecordsHeadingId,
 } from '@models/headings';
-import {
-  biorepositoryParagraphsAfterAccordionsId,
-  biorepositoryParagraphsBeforeAccordionsId,
-  registerPatientInOurresearchPageParagraphsId,
-  surveyParagraphsAfterAccordionsId,
-  surveyParagraphsBeforeAccordionsId,
-} from '@models/paragraphs';
 import { createHashLink } from '@shared/utils/hash-links';
-import styles from './index.module.scss';
 
-interface GetInvolvedInBbsoasResearchPageProps {
+interface ResourcesAvailableToResearchersBodyProps {
   lang: AvailableLocale;
 }
 
 const { query } = getClient();
 
-const GetInvolvedInBbsoasResearchBody: React.FC<
-  GetInvolvedInBbsoasResearchPageProps
+const ResourcesAvailableToResearchersBody: React.FC<
+  ResourcesAvailableToResearchersBodyProps
 > = async ({ lang }) => {
   const {
     data: {
-      patientRegistryHeading,
-      biorepositoryHeading,
-      surveyHeading,
-      patientRegistryParagraphs,
-      biorepositoryParagraphsBeforeAccordions,
-      whatIsBioRepositoryAccordion,
-      whyBioRepositoryAccordion,
-      anotherSampleAccordion,
-      biorepositoryParagraphsAfterAccordions,
-      surveyParagraphsBeforeAccordions,
-      ortasWhatAccordion,
-      ortasWhyAccordion,
-      ortasWhoAccordion,
-      surveyParagraphsAfterAccordions,
+      biorepositorySamplesHeading,
+      grantsHeading,
+      patientRegistryRecordsHeading,
+      miceModelsHeading,
     },
     error,
-  } = await query<GetGetInvolvedInBbsoasResearchPageQuery>({
-    query: GetGetInvolvedInBbsoasResearchPageDocument,
+  } = await query<GetResourcesAvailableToResearchersPageQuery>({
+    query: GetResourcesAvailableToResearchersPageDocument,
     variables: {
-      anotherSampleAccordionId,
-      biorepositoryHeadingId,
-      biorepositoryParagraphsAfterAccordionsId,
-      biorepositoryParagraphsBeforeAccordionsId,
+      biorepositorySamplesHeadingId,
+      grantsHeadingId,
+      patientRegistryRecordsHeadingId,
+      miceModelsHeadingId,
       locale: lang,
-      ortasWhatAccordionId,
-      ortasWhoAccordionId,
-      ortasWhyAccordionId,
-      patientRegistryHeadingId,
-      registerPatientInOurresearchPageParagraphsId,
-      surveyHeadingId,
-      surveyParagraphsAfterAccordionsId,
-      surveyParagraphsBeforeAccordionsId,
-      whatIsBioRepositoryAccordionId,
-      whyBioRepositoryAccordionId,
     },
   });
 
@@ -83,77 +46,40 @@ const GetInvolvedInBbsoasResearchBody: React.FC<
   }
 
   const headings = [
-    patientRegistryHeading?.content ?? '',
-    biorepositoryHeading?.content ?? '',
-    surveyHeading?.content ?? '',
+    biorepositorySamplesHeading?.content ?? '',
+    grantsHeading?.content ?? '',
+    patientRegistryRecordsHeading?.content ?? '',
+    miceModelsHeading?.content ?? '',
   ];
 
   return (
     <PageBody lang={lang} headings={headings}>
       <section>
-        <h2 id={createHashLink(patientRegistryHeading?.content ?? '')}>
-          {patientRegistryHeading?.content}
+        <h2 id={createHashLink(biorepositorySamplesHeading?.content ?? '')}>
+          {biorepositorySamplesHeading?.content}
         </h2>
-        {documentToReactComponents(patientRegistryParagraphs?.content?.json)}
+        {/*{documentToReactComponents(patientRegistryParagraphs?.content?.json)}*/}
       </section>
       <section>
-        <h2 id={createHashLink(biorepositoryHeading?.content ?? '')}>
-          {biorepositoryHeading?.content}
+        <h2 id={createHashLink(grantsHeading?.content ?? '')}>
+          {grantsHeading?.content}
         </h2>
-        {documentToReactComponents(
-          biorepositoryParagraphsBeforeAccordions?.content?.json,
-        )}
-        <Accordion
-          title={whatIsBioRepositoryAccordion?.title ?? ''}
-          content={documentToReactComponents(
-            whatIsBioRepositoryAccordion?.content?.json,
-          )}
-        />
-        <Accordion
-          title={whyBioRepositoryAccordion?.title ?? ''}
-          content={documentToReactComponents(
-            whyBioRepositoryAccordion?.content?.json,
-          )}
-        />
-        <Accordion
-          title={anotherSampleAccordion?.title ?? ''}
-          content={documentToReactComponents(
-            anotherSampleAccordion?.content?.json,
-          )}
-        />
-        <div className={styles.override}>
-          {documentToReactComponents(
-            biorepositoryParagraphsAfterAccordions?.content?.json,
-          )}
-        </div>
+        {/*{documentToReactComponents(patientRegistryParagraphs?.content?.json)}*/}
       </section>
       <section>
-        <h2 id={createHashLink(surveyHeading?.content ?? '')}>
-          {surveyHeading?.content}
+        <h2 id={createHashLink(patientRegistryRecordsHeading?.content ?? '')}>
+          {patientRegistryRecordsHeading?.content}
         </h2>
-        {documentToReactComponents(
-          surveyParagraphsBeforeAccordions?.content?.json,
-        )}
-        <Accordion
-          title={ortasWhatAccordion?.title ?? ''}
-          content={documentToReactComponents(ortasWhatAccordion?.content?.json)}
-        />
-        <Accordion
-          title={ortasWhyAccordion?.title ?? ''}
-          content={documentToReactComponents(ortasWhyAccordion?.content?.json)}
-        />
-        <Accordion
-          title={ortasWhoAccordion?.title ?? ''}
-          content={documentToReactComponents(ortasWhoAccordion?.content?.json)}
-        />
-        <div className={styles.override}>
-          {documentToReactComponents(
-            surveyParagraphsAfterAccordions?.content?.json,
-          )}
-        </div>
+        {/*{documentToReactComponents(patientRegistryParagraphs?.content?.json)}*/}
+      </section>
+      <section>
+        <h2 id={createHashLink(miceModelsHeading?.content ?? '')}>
+          {miceModelsHeading?.content}
+        </h2>
+        {/*{documentToReactComponents(patientRegistryParagraphs?.content?.json)}*/}
       </section>
     </PageBody>
   );
 };
 
-export default GetInvolvedInBbsoasResearchBody;
+export default ResourcesAvailableToResearchersBody;
