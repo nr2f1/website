@@ -17,6 +17,7 @@ query GetHeader(
   $supportGroupsLinkId: String!
   $researchMicrocopyId: String!
   $researchLinkId: String!
+  $getInvolvedInBbsoasLinkId: String!
   $publicationsLinkId: String!
   $forResearchersLinkId: String!
   $supportUsMicrocopyId: String!
@@ -118,11 +119,14 @@ query GetHeader(
     }
   }
 
-  livingWithBbsoasMicrocopy: microcopyResource(locale: $locale, id: $livingWithBbsoasMicrocopyId) {
+  livingWithBbsoasMicrocopy: microcopyResource(
+    locale: $locale
+    id: $livingWithBbsoasMicrocopyId
+  ) {
     value
   }
 
-  livingWithBbsoasLink: link(locale: $locale id: $livingWithBbsoasLinkId) {
+  livingWithBbsoasLink: link(locale: $locale, id: $livingWithBbsoasLinkId) {
     text {
       content
     }
@@ -132,7 +136,10 @@ query GetHeader(
     }
   }
 
-  registerABbsoasPatientLink: link(locale: $locale id: $registerABbsoasPatientLinkId) {
+  registerABbsoasPatientLink: link(
+    locale: $locale
+    id: $registerABbsoasPatientLinkId
+  ) {
     text {
       content
     }
@@ -151,68 +158,86 @@ query GetHeader(
     }
   }
 
-  researchMicrocopy: microcopyResource(locale: $locale, id: $researchMicrocopyId) {
-     value
-   }
+  researchMicrocopy: microcopyResource(
+    locale: $locale
+    id: $researchMicrocopyId
+  ) {
+    value
+  }
 
-   researchLink: link(locale: $locale, id: $researchLinkId) {
-     text {
-       content
-     }
-     target {
-       url
-     }
-   }
+  researchLink: link(locale: $locale, id: $researchLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
 
-   publicationsLink: link(locale: $locale, id: $publicationsLinkId) {
-     text {
-       content
-     }
-     target {
-       url
-     }
-   }
+  getInvolvedInBbsoasLink: link(
+    locale: $locale
+    id: $getInvolvedInBbsoasLinkId
+  ) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
 
-   forResearchersLink: link(locale: $locale, id: $forResearchersLinkId) {
-     text {
-       content
-     }
-     target {
-       url
-     }
-   }
+  publicationsLink: link(locale: $locale, id: $publicationsLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
 
-   supportUsMicrocopy: microcopyResource(locale: $locale, id: $supportUsMicrocopyId) {
-     value
-   }
+  forResearchersLink: link(locale: $locale, id: $forResearchersLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
 
-   supportUsLink: link(locale: $locale, id: $supportUsLinkId) {
-     text {
-       content
-     }
+  supportUsMicrocopy: microcopyResource(
+    locale: $locale
+    id: $supportUsMicrocopyId
+  ) {
+    value
+  }
 
-     target {
-       url
-     }
-   }
+  supportUsLink: link(locale: $locale, id: $supportUsLinkId) {
+    text {
+      content
+    }
 
-   volunteerLink: link(locale: $locale, id: $volunteerLinkId ) {
-     text {
-       content
-     }
+    target {
+      url
+    }
+  }
 
-     target {
-       url
-     }
-   }
+  volunteerLink: link(locale: $locale, id: $volunteerLinkId) {
+    text {
+      content
+    }
 
-   shopLink: link(locale: $locale, id: $shopLinkId) {
-     text {
-       content
-     }
+    target {
+      url
+    }
+  }
 
-     target {
-       url
-     }
-   }
+  shopLink: link(locale: $locale, id: $shopLinkId) {
+    text {
+      content
+    }
+
+    target {
+      url
+    }
+  }
 }

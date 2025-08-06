@@ -21,9 +21,6 @@ const NavList = ({ name, children, nested = false }: NavListProps) => {
   }, [pathname, searchParams]);
 
   return (
-    // @ts-ignore
-    // name it is a valid attribute for details:
-    // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
     <details
       name="dev"
       aria-haspopup="true"
