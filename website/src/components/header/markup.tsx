@@ -12,13 +12,13 @@ import {
   aboutUsLinkParnershipsId,
   contactUsLinkId,
   donateId,
-  forResearchersLinkId,
   getInvolvedInBbsoasLinkId,
   livingWithBbsoasLinkId,
   publicationsLinkId,
   registerABbsoasPatientLinkId,
   registerPatientId,
   researchLinkId,
+  resourcesAvailableToresearchersLinkId,
   shopLinkId,
   supportGroupsLinkId,
   supportUsLinkId,
@@ -98,7 +98,6 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
       aboutUsLinkParnershipsId,
       contactUsLinkId,
       donateId,
-      forResearchersLinkId,
       getInvolvedInBbsoasLinkId,
       livingWithBbsoasLinkId,
       livingWithBbsoasMicrocopyId,
@@ -108,6 +107,7 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
       registerPatientId,
       researchLinkId,
       researchMicrocopyId,
+      resourcesAvailableToresearchersLinkId,
       shopLinkId,
       supportGroupsLinkId,
       supportUsLinkId,
@@ -140,7 +140,7 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
     researchMicrocopy,
     researchLink,
     publicationsLink,
-    forResearchersLink,
+    resourcesAvailableToresearchersLink,
     supportUsMicrocopy,
     supportUsLink,
     volunteerLink,
@@ -273,13 +273,17 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link href={publicationsLink?.target?.url ?? '/'}>
-                    {publicationsLink?.text?.content ?? ''}
+                  <Link
+                    href={
+                      resourcesAvailableToresearchersLink?.target?.url ?? '/'
+                    }
+                  >
+                    {resourcesAvailableToresearchersLink?.text?.content ?? ''}
                   </Link>
                 </li>
                 <li>
-                  <Link href={forResearchersLink?.target?.url ?? '/'}>
-                    {forResearchersLink?.text?.content ?? ''}
+                  <Link href={publicationsLink?.target?.url ?? '/'}>
+                    {publicationsLink?.text?.content ?? ''}
                   </Link>
                 </li>
               </ul>
