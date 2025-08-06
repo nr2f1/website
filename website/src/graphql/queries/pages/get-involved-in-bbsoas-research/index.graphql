@@ -1,4 +1,4 @@
-query GetForResearchersPage(
+query GetGetInvolvedInBbsoasResearchPage(
   $locale: String
   $patientRegistryHeadingId: String!
   $biorepositoryHeadingId: String!

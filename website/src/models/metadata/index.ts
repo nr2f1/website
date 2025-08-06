@@ -9,4 +9,5 @@ export const partnershipsPageMetadataId = '4z7eLw9QtGbZ9uLA6alQWm';
 export const privacyPolicyPageMetadataId = '1qyQH5thrgC4dSDB8lxSyf';
 export const contactUsPageMetadataId = '3Po9WkDs9gZvU8DuMIlazH';
 export const ourFinancialsPageMetadataId = '36O7nwBVyFzTmDX7Gvigzr';
-export const forResearchersPageMetadataId = '2FePH9NzfGAWSjvg4aeydv';
+export const getInvolvedInBbsoasResearchPageMetadataId =
+  '2FePH9NzfGAWSjvg4aeydv';
