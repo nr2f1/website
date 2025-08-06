@@ -3,9 +3,9 @@ import PageBody from '@components/page-body';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
 import {
-  GetForResearchersPageDocument,
-  type GetForResearchersPageQuery,
-} from '@graphql/queries/pages/for-researchers/index.generated';
+  GetGetInvolvedInBbsoasResearchPageDocument,
+  GetGetInvolvedInBbsoasResearchPageQuery,
+} from '@graphql/queries/pages/get-involved-in-bbsoas-research/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   anotherSampleAccordionId,
@@ -30,13 +30,15 @@ import {
 import { createHashLink } from '@shared/utils/hash-links';
 import styles from './index.module.scss';
 
-interface RegisterPageBodyProps {
+interface GetInvolvedInBbsoasResearchPageProps {
   lang: AvailableLocale;
 }
 
 const { query } = getClient();
 
-const WhatIsBbsoasBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
+const GetInvolvedInBbsoasResearchBody: React.FC<
+  GetInvolvedInBbsoasResearchPageProps
+> = async ({ lang }) => {
   const {
     data: {
       patientRegistryHeading,
@@ -55,8 +57,8 @@ const WhatIsBbsoasBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
       surveyParagraphsAfterAccordions,
     },
     error,
-  } = await query<GetForResearchersPageQuery>({
-    query: GetForResearchersPageDocument,
+  } = await query<GetGetInvolvedInBbsoasResearchPageQuery>({
+    query: GetGetInvolvedInBbsoasResearchPageDocument,
     variables: {
       anotherSampleAccordionId,
       biorepositoryHeadingId,
@@ -154,4 +156,4 @@ const WhatIsBbsoasBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
   );
 };
 
-export default WhatIsBbsoasBody;
+export default GetInvolvedInBbsoasResearchBody;

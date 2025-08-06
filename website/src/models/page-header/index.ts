@@ -14,3 +14,5 @@ export const privacyPolicyPageHeaderId = '3B74Szv7YsEWNUKYf3yqNR';
 export const contactUsPageHeaderId = '3Qs9VUFdrUjr7QEuWZQiuK';
 export const ourFinancialsPageHeaderId = '2ed5Np6pwmwlWKErFk1YWa';
 export const forResearchersPageHeaderId = 'o4fo1a5jct0npgrPzjFcd';
+export const getInvolvedInBbsoasResearchHeaderPageHeaderId =
+  'o4fo1a5jct0npgrPzjFcd';

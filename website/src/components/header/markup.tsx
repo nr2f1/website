@@ -13,6 +13,7 @@ import {
   contactUsLinkId,
   donateId,
   forResearchersLinkId,
+  getInvolvedInBbsoasLinkId,
   livingWithBbsoasLinkId,
   publicationsLinkId,
   registerABbsoasPatientLinkId,
@@ -98,6 +99,7 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
       contactUsLinkId,
       donateId,
       forResearchersLinkId,
+      getInvolvedInBbsoasLinkId,
       livingWithBbsoasLinkId,
       livingWithBbsoasMicrocopyId,
       locale: lang,
@@ -143,6 +145,7 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
     supportUsLink,
     volunteerLink,
     shopLink,
+    getInvolvedInBbsoasLink,
   } = data;
 
   const [title, whoWeAre, whatWeDo] =
@@ -262,6 +265,11 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
                 <li>
                   <Link href={researchLink?.target?.url ?? '/'}>
                     {researchLink?.text?.content ?? ''}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={getInvolvedInBbsoasLink?.target?.url ?? '/'}>
+                    {getInvolvedInBbsoasLink?.text?.content ?? ''}
                   </Link>
                 </li>
                 <li>
