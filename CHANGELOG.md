@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.10.0](https://github.com/nr2f1/website/compare/v2.9.1...v2.10.0) (2025-08-06)
+
+
+### Features
+
+* add get involved in bbsoas link to nav header ([cb12a5d](https://github.com/nr2f1/website/commit/cb12a5d4e1c64b130e20e09cf86cc3ca4f6e6314))
+* add get involved in bbsoas link to nav header ([#269](https://github.com/nr2f1/website/issues/269)) ([cb38982](https://github.com/nr2f1/website/commit/cb38982845a8df3162b71c2a3b2ca40b5f052c66))
+
+
+### Bug Fixes
+
+* change name conventions for get-involved-in-bbsoas-research ([9378e07](https://github.com/nr2f1/website/commit/9378e07e11bce1d5e2e6cb5d08f29c3c508fc085))
+* rename for-researchers to get-involved-in-bbsoas-research ([00e1b49](https://github.com/nr2f1/website/commit/00e1b4981e63b9371df7ee112bb449081e01f8ed))
+
 ## [2.9.1](https://github.com/nr2f1/website/compare/v2.9.0...v2.9.1) (2025-08-05)
 
 
