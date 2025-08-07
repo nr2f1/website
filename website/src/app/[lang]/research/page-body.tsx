@@ -1,12 +1,24 @@
 import PageBody from '@components/page-body';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import type { AvailableLocale } from '@i18n/locales';
-import { initiativesHeadingId } from '@models/headings';
-import { createHashLink } from '@shared/utils/hash-links';
 import {
   GetResearchPageDocument,
-  GetResearchPageQuery,
+  type GetResearchPageQuery,
 } from '@graphql/queries/pages/research/index.generated';
+import type { AvailableLocale } from '@i18n/locales';
+import {
+  initiativesHeadingId,
+  registerPatientHeadingId,
+} from '@models/headings';
+import { registerPatientLinkId } from '@models/links';
+import {
+  initiativesParagraphsId,
+  registerPatientParagraphsId,
+  researchIntroParagraphsId,
+} from '@models/paragraphs';
+import { createHashLink } from '@shared/utils/hash-links';
+import Link from 'next/link';
+import styles from './index.module.scss';
 
 interface ResearchPageBodyProps {
   lang: AvailableLocale;
@@ -16,13 +28,25 @@ const { query } = getClient();
 
 const ResearchPageBody: React.FC<ResearchPageBodyProps> = async ({ lang }) => {
   const {
-    data: { initiativesHeading },
+    data: {
+      initiativesHeading,
+      registerPatientHeading,
+      registerPatientParagraphs,
+      registerPatientCta,
+      researchIntroParagraphs,
+      initiativesParagraphs,
+    },
     error,
   } = await query<GetResearchPageQuery>({
     query: GetResearchPageDocument,
     variables: {
-      locale: lang,
       initiativesHeadingId,
+      initiativesParagraphsId,
+      locale: lang,
+      registerPatientHeadingId,
+      registerPatientLinkId,
+      registerPatientParagraphsId,
+      researchIntroParagraphsId,
     },
   });
 
@@ -34,18 +58,27 @@ const ResearchPageBody: React.FC<ResearchPageBodyProps> = async ({ lang }) => {
 
   return (
     <PageBody lang={lang} headings={headings}>
-      {/*<section>
-        {documentToReactComponents(
-          resourcesAvailableintroParagraphs?.content?.json,
-        )}
-      </section>*/}
-      <section>
+      <section className={styles.intro}>
+        {documentToReactComponents(researchIntroParagraphs?.content?.json)}
+      </section>
+      <section className={styles.register}>
+        <h2 id={createHashLink(registerPatientHeading?.content ?? '')}>
+          {registerPatientHeading?.content}
+        </h2>
+        {documentToReactComponents(registerPatientParagraphs?.content?.json)}
+        <Link
+          href={registerPatientCta?.target?.url ?? ''}
+          className={`button button--on-light ${styles.register__button}`}
+          id="button"
+        >
+          {registerPatientCta?.text?.content ?? ''}
+        </Link>
+      </section>
+      <section className={styles.initiatives}>
         <h2 id={createHashLink(initiativesHeading?.content ?? '')}>
           {initiativesHeading?.content}
         </h2>
-        {/*{documentToReactComponents(
-          biorepositorySamplesParagraphs?.content?.json,
-        )}*/}
+        {documentToReactComponents(initiativesParagraphs?.content?.json)}
       </section>
     </PageBody>
   );

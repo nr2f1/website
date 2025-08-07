@@ -5,17 +5,54 @@ import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
 export type GetResearchPageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
+  researchIntroParagraphsId: Types.Scalars['String']['input'];
   initiativesHeadingId: Types.Scalars['String']['input'];
+  registerPatientHeadingId: Types.Scalars['String']['input'];
+  registerPatientParagraphsId: Types.Scalars['String']['input'];
+  registerPatientLinkId: Types.Scalars['String']['input'];
+  initiativesParagraphsId: Types.Scalars['String']['input'];
 }>;
 
 
-export type GetResearchPageQuery = { __typename?: 'Query', initiativesHeading?: { __typename?: 'Heading', content?: string | null } | null };
+export type GetResearchPageQuery = { __typename?: 'Query', researchIntroParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerPatientHeading?: { __typename?: 'Heading', content?: string | null } | null, registerPatientParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerPatientCta?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null, initiativesHeading?: { __typename?: 'Heading', content?: string | null } | null, initiativesParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null };
 
 
 export const GetResearchPageDocument = gql`
-    query GetResearchPage($locale: String, $initiativesHeadingId: String!) {
+    query GetResearchPage($locale: String, $researchIntroParagraphsId: String!, $initiativesHeadingId: String!, $registerPatientHeadingId: String!, $registerPatientParagraphsId: String!, $registerPatientLinkId: String!, $initiativesParagraphsId: String!) {
+  researchIntroParagraphs: paragraphs(
+    locale: $locale
+    id: $researchIntroParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  registerPatientHeading: heading(locale: $locale, id: $registerPatientHeadingId) {
+    content
+  }
+  registerPatientParagraphs: paragraphs(
+    locale: $locale
+    id: $registerPatientParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  registerPatientCta: link(locale: $locale, id: $registerPatientLinkId) {
+    target {
+      url
+    }
+    text {
+      content
+    }
+  }
   initiativesHeading: heading(locale: $locale, id: $initiativesHeadingId) {
     content
+  }
+  initiativesParagraphs: paragraphs(locale: $locale, id: $initiativesParagraphsId) {
+    content {
+      json
+    }
   }
 }
     `;
@@ -33,7 +70,12 @@ export const GetResearchPageDocument = gql`
  * const { data, loading, error } = useGetResearchPageQuery({
  *   variables: {
  *      locale: // value for 'locale'
+ *      researchIntroParagraphsId: // value for 'researchIntroParagraphsId'
  *      initiativesHeadingId: // value for 'initiativesHeadingId'
+ *      registerPatientHeadingId: // value for 'registerPatientHeadingId'
+ *      registerPatientParagraphsId: // value for 'registerPatientParagraphsId'
+ *      registerPatientLinkId: // value for 'registerPatientLinkId'
+ *      initiativesParagraphsId: // value for 'initiativesParagraphsId'
  *   },
  * });
  */

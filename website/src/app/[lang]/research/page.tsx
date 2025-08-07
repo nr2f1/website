@@ -37,7 +37,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     inLanguage: lang,
     keywords,
     name: title,
-    url: `https://nr2f1.org${routes['research'](lang)}`,
+    url: `https://nr2f1.org${routes.research(lang)}`,
   };
 
   return (

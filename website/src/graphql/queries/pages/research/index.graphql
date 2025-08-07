@@ -1,14 +1,56 @@
-query GetResearchPage($locale: String, $initiativesHeadingId: String!) {
-  # resourcesAvailableintroParagraphs: paragraphs(
-  #   locale: $locale
-  #   id: $resourcesAvailableintroParagraphsId
-  # ) {
-  #   content {
-  #     json
-  #   }
-  # }
+query GetResearchPage(
+  $locale: String
+  $researchIntroParagraphsId: String!
+  $initiativesHeadingId: String!
+  $registerPatientHeadingId: String!
+  $registerPatientParagraphsId: String!
+  $registerPatientLinkId: String!
+  $initiativesParagraphsId: String!
+) {
+  researchIntroParagraphs: paragraphs(
+    locale: $locale
+    id: $researchIntroParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+
+  registerPatientHeading: heading(
+    locale: $locale
+    id: $registerPatientHeadingId
+  ) {
+    content
+  }
+
+  registerPatientParagraphs: paragraphs(
+    locale: $locale
+    id: $registerPatientParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+
+  registerPatientCta: link(locale: $locale, id: $registerPatientLinkId) {
+    target {
+      url
+    }
+    text {
+      content
+    }
+  }
 
   initiativesHeading: heading(locale: $locale, id: $initiativesHeadingId) {
     content
+  }
+
+  initiativesParagraphs: paragraphs(
+    locale: $locale
+    id: $initiativesParagraphsId
+  ) {
+    content {
+      json
+    }
   }
 }
