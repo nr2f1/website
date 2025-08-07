@@ -1,0 +1,26 @@
+@use '@styles/breakpoints';
+@use '@styles/text-styles';
+
+.register {
+  padding: var(--spacing-6);
+  background-color: var(--background-accent-navy);
+  border-radius: var(--border-radius-xl);
+
+  &__button:is(a) {
+    @include text-styles.button;
+    text-decoration: none !important;
+    color: var(--foreground-inverse-primary) !important;
+  }
+}
+
+.intro {
+  h2 {
+    @include text-styles.header-4;
+  }
+}
+
+.initiatives {
+  h3 {
+    margin-block-start: var(--spacing-6);
+  }
+}

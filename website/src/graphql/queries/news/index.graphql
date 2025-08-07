@@ -1,6 +1,11 @@
 query GetNews($locale: String) {
   entryCollection(
-    where: {contentfulMetadata: {tags_exists: true, tags: {id_contains_some: ["blog", "newsletter", "podcast"]}}}
+    where: {
+      contentfulMetadata: {
+        tags_exists: true
+        tags: { id_contains_some: ["blog", "newsletter", "podcast"] }
+      }
+    }
     locale: $locale
   ) {
     total
@@ -32,7 +37,6 @@ query GetNews($locale: String) {
     }
   }
 }
-
 
 query GetBlogPosts($locale: String, $limit: Int!, $skip: Int!) {
   blogPageCollection(locale: $locale, limit: $limit, skip: $skip) {

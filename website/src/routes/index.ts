@@ -16,6 +16,7 @@ type RouteProperty =
   | 'privacy-policy'
   | 'publications'
   | 'register-a-patient'
+  | 'research'
   | 'resources-available-to-researchers'
   | 'strategic-plan'
   | 'support-groups'
@@ -55,6 +56,9 @@ export const routes: Record<RouteProperty, LocalisedRoute> = {
   },
   'register-a-patient': (locale: AvailableLocale) => {
     return `/${locale}/register-a-patient`;
+  },
+  research: (locale: AvailableLocale) => {
+    return `/${locale}/research`;
   },
   'resources-available-to-researchers': (locale: AvailableLocale) => {
     return `/${locale}/resources-available-to-researchers`;

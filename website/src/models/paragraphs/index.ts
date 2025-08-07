@@ -84,3 +84,7 @@ export const biorepositorySamplesParagraphsId = '2NK6bK1LyX9trvSM8DhzRx';
 export const grantsSamplesParagraphsId = '4BV4EkngQVVdvyE12jWV04';
 export const patientRegistryRecordsParagraphsId = 'bLRPvB2JkMDfV9yQfV84u';
 export const miceModelsParagraphsId = '7wZTTIvXBtjw7iwgHxy2Em';
+
+// Research page
+export const researchIntroParagraphsId = '6ZLtBADAYgpflM8PDbDMCi';
+export const initiativesParagraphsId = '1hObCYBVaZhUQm6zbiggqK';

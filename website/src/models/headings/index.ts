@@ -58,3 +58,5 @@ export const biorepositorySamplesHeadingId = '6rIAv8j5fUIfobo2Csi6PI';
 export const grantsHeadingId = '4dnZo9ZSEObgyIM14m8UVj';
 export const patientRegistryRecordsHeadingId = '4EPkV6YO1SwRF3VY2teTvH';
 export const miceModelsHeadingId = '6SEPsTpBiok8ePzonmOy9Q';
+// research page
+export const initiativesHeadingId = 'usjjDZs0yf5ZAozfCksG1';

@@ -13,3 +13,5 @@ export const getInvolvedInBbsoasResearchPageMetadataId =
   '2FePH9NzfGAWSjvg4aeydv';
 export const resourcesAvailableToResearchersPageMetadataId =
   '6xVXgsShT1cYRgd4LOv2Ay';
+
+export const researchPageMetadataId = '1vmTfawjVM5kb1DbgvAuQh';
