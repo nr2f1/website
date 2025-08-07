@@ -68,7 +68,7 @@ export const contactUsPageParagraphsId = '3uIIUXFNvUiAvBqQEPQjf4';
 // Our financials page
 export const ourFinancialsPageParagraphsId = '4zlDsXcJG3k1XZPclAlVAl';
 
-// Our research page
+// Get involved in research
 export const registerPatientInOurresearchPageParagraphsId =
   '2WqVxaTWui7lXjhtQDIuuo';
 export const biorepositoryParagraphsBeforeAccordionsId =
@@ -77,3 +77,10 @@ export const biorepositoryParagraphsAfterAccordionsId =
   '2nKSO7YOBtOBl0JNZrv58f';
 export const surveyParagraphsBeforeAccordionsId = '3ea22q5P45zZfTKtYF34MW';
 export const surveyParagraphsAfterAccordionsId = '3bbldu6OJp82fiKcU6egzl';
+
+// Resources available to researchers page
+export const resourcesAvailableintroParagraphsId = '6WQ8eGlOSI4qrtNXqZ25N3';
+export const biorepositorySamplesParagraphsId = '2NK6bK1LyX9trvSM8DhzRx';
+export const grantsSamplesParagraphsId = '4BV4EkngQVVdvyE12jWV04';
+export const patientRegistryRecordsParagraphsId = 'bLRPvB2JkMDfV9yQfV84u';
+export const miceModelsParagraphsId = '7wZTTIvXBtjw7iwgHxy2Em';

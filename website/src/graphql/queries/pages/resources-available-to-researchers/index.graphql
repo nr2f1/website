@@ -1,10 +1,24 @@
 query GetResourcesAvailableToResearchersPage(
   $locale: String
+  $resourcesAvailableintroParagraphsId: String!
   $biorepositorySamplesHeadingId: String!
   $grantsHeadingId: String!
+  $grantsSamplesParagraphsId: String!
+  $biorepositorySamplesParagraphsId: String!
   $patientRegistryRecordsHeadingId: String!
+  $patientRegistryRecordsParagraphsId: String!
   $miceModelsHeadingId: String!
+  $miceModelsParagraphsId: String!
 ) {
+  resourcesAvailableintroParagraphs: paragraphs(
+    locale: $locale
+    id: $resourcesAvailableintroParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+
   biorepositorySamplesHeading: heading(
     locale: $locale
     id: $biorepositorySamplesHeadingId
@@ -12,8 +26,26 @@ query GetResourcesAvailableToResearchersPage(
     content
   }
 
+  biorepositorySamplesParagraphs: paragraphs(
+    locale: $locale
+    id: $biorepositorySamplesParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+
   grantsHeading: heading(locale: $locale, id: $grantsHeadingId) {
     content
+  }
+
+  grantsSamplesParagraphs: paragraphs(
+    locale: $locale
+    id: $grantsSamplesParagraphsId
+  ) {
+    content {
+      json
+    }
   }
 
   patientRegistryRecordsHeading: heading(
@@ -23,7 +55,25 @@ query GetResourcesAvailableToResearchersPage(
     content
   }
 
+  patientRegistryRecordsParagraphs: paragraphs(
+    locale: $locale
+    id: $patientRegistryRecordsParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+
   miceModelsHeading: heading(locale: $locale, id: $miceModelsHeadingId) {
     content
+  }
+
+  miceModelsParagraphs: paragraphs(
+    locale: $locale
+    id: $miceModelsParagraphsId
+  ) {
+    content {
+      json
+    }
   }
 }

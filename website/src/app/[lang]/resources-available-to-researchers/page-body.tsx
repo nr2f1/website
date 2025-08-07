@@ -1,4 +1,5 @@
 import PageBody from '@components/page-body';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
 import {
   GetResourcesAvailableToResearchersPageDocument,
@@ -11,6 +12,13 @@ import {
   miceModelsHeadingId,
   patientRegistryRecordsHeadingId,
 } from '@models/headings';
+import {
+  biorepositorySamplesParagraphsId,
+  resourcesAvailableintroParagraphsId,
+  grantsSamplesParagraphsId,
+  patientRegistryRecordsParagraphsId,
+  miceModelsParagraphsId,
+} from '@models/paragraphs';
 import { createHashLink } from '@shared/utils/hash-links';
 
 interface ResourcesAvailableToResearchersBodyProps {
@@ -28,6 +36,11 @@ const ResourcesAvailableToResearchersBody: React.FC<
       grantsHeading,
       patientRegistryRecordsHeading,
       miceModelsHeading,
+      resourcesAvailableintroParagraphs,
+      biorepositorySamplesParagraphs,
+      grantsSamplesParagraphs,
+      patientRegistryRecordsParagraphs,
+      miceModelsParagraphs,
     },
     error,
   } = await query<GetResourcesAvailableToResearchersPageQuery>({
@@ -38,6 +51,11 @@ const ResourcesAvailableToResearchersBody: React.FC<
       patientRegistryRecordsHeadingId,
       miceModelsHeadingId,
       locale: lang,
+      resourcesAvailableintroParagraphsId,
+      biorepositorySamplesParagraphsId,
+      grantsSamplesParagraphsId,
+      patientRegistryRecordsParagraphsId,
+      miceModelsParagraphsId,
     },
   });
 
@@ -55,28 +73,37 @@ const ResourcesAvailableToResearchersBody: React.FC<
   return (
     <PageBody lang={lang} headings={headings}>
       <section>
+        {documentToReactComponents(
+          resourcesAvailableintroParagraphs?.content?.json,
+        )}
+      </section>
+      <section>
         <h2 id={createHashLink(biorepositorySamplesHeading?.content ?? '')}>
           {biorepositorySamplesHeading?.content}
         </h2>
-        {/*{documentToReactComponents(patientRegistryParagraphs?.content?.json)}*/}
+        {documentToReactComponents(
+          biorepositorySamplesParagraphs?.content?.json,
+        )}
       </section>
       <section>
         <h2 id={createHashLink(grantsHeading?.content ?? '')}>
           {grantsHeading?.content}
         </h2>
-        {/*{documentToReactComponents(patientRegistryParagraphs?.content?.json)}*/}
+        {documentToReactComponents(grantsSamplesParagraphs?.content?.json)}
       </section>
       <section>
         <h2 id={createHashLink(patientRegistryRecordsHeading?.content ?? '')}>
           {patientRegistryRecordsHeading?.content}
         </h2>
-        {/*{documentToReactComponents(patientRegistryParagraphs?.content?.json)}*/}
+        {documentToReactComponents(
+          patientRegistryRecordsParagraphs?.content?.json,
+        )}
       </section>
       <section>
         <h2 id={createHashLink(miceModelsHeading?.content ?? '')}>
           {miceModelsHeading?.content}
         </h2>
-        {/*{documentToReactComponents(patientRegistryParagraphs?.content?.json)}*/}
+        {documentToReactComponents(miceModelsParagraphs?.content?.json)}
       </section>
     </PageBody>
   );
