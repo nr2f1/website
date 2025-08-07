@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.12.0](https://github.com/nr2f1/website/compare/v2.11.0...v2.12.0) (2025-08-07)
+
+
+### Features
+
+* research page ([07bad65](https://github.com/nr2f1/website/commit/07bad659463e5d7952a71b27aaab47e2100f1c2a))
+
 ## [2.11.0](https://github.com/nr2f1/website/compare/v2.10.0...v2.11.0) (2025-08-07)
 
 
