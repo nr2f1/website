@@ -14,12 +14,13 @@ import {
 } from '@models/headings';
 import {
   biorepositorySamplesParagraphsId,
-  resourcesAvailableintroParagraphsId,
   grantsSamplesParagraphsId,
-  patientRegistryRecordsParagraphsId,
   miceModelsParagraphsId,
+  patientRegistryRecordsParagraphsId,
+  resourcesAvailableintroParagraphsId,
 } from '@models/paragraphs';
 import { createHashLink } from '@shared/utils/hash-links';
+import styles from './index.module.scss';
 
 interface ResourcesAvailableToResearchersBodyProps {
   lang: AvailableLocale;
@@ -47,15 +48,15 @@ const ResourcesAvailableToResearchersBody: React.FC<
     query: GetResourcesAvailableToResearchersPageDocument,
     variables: {
       biorepositorySamplesHeadingId,
-      grantsHeadingId,
-      patientRegistryRecordsHeadingId,
-      miceModelsHeadingId,
-      locale: lang,
-      resourcesAvailableintroParagraphsId,
       biorepositorySamplesParagraphsId,
+      grantsHeadingId,
       grantsSamplesParagraphsId,
-      patientRegistryRecordsParagraphsId,
+      locale: lang,
+      miceModelsHeadingId,
       miceModelsParagraphsId,
+      patientRegistryRecordsHeadingId,
+      patientRegistryRecordsParagraphsId,
+      resourcesAvailableintroParagraphsId,
     },
   });
 
@@ -99,7 +100,7 @@ const ResourcesAvailableToResearchersBody: React.FC<
           patientRegistryRecordsParagraphs?.content?.json,
         )}
       </section>
-      <section>
+      <section className={styles.containsTable}>
         <h2 id={createHashLink(miceModelsHeading?.content ?? '')}>
           {miceModelsHeading?.content}
         </h2>

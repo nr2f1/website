@@ -1,8 +1,33 @@
 @use '@styles/text-styles';
 
-.override {
-  margin-block-start: var(--spacing-6);
+.containsTable {
   h3 {
-    @include text-styles.header-4;
+    margin-block-end: var(--spacing-4);
+  }
+  table {
+    border: 1px solid var(--grey-300);
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin-block-end: var(--spacing-6);
+    color: var(--black);
+
+    td,
+    th {
+      border: 1px solid var(--grey-300);
+      padding: var(--spacing-1) var(--spacing-2);
+      width: 100%;
+      max-width: 25%;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--navy-50);
+      p {
+        @include text-styles.header-4;
+        color: var(--black);
+        margin: 0;
+        text-align: start;
+      }
+    }
   }
 }

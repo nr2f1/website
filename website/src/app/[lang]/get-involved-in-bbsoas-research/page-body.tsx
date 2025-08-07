@@ -4,7 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { getClient } from '@graphql/client';
 import {
   GetGetInvolvedInBbsoasResearchPageDocument,
-  GetGetInvolvedInBbsoasResearchPageQuery,
+  type GetGetInvolvedInBbsoasResearchPageQuery,
 } from '@graphql/queries/pages/get-involved-in-bbsoas-research/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
