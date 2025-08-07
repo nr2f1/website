@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.11.0](https://github.com/nr2f1/website/compare/v2.10.0...v2.11.0) (2025-08-07)
+
+
+### Features
+
+* add research resources page ([7eb15fa](https://github.com/nr2f1/website/commit/7eb15fa976e7b690e96a058a5f08c40da6c8e354))
+
 ## [2.10.0](https://github.com/nr2f1/website/compare/v2.9.1...v2.10.0) (2025-08-06)
 
 
