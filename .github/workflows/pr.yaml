@@ -6,9 +6,10 @@ on:
     types: [opened, synchronize, reopened]
     branches:
       - main
-      - '!release-please--branches--**'
+      - '!release-please--branches--main'
     paths-ignore:
       - 'CHANGELOG.md'
+      - .release-please-manifest.json
   merge_group:
     types: [checks_requested]
 

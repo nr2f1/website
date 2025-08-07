@@ -11,3 +11,5 @@ export const contactUsPageMetadataId = '3Po9WkDs9gZvU8DuMIlazH';
 export const ourFinancialsPageMetadataId = '36O7nwBVyFzTmDX7Gvigzr';
 export const getInvolvedInBbsoasResearchPageMetadataId =
   '2FePH9NzfGAWSjvg4aeydv';
+export const resourcesAvailableToResearchersPageMetadataId =
+  '6xVXgsShT1cYRgd4LOv2Ay';

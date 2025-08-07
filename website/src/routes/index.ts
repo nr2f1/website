@@ -16,14 +16,13 @@ type RouteProperty =
   | 'privacy-policy'
   | 'publications'
   | 'register-a-patient'
+  | 'resources-available-to-researchers'
   | 'strategic-plan'
   | 'support-groups'
   | 'what-is-bbsoas';
 
 export const routes: Record<RouteProperty, LocalisedRoute> = {
-  blog: (locale: AvailableLocale) => {
-    return `/${locale}/news/blog`;
-  },
+  blog: (locale: AvailableLocale) => `/${locale}/news/blog`,
   'contact-us': (locale: AvailableLocale) => {
     return `/${locale}/contact-us`;
   },
@@ -54,9 +53,19 @@ export const routes: Record<RouteProperty, LocalisedRoute> = {
   publications: (locale: AvailableLocale) => {
     return `/${locale}/publications`;
   },
-  'register-a-patient': (locale: AvailableLocale) =>
-    `/${locale}/register-a-patient`,
-  'strategic-plan': (locale: AvailableLocale) => `/${locale}/strategic-plan`,
-  'support-groups': (locale: AvailableLocale) => `/${locale}/support-groups`,
-  'what-is-bbsoas': (locale: AvailableLocale) => `/${locale}/what-is-bbsoas`,
+  'register-a-patient': (locale: AvailableLocale) => {
+    return `/${locale}/register-a-patient`;
+  },
+  'resources-available-to-researchers': (locale: AvailableLocale) => {
+    return `/${locale}/resources-available-to-researchers`;
+  },
+  'strategic-plan': (locale: AvailableLocale) => {
+    return `/${locale}/strategic-plan`;
+  },
+  'support-groups': (locale: AvailableLocale) => {
+    return `/${locale}/support-groups`;
+  },
+  'what-is-bbsoas': (locale: AvailableLocale) => {
+    return `/${locale}/what-is-bbsoas`;
+  },
 };

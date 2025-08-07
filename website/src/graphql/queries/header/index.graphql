@@ -19,7 +19,7 @@ query GetHeader(
   $researchLinkId: String!
   $getInvolvedInBbsoasLinkId: String!
   $publicationsLinkId: String!
-  $forResearchersLinkId: String!
+  $resourcesAvailableToresearchersLinkId: String!
   $supportUsMicrocopyId: String!
   $supportUsLinkId: String!
   $volunteerLinkId: String!
@@ -186,7 +186,10 @@ query GetHeader(
     }
   }
 
-  publicationsLink: link(locale: $locale, id: $publicationsLinkId) {
+  resourcesAvailableToresearchersLink: link(
+    locale: $locale
+    id: $resourcesAvailableToresearchersLinkId
+  ) {
     text {
       content
     }
@@ -195,7 +198,7 @@ query GetHeader(
     }
   }
 
-  forResearchersLink: link(locale: $locale, id: $forResearchersLinkId) {
+  publicationsLink: link(locale: $locale, id: $publicationsLinkId) {
     text {
       content
     }
