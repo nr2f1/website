@@ -1,0 +1,14 @@
+query GetResearchPage($locale: String, $initiativesHeadingId: String!) {
+  # resourcesAvailableintroParagraphs: paragraphs(
+  #   locale: $locale
+  #   id: $resourcesAvailableintroParagraphsId
+  # ) {
+  #   content {
+  #     json
+  #   }
+  # }
+
+  initiativesHeading: heading(locale: $locale, id: $initiativesHeadingId) {
+    content
+  }
+}
