@@ -88,3 +88,6 @@ export const miceModelsParagraphsId = '7wZTTIvXBtjw7iwgHxy2Em';
 // Research page
 export const researchIntroParagraphsId = '6ZLtBADAYgpflM8PDbDMCi';
 export const initiativesParagraphsId = '1hObCYBVaZhUQm6zbiggqK';
+
+// Support us page
+export const supportUsPageParagraphsId = '5Cf0wuufSTx1s4nk98bPFu';
