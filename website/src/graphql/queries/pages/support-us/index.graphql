@@ -1,0 +1,7 @@
+query GetSupportUsPage($locale: String, $supportUsPageParagraphsId: String!) {
+  mainbody: paragraphs(locale: $locale, id: $supportUsPageParagraphsId) {
+    content {
+      json
+    }
+  }
+}

@@ -1,30 +1,28 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetOurFinancialsPageDocument,
-  type GetOurFinancialsPageQuery,
-} from '@graphql/queries/pages/our-financials/index.generated';
+import { GetSupportUsPageDocument, GetSupportUsPageQuery } from '@graphql/queries/pages/support-us/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
-import { ourFinancialsPageParagraphsId } from '@models/paragraphs';
-import styles from './index.module.scss';
+import { supportUsPageParagraphsId } from '@models/paragraphs';
+import styles from './index.module.scss'
+
 
 const { query } = getClient();
 
-interface OurFinancialsPageBodyProps {
+interface SupportUsPageBodyProps {
   lang: AvailableLocale;
 }
 
-export const OurFinancialsPageBody: React.FC<
-  OurFinancialsPageBodyProps
+export const SupportUsPageBody: React.FC<
+  SupportUsPageBodyProps
 > = async ({ lang }) => {
   const {
     data: { mainbody },
     error,
-  } = await query<GetOurFinancialsPageQuery>({
-    query: GetOurFinancialsPageDocument,
+  } = await query<GetSupportUsPageQuery>({
+    query: GetSupportUsPageDocument,
     variables: {
       locale: lang,
-      ourFinancialsPageParagraphsId,
+      supportUsPageParagraphsId,
     },
   });
 
@@ -33,12 +31,16 @@ export const OurFinancialsPageBody: React.FC<
   }
 
   return (
-    <div className={styles.ourFinancials}>
-      <div className={styles.ourFinancials__content_wrapper}>
-        <article>{documentToReactComponents(mainbody?.content?.json)}</article>
+    <div className={styles.supportUs}>
+      <div className={styles.supportUs__content_wrapper}>
+        <article>
+          <section>
+          {documentToReactComponents(mainbody?.content?.json)}
+          </section>
+          </article>
       </div>
     </div>
   );
 };
 
-export default OurFinancialsPageBody;
+export default SupportUsPageBody;
