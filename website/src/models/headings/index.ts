@@ -60,3 +60,7 @@ export const patientRegistryRecordsHeadingId = '4EPkV6YO1SwRF3VY2teTvH';
 export const miceModelsHeadingId = '6SEPsTpBiok8ePzonmOy9Q';
 // research page
 export const initiativesHeadingId = 'usjjDZs0yf5ZAozfCksG1';
+// Support us cards
+export const donateHeadingId = '7rVf60EsgI0F1LcpugdsWm';
+export const fundraiseHeadingId = '4TxKq02us7a1ew2P3hRi9Q';
+export const volunteerHeadingId = '65IWDrgnXzv2OBpKJTLmAW';
