@@ -12,6 +12,7 @@ import type { WebPage, WithContext } from 'schema-dts';
 import SupportUsPageBody from './page-body';
 import SupportUsHeader from './page-header';
 import SupportUsCards from '@components/support-us-cards';
+import StoreBanner from '@components/store-banner';
 
 const { query } = getClient();
 
@@ -50,6 +51,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
       <SupportUsHeader lang={lang} />
       <SupportUsPageBody lang={lang} />
       <SupportUsCards lang={lang} />
+      <StoreBanner lang={lang} />
     </>
   );
 };

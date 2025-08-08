@@ -1,0 +1,91 @@
+@use '@styles/text-styles';
+@use '@styles/breakpoints';
+
+.support-banner {
+  padding: 0 var(--spacing-16) var(--spacing-24);
+
+  @include breakpoints.medium-screen {
+    padding: 0 var(--spacing-12) var(--spacing-12);
+  }
+
+  @include breakpoints.small-screen {
+    padding: 0;
+    margin-block-end: var(--spacing-8);
+  }
+
+  h2,
+  p {
+    margin: 0;
+  }
+
+  section {
+    border-radius: var(--border-radius-xl, 16px);
+    padding: var(--spacing-24) var(--spacing-16);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.6) 36.61%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      var(--bg-image);
+
+    @include breakpoints.medium-screen {
+      background-image: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.6) 0%,
+          rgba(0, 0, 0, 0.6) 100%
+        ),
+        var(--bg-image);
+      padding: var(--spacing-12);
+    }
+
+    @include breakpoints.small-screen {
+      background-image: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.6) 0%,
+          rgba(0, 0, 0, 0.6) 100%
+        ),
+        var(--bg-image);
+      padding: var(--spacing-6);
+      border-radius: 0;
+    }
+  }
+
+  h2 {
+    @include text-styles.header-1;
+    color: var(--foreground-inverse-primary);
+    margin-block-end: var(--spacing-6);
+
+    @include breakpoints.medium-screen {
+      @include text-styles.header-1--mobile;
+      color: var(--foreground-inverse-primary);
+    }
+
+    @include breakpoints.small-screen {
+      @include text-styles.header-1--mobile;
+      color: var(--foreground-inverse-primary);
+    }
+  }
+
+  p {
+    @include text-styles.text-base;
+    color: var(--foreground-inverse-primary);
+    margin-block-end: var(--spacing-6);
+    max-width: 576px;
+
+    @include breakpoints.medium-screen {
+      max-width: 672px;
+    }
+  }
+
+  a {
+    text-decoration: none !important;
+
+    @include breakpoints.small-screen {
+      display: flex;
+      width: 100%;
+    }
+  }
+}
