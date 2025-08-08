@@ -45,3 +45,8 @@ export const combinedBrainLinkId = '22d0QahxYSxyjtkGZucmk5';
 export const renLinkId = '2ZwACMjV3jE2DTNYbiv4te';
 export const globalGenesLinkId = '3p4Z3e7VfVH5WMxbXSsw1U';
 export const uniqueLinkId = '4SvAB0idVYqw7GngdgCow3';
+
+// Support us cards
+export const donateCtaId = '7imQTj97SyE7LkXB7Uj0gW';
+export const fundraiseCtaId = '1gbeG9X2GgD2x8k2KM7eKn';
+export const volunteerCtaId = '1bsB7giEebn19Nwwh52Gb7';

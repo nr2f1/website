@@ -11,6 +11,7 @@ import type { Metadata, NextPage } from 'next';
 import type { WebPage, WithContext } from 'schema-dts';
 import PrivacyPolicyPageBody from './page-body';
 import SupportUsHeader from './page-header';
+import SupportUsCards from '@components/support-us-cards';
 
 const { query } = getClient();
 
@@ -48,7 +49,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
       />
       <SupportUsHeader lang={lang} />
       <PrivacyPolicyPageBody lang={lang} />
-      <SupportBanner lang={lang} />
+      <SupportUsCards lang={lang} />
     </>
   );
 };

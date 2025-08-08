@@ -91,3 +91,7 @@ export const initiativesParagraphsId = '1hObCYBVaZhUQm6zbiggqK';
 
 // Support us page
 export const supportUsPageParagraphsId = '5Cf0wuufSTx1s4nk98bPFu';
+// Support us cards
+export const donateParagraphId = 'R8qcXHJtmJClbfnXRpKxD';
+export const fundraiseParagraphId = '5ZG5ziJsygmZXoYCccSyDU';
+export const volunteerParagraphId = '5jQiaE5eRsKNBdMvYvf6HG';
