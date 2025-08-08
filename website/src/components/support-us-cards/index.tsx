@@ -97,6 +97,8 @@ const SupportUsCards: React.FC<SupportUsCardsProps> = async ({ lang }) => {
       </div>
     </div>
   );
+
+  // return <h1 className={styles.support_us_cards__title}>{lang}</h1>;
 };
 
 export default SupportUsCards;

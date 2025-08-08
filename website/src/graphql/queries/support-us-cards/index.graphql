@@ -13,13 +13,11 @@ query GetSupportUsCards(
   donateHeading: heading(id: $donateHeadingId, locale: $locale) {
     content
   }
-
   donateParagraph: paragraphs(id: $donateParagraphId, locale: $locale) {
     content {
       json
     }
   }
-
   donateCta: link(id: $donateCtaId, locale: $locale) {
     text {
       content
@@ -28,17 +26,14 @@ query GetSupportUsCards(
       url
     }
   }
-
   fundraiseHeading: heading(id: $fundraiseHeadingId, locale: $locale) {
     content
   }
-
   fundraiseParagraph: paragraphs(id: $fundraiseParagraphId, locale: $locale) {
     content {
       json
     }
   }
-
   fundraiseCta: link(id: $fundraiseCtaId, locale: $locale) {
     text {
       content
@@ -47,18 +42,15 @@ query GetSupportUsCards(
       url
     }
   }
-
   volunteerHeading: heading(id: $volunteerHeadingId, locale: $locale) {
     content
   }
-
   volunteerParagraph: paragraphs(id: $volunteerParagraphId, locale: $locale) {
     content {
       json
     }
   }
-
-  volunteerCta: link(id: $volunteerParagraphId, locale: $locale) {
+  volunteerCta: link(id: $volunteerCtaId, locale: $locale) {
     text {
       content
     }

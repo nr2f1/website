@@ -62,7 +62,7 @@ export const GetSupportUsCardsDocument = gql`
       json
     }
   }
-  volunteerCta: link(id: $volunteerParagraphId, locale: $locale) {
+  volunteerCta: link(id: $volunteerCtaId, locale: $locale) {
     text {
       content
     }
