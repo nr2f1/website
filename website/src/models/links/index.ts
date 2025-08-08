@@ -50,3 +50,6 @@ export const uniqueLinkId = '4SvAB0idVYqw7GngdgCow3';
 export const donateCtaId = '7imQTj97SyE7LkXB7Uj0gW';
 export const fundraiseCtaId = '1gbeG9X2GgD2x8k2KM7eKn';
 export const volunteerCtaId = '1bsB7giEebn19Nwwh52Gb7';
+
+// Fundraising campaigns
+export const fundraisingCampaignsLinkId = '3EBCbe3bIBSvHhBsj7nkbq';

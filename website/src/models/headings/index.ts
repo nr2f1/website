@@ -64,3 +64,5 @@ export const initiativesHeadingId = 'usjjDZs0yf5ZAozfCksG1';
 export const donateHeadingId = '7rVf60EsgI0F1LcpugdsWm';
 export const fundraiseHeadingId = '4TxKq02us7a1ew2P3hRi9Q';
 export const volunteerHeadingId = '65IWDrgnXzv2OBpKJTLmAW';
+// Fundraising campaigns
+export const fundraisingCampaignsHeadingId = '4zqAhCQsaDOulDzLSeH87r';
