@@ -13,6 +13,7 @@ import SupportUsPageBody from './page-body';
 import SupportUsHeader from './page-header';
 import SupportUsCards from '@components/support-us-cards';
 import StoreBanner from '@components/store-banner';
+import FundrasingCampaigns from '@components/fundraising-campaigns';
 
 const { query } = getClient();
 
@@ -52,6 +53,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
       <SupportUsPageBody lang={lang} />
       <SupportUsCards lang={lang} />
       <StoreBanner lang={lang} />
+      <FundrasingCampaigns lang={lang} />
     </>
   );
 };

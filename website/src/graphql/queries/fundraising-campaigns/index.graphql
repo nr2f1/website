@@ -1,0 +1,24 @@
+query GetFundraisingCampaigns(
+  $locale: String
+  $fundraisingCampaignsHeadingId: String!
+  $fundraisingCampaignsLinkId: String!
+) {
+  fundraisingCampaignsHeading: heading(
+    id: $fundraisingCampaignsHeadingId
+    locale: $locale
+  ) {
+    content
+  }
+
+  fundraisingCampaignsLink: link(
+    locale: $locale
+    id: $fundraisingCampaignsLinkId
+  ) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+}

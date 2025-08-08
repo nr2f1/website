@@ -1,18 +1,9 @@
+import type { GivebutterCampaign } from '@shared/types/api';
+
 const headers = new Headers({ 'content-type': 'application/json' });
 
 interface GivebutterCampaignResponse {
   data: GivebutterCampaign[];
-}
-
-interface GivebutterCampaign {
-  title: string;
-  cover: {
-    url: string;
-  };
-  created_at: string;
-  url: string;
-  raised: number;
-  currency: string;
 }
 
 export async function GET(request: Request) {
