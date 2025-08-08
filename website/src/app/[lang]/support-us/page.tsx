@@ -4,13 +4,13 @@ import {
   GetMetadataDocument,
   type GetMetadataQuery,
 } from '@graphql/queries/metadata/index.generated';
-import { supportUsPageMetadataId } from '@models/metadata';
+import { ourFinancialsPageMetadataId } from '@models/metadata';
 import { routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
 import type { WebPage, WithContext } from 'schema-dts';
-import GetInvolvedInBbsoasResearchBody from './page-body';
-import ResearchPageHeader from './page-header';
+import PrivacyPolicyPageBody from './page-body';
+import SupportUsHeader from './page-header';
 
 const { query } = getClient();
 
@@ -20,12 +20,12 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const {
     data: {
       // @ts-ignore
-      htmlHeadMetadata: { title, description, keywords },
+      htmlHeadMetadata: { title, description },
     },
   } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
-      id: supportUsPageMetadataId,
+      id: ourFinancialsPageMetadataId,
       locale: lang,
     },
   });
@@ -35,9 +35,8 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     '@type': 'WebPage',
     description,
     inLanguage: lang,
-    keywords,
     name: title,
-    url: `https://nr2f1.org${routes.research(lang)}`,
+    url: `https://nr2f1.org${routes['support-us'](lang)}`,
   };
 
   return (
@@ -47,8 +46,8 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
         // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <ResearchPageHeader lang={lang} />
-      <GetInvolvedInBbsoasResearchBody lang={lang} />
+      <SupportUsHeader lang={lang} />
+      <PrivacyPolicyPageBody lang={lang} />
       <SupportBanner lang={lang} />
     </>
   );
@@ -67,7 +66,7 @@ export async function generateMetadata({
   } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
-      id: supportUsPageMetadataId,
+      id: ourFinancialsPageMetadataId,
       locale: lang,
     },
   });
@@ -78,4 +77,5 @@ export async function generateMetadata({
     title: `NR2F1 Foundation | ${title}`,
   };
 }
+
 export default Page;
