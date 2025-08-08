@@ -9,7 +9,7 @@ import { routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
 import type { WebPage, WithContext } from 'schema-dts';
-import PrivacyPolicyPageBody from './page-body';
+import SupportUsPageBody from './page-body';
 import SupportUsHeader from './page-header';
 import SupportUsCards from '@components/support-us-cards';
 
@@ -48,7 +48,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <SupportUsHeader lang={lang} />
-      <PrivacyPolicyPageBody lang={lang} />
+      <SupportUsPageBody lang={lang} />
       <SupportUsCards lang={lang} />
     </>
   );
