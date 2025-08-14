@@ -8,3 +8,12 @@ export interface GivebutterCampaign {
   raised: number;
   currency: string;
 }
+
+export interface CampaignApiResponse {
+  coverUrl: string;
+  created_at: string;
+  currency: string;
+  raised: number;
+  title: string;
+  url: string;
+}

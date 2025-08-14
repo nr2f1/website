@@ -1,16 +1,11 @@
 'use client';
 
-import { useQuery } from '@apollo/client';
-import {
-  GetFundraisingCampaignsDocument,
-  type GetFundraisingCampaignsQuery,
-  useGetFundraisingCampaignsSuspenseQuery,
-} from '@graphql/queries/fundraising-campaigns/index.generated';
+import { useGetFundraisingCampaignsSuspenseQuery } from '@graphql/queries/fundraising-campaigns/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { fundraisingCampaignsHeadingId } from '@models/headings';
 import { fundraisingCampaignsLinkId } from '@models/links';
 import { getCampaigns } from '@services/givebutter/campaigns';
-import type { GivebutterCampaign } from '@shared/types/api';
+import type { CampaignApiResponse } from '@shared/types/api';
 import type { RequestResult } from '@shared/types/request';
 import { useEffect, useReducer } from 'react';
 import styles from './index.module.scss';
@@ -20,8 +15,9 @@ export interface GivebutterCampaignProps {
 }
 
 interface State {
-  campaigns: GivebutterCampaign[];
+  campaigns: CampaignApiResponse[];
   requestResult: RequestResult;
+  error?: Error;
 }
 
 const initialState: State = {
@@ -33,8 +29,8 @@ type Action =
   | { type: 'setLoading' }
   | { type: 'setIdle' }
   | { type: 'setSuccess' }
-  | { type: 'setCampaigns'; payload: GivebutterCampaign[] }
-  | { type: 'setError' };
+  | { type: 'setCampaigns'; payload: CampaignApiResponse[] }
+  | { type: 'setError'; payload: Error };
 
 const reducer = (state: State, action: Action): State => {
   switch (action.type) {
@@ -51,6 +47,7 @@ const reducer = (state: State, action: Action): State => {
     case 'setError':
       return {
         ...state,
+        error: action.payload,
         requestResult: 'error',
       };
 
@@ -70,30 +67,35 @@ const reducer = (state: State, action: Action): State => {
 
 // https://stackoverflow.com/a/53800501/4842303
 const FundrasingCampaigns: React.FC<GivebutterCampaignProps> = ({ lang }) => {
-  const [{ campaigns, requestResult }, dispatch] = useReducer(
+  const [{ campaigns, requestResult, error }, dispatch] = useReducer(
     reducer,
     initialState,
   );
 
-  const { data, loading, error } = useGetFundraisingCampaignsSuspenseQuery({
-    variables: {
-      fundraisingCampaignsHeadingId,
-      fundraisingCampaignsLinkId,
-      locale: lang,
-    },
-  });
+  const { data, error: contentfulError } =
+    useGetFundraisingCampaignsSuspenseQuery({
+      variables: {
+        fundraisingCampaignsHeadingId,
+        fundraisingCampaignsLinkId,
+        locale: lang,
+      },
+    });
 
-  if (loading) {
-    return (
-      <div className={styles.fundraising_campaigns}>
-        <div className={styles.fundraising_campaigns__content_wrapper}>
-          <section>Loading...</section>
-        </div>
-      </div>
-    );
-  }
+  useEffect(() => {
+    getCampaigns()
+      .then((campaigns) => {
+        dispatch({ payload: campaigns, type: 'setCampaigns' });
+      })
+      .catch((error) => {
+        dispatch({ payload: error, type: 'setError' });
+      });
 
-  if (error) {
+    return () => {
+      dispatch({ type: 'setIdle' });
+    };
+  }, []);
+
+  if (contentfulError || error || requestResult === 'error') {
     return (
       <div className={styles.fundraising_campaigns}>
         <div className={styles.fundraising_campaigns__content_wrapper}>
@@ -112,13 +114,15 @@ const FundrasingCampaigns: React.FC<GivebutterCampaignProps> = ({ lang }) => {
           <h2>{fundraisingCampaignsHeading?.content}</h2>
 
           <ul>
-            <li>
-              <picture>
-                <img src="" alt="" />
-              </picture>
-              <h3>Campaign name</h3>
-              <p>Created</p>
-            </li>
+            {campaigns.map(({ title, coverUrl, created_at }) => (
+              <li key={crypto.randomUUID()}>
+                <picture>
+                  <img src={coverUrl} alt={title} />
+                </picture>
+                <h3>{title}</h3>
+                {/*<p>Created</p>*/}
+              </li>
+            ))}
           </ul>
           <a href={fundraisingCampaignsLink?.target?.url ?? '/'}>
             {fundraisingCampaignsLink?.text?.content ?? ''}

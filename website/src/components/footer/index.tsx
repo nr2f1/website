@@ -14,7 +14,6 @@ import Footer from './markup';
 const FooterWithData: React.FC<HeaderProps> = ({ lang }) => {
   return (
     <PreloadQuery
-      // @ts-ignore
       query={GetFooterDocument}
       variables={{
         contactUsId,
