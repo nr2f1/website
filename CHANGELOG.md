@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.13.0](https://github.com/nr2f1/website/compare/v2.12.0...v2.13.0) (2025-08-14)
+
+
+### Features
+
+* add support for fetching campaigns from Givebutter API ([6ef1a21](https://github.com/nr2f1/website/commit/6ef1a2124fffb812a201e3ad8e56f1d4d90d2e18))
+* create support us cards ([2652bfb](https://github.com/nr2f1/website/commit/2652bfb1c86e190edbe796be62e4768b8ec90815))
+* store banner ([cec2fe7](https://github.com/nr2f1/website/commit/cec2fe74bb918d7483c78ec6d3fcd6e49df97374))
+* support us cards ([c09add0](https://github.com/nr2f1/website/commit/c09add0f78a0aab9e78ffcd0e90a938b40887f89))
+
+
+### Bug Fixes
+
+* research page metadata ([800f02c](https://github.com/nr2f1/website/commit/800f02cd6e2bca9adb54b3d4f5ce888607d020d2))
+
 ## [2.12.0](https://github.com/nr2f1/website/compare/v2.11.0...v2.12.0) (2025-08-07)
 
 
