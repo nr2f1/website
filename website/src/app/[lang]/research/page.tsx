@@ -4,7 +4,7 @@ import {
   GetMetadataDocument,
   type GetMetadataQuery,
 } from '@graphql/queries/metadata/index.generated';
-import { supportUsPageMetadataId } from '@models/metadata';
+import { researchPageMetadataId } from '@models/metadata';
 import { routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
@@ -25,7 +25,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
-      id: supportUsPageMetadataId,
+      id: researchPageMetadataId,
       locale: lang,
     },
   });
@@ -67,7 +67,7 @@ export async function generateMetadata({
   } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
-      id: supportUsPageMetadataId,
+      id: researchPageMetadataId,
       locale: lang,
     },
   });
