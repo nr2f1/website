@@ -122,27 +122,35 @@ const FundrasingCampaigns: React.FC<GivebutterCampaignProps> = ({ lang }) => {
 
               <ul>
                 {campaigns.map(({ title, coverUrl, created_at, url }) => (
-                  <li key={crypto.randomUUID()}>
+                  <li key={crypto.randomUUID()} className={styles.campaign}>
                     <a href={url} target="_blank" rel="noopener noreferrer">
-                      <picture>
-                        <img src={coverUrl} alt={title} />
-                      </picture>
-                      <h3>{title}</h3>
-                      <p>
-                        {createdI18n[lang]}{' '}
-                        {getRelativeTime({
-                          from: new Date(created_at),
-                          lang,
-                          to: new Date(),
-                        })}
-                      </p>
+                      <div
+                        className={styles.campaign__cover}
+                        style={{ backgroundImage: `url(${coverUrl})` }}
+                      />
+                      <div className={styles.campaign__details}>
+                        <h3>{title}</h3>
+                        <p>
+                          {createdI18n[lang]}{' '}
+                          {getRelativeTime({
+                            from: new Date(created_at),
+                            lang,
+                            to: new Date(),
+                          })}
+                        </p>
+                      </div>
                     </a>
                   </li>
                 ))}
               </ul>
-              <a href={fundraisingCampaignsLink?.target?.url ?? '/'}>
-                {fundraisingCampaignsLink?.text?.content ?? ''}
-              </a>
+              <div className={styles.fundraising_campaigns__cta}>
+                <a
+                  href={fundraisingCampaignsLink?.target?.url ?? '/'}
+                  className="button button--on-light-open-new-tab"
+                >
+                  {fundraisingCampaignsLink?.text?.content ?? ''}
+                </a>
+              </div>
             </section>
           </div>
         </div>

@@ -1,19 +1,18 @@
-import SupportBanner from '@components/support-banner';
+import FundrasingCampaigns from '@components/fundraising-campaigns';
+import StoreBanner from '@components/store-banner';
+import SupportUsCards from '@components/support-us-cards';
 import { getClient } from '@graphql/client';
 import {
   GetMetadataDocument,
   type GetMetadataQuery,
 } from '@graphql/queries/metadata/index.generated';
-import { ourFinancialsPageMetadataId } from '@models/metadata';
+import { supportUsPageMetadataId } from '@models/metadata';
 import { routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
 import type { WebPage, WithContext } from 'schema-dts';
 import SupportUsPageBody from './page-body';
 import SupportUsHeader from './page-header';
-import SupportUsCards from '@components/support-us-cards';
-import StoreBanner from '@components/store-banner';
-import FundrasingCampaigns from '@components/fundraising-campaigns';
 
 const { query } = getClient();
 
@@ -28,7 +27,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
-      id: ourFinancialsPageMetadataId,
+      id: supportUsPageMetadataId,
       locale: lang,
     },
   });
@@ -71,7 +70,7 @@ export async function generateMetadata({
   } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
-      id: ourFinancialsPageMetadataId,
+      id: supportUsPageMetadataId,
       locale: lang,
     },
   });

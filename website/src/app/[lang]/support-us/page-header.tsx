@@ -11,9 +11,7 @@ interface SupportUsHeaderProps {
   lang: AvailableLocale;
 }
 
-const SupportUsHeader: React.FC<SupportUsHeaderProps> = async ({
-  lang,
-}) => {
+const SupportUsHeader: React.FC<SupportUsHeaderProps> = async ({ lang }) => {
   const { query } = getClient();
 
   // TODO: Change query
@@ -41,7 +39,14 @@ const SupportUsHeader: React.FC<SupportUsHeaderProps> = async ({
     image: { url },
   } = data.pageHeader;
 
-  return <PageHeader lang={lang} pageTitle={title} lastUpdated={lastUpdated} imageUrl={url ?? ''}/>;
+  return (
+    <PageHeader
+      lang={lang}
+      pageTitle={title}
+      lastUpdated={lastUpdated}
+      imageUrl={url ?? ''}
+    />
+  );
 };
 
 export default SupportUsHeader;
