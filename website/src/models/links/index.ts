@@ -52,4 +52,4 @@ export const fundraiseCtaId = '1gbeG9X2GgD2x8k2KM7eKn';
 export const volunteerCtaId = '1bsB7giEebn19Nwwh52Gb7';
 
 // Fundraising campaigns
-export const fundraisingCampaignsLinkId = '3EBCbe3bIBSvHhBsj7nkbq';
+export const fundraisingCampaignsLinkId = '2zzboFpNHBVEAzMI5LkpvT';

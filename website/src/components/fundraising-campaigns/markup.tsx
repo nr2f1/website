@@ -6,6 +6,7 @@ import { fundraisingCampaignsHeadingId } from '@models/headings';
 import { fundraisingCampaignsLinkId } from '@models/links';
 import { getCampaigns } from '@services/givebutter/campaigns';
 import type { CampaignApiResponse } from '@shared/types/api';
+import getRelativeTime from '@shared/types/get-relative-time';
 import type { RequestResult } from '@shared/types/request';
 import { useEffect, useReducer } from 'react';
 import styles from './index.module.scss';
@@ -63,9 +64,13 @@ const reducer = (state: State, action: Action): State => {
   }
 };
 
-// https://github.com/apollographql/apollo-client-integrations/tree/main/packages/nextjs#preloading-data-in-rsc-for-usage-in-client-components
+const createdI18n: Record<AvailableLocale, string> = {
+  de: 'Erstellt',
+  en: 'Created',
+  es: 'Creado',
+  fr: 'Créé',
+};
 
-// https://stackoverflow.com/a/53800501/4842303
 const FundrasingCampaigns: React.FC<GivebutterCampaignProps> = ({ lang }) => {
   const [{ campaigns, requestResult, error }, dispatch] = useReducer(
     reducer,
@@ -95,42 +100,69 @@ const FundrasingCampaigns: React.FC<GivebutterCampaignProps> = ({ lang }) => {
     };
   }, []);
 
-  if (contentfulError || error || requestResult === 'error') {
-    return (
-      <div className={styles.fundraising_campaigns}>
-        <div className={styles.fundraising_campaigns__content_wrapper}>
-          <section>Error loading campaigns</section>
+  switch (true) {
+    case contentfulError || error || requestResult === 'error': {
+      return (
+        <div className={styles.fundraising_campaigns}>
+          <div className={styles.fundraising_campaigns__content_wrapper}>
+            <section>Error loading campaigns</section>
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
+
+    case requestResult === 'success': {
+      const { fundraisingCampaignsHeading, fundraisingCampaignsLink } =
+        data || {};
+      return (
+        <div className={styles.fundraising_campaigns}>
+          <div className={styles.fundraising_campaigns__content_wrapper}>
+            <section>
+              <h2>{fundraisingCampaignsHeading?.content}</h2>
+
+              <ul>
+                {campaigns.map(({ title, coverUrl, created_at, url }) => (
+                  <li key={crypto.randomUUID()}>
+                    <a href={url} target="_blank" rel="noopener noreferrer">
+                      <picture>
+                        <img src={coverUrl} alt={title} />
+                      </picture>
+                      <h3>{title}</h3>
+                      <p>
+                        {createdI18n[lang]}{' '}
+                        {getRelativeTime({
+                          from: new Date(created_at),
+                          lang,
+                          to: new Date(),
+                        })}
+                      </p>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <a href={fundraisingCampaignsLink?.target?.url ?? '/'}>
+                {fundraisingCampaignsLink?.text?.content ?? ''}
+              </a>
+            </section>
+          </div>
+        </div>
+      );
+    }
+    default: {
+      const { fundraisingCampaignsHeading } = data || {};
+      return (
+        <div className={styles.fundraising_campaigns}>
+          <div className={styles.fundraising_campaigns__content_wrapper}>
+            <section>
+              <h2>{fundraisingCampaignsHeading?.content}</h2>
+
+              <p>Loading campaigns</p>
+            </section>
+          </div>
+        </div>
+      );
+    }
   }
-
-  const { fundraisingCampaignsHeading, fundraisingCampaignsLink } = data || {};
-
-  return (
-    <div className={styles.fundraising_campaigns}>
-      <div className={styles.fundraising_campaigns__content_wrapper}>
-        <section>
-          <h2>{fundraisingCampaignsHeading?.content}</h2>
-
-          <ul>
-            {campaigns.map(({ title, coverUrl, created_at }) => (
-              <li key={crypto.randomUUID()}>
-                <picture>
-                  <img src={coverUrl} alt={title} />
-                </picture>
-                <h3>{title}</h3>
-                {/*<p>Created</p>*/}
-              </li>
-            ))}
-          </ul>
-          <a href={fundraisingCampaignsLink?.target?.url ?? '/'}>
-            {fundraisingCampaignsLink?.text?.content ?? ''}
-          </a>
-        </section>
-      </div>
-    </div>
-  );
 };
 
 export default FundrasingCampaigns;
