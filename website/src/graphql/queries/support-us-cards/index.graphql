@@ -1,0 +1,61 @@
+query GetSupportUsCards(
+  $locale: String
+  $donateHeadingId: String!
+  $donateParagraphId: String!
+  $donateCtaId: String!
+  $fundraiseHeadingId: String!
+  $fundraiseParagraphId: String!
+  $fundraiseCtaId: String!
+  $volunteerHeadingId: String!
+  $volunteerParagraphId: String!
+  $volunteerCtaId: String!
+) {
+  donateHeading: heading(id: $donateHeadingId, locale: $locale) {
+    content
+  }
+  donateParagraph: paragraphs(id: $donateParagraphId, locale: $locale) {
+    content {
+      json
+    }
+  }
+  donateCta: link(id: $donateCtaId, locale: $locale) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  fundraiseHeading: heading(id: $fundraiseHeadingId, locale: $locale) {
+    content
+  }
+  fundraiseParagraph: paragraphs(id: $fundraiseParagraphId, locale: $locale) {
+    content {
+      json
+    }
+  }
+  fundraiseCta: link(id: $fundraiseCtaId, locale: $locale) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  volunteerHeading: heading(id: $volunteerHeadingId, locale: $locale) {
+    content
+  }
+  volunteerParagraph: paragraphs(id: $volunteerParagraphId, locale: $locale) {
+    content {
+      json
+    }
+  }
+  volunteerCta: link(id: $volunteerCtaId, locale: $locale) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+}

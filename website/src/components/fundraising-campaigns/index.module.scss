@@ -1,0 +1,106 @@
+@use '@styles/text-styles';
+@use '@styles/layout';
+@use '@styles/buttons';
+@use '@styles/breakpoints';
+
+.fundraising_campaigns {
+  &__content_wrapper {
+    @include layout.content-max-width-7xl;
+    padding: 0 var(--spacing-16) var(--spacing-24);
+
+    @include breakpoints.medium-screen {
+      padding: 0 var(--spacing-12) var(--spacing-12);
+    }
+
+    @include breakpoints.small-screen {
+      padding: 0 var(--spacing-6) var(--spacing-8);
+    }
+  }
+
+  h2 {
+    margin: 0;
+    @include text-styles.header-2;
+    text-align: center;
+    margin-block-end: var(--spacing-12);
+    @include breakpoints.small-screen {
+      margin-block-end: var(--spacing-6);
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: var(--spacing-6);
+    flex-wrap: wrap;
+    margin-block-end: var(--spacing-12);
+    align-items: baseline;
+
+    @include breakpoints.small-screen {
+      flex-wrap: no-wrap;
+      gap: var(--spacing-8);
+      margin-block-end: var(--spacing-6);
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &__cta {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.campaign {
+  border-radius: var(--border-radius-xl);
+  border: 1px solid var(--grey-300);
+  flex-basis: calc(33.33% - var(--spacing-6));
+  @include breakpoints.medium-screen {
+    flex-basis: calc(50% - var(--spacing-6));
+  }
+
+  @include breakpoints.small-screen {
+    flex-basis: 100%;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--background-accent-navy);
+  }
+
+  &:active {
+    background-color: var(--background-interactive-press_active);
+  }
+
+  &__cover {
+    aspect-ratio: 1.6428571429;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top-left-radius: var(--border-radius-xl);
+    border-top-right-radius: var(--border-radius-xl);
+
+    @include breakpoints.medium-screen {
+      aspect-ratio: 2.015625;
+    }
+  }
+
+  &__details {
+    padding: var(--spacing-4);
+  }
+
+  h3 {
+    margin: 0;
+    @include text-styles.header-3;
+    margin-bottom: var(--spacing-2);
+  }
+
+  p {
+    @include text-styles.text-small;
+    margin: 0;
+    color: var(--foreground-secondary);
+  }
+}

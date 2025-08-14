@@ -29,8 +29,9 @@ export const researchLinkId = '4hAFfmRSjOSF6a0DfX1m9r';
 export const getInvolvedInBbsoasLinkId = '4MCYVneft8uv08HqzlPGXo';
 export const publicationsLinkId = '5V8x3yb4RE1613k7l8xh3o';
 export const resourcesAvailableToresearchersLinkId = '4yixndvvAce1kno9jVioR1';
-// export const forResearchersLinkId = '3zEOmyg8ZvDWnBq5mq0L8u';
 export const supportUsLinkId = '5SRoXh7o51CaK92GkkjVPV';
+export const fundraiseLinkId = '3LjQwmB13TUPOUmwC8D0Xb';
+
 export const volunteerLinkId = '4x61I4JOzWOSf9iCr1HcPj';
 export const shopLinkId = '3Kp1mLwrO1L1t2GVjLxNvw';
 // Shop
@@ -44,3 +45,11 @@ export const combinedBrainLinkId = '22d0QahxYSxyjtkGZucmk5';
 export const renLinkId = '2ZwACMjV3jE2DTNYbiv4te';
 export const globalGenesLinkId = '3p4Z3e7VfVH5WMxbXSsw1U';
 export const uniqueLinkId = '4SvAB0idVYqw7GngdgCow3';
+
+// Support us cards
+export const donateCtaId = '7imQTj97SyE7LkXB7Uj0gW';
+export const fundraiseCtaId = '1gbeG9X2GgD2x8k2KM7eKn';
+export const volunteerCtaId = '1bsB7giEebn19Nwwh52Gb7';
+
+// Fundraising campaigns
+export const fundraisingCampaignsLinkId = '2zzboFpNHBVEAzMI5LkpvT';
