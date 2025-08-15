@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.14.0](https://github.com/nr2f1/website/compare/v2.13.1...v2.14.0) (2025-08-15)
+
+
+### Features
+
+* donate page ([f68399a](https://github.com/nr2f1/website/commit/f68399a4a492d522eed4d95462a9963b9c20331a))
+
 ## [2.13.1](https://github.com/nr2f1/website/compare/v2.13.0...v2.13.1) (2025-08-15)
 
 
