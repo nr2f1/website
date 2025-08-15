@@ -67,6 +67,8 @@ const NewsCard: React.FC<NewsCardProps> = ({
     locale: lang,
   });
 
+  // console.log({ })
+
   switch (type) {
     case News.PODCAST:
       return (
@@ -98,7 +100,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
             <article>
               <div className={styles.article__newsletter_img} />
               <div>
-                <h2>{getNewsLetterTitle({ date: title, lang })}</h2>
+                <h2>{title}</h2>
                 <p className={styles.article__date}>
                   <Link
                     className={styles.article__label}

@@ -10,13 +10,39 @@ export type GetLatestNewsQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetLatestNewsQuery = { __typename?: 'Query', title?: { __typename?: 'Heading', content?: string | null } | null, cta?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null };
+export type GetLatestNewsQuery = { __typename?: 'Query', title?: { __typename?: 'Heading', content?: string | null } | null, posts?: { __typename?: 'BlogPageCollection', items: Array<{ __typename?: 'BlogPage', title?: string | null, date?: any | null, slug?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null, newsletters?: { __typename?: 'NewsletterCollection', items: Array<{ __typename?: 'Newsletter', date?: any | null, title?: string | null, newsletterContent?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null, podcasts?: { __typename?: 'PodcastCollection', items: Array<{ __typename?: 'Podcast', title?: string | null, date?: any | null, url?: string | null } | null> } | null, cta?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null };
 
 
 export const GetLatestNewsDocument = gql`
     query GetLatestNews($locale: String, $latestNewsTitleId: String!, $latestNewsCtaId: String!) {
   title: heading(id: $latestNewsTitleId, locale: $locale) {
     content
+  }
+  posts: blogPageCollection(locale: $locale, limit: 6, order: date_DESC) {
+    items {
+      title
+      date
+      image {
+        url
+      }
+      slug
+    }
+  }
+  newsletters: newsletterCollection(limit: 6, order: date_DESC) {
+    items {
+      date
+      title
+      newsletterContent {
+        url
+      }
+    }
+  }
+  podcasts: podcastCollection(limit: 6, order: date_ASC) {
+    items {
+      title
+      date
+      url
+    }
   }
   cta: link(id: $latestNewsCtaId, locale: $locale) {
     target {
