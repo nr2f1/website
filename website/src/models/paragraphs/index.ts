@@ -95,3 +95,6 @@ export const supportUsPageParagraphsId = '5Cf0wuufSTx1s4nk98bPFu';
 export const donateParagraphId = 'R8qcXHJtmJClbfnXRpKxD';
 export const fundraiseParagraphId = '5ZG5ziJsygmZXoYCccSyDU';
 export const volunteerParagraphId = '5jQiaE5eRsKNBdMvYvf6HG';
+
+// Donate page
+export const donatePageParagraphsId = '7IsczfwHTfxixwrNxPskFb';

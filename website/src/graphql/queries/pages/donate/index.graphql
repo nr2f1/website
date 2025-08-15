@@ -1,0 +1,7 @@
+query GetDonatePage($locale: String, $donatePageParagraphsId: String!) {
+  mainbody: paragraphs(locale: $locale, id: $donatePageParagraphsId) {
+    content {
+      json
+    }
+  }
+}
