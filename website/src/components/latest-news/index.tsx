@@ -1,13 +1,18 @@
-import NewsCard, { type NewsCardProps } from '@components/news-card';
+import NewsCard from '@components/news-card';
 import { getClient } from '@graphql/client';
 import {
   GetLatestNewsDocument,
   type GetLatestNewsQuery,
 } from '@graphql/queries/latest-news/index.generated';
+import type {
+  BlogPageCollection,
+  NewsletterCollection,
+  PodcastCollection,
+} from '@graphql/types';
 import type { AvailableLocale } from '@i18n/locales';
 import { latestNewsTitleId } from '@models/headings';
 import { latestNewsCtaId } from '@models/links';
-import { News } from '@shared/types/news';
+import { fromNewsToNewsCards } from '@shared/utils/from-news-items-to-news-cards';
 import Link from 'next/link';
 import styles from './index.module.scss';
 
@@ -30,8 +35,6 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
     },
   });
 
-  console.log({ podcasts });
-
   if (
     !title ||
     !posts ||
@@ -49,52 +52,20 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
     return null;
   }
 
-  const postAsNews: NewsCardProps[] = posts.items
-    .filter((item): item is NonNullable<typeof item> => item !== null)
-    .map(({ title, date, image, slug }) => ({
-      date,
-      imageUrl: image?.url ?? null,
-      lang,
-      title: title ?? '',
-      type: News.BLOG,
-      url: slug ?? '',
-    }));
-
-  const newslettersAsNews: NewsCardProps[] = newsletters.items
-    .filter((item): item is NonNullable<typeof item> => item !== null)
-    .map(({ title, date, newsletterContent }) => ({
-      date,
-      lang,
-      title: title ?? '',
-      type: News.NEWSLETTER,
-      url: newsletterContent?.url ?? '',
-    }));
-
-  const podcastsAsNews: NewsCardProps[] = podcasts.items
-    .filter((item): item is NonNullable<typeof item> => item !== null)
-    .map(({ title, date, url }) => ({
-      date,
-      lang,
-      title: title ?? '',
-      type: News.PODCAST,
-      url: url ?? '',
-    }));
-
-  const allNews = [...postAsNews, ...newslettersAsNews, ...podcastsAsNews]
-    .sort((newsA, newsB) => {
-      const dateA = newsA.date ? new Date(newsA.date) : new Date(0);
-      const dateB = newsB.date ? new Date(newsB.date) : new Date(0);
-      return dateB.getTime() - dateA.getTime();
-    })
-    .slice(0, 6);
+  const newsRefactor = fromNewsToNewsCards({
+    lang,
+    limit: 6,
+    newsletters: newsletters.items as NewsletterCollection['items'],
+    podcasts: podcasts.items as PodcastCollection['items'],
+    posts: posts.items as BlogPageCollection['items'],
+  });
 
   return (
     <section className={styles.news}>
       <div className="content-wrapper">
-        <p>Pedro</p>
         <h2>{title.content}</h2>
         <ul className={styles.news__articles}>
-          {allNews.map((news) => (
+          {newsRefactor.map((news) => (
             <NewsCard
               date={news.date ?? ''}
               imageUrl={news.imageUrl}
