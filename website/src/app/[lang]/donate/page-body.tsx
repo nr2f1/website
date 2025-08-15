@@ -1,22 +1,21 @@
+import DonateForm from '@components/widgets/form';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
 import {
-  GetSupportUsPageDocument,
-  type GetSupportUsPageQuery,
-} from '@graphql/queries/pages/support-us/index.generated';
+  GetDonatePageDocument,
+  type GetDonatePageQuery,
+} from '@graphql/queries/pages/donate/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
-import { donatePageParagraphsId, supportUsPageParagraphsId } from '@models/paragraphs';
+import { donatePageParagraphsId } from '@models/paragraphs';
 import styles from './index.module.scss';
-import { GetDonatePageDocument, GetDonatePageQuery } from '@graphql/queries/pages/donate/index.generated';
-import DonateForm from '@components/widgets/form';
 
 const { query } = getClient();
 
-interface SupportUsPageBodyProps {
+interface DonatePageBodyProps {
   lang: AvailableLocale;
 }
 
-export const SupportUsPageBody: React.FC<SupportUsPageBodyProps> = async ({
+export const DonatePageBody: React.FC<DonatePageBodyProps> = async ({
   lang,
 }) => {
   const {
@@ -25,8 +24,8 @@ export const SupportUsPageBody: React.FC<SupportUsPageBodyProps> = async ({
   } = await query<GetDonatePageQuery>({
     query: GetDonatePageDocument,
     variables: {
-      locale: lang,
       donatePageParagraphsId,
+      locale: lang,
     },
   });
 
@@ -42,12 +41,12 @@ export const SupportUsPageBody: React.FC<SupportUsPageBodyProps> = async ({
             {documentToReactComponents(mainbody?.content?.json)}
           </section>
         </article>
-          <div className={styles.donate__form_wrapper}>
-            <DonateForm/>
-          </div>
+        <div className={styles.donate__form_wrapper}>
+          <DonateForm />
+        </div>
       </div>
     </div>
   );
 };
 
-export default SupportUsPageBody;
+export default DonatePageBody;

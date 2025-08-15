@@ -11,8 +11,8 @@ import { routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
 import type { WebPage, WithContext } from 'schema-dts';
-import SupportUsPageBody from './page-body';
-import SupportUsHeader from './page-header';
+import DonatePageBody from './page-body';
+import DonateHeader from './page-header';
 
 const { query } = getClient();
 
@@ -38,7 +38,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     description,
     inLanguage: lang,
     name: title,
-    url: `https://nr2f1.org${routes['donate'](lang)}`,
+    url: `https://nr2f1.org${routes.donate(lang)}`,
   };
 
   return (
@@ -48,8 +48,8 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
         // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <SupportUsHeader lang={lang} />
-      <SupportUsPageBody lang={lang} />
+      <DonateHeader lang={lang} />
+      <DonatePageBody lang={lang} />
 
       <StoreBanner lang={lang} />
       <FundrasingCampaigns lang={lang} />
