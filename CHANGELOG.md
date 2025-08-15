@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.13.1](https://github.com/nr2f1/website/compare/v2.13.0...v2.13.1) (2025-08-15)
+
+
+### Bug Fixes
+
+* a11y headings in support us page ([e500e20](https://github.com/nr2f1/website/commit/e500e2007a64ac12ed6b968097c853441cc9b44f))
+* a11y headings in support us page ([#278](https://github.com/nr2f1/website/issues/278)) ([85bc1bf](https://github.com/nr2f1/website/commit/85bc1bf756a61e170fe03b3889e2adb22ada5176))
+
 ## [2.13.0](https://github.com/nr2f1/website/compare/v2.12.0...v2.13.0) (2025-08-14)
 
 
