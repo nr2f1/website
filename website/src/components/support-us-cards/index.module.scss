@@ -12,7 +12,7 @@ $group: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none
 $cube_icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='33' height='32' fill='none'%3E%3Cpath fill='%2300ABCF' d='M17.004 2.136a1 1 0 0 0-1.008 0L4.5 8.842l12 7 12-7-11.496-6.706ZM29.5 10.574l-12 7v12l11.504-6.71A1 1 0 0 0 29.5 22V10.574ZM15.5 29.574v-12l-12-7V22a1 1 0 0 0 .496.864l11.504 6.71Z'/%3E%3C/svg%3E";
 
 .support_us_cards {
-  padding: var(--spacing-20) var(--spacing-16) var(--spacing-24);
+  padding: 0 var(--spacing-16) var(--spacing-24);
 
   @include breakpoints.medium-screen {
     padding: var(--spacing-10) var(--spacing-12) var(--spacing-12);
@@ -91,7 +91,7 @@ $cube_icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width=
     margin-block-end: var(--spacing-4);
   }
 
-  & h3 {
+  & h2 {
     @include text-styles.header-3;
     margin-block-end: var(--spacing-3);
   }

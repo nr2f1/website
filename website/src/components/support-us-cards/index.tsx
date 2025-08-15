@@ -61,7 +61,7 @@ const SupportUsCards: React.FC<SupportUsCardsProps> = async ({ lang }) => {
           <div className={styles.support_us_cards__row}>
             <div className={styles.card}>
               <div />
-              <h3>{donateHeading?.content}</h3>
+              <h2>{donateHeading?.content}</h2>
               {documentToReactComponents(donateParagraph?.content?.json)}
               <Link
                 className="button button--on-light"
@@ -72,7 +72,7 @@ const SupportUsCards: React.FC<SupportUsCardsProps> = async ({ lang }) => {
             </div>
             <div className={styles.card}>
               <div />
-              <h3>{fundraiseHeading?.content}</h3>
+              <h2>{fundraiseHeading?.content}</h2>
               {documentToReactComponents(fundraiseParagraph?.content?.json)}
               <Link
                 className="button button--on-light"
@@ -83,7 +83,7 @@ const SupportUsCards: React.FC<SupportUsCardsProps> = async ({ lang }) => {
             </div>
             <div className={styles.card}>
               <div />
-              <h3>{volunteerHeading?.content}</h3>
+              <h2>{volunteerHeading?.content}</h2>
               {documentToReactComponents(volunteerParagraph?.content?.json)}
               <Link
                 className="button button--on-light"
@@ -97,8 +97,6 @@ const SupportUsCards: React.FC<SupportUsCardsProps> = async ({ lang }) => {
       </div>
     </div>
   );
-
-  // return <h1 className={styles.support_us_cards__title}>{lang}</h1>;
 };
 
 export default SupportUsCards;
