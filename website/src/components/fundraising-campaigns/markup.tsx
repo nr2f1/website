@@ -6,8 +6,8 @@ import { fundraisingCampaignsHeadingId } from '@models/headings';
 import { fundraisingCampaignsLinkId } from '@models/links';
 import { getCampaigns } from '@services/givebutter/campaigns';
 import type { CampaignApiResponse } from '@shared/types/api';
-import getRelativeTime from '@shared/types/get-relative-time';
 import type { RequestResult } from '@shared/types/request';
+import getRelativeTime from '@shared/utils/get-relative-time';
 import { useEffect, useReducer } from 'react';
 import styles from './index.module.scss';
 
@@ -71,6 +71,51 @@ const createdI18n: Record<AvailableLocale, string> = {
   fr: 'Créé',
 };
 
+const now = new Date();
+
+// interface FundRaisingCampaignCardProps extends CampaignApiResponse {
+//   lang: AvailableLocale;
+// }
+
+type FundRaisingCampaignCardProps = Omit<
+  CampaignApiResponse,
+  'raised' | 'currency'
+> & {
+  lang: AvailableLocale;
+};
+
+const FundRaisingCampaignCard: React.FC<FundRaisingCampaignCardProps> = ({
+  title,
+  coverUrl,
+  created_at,
+  url,
+  lang,
+}) => {
+  const { isoDurationString, relativeString } = getRelativeTime({
+    from: new Date(created_at),
+    lang,
+    to: now,
+  });
+
+  return (
+    <li key={crypto.randomUUID()} className={styles.campaign}>
+      <a href={url} target="_blank" rel="noopener noreferrer">
+        <div
+          className={styles.campaign__cover}
+          style={{ backgroundImage: `url(${coverUrl})` }}
+        />
+        <div className={styles.campaign__details}>
+          <h3>{title}</h3>
+          <p>
+            {createdI18n[lang]}{' '}
+            <time dateTime={isoDurationString}>{relativeString}</time>
+          </p>
+        </div>
+      </a>
+    </li>
+  );
+};
+
 const FundrasingCampaigns: React.FC<GivebutterCampaignProps> = ({ lang }) => {
   const [{ campaigns, requestResult, error }, dispatch] = useReducer(
     reducer,
@@ -122,25 +167,33 @@ const FundrasingCampaigns: React.FC<GivebutterCampaignProps> = ({ lang }) => {
 
               <ul>
                 {campaigns.map(({ title, coverUrl, created_at, url }) => (
-                  <li key={crypto.randomUUID()} className={styles.campaign}>
-                    <a href={url} target="_blank" rel="noopener noreferrer">
-                      <div
-                        className={styles.campaign__cover}
-                        style={{ backgroundImage: `url(${coverUrl})` }}
-                      />
-                      <div className={styles.campaign__details}>
-                        <h3>{title}</h3>
-                        <p>
-                          {createdI18n[lang]}{' '}
-                          {getRelativeTime({
-                            from: new Date(created_at),
-                            lang,
-                            to: new Date(),
-                          })}
-                        </p>
-                      </div>
-                    </a>
-                  </li>
+                  <FundRaisingCampaignCard
+                    title={title}
+                    coverUrl={coverUrl}
+                    created_at={created_at}
+                    url={url}
+                    lang={lang}
+                    key={crypto.randomUUID()}
+                  />
+                  // <li key={crypto.randomUUID()} className={styles.campaign}>
+                  //   <a href={url} target="_blank" rel="noopener noreferrer">
+                  //     <div
+                  //       className={styles.campaign__cover}
+                  //       style={{ backgroundImage: `url(${coverUrl})` }}
+                  //     />
+                  //     <div className={styles.campaign__details}>
+                  //       <h3>{title}</h3>
+                  //       <p>
+                  //         {createdI18n[lang]}{' '}
+                  //         {/*{getRelativeTime({
+                  //           from: new Date(created_at),
+                  //           lang,
+                  //           to: new Date(),
+                  //         })}*/}
+                  //       </p>
+                  //     </div>
+                  //   </a>
+                  // </li>
                 ))}
               </ul>
               <div className={styles.fundraising_campaigns__cta}>
