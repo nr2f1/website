@@ -5,6 +5,7 @@ type LocalisedRoute = (locale: AvailableLocale) => string;
 type RouteProperty =
   | 'blog'
   | 'contact-us'
+  | 'donate'
   | 'get-involved-in-bbsoas-research'
   | 'homepage'
   | 'living-with-bbsoas'
@@ -27,6 +28,9 @@ export const routes: Record<RouteProperty, LocalisedRoute> = {
   blog: (locale: AvailableLocale) => `/${locale}/news/blog`,
   'contact-us': (locale: AvailableLocale) => {
     return `/${locale}/contact-us`;
+  },
+  donate: (locale: AvailableLocale) => {
+    return `/${locale}/donate`;
   },
   'get-involved-in-bbsoas-research': (locale: AvailableLocale) => {
     return `/${locale}/get-involved-in-bbsoas-research`;

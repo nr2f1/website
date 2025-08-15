@@ -16,3 +16,4 @@ export const resourcesAvailableToResearchersPageMetadataId =
 
 export const researchPageMetadataId = '1vmTfawjVM5kb1DbgvAuQh';
 export const supportUsPageMetadataId = '1kNp9QSs09OXbiOJc6jCGV';
+export const donatePageMetadataId = '1DoJ3NhqI4owQwQkIBKjAa';
