@@ -75,8 +75,9 @@ const Page: NextPage<NewsPagePropsWithLocale> = async ({ params }) => {
     abstract: post?.excerpt ?? '',
     datePublished: publishedString,
     headline: post?.title ?? '',
-    url: `https://nr2f1.org/news/${slug}`,
+    url: `https://nr2f1.org/news/blog/${slug}`,
   };
+
 
   return (
     <>
