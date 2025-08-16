@@ -3,12 +3,12 @@ import * as Types from '../../types';
 import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
-export type GetNewsQueryVariables = Types.Exact<{
+export type GetAllNewsQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
 }>;
 
 
-export type GetNewsQuery = { __typename?: 'Query', entryCollection?: { __typename?: 'EntryCollection', total: number, items: Array<{ __typename?: 'Accordion' } | { __typename?: 'Banner' } | { __typename: 'BlogPage', title?: string | null, slug?: string | null, date?: any | null, excerpt?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | { __typename?: 'BoardMember' } | { __typename?: 'Heading' } | { __typename?: 'HtmlHeadMetadata' } | { __typename?: 'Hyperlink' } | { __typename?: 'Image' } | { __typename?: 'Link' } | { __typename?: 'LinkContent' } | { __typename?: 'MicrocopyResource' } | { __typename?: 'NavigationList' } | { __typename: 'Newsletter', date?: any | null, newsletterContent?: { __typename?: 'Asset', url?: string | null } | null } | { __typename?: 'PageHeader' } | { __typename?: 'Paragraphs' } | { __typename: 'Podcast', date?: any | null, url?: string | null, title?: string | null, name?: string | null } | { __typename?: 'Publication' } | { __typename?: 'ResourceSet' } | { __typename?: 'Volunteer' } | null> } | null };
+export type GetAllNewsQuery = { __typename?: 'Query', posts?: { __typename?: 'BlogPageCollection', total: number, items: Array<{ __typename?: 'BlogPage', title?: string | null, date?: any | null, slug?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null, newsletters?: { __typename?: 'NewsletterCollection', total: number, items: Array<{ __typename?: 'Newsletter', date?: any | null, title?: string | null, newsletterContent?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null, podcasts?: { __typename?: 'PodcastCollection', total: number, items: Array<{ __typename?: 'Podcast', title?: string | null, date?: any | null, url?: string | null } | null> } | null };
 
 export type GetBlogPostsQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -38,75 +38,72 @@ export type GetNewslettersQueryVariables = Types.Exact<{
 export type GetNewslettersQuery = { __typename?: 'Query', newsletterCollection?: { __typename?: 'NewsletterCollection', total: number, items: Array<{ __typename?: 'Newsletter', date?: any | null, title?: string | null, newsletterContent?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null };
 
 
-export const GetNewsDocument = gql`
-    query GetNews($locale: String) {
-  entryCollection(
-    where: {contentfulMetadata: {tags_exists: true, tags: {id_contains_some: ["blog", "newsletter", "podcast"]}}}
-    locale: $locale
-  ) {
+export const GetAllNewsDocument = gql`
+    query GetAllNews($locale: String) {
+  posts: blogPageCollection(locale: $locale, order: date_DESC) {
     total
     items {
-      ... on BlogPage {
-        __typename
-        title
-        slug
-        date
-        excerpt
-        image {
-          url
-        }
-      }
-      ... on Newsletter {
-        __typename
-        date
-        newsletterContent {
-          url
-        }
-      }
-      ... on Podcast {
-        __typename
-        date
+      title
+      date
+      image {
         url
-        title
-        name
       }
+      slug
+    }
+  }
+  newsletters: newsletterCollection(order: date_DESC, locale: $locale) {
+    total
+    items {
+      date
+      title
+      newsletterContent {
+        url
+      }
+    }
+  }
+  podcasts: podcastCollection(order: date_ASC, locale: $locale) {
+    total
+    items {
+      title
+      date
+      url
     }
   }
 }
     `;
 
 /**
- * __useGetNewsQuery__
+ * __useGetAllNewsQuery__
  *
- * To run a query within a React component, call `useGetNewsQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetNewsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useGetAllNewsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetAllNewsQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useGetNewsQuery({
+ * const { data, loading, error } = useGetAllNewsQuery({
  *   variables: {
  *      locale: // value for 'locale'
  *   },
  * });
  */
-export function useGetNewsQuery(baseOptions?: Apollo.QueryHookOptions<GetNewsQuery, GetNewsQueryVariables>) {
+export function useGetAllNewsQuery(baseOptions?: Apollo.QueryHookOptions<GetAllNewsQuery, GetAllNewsQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetNewsQuery, GetNewsQueryVariables>(GetNewsDocument, options);
+        return Apollo.useQuery<GetAllNewsQuery, GetAllNewsQueryVariables>(GetAllNewsDocument, options);
       }
-export function useGetNewsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetNewsQuery, GetNewsQueryVariables>) {
+export function useGetAllNewsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetAllNewsQuery, GetAllNewsQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetNewsQuery, GetNewsQueryVariables>(GetNewsDocument, options);
+          return Apollo.useLazyQuery<GetAllNewsQuery, GetAllNewsQueryVariables>(GetAllNewsDocument, options);
         }
-export function useGetNewsSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetNewsQuery, GetNewsQueryVariables>) {
+export function useGetAllNewsSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetAllNewsQuery, GetAllNewsQueryVariables>) {
           const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetNewsQuery, GetNewsQueryVariables>(GetNewsDocument, options);
+          return Apollo.useSuspenseQuery<GetAllNewsQuery, GetAllNewsQueryVariables>(GetAllNewsDocument, options);
         }
-export type GetNewsQueryHookResult = ReturnType<typeof useGetNewsQuery>;
-export type GetNewsLazyQueryHookResult = ReturnType<typeof useGetNewsLazyQuery>;
-export type GetNewsSuspenseQueryHookResult = ReturnType<typeof useGetNewsSuspenseQuery>;
-export type GetNewsQueryResult = Apollo.QueryResult<GetNewsQuery, GetNewsQueryVariables>;
+export type GetAllNewsQueryHookResult = ReturnType<typeof useGetAllNewsQuery>;
+export type GetAllNewsLazyQueryHookResult = ReturnType<typeof useGetAllNewsLazyQuery>;
+export type GetAllNewsSuspenseQueryHookResult = ReturnType<typeof useGetAllNewsSuspenseQuery>;
+export type GetAllNewsQueryResult = Apollo.QueryResult<GetAllNewsQuery, GetAllNewsQueryVariables>;
 export const GetBlogPostsDocument = gql`
     query GetBlogPosts($locale: String, $limit: Int!, $skip: Int!) {
   blogPageCollection(locale: $locale, limit: $limit, skip: $skip) {

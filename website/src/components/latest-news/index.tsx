@@ -52,9 +52,9 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
     return null;
   }
 
-  const newsRefactor = fromNewsToNewsCards({
+  const allNews = fromNewsToNewsCards({
+    end: 6,
     lang,
-    limit: 6,
     newsletters: newsletters.items as NewsletterCollection['items'],
     podcasts: podcasts.items as PodcastCollection['items'],
     posts: posts.items as BlogPageCollection['items'],
@@ -65,7 +65,7 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
       <div className="content-wrapper">
         <h2>{title.content}</h2>
         <ul className={styles.news__articles}>
-          {newsRefactor.map((news) => (
+          {allNews.map((news) => (
             <NewsCard
               date={news.date ?? ''}
               imageUrl={news.imageUrl}

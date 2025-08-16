@@ -2,6 +2,8 @@ import type { AvailableLocale } from '@i18n/locales';
 
 type LocalisedRoute = (locale: AvailableLocale) => string;
 
+export const BASE_URL = 'https://nr2f1.org';
+
 type RouteProperty =
   | 'blog'
   | 'contact-us'

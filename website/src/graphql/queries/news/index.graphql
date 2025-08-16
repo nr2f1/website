@@ -1,39 +1,33 @@
-query GetNews($locale: String) {
-  entryCollection(
-    where: {
-      contentfulMetadata: {
-        tags_exists: true
-        tags: { id_contains_some: ["blog", "newsletter", "podcast"] }
-      }
-    }
-    locale: $locale
-  ) {
+query GetAllNews($locale: String) {
+  posts: blogPageCollection(locale: $locale, order: date_DESC) {
     total
     items {
-      ... on BlogPage {
-        __typename
-        title
-        slug
-        date
-        excerpt
-        image {
-          url
-        }
-      }
-      ... on Newsletter {
-        __typename
-        date
-        newsletterContent {
-          url
-        }
-      }
-      ... on Podcast {
-        __typename
-        date
+      title
+      date
+      image {
         url
-        title
-        name
       }
+      slug
+    }
+  }
+
+  newsletters: newsletterCollection(order: date_DESC, locale: $locale) {
+    total
+    items {
+      date
+      title
+      newsletterContent {
+        url
+      }
+    }
+  }
+
+  podcasts: podcastCollection(order: date_ASC, locale: $locale) {
+    total
+    items {
+      title
+      date
+      url
     }
   }
 }

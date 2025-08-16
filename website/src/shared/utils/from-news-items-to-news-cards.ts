@@ -10,9 +10,10 @@ import { News } from '@shared/types/news';
 interface FromNewsToNewsCards {
   lang: AvailableLocale;
   posts: BlogPageCollection['items'];
-  limit: number;
   newsletters: NewsletterCollection['items'];
   podcasts: PodcastCollection['items'];
+  start?: number;
+  end: number;
 }
 
 export const fromNewsToNewsCards = ({
@@ -20,7 +21,8 @@ export const fromNewsToNewsCards = ({
   posts,
   newsletters,
   podcasts,
-  limit,
+  start = 0,
+  end,
 }: FromNewsToNewsCards): NewsCardProps[] => {
   const postAsNews: NewsCardProps[] = posts
     .filter((item): item is NonNullable<typeof item> => item !== null)
@@ -59,5 +61,5 @@ export const fromNewsToNewsCards = ({
       const dateB = newsB.date ? new Date(newsB.date) : new Date(0);
       return dateB.getTime() - dateA.getTime();
     })
-    .slice(0, limit);
+    .slice(start, end);
 };

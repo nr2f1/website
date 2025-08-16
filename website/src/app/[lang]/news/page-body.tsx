@@ -2,8 +2,8 @@ import NewsCard from '@components/news-card';
 import Pagination from '@components/pagination';
 import { getClient } from '@graphql/client';
 import {
-  GetNewsDocument,
-  type GetNewsQuery,
+  GetAllNewsDocument,
+  type GetAllNewsQuery,
 } from '@graphql/queries/news/index.generated';
 import type {
   BlogPageCollection,
@@ -11,8 +11,9 @@ import type {
   PodcastCollection,
 } from '@graphql/types';
 import type { AvailableLocale } from '@i18n/locales';
+import { BASE_URL } from '@routes/index';
 import { News } from '@shared/types/news';
-import { fromBlogNewsletterToNews } from '@shared/utils/from-blog-newsletter-to-news';
+import { fromNewsToNewsCards } from '@shared/utils/from-news-items-to-news-cards';
 import type { CollectionPage, WithContext } from 'schema-dts';
 import styles from './page-body.module.scss';
 
@@ -40,51 +41,52 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
   const LIMIT = 12;
 
   const {
-    data: { entryCollection },
+    data: { posts, podcasts, newsletters },
     error,
-  } = await query<GetNewsQuery>({
-    query: GetNewsDocument,
+  } = await query<GetAllNewsQuery>({
+    query: GetAllNewsDocument,
     variables: {
       locale: lang,
     },
   });
 
-  if (error || !entryCollection?.items) {
+
+  if (
+    !posts ||
+    !posts.items ||
+    !posts.items.length ||
+    !newsletters ||
+    !newsletters.items ||
+    !newsletters.items.length ||
+    !podcasts ||
+    !podcasts.items ||
+    !podcasts.items.length ||
+    error
+  ) {
     return null;
   }
 
-  const { total, items } = entryCollection;
-
-  const rawPosts = items.filter((item) => item?.__typename === 'BlogPage');
-
-  const rawNewsletter = items.filter(
-    (item) => item?.__typename === 'Newsletter',
-  );
-
-  const rawPodcast = items.filter((item) => item?.__typename === 'Podcast');
-
-  const allNews = fromBlogNewsletterToNews({
-    limit: total,
-    newsletters: rawNewsletter as NewsletterCollection['items'],
-    podcasts: rawPodcast as PodcastCollection['items'],
-    posts: rawPosts as BlogPageCollection['items'],
-  });
-
+  const total = posts.items.length + newsletters.items.length + podcasts.items.length;
   const start = getSkipPagination(page, LIMIT);
   const end = start + LIMIT;
 
-  const news = allNews.slice(start, end);
-
-  const newsPosts = news.filter((item) => item.type === News.BLOG);
+  const allNews = fromNewsToNewsCards({
+    end,
+    lang,
+    newsletters: newsletters.items as NewsletterCollection['items'],
+    podcasts: podcasts.items as PodcastCollection['items'],
+    posts: posts.items as BlogPageCollection['items'],
+    start,
+  });
 
   const jsonLd: WithContext<CollectionPage> = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    mainEntity: newsPosts.map(({ title, url, imageUrl }) => ({
+    mainEntity: allNews.map(({ title, url, imageUrl, type }) => ({
       '@type': 'BlogPosting',
       headline: title,
       image: imageUrl ?? undefined,
-      url: `https://nr2f1.org/${lang}/news/${url}`,
+      url: type ===  News.BLOG ? `${BASE_URL}/${lang}/news/blog/${url}` : type === News.PODCAST ? `${BASE_URL}/${lang}/news/podcast/${url}` : `${BASE_URL}/${lang}/news/newsletter/${url}`,
     })),
   };
 
@@ -92,13 +94,12 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
     <section className={styles.news}>
       <script
         type="application/ld+json"
-        // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="content-wrapper">
         <nav>
           <ul className={styles.news__articles}>
-            {news.map(({ title, url, date, imageUrl, type }) => (
+            {allNews.map(({ title, url, date, imageUrl, type }) => (
               <NewsCard
                 date={date}
                 imageUrl={imageUrl}

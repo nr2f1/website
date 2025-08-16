@@ -1,6 +1,5 @@
 import type { AvailableLocale } from '@i18n/locales';
 import { News } from '@shared/types/news';
-import { firstLetterCapital } from '@shared/utils/first-letter-capital';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
 import Link from 'next/link';
 import styles from './index.module.scss';
@@ -13,22 +12,6 @@ export interface NewsCardProps {
   title: string;
   type?: News;
 }
-
-interface GetNewsLetterTitleProps {
-  date: string;
-  lang: AvailableLocale;
-}
-
-const getNewsLetterTitle = ({ date, lang }: GetNewsLetterTitleProps) => {
-  const dateObj = new Date(date);
-
-  return firstLetterCapital(
-    new Intl.DateTimeFormat(lang, {
-      month: 'long',
-      year: 'numeric',
-    }).format(dateObj),
-  );
-};
 
 interface NewsType {
   [News.BLOG]: string;
@@ -66,8 +49,6 @@ const NewsCard: React.FC<NewsCardProps> = ({
     date,
     locale: lang,
   });
-
-  // console.log({ })
 
   switch (type) {
     case News.PODCAST:
