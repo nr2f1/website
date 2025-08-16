@@ -168,10 +168,9 @@ export const renderOptions = (links: Links) => {
             <img
               {...imageProps.img}
               alt={alt}
-              style={{
-                ...imageProps.img.style,
-                margin: '1rem 0',
-              }}
+              // style={{
+              //   ...imageProps.img.style,
+              // }}
             />
           </picture>
         );
