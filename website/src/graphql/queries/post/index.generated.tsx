@@ -9,17 +9,43 @@ export type GetPostQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetPostQuery = { __typename?: 'Query', blogPageCollection?: { __typename?: 'BlogPageCollection', items: Array<{ __typename?: 'BlogPage', title?: string | null, excerpt?: string | null, date?: any | null, body?: { __typename?: 'BlogPageBody', json: any } | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null };
+export type GetPostQuery = { __typename?: 'Query', blogPageCollection?: { __typename?: 'BlogPageCollection', items: Array<{ __typename?: 'BlogPage', title?: string | null, excerpt?: string | null, date?: any | null, body?: { __typename?: 'BlogPageBody', json: any, links: { __typename?: 'BlogPageBodyLinks', entries: { __typename?: 'BlogPageBodyEntries', inline: Array<{ __typename?: 'Accordion', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Banner', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'BlogPage', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'BoardMember', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Heading', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'HtmlHeadMetadata', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Hyperlink', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Link', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'LinkContent', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'MicrocopyResource', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'NavigationList', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Newsletter', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'PageHeader', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Paragraphs', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Podcast', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Publication', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ResourceSet', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Volunteer', sys: { __typename?: 'Sys', id: string } } | null>, block: Array<{ __typename?: 'Accordion', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Banner', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'BlogPage', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'BoardMember', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Heading', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'HtmlHeadMetadata', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Hyperlink', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Link', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'LinkContent', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'MicrocopyResource', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'NavigationList', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Newsletter', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'PageHeader', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Paragraphs', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Podcast', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Publication', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ResourceSet', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Volunteer', sys: { __typename?: 'Sys', id: string } } | null> }, assets: { __typename?: 'BlogPageBodyAssets', block: Array<{ __typename?: 'Asset', url?: string | null, title?: string | null, width?: number | null, height?: number | null, description?: string | null, sys: { __typename?: 'Sys', id: string } } | null> } } } | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null };
 
 
 export const GetPostDocument = gql`
     query GetPost($locale: String, $slug: String!) {
-  blogPageCollection(locale: $locale, where: {slug: $slug}) {
+  blogPageCollection(locale: $locale, where: {slug: $slug}, limit: 1) {
     items {
       title
       excerpt
       body {
         json
+        links {
+          entries {
+            inline {
+              sys {
+                id
+              }
+            }
+            block {
+              sys {
+                id
+              }
+            }
+          }
+          assets {
+            block {
+              sys {
+                id
+              }
+              url
+              title
+              width
+              height
+              description
+            }
+          }
+        }
       }
       date
       image {

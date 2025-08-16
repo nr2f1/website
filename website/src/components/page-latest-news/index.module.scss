@@ -45,8 +45,8 @@
     }
 
     p {
-      margin: 0;
       @include text-styles.text-small;
+      margin: 0 !important;
       color: var(--foreground-secondary);
       display: list-item;
       list-style-type: disc;
@@ -55,6 +55,7 @@
   }
 
   & &__type:is(a) {
+    @include text-styles.text-link-small;
     font-size: 1rem !important;
     margin-block-end: var(--spacing-2);
     text-decoration: underline !important;
