@@ -10,7 +10,7 @@ import {
 import { blogPostUrl } from '@routes/index';
 import type { NewsPagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
-import { renderNode } from '@shared/utils/rich-text';
+import { Links, renderNode, renderOptions } from '@shared/utils/rich-text';
 import type { Metadata, NextPage } from 'next';
 import type { Blog, WithContext } from 'schema-dts';
 import styles from './index.module.scss';
@@ -96,7 +96,7 @@ const Page: NextPage<NewsPagePropsWithLocale> = async ({ params }) => {
         <div className={styles.post__layout}>
           <div className={styles.post__row}>
             <div className={styles.post__content}>
-              {documentToReactComponents(post?.body?.json, { renderNode })}
+              {documentToReactComponents(post?.body?.json, renderOptions(post?.body?.links as Links))}
             </div>
             <div className={styles.post__aside}>
               <PageLatestNews lang={lang} />
