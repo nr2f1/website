@@ -1,4 +1,4 @@
-@use "@styles/text-styles";
+@use '@styles/text-styles';
 
 .latest-news-content {
   & &__list:is(ul) {
@@ -16,7 +16,7 @@
     text-decoration: none !important;
   }
 
-  h3 {
+  & &__title {
     @include text-styles.header-3;
     color: var(--black);
     margin: 0;
@@ -36,27 +36,28 @@
     &:active {
       background-color: var(--background-interactive-press_active);
     }
-  }
 
-  p {
-    margin: 0;
-
-    &:first-of-type {
-      @include text-styles.text-link-small;
-      margin-block-end: var(--spacing-1);
+    h4 {
+      @include text-styles.header-4;
+      margin: 0;
+      margin-block-end: var(--spacing-4);
+      text-decoration: none;
     }
 
-    &:last-of-type {
+    p {
+      margin: 0;
       @include text-styles.text-small;
       color: var(--foreground-secondary);
+      display: list-item;
+      list-style-type: disc;
+      list-style-position: inside;
     }
   }
 
-  h4 {
-    margin: 0;
-    margin-block-end: var(--spacing-4);
-
-    @include text-styles.header-4;
+  & &__type:is(a) {
+    font-size: 1rem !important;
+    margin-block-end: var(--spacing-2);
+    text-decoration: underline !important;
   }
 
   & &__see-all:is(a) {

@@ -4,10 +4,6 @@ import {
   GetLatestNewsDocument,
   type GetLatestNewsQuery,
 } from '@graphql/queries/latest-news/index.generated';
-import {
-  GetNewsDocument,
-  type GetNewsQuery,
-} from '@graphql/queries/news/index.generated';
 import type {
   BlogPageCollection,
   NewsletterCollection,
@@ -16,7 +12,7 @@ import type {
 import type { AvailableLocale } from '@i18n/locales';
 import { latestNewsTitleId } from '@models/headings';
 import { latestNewsCtaId } from '@models/links';
-import { fromBlogNewsletterToNews } from '@shared/utils/from-blog-newsletter-to-news';
+import { fromNewsToNewsCards } from '@shared/utils/from-news-items-to-news-cards';
 import Link from 'next/link';
 import styles from './index.module.scss';
 
@@ -28,41 +24,8 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
   const { query } = getClient();
 
   const {
-    data: { entryCollection },
+    data: { title, cta, posts, newsletters, podcasts },
     error,
-  } = await query<GetNewsQuery>({
-    query: GetNewsDocument,
-    variables: {
-      locale: lang,
-    },
-  });
-
-  if (error || !entryCollection?.items) {
-    return null;
-  }
-
-  const { total, items } = entryCollection;
-
-  const rawPosts = items.filter((item) => item?.__typename === 'BlogPage');
-
-  const rawNewsletter = items.filter(
-    (item) => item?.__typename === 'Newsletter',
-  );
-
-  const rawPodcast = items.filter((item) => item?.__typename === 'Podcast');
-
-  const allNews = fromBlogNewsletterToNews({
-    limit: total,
-    newsletters: rawNewsletter as NewsletterCollection['items'],
-    podcasts: rawPodcast as PodcastCollection['items'],
-    posts: rawPosts as BlogPageCollection['items'],
-  });
-
-  const news = allNews.slice(0, 6);
-
-  const {
-    data: { title, cta },
-    error: getLatestNewsError,
   } = await query<GetLatestNewsQuery>({
     query: GetLatestNewsDocument,
     variables: {
@@ -72,16 +35,37 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
     },
   });
 
-  if (getLatestNewsError || !title || !cta) {
+  if (
+    !title ||
+    !posts ||
+    !posts.items ||
+    !posts.items.length ||
+    !newsletters ||
+    !newsletters.items ||
+    !newsletters.items.length ||
+    !podcasts ||
+    !podcasts.items ||
+    !podcasts.items.length ||
+    !cta ||
+    error
+  ) {
     return null;
   }
+
+  const allNews = fromNewsToNewsCards({
+    end: 6,
+    lang,
+    newsletters: newsletters.items as NewsletterCollection['items'],
+    podcasts: podcasts.items as PodcastCollection['items'],
+    posts: posts.items as BlogPageCollection['items'],
+  });
 
   return (
     <section className={styles.news}>
       <div className="content-wrapper">
         <h2>{title.content}</h2>
         <ul className={styles.news__articles}>
-          {news.map((news) => (
+          {allNews.map((news) => (
             <NewsCard
               date={news.date ?? ''}
               imageUrl={news.imageUrl}

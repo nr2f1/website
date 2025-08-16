@@ -5,38 +5,17 @@ import {
   GetNewslettersDocument,
   type GetNewslettersQuery,
 } from '@graphql/queries/news/index.generated';
-import type { AvailableLocale } from '@i18n/locales';
 import { News } from '@shared/types/news';
+import {
+  getSkipPagination,
+  type NewsPageBodyProps,
+} from '@shared/utils/pagination';
 import type { CollectionPage, WithContext } from 'schema-dts';
 import styles from '../page-body.module.scss';
 
-interface NewslettersPageBodyProps {
-  lang: AvailableLocale;
-  page?: string | string[] | undefined;
-}
 const { query } = getClient();
 
-const getSkipPagination = (
-  page: NewslettersPageBodyProps['page'],
-  limit: number,
-) => {
-  if (!page) {
-    return 0;
-  }
-
-  const pageNumber = Number(page) - 1;
-
-  if (pageNumber < 0) {
-    return 0;
-  }
-
-  return pageNumber * limit;
-};
-
-const NewsPageBody: React.FC<NewslettersPageBodyProps> = async ({
-  lang,
-  page,
-}) => {
+const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
   const LIMIT = 12;
 
   const {
@@ -62,7 +41,7 @@ const NewsPageBody: React.FC<NewslettersPageBodyProps> = async ({
     .map((item) => {
       return {
         date: item?.date ?? ('' as string),
-        title: item?.date ?? ('' as string),
+        title: item?.title ?? ('' as string),
         type: News.NEWSLETTER,
         url: item?.newsletterContent?.url ?? '',
       };
@@ -71,10 +50,10 @@ const NewsPageBody: React.FC<NewslettersPageBodyProps> = async ({
   const jsonLd: WithContext<CollectionPage> = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    mainEntity: newsletters.map(({ title }) => ({
+    mainEntity: newsletters.map(({ title, url }) => ({
       '@type': 'BlogPosting',
       headline: title,
-      url: `https://nr2f1.org/${lang}/news/newsletter`,
+      url,
     })),
   };
 

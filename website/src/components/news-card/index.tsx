@@ -1,58 +1,11 @@
-import type { AvailableLocale } from '@i18n/locales';
 import { News } from '@shared/types/news';
-import { firstLetterCapital } from '@shared/utils/first-letter-capital';
+import {
+  type NewsCardProps,
+  newsTypeLocale,
+} from '@shared/utils/from-news-items-to-news-cards';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
 import Link from 'next/link';
 import styles from './index.module.scss';
-
-export interface NewsCardProps {
-  date: string;
-  imageUrl?: string | null;
-  lang: AvailableLocale;
-  url: string;
-  title: string;
-  type?: News;
-}
-
-interface GetNewsLetterTitleProps {
-  date: string;
-  lang: AvailableLocale;
-}
-
-const getNewsLetterTitle = ({ date, lang }: GetNewsLetterTitleProps) => {
-  const dateObj = new Date(date);
-
-  return firstLetterCapital(
-    new Intl.DateTimeFormat(lang, {
-      month: 'long',
-      year: 'numeric',
-    }).format(dateObj),
-  );
-};
-
-interface NewsType {
-  [News.BLOG]: string;
-  [News.NEWSLETTER]: string;
-}
-
-const newsTypeLocale: Record<AvailableLocale, NewsType> = {
-  de: {
-    blog: 'Blogbeitrag',
-    newsletter: 'Newsletter',
-  },
-  en: {
-    blog: 'Blog post',
-    newsletter: 'Newsletter',
-  },
-  es: {
-    blog: 'Entrada de blog',
-    newsletter: 'Boletín informativo',
-  },
-  fr: {
-    blog: 'Article de blog',
-    newsletter: "Bulletin d'information",
-  },
-};
 
 const NewsCard: React.FC<NewsCardProps> = ({
   title,
@@ -98,7 +51,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
             <article>
               <div className={styles.article__newsletter_img} />
               <div>
-                <h2>{getNewsLetterTitle({ date: title, lang })}</h2>
+                <h2>{title}</h2>
                 <p className={styles.article__date}>
                   <Link
                     className={styles.article__label}
