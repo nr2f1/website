@@ -5,11 +5,14 @@ import {
   GetBlogPostsDocument,
   type GetBlogPostsQuery,
 } from '@graphql/queries/news/index.generated';
-import type { AvailableLocale } from '@i18n/locales';
+import { blogPostUrl } from '@routes/index';
 import { News } from '@shared/types/news';
+import {
+  getSkipPagination,
+  type NewsPageBodyProps,
+} from '@shared/utils/pagination';
 import type { CollectionPage, WithContext } from 'schema-dts';
 import styles from '../page-body.module.scss';
-import { getSkipPagination, NewsPageBodyProps } from '@shared/utils/pagination';
 
 const { query } = getClient();
 
@@ -53,7 +56,7 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
       '@type': 'BlogPosting',
       headline: title,
       image: imageUrl ?? undefined,
-      url: `https://nr2f1.org/${lang}/news/blog/${url}`,
+      url: blogPostUrl({ locale: lang, slug: url }),
     })),
   };
 

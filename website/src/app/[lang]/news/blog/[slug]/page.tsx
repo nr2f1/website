@@ -7,6 +7,7 @@ import {
   GetPostDocument,
   type GetPostQuery,
 } from '@graphql/queries/post/index.generated';
+import { blogPostUrl } from '@routes/index';
 import type { NewsPagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
 import { renderNode } from '@shared/utils/rich-text';
@@ -40,7 +41,7 @@ export async function generateMetadata({
       locale: lang,
       title,
       type: 'article',
-      url: `https://nr2f1.org/${lang}/news/${slug}`,
+      url: blogPostUrl({ locale: lang, slug }),
     },
     title,
   };
@@ -77,7 +78,6 @@ const Page: NextPage<NewsPagePropsWithLocale> = async ({ params }) => {
     headline: post?.title ?? '',
     url: `https://nr2f1.org/news/blog/${slug}`,
   };
-
 
   return (
     <>

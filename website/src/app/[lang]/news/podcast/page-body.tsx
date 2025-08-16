@@ -2,11 +2,14 @@ import NewsCard from '@components/news-card';
 import Pagination from '@components/pagination';
 import { getClient } from '@graphql/client';
 import {
-    GetPodcastsDocument,
-    type GetPodcastsQuery,
+  GetPodcastsDocument,
+  type GetPodcastsQuery,
 } from '@graphql/queries/news/index.generated';
 import { News } from '@shared/types/news';
-import { getSkipPagination, NewsPageBodyProps } from '@shared/utils/pagination';
+import {
+  getSkipPagination,
+  type NewsPageBodyProps,
+} from '@shared/utils/pagination';
 import type { CollectionPage, WithContext } from 'schema-dts';
 import styles from '../page-body.module.scss';
 

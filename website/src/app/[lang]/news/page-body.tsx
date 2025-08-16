@@ -13,7 +13,10 @@ import type {
 import { BASE_URL } from '@routes/index';
 import { News } from '@shared/types/news';
 import { fromNewsToNewsCards } from '@shared/utils/from-news-items-to-news-cards';
-import { getSkipPagination, NewsPageBodyProps } from '@shared/utils/pagination';
+import {
+  getSkipPagination,
+  type NewsPageBodyProps,
+} from '@shared/utils/pagination';
 import type { CollectionPage, WithContext } from 'schema-dts';
 import styles from './page-body.module.scss';
 
@@ -32,7 +35,6 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
     },
   });
 
-
   if (
     !posts ||
     !posts.items ||
@@ -48,7 +50,8 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
     return null;
   }
 
-  const total = posts.items.length + newsletters.items.length + podcasts.items.length;
+  const total =
+    posts.items.length + newsletters.items.length + podcasts.items.length;
   const start = getSkipPagination(page, LIMIT);
   const end = start + LIMIT;
 
@@ -68,7 +71,7 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
       '@type': 'BlogPosting',
       headline: title,
       image: imageUrl ?? undefined,
-      url: type ===  News.BLOG ? `${BASE_URL}/${lang}/news/blog/${url}` : url,
+      url: type === News.BLOG ? `${BASE_URL}/${lang}/news/blog/${url}` : url,
     })),
   };
 
@@ -76,6 +79,7 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
     <section className={styles.news}>
       <script
         type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="content-wrapper">

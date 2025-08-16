@@ -4,6 +4,14 @@ type LocalisedRoute = (locale: AvailableLocale) => string;
 
 export const BASE_URL = 'https://nr2f1.org';
 
+interface BlogPostUrl {
+  locale: AvailableLocale;
+  slug: string;
+}
+
+export const blogPostUrl = ({ locale, slug }: BlogPostUrl) =>
+  `/${locale}/news/blog/${slug}`;
+
 type RouteProperty =
   | 'blog'
   | 'contact-us'

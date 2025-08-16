@@ -1,8 +1,6 @@
 @use '@styles/text-styles';
 
 .latest-news-content {
-  $self: &;
-
   & &__list:is(ul) {
     list-style-type: none;
     padding: 0;

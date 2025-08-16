@@ -2,21 +2,20 @@ import NewsCard from '@components/news-card';
 import Pagination from '@components/pagination';
 import { getClient } from '@graphql/client';
 import {
-    GetNewslettersDocument,
-    type GetNewslettersQuery,
+  GetNewslettersDocument,
+  type GetNewslettersQuery,
 } from '@graphql/queries/news/index.generated';
 import { News } from '@shared/types/news';
-import { getSkipPagination, NewsPageBodyProps } from '@shared/utils/pagination';
+import {
+  getSkipPagination,
+  type NewsPageBodyProps,
+} from '@shared/utils/pagination';
 import type { CollectionPage, WithContext } from 'schema-dts';
 import styles from '../page-body.module.scss';
 
-
 const { query } = getClient();
 
-const NewsPageBody: React.FC<NewsPageBodyProps> = async ({
-  lang,
-  page,
-}) => {
+const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
   const LIMIT = 12;
 
   const {
