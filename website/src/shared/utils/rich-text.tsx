@@ -1,4 +1,3 @@
-import type { RenderNode } from '@contentful/rich-text-react-renderer';
 import type { Block, Inline } from '@contentful/rich-text-types';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import type { Asset, Entry } from '@graphql/types';
