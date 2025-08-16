@@ -46,6 +46,7 @@ export const registerPatientParagraphsId = '6Cjcs2urmD7rF6gk31BIie';
 export const understandingBbsoasParagraphsId = '10h4QnDIEHRyLltsfNo2q1';
 export const handingLettersParagraphsId = 'Il2rlY429uYxenDT3eSRJ';
 export const bbsoasClinicParagraphsId = '7bM5xp9op763zPV5NVxsqC';
+export const readingGeneticReportParagraphsId = 'c1HQ0NPV9hCPN2oeZ1a3k';
 
 // Support groups page
 export const supportGroupsIntroParagraphsId = '5KnIaHGiPebNQnd5mDVIyq';

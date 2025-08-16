@@ -2,6 +2,7 @@ import type { Block, Inline } from '@contentful/rich-text-types';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import type { Asset, Entry } from '@graphql/types';
 import type { ReactNode } from 'react';
+import { inspect } from 'util';
 import { createBlogImageProps } from './image-optimisation';
 
 // From https://github.com/contentful/rich-text/tree/master/packages/rich-text-react-renderer
@@ -81,7 +82,7 @@ export const renderOptions = (links: Links) => {
 
         // Create a link when it's not a youtube video
         return (
-          <a href={node.data.uri} target="_blank" rel="noopener noreferrer">
+          <a href={node.data.uri}>
             {node.content.map((content) => {
               return (
                 <span key={crypto.randomUUID()}>
@@ -102,8 +103,17 @@ export const renderOptions = (links: Links) => {
         const originalWidth = asset.width || 800;
         const alt = asset.description || asset.title || '';
 
-        // Use the optimized image utility
+        if (asset.contentType === 'application/pdf') {
+          return (
+            <div className="embed">
+              <embed src={asset.url} type="application/pdf" title={alt} />
+            </div>
+          );
+        }
 
+        console.log(inspect(asset, { depth: Number.POSITIVE_INFINITY }));
+
+        // Use the optimized image utility
         const imageProps = createBlogImageProps({
           alt,
           baseUrl: asset.url,
@@ -111,7 +121,7 @@ export const renderOptions = (links: Links) => {
         });
 
         return (
-          <picture>
+          <picture className="picture">
             <source
               media={imageProps.sources.avif.mobile.media}
               srcSet={imageProps.sources.avif.mobile.srcSet}

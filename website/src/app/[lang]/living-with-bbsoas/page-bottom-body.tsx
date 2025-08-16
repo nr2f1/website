@@ -9,12 +9,15 @@ import type { AvailableLocale } from '@i18n/locales';
 import {
   bbsoasClinicHeadingId,
   handingLettersHeadingId,
+  readingGeneticReportHeadingId,
 } from '@models/headings';
 import {
   bbsoasClinicParagraphsId,
   handingLettersParagraphsId,
+  readingGeneticReportParagraphsId,
 } from '@models/paragraphs';
 import { createHashLink } from '@shared/utils/hash-links';
+import { type Links, renderOptions } from '@shared/utils/rich-text';
 
 interface LivingWithBbsoasBottomBodyProps {
   lang: AvailableLocale;
@@ -31,6 +34,8 @@ const LivingWithBbsoasBottomBody: React.FC<
       bbsoasClinicParagraphs,
       handingLettersHeading,
       handingLettersParagraphs,
+      readingGeneticReportHeading,
+      readingGeneticReportParagraphs,
     },
     error,
   } = await query<GetLivingWithBbsoasBottomPageQuery>({
@@ -41,6 +46,8 @@ const LivingWithBbsoasBottomBody: React.FC<
       handingLettersHeadingId,
       handingLettersParagraphsId,
       locale: lang,
+      readingGeneticReportHeadingId,
+      readingGeneticReportParagraphsId,
     },
   });
 
@@ -61,6 +68,17 @@ const LivingWithBbsoasBottomBody: React.FC<
           {bbsoasClinicHeading?.content}
         </h2>
         {documentToReactComponents(bbsoasClinicParagraphs?.content?.json)}
+      </section>
+      <section>
+        <h2 id={createHashLink(readingGeneticReportHeading?.content ?? '')}>
+          {readingGeneticReportHeading?.content}
+        </h2>
+        {documentToReactComponents(
+          readingGeneticReportParagraphs?.content?.json,
+          renderOptions(
+            readingGeneticReportParagraphs?.content?.links as Links,
+          ),
+        )}
       </section>
     </PageBodySection>
   );

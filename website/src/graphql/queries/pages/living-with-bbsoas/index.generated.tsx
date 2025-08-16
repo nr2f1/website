@@ -14,10 +14,11 @@ export type GetLivingWithBbsoasUpperPageQueryVariables = Types.Exact<{
   understandingBbsoasParagraphsId: Types.Scalars['String']['input'];
   handingLettersHeadingId: Types.Scalars['String']['input'];
   bbsoasClinicHeadingId: Types.Scalars['String']['input'];
+  readingGeneticReportHeadingId: Types.Scalars['String']['input'];
 }>;
 
 
-export type GetLivingWithBbsoasUpperPageQuery = { __typename?: 'Query', testAndTherapiesHeading?: { __typename?: 'Heading', content?: string | null } | null, testAndTherapiesParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerPatientHeading?: { __typename?: 'Heading', content?: string | null } | null, registerPatientParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerPatientCta?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null, understandingBbsoasHeading?: { __typename?: 'Heading', content?: string | null } | null, understandingBbsoasParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, handingLettersHeading?: { __typename?: 'Heading', content?: string | null } | null, bbsoasClinicHeading?: { __typename?: 'Heading', content?: string | null } | null };
+export type GetLivingWithBbsoasUpperPageQuery = { __typename?: 'Query', testAndTherapiesHeading?: { __typename?: 'Heading', content?: string | null } | null, testAndTherapiesParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerPatientHeading?: { __typename?: 'Heading', content?: string | null } | null, registerPatientParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerPatientCta?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null, understandingBbsoasHeading?: { __typename?: 'Heading', content?: string | null } | null, understandingBbsoasParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, handingLettersHeading?: { __typename?: 'Heading', content?: string | null } | null, bbsoasClinicHeading?: { __typename?: 'Heading', content?: string | null } | null, readingGeneticReportHeading?: { __typename?: 'Heading', content?: string | null } | null };
 
 export type GetLivingWithBbsoasBottomPageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -25,14 +26,16 @@ export type GetLivingWithBbsoasBottomPageQueryVariables = Types.Exact<{
   handingLettersParagraphsId: Types.Scalars['String']['input'];
   bbsoasClinicHeadingId: Types.Scalars['String']['input'];
   bbsoasClinicParagraphsId: Types.Scalars['String']['input'];
+  readingGeneticReportHeadingId: Types.Scalars['String']['input'];
+  readingGeneticReportParagraphsId: Types.Scalars['String']['input'];
 }>;
 
 
-export type GetLivingWithBbsoasBottomPageQuery = { __typename?: 'Query', handingLettersHeading?: { __typename?: 'Heading', content?: string | null } | null, handingLettersParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, bbsoasClinicHeading?: { __typename?: 'Heading', content?: string | null } | null, bbsoasClinicParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null };
+export type GetLivingWithBbsoasBottomPageQuery = { __typename?: 'Query', handingLettersHeading?: { __typename?: 'Heading', content?: string | null } | null, handingLettersParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, bbsoasClinicHeading?: { __typename?: 'Heading', content?: string | null } | null, bbsoasClinicParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, readingGeneticReportHeading?: { __typename?: 'Heading', content?: string | null } | null, readingGeneticReportParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any, links: { __typename?: 'ParagraphsContentLinks', entries: { __typename?: 'ParagraphsContentEntries', inline: Array<{ __typename?: 'Accordion', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Banner', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'BlogPage', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'BoardMember', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Heading', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'HtmlHeadMetadata', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Hyperlink', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Link', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'LinkContent', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'MicrocopyResource', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'NavigationList', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Newsletter', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'PageHeader', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Paragraphs', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Podcast', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Publication', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ResourceSet', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Volunteer', sys: { __typename?: 'Sys', id: string } } | null>, block: Array<{ __typename?: 'Accordion', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Banner', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'BlogPage', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'BoardMember', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Heading', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'HtmlHeadMetadata', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Hyperlink', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Link', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'LinkContent', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'MicrocopyResource', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'NavigationList', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Newsletter', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'PageHeader', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Paragraphs', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Podcast', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Publication', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ResourceSet', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Volunteer', sys: { __typename?: 'Sys', id: string } } | null> }, assets: { __typename?: 'ParagraphsContentAssets', block: Array<{ __typename?: 'Asset', url?: string | null, title?: string | null, width?: number | null, height?: number | null, description?: string | null, contentType?: string | null, sys: { __typename?: 'Sys', id: string } } | null> } } } | null } | null };
 
 
 export const GetLivingWithBbsoasUpperPageDocument = gql`
-    query GetLivingWithBbsoasUpperPage($locale: String, $testAndTherapiesHeadingId: String!, $testAndTherapiesParagraphsId: String!, $registerPatientHeadingId: String!, $registerPatientParagraphsId: String!, $registerPatientLinkId: String!, $understandingBbsoasHeadingId: String!, $understandingBbsoasParagraphsId: String!, $handingLettersHeadingId: String!, $bbsoasClinicHeadingId: String!) {
+    query GetLivingWithBbsoasUpperPage($locale: String, $testAndTherapiesHeadingId: String!, $testAndTherapiesParagraphsId: String!, $registerPatientHeadingId: String!, $registerPatientParagraphsId: String!, $registerPatientLinkId: String!, $understandingBbsoasHeadingId: String!, $understandingBbsoasParagraphsId: String!, $handingLettersHeadingId: String!, $bbsoasClinicHeadingId: String!, $readingGeneticReportHeadingId: String!) {
   testAndTherapiesHeading: heading(
     locale: $locale
     id: $testAndTherapiesHeadingId
@@ -86,6 +89,12 @@ export const GetLivingWithBbsoasUpperPageDocument = gql`
   bbsoasClinicHeading: heading(locale: $locale, id: $bbsoasClinicHeadingId) {
     content
   }
+  readingGeneticReportHeading: heading(
+    locale: $locale
+    id: $readingGeneticReportHeadingId
+  ) {
+    content
+  }
 }
     `;
 
@@ -111,6 +120,7 @@ export const GetLivingWithBbsoasUpperPageDocument = gql`
  *      understandingBbsoasParagraphsId: // value for 'understandingBbsoasParagraphsId'
  *      handingLettersHeadingId: // value for 'handingLettersHeadingId'
  *      bbsoasClinicHeadingId: // value for 'bbsoasClinicHeadingId'
+ *      readingGeneticReportHeadingId: // value for 'readingGeneticReportHeadingId'
  *   },
  * });
  */
@@ -131,7 +141,7 @@ export type GetLivingWithBbsoasUpperPageLazyQueryHookResult = ReturnType<typeof 
 export type GetLivingWithBbsoasUpperPageSuspenseQueryHookResult = ReturnType<typeof useGetLivingWithBbsoasUpperPageSuspenseQuery>;
 export type GetLivingWithBbsoasUpperPageQueryResult = Apollo.QueryResult<GetLivingWithBbsoasUpperPageQuery, GetLivingWithBbsoasUpperPageQueryVariables>;
 export const GetLivingWithBbsoasBottomPageDocument = gql`
-    query GetLivingWithBbsoasBottomPage($locale: String, $handingLettersHeadingId: String!, $handingLettersParagraphsId: String!, $bbsoasClinicHeadingId: String!, $bbsoasClinicParagraphsId: String!) {
+    query GetLivingWithBbsoasBottomPage($locale: String, $handingLettersHeadingId: String!, $handingLettersParagraphsId: String!, $bbsoasClinicHeadingId: String!, $bbsoasClinicParagraphsId: String!, $readingGeneticReportHeadingId: String!, $readingGeneticReportParagraphsId: String!) {
   handingLettersHeading: heading(locale: $locale, id: $handingLettersHeadingId) {
     content
   }
@@ -154,6 +164,47 @@ export const GetLivingWithBbsoasBottomPageDocument = gql`
       json
     }
   }
+  readingGeneticReportHeading: heading(
+    locale: $locale
+    id: $readingGeneticReportHeadingId
+  ) {
+    content
+  }
+  readingGeneticReportParagraphs: paragraphs(
+    locale: $locale
+    id: $readingGeneticReportParagraphsId
+  ) {
+    content {
+      json
+      links {
+        entries {
+          inline {
+            sys {
+              id
+            }
+          }
+          block {
+            sys {
+              id
+            }
+          }
+        }
+        assets {
+          block {
+            sys {
+              id
+            }
+            url
+            title
+            width
+            height
+            description
+            contentType
+          }
+        }
+      }
+    }
+  }
 }
     `;
 
@@ -174,6 +225,8 @@ export const GetLivingWithBbsoasBottomPageDocument = gql`
  *      handingLettersParagraphsId: // value for 'handingLettersParagraphsId'
  *      bbsoasClinicHeadingId: // value for 'bbsoasClinicHeadingId'
  *      bbsoasClinicParagraphsId: // value for 'bbsoasClinicParagraphsId'
+ *      readingGeneticReportHeadingId: // value for 'readingGeneticReportHeadingId'
+ *      readingGeneticReportParagraphsId: // value for 'readingGeneticReportParagraphsId'
  *   },
  * });
  */

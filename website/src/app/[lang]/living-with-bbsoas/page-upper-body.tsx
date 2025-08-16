@@ -9,6 +9,7 @@ import type { AvailableLocale } from '@i18n/locales';
 import {
   bbsoasClinicHeadingId,
   handingLettersHeadingId,
+  readingGeneticReportHeadingId,
   registerPatientHeadingId,
   testAndTherapiesHeadingId,
   understandingBbsoasHeadingId,
@@ -43,6 +44,7 @@ const LivingWithBbsoasUpperBody: React.FC<RegisterPageBodyProps> = async ({
       testAndTherapiesParagraphs,
       understandingBbsoasHeading,
       understandingBbsoasParagraphs,
+      readingGeneticReportHeading,
     },
     error,
   } = await query<GetLivingWithBbsoasUpperPageQuery>({
@@ -51,6 +53,7 @@ const LivingWithBbsoasUpperBody: React.FC<RegisterPageBodyProps> = async ({
       bbsoasClinicHeadingId,
       handingLettersHeadingId,
       locale: lang,
+      readingGeneticReportHeadingId,
       registerPatientHeadingId,
       registerPatientLinkId,
       registerPatientParagraphsId,
@@ -71,6 +74,7 @@ const LivingWithBbsoasUpperBody: React.FC<RegisterPageBodyProps> = async ({
     understandingBbsoasHeading?.content ?? '',
     handingLettersHeading?.content ?? '',
     bbsoasClinicHeading?.content ?? '',
+    readingGeneticReportHeading?.content ?? '',
   ];
 
   return (
