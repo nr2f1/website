@@ -6,6 +6,7 @@ import {
 } from '@graphql/queries/banner/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { supportUsBannerId } from '@models/banners/banner';
+import { optimisedAvifImageUrl } from '@shared/utils/image-optimisation';
 import styles from './index.module.scss';
 
 interface SupportBannerProps {
@@ -46,7 +47,7 @@ const SupportBanner: React.FC<SupportBannerProps> = async ({ lang }) => {
         <section
           style={
             {
-              '--bg-image': `url(${imageUrl})`,
+              '--bg-image': `url(${optimisedAvifImageUrl(imageUrl)})`,
             } as React.CSSProperties
           }
         >

@@ -258,6 +258,9 @@ export const createOptimisedImageProps = (
 /**
  * Utility for creating optimized images specifically for blog content
  */
+
+const QUALITY = 85;
+
 export const createBlogImageProps = (
   baseUrl: string,
   originalWidth: number,
@@ -271,7 +274,7 @@ export const createBlogImageProps = (
     alt,
     {
       format: 'avif',
-      quality: 85,
+      quality: QUALITY,
     },
     {
       desktop: 1200,
@@ -282,4 +285,4 @@ export const createBlogImageProps = (
 };
 
 export const optimisedAvifImageUrl = (url: string) =>
-  `${url}?q=80&fm=avif&fit=fill`;
+  `${url}?q=${QUALITY}&fm=avif&fit=fill`;

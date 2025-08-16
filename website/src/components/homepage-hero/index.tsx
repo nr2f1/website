@@ -10,6 +10,7 @@ import { heroImageId } from '@models/images';
 import { heroCtaId } from '@models/links';
 import { heroNavigationListId } from '@models/navlinks';
 import { heroParagraphId } from '@models/paragraphs';
+import { optimisedAvifImageUrl } from '@shared/utils/image-optimisation';
 import styles from './index.module.scss';
 
 interface HomePageHeroProps {
@@ -84,7 +85,9 @@ const HomePageHero: React.FC<HomePageHeroProps> = async ({ lang }) => {
           </div>
           <div
             className={styles.hero__col}
-            style={{ backgroundImage: `url(${heroImage?.asset?.url ?? ''})` }}
+            style={{
+              backgroundImage: `url(${heroImage?.asset?.url ? optimisedAvifImageUrl(heroImage?.asset?.url) : ''})`,
+            }}
           />
         </div>
         <section className={styles.hero__how_can_we_help_tablet}>

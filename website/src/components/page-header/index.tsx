@@ -1,4 +1,5 @@
 import type { AvailableLocale } from '@i18n/locales';
+import { optimisedAvifImageUrl } from '@shared/utils/image-optimisation';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
 import styles from './index.module.scss';
 
@@ -43,7 +44,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
             </section>
             <div
               style={{
-                backgroundImage: `url(${imageUrl})`,
+                backgroundImage: `url(${optimisedAvifImageUrl(imageUrl)})`,
               }}
             />
           </div>
