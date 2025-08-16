@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.16.0](https://github.com/nr2f1/website/compare/v2.15.0...v2.16.0) (2025-08-16)
+
+
+### Features
+
+* embed pdf via rich media ([7ebe8cb](https://github.com/nr2f1/website/commit/7ebe8cbcf0742678fba980f77d77603b9245a73a))
+* embed pdf via rich media ([#286](https://github.com/nr2f1/website/issues/286)) ([fe025cc](https://github.com/nr2f1/website/commit/fe025ccde69870c542f33b4cc6ee914c89239214))
+
 ## [2.15.0](https://github.com/nr2f1/website/compare/v2.14.1...v2.15.0) (2025-08-16)
 
 
