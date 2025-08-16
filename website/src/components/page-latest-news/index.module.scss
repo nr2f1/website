@@ -45,7 +45,7 @@
     }
 
     p {
-      margin: 0;
+      margin: 0 !important;
       @include text-styles.text-small;
       color: var(--foreground-secondary);
       display: list-item;

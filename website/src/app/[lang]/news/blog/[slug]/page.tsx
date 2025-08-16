@@ -4,13 +4,13 @@ import SupportBanner from '@components/support-banner';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
 import {
-  GetPostDocument,
-  type GetPostQuery,
+    GetPostDocument,
+    type GetPostQuery,
 } from '@graphql/queries/post/index.generated';
 import { blogPostUrl } from '@routes/index';
 import type { NewsPagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
-import { Links, renderNode, renderOptions } from '@shared/utils/rich-text';
+import { Links, renderOptions } from '@shared/utils/rich-text';
 import type { Metadata, NextPage } from 'next';
 import type { Blog, WithContext } from 'schema-dts';
 import styles from './index.module.scss';

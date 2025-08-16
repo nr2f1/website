@@ -42,10 +42,10 @@ export const DEFAULT_RESPONSIVE_SIZES: ResponsiveImageSizes = {
 /**
  * Creates an optimized Contentful image URL with the specified transformations
  */
-export function createOptimizedImageUrl(
+export const createOptimizedImageUrl = (
   baseUrl: string,
   options: ImageTransformOptions = {},
-): string {
+): string => {
   if (!baseUrl) return '';
 
   const {
@@ -73,17 +73,17 @@ export function createOptimizedImageUrl(
   if (progressive) params.set('fl', 'progressive');
 
   return `${cleanUrl}?${params.toString()}`;
-}
+};
 
 /**
  * Creates a responsive image source set for different screen sizes and pixel densities
  */
-export function createResponsiveImageSources(
+export const createResponsiveImageSources = (
   baseUrl: string,
   originalWidth: number,
   options: Partial<ImageTransformOptions> = {},
   sizes: ResponsiveImageSizes = DEFAULT_RESPONSIVE_SIZES,
-) {
+) => {
   const mobileWidth = Math.min(originalWidth, sizes.mobile);
   const tabletWidth = Math.min(originalWidth, sizes.tablet);
   const desktopWidth = Math.min(originalWidth, sizes.desktop);
@@ -120,56 +120,55 @@ export function createResponsiveImageSources(
       }),
     },
   };
-}
+};
 
 /**
  * Creates srcSet strings for responsive images
  */
-export function createSrcSet(
+export const createSrcSet = (
   sources: ReturnType<typeof createResponsiveImageSources>,
-) {
+) => {
   return {
     desktop: `${sources.desktop['1x']} 1x, ${sources.desktop['2x']} 2x`,
     mobile: `${sources.mobile['1x']} 1x, ${sources.mobile['2x']} 2x`,
     tablet: `${sources.tablet['1x']} 1x, ${sources.tablet['2x']} 2x`,
   };
-}
+};
 
 /**
  * Creates a fallback image URL (typically JPEG for maximum compatibility)
  */
-export function createFallbackImageUrl(
+export const createFallbackImageUrl = (
   baseUrl: string,
   width: number,
   quality = 85,
-): string {
+): string => {
   return createOptimizedImageUrl(baseUrl, {
     format: 'jpg',
     quality,
     width,
   });
-}
+};
 
 /**
  * Generates appropriate sizes attribute for responsive images
  */
-export function generateSizesAttribute(
+export const generateSizesAttribute = (
   sizes: ResponsiveImageSizes = DEFAULT_RESPONSIVE_SIZES,
-): string {
-  return `(max-width: ${sizes.mobile}px) 100vw, (max-width: ${sizes.tablet}px) 100vw, ${sizes.desktop}px`;
-}
+): string =>
+  `(max-width: ${sizes.mobile}px) 100vw, (max-width: ${sizes.tablet}px) 100vw, ${sizes.desktop}px`;
 
 /**
  * Complete utility for creating optimized responsive image props
  */
-export function createOptimizedImageProps(
+export const createOptimisedImageProps = (
   baseUrl: string,
   originalWidth: number,
   originalHeight: number,
   alt: string,
   options: Partial<ImageTransformOptions> = {},
   sizes: ResponsiveImageSizes = DEFAULT_RESPONSIVE_SIZES,
-) {
+) => {
   const sources = createResponsiveImageSources(
     baseUrl,
     originalWidth,
@@ -254,18 +253,18 @@ export function createOptimizedImageProps(
       },
     },
   };
-}
+};
 
 /**
  * Utility for creating optimized images specifically for blog content
  */
-export function createBlogImageProps(
+export const createBlogImageProps = (
   baseUrl: string,
   originalWidth: number,
   originalHeight: number,
   alt: string,
-) {
-  return createOptimizedImageProps(
+) => {
+  return createOptimisedImageProps(
     baseUrl,
     originalWidth,
     originalHeight,
@@ -280,4 +279,4 @@ export function createBlogImageProps(
       tablet: 1024,
     },
   );
-}
+};

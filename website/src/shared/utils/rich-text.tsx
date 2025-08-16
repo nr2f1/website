@@ -2,8 +2,9 @@ import type { RenderNode } from '@contentful/rich-text-react-renderer';
 import type { Block, Inline } from '@contentful/rich-text-types';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import type { Asset, Entry } from '@graphql/types';
+import Image from 'next/image';
 import type { ReactNode } from 'react';
-import { createBlogImageProps } from './contentful/image-optimization';
+import { createBlogImageProps } from './image-optimisation';
 
 // From https://github.com/contentful/rich-text/tree/master/packages/rich-text-react-renderer
 // Create <br> tag for new line in text
@@ -16,38 +17,6 @@ export const renderText = (text: string) => {
         textSegment,
       );
     }, []);
-};
-
-// From https://miguelcrespo.co/posts/rendering-youtube-videos-using-rich-text-contentful/
-// Create an iframe when a hyperlink is a youtube video
-export const renderNode: RenderNode = {
-  // If the node is a link
-  [INLINES.HYPERLINK]: (node) => {
-    console.log({ node });
-
-    // Only process youtube links
-    if (node.data.uri.includes('youtube.com')) {
-      // Extract videoId from the URL
-      const match =
-        /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/.exec(
-          node.data.uri,
-        );
-      const videoId = match && match[7].length === 11 ? match[7] : null;
-      return (
-        videoId && (
-          <section className="video-container">
-            <iframe
-              className="video"
-              title={`https://youtube.com/embed/${videoId}`}
-              src={`https://youtube.com/embed/${videoId}`}
-              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </section>
-        )
-      );
-    }
-  },
 };
 
 export interface Links {
@@ -115,8 +84,6 @@ export const renderOptions = (links: Links) => {
         }
       },
       [BLOCKS.EMBEDDED_ASSET]: (node: Block | Inline, _children: ReactNode) => {
-        console.log({ node });
-
         // find the asset in the assetMap by ID
         const asset = assetMap.get(node.data.target.sys.id);
 
@@ -165,13 +132,7 @@ export const renderOptions = (links: Links) => {
               srcSet={imageProps.sources.webp.desktop.srcSet}
               type={imageProps.sources.webp.desktop.type}
             />
-            <img
-              {...imageProps.img}
-              alt={alt}
-              // style={{
-              //   ...imageProps.img.style,
-              // }}
-            />
+            <Image {...imageProps.img} alt={alt} />
           </picture>
         );
       },
