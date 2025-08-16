@@ -1,7 +1,6 @@
 import type { Block, Inline } from '@contentful/rich-text-types';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import type { Asset, Entry } from '@graphql/types';
-import Image from 'next/image';
 import type { ReactNode } from 'react';
 import { createBlogImageProps } from './image-optimisation';
 
@@ -142,7 +141,7 @@ export const renderOptions = (links: Links) => {
               srcSet={imageProps.sources.webp.desktop.srcSet}
               type={imageProps.sources.webp.desktop.type}
             />
-            <Image {...imageProps.img} alt={alt} />
+            <img {...imageProps.img} alt={alt} />
           </picture>
         );
       },

@@ -185,17 +185,9 @@ export const createOptimisedImageProps = (
     img: {
       alt,
       decoding: 'async' as const,
-      height: originalHeight,
       loading: 'lazy' as const,
       sizes: generateSizesAttribute(sizes),
       src: fallbackUrl,
-      style: {
-        aspectRatio: `${originalWidth} / ${originalHeight}`,
-        display: 'block',
-        height: 'auto',
-        maxWidth: '100%',
-      },
-      width: originalWidth,
     },
     sources: {
       avif: {
@@ -259,7 +251,7 @@ export const createOptimisedImageProps = (
  * Utility for creating optimized images specifically for blog content
  */
 
-const QUALITY = 85;
+export const QUALITY = 85;
 
 export const createBlogImageProps = (
   baseUrl: string,

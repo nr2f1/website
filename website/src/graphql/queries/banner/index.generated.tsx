@@ -9,7 +9,7 @@ export type GetBannerQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetBannerQuery = { __typename?: 'Query', banner?: { __typename?: 'Banner', heading?: { __typename?: 'Heading', content?: string | null } | null, content?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, cta?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null, image?: { __typename?: 'Asset', url?: string | null, description?: string | null, width?: number | null, height?: number | null } | null } | null };
+export type GetBannerQuery = { __typename?: 'Query', banner?: { __typename?: 'Banner', heading?: { __typename?: 'Heading', content?: string | null } | null, content?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, cta?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null };
 
 
 export const GetBannerDocument = gql`
@@ -33,9 +33,6 @@ export const GetBannerDocument = gql`
     }
     image {
       url
-      description
-      width
-      height
     }
   }
 }
