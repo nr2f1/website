@@ -8,57 +8,13 @@ query GetPost($locale: String, $slug: String!) {
         links {
           entries {
             inline {
-              ... on Link {
-                sys {
-                  id
-                }
-                text {
-                  content
-                }
-                target {
-                  ... on Hyperlink {
-                    url
-                  }
-                }
-              }
-              ... on BlogPage {
-                sys {
-                  id
-                }
-                title
-                slug
+              sys {
+                id
               }
             }
             block {
-              ... on Link {
-                sys {
-                  id
-                }
-                text {
-                  content
-                }
-                target {
-                  ... on Hyperlink {
-                    url
-                  }
-                }
-              }
-              ... on BlogPage {
-                sys {
-                  id
-                }
-                title
-                slug
-              }
-              ... on Image {
-                sys {
-                  id
-                }
-                url
-                title
-                description
-                width
-                height
+              sys {
+                id
               }
             }
           }
@@ -72,7 +28,6 @@ query GetPost($locale: String, $slug: String!) {
               width
               height
               description
-              contentType
             }
           }
         }

@@ -57,8 +57,6 @@ export const renderOptions = (links: Links) => {
       // From https://miguelcrespo.co/posts/rendering-youtube-videos-using-rich-text-contentful/
       // Create an iframe when a hyperlink is a youtube video
       [INLINES.HYPERLINK]: (node: Block | Inline, _children: ReactNode) => {
-        console.log({ node });
-
         // Only process youtube links
         if (node.data.uri.includes('youtube.com')) {
           // Extract videoId from the URL
@@ -81,6 +79,19 @@ export const renderOptions = (links: Links) => {
             )
           );
         }
+
+        // Create a link when it's not a youtube video
+        return (
+          <a href={node.data.uri} target="_blank" rel="noopener noreferrer">
+            {node.content.map((content) => {
+              return (
+                <span key={crypto.randomUUID()}>
+                  {'value' in content ? content.value : ''}
+                </span>
+              );
+            })}
+          </a>
+        );
       },
       [BLOCKS.EMBEDDED_ASSET]: (node: Block | Inline, _children: ReactNode) => {
         // find the asset in the assetMap by ID
