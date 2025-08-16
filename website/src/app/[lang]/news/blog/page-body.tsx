@@ -9,26 +9,9 @@ import type { AvailableLocale } from '@i18n/locales';
 import { News } from '@shared/types/news';
 import type { CollectionPage, WithContext } from 'schema-dts';
 import styles from '../page-body.module.scss';
+import { getSkipPagination, NewsPageBodyProps } from '@shared/utils/pagination';
 
-interface NewsPageBodyProps {
-  lang: AvailableLocale;
-  page?: string | string[] | undefined;
-}
 const { query } = getClient();
-
-const getSkipPagination = (page: NewsPageBodyProps['page'], limit: number) => {
-  if (!page) {
-    return 0;
-  }
-
-  const pageNumber = Number(page) - 1;
-
-  if (pageNumber < 0) {
-    return 0;
-  }
-
-  return pageNumber * limit;
-};
 
 const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
   const LIMIT = 12;
@@ -70,7 +53,7 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
       '@type': 'BlogPosting',
       headline: title,
       image: imageUrl ?? undefined,
-      url: `https://nr2f1.org/${lang}/news/${url}`,
+      url: `https://nr2f1.org/${lang}/news/blog/${url}`,
     })),
   };
 

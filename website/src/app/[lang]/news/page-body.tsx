@@ -10,32 +10,15 @@ import type {
   NewsletterCollection,
   PodcastCollection,
 } from '@graphql/types';
-import type { AvailableLocale } from '@i18n/locales';
 import { BASE_URL } from '@routes/index';
 import { News } from '@shared/types/news';
 import { fromNewsToNewsCards } from '@shared/utils/from-news-items-to-news-cards';
 import type { CollectionPage, WithContext } from 'schema-dts';
 import styles from './page-body.module.scss';
+import { getSkipPagination, NewsPageBodyProps } from '@shared/utils/pagination';
 
-interface NewsPageBodyProps {
-  lang: AvailableLocale;
-  page?: string | string[] | undefined;
-}
+
 const { query } = getClient();
-
-const getSkipPagination = (page: NewsPageBodyProps['page'], limit: number) => {
-  if (!page) {
-    return 0;
-  }
-
-  const pageNumber = Number(page) - 1;
-
-  if (pageNumber < 0) {
-    return 0;
-  }
-
-  return pageNumber * limit;
-};
 
 const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
   const LIMIT = 12;
