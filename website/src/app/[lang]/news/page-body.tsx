@@ -86,7 +86,7 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
       '@type': 'BlogPosting',
       headline: title,
       image: imageUrl ?? undefined,
-      url: type ===  News.BLOG ? `${BASE_URL}/${lang}/news/blog/${url}` : type === News.PODCAST ? `${BASE_URL}/${lang}/news/podcast/${url}` : `${BASE_URL}/${lang}/news/newsletter/${url}`,
+      url: type ===  News.BLOG ? `${BASE_URL}/${lang}/news/blog/${url}` : url,
     })),
   };
 
