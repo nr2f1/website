@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.15.0](https://github.com/nr2f1/website/compare/v2.14.1...v2.15.0) (2025-08-16)
+
+
+### Features
+
+* optimised banner images ([2ee38c5](https://github.com/nr2f1/website/commit/2ee38c5cd6be0903098762fa455806cf6fc8d62f))
+* optimised image loading ([d4f5a6a](https://github.com/nr2f1/website/commit/d4f5a6a2ecb933f9053ee37c9ff9f312671f98a5))
+* optmised background images ([23d0c37](https://github.com/nr2f1/website/commit/23d0c37a13ed8817d33c9d9e461e3eafcd84fee7))
+* render images in blogs ([ac2b085](https://github.com/nr2f1/website/commit/ac2b085b1a98e522afde87836a5f3ec2e3fb4673))
+* render links ([9417ee5](https://github.com/nr2f1/website/commit/9417ee5b4f71696fc0876cc758b74c55e15f7e0f))
+
 ## [2.14.1](https://github.com/nr2f1/website/compare/v2.14.0...v2.14.1) (2025-08-16)
 
 
