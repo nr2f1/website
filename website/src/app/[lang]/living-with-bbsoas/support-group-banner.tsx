@@ -8,7 +8,6 @@ import {
 import type { AvailableLocale } from '@i18n/locales';
 import { supportGroupBannerId } from '@models/banners/banner';
 
-
 interface SupportGroupBannerProps {
   lang: AvailableLocale;
 }

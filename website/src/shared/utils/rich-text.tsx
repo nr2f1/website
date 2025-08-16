@@ -100,16 +100,15 @@ export const renderOptions = (links: Links) => {
 
         // Get original dimensions or fallback values
         const originalWidth = asset.width || 800;
-        const originalHeight = asset.height || 600;
         const alt = asset.description || asset.title || '';
 
         // Use the optimized image utility
-        const imageProps = createBlogImageProps(
-          asset.url,
-          originalWidth,
-          originalHeight,
+
+        const imageProps = createBlogImageProps({
           alt,
-        );
+          baseUrl: asset.url,
+          originalWidth,
+        });
 
         return (
           <picture>

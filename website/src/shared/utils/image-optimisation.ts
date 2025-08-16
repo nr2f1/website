@@ -161,14 +161,21 @@ export const generateSizesAttribute = (
 /**
  * Complete utility for creating optimized responsive image props
  */
-export const createOptimisedImageProps = (
-  baseUrl: string,
-  originalWidth: number,
-  originalHeight: number,
-  alt: string,
-  options: Partial<ImageTransformOptions> = {},
-  sizes: ResponsiveImageSizes = DEFAULT_RESPONSIVE_SIZES,
-) => {
+interface CreateOptimisedImageProps {
+  baseUrl: string;
+  originalWidth: number;
+  alt: string;
+  options: Partial<ImageTransformOptions>;
+  sizes: ResponsiveImageSizes;
+}
+
+export const createOptimisedImageProps = ({
+  baseUrl,
+  originalWidth,
+  alt,
+  options = {},
+  sizes = DEFAULT_RESPONSIVE_SIZES,
+}: CreateOptimisedImageProps) => {
   const sources = createResponsiveImageSources(
     baseUrl,
     originalWidth,
@@ -253,27 +260,31 @@ export const createOptimisedImageProps = (
 
 export const QUALITY = 85;
 
-export const createBlogImageProps = (
-  baseUrl: string,
-  originalWidth: number,
-  originalHeight: number,
-  alt: string,
-) => {
-  return createOptimisedImageProps(
-    baseUrl,
-    originalWidth,
-    originalHeight,
+interface BlogImageProps {
+  alt: string;
+  baseUrl: string;
+  originalWidth: number;
+}
+
+export const createBlogImageProps = ({
+  baseUrl,
+  originalWidth,
+  alt,
+}: BlogImageProps) => {
+  return createOptimisedImageProps({
     alt,
-    {
+    baseUrl,
+    options: {
       format: 'avif',
       quality: QUALITY,
     },
-    {
+    originalWidth,
+    sizes: {
       desktop: 1200,
       mobile: 768,
       tablet: 1024,
     },
-  );
+  });
 };
 
 export const optimisedAvifImageUrl = (url: string) =>
