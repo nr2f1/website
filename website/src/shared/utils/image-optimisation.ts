@@ -280,3 +280,6 @@ export const createBlogImageProps = (
     },
   );
 };
+
+export const optimisedAvifImageUrl = (url: string) =>
+  `${url}?q=80&fm=avif&fit=fill`;

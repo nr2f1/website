@@ -1,3 +1,4 @@
+import { optimisedAvifImageUrl } from '@shared/utils/image-optimisation';
 import type { ReactNode } from 'react';
 import styles from './index.module.scss';
 
@@ -41,7 +42,7 @@ const Banner: React.FC<BannerProps> = ({
           <div
             className={styles.banner__col}
             style={{
-              backgroundImage: `url(${imageUrl})`,
+              backgroundImage: `url(${optimisedAvifImageUrl(imageUrl)})`,
             }}
           />
         </section>
