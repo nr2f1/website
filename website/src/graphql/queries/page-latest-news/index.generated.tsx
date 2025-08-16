@@ -8,16 +8,35 @@ export type GetPageLatestNewsQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetPageLatestNewsQuery = { __typename?: 'Query', blogPageCollection?: { __typename?: 'BlogPageCollection', items: Array<{ __typename?: 'BlogPage', title?: string | null, date?: any | null, slug?: string | null } | null> } | null };
+export type GetPageLatestNewsQuery = { __typename?: 'Query', posts?: { __typename?: 'BlogPageCollection', items: Array<{ __typename?: 'BlogPage', title?: string | null, date?: any | null, slug?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null, newsletters?: { __typename?: 'NewsletterCollection', items: Array<{ __typename?: 'Newsletter', date?: any | null, title?: string | null, newsletterContent?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null, podcasts?: { __typename?: 'PodcastCollection', items: Array<{ __typename?: 'Podcast', title?: string | null, date?: any | null, url?: string | null } | null> } | null };
 
 
 export const GetPageLatestNewsDocument = gql`
     query GetPageLatestNews($locale: String) {
-  blogPageCollection(locale: $locale, order: date_DESC, limit: 3) {
+  posts: blogPageCollection(locale: $locale, limit: 3, order: date_DESC) {
     items {
       title
       date
+      image {
+        url
+      }
       slug
+    }
+  }
+  newsletters: newsletterCollection(locale: $locale, limit: 3, order: date_DESC) {
+    items {
+      date
+      title
+      newsletterContent {
+        url
+      }
+    }
+  }
+  podcasts: podcastCollection(locale: $locale, limit: 3, order: date_ASC) {
+    items {
+      title
+      date
+      url
     }
   }
 }

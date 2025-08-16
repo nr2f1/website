@@ -1,41 +1,11 @@
-import type { AvailableLocale } from '@i18n/locales';
 import { News } from '@shared/types/news';
+import {
+  type NewsCardProps,
+  newsTypeLocale,
+} from '@shared/utils/from-news-items-to-news-cards';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
 import Link from 'next/link';
 import styles from './index.module.scss';
-
-export interface NewsCardProps {
-  date: string;
-  imageUrl?: string | null;
-  lang: AvailableLocale;
-  url: string;
-  title: string;
-  type?: News;
-}
-
-interface NewsType {
-  [News.BLOG]: string;
-  [News.NEWSLETTER]: string;
-}
-
-const newsTypeLocale: Record<AvailableLocale, NewsType> = {
-  de: {
-    blog: 'Blogbeitrag',
-    newsletter: 'Newsletter',
-  },
-  en: {
-    blog: 'Blog post',
-    newsletter: 'Newsletter',
-  },
-  es: {
-    blog: 'Entrada de blog',
-    newsletter: 'Boletín informativo',
-  },
-  fr: {
-    blog: 'Article de blog',
-    newsletter: "Bulletin d'information",
-  },
-};
 
 const NewsCard: React.FC<NewsCardProps> = ({
   title,

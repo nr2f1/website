@@ -1,4 +1,3 @@
-import type { NewsCardProps } from '@components/news-card';
 import type {
   BlogPageCollection,
   NewsletterCollection,
@@ -15,6 +14,39 @@ interface FromNewsToNewsCards {
   start?: number;
   end: number;
 }
+
+export interface NewsCardProps {
+  date: string;
+  imageUrl?: string | null;
+  lang: AvailableLocale;
+  url: string;
+  title: string;
+  type?: News;
+}
+
+interface NewsType {
+  [News.BLOG]: string;
+  [News.NEWSLETTER]: string;
+}
+
+export const newsTypeLocale: Record<AvailableLocale, NewsType> = {
+  de: {
+    blog: 'Blogbeitrag',
+    newsletter: 'Newsletter',
+  },
+  en: {
+    blog: 'Blog post',
+    newsletter: 'Newsletter',
+  },
+  es: {
+    blog: 'Entrada de blog',
+    newsletter: 'Boletín informativo',
+  },
+  fr: {
+    blog: 'Article de blog',
+    newsletter: "Bulletin d'information",
+  },
+};
 
 export const fromNewsToNewsCards = ({
   lang,

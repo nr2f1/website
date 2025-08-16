@@ -3,7 +3,18 @@ import {
   GetPageLatestNewsDocument,
   type GetPageLatestNewsQuery,
 } from '@graphql/queries/page-latest-news/index.generated';
+import type {
+  BlogPageCollection,
+  NewsletterCollection,
+  PodcastCollection,
+} from '@graphql/types';
 import type { AvailableLocale, LocalisedString } from '@i18n/locales';
+import { News } from '@shared/types/news';
+import {
+  fromNewsToNewsCards,
+  type NewsCardProps,
+  newsTypeLocale,
+} from '@shared/utils/from-news-items-to-news-cards';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
 import Link from 'next/link';
 import styles from './index.module.scss';
@@ -19,35 +30,71 @@ const latestNewsTitle: LocalisedString = {
   fr: 'Dernières nouvelles',
 };
 
-interface BlogPostCardsProps {
+interface AsideNewsCardsProps {
   title: string;
-  slug: string;
+  url: string;
   published: string;
   lang: AvailableLocale;
+  type: NewsCardProps['type'];
 }
 
-const BlogPostCards: React.FC<BlogPostCardsProps> = ({
+const AsideNewsCards: React.FC<AsideNewsCardsProps> = ({
   title,
-  slug,
+  url,
   published,
   lang,
+  type,
 }) => {
   const { publishedString, dateTime } = getIntlDateStrings({
     date: published,
     locale: lang,
   });
 
-  return (
-    <Link href={`/${lang}/news/blog/${slug}`}>
-      <article>
-        <p>Blog</p>
-        <h4>{title}</h4>
-        <p>
-          <time dateTime={dateTime}>{publishedString}</time>
-        </p>
-      </article>
-    </Link>
-  );
+  switch (type) {
+    case News.BLOG:
+      return (
+        <Link href={`/${lang}/news/blog/${url}`}>
+          <article>
+            <h4>{title}</h4>
+            <Link
+              href={`/${lang}/news/blog`}
+              className={styles['latest-news-content__type']}
+            >
+              {newsTypeLocale[lang][News.BLOG]}
+            </Link>
+            <p>
+              <time dateTime={dateTime}>{publishedString}</time>
+            </p>
+          </article>
+        </Link>
+      );
+    case News.NEWSLETTER:
+      return (
+        <a href={url}>
+          <article>
+            <h4>{title}</h4>
+            <p> {newsTypeLocale[lang][News.NEWSLETTER]}</p>
+            <p>
+              <time dateTime={dateTime}>{publishedString}</time>
+            </p>
+          </article>
+        </a>
+      );
+    case News.PODCAST:
+      return (
+        <a href={url}>
+          <article>
+            <h4>{title}</h4>
+            <p>Podcast</p>
+            <p>
+              <time dateTime={dateTime}>{publishedString}</time>
+            </p>
+          </article>
+        </a>
+      );
+    default:
+      return null;
+  }
 };
 
 const PageLatestNews: React.FC<PageLatestNewsProps> = async ({ lang }) => {
@@ -56,7 +103,7 @@ const PageLatestNews: React.FC<PageLatestNewsProps> = async ({ lang }) => {
   const { query } = getClient();
 
   const {
-    data: { blogPageCollection },
+    data: { posts, podcasts, newsletters },
     error,
   } = await query<GetPageLatestNewsQuery>({
     query: GetPageLatestNewsDocument,
@@ -65,28 +112,44 @@ const PageLatestNews: React.FC<PageLatestNewsProps> = async ({ lang }) => {
     },
   });
 
-  if (error || !blogPageCollection || !blogPageCollection?.items) {
+  if (
+    !posts ||
+    !posts.items ||
+    !posts.items.length ||
+    !newsletters ||
+    !newsletters.items ||
+    !newsletters.items.length ||
+    !podcasts ||
+    !podcasts.items ||
+    !podcasts.items.length ||
+    error
+  ) {
     return null;
   }
 
-  const posts = blogPageCollection.items.map((item) => ({
-    published: (item?.date ?? '') as string,
-    slug: item?.slug ?? '',
-    title: item?.title ?? '',
-  }));
+  const allNews = fromNewsToNewsCards({
+    end: 3,
+    lang,
+    newsletters: newsletters.items as NewsletterCollection['items'],
+    podcasts: podcasts.items as PodcastCollection['items'],
+    posts: posts.items as BlogPageCollection['items'],
+  });
 
   return (
     <div className={styles['latest-news-content']}>
-      <h3>{latestNewsTitleText}</h3>
+      <h3 className={styles['latest-news-content__title']}>
+        {latestNewsTitleText}
+      </h3>
 
       <ul className={styles['latest-news-content__list']}>
-        {posts.map(({ title, slug, published }) => (
+        {allNews.map(({ title, url, date, type }) => (
           <li key={crypto.randomUUID()}>
-            <BlogPostCards
+            <AsideNewsCards
               title={title}
-              slug={slug}
-              published={published}
+              url={url}
+              published={date}
               lang={lang}
+              type={type}
             />
           </li>
         ))}

@@ -1,9 +1,34 @@
 query GetPageLatestNews($locale: String) {
-  blogPageCollection(locale: $locale, order: date_DESC, limit: 3) {
+  posts: blogPageCollection(locale: $locale, limit: 3, order: date_DESC) {
     items {
       title
       date
+      image {
+        url
+      }
       slug
+    }
+  }
+
+  newsletters: newsletterCollection(
+    locale: $locale
+    limit: 3
+    order: date_DESC
+  ) {
+    items {
+      date
+      title
+      newsletterContent {
+        url
+      }
+    }
+  }
+
+  podcasts: podcastCollection(locale: $locale, limit: 3, order: date_ASC) {
+    items {
+      title
+      date
+      url
     }
   }
 }
