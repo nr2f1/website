@@ -42,7 +42,7 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({
     .map((item) => {
       return {
         date: item?.date ?? ('' as string),
-        title: item?.date ?? ('' as string),
+        title: item?.title ?? ('' as string),
         type: News.NEWSLETTER,
         url: item?.newsletterContent?.url ?? '',
       };

@@ -13,10 +13,9 @@ import type {
 import { BASE_URL } from '@routes/index';
 import { News } from '@shared/types/news';
 import { fromNewsToNewsCards } from '@shared/utils/from-news-items-to-news-cards';
+import { getSkipPagination, NewsPageBodyProps } from '@shared/utils/pagination';
 import type { CollectionPage, WithContext } from 'schema-dts';
 import styles from './page-body.module.scss';
-import { getSkipPagination, NewsPageBodyProps } from '@shared/utils/pagination';
-
 
 const { query } = getClient();
 
