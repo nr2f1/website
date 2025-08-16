@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.14.1](https://github.com/nr2f1/website/compare/v2.14.0...v2.14.1) (2025-08-16)
+
+
+### Bug Fixes
+
+* all news pagination ([a458d5f](https://github.com/nr2f1/website/commit/a458d5f597f61b18bf9b1875b44a19a1d1332df2))
+* blog news cards with correct slug ([ef3d9fa](https://github.com/nr2f1/website/commit/ef3d9fa28f735b416de9476eaf7c81946f14ea6e))
+* card title in newsletter index page ([8e2ef64](https://github.com/nr2f1/website/commit/8e2ef646d53738229da22d5b2f4e3ba17dd477e1))
+* latest news sorting ([7edf2bc](https://github.com/nr2f1/website/commit/7edf2bc9575fd51bc44c583c8b34c3b4d76921d3))
+
 ## [2.14.0](https://github.com/nr2f1/website/compare/v2.13.1...v2.14.0) (2025-08-15)
 
 
