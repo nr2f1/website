@@ -39,6 +39,7 @@ export const registerPatientHeadingId = '7tY3DHsMTKB3qMqVtEXDpj';
 export const understandingBbsoasHeadingId = '7mTLUb8yYuMvLBULv0Fnwq';
 export const handingLettersHeadingId = '4fNygnKyxywrTRra2ypCis';
 export const bbsoasClinicHeadingId = '1WUmMDhEv00JGddzeiwfog';
+export const readingGeneticReportHeadingId = '2bgKMOstX9FUF65T1Gd1MW';
 // Support groups
 export const virtualParentsHeadingId = '2BzWbEEzTQVsbvkvdBSV6I';
 export const dadsHeadingId = '50ipBuzDNq1djevjUgID1v';

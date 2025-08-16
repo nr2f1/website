@@ -9,6 +9,7 @@ query GetLivingWithBbsoasUpperPage(
   $understandingBbsoasParagraphsId: String!
   $handingLettersHeadingId: String!
   $bbsoasClinicHeadingId: String!
+  $readingGeneticReportHeadingId: String!
 ) {
   testAndTherapiesHeading: heading(
     locale: $locale
@@ -69,6 +70,13 @@ query GetLivingWithBbsoasUpperPage(
   bbsoasClinicHeading: heading(locale: $locale, id: $bbsoasClinicHeadingId) {
     content
   }
+
+  readingGeneticReportHeading: heading(
+    locale: $locale
+    id: $readingGeneticReportHeadingId
+  ) {
+    content
+  }
 }
 
 query GetLivingWithBbsoasBottomPage(
@@ -77,6 +85,8 @@ query GetLivingWithBbsoasBottomPage(
   $handingLettersParagraphsId: String!
   $bbsoasClinicHeadingId: String!
   $bbsoasClinicParagraphsId: String!
+  $readingGeneticReportHeadingId: String!
+  $readingGeneticReportParagraphsId: String!
 ) {
   handingLettersHeading: heading(
     locale: $locale
@@ -101,6 +111,47 @@ query GetLivingWithBbsoasBottomPage(
   ) {
     content {
       json
+    }
+  }
+  readingGeneticReportHeading: heading(
+    locale: $locale
+    id: $readingGeneticReportHeadingId
+  ) {
+    content
+  }
+  readingGeneticReportParagraphs: paragraphs(
+    locale: $locale
+    id: $readingGeneticReportParagraphsId
+  ) {
+    content {
+      json
+      links {
+        entries {
+          inline {
+            sys {
+              id
+            }
+          }
+          block {
+            sys {
+              id
+            }
+          }
+        }
+        assets {
+          block {
+            sys {
+              id
+            }
+            url
+            title
+            width
+            height
+            description
+            contentType
+          }
+        }
+      }
     }
   }
 }
