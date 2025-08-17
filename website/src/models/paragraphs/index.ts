@@ -99,3 +99,6 @@ export const volunteerParagraphId = '5jQiaE5eRsKNBdMvYvf6HG';
 
 // Donate page
 export const donatePageParagraphsId = '7IsczfwHTfxixwrNxPskFb';
+
+// Fundraise page
+export const fundraisePageParagraphsId = '77BrgJuv2IWtRDouSqLarB';

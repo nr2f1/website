@@ -125,3 +125,8 @@ input {
 .picture {
   margin-block: var(--spacing-6);
 }
+
+b a {
+  @include text-styles.text-link;
+  font-weight: 400;
+}
