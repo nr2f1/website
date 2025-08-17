@@ -301,6 +301,7 @@ export type AssetLinkingCollections = {
   blogPageCollection?: Maybe<BlogPageCollection>;
   boardMemberCollection?: Maybe<BoardMemberCollection>;
   entryCollection?: Maybe<EntryCollection>;
+  fundraisingIdeaCollection?: Maybe<FundraisingIdeaCollection>;
   htmlHeadMetadataCollection?: Maybe<HtmlHeadMetadataCollection>;
   imageCollection?: Maybe<ImageCollection>;
   newsletterCollection?: Maybe<NewsletterCollection>;
@@ -334,6 +335,14 @@ export type AssetLinkingCollectionsBoardMemberCollectionArgs = {
 
 
 export type AssetLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type AssetLinkingCollectionsFundraisingIdeaCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
@@ -673,6 +682,7 @@ export type BlogPageFilter = {
 export type BlogPageLinkingCollections = {
   __typename?: 'BlogPageLinkingCollections';
   entryCollection?: Maybe<EntryCollection>;
+  fundraisingIdeaCollection?: Maybe<FundraisingIdeaCollection>;
 };
 
 
@@ -682,6 +692,28 @@ export type BlogPageLinkingCollectionsEntryCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
 };
+
+
+export type BlogPageLinkingCollectionsFundraisingIdeaCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<BlogPageLinkingCollectionsFundraisingIdeaCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum BlogPageLinkingCollectionsFundraisingIdeaCollectionOrder {
+  HeadingAsc = 'heading_ASC',
+  HeadingDesc = 'heading_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
 
 export enum BlogPageOrder {
   DateAsc = 'date_ASC',
@@ -920,6 +952,154 @@ export type EntryFilter = {
 };
 
 export enum EntryOrder {
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/fundraisingIdea) */
+export type FundraisingIdea = Entry & _Node & {
+  __typename?: 'FundraisingIdea';
+  _id: Scalars['ID']['output'];
+  associatedBlog?: Maybe<BlogPage>;
+  body?: Maybe<FundraisingIdeaBody>;
+  contentfulMetadata: ContentfulMetadata;
+  heading?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Asset>;
+  linkedFrom?: Maybe<FundraisingIdeaLinkingCollections>;
+  sys: Sys;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/fundraisingIdea) */
+export type FundraisingIdeaAssociatedBlogArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  where?: InputMaybe<BlogPageFilter>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/fundraisingIdea) */
+export type FundraisingIdeaBodyArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/fundraisingIdea) */
+export type FundraisingIdeaHeadingArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/fundraisingIdea) */
+export type FundraisingIdeaImageArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/fundraisingIdea) */
+export type FundraisingIdeaLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type FundraisingIdeaBody = {
+  __typename?: 'FundraisingIdeaBody';
+  json: Scalars['JSON']['output'];
+  links: FundraisingIdeaBodyLinks;
+};
+
+export type FundraisingIdeaBodyAssets = {
+  __typename?: 'FundraisingIdeaBodyAssets';
+  block: Array<Maybe<Asset>>;
+  hyperlink: Array<Maybe<Asset>>;
+};
+
+export type FundraisingIdeaBodyEntries = {
+  __typename?: 'FundraisingIdeaBodyEntries';
+  block: Array<Maybe<Entry>>;
+  hyperlink: Array<Maybe<Entry>>;
+  inline: Array<Maybe<Entry>>;
+};
+
+export type FundraisingIdeaBodyLinks = {
+  __typename?: 'FundraisingIdeaBodyLinks';
+  assets: FundraisingIdeaBodyAssets;
+  entries: FundraisingIdeaBodyEntries;
+  resources: FundraisingIdeaBodyResources;
+};
+
+export type FundraisingIdeaBodyResources = {
+  __typename?: 'FundraisingIdeaBodyResources';
+  block: Array<FundraisingIdeaBodyResourcesBlock>;
+  hyperlink: Array<FundraisingIdeaBodyResourcesHyperlink>;
+  inline: Array<FundraisingIdeaBodyResourcesInline>;
+};
+
+export type FundraisingIdeaBodyResourcesBlock = ResourceLink & {
+  __typename?: 'FundraisingIdeaBodyResourcesBlock';
+  sys: ResourceSys;
+};
+
+export type FundraisingIdeaBodyResourcesHyperlink = ResourceLink & {
+  __typename?: 'FundraisingIdeaBodyResourcesHyperlink';
+  sys: ResourceSys;
+};
+
+export type FundraisingIdeaBodyResourcesInline = ResourceLink & {
+  __typename?: 'FundraisingIdeaBodyResourcesInline';
+  sys: ResourceSys;
+};
+
+export type FundraisingIdeaCollection = {
+  __typename?: 'FundraisingIdeaCollection';
+  items: Array<Maybe<FundraisingIdea>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type FundraisingIdeaFilter = {
+  AND?: InputMaybe<Array<InputMaybe<FundraisingIdeaFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<FundraisingIdeaFilter>>>;
+  associatedBlog?: InputMaybe<CfBlogPageNestedFilter>;
+  associatedBlog_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  body_contains?: InputMaybe<Scalars['String']['input']>;
+  body_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  body_not_contains?: InputMaybe<Scalars['String']['input']>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  heading?: InputMaybe<Scalars['String']['input']>;
+  heading_contains?: InputMaybe<Scalars['String']['input']>;
+  heading_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  heading_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  heading_not?: InputMaybe<Scalars['String']['input']>;
+  heading_not_contains?: InputMaybe<Scalars['String']['input']>;
+  heading_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  image_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type FundraisingIdeaLinkingCollections = {
+  __typename?: 'FundraisingIdeaLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type FundraisingIdeaLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum FundraisingIdeaOrder {
+  HeadingAsc = 'heading_ASC',
+  HeadingDesc = 'heading_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',
@@ -2604,6 +2784,8 @@ export type Query = {
   boardMember?: Maybe<BoardMember>;
   boardMemberCollection?: Maybe<BoardMemberCollection>;
   entryCollection?: Maybe<EntryCollection>;
+  fundraisingIdea?: Maybe<FundraisingIdea>;
+  fundraisingIdeaCollection?: Maybe<FundraisingIdeaCollection>;
   heading?: Maybe<Heading>;
   headingCollection?: Maybe<HeadingCollection>;
   htmlHeadMetadata?: Maybe<HtmlHeadMetadata>;
@@ -2743,6 +2925,23 @@ export type QueryEntryCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<EntryFilter>;
+};
+
+
+export type QueryFundraisingIdeaArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryFundraisingIdeaCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<FundraisingIdeaOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<FundraisingIdeaFilter>;
 };
 
 
@@ -3231,6 +3430,47 @@ export enum VolunteerOrder {
 
 export type _Node = {
   _id: Scalars['ID']['output'];
+};
+
+export type CfBlogPageNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfBlogPageNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfBlogPageNestedFilter>>>;
+  body_contains?: InputMaybe<Scalars['String']['input']>;
+  body_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  body_not_contains?: InputMaybe<Scalars['String']['input']>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  date?: InputMaybe<Scalars['DateTime']['input']>;
+  date_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  date_gt?: InputMaybe<Scalars['DateTime']['input']>;
+  date_gte?: InputMaybe<Scalars['DateTime']['input']>;
+  date_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  date_lt?: InputMaybe<Scalars['DateTime']['input']>;
+  date_lte?: InputMaybe<Scalars['DateTime']['input']>;
+  date_not?: InputMaybe<Scalars['DateTime']['input']>;
+  date_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  excerpt?: InputMaybe<Scalars['String']['input']>;
+  excerpt_contains?: InputMaybe<Scalars['String']['input']>;
+  excerpt_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  excerpt_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  excerpt_not?: InputMaybe<Scalars['String']['input']>;
+  excerpt_not_contains?: InputMaybe<Scalars['String']['input']>;
+  excerpt_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  image_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  slug?: InputMaybe<Scalars['String']['input']>;
+  slug_contains?: InputMaybe<Scalars['String']['input']>;
+  slug_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  slug_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  slug_not?: InputMaybe<Scalars['String']['input']>;
+  slug_not_contains?: InputMaybe<Scalars['String']['input']>;
+  slug_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type CfHeadingNestedFilter = {

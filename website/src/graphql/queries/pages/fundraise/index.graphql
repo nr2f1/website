@@ -1,0 +1,29 @@
+query GetFunraisePage(
+  $locale: String
+  $fundraisePageParagraphsId: String!
+  $campaignsHeadingId: String!
+) {
+  mainBody: paragraphs(locale: $locale, id: $fundraisePageParagraphsId) {
+    content {
+      json
+    }
+  }
+  campaignsHeading: heading(locale: $locale, id: $campaignsHeadingId) {
+    content
+  }
+
+  campaigns: fundraisingIdeaCollection(locale: $locale) {
+    items {
+      heading
+      image {
+        url
+      }
+      body {
+        json
+      }
+      associatedBlog {
+        slug
+      }
+    }
+  }
+}

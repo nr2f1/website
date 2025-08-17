@@ -21,3 +21,4 @@ export const resourcesAvailableToResearchersPageHeaderId =
 export const researchPageHeaderId = 'oRMucQoVZ0pkuwucEOJEl';
 export const supportUsPageHeaderId = 'iWPoKiFnfe8SihfZvtszD';
 export const donatePageHeaderId = 'nxF3r3DiXW5RA2BFRsmPR';
+export const fundraisePageHeaderId = '3MrIWUeGyQQPHutF0GUmIl';

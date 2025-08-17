@@ -16,6 +16,7 @@ type RouteProperty =
   | 'blog'
   | 'contact-us'
   | 'donate'
+  | 'fundraise'
   | 'get-involved-in-bbsoas-research'
   | 'homepage'
   | 'living-with-bbsoas'
@@ -41,6 +42,9 @@ export const routes: Record<RouteProperty, LocalisedRoute> = {
   },
   donate: (locale: AvailableLocale) => {
     return `/${locale}/donate`;
+  },
+  fundraise: (locale: AvailableLocale) => {
+    return `/${locale}/fundraise`;
   },
   'get-involved-in-bbsoas-research': (locale: AvailableLocale) => {
     return `/${locale}/get-involved-in-bbsoas-research`;
