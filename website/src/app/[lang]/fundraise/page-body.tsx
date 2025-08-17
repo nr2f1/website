@@ -1,16 +1,17 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import type { Document } from '@contentful/rich-text-types';
 import { getClient } from '@graphql/client';
 import {
-  GetSupportUsPageDocument,
-  type GetSupportUsPageQuery,
-} from '@graphql/queries/pages/support-us/index.generated';
+  GetFunraisePageDocument,
+  type GetFunraisePageQuery,
+} from '@graphql/queries/pages/fundraise/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
-import { fundraisePageParagraphsId, supportUsPageParagraphsId } from '@models/paragraphs';
-import styles from './index.module.scss';
-import { GetFunraisePageDocument, GetFunraisePageQuery } from '@graphql/queries/pages/fundraise/index.generated';
 import { campaignsHeadingId } from '@models/headings';
-import Link from 'next/link';
+import { fundraisePageParagraphsId } from '@models/paragraphs';
 import { blogPostUrl } from '@routes/index';
+import { createBlogImageProps } from '@shared/utils/image-optimisation';
+import Link from 'next/link';
+import styles from './index.module.scss';
 
 const { query } = getClient();
 
@@ -18,37 +19,83 @@ interface FundraisePageBodyProps {
   lang: AvailableLocale;
 }
 
-
 interface CampaignProps {
   body: Document;
   heading: string;
-  slug?: string;
+  slug?: string | null;
+  image: {
+    url: string;
+    description?: string;
+    width: number;
+    height: number;
+  } | null;
+  lang: AvailableLocale;
 }
 
-const CampaignIdea: React.FC<CampaignProps> = ({heading, body, slug}) => {
+const CampaignIdea: React.FC<CampaignProps> = ({
+  heading,
+  body,
+  slug,
+  image,
+  lang,
+}) => {
+  const imageProps = createBlogImageProps({
+    alt: image?.description ?? '',
+    baseUrl: image?.url ?? '',
+    originalWidth: image?.width ?? 0,
+  });
+
   return (
     <li className={styles.fundraisePage__campaign}>
       <div>
         <h3>{heading}</h3>
-        <div>
-          {documentToReactComponents(body)}
-        </div>
+        <div>{documentToReactComponents(body)}</div>
 
-
-        {slug && <Link href={blogPostUrl({locale: "en", slug})} className="button button--on-light">Learn more</Link>}
+        {slug && (
+          <Link
+            href={blogPostUrl({ locale: lang, slug })}
+            className="button button--on-light"
+          >
+            Learn more
+          </Link>
+        )}
       </div>
       <div>
         <picture>
-          <img src="https://images.ctfassets.net/9j9d6tsmuyzl/774VJYnW69qB6Qt8Ikv1AR/23790fed7fd197171e60cc1c7eac7baa/Edith-collage.jpg" alt="" />
+          <source
+            media={imageProps.sources.avif.mobile.media}
+            srcSet={imageProps.sources.avif.mobile.srcSet}
+            type={imageProps.sources.avif.mobile.type}
+          />
+          <source
+            media={imageProps.sources.avif.tablet.media}
+            srcSet={imageProps.sources.avif.tablet.srcSet}
+            type={imageProps.sources.avif.tablet.type}
+          />
+          <source
+            srcSet={imageProps.sources.avif.desktop.srcSet}
+            type={imageProps.sources.avif.desktop.type}
+          />
+          <source
+            media={imageProps.sources.webp.mobile.media}
+            srcSet={imageProps.sources.webp.mobile.srcSet}
+            type={imageProps.sources.webp.mobile.type}
+          />
+          <source
+            media={imageProps.sources.webp.tablet.media}
+            srcSet={imageProps.sources.webp.tablet.srcSet}
+            type={imageProps.sources.webp.tablet.type}
+          />
+          <source
+            srcSet={imageProps.sources.webp.desktop.srcSet}
+            type={imageProps.sources.webp.desktop.type}
+          />
+          <img {...imageProps.img} alt={image?.description ?? ''} />
         </picture>
       </div>
     </li>
-  )
-}
-
-
-
-
+  );
+};
 
 export const FundraisePageBody: React.FC<FundraisePageBodyProps> = async ({
   lang,
@@ -59,9 +106,9 @@ export const FundraisePageBody: React.FC<FundraisePageBodyProps> = async ({
   } = await query<GetFunraisePageQuery>({
     query: GetFunraisePageDocument,
     variables: {
-      locale: lang,
-      fundraisePageParagraphsId,
       campaignsHeadingId,
+      fundraisePageParagraphsId,
+      locale: lang,
     },
   });
 
@@ -79,34 +126,28 @@ export const FundraisePageBody: React.FC<FundraisePageBodyProps> = async ({
           <section>
             <h2>{campaignsHeading?.content}</h2>
             <ul>
-              <li className={styles.fundraisePage__campaign}>
-                <div>
-                  <h3>Bake sale</h3>
-                  <div>
-                    <p>
-                      United Kingdom
-                    </p>
-                    <p>
-                      Raised $2,582 over 8 months
-                    </p>
-                  </div>
-                  <a href="" className="button button--on-light">Learn more</a>
-                </div>
-                <div>
-                  <picture>
-                    <img src="https://images.ctfassets.net/9j9d6tsmuyzl/774VJYnW69qB6Qt8Ikv1AR/23790fed7fd197171e60cc1c7eac7baa/Edith-collage.jpg" alt="" />
-                  </picture>
-                </div>
-              </li>
-
-              {campaigns?.items.map(({heading, body, associatedBlog: {slug}}) => (<CampaignIdea key={crypto.randomUUID()} heading={heading} body={body.json} slug={slug} />))}
-
-
-
-
+              {campaigns?.items.map((campaign) => (
+                <CampaignIdea
+                  key={crypto.randomUUID()}
+                  lang={lang}
+                  heading={campaign?.heading || ''}
+                  body={campaign?.body?.json}
+                  slug={campaign?.associatedBlog?.slug}
+                  image={
+                    campaign?.image?.url &&
+                    campaign.image.width &&
+                    campaign.image.height
+                      ? {
+                          description: campaign.image.description || undefined,
+                          height: campaign.image.height,
+                          url: campaign.image.url,
+                          width: campaign.image.width,
+                        }
+                      : null
+                  }
+                />
+              ))}
             </ul>
-
-
           </section>
         </article>
       </div>

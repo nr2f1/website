@@ -52,10 +52,6 @@
       @include breakpoints.small-screen {
         @include text-styles.header-2__mobile;
       }
-
-      @include breakpoints.medium-screen {
-        @include text-styles.header-2__mobile;
-      }
     }
 
     ul {
@@ -74,6 +70,13 @@
       display: flex;
       background-color: var(--background-accent-coral);
       border-radius: var(--border-radius-xl);
+      @include breakpoints.small-screen {
+        flex-direction: column;
+      }
+
+      &:not(:last-of-type) {
+        margin-block-end: var(--spacing-6);
+      }
 
       & > div {
         flex-basis: 50%;

@@ -11,12 +11,17 @@ query GetFunraisePage(
   campaignsHeading: heading(locale: $locale, id: $campaignsHeadingId) {
     content
   }
-
-  campaigns: fundraisingIdeaCollection(locale: $locale) {
+  campaigns: fundraisingIdeaCollection(
+    locale: $locale
+    order: sys_publishedAt_ASC
+  ) {
     items {
       heading
       image {
         url
+        description
+        width
+        height
       }
       body {
         json

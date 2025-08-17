@@ -10,7 +10,7 @@ export type GetFunraisePageQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetFunraisePageQuery = { __typename?: 'Query', mainBody?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, campaignsHeading?: { __typename?: 'Heading', content?: string | null } | null, campaigns?: { __typename?: 'FundraisingIdeaCollection', items: Array<{ __typename?: 'FundraisingIdea', heading?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null, body?: { __typename?: 'FundraisingIdeaBody', json: any } | null, associatedBlog?: { __typename?: 'BlogPage', slug?: string | null } | null } | null> } | null };
+export type GetFunraisePageQuery = { __typename?: 'Query', mainBody?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, campaignsHeading?: { __typename?: 'Heading', content?: string | null } | null, campaigns?: { __typename?: 'FundraisingIdeaCollection', items: Array<{ __typename?: 'FundraisingIdea', heading?: string | null, image?: { __typename?: 'Asset', url?: string | null, description?: string | null, width?: number | null, height?: number | null } | null, body?: { __typename?: 'FundraisingIdeaBody', json: any } | null, associatedBlog?: { __typename?: 'BlogPage', slug?: string | null } | null } | null> } | null };
 
 
 export const GetFunraisePageDocument = gql`
@@ -23,11 +23,17 @@ export const GetFunraisePageDocument = gql`
   campaignsHeading: heading(locale: $locale, id: $campaignsHeadingId) {
     content
   }
-  campaigns: fundraisingIdeaCollection(locale: $locale) {
+  campaigns: fundraisingIdeaCollection(
+    locale: $locale
+    order: sys_publishedAt_ASC
+  ) {
     items {
       heading
       image {
         url
+        description
+        width
+        height
       }
       body {
         json
