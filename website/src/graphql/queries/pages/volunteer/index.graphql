@@ -1,0 +1,7 @@
+query GetVolunteerPage($locale: String, $volunteerParagraphsId: String!) {
+  mainbody: paragraphs(locale: $locale, id: $volunteerParagraphsId) {
+    content {
+      json
+    }
+  }
+}
