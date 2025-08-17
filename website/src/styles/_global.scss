@@ -126,7 +126,8 @@ input {
   margin-block: var(--spacing-6);
 }
 
-b a {
+b > a,
+a > b {
   @include text-styles.text-link;
   font-weight: 400;
 }

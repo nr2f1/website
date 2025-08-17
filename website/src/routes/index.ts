@@ -33,6 +33,7 @@ type RouteProperty =
   | 'strategic-plan'
   | 'support-groups'
   | 'support-us'
+  | 'volunteer'
   | 'what-is-bbsoas';
 
 export const routes: Record<RouteProperty, LocalisedRoute> = {
@@ -90,6 +91,9 @@ export const routes: Record<RouteProperty, LocalisedRoute> = {
   },
   'support-us': (locale: AvailableLocale) => {
     return `/${locale}/support-us`;
+  },
+  volunteer: (locale: AvailableLocale) => {
+    return `/${locale}/volunteer`;
   },
   'what-is-bbsoas': (locale: AvailableLocale) => {
     return `/${locale}/what-is-bbsoas`;
