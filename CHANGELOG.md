@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.18.0](https://github.com/nr2f1/website/compare/v2.17.0...v2.18.0) (2025-08-17)
+
+
+### Features
+
+* volunteer page ([ade254b](https://github.com/nr2f1/website/commit/ade254b8e716561c8a7b2e7e0357815509ed320c))
+
 ## [2.17.0](https://github.com/nr2f1/website/compare/v2.16.0...v2.17.0) (2025-08-17)
 
 
