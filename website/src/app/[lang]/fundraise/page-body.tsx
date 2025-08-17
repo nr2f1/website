@@ -60,7 +60,7 @@ const CampaignIdea: React.FC<CampaignProps> = ({
           </Link>
         )}
       </div>
-      <div>
+      <div className={styles.fundraisePage__campaign__image}>
         <picture>
           <source
             media={imageProps.sources.avif.mobile.media}
