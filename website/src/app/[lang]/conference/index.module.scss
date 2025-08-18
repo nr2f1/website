@@ -1,0 +1,45 @@
+@use '@styles/text-styles';
+
+.conference {
+  &__intro {
+    h2 {
+      @include text-styles.header-3;
+    }
+  }
+
+  &__with_image {
+    picture {
+      margin-block-end: var(--spacing-2);
+
+      & + p {
+        @include text-styles.text-small;
+        color: var(--foreground-secondary);
+        margin-block-end: var(--spacing-6);
+      }
+    }
+  }
+
+  & &__button:is(a),
+  & &__button:is(a):hover,
+  & &__button:is(a):focus {
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  & &__info &__button {
+    display: inline-block;
+    margin-block-end: var(--spacing-6);
+  }
+
+  &__book_tickets {
+    padding: var(--spacing-6);
+    background-color: var(--background-accent-coral);
+    border-radius: var(--border-radius-xl);
+  }
+
+  &__faqs {
+    h2 {
+      margin-block-end: var(--spacing-6);
+    }
+  }
+}

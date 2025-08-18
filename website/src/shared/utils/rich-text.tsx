@@ -2,7 +2,6 @@ import type { Block, Inline } from '@contentful/rich-text-types';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import type { Asset, Entry } from '@graphql/types';
 import type { ReactNode } from 'react';
-import { inspect } from 'util';
 import { createBlogImageProps } from './image-optimisation';
 
 // From https://github.com/contentful/rich-text/tree/master/packages/rich-text-react-renderer
@@ -110,8 +109,6 @@ export const renderOptions = (links: Links) => {
             </div>
           );
         }
-
-        console.log(inspect(asset, { depth: Number.POSITIVE_INFINITY }));
 
         // Use the optimized image utility
         const imageProps = createBlogImageProps({

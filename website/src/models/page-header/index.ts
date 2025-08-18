@@ -23,3 +23,4 @@ export const supportUsPageHeaderId = 'iWPoKiFnfe8SihfZvtszD';
 export const donatePageHeaderId = 'nxF3r3DiXW5RA2BFRsmPR';
 export const fundraisePageHeaderId = '3MrIWUeGyQQPHutF0GUmIl';
 export const volunteerPageHeaderId = '2czDepGuAARiBIdOhBWP6F';
+export const conferencePageHeaderId = '4B9DwCTPtJ3y9QNsz6FpMG';

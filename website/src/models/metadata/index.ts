@@ -19,3 +19,4 @@ export const supportUsPageMetadataId = '1kNp9QSs09OXbiOJc6jCGV';
 export const donatePageMetadataId = '1DoJ3NhqI4owQwQkIBKjAa';
 export const fundraisePageMetadataId = '5iU3VvT2g1ywQhrL0NyNDT';
 export const volunteerPageMetadataId = '3PC3dCPqCPHGQTQVX7ivoP';
+export const conferencesPageMetadataId = '5Tux35GEsQhjSzhGpdGT7K';

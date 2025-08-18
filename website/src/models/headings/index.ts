@@ -69,3 +69,10 @@ export const volunteerHeadingId = '65IWDrgnXzv2OBpKJTLmAW';
 export const fundraisingCampaignsHeadingId = '4zqAhCQsaDOulDzLSeH87r';
 // Fundraise page
 export const campaignsHeadingId = '2xeeAsvHoj4aow4JaOnPOC';
+// Conference page
+export const nextConferenceHeadingId = '4DyyJenhugkB7n0EaAvArf';
+export const bookTicketsHeadingId = '7wmJzIQHcYx85lYjqKsbNR';
+export const offerHeadingId = 'By78oPH1cOTKWN8wopMcO';
+export const sponsorshipHeadingId = '3A4n877FbJz0Zb2UpVAYKx';
+export const faqsHeadingId = '3z4BD0PtpoHBHN3S8faiy2';
+export const pastConferencesHeadingId = '6Qgir16Vclazw8NhLCpEvV';
