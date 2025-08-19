@@ -111,3 +111,4 @@ export const introParagraphId = '3OdJQ2w8ReHkE4p2vFIpCL';
 export const infoParagraphId = '2onelDoGBji2z2EmtTlMeT';
 export const offerParagraphsId = '7RiIL8nl2wIlFPoujZQAc';
 export const sponsorshipParagraphsId = 'hhanXEHeh5VkTumjiZF7m';
+export const pastConferencesParagraphsId = '41nwrdWWQ3r7JXXFOAeYZF';

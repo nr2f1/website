@@ -19,6 +19,7 @@ import {
   infoParagraphId,
   introParagraphId,
   offerParagraphsId,
+  pastConferencesParagraphsId,
   sponsorshipParagraphsId,
 } from '@models/paragraphs';
 import type { ComponentPropsWithLocale } from '@shared/types/page-with-locale-params';
@@ -45,6 +46,7 @@ const ConferencePageBody: React.FC<ComponentPropsWithLocale> = async ({
       faqsHeading,
       accordionCollection,
       nextConferenceHeading,
+      pastConferencesParagraphs,
     },
     error,
   } = await query<GetConferencePageQuery>({
@@ -60,6 +62,7 @@ const ConferencePageBody: React.FC<ComponentPropsWithLocale> = async ({
       offerHeadingId,
       offerParagraphsId,
       pastConferencesHeadingId,
+      pastConferencesParagraphsId,
       sponsorshipHeadingId,
       sponsorshipParagraphsId,
     },
@@ -140,11 +143,11 @@ const ConferencePageBody: React.FC<ComponentPropsWithLocale> = async ({
           />
         ))}
       </section>
-      <section>
+      <section className={styles.conference__past_conferences}>
         <h2 id={createHashLink(pastConferencesHeading?.content ?? '')}>
           {pastConferencesHeading?.content}
         </h2>
-        {/*{documentToReactComponents(pastConferencesParagraphs?.content?.json)}*/}
+        {documentToReactComponents(pastConferencesParagraphs?.content?.json)}
       </section>
     </PageBody>
   );

@@ -42,4 +42,15 @@
       margin-block-end: var(--spacing-6);
     }
   }
+
+  &__past_conferences {
+    h3 {
+      margin-block-start: var(--spacing-6);
+    }
+
+    h4 {
+      margin: 0;
+      margin-block-end: var(--spacing-4);
+    }
+  }
 }

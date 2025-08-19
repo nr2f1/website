@@ -11,6 +11,7 @@ query GetConferencePage(
   $sponsorshipParagraphsId: String!
   $faqsHeadingId: String!
   $pastConferencesHeadingId: String!
+  $pastConferencesParagraphsId: String!
 ) {
   nextConferenceHeading: heading(
     locale: $locale
@@ -133,5 +134,14 @@ query GetConferencePage(
     id: $pastConferencesHeadingId
   ) {
     content
+  }
+
+  pastConferencesParagraphs: paragraphs(
+    locale: $locale
+    id: $pastConferencesParagraphsId
+  ) {
+    content {
+      json
+    }
   }
 }
