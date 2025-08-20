@@ -7,3 +7,7 @@ export interface PagePropsWithLocale {
 export interface NewsPagePropsWithLocale {
   params: Promise<{ lang: AvailableLocale; slug: string }>;
 }
+
+export interface ComponentPropsWithLocale {
+  lang: AvailableLocale;
+}

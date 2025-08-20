@@ -53,3 +53,6 @@ export const volunteerCtaId = '1bsB7giEebn19Nwwh52Gb7';
 
 // Fundraising campaigns
 export const fundraisingCampaignsLinkId = '2zzboFpNHBVEAzMI5LkpvT';
+
+// Conference page
+export const bookTicketsLinkId = '1n4hexw8UdTMAamhck7l9T';

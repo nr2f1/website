@@ -14,6 +14,7 @@ export const blogPostUrl = ({ locale, slug }: BlogPostUrl) =>
 
 type RouteProperty =
   | 'blog'
+  | 'conference'
   | 'contact-us'
   | 'donate'
   | 'fundraise'
@@ -38,6 +39,9 @@ type RouteProperty =
 
 export const routes: Record<RouteProperty, LocalisedRoute> = {
   blog: (locale: AvailableLocale) => `/${locale}/news/blog`,
+  conference: (locale: AvailableLocale) => {
+    return `/${locale}/conferences`;
+  },
   'contact-us': (locale: AvailableLocale) => {
     return `/${locale}/contact-us`;
   },
