@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.19.0](https://github.com/nr2f1/website/compare/v2.18.0...v2.19.0) (2025-08-20)
+
+
+### Features
+
+* conferences page ([8929bb3](https://github.com/nr2f1/website/commit/8929bb3ce1dd0ed4a7cc26d0fa7bd0de5a7b166a))
+
 ## [2.18.0](https://github.com/nr2f1/website/compare/v2.17.0...v2.18.0) (2025-08-17)
 
 
