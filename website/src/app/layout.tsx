@@ -1,6 +1,7 @@
 import '@styles/main.scss';
 
 import { ApolloWrapper } from '@app/apollo-wrapper';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata = {
   alternates: {
