@@ -1,7 +1,9 @@
 import Footer from '@components/footer';
 import Header from '@components/header';
 import { AVAILABLE_LOCALES } from '@i18n/locales';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
+import { GOOGLE_ANALYTICS_ID } from '@shared/utils/google-tracking';
 import { Nunito_Sans } from 'next/font/google';
 
 const nunitoSans = Nunito_Sans({
@@ -44,6 +46,7 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children, params }) => {
         <main>{children}</main>
         <Footer lang={lang} />
       </body>
+      <GoogleAnalytics gaId={GOOGLE_ANALYTICS_ID} />
     </html>
   );
 };

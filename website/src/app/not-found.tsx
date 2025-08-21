@@ -32,6 +32,8 @@ const translations: Record<AvailableLocale, Record<string, string>> = {
   },
 };
 
+import { GoogleAnalytics } from '@next/third-parties/google';
+import { GOOGLE_ANALYTICS_ID } from '@shared/utils/google-tracking';
 import { Nunito_Sans } from 'next/font/google';
 
 const nunitoSans = Nunito_Sans({
@@ -70,6 +72,7 @@ export default async function NotFound() {
         </main>
         <Footer lang={lang} />
       </body>
+      <GoogleAnalytics gaId={GOOGLE_ANALYTICS_ID} />
     </html>
   );
 }
