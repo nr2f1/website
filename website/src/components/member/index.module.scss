@@ -1,0 +1,86 @@
+@use '@styles/icons';
+@use '@styles/breakpoints';
+
+$curve: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 292 46'%3E%3Cpath fill='%23F3F7FC' d='M292 45.6H0V17.452c59.263 28.127 123.013 35.105 191.88 18.463C226.652 27.514 259.813 15.128 292 .41V45.6Z'/%3E%3C/svg%3E%0A");
+
+.member {
+  background-color: var(--background-accent-navy);
+  border-radius: var(--border-radius-xl);
+  max-width: calc(50% - var(--spacing-6));
+  align-self: baseline;
+
+  @include breakpoints.small-screen {
+    max-width: 100%;
+  }
+
+  & > picture {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-top-left-radius: var(--border-radius-xl);
+    border-top-right-radius: var(--border-radius-xl);
+    position: relative;
+    &::after {
+      content: ' ';
+      position: absolute;
+      inset: 0 -1px -1px -1px;
+      background-image: $curve;
+      background-size: calc(100% + 2px) auto;
+      background-position: center 100%;
+      background-repeat: no-repeat;
+      display: block;
+    }
+  }
+
+  & > &__content {
+    padding: var(--spacing-6);
+
+    & > p {
+      margin: 0;
+    }
+  }
+
+  &__content &__name {
+    color: var(--black);
+    margin: 0;
+  }
+
+  &__content__details {
+    margin-block-start: var(--spacing-4);
+    padding-block-start: var(--spacing-2);
+    border-top: 1px solid var(--grey-300);
+
+    &[open] summary {
+      padding-block-end: var(--spacing-4);
+      &::after {
+        background-image: url(icons.$chevron-up-navy);
+      }
+    }
+
+    summary {
+      padding-block-start: var(--spacing-2);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &::marker,
+      &::-webkit-details-marker {
+        display: none;
+        content: '';
+      }
+
+      &::after {
+        aspect-ratio: 1 / 1;
+        background-image: url(icons.$chevron-down-navy);
+        background-position: center;
+        background-size: contain;
+        content: '';
+        display: block;
+        width: var(--spacing-5);
+      }
+    }
+
+    & p:last-of-type {
+      margin-block-end: 0;
+    }
+  }
+}

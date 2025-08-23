@@ -19,6 +19,7 @@ import {
 } from '@models/paragraphs';
 import type { ComponentPropsWithLocale } from '@shared/types/page-with-locale-params';
 import { createHashLink } from '@shared/utils/hash-links';
+import type { NGO, WithContext } from 'schema-dts';
 import styles from './index.module.scss';
 
 const { query } = getClient();
@@ -63,6 +64,18 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
     researchHeading?.content ?? '',
   ];
 
+  const board: WithContext<NGO> = {
+    '@context': 'https://schema.org',
+    '@type': 'NGO',
+    members: boardMembers?.items?.map((member) => ({
+      '@type': 'Person',
+      email: member?.email || undefined,
+      image: member?.image?.url || undefined,
+      jobTitle: member?.title || undefined,
+      name: member?.name || undefined,
+    })),
+  };
+
   return (
     <PageBody lang={lang} headings={headings}>
       <section>
@@ -72,6 +85,11 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
         {documentToReactComponents(boardParagraphs?.content?.json)}
 
         <div className={styles.organization__members}>
+          <script
+            type="application/ld+json"
+            // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(board) }}
+          />
           {boardMembers?.items?.map((member) => {
             return (
               <Member
