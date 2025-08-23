@@ -304,6 +304,7 @@ export type AssetLinkingCollections = {
   fundraisingIdeaCollection?: Maybe<FundraisingIdeaCollection>;
   htmlHeadMetadataCollection?: Maybe<HtmlHeadMetadataCollection>;
   imageCollection?: Maybe<ImageCollection>;
+  memberCollection?: Maybe<MemberCollection>;
   newsletterCollection?: Maybe<NewsletterCollection>;
   pageHeaderCollection?: Maybe<PageHeaderCollection>;
   publicationCollection?: Maybe<PublicationCollection>;
@@ -359,6 +360,14 @@ export type AssetLinkingCollectionsHtmlHeadMetadataCollectionArgs = {
 
 
 export type AssetLinkingCollectionsImageCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type AssetLinkingCollectionsMemberCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
@@ -1961,6 +1970,191 @@ export type LinkReferenceCollection = {
   total: Scalars['Int']['output'];
 };
 
+/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/member) */
+export type Member = Entry & _Node & {
+  __typename?: 'Member';
+  _id: Scalars['ID']['output'];
+  about?: Maybe<MemberAbout>;
+  category?: Maybe<Scalars['String']['output']>;
+  contentfulMetadata: ContentfulMetadata;
+  email?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Asset>;
+  linkedFrom?: Maybe<MemberLinkingCollections>;
+  name?: Maybe<Scalars['String']['output']>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/member) */
+export type MemberAboutArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/member) */
+export type MemberCategoryArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/member) */
+export type MemberEmailArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/member) */
+export type MemberImageArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/member) */
+export type MemberLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/member) */
+export type MemberNameArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/member) */
+export type MemberTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MemberAbout = {
+  __typename?: 'MemberAbout';
+  json: Scalars['JSON']['output'];
+  links: MemberAboutLinks;
+};
+
+export type MemberAboutAssets = {
+  __typename?: 'MemberAboutAssets';
+  block: Array<Maybe<Asset>>;
+  hyperlink: Array<Maybe<Asset>>;
+};
+
+export type MemberAboutEntries = {
+  __typename?: 'MemberAboutEntries';
+  block: Array<Maybe<Entry>>;
+  hyperlink: Array<Maybe<Entry>>;
+  inline: Array<Maybe<Entry>>;
+};
+
+export type MemberAboutLinks = {
+  __typename?: 'MemberAboutLinks';
+  assets: MemberAboutAssets;
+  entries: MemberAboutEntries;
+  resources: MemberAboutResources;
+};
+
+export type MemberAboutResources = {
+  __typename?: 'MemberAboutResources';
+  block: Array<MemberAboutResourcesBlock>;
+  hyperlink: Array<MemberAboutResourcesHyperlink>;
+  inline: Array<MemberAboutResourcesInline>;
+};
+
+export type MemberAboutResourcesBlock = ResourceLink & {
+  __typename?: 'MemberAboutResourcesBlock';
+  sys: ResourceSys;
+};
+
+export type MemberAboutResourcesHyperlink = ResourceLink & {
+  __typename?: 'MemberAboutResourcesHyperlink';
+  sys: ResourceSys;
+};
+
+export type MemberAboutResourcesInline = ResourceLink & {
+  __typename?: 'MemberAboutResourcesInline';
+  sys: ResourceSys;
+};
+
+export type MemberCollection = {
+  __typename?: 'MemberCollection';
+  items: Array<Maybe<Member>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type MemberFilter = {
+  AND?: InputMaybe<Array<InputMaybe<MemberFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<MemberFilter>>>;
+  about_contains?: InputMaybe<Scalars['String']['input']>;
+  about_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  about_not_contains?: InputMaybe<Scalars['String']['input']>;
+  category?: InputMaybe<Scalars['String']['input']>;
+  category_contains?: InputMaybe<Scalars['String']['input']>;
+  category_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  category_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  category_not?: InputMaybe<Scalars['String']['input']>;
+  category_not_contains?: InputMaybe<Scalars['String']['input']>;
+  category_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  email_contains?: InputMaybe<Scalars['String']['input']>;
+  email_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  email_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  email_not?: InputMaybe<Scalars['String']['input']>;
+  email_not_contains?: InputMaybe<Scalars['String']['input']>;
+  email_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  image_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  name_contains?: InputMaybe<Scalars['String']['input']>;
+  name_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  name_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  name_not?: InputMaybe<Scalars['String']['input']>;
+  name_not_contains?: InputMaybe<Scalars['String']['input']>;
+  name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type MemberLinkingCollections = {
+  __typename?: 'MemberLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type MemberLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum MemberOrder {
+  CategoryAsc = 'category_ASC',
+  CategoryDesc = 'category_DESC',
+  EmailAsc = 'email_ASC',
+  EmailDesc = 'email_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
 /** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/microcopyResource) */
 export type MicrocopyResource = Entry & _Node & {
   __typename?: 'MicrocopyResource';
@@ -2798,6 +2992,8 @@ export type Query = {
   linkCollection?: Maybe<LinkCollection>;
   linkContent?: Maybe<LinkContent>;
   linkContentCollection?: Maybe<LinkContentCollection>;
+  member?: Maybe<Member>;
+  memberCollection?: Maybe<MemberCollection>;
   microcopyResource?: Maybe<MicrocopyResource>;
   microcopyResourceCollection?: Maybe<MicrocopyResourceCollection>;
   navigationList?: Maybe<NavigationList>;
@@ -3044,6 +3240,23 @@ export type QueryLinkContentCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<LinkContentFilter>;
+};
+
+
+export type QueryMemberArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryMemberCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<MemberOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<MemberFilter>;
 };
 
 

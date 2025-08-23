@@ -16,6 +16,23 @@ query GetOrganizationPage(
       json
     }
   }
+  boardMembers: memberCollection(
+    where: { category: "board" }
+    order: sys_firstPublishedAt_ASC
+  ) {
+    items {
+      image {
+        url
+        width
+      }
+      name
+      title
+      email
+      about {
+        json
+      }
+    }
+  }
   volunteersHeading: heading(locale: $locale, id: $volunteersHeadingId) {
     content
   }
