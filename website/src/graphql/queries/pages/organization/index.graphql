@@ -1,12 +1,20 @@
 query GetOrganizationPage(
   $locale: String
   $boardHeadingId: String!
+  $boardParagraphsId: String!
   $volunteersHeadingId: String!
   $scientificHeadingId: String!
+  $scientificParagraphsId: String!
   $organizationResearchHeadingId: String!
+  $organizationResearchParagraphsId: String!
 ) {
   boardHeading: heading(locale: $locale, id: $boardHeadingId) {
     content
+  }
+  boardParagraphs: paragraphs(locale: $locale, id: $boardParagraphsId) {
+    content {
+      json
+    }
   }
   volunteersHeading: heading(locale: $locale, id: $volunteersHeadingId) {
     content
@@ -14,10 +22,26 @@ query GetOrganizationPage(
   scientificHeading: heading(locale: $locale, id: $scientificHeadingId) {
     content
   }
+  scientificParagraphs: paragraphs(
+    locale: $locale
+    id: $scientificParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
   researchHeading: heading(
     locale: $locale
     id: $organizationResearchHeadingId
   ) {
     content
+  }
+  researchParagraphs: paragraphs(
+    locale: $locale
+    id: $organizationResearchParagraphsId
+  ) {
+    content {
+      json
+    }
   }
 }
