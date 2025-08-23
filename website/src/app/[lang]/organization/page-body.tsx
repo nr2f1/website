@@ -1,3 +1,4 @@
+import Member from '@components/member';
 import PageBody from '@components/page-body';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
@@ -5,7 +6,6 @@ import {
   GetOrganizationPageDocument,
   type GetOrganizationPageQuery,
 } from '@graphql/queries/pages/organization/index.generated';
-import type { AvailableLocale } from '@i18n/locales';
 import {
   boardHeadingId,
   organizationResearchHeadingId,
@@ -19,86 +19,9 @@ import {
 } from '@models/paragraphs';
 import type { ComponentPropsWithLocale } from '@shared/types/page-with-locale-params';
 import { createHashLink } from '@shared/utils/hash-links';
-import { createBlogImageProps } from '@shared/utils/image-optimisation';
+import styles from './index.module.scss';
 
 const { query } = getClient();
-
-interface MemberProps {
-  name: string | null | undefined;
-  image: {
-    url?: string | null;
-    width?: number | null;
-  } | null;
-  title?: string | null;
-  email?: string | null;
-  lang: AvailableLocale;
-  about: React.ReactNode;
-}
-
-const Member: React.FC<MemberProps> = ({
-  name,
-  image,
-  title,
-  email,
-  lang,
-  about,
-}) => {
-  const imageProps = createBlogImageProps({
-    alt: name ?? '',
-    baseUrl: image?.url ?? '',
-    originalWidth: image?.width ?? 0,
-  });
-
-  return (
-    <article>
-      <div>
-        <picture>
-          <source
-            media={imageProps.sources.avif.mobile.media}
-            srcSet={imageProps.sources.avif.mobile.srcSet}
-            type={imageProps.sources.avif.mobile.type}
-          />
-          <source
-            media={imageProps.sources.avif.tablet.media}
-            srcSet={imageProps.sources.avif.tablet.srcSet}
-            type={imageProps.sources.avif.tablet.type}
-          />
-          <source
-            srcSet={imageProps.sources.avif.desktop.srcSet}
-            type={imageProps.sources.avif.desktop.type}
-          />
-          <source
-            media={imageProps.sources.webp.mobile.media}
-            srcSet={imageProps.sources.webp.mobile.srcSet}
-            type={imageProps.sources.webp.mobile.type}
-          />
-          <source
-            media={imageProps.sources.webp.tablet.media}
-            srcSet={imageProps.sources.webp.tablet.srcSet}
-            type={imageProps.sources.webp.tablet.type}
-          />
-          <source
-            srcSet={imageProps.sources.webp.desktop.srcSet}
-            type={imageProps.sources.webp.desktop.type}
-          />
-          <img {...imageProps.img} alt={name ?? ''} />
-        </picture>
-      </div>
-      <h3>{name}</h3>
-      {title && <p>{title}</p>}
-      {email && (
-        <p>
-          <a href={`mailto:${email}`}>{email}</a>
-        </p>
-      )}
-
-      <details>
-        <summary>About</summary>
-        {about}
-      </details>
-    </article>
-  );
-};
 
 export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
   lang,
@@ -148,7 +71,7 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
         </h2>
         {documentToReactComponents(boardParagraphs?.content?.json)}
 
-        <div>
+        <div className={styles.organization__members}>
           {boardMembers?.items?.map((member) => {
             return (
               <Member
