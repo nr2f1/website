@@ -299,7 +299,6 @@ export type AssetLinkingCollections = {
   __typename?: 'AssetLinkingCollections';
   bannerCollection?: Maybe<BannerCollection>;
   blogPageCollection?: Maybe<BlogPageCollection>;
-  boardMemberCollection?: Maybe<BoardMemberCollection>;
   entryCollection?: Maybe<EntryCollection>;
   fundraisingIdeaCollection?: Maybe<FundraisingIdeaCollection>;
   htmlHeadMetadataCollection?: Maybe<HtmlHeadMetadataCollection>;
@@ -320,14 +319,6 @@ export type AssetLinkingCollectionsBannerCollectionArgs = {
 
 
 export type AssetLinkingCollectionsBlogPageCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  locale?: InputMaybe<Scalars['String']['input']>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-};
-
-
-export type AssetLinkingCollectionsBoardMemberCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
@@ -737,165 +728,6 @@ export enum BlogPageOrder {
   SysPublishedAtDesc = 'sys_publishedAt_DESC',
   SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
-}
-
-/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/boardMember) */
-export type BoardMember = Entry & _Node & {
-  __typename?: 'BoardMember';
-  _id: Scalars['ID']['output'];
-  bio?: Maybe<Scalars['String']['output']>;
-  contentfulMetadata: ContentfulMetadata;
-  email?: Maybe<Scalars['String']['output']>;
-  linkedFrom?: Maybe<BoardMemberLinkingCollections>;
-  name?: Maybe<Scalars['String']['output']>;
-  order?: Maybe<Scalars['Int']['output']>;
-  picture?: Maybe<Asset>;
-  position?: Maybe<Scalars['String']['output']>;
-  sys: Sys;
-  title?: Maybe<Scalars['String']['output']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/boardMember) */
-export type BoardMemberBioArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/boardMember) */
-export type BoardMemberEmailArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/boardMember) */
-export type BoardMemberLinkedFromArgs = {
-  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/boardMember) */
-export type BoardMemberNameArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/boardMember) */
-export type BoardMemberOrderArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/boardMember) */
-export type BoardMemberPictureArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/boardMember) */
-export type BoardMemberPositionArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/9j9d6tsmuyzl/content_types/boardMember) */
-export type BoardMemberTitleArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type BoardMemberCollection = {
-  __typename?: 'BoardMemberCollection';
-  items: Array<Maybe<BoardMember>>;
-  limit: Scalars['Int']['output'];
-  skip: Scalars['Int']['output'];
-  total: Scalars['Int']['output'];
-};
-
-export type BoardMemberFilter = {
-  AND?: InputMaybe<Array<InputMaybe<BoardMemberFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<BoardMemberFilter>>>;
-  bio?: InputMaybe<Scalars['String']['input']>;
-  bio_contains?: InputMaybe<Scalars['String']['input']>;
-  bio_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  bio_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  bio_not?: InputMaybe<Scalars['String']['input']>;
-  bio_not_contains?: InputMaybe<Scalars['String']['input']>;
-  bio_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  email?: InputMaybe<Scalars['String']['input']>;
-  email_contains?: InputMaybe<Scalars['String']['input']>;
-  email_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  email_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  email_not?: InputMaybe<Scalars['String']['input']>;
-  email_not_contains?: InputMaybe<Scalars['String']['input']>;
-  email_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name?: InputMaybe<Scalars['String']['input']>;
-  name_contains?: InputMaybe<Scalars['String']['input']>;
-  name_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  name_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_not?: InputMaybe<Scalars['String']['input']>;
-  name_not_contains?: InputMaybe<Scalars['String']['input']>;
-  name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  order?: InputMaybe<Scalars['Int']['input']>;
-  order_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  order_gt?: InputMaybe<Scalars['Int']['input']>;
-  order_gte?: InputMaybe<Scalars['Int']['input']>;
-  order_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
-  order_lt?: InputMaybe<Scalars['Int']['input']>;
-  order_lte?: InputMaybe<Scalars['Int']['input']>;
-  order_not?: InputMaybe<Scalars['Int']['input']>;
-  order_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
-  picture_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  position?: InputMaybe<Scalars['String']['input']>;
-  position_contains?: InputMaybe<Scalars['String']['input']>;
-  position_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  position_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  position_not?: InputMaybe<Scalars['String']['input']>;
-  position_not_contains?: InputMaybe<Scalars['String']['input']>;
-  position_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  sys?: InputMaybe<SysFilter>;
-  title?: InputMaybe<Scalars['String']['input']>;
-  title_contains?: InputMaybe<Scalars['String']['input']>;
-  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  title_not?: InputMaybe<Scalars['String']['input']>;
-  title_not_contains?: InputMaybe<Scalars['String']['input']>;
-  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type BoardMemberLinkingCollections = {
-  __typename?: 'BoardMemberLinkingCollections';
-  entryCollection?: Maybe<EntryCollection>;
-};
-
-
-export type BoardMemberLinkingCollectionsEntryCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  locale?: InputMaybe<Scalars['String']['input']>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-};
-
-export enum BoardMemberOrder {
-  EmailAsc = 'email_ASC',
-  EmailDesc = 'email_DESC',
-  NameAsc = 'name_ASC',
-  NameDesc = 'name_DESC',
-  OrderAsc = 'order_ASC',
-  OrderDesc = 'order_DESC',
-  PositionAsc = 'position_ASC',
-  PositionDesc = 'position_DESC',
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC'
 }
 
 export type ContentfulMetadata = {
@@ -2975,8 +2807,6 @@ export type Query = {
   bannerCollection?: Maybe<BannerCollection>;
   blogPage?: Maybe<BlogPage>;
   blogPageCollection?: Maybe<BlogPageCollection>;
-  boardMember?: Maybe<BoardMember>;
-  boardMemberCollection?: Maybe<BoardMemberCollection>;
   entryCollection?: Maybe<EntryCollection>;
   fundraisingIdea?: Maybe<FundraisingIdea>;
   fundraisingIdeaCollection?: Maybe<FundraisingIdeaCollection>;
@@ -3094,23 +2924,6 @@ export type QueryBlogPageCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<BlogPageFilter>;
-};
-
-
-export type QueryBoardMemberArgs = {
-  id: Scalars['String']['input'];
-  locale?: InputMaybe<Scalars['String']['input']>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-export type QueryBoardMemberCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  locale?: InputMaybe<Scalars['String']['input']>;
-  order?: InputMaybe<Array<InputMaybe<BoardMemberOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<BoardMemberFilter>;
 };
 
 

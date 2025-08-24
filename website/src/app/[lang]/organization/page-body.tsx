@@ -37,6 +37,7 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
       scientificParagraphs,
       researchParagraphs,
       boardMembers,
+      volunteersMembers,
     },
     error,
   } = await query<GetOrganizationPageQuery>({
@@ -109,6 +110,21 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
         <h2 id={createHashLink(volunteersHeading?.content ?? '')}>
           {volunteersHeading?.content}
         </h2>
+
+        <div className={styles.organization__members}>
+          {volunteersMembers?.items?.map((member) => {
+            return (
+              <Member
+                key={crypto.randomUUID()}
+                name={member?.name}
+                image={member?.image ?? null}
+                email={member?.email ?? null}
+                lang={lang}
+                about={documentToReactComponents(member?.about?.json)}
+              />
+            );
+          })}
+        </div>
       </section>
       <section>
         <h2 id={createHashLink(scientificHeading?.content ?? '')}>

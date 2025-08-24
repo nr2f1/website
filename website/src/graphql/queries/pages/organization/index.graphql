@@ -36,6 +36,23 @@ query GetOrganizationPage(
   volunteersHeading: heading(locale: $locale, id: $volunteersHeadingId) {
     content
   }
+  volunteersMembers: memberCollection(
+    where: { category: "volunteer" }
+    order: name_ASC
+  ) {
+    items {
+      image {
+        url
+        width
+      }
+      name
+      title
+      email
+      about {
+        json
+      }
+    }
+  }
   scientificHeading: heading(locale: $locale, id: $scientificHeadingId) {
     content
   }
