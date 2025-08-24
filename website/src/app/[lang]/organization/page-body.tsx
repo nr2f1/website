@@ -38,6 +38,7 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
       researchParagraphs,
       boardMembers,
       volunteersMembers,
+      scientificMembers
     },
     error,
   } = await query<GetOrganizationPageQuery>({
@@ -77,6 +78,30 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
     })),
   };
 
+  const volunteers: WithContext<NGO> = {
+    '@context': 'https://schema.org',
+    '@type': 'NGO',
+    members: volunteersMembers?.items?.map((member) => ({
+      '@type': 'Person',
+      email: member?.email || undefined,
+      image: member?.image?.url || undefined,
+      name: member?.name || undefined,
+    })),
+  };
+
+  const scientific: WithContext<NGO> = {
+    '@context': 'https://schema.org',
+    '@type': 'NGO',
+    members: scientificMembers?.items?.map((member) => ({
+      '@type': 'Person',
+      email: member?.email || undefined,
+      image: member?.image?.url || undefined,
+      name: member?.name || undefined,
+      jobTitle: member?.title || undefined,
+    })),
+  };
+
+
   return (
     <PageBody lang={lang} headings={headings}>
       <section>
@@ -112,6 +137,11 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
         </h2>
 
         <div className={styles.organization__members}>
+          <script
+            type="application/ld+json"
+            // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(volunteers) }}
+          />
           {volunteersMembers?.items?.map((member) => {
             return (
               <Member
@@ -131,6 +161,27 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
           {scientificHeading?.content}
         </h2>
         {documentToReactComponents(scientificParagraphs?.content?.json)}
+        <script
+          type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(scientific) }}
+        />
+
+
+        <div className={styles.organization__members}>
+          {scientificMembers?.items?.map((member) => {
+            return (
+              <Member
+                key={crypto.randomUUID()}
+                name={member?.name}
+                image={member?.image ?? null}
+                email={member?.email ?? null}
+                lang={lang}
+                about={documentToReactComponents(member?.about?.json)}
+              />
+            );
+          })}
+        </div>
       </section>
       <section>
         <h2 id={createHashLink(researchHeading?.content ?? '')}>

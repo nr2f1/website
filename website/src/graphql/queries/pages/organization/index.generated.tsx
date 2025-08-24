@@ -15,7 +15,7 @@ export type GetOrganizationPageQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetOrganizationPageQuery = { __typename?: 'Query', boardHeading?: { __typename?: 'Heading', content?: string | null } | null, boardParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, boardMembers?: { __typename?: 'MemberCollection', items: Array<{ __typename?: 'Member', name?: string | null, title?: string | null, email?: string | null, image?: { __typename?: 'Asset', url?: string | null, width?: number | null } | null, about?: { __typename?: 'MemberAbout', json: any } | null } | null> } | null, volunteersHeading?: { __typename?: 'Heading', content?: string | null } | null, volunteersMembers?: { __typename?: 'MemberCollection', items: Array<{ __typename?: 'Member', name?: string | null, title?: string | null, email?: string | null, image?: { __typename?: 'Asset', url?: string | null, width?: number | null } | null, about?: { __typename?: 'MemberAbout', json: any } | null } | null> } | null, scientificHeading?: { __typename?: 'Heading', content?: string | null } | null, scientificParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, researchHeading?: { __typename?: 'Heading', content?: string | null } | null, researchParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null };
+export type GetOrganizationPageQuery = { __typename?: 'Query', boardHeading?: { __typename?: 'Heading', content?: string | null } | null, boardParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, boardMembers?: { __typename?: 'MemberCollection', items: Array<{ __typename?: 'Member', name?: string | null, title?: string | null, email?: string | null, image?: { __typename?: 'Asset', url?: string | null, width?: number | null } | null, about?: { __typename?: 'MemberAbout', json: any } | null } | null> } | null, volunteersHeading?: { __typename?: 'Heading', content?: string | null } | null, volunteersMembers?: { __typename?: 'MemberCollection', items: Array<{ __typename?: 'Member', name?: string | null, title?: string | null, email?: string | null, image?: { __typename?: 'Asset', url?: string | null, width?: number | null } | null, about?: { __typename?: 'MemberAbout', json: any } | null } | null> } | null, scientificHeading?: { __typename?: 'Heading', content?: string | null } | null, scientificParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, scientificMembers?: { __typename?: 'MemberCollection', items: Array<{ __typename?: 'Member', name?: string | null, title?: string | null, email?: string | null, image?: { __typename?: 'Asset', url?: string | null, width?: number | null } | null, about?: { __typename?: 'MemberAbout', json: any } | null } | null> } | null, researchHeading?: { __typename?: 'Heading', content?: string | null } | null, researchParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null };
 
 
 export const GetOrganizationPageDocument = gql`
@@ -71,6 +71,23 @@ export const GetOrganizationPageDocument = gql`
   scientificParagraphs: paragraphs(locale: $locale, id: $scientificParagraphsId) {
     content {
       json
+    }
+  }
+  scientificMembers: memberCollection(
+    where: {category: "scientific"}
+    order: name_ASC
+  ) {
+    items {
+      image {
+        url
+        width
+      }
+      name
+      title
+      email
+      about {
+        json
+      }
     }
   }
   researchHeading: heading(locale: $locale, id: $organizationResearchHeadingId) {

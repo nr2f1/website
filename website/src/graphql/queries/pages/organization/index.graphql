@@ -64,6 +64,23 @@ query GetOrganizationPage(
       json
     }
   }
+  scientificMembers: memberCollection(
+    where: { category: "scientific" }
+    order: name_ASC
+  ) {
+    items {
+      image {
+        url
+        width
+      }
+      name
+      title
+      email
+      about {
+        json
+      }
+    }
+  }
   researchHeading: heading(
     locale: $locale
     id: $organizationResearchHeadingId
