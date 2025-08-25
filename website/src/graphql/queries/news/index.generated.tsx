@@ -40,7 +40,14 @@ export type GetNewslettersQuery = { __typename?: 'Query', newsletterCollection?:
 export type GetBlogPostsSlugsQueryVariables = Types.Exact<{ [key: string]: never; }>;
 
 
-export type GetBlogPostsSlugsQuery = { __typename?: 'Query', blogPageCollection?: { __typename?: 'BlogPageCollection', items: Array<{ __typename?: 'BlogPage', slug?: string | null, date?: any | null } | null> } | null };
+export type GetBlogPostsSlugsQuery = { __typename?: 'Query', blogPageCollection?: { __typename?: 'BlogPageCollection', items: Array<{ __typename?: 'BlogPage', slug?: string | null, date?: any | null, excerpt?: string | null, title?: string | null } | null> } | null };
+
+export type GetAllBlogPostsForRssQueryVariables = Types.Exact<{
+  locale: Types.Scalars['String']['input'];
+}>;
+
+
+export type GetAllBlogPostsForRssQuery = { __typename?: 'Query', blogPageCollection?: { __typename?: 'BlogPageCollection', items: Array<{ __typename?: 'BlogPage', date?: any | null, title?: string | null, slug?: string | null, excerpt?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null };
 
 
 export const GetAllNewsDocument = gql`
@@ -261,6 +268,8 @@ export const GetBlogPostsSlugsDocument = gql`
     items {
       slug
       date
+      excerpt
+      title
     }
   }
 }
@@ -297,3 +306,51 @@ export type GetBlogPostsSlugsQueryHookResult = ReturnType<typeof useGetBlogPosts
 export type GetBlogPostsSlugsLazyQueryHookResult = ReturnType<typeof useGetBlogPostsSlugsLazyQuery>;
 export type GetBlogPostsSlugsSuspenseQueryHookResult = ReturnType<typeof useGetBlogPostsSlugsSuspenseQuery>;
 export type GetBlogPostsSlugsQueryResult = Apollo.QueryResult<GetBlogPostsSlugsQuery, GetBlogPostsSlugsQueryVariables>;
+export const GetAllBlogPostsForRssDocument = gql`
+    query GetAllBlogPostsForRSS($locale: String!) {
+  blogPageCollection(locale: $locale, order: date_DESC) {
+    items {
+      date
+      title
+      slug
+      excerpt
+      image {
+        url
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetAllBlogPostsForRssQuery__
+ *
+ * To run a query within a React component, call `useGetAllBlogPostsForRssQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetAllBlogPostsForRssQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetAllBlogPostsForRssQuery({
+ *   variables: {
+ *      locale: // value for 'locale'
+ *   },
+ * });
+ */
+export function useGetAllBlogPostsForRssQuery(baseOptions: Apollo.QueryHookOptions<GetAllBlogPostsForRssQuery, GetAllBlogPostsForRssQueryVariables> & ({ variables: GetAllBlogPostsForRssQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetAllBlogPostsForRssQuery, GetAllBlogPostsForRssQueryVariables>(GetAllBlogPostsForRssDocument, options);
+      }
+export function useGetAllBlogPostsForRssLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetAllBlogPostsForRssQuery, GetAllBlogPostsForRssQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetAllBlogPostsForRssQuery, GetAllBlogPostsForRssQueryVariables>(GetAllBlogPostsForRssDocument, options);
+        }
+export function useGetAllBlogPostsForRssSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetAllBlogPostsForRssQuery, GetAllBlogPostsForRssQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetAllBlogPostsForRssQuery, GetAllBlogPostsForRssQueryVariables>(GetAllBlogPostsForRssDocument, options);
+        }
+export type GetAllBlogPostsForRssQueryHookResult = ReturnType<typeof useGetAllBlogPostsForRssQuery>;
+export type GetAllBlogPostsForRssLazyQueryHookResult = ReturnType<typeof useGetAllBlogPostsForRssLazyQuery>;
+export type GetAllBlogPostsForRssSuspenseQueryHookResult = ReturnType<typeof useGetAllBlogPostsForRssSuspenseQuery>;
+export type GetAllBlogPostsForRssQueryResult = Apollo.QueryResult<GetAllBlogPostsForRssQuery, GetAllBlogPostsForRssQueryVariables>;
