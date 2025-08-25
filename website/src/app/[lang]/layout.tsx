@@ -2,6 +2,7 @@ import Footer from '@components/footer';
 import Header from '@components/header';
 import { AVAILABLE_LOCALES } from '@i18n/locales';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
+import type { Metadata } from 'next';
 import { Nunito_Sans } from 'next/font/google';
 
 const nunitoSans = Nunito_Sans({
@@ -12,7 +13,7 @@ const nunitoSans = Nunito_Sans({
   variable: '--font-nunito-sans',
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   alternates: {
     canonical: '/',
     languages: {

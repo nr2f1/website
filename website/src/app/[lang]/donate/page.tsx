@@ -9,6 +9,7 @@ import {
 import { donatePageMetadataId } from '@models/metadata';
 import { routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
+import { validateLocale } from '@shared/utils/validate-locale';
 import type { Metadata, NextPage } from 'next';
 import type { WebPage, WithContext } from 'schema-dts';
 import DonatePageBody from './page-body';
@@ -18,6 +19,9 @@ const { query } = getClient();
 
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { lang } = await params;
+
+  // Validate locale before any GraphQL queries
+  validateLocale(lang);
 
   const {
     data: {
@@ -61,6 +65,9 @@ export async function generateMetadata({
   params,
 }: PagePropsWithLocale): Promise<Metadata> {
   const { lang } = await params;
+
+  // Validate locale before any GraphQL queries
+  validateLocale(lang);
 
   const {
     data: {
