@@ -60,6 +60,11 @@ export async function GET(
       <language>${lang}</language>
       <lastBuildDate>${currentDate}</lastBuildDate>
       <pubDate>${currentDate}</pubDate>
+      <image>
+        <url>${BASE_URL}/${lang}/icon.svg</url>
+        <width>502.93</width>
+        <height>463.04</height>
+      </image>
       ${rssItems}
     </channel>
   </rss>`;
