@@ -1,12 +1,33 @@
+import { getClient } from '@graphql/client';
+import {
+  GetMetadataDocument,
+  type GetMetadataQuery,
+} from '@graphql/queries/metadata/index.generated';
+import { blogIndexPageMetadataId } from '@models/metadata';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
 import BlogIndexPageBody from './page-body';
 import BlogIndexPageHeader from './page-header';
 
+const { query } = getClient();
+
 export async function generateMetadata({
   params,
 }: NewsPageProps): Promise<Metadata> {
   const { lang } = await params;
+
+  const {
+    data: {
+      // @ts-ignore
+      htmlHeadMetadata: { title, description },
+    },
+  } = await query<GetMetadataQuery>({
+    query: GetMetadataDocument,
+    variables: {
+      id: blogIndexPageMetadataId,
+      locale: lang,
+    },
+  });
 
   return {
     alternates: {
@@ -14,9 +35,8 @@ export async function generateMetadata({
         'application/rss+xml': `/${lang}/news/blog/rss.xml`,
       },
     },
-    // Todo: update i18n title and description
-    description: 'News',
-    title: 'NR2F1 Foundation | News',
+    description,
+    title: `NR2F1 Foundation | ${title}`,
   };
 }
 
