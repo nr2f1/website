@@ -1,3 +1,4 @@
+import SupportBanner from '@components/support-banner';
 import { getClient } from '@graphql/client';
 import {
   GetMetadataDocument,
@@ -49,6 +50,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
       />
       <OrganizationHeader lang={lang} />
       <OrganizationPageBody lang={lang} />
+      <SupportBanner lang={lang} />
     </>
   );
 };

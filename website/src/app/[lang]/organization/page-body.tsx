@@ -38,7 +38,8 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
       researchParagraphs,
       boardMembers,
       volunteersMembers,
-      scientificMembers
+      scientificMembers,
+      researchMembers,
     },
     error,
   } = await query<GetOrganizationPageQuery>({
@@ -66,44 +67,32 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
     researchHeading?.content ?? '',
   ];
 
-  const board: WithContext<NGO> = {
+  const allMembers = [
+    ...(boardMembers?.items || []),
+    ...(volunteersMembers?.items || []),
+    ...(scientificMembers?.items || []),
+    ...(researchMembers?.items || []),
+  ].map((member) => ({
+    '@type': 'Person' as const,
+    email: member?.email || undefined,
+    image: member?.image?.url || undefined,
+    jobTitle: member?.title || undefined,
+    name: member?.name || undefined,
+  }));
+
+  const jsonLd: WithContext<NGO> = {
     '@context': 'https://schema.org',
     '@type': 'NGO',
-    members: boardMembers?.items?.map((member) => ({
-      '@type': 'Person',
-      email: member?.email || undefined,
-      image: member?.image?.url || undefined,
-      jobTitle: member?.title || undefined,
-      name: member?.name || undefined,
-    })),
+    members: allMembers,
   };
-
-  const volunteers: WithContext<NGO> = {
-    '@context': 'https://schema.org',
-    '@type': 'NGO',
-    members: volunteersMembers?.items?.map((member) => ({
-      '@type': 'Person',
-      email: member?.email || undefined,
-      image: member?.image?.url || undefined,
-      name: member?.name || undefined,
-    })),
-  };
-
-  const scientific: WithContext<NGO> = {
-    '@context': 'https://schema.org',
-    '@type': 'NGO',
-    members: scientificMembers?.items?.map((member) => ({
-      '@type': 'Person',
-      email: member?.email || undefined,
-      image: member?.image?.url || undefined,
-      name: member?.name || undefined,
-      jobTitle: member?.title || undefined,
-    })),
-  };
-
 
   return (
     <PageBody lang={lang} headings={headings}>
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section>
         <h2 id={createHashLink(boardHeading?.content ?? '')}>
           {boardHeading?.content}
@@ -111,11 +100,6 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
         {documentToReactComponents(boardParagraphs?.content?.json)}
 
         <div className={styles.organization__members}>
-          <script
-            type="application/ld+json"
-            // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(board) }}
-          />
           {boardMembers?.items?.map((member) => {
             return (
               <Member
@@ -137,11 +121,6 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
         </h2>
 
         <div className={styles.organization__members}>
-          <script
-            type="application/ld+json"
-            // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(volunteers) }}
-          />
           {volunteersMembers?.items?.map((member) => {
             return (
               <Member
@@ -161,12 +140,6 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
           {scientificHeading?.content}
         </h2>
         {documentToReactComponents(scientificParagraphs?.content?.json)}
-        <script
-          type="application/ld+json"
-          // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(scientific) }}
-        />
-
 
         <div className={styles.organization__members}>
           {scientificMembers?.items?.map((member) => {
@@ -188,6 +161,21 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
           {researchHeading?.content}
         </h2>
         {documentToReactComponents(researchParagraphs?.content?.json)}
+
+        <div className={styles.organization__members}>
+          {researchMembers?.items?.map((member) => {
+            return (
+              <Member
+                key={crypto.randomUUID()}
+                name={member?.name}
+                image={member?.image ?? null}
+                email={member?.email ?? null}
+                lang={lang}
+                about={documentToReactComponents(member?.about?.json)}
+              />
+            );
+          })}
+        </div>
       </section>
     </PageBody>
   );

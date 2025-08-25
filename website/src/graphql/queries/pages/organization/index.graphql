@@ -95,4 +95,21 @@ query GetOrganizationPage(
       json
     }
   }
+  researchMembers: memberCollection(
+    where: { category: "research" }
+    order: name_ASC
+  ) {
+    items {
+      image {
+        url
+        width
+      }
+      name
+      title
+      email
+      about {
+        json
+      }
+    }
+  }
 }
