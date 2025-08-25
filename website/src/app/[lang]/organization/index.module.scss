@@ -1,0 +1,9 @@
+.organization {
+  &__members {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--spacing-6);
+    row-gap: var(--spacing-6);
+    margin-block: var(--spacing-6);
+  }
+}

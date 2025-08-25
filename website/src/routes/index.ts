@@ -23,6 +23,7 @@ type RouteProperty =
   | 'living-with-bbsoas'
   | 'news'
   | 'newsletter'
+  | 'organization'
   | 'our-financials'
   | 'partnerships'
   | 'podcast'
@@ -64,6 +65,9 @@ export const routes: Record<RouteProperty, LocalisedRoute> = {
   },
   newsletter: (locale: AvailableLocale) => {
     return `/${locale}/news/newsletter`;
+  },
+  organization: (locale: AvailableLocale) => {
+    return `/${locale}/organization`;
   },
   'our-financials': (locale: AvailableLocale) => {
     return `/${locale}/our-financials`;
