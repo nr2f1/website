@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.21.0](https://github.com/nr2f1/website/compare/v2.20.0...v2.21.0) (2025-08-25)
+
+
+### Features
+
+* add rss link tag to news index page ([6ebbac1](https://github.com/nr2f1/website/commit/6ebbac1faa66fa8affb06bd9e3130c5a466fa3dc))
+* create a robots.txt file ([ac56203](https://github.com/nr2f1/website/commit/ac56203f91bfbed6ea7148caeef72602950f207b))
+* create a RSS to blog posts ([ab39e91](https://github.com/nr2f1/website/commit/ab39e911a295c0d081b60a0c8a6f95451829dba1))
+* sitemap ([3606530](https://github.com/nr2f1/website/commit/3606530063b52ec8033db97bdf053a5ad5755e19))
+
 ## [2.20.0](https://github.com/nr2f1/website/compare/v2.19.0...v2.20.0) (2025-08-25)
 
 
