@@ -26,8 +26,12 @@ export function middleware(request: NextRequest) {
   );
 
   const isApiRoute = pathname.startsWith('/api');
+  const isStaticFile =
+    pathname === '/sitemap.xml' ||
+    pathname === '/robots.txt' ||
+    pathname === '/favicon.ico';
 
-  if (pathnameHasLocale || isApiRoute) return;
+  if (pathnameHasLocale || isApiRoute || isStaticFile) return;
 
   // Redirect if there is no locale
   const locale = getLocale(request);

@@ -27,36 +27,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  return [
-    {
-      alternates: {
-        languages: {
-          de: 'https://acme.com/de',
-          es: 'https://acme.com/es',
-        },
-      },
-      lastModified: new Date(),
-      url: 'https://acme.com',
-    },
-    {
-      alternates: {
-        languages: {
-          de: 'https://acme.com/de/about',
-          es: 'https://acme.com/es/about',
-        },
-      },
-      lastModified: new Date(),
-      url: 'https://acme.com/about',
-    },
-    {
-      alternates: {
-        languages: {
-          de: 'https://acme.com/de/blog',
-          es: 'https://acme.com/es/blog',
-        },
-      },
-      lastModified: new Date(),
-      url: 'https://acme.com/blog',
-    },
-  ];
+  return sitemap;
 }
