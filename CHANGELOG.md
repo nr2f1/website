@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.20.0](https://github.com/nr2f1/website/compare/v2.19.0...v2.20.0) (2025-08-25)
+
+
+### Features
+
+* member component ([5c8be52](https://github.com/nr2f1/website/commit/5c8be52b77e510d9c709e22b60451ee7de90afb1))
+* organization page ([eb68f4f](https://github.com/nr2f1/website/commit/eb68f4fd9daa5af76475ba0d1fedc67255de4aa4))
+
 ## [2.19.0](https://github.com/nr2f1/website/compare/v2.18.0...v2.19.0) (2025-08-20)
 
 
