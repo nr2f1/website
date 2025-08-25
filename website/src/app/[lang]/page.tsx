@@ -10,6 +10,7 @@ import {
 } from '@graphql/queries/metadata/index.generated';
 import { homepageMetadataId } from '@models/metadata';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
+import { validateLocale } from '@shared/utils/validate-locale';
 import type { Metadata, NextPage } from 'next';
 import type { Graph } from 'schema-dts';
 import HomePageBanner from './banner';
@@ -19,6 +20,9 @@ export async function generateMetadata({
   params,
 }: PagePropsWithLocale): Promise<Metadata> {
   const { lang } = await params;
+
+  // Validate locale before any GraphQL queries
+  validateLocale(lang);
 
   const { query } = getClient();
   const { data, error } = await query<GetMetadataQuery>({
@@ -52,6 +56,9 @@ export async function generateMetadata({
 
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { lang } = await params;
+
+  // Validate locale before any GraphQL queries
+  validateLocale(lang);
 
   const { query } = getClient();
   const { data } = await query<GetMetadataQuery>({

@@ -26,8 +26,12 @@ export function middleware(request: NextRequest) {
   );
 
   const isApiRoute = pathname.startsWith('/api');
+  const isStaticFile =
+    pathname === '/sitemap.xml' ||
+    pathname === '/robots.txt' ||
+    pathname === '/favicon.ico';
 
-  if (pathnameHasLocale || isApiRoute) return;
+  if (pathnameHasLocale || isApiRoute || isStaticFile) return;
 
   // Redirect if there is no locale
   const locale = getLocale(request);
@@ -37,9 +41,7 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Skip all API routes
-    '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)',
-    // Skip all internal paths (_next)
-    '/((?!_next).*)',
+    // Apply middleware to all routes except API routes, Next.js internals, and static files
+    '/((?!api|_next/static|_next/image|_next/webpack-hmr|favicon.ico|sitemap.xml|robots.txt).*)',
   ],
 };

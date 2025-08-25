@@ -1,8 +1,9 @@
 import '@styles/main.scss';
 
 import { ApolloWrapper } from '@app/apollo-wrapper';
+import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   alternates: {
     canonical: '/',
     languages: {

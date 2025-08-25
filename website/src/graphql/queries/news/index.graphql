@@ -69,3 +69,28 @@ query GetNewsletters($locale: String, $limit: Int!, $skip: Int!) {
     }
   }
 }
+
+query GetBlogPostsSlugs {
+  blogPageCollection {
+    items {
+      slug
+      date
+      excerpt
+      title
+    }
+  }
+}
+
+query GetAllBlogPostsForRSS($locale: String!) {
+  blogPageCollection(locale: $locale, order: date_DESC) {
+    items {
+      date
+      title
+      slug
+      excerpt
+      image {
+        url
+      }
+    }
+  }
+}
