@@ -9,6 +9,7 @@ import type {
   PodcastCollection,
 } from '@graphql/types';
 import type { AvailableLocale, LocalisedString } from '@i18n/locales';
+import { routes } from '@routes/index';
 import { News } from '@shared/types/news';
 import {
   fromNewsToNewsCards,
@@ -57,7 +58,7 @@ const AsideNewsCards: React.FC<AsideNewsCardsProps> = ({
           <article>
             <h4>{title}</h4>
             <Link
-              href={`/${lang}/news/blog`}
+              href={`${routes.blog(lang)}`}
               className={styles['latest-news-content__type']}
             >
               {newsTypeLocale[lang][News.BLOG]}
@@ -73,7 +74,12 @@ const AsideNewsCards: React.FC<AsideNewsCardsProps> = ({
         <a href={url}>
           <article>
             <h4>{title}</h4>
-            <p> {newsTypeLocale[lang][News.NEWSLETTER]}</p>
+            <Link
+              href={`${routes.newsletter(lang)}`}
+              className={styles['latest-news-content__type']}
+            >
+              {newsTypeLocale[lang][News.NEWSLETTER]}
+            </Link>
             <p>
               <time dateTime={dateTime}>{publishedString}</time>
             </p>
@@ -85,7 +91,13 @@ const AsideNewsCards: React.FC<AsideNewsCardsProps> = ({
         <a href={url}>
           <article>
             <h4>{title}</h4>
-            <p>Podcast</p>
+            <Link
+              href={`${routes.podcast(lang)}`}
+              className={styles['latest-news-content__type']}
+            >
+              Podcast
+            </Link>
+
             <p>
               <time dateTime={dateTime}>{publishedString}</time>
             </p>
