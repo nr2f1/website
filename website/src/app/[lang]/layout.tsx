@@ -42,7 +42,7 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children, params }) => {
   return (
     <html lang={lang} className={nunitoSans.variable}>
       <body>
-        <CookieBanner lang={lang}/>
+        <CookieBanner lang={lang} />
         <Header lang={lang} />
         <main>{children}</main>
         <Footer lang={lang} />

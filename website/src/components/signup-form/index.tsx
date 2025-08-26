@@ -419,7 +419,11 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang, registerPatient }) => {
                 </div>
               </div>
             )}
-            <button type="submit" className="button button--on-light">
+            <button
+              type="submit"
+              className="button button--on-light"
+              data-register-form-button
+            >
               {showSpinner ? (
                 <span>
                   <Spinner />
