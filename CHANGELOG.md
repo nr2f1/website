@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.22.0](https://github.com/nr2f1/website/compare/v2.21.0...v2.22.0) (2025-08-26)
+
+
+### Features
+
+* create cookie banner ([8e7e087](https://github.com/nr2f1/website/commit/8e7e08711f819662d5f32d6d95974ef1ecd49e2d))
+
+
+### Bug Fixes
+
+* newsletter card ([66eee0d](https://github.com/nr2f1/website/commit/66eee0d31c0489d7f913be946e19afcccac886e6))
+
 ## [2.21.0](https://github.com/nr2f1/website/compare/v2.20.0...v2.21.0) (2025-08-25)
 
 
