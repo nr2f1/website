@@ -1,0 +1,18 @@
+query GetCookieBanner($locale: String) {
+  heading(locale: $locale, id: "75JVmdAYFPHndWv80VJ8wz") {
+    content
+  }
+  paragraphs(locale: $locale, id: "6nLeNH9hAgS5qDMWSIaOwO") {
+    content {
+      json
+    }
+  }
+  resourceSet(locale: $locale, id: "34h4V1fIBxMLa55nzXn4cG") {
+    resourcesCollection {
+      items {
+        key
+        value
+      }
+    }
+  }
+}
