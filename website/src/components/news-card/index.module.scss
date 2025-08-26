@@ -50,7 +50,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url(icons.$newsletter);
+    /* background-image: url(icons.$newsletter); */
+    background-image: url(icons.$newsletter_version_2);
 
     @include breakpoints.small-screen {
       height: var(--spacing-40);

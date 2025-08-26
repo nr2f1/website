@@ -1,0 +1,36 @@
+@use '@styles/text-styles';
+
+.cookieBanner {
+  @include text-styles.text-base;
+  background-color: var(--background-accent-navy);
+  padding: var(--spacing-5) var(--spacing-6);
+  border-bottom: 1px solid var(--grey-300);
+
+  h2 {
+    @include text-styles.header-2;
+    margin: 0;
+    margin-block-end: var(--spacing-4);
+  }
+
+  p {
+    margin: 0;
+    margin-block-end: var(--spacing-4);
+    max-width: 42rem;
+  }
+
+  a:not([target='_blank']) {
+    @include text-styles.text-link;
+  }
+
+  menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    column-gap: var(--spacing-4);
+  }
+
+  button:first-of-type {
+    order: 1;
+  }
+}

@@ -152,6 +152,7 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
           target="_blank"
           rel="noreferrer"
           className="button button--on-light-open-new-tab mbe--4"
+          data-register-in-patient-registry
         >
           {registerPatientRegistrySignUpLink?.text?.content}
         </a>
@@ -165,6 +166,7 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
           target="_blank"
           rel="noreferrer"
           className="button button--on-light-open-new-tab mbe--6"
+          data-login-in-patient-registry
         >
           {registerPatientRegistryLoginLink?.text?.content}
         </a>
@@ -220,6 +222,7 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
           rel="noreferrer"
           title={registerContentIdLink?.text?.content ?? 'Clinical Registry'}
           className="button button--on-light-open-new-tab"
+          data-register-in-clinical-research
         >
           {registerContentIdLink?.text?.content}
         </a>

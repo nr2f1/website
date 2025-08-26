@@ -1,3 +1,4 @@
+import CookieBanner from '@components/cookie-banner';
 import Footer from '@components/footer';
 import Header from '@components/header';
 import { AVAILABLE_LOCALES } from '@i18n/locales';
@@ -41,6 +42,7 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children, params }) => {
   return (
     <html lang={lang} className={nunitoSans.variable}>
       <body>
+        <CookieBanner lang={lang} />
         <Header lang={lang} />
         <main>{children}</main>
         <Footer lang={lang} />
