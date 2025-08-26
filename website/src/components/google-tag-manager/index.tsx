@@ -1,23 +1,14 @@
 'use client';
+import { LOCAL_STORAGE_KEY_TRACKING_KEY } from '@shared/utils/analytics-tracking';
 import Script from 'next/script';
-import { useEffect, useState } from 'react';
+import { useLocalStorage } from 'website/src/hooks/local-storage';
 
 export const GA_ID = 'GTM-N8JW7VZF';
 
 export const GoogleTag = () => {
-  const [consent, setConsent] = useState<string | null>(null);
+  const [consent] = useLocalStorage(LOCAL_STORAGE_KEY_TRACKING_KEY);
 
-  // Set the consent value from localStorage after the client loads
-  // Assuming the answer is stored in localStorage called cookie
-  useEffect(() => {
-    setConsent(
-      localStorage.getItem('tracking_consent') === 'true'
-        ? 'granted'
-        : 'denied',
-    );
-  }, []);
-
-  if (consent === null) return null;
+  if (!consent) return null;
 
   return (
     <>
