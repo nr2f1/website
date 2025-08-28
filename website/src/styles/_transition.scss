@@ -1,0 +1,40 @@
+/* Transition */
+@view-transition {
+  navigation: auto;
+}
+
+main {
+  view-transition-name: content;
+}
+
+/* Both Pages */
+::view-transition-old(content) {
+  animation: slide-out 0.4s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+}
+
+::view-transition-new(content) {
+  animation: slide-in 0.4s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+}
+
+/* Both Pages */
+@keyframes slide-out {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(calc(50% * var(--direction)));
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(calc(-50% * var(--direction)));
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}

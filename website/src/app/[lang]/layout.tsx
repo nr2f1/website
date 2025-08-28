@@ -5,6 +5,7 @@ import { AVAILABLE_LOCALES } from '@i18n/locales';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata } from 'next';
 import { Nunito_Sans } from 'next/font/google';
+import { unstable_ViewTransition as ViewTransition } from 'react';
 
 const nunitoSans = Nunito_Sans({
   adjustFontFallback: false,
@@ -44,7 +45,9 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children, params }) => {
       <body>
         <CookieBanner lang={lang} />
         <Header lang={lang} />
-        <main>{children}</main>
+        <ViewTransition enter="slide-in" exit="slide-out">
+          <main>{children}</main>
+        </ViewTransition>
         <Footer lang={lang} />
       </body>
     </html>

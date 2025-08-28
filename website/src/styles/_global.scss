@@ -131,7 +131,3 @@ a > b {
   @include text-styles.text-link;
   font-weight: 400;
 }
-
-@view-transition {
-  navigation: auto;
-}
