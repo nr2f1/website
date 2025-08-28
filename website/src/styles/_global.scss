@@ -132,48 +132,44 @@ a > b {
   font-weight: 400;
 }
 
-@view-transition {
-  navigation: auto;
-}
+/* Transition */
 
 @view-transition {
   navigation: auto;
 }
 
-/* Customize the default animation behavior */
-
-::view-transition-group(root) {
-  animation-duration: 0.5s;
+main {
+  view-transition-name: content;
 }
 
-/* Create a custom animation */
-
-@keyframes move-out {
-  from {
-    transform: translateY(0%);
-  }
-
-  to {
-    transform: translateY(-100%);
-  }
+/* Both Pages */
+::view-transition-old(content) {
+  animation: slide-out 0.5s cubic-bezier(0.86, 0, 0.07, 1) forwards;
 }
 
-@keyframes move-in {
-  from {
-    transform: translateY(100%);
+::view-transition-new(content) {
+  animation: slide-in 0.5s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+}
+
+/* Both Pages */
+@keyframes slide-out {
+  0% {
+    transform: translateX(0%);
   }
 
-  to {
-    transform: translateY(0%);
+  100% {
+    opacity: 0;
+    transform: translateX(calc(50% * var(--direction)));
   }
 }
 
-/* Apply the custom animation to the old and new page states */
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(calc(-50% * var(--direction)));
+  }
 
-::view-transition-old(root) {
-  animation: 0.4s ease-in both move-out;
-}
-
-::view-transition-new(root) {
-  animation: 0.4s ease-in both move-in;
+  100% {
+    transform: translateX(0%);
+  }
 }
