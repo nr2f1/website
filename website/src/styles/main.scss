@@ -9,6 +9,7 @@
 @use 'border';
 @use 'buttons';
 @use 'helpers';
+@use 'transition';
 @use 'global';
 
 @layer reset {
@@ -24,6 +25,7 @@
   @include meta.load-css('border');
   @include meta.load-css('buttons');
   @include meta.load-css('helpers');
+  @include meta.load-css('transition');
   @include meta.load-css('global');
 }
 
