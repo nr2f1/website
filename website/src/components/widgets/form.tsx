@@ -5,7 +5,7 @@ const DonateForm = () => {
     <>
       <Script
         src="https://widgets.givebutter.com/latest.umd.cjs?acct=pu3mFEs44Glxowbo&p=other"
-        strategy="beforeInteractive"
+        strategy="lazyOnload"
       />
       {/* @ts-ignore */}
       <givebutter-widget id="j2dKdg" />
