@@ -133,7 +133,6 @@ a > b {
 }
 
 /* Transition */
-
 @view-transition {
   navigation: auto;
 }
@@ -144,11 +143,11 @@ main {
 
 /* Both Pages */
 ::view-transition-old(content) {
-  animation: slide-out 0.5s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+  animation: slide-out 0.4s cubic-bezier(0.86, 0, 0.07, 1) forwards;
 }
 
 ::view-transition-new(content) {
-  animation: slide-in 0.5s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+  animation: slide-in 0.4s cubic-bezier(0.86, 0, 0.07, 1) forwards;
 }
 
 /* Both Pages */
