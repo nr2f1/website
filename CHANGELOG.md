@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.22.1](https://github.com/nr2f1/website/compare/v2.22.0...v2.22.1) (2025-08-28)
+
+
+### Bug Fixes
+
+* update givebutter widget script strategy to lazyOnload ([4ac9ef6](https://github.com/nr2f1/website/commit/4ac9ef635ad68622a88a89324de672c701b88ba5))
+* update givebutter widget script strategy to lazyOnload ([#304](https://github.com/nr2f1/website/issues/304)) ([b15416e](https://github.com/nr2f1/website/commit/b15416e3f7f76e28b408f9ba5167ec9f836f072a))
+
 ## [2.22.0](https://github.com/nr2f1/website/compare/v2.21.0...v2.22.0) (2025-08-26)
 
 
