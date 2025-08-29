@@ -25,7 +25,7 @@ const FooterWithData: React.FC<HeaderProps> = ({ lang }) => {
       }}
     >
       {/* TODO: handle loading */}
-      <Suspense fallback={<span>loading</span>}>
+      <Suspense fallback={null}>
         <Footer lang={lang} />
       </Suspense>
     </PreloadQuery>

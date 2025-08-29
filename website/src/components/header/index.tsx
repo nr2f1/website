@@ -63,7 +63,7 @@ const HeaderWithData: React.FC<HeaderProps> = ({ lang }) => {
       }}
     >
       {/* TODO: handle loading */}
-      <Suspense fallback={<span>loading</span>}>
+      <Suspense fallback={null}>
         <Header lang={lang} />
       </Suspense>
     </PreloadQuery>
