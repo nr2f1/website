@@ -12,7 +12,7 @@ const CookieBannerWithData: React.FC<ComponentPropsWithLocale> = ({ lang }) => {
         locale: lang,
       }}
     >
-      <Suspense fallback={<span>loading</span>}>
+      <Suspense fallback={null}>
         <CookieBanner lang={lang} />
       </Suspense>
     </PreloadQuery>
