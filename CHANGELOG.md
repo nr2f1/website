@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.22.2](https://github.com/nr2f1/website/compare/v2.22.1...v2.22.2) (2025-08-29)
+
+
+### Bug Fixes
+
+* transition clunky load ([7b40e48](https://github.com/nr2f1/website/commit/7b40e486c321cb960d34df3fbb2a9adb418604cc))
+* transition clunky load ([#307](https://github.com/nr2f1/website/issues/307)) ([958eef0](https://github.com/nr2f1/website/commit/958eef025cfded4991c62677e92368c91e26a1f8))
+
 ## [2.22.1](https://github.com/nr2f1/website/compare/v2.22.0...v2.22.1) (2025-08-28)
 
 
