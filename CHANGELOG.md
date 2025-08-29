@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.22.3](https://github.com/nr2f1/website/compare/v2.22.2...v2.22.3) (2025-08-29)
+
+
+### Bug Fixes
+
+* a11y on loading ([db3046e](https://github.com/nr2f1/website/commit/db3046e6c53ffee3a58e0e42ec51f989763e848b))
+* a11y on loading ([#310](https://github.com/nr2f1/website/issues/310)) ([10e7d3e](https://github.com/nr2f1/website/commit/10e7d3e9a88e2908ebb15f015726384740470bec))
+
 ## [2.22.2](https://github.com/nr2f1/website/compare/v2.22.1...v2.22.2) (2025-08-29)
 
 
