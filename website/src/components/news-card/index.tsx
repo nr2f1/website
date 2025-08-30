@@ -32,9 +32,9 @@ const NewsCard: React.FC<NewsCardProps> = ({
           <a href={url}>
             <article>
               <div className={styles.article__podcast_img} />
-              <div>
+              <div className={styles.article__content}>
                 <h2>{title}</h2>
-                <p className={styles.article__date}>
+                <div className={styles.article__text_wrapper}>
                   <button
                     className={styles.article__label}
                     onClick={() => router.push(`/${lang}/news/podcast`)}
@@ -42,9 +42,11 @@ const NewsCard: React.FC<NewsCardProps> = ({
                   >
                     Podcast
                   </button>
-                  <span className={styles.article__separator}>&#8226;</span>
-                  <time dateTime={dateTime}>{publishedString}</time>
-                </p>
+                  <p className={styles.article__date}>
+                    <span className={styles.article__separator}>&#8226;</span>
+                    <time dateTime={dateTime}>{publishedString}</time>
+                  </p>
+                </div>
               </div>
             </article>
           </a>
@@ -56,9 +58,9 @@ const NewsCard: React.FC<NewsCardProps> = ({
           <a href={url}>
             <article>
               <div className={styles.article__newsletter_img} />
-              <div>
+              <div className={styles.article__content}>
                 <h2>{title}</h2>
-                <p className={styles.article__date}>
+                <div className={styles.article__text_wrapper}>
                   <button
                     className={styles.article__label}
                     onClick={() => router.push(`/${lang}/news/newsletter`)}
@@ -66,9 +68,11 @@ const NewsCard: React.FC<NewsCardProps> = ({
                   >
                     {newsTypeLocale[lang][News.NEWSLETTER]}
                   </button>
-                  <span className={styles.article__separator}>&#8226;</span>
-                  <time dateTime={dateTime}>{publishedString}</time>
-                </p>
+                  <p className={styles.article__date}>
+                    <span className={styles.article__separator}>&#8226;</span>
+                    <time dateTime={dateTime}>{publishedString}</time>
+                  </p>
+                </div>
               </div>
             </article>
           </a>
@@ -85,9 +89,9 @@ const NewsCard: React.FC<NewsCardProps> = ({
                   backgroundImage: `url(${imageUrl})`,
                 }}
               />
-              <div>
+              <div className={styles.article__content}>
                 <h2>{title}</h2>
-                <p className={styles.article__date}>
+                <div className={styles.article__text_wrapper}>
                   <button
                     className={styles.article__label}
                     type="button"
@@ -95,9 +99,11 @@ const NewsCard: React.FC<NewsCardProps> = ({
                   >
                     {newsTypeLocale[lang][News.BLOG]}
                   </button>
-                  <span className={styles.article__separator}>&#8226;</span>
-                  <time dateTime={dateTime}>{publishedString}</time>
-                </p>
+                  <p className={styles.article__date}>
+                    <span className={styles.article__separator}>&#8226;</span>
+                    <time dateTime={dateTime}>{publishedString}</time>
+                  </p>
+                </div>
               </div>
             </article>
           </Link>

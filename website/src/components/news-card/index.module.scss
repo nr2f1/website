@@ -70,8 +70,13 @@
     }
   }
 
-  & div {
+  &__content {
     padding: var(--spacing-4);
+  }
+
+  &__text_wrapper {
+    display: flex;
+    padding: 0;
   }
 
   &__label {
@@ -82,8 +87,8 @@
     @include text-styles.text-link-small;
     text-decoration: underline;
     font-weight: 400;
-    margin-bottom-end: var(--spacing-2);
     display: block;
+    cursor: pointer;
   }
   &__separator {
     margin: 0 var(--spacing-2);
