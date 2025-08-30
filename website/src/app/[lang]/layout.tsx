@@ -10,7 +10,7 @@ import { unstable_ViewTransition as ViewTransition } from 'react';
 const nunitoSans = Nunito_Sans({
   adjustFontFallback: false,
   display: 'swap',
-  preload: true,
+  preload: false,
   subsets: ['latin'],
   variable: '--font-nunito-sans',
 });
