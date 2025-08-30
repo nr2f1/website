@@ -3,6 +3,7 @@ import { GetCookieBannerDocument } from '@graphql/queries/cookie-banner/index.ge
 import type { ComponentPropsWithLocale } from '@shared/types/page-with-locale-params';
 import { Suspense } from 'react';
 import CookieBanner from './markup';
+import CookieBannerSkeleton from './skeleton';
 
 const CookieBannerWithData: React.FC<ComponentPropsWithLocale> = ({ lang }) => {
   return (
@@ -12,7 +13,7 @@ const CookieBannerWithData: React.FC<ComponentPropsWithLocale> = ({ lang }) => {
         locale: lang,
       }}
     >
-      <Suspense fallback={null}>
+      <Suspense fallback={<CookieBannerSkeleton />}>
         <CookieBanner lang={lang} />
       </Suspense>
     </PreloadQuery>
