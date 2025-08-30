@@ -76,6 +76,11 @@ export interface HeaderProps {
 const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Close menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, []);
+
   useEffect(() => {
     if (isMenuOpen) {
       document.body.classList.add('menu-open');
