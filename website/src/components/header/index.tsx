@@ -29,6 +29,7 @@ import {
 import { aboutCopiesId } from '@models/resource-sets';
 import { Suspense } from 'react';
 import Header, { type HeaderProps } from './markup';
+import HeaderSkeleton from './skeleton';
 
 const HeaderWithData: React.FC<HeaderProps> = ({ lang }) => {
   return (
@@ -62,8 +63,7 @@ const HeaderWithData: React.FC<HeaderProps> = ({ lang }) => {
         whatIsBbsoasLinkId,
       }}
     >
-      {/* TODO: handle loading */}
-      <Suspense fallback={null}>
+      <Suspense fallback={<HeaderSkeleton />}>
         <Header lang={lang} />
       </Suspense>
     </PreloadQuery>
