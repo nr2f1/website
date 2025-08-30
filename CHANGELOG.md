@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.24.0](https://github.com/nr2f1/website/compare/v2.23.0...v2.24.0) (2025-08-30)
+
+
+### Features
+
+* create an error page ([ad5368a](https://github.com/nr2f1/website/commit/ad5368a4bcf165a43215e9f3fb1f51c0e6c8bcf7))
+
+
+### Bug Fixes
+
+* pagination style in mobile ([750b99a](https://github.com/nr2f1/website/commit/750b99a01085c7b3018514196d4fc0320a4f79fe))
+
 ## [2.23.0](https://github.com/nr2f1/website/compare/v2.22.3...v2.23.0) (2025-08-30)
 
 
