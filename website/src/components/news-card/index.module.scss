@@ -74,7 +74,11 @@
     padding: var(--spacing-4);
   }
 
-  &__label:is(a) {
+  &__label {
+    appearance: none;
+    padding: 0;
+    border: none;
+    background-color: transparent;
     @include text-styles.text-link-small;
     text-decoration: underline;
   }

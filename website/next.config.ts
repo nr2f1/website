@@ -2,6 +2,7 @@ import { composePlugins, withNx } from '@nx/next';
 import type { WithNxOptions } from '@nx/next/plugins/with-nx';
 
 const nextConfig: WithNxOptions = {
+  allowedDevOrigins: ['*'],
   experimental: {
     viewTransition: true,
   },
