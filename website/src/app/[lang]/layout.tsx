@@ -2,6 +2,7 @@ import CookieBanner from '@components/cookie-banner';
 import Footer from '@components/footer';
 import Header from '@components/header';
 import { AVAILABLE_LOCALES } from '@i18n/locales';
+import { BASE_URL } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata } from 'next';
 import { Nunito_Sans } from 'next/font/google';
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
       fr: '/fr',
     },
   },
-  metadataBase: new URL('https://website-nr2f1.vercel.app'), // TODO: update this once we migrate
+  metadataBase: new URL(BASE_URL),
   title: 'NR2F1 Foundation',
 };
 
