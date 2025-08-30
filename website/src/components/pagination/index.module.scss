@@ -1,11 +1,24 @@
+@use '@styles/breakpoints';
+
 .pagination {
   &:is(ul) {
     display: flex;
     margin: 0 auto;
-    /* max-width: 560px; */
+    max-width: 560px;
     column-gap: var(--spacing-4);
     justify-content: center;
     align-items: center;
+    @include breakpoints.small-screen {
+      display: none;
+    }
+
+    &.mobile {
+      display: none;
+
+      @include breakpoints.small-screen {
+        display: flex;
+      }
+    }
   }
 
   &__item {
