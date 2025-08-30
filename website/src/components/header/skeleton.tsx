@@ -8,7 +8,7 @@ const HeaderSkeleton: React.FC = () => {
           <div className={styles.headerSkeleton__logo} />
           <div className={styles.headerSkeleton__topRight}>
             <div className={styles.headerSkeleton__localeSelector} />
-            <nav>
+            <nav aria-label="loading navigation">
               <ul>
                 <li>
                   <div className={styles.headerSkeleton__button} />
@@ -24,7 +24,7 @@ const HeaderSkeleton: React.FC = () => {
       </div>
       <div className={styles.headerSkeleton__bottom}>
         <div className={styles.headerSkeleton__contentWrapper}>
-          <nav>
+          <nav aria-label="loading second navigation ">
             <div className={styles.headerSkeleton__navItem} />
             <div className={styles.headerSkeleton__navItem} />
             <div className={styles.headerSkeleton__navItem} />
