@@ -70,13 +70,25 @@
     }
   }
 
-  & div {
+  &__content {
     padding: var(--spacing-4);
   }
 
-  &__label:is(a) {
+  &__text_wrapper {
+    display: flex;
+    padding: 0;
+  }
+
+  &__label {
+    appearance: none;
+    padding: 0;
+    border: none;
+    background-color: transparent;
     @include text-styles.text-link-small;
     text-decoration: underline;
+    font-weight: 400;
+    display: block;
+    cursor: pointer;
   }
   &__separator {
     margin: 0 var(--spacing-2);

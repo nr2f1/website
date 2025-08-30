@@ -1,8 +1,9 @@
+@use 'breakpoints';
+
 main {
   view-transition-name: content;
 }
 
-/* Both Pages */
 ::view-transition-old(content) {
   animation: slide-out 0.4s cubic-bezier(0.86, 0, 0.07, 1) forwards;
 }
@@ -11,25 +12,50 @@ main {
   animation: slide-in 0.4s cubic-bezier(0.86, 0, 0.07, 1) forwards;
 }
 
-/* Both Pages */
-@keyframes slide-out {
-  0% {
-    transform: translateX(0%);
+@include breakpoints.from-large-to-extra-screen {
+  @keyframes slide-out {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(calc(50% * var(--direction)));
+    }
   }
 
-  100% {
-    opacity: 0;
-    transform: translateX(calc(50% * var(--direction)));
+  @keyframes slide-in {
+    0% {
+      opacity: 0;
+      transform: translateX(calc(-50% * var(--direction)));
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
   }
 }
 
-@keyframes slide-in {
-  0% {
-    opacity: 0;
-    transform: translateX(calc(-50% * var(--direction)));
+@include breakpoints.from-small-to-medium-screen {
+  @keyframes slide-out {
+    0% {
+      transform: translateY(0%);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateY(calc(50% * var(--direction)));
+    }
   }
 
-  100% {
-    transform: translateX(0%);
+  @keyframes slide-in {
+    0% {
+      opacity: 0;
+      transform: translateY(calc(-50% * var(--direction)));
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
   }
 }

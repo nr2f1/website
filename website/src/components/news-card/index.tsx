@@ -1,3 +1,5 @@
+'use client';
+
 import { News } from '@shared/types/news';
 import {
   type NewsCardProps,
@@ -5,6 +7,7 @@ import {
 } from '@shared/utils/from-news-items-to-news-cards';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import styles from './index.module.scss';
 
 const NewsCard: React.FC<NewsCardProps> = ({
@@ -20,6 +23,8 @@ const NewsCard: React.FC<NewsCardProps> = ({
     locale: lang,
   });
 
+  const router = useRouter();
+
   switch (type) {
     case News.PODCAST:
       return (
@@ -27,18 +32,21 @@ const NewsCard: React.FC<NewsCardProps> = ({
           <a href={url}>
             <article>
               <div className={styles.article__podcast_img} />
-              <div>
+              <div className={styles.article__content}>
                 <h2>{title}</h2>
-                <p className={styles.article__date}>
-                  <Link
+                <div className={styles.article__text_wrapper}>
+                  <button
                     className={styles.article__label}
-                    href={`/${lang}/news/podcast`}
+                    onClick={() => router.push(`/${lang}/news/podcast`)}
+                    type="button"
                   >
                     Podcast
-                  </Link>
-                  <span className={styles.article__separator}>&#8226;</span>
-                  <time dateTime={dateTime}>{publishedString}</time>
-                </p>
+                  </button>
+                  <p className={styles.article__date}>
+                    <span className={styles.article__separator}>&#8226;</span>
+                    <time dateTime={dateTime}>{publishedString}</time>
+                  </p>
+                </div>
               </div>
             </article>
           </a>
@@ -50,18 +58,21 @@ const NewsCard: React.FC<NewsCardProps> = ({
           <a href={url}>
             <article>
               <div className={styles.article__newsletter_img} />
-              <div>
+              <div className={styles.article__content}>
                 <h2>{title}</h2>
-                <p className={styles.article__date}>
-                  <Link
+                <div className={styles.article__text_wrapper}>
+                  <button
                     className={styles.article__label}
-                    href={`/${lang}/news/newsletter`}
+                    onClick={() => router.push(`/${lang}/news/newsletter`)}
+                    type="button"
                   >
                     {newsTypeLocale[lang][News.NEWSLETTER]}
-                  </Link>
-                  <span className={styles.article__separator}>&#8226;</span>
-                  <time dateTime={dateTime}>{publishedString}</time>
-                </p>
+                  </button>
+                  <p className={styles.article__date}>
+                    <span className={styles.article__separator}>&#8226;</span>
+                    <time dateTime={dateTime}>{publishedString}</time>
+                  </p>
+                </div>
               </div>
             </article>
           </a>
@@ -78,18 +89,21 @@ const NewsCard: React.FC<NewsCardProps> = ({
                   backgroundImage: `url(${imageUrl})`,
                 }}
               />
-              <div>
+              <div className={styles.article__content}>
                 <h2>{title}</h2>
-                <p className={styles.article__date}>
-                  <Link
+                <div className={styles.article__text_wrapper}>
+                  <button
                     className={styles.article__label}
-                    href={`/${lang}/news/blog`}
+                    type="button"
+                    onClick={() => router.push(`/${lang}/news/blog`)}
                   >
                     {newsTypeLocale[lang][News.BLOG]}
-                  </Link>
-                  <span className={styles.article__separator}>&#8226;</span>
-                  <time dateTime={dateTime}>{publishedString}</time>
-                </p>
+                  </button>
+                  <p className={styles.article__date}>
+                    <span className={styles.article__separator}>&#8226;</span>
+                    <time dateTime={dateTime}>{publishedString}</time>
+                  </p>
+                </div>
               </div>
             </article>
           </Link>

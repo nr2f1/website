@@ -52,18 +52,6 @@
       list-style-type: disc;
       list-style-position: inside;
     }
-
-    button {
-      appearance: none;
-      padding: 0;
-      border: none;
-      background-color: transparent;
-      @include text-styles.text-link-small;
-      text-decoration: underline;
-      font-weight: 400;
-      margin-block-end: var(--spacing-2);
-      display: block;
-    }
   }
 
   & &__type:is(a) {

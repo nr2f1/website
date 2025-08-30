@@ -8,7 +8,6 @@ import {
   socialMediaTextId,
   warningId,
 } from '@models/paragraphs';
-import { Suspense } from 'react';
 import Footer from './markup';
 
 const FooterWithData: React.FC<HeaderProps> = ({ lang }) => {
@@ -24,10 +23,7 @@ const FooterWithData: React.FC<HeaderProps> = ({ lang }) => {
         warningId,
       }}
     >
-      {/* TODO: handle loading */}
-      <Suspense fallback={null}>
-        <Footer lang={lang} />
-      </Suspense>
+      <Footer lang={lang} />
     </PreloadQuery>
   );
 };

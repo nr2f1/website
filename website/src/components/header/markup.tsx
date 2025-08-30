@@ -34,6 +34,7 @@ import {
 import { aboutCopiesId } from '@models/resource-sets';
 import type { LocalisedLinkProps } from '@shared/types/link';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 import LocaleSelector from './locale-selector';
@@ -75,6 +76,13 @@ export interface HeaderProps {
 
 const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Close menu when route changes
+  // biome-ignore lint/correctness/useExhaustiveDependencies: must be when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (isMenuOpen) {

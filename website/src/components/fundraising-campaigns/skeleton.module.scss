@@ -1,0 +1,175 @@
+@use '@styles/text-styles';
+@use '@styles/layout';
+@use '@styles/breakpoints';
+
+.fundraisingCampaignsSkeleton {
+  &__contentWrapper {
+    @include layout.content-max-width-7xl;
+    padding: 0 var(--spacing-16) var(--spacing-24);
+
+    @include breakpoints.medium-screen {
+      padding: 0 var(--spacing-12) var(--spacing-12);
+    }
+
+    @include breakpoints.small-screen {
+      padding: 0 var(--spacing-6) var(--spacing-8);
+    }
+  }
+}
+
+.headingSkeleton {
+  height: 2.5rem;
+  width: 20rem;
+  max-width: 100%;
+  background-color: var(--grey-200);
+  border-radius: 0.25rem;
+  margin: 0 auto;
+  margin-block-end: var(--spacing-12);
+  animation: shimmer 1.5s ease-in-out infinite;
+
+  @include breakpoints.small-screen {
+    margin-block-end: var(--spacing-6);
+    height: 2rem;
+    width: 16rem;
+  }
+}
+
+.campaignsList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: var(--spacing-6);
+  flex-wrap: wrap;
+  margin-block-end: var(--spacing-12);
+  align-items: baseline;
+
+  @include breakpoints.small-screen {
+    flex-wrap: no-wrap;
+    gap: var(--spacing-8);
+    margin-block-end: var(--spacing-6);
+  }
+}
+
+.campaignSkeleton {
+  border-radius: var(--border-radius-xl);
+  border: 1px solid var(--grey-300);
+  flex-basis: calc(33.33% - var(--spacing-6));
+  overflow: hidden;
+
+  @include breakpoints.medium-screen {
+    flex-basis: calc(50% - var(--spacing-6));
+  }
+
+  @include breakpoints.small-screen {
+    flex-basis: 100%;
+  }
+
+  &__cover {
+    aspect-ratio: 1.6428571429;
+    background-color: var(--grey-200);
+    animation: shimmer 1.5s ease-in-out infinite;
+
+    @include breakpoints.medium-screen {
+      aspect-ratio: 2.015625;
+    }
+
+    &:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+  }
+
+  &__details {
+    padding: var(--spacing-4);
+  }
+
+  &__title {
+    height: 1.5rem;
+    width: 80%;
+    background-color: var(--grey-200);
+    border-radius: 0.25rem;
+    margin-bottom: var(--spacing-2);
+    animation: shimmer 1.5s ease-in-out infinite;
+    animation-delay: 0.8s;
+  }
+
+  &__date {
+    height: 1rem;
+    width: 60%;
+    background-color: var(--grey-200);
+    border-radius: 0.25rem;
+    animation: shimmer 1.5s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+}
+
+// Apply different delays to each campaign card
+.campaignSkeleton:nth-child(1) {
+  .campaignSkeleton__cover {
+    animation-delay: 0.2s;
+  }
+  .campaignSkeleton__title {
+    animation-delay: 0.4s;
+  }
+  .campaignSkeleton__date {
+    animation-delay: 0.6s;
+  }
+}
+
+.campaignSkeleton:nth-child(2) {
+  .campaignSkeleton__cover {
+    animation-delay: 0.4s;
+  }
+  .campaignSkeleton__title {
+    animation-delay: 0.6s;
+  }
+  .campaignSkeleton__date {
+    animation-delay: 0.8s;
+  }
+}
+
+.campaignSkeleton:nth-child(3) {
+  .campaignSkeleton__cover {
+    animation-delay: 0.6s;
+  }
+  .campaignSkeleton__title {
+    animation-delay: 0.8s;
+  }
+  .campaignSkeleton__date {
+    animation-delay: 1s;
+  }
+}
+
+.ctaSkeleton {
+  display: flex;
+  justify-content: center;
+}
+
+.buttonSkeleton {
+  height: 2.5rem;
+  width: 8rem;
+  background-color: var(--grey-200);
+  border-radius: 0.25rem;
+  animation: shimmer 1.5s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+@keyframes shimmer {
+  0% {
+    background-color: var(--grey-200);
+  }
+  50% {
+    background-color: var(--grey-300);
+  }
+  100% {
+    background-color: var(--grey-200);
+  }
+}
