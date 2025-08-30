@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.23.0](https://github.com/nr2f1/website/compare/v2.22.3...v2.23.0) (2025-08-30)
+
+
+### Features
+
+* add loading state to fundraising campaigns ([6295833](https://github.com/nr2f1/website/commit/62958330fb0d5ef984ed88c9f124ce9ae53cf066))
+* close menu when route changes ([c196444](https://github.com/nr2f1/website/commit/c196444e4f147058979afd66200dbb8fb734d4d8))
+* create a shimmer skeleton for the cookie banner ([ee13031](https://github.com/nr2f1/website/commit/ee130312a6d0220b1eaaa60162a53222a38b878c))
+
+
+### Bug Fixes
+
+* close menu when route changes ([419aae2](https://github.com/nr2f1/website/commit/419aae285f38a1f343e4254afbe26635026f49ae))
+* font preloading ([b294667](https://github.com/nr2f1/website/commit/b294667a56e6290c6827f05f259a210b1aec8d85))
+* hydration problem with nested link ([a286b09](https://github.com/nr2f1/website/commit/a286b09ad6e711836a2b5a2c34ce612b329b19a1))
+* local storage hydration problem ([777aa81](https://github.com/nr2f1/website/commit/777aa81e75911273468c91ff76609f77efecea34))
+* news cards ([fdf0008](https://github.com/nr2f1/website/commit/fdf0008ea4eaa29ec097c29d844a2b49d1255492))
+* shimmer skeleton a11y issue ([e6952a6](https://github.com/nr2f1/website/commit/e6952a624921ad3c984c61ac882ead7b0d7ab89b))
+
 ## [2.22.3](https://github.com/nr2f1/website/compare/v2.22.2...v2.22.3) (2025-08-29)
 
 
