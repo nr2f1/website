@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // useLocalStorage adapted from
 // https://usehooks.com/useLocalStorage/
@@ -12,24 +12,33 @@ export const useLocalStorage = (
   key: string,
   initialValue?: string,
 ): UseLocalStorage => {
-  const [storedValue, setStoredValue] = useState(() => {
+  const [storedValue, setStoredValue] = useState<StoredValue>(initialValue);
+
+  useEffect(() => {
+    // Only run on client side after hydration
     try {
       const item = window.localStorage.getItem(key);
-      return item ? JSON.parse(item) : initialValue;
+      const value = item ? JSON.parse(item) : initialValue;
+      setStoredValue(value);
     } catch {
-      return initialValue;
+      setStoredValue(initialValue);
     }
-  });
+  }, [key, initialValue]);
 
   const setValue = (value: string | ((prev: string) => string)) => {
     try {
       const valueToStore =
-        value instanceof Function ? value(storedValue) : value;
+        value instanceof Function ? value(storedValue as string) : value;
       setStoredValue(valueToStore);
-      window.localStorage.setItem(key, JSON.stringify(valueToStore));
+
+      // Only access localStorage on client side
+      if (typeof window !== 'undefined') {
+        window.localStorage.setItem(key, JSON.stringify(valueToStore));
+      }
     } catch {
       return;
     }
   };
+
   return [storedValue, setValue];
 };
