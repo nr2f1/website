@@ -41,6 +41,7 @@ const Pagination: React.FC<PaginationProps> = ({
   siblingCount = 0,
   lang,
   paginationPath = '/news',
+  className = '',
 }) => {
   const realCurrentPage = currentPage < 1 ? 1 : currentPage;
 
@@ -64,7 +65,7 @@ const Pagination: React.FC<PaginationProps> = ({
     realCurrentPage + 1 > Number(lastPage) ? lastPage : realCurrentPage + 1;
 
   return (
-    <ul className={styles.pagination}>
+    <ul className={`${styles.pagination} ${styles[className]}`}>
       <li className={styles.pagination__item}>
         <Link href={`${paginationPath}?page=${getPreviousPage()}`}>
           <ArrowLeft title={paginationLocales[lang].previous} />

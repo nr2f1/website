@@ -7,6 +7,7 @@ export interface PaginationProps {
   siblingCount: number;
   lang: AvailableLocale;
   paginationPath?: string;
+  className?: string;
 }
 
 export const DOTS = '...';

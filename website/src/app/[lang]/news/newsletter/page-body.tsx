@@ -90,6 +90,17 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
             paginationPath={'/news/newsletter'}
           />
         ) : null}
+        {total > LIMIT ? (
+          <Pagination
+            totalCount={total}
+            currentPage={page ? Number(page) : 0}
+            pageSize={LIMIT}
+            siblingCount={0}
+            lang={lang}
+            paginationPath={'/news/newsletter'}
+            className="mobile"
+          />
+        ) : null}
       </div>
     </section>
   );
