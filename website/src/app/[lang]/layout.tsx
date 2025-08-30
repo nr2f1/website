@@ -41,7 +41,7 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children, params }) => {
   const { lang } = await params;
 
   return (
-    <html lang={lang} className={nunitoSans.variable}>
+    <html lang={lang} className={nunitoSans.variable} data-scroll-behavior="smooth">
       <body>
         <CookieBanner lang={lang} />
         <Header lang={lang} />
