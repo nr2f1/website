@@ -98,7 +98,7 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
             siblingCount={0}
             lang={lang}
             paginationPath={'/news/newsletter'}
-            className='mobile'
+            className="mobile"
           />
         ) : null}
       </div>

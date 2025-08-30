@@ -115,7 +115,7 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
             pageSize={LIMIT}
             siblingCount={0}
             lang={lang}
-            className='mobile'
+            className="mobile"
           />
         ) : null}
       </div>

@@ -17,6 +17,32 @@
     }
   }
 
+  &__header_content_wrapper {
+    @include layout.content-max-width-7xl;
+    padding: var(--spacing-6) var(--spacing-16);
+
+    @include breakpoints.medium-screen {
+      padding: var(--spacing-6) var(--spacing-12);
+    }
+
+    @include breakpoints.small-screen {
+      padding: var(--spacing-6) var(--spacing-6);
+    }
+  }
+
+  &__logo {
+    max-width: 206px;
+    flex-basis: 100%;
+
+    @include breakpoints.from-small-to-medium-screen {
+      max-width: 137.33px;
+    }
+
+    & > a {
+      display: block;
+    }
+  }
+
   h1 {
     @include text-styles.header-1;
     margin: 0;
