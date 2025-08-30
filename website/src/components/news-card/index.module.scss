@@ -81,6 +81,9 @@
     background-color: transparent;
     @include text-styles.text-link-small;
     text-decoration: underline;
+    font-weight: 400;
+    margin-bottom-end: var(--spacing-2);
+    display: block;
   }
   &__separator {
     margin: 0 var(--spacing-2);

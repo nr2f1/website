@@ -1,3 +1,4 @@
+import AsideNewsCards from '@components/aside-news-cards';
 import { getClient } from '@graphql/client';
 import {
   GetPageLatestNewsDocument,
@@ -9,14 +10,7 @@ import type {
   PodcastCollection,
 } from '@graphql/types';
 import type { AvailableLocale, LocalisedString } from '@i18n/locales';
-import { routes } from '@routes/index';
-import { News } from '@shared/types/news';
-import {
-  fromNewsToNewsCards,
-  type NewsCardProps,
-  newsTypeLocale,
-} from '@shared/utils/from-news-items-to-news-cards';
-import { getIntlDateStrings } from '@shared/utils/intl-date';
+import { fromNewsToNewsCards } from '@shared/utils/from-news-items-to-news-cards';
 import Link from 'next/link';
 import styles from './index.module.scss';
 
@@ -29,84 +23,6 @@ const latestNewsTitle: LocalisedString = {
   en: 'Latest news',
   es: 'Últimas noticias',
   fr: 'Dernières nouvelles',
-};
-
-interface AsideNewsCardsProps {
-  title: string;
-  url: string;
-  published: string;
-  lang: AvailableLocale;
-  type: NewsCardProps['type'];
-}
-
-const AsideNewsCards: React.FC<AsideNewsCardsProps> = ({
-  title,
-  url,
-  published,
-  lang,
-  type,
-}) => {
-  const { publishedString, dateTime } = getIntlDateStrings({
-    date: published,
-    locale: lang,
-  });
-
-  switch (type) {
-    case News.BLOG:
-      return (
-        <Link href={`/${lang}/news/blog/${url}`}>
-          <article>
-            <h4>{title}</h4>
-            <Link
-              href={`${routes.blog(lang)}`}
-              className={styles['latest-news-content__type']}
-            >
-              {newsTypeLocale[lang][News.BLOG]}
-            </Link>
-            <p>
-              <time dateTime={dateTime}>{publishedString}</time>
-            </p>
-          </article>
-        </Link>
-      );
-    case News.NEWSLETTER:
-      return (
-        <a href={url}>
-          <article>
-            <h4>{title}</h4>
-            <Link
-              href={`${routes.newsletter(lang)}`}
-              className={styles['latest-news-content__type']}
-            >
-              {newsTypeLocale[lang][News.NEWSLETTER]}
-            </Link>
-            <p>
-              <time dateTime={dateTime}>{publishedString}</time>
-            </p>
-          </article>
-        </a>
-      );
-    case News.PODCAST:
-      return (
-        <a href={url}>
-          <article>
-            <h4>{title}</h4>
-            <Link
-              href={`${routes.podcast(lang)}`}
-              className={styles['latest-news-content__type']}
-            >
-              Podcast
-            </Link>
-
-            <p>
-              <time dateTime={dateTime}>{publishedString}</time>
-            </p>
-          </article>
-        </a>
-      );
-    default:
-      return null;
-  }
 };
 
 const PageLatestNews: React.FC<PageLatestNewsProps> = async ({ lang }) => {
