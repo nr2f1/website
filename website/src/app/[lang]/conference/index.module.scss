@@ -22,13 +22,20 @@
   & &__button:is(a),
   & &__button:is(a):hover,
   & &__button:is(a):focus {
-    color: var(--white);
-    text-decoration: none;
+    color: var(--foreground-inverse-primary) !important;
+    text-decoration: none !important;
   }
 
   & &__info &__button {
     display: inline-block;
     margin-block-end: var(--spacing-6);
+    color: var(--foreground-inverse-primary);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: var(--foreground-inverse-primary);
+    }
   }
 
   &__book_tickets {
