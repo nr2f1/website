@@ -7,20 +7,27 @@ import {
   LOCAL_STORAGE_KEY_TRACKING_KEY,
   TRACKING_CONSENT,
 } from '@shared/utils/analytics-tracking';
+import { useEffect, useState } from 'react';
 import { useLocalStorage } from 'website/src/hooks/local-storage';
 import styles from './index.module.scss';
 
 const CookieBanner: React.FC<ComponentPropsWithLocale> = ({ lang }) => {
   const [consent, setConsent] = useLocalStorage(LOCAL_STORAGE_KEY_TRACKING_KEY);
+  const [isHydrated, setIsHydrated] = useState(false);
 
   const { data } = useGetCookieBannerSuspenseQuery({
     variables: { locale: lang },
   });
 
+  useEffect(() => {
+    setIsHydrated(true);
+  }, []);
+
   if (
     consent === TRACKING_CONSENT.GRANTED ||
     consent === TRACKING_CONSENT.DENIED ||
-    !data
+    !data ||
+    !isHydrated
   ) {
     return null;
   }

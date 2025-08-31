@@ -18,6 +18,8 @@ import {
   empowerFamiliesParagraphId,
   ourVisionParagraphId,
 } from '@models/paragraphs';
+import { routes } from '@routes/index';
+import Link from 'next/link';
 import styles from './index.module.scss';
 
 interface WhatWeDoProps {
@@ -66,9 +68,12 @@ const WhatWeDo: React.FC<WhatWeDoProps> = async ({ lang }) => {
               <div />
               <h3>{educatePeopleHeading?.content}</h3>
               {documentToReactComponents(educatePeopleParagraph?.content?.json)}
-              <a href="/" className="button button--on-light">
+              <Link
+                href={routes['what-is-bbsoas'](lang)}
+                className="button button--on-light"
+              >
                 {learnMoreCta?.content}
-              </a>
+              </Link>
             </div>
             <div className={styles.card}>
               <div />
@@ -76,17 +81,23 @@ const WhatWeDo: React.FC<WhatWeDoProps> = async ({ lang }) => {
               {documentToReactComponents(
                 empowerFamiliesParagraph?.content?.json,
               )}
-              <a href="/" className="button button--on-light">
+              <Link
+                href={routes['living-with-bbsoas'](lang)}
+                className="button button--on-light"
+              >
                 {learnMoreCta?.content}
-              </a>
+              </Link>
             </div>
             <div className={styles.card}>
               <div />
               <h3>{driveResearchHeading?.content}</h3>
               {documentToReactComponents(driveResearchParagraph?.content?.json)}
-              <a href="/" className="button button--on-light">
+              <Link
+                href={routes.research(lang)}
+                className="button button--on-light"
+              >
                 {learnMoreCta?.content}
-              </a>
+              </Link>
             </div>
           </div>
         </section>
