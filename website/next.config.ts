@@ -24,6 +24,7 @@ const nextConfig: WithNxOptions = {
       fullUrl: true,
     },
   },
+  poweredByHeader: false,
   sassOptions: {
     silenceDeprecations: ['legacy-js-api'],
   },

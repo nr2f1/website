@@ -2,6 +2,7 @@ import '@styles/main.scss';
 
 import { ApolloWrapper } from '@app/apollo-wrapper';
 import { GoogleTag } from '@components/google-tag-manager';
+import { BASE_URL } from '@routes/index';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -14,7 +15,26 @@ export const metadata: Metadata = {
       fr: '/fr',
     },
   },
-  metadataBase: new URL('https://website-nr2f1.vercel.app'), // TODO: update this once we migrate
+
+  keywords: [
+    'nr2f1',
+    'foundation',
+    'bbsoas',
+    'Bosch-Boonstra-Schaaf Optic Atrophy Syndrome',
+  ],
+  metadataBase: new URL(BASE_URL),
+  robots: {
+    follow: true,
+    googleBot: {
+      follow: true,
+      index: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+      noimageindex: false,
+    },
+    index: true,
+  },
   title: 'NR2F1 Foundation',
 };
 
