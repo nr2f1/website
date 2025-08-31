@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.28.0](https://github.com/nr2f1/website/compare/v2.27.0...v2.28.0) (2025-08-31)
+
+
+### Features
+
+* create csp headers ([2dff818](https://github.com/nr2f1/website/commit/2dff818624c0f999b66233cee8de0cc4c249bc84))
+
 ## [2.27.0](https://github.com/nr2f1/website/compare/v2.26.0...v2.27.0) (2025-08-31)
 
 
