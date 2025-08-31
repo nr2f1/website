@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.27.0](https://github.com/nr2f1/website/compare/v2.26.0...v2.27.0) (2025-08-31)
+
+
+### Features
+
+* set headers to index ([56fcb22](https://github.com/nr2f1/website/commit/56fcb222d4787c59090337e0bcaf9c9c24cab8ba))
+* set headers to index ([#321](https://github.com/nr2f1/website/issues/321)) ([e2baa33](https://github.com/nr2f1/website/commit/e2baa332e84cdad3faa771236a5f231eb06b3ba8))
+
 ## [2.26.0](https://github.com/nr2f1/website/compare/v2.25.0...v2.26.0) (2025-08-31)
 
 
