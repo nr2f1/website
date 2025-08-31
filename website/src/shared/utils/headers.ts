@@ -20,6 +20,8 @@ const SCHEMA_ORG = 'https://schema.org';
 const STRIPE_JS = 'https://js.stripe.com';
 const STRIPE_NETWORK = 'https://m.stripe.network';
 const TURNSTILE = 'https://challenges.cloudflare.com';
+const YOUTUBE_WWW = 'https://www.youtube.com';
+const YOUTUBE_NO_WWW = 'https://youtube.com';
 
 const headers: NextConfig['headers'] = async () => {
   return [
@@ -134,7 +136,7 @@ const headers: NextConfig['headers'] = async () => {
             // Prevent embedding in frames except for trusted sources
             `frame-ancestors 'self'`,
             // Frames/iframes: Self and trusted third-party services
-            `frame-src 'self' ${GTM_URL} ${GIVEBUTTER} ${STRIPE_JS} ${STRIPE_NETWORK} ${TURNSTILE} https://vercel.live`,
+            `frame-src 'self' ${GTM_URL} ${GIVEBUTTER} ${STRIPE_JS} ${STRIPE_NETWORK} ${TURNSTILE} https://vercel.live ${YOUTUBE_WWW} ${YOUTUBE_NO_WWW}`,
             // Network requests: APIs and analytics
             `connect-src 'self' ${GTM_URL} ${CONTENTFUL_GRAPHQL_URL} ${GIVEBUTTER_API} ${GIVEBUTTER} ${SCHEMA_ORG} ${FACEBOOK_SDK} ${CLOUDFLARE_INSIGHTS} ${GOOGLE_MAPS} ${STRIPE_JS} ${STRIPE_NETWORK} ${POSTHOG} https://*.google-analytics.com https://*.googlesyndication.com https://vercel.live`,
             // Form submissions: Self and trusted payment processors
@@ -153,26 +155,6 @@ const headers: NextConfig['headers'] = async () => {
             'upgrade-insecure-requests',
           ].join('; '),
         },
-        // {
-        //   key: 'X-Content-Type-Options',
-        //   value: 'nosniff',
-        // },
-        // {
-        //   key: 'X-Frame-Options',
-        //   value: 'SAMEORIGIN',
-        // },
-        // {
-        //   key: 'X-XSS-Protection',
-        //   value: '1; mode=block',
-        // },
-        // {
-        //   key: 'Referrer-Policy',
-        //   value: 'strict-origin-when-cross-origin',
-        // },
-        // {
-        //   key: 'Permissions-Policy',
-        //   value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
-        // },
       ],
       source: '/(.*)',
     },
