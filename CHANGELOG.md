@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.25.0](https://github.com/nr2f1/website/compare/v2.24.0...v2.25.0) (2025-08-31)
+
+
+### Features
+
+* add links to what we do section ([57361b8](https://github.com/nr2f1/website/commit/57361b8f0f6e8005d7cad6103c0ceef85236f3d9))
+
+
+### Bug Fixes
+
+* button styls in conference page ([f13c1d1](https://github.com/nr2f1/website/commit/f13c1d15f334e6402b0862bd423b26cbd0de2c8b))
+* cookie banner flashing ([c58341e](https://github.com/nr2f1/website/commit/c58341ec77f371edae6f16a13eee8862173960b6))
+
 ## [2.24.0](https://github.com/nr2f1/website/compare/v2.23.0...v2.24.0) (2025-08-30)
 
 
