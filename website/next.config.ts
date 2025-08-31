@@ -5,6 +5,102 @@ const nextConfig: WithNxOptions = {
   experimental: {
     viewTransition: true,
   },
+
+  async headers() {
+    return [
+      {
+        headers: [
+          {
+            key: 'x-robots-tag',
+            value: 'index, follow',
+          },
+        ],
+        source: '/(.*)',
+      },
+      // Block indexing for disallowed paths from robots.txt
+      {
+        headers: [
+          {
+            key: 'x-robots-tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+        source: '/api/:path*',
+      },
+      {
+        headers: [
+          {
+            key: 'x-robots-tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+        source: '/admin/:path*',
+      },
+      {
+        headers: [
+          {
+            key: 'x-robots-tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+        source: '/private/:path*',
+      },
+      {
+        headers: [
+          {
+            key: 'x-robots-tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+        source: '/_next/:path*',
+      },
+      {
+        headers: [
+          {
+            key: 'x-robots-tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+        source: '/:path*.json',
+      },
+      {
+        headers: [
+          {
+            key: 'x-robots-tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+        source: '/:path*/opengraph-image:ext*',
+      },
+      {
+        headers: [
+          {
+            key: 'x-robots-tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+        source: '/:path*/twitter-image:ext*',
+      },
+      {
+        headers: [
+          {
+            key: 'x-robots-tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+        source: '/:path*/icon:ext*',
+      },
+      {
+        headers: [
+          {
+            key: 'x-robots-tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+        source: '/:path*/apple-icon:ext*',
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {
