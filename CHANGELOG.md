@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.26.0](https://github.com/nr2f1/website/compare/v2.25.0...v2.26.0) (2025-08-31)
+
+
+### Features
+
+* enable indexing ([3fd294f](https://github.com/nr2f1/website/commit/3fd294f0ecea14438acf022f2324acce03f7c7ca))
+* enable indexing ([#319](https://github.com/nr2f1/website/issues/319)) ([c6358f7](https://github.com/nr2f1/website/commit/c6358f779838cc3f917fb71ff4c18bb9e4ca6550))
+
 ## [2.25.0](https://github.com/nr2f1/website/compare/v2.24.0...v2.25.0) (2025-08-31)
 
 
