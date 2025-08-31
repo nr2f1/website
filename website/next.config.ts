@@ -1,6 +1,6 @@
 import { composePlugins, withNx } from '@nx/next';
 import type { WithNxOptions } from '@nx/next/plugins/with-nx';
-import headers from '@shared/utils/headers';
+import headers from './src/shared/utils/headers';
 
 const nextConfig: WithNxOptions = {
   experimental: {
