@@ -11,7 +11,6 @@ query GetStrategicPlanUpperPage(
   $researchParagraphsId: String!
   $researchProgressParagraphsId: String!
   $getThereHeadingId: String!
-  $fiveYearsHeadingId: String!
 ) {
   ourObjectivesHeading: heading(locale: $locale, id: $ourObjectivesHeadingId) {
     content
@@ -67,9 +66,6 @@ query GetStrategicPlanUpperPage(
   getThereHeading: heading(locale: $locale, id: $getThereHeadingId) {
     content
   }
-  fiveYearsHeading: heading(locale: $locale, id: $fiveYearsHeadingId) {
-    content
-  }
 }
 
 query GetStrategicPlanMiddlePage(
@@ -90,21 +86,6 @@ query GetStrategicPlanMiddlePage(
     locale: $locale
     id: $getThereProgressParagraphsId
   ) {
-    content {
-      json
-    }
-  }
-}
-
-query GetStrategicPlanBottomPage(
-  $locale: String
-  $fiveYearsHeadingId: String!
-  $fiveYearsParagraphsId: String!
-) {
-  fiveYearsHeading: heading(locale: $locale, id: $fiveYearsHeadingId) {
-    content
-  }
-  fiveYearsParagraphs: paragraphs(locale: $locale, id: $fiveYearsParagraphsId) {
     content {
       json
     }

@@ -2,6 +2,8 @@ import { composePlugins, withNx } from '@nx/next';
 import type { WithNxOptions } from '@nx/next/plugins/with-nx';
 import headers from './src/shared/utils/headers';
 
+const isDev = process.env.NODE_ENV === 'development';
+
 const nextConfig: WithNxOptions = {
   experimental: {
     viewTransition: true,
@@ -24,7 +26,7 @@ const nextConfig: WithNxOptions = {
   },
   logging: {
     fetches: {
-      fullUrl: true,
+      fullUrl: isDev,
     },
   },
   poweredByHeader: false,

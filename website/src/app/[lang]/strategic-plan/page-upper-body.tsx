@@ -9,7 +9,6 @@ import type { AvailableLocale } from '@i18n/locales';
 import {
   advocacyHeadingId,
   educationHeadingId,
-  fiveYearsHeadingId,
   getThereHeadingId,
   ourObjectivesHeadingId,
   strategicResearchHeadingId,
@@ -47,7 +46,6 @@ const StrategicPlanUpperBody: React.FC<RegisterPageBodyProps> = async ({
       researchParagraphs,
       researchProgressParagraphs,
       getThereHeading,
-      fiveYearsHeading,
     },
     error,
   } = await query<GetStrategicPlanUpperPageQuery>({
@@ -58,7 +56,6 @@ const StrategicPlanUpperBody: React.FC<RegisterPageBodyProps> = async ({
       advocacyProgressParagraphsId,
       educationHeadingId,
       educationParagraphsId,
-      fiveYearsHeadingId,
       getThereHeadingId,
       locale: lang,
       ourObjectivesHeadingId,
@@ -79,7 +76,6 @@ const StrategicPlanUpperBody: React.FC<RegisterPageBodyProps> = async ({
     advocacyHeading?.content ?? '',
     researchHeading?.content ?? '',
     getThereHeading?.content ?? '',
-    fiveYearsHeading?.content ?? '',
   ];
 
   return (
