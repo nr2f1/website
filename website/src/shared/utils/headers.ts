@@ -136,9 +136,9 @@ const headers: NextConfig['headers'] = async () => {
             // Prevent embedding in frames except for trusted sources
             `frame-ancestors 'self'`,
             // Frames/iframes: Self and trusted third-party services
-            `frame-src 'self' ${GTM_URL} ${GIVEBUTTER} ${STRIPE_JS} ${STRIPE_NETWORK} ${TURNSTILE} https://vercel.live ${YOUTUBE_WWW} ${YOUTUBE_NO_WWW}`,
+            `frame-src 'self' ${GTM_URL} ${GIVEBUTTER} ${STRIPE_JS} ${STRIPE_NETWORK} ${TURNSTILE} https://vercel.live ${YOUTUBE_WWW} ${YOUTUBE_NO_WWW} ${CONTENTFUL_ASSETS_URL}`,
             // Network requests: APIs and analytics
-            `connect-src 'self' ${GTM_URL} ${CONTENTFUL_GRAPHQL_URL} ${GIVEBUTTER_API} ${GIVEBUTTER} ${SCHEMA_ORG} ${FACEBOOK_SDK} ${CLOUDFLARE_INSIGHTS} ${GOOGLE_MAPS} ${STRIPE_JS} ${STRIPE_NETWORK} ${POSTHOG} https://*.google-analytics.com https://*.googlesyndication.com https://vercel.live`,
+            `connect-src 'self' ${GTM_URL} ${CONTENTFUL_GRAPHQL_URL} ${GIVEBUTTER_API} ${GIVEBUTTER} ${SCHEMA_ORG} ${FACEBOOK_SDK} ${CLOUDFLARE_INSIGHTS} ${GOOGLE_MAPS} ${STRIPE_JS} ${STRIPE_NETWORK} ${POSTHOG} https://*.google-analytics.com https://*.googlesyndication.com https://vercel.live ${CONTENTFUL_ASSETS_URL}`,
             // Form submissions: Self and trusted payment processors
             `form-action 'self' ${GIVEBUTTER} ${STRIPE_JS}`,
             // Block plugins and embeds except for trusted sources
