@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.29.0](https://github.com/nr2f1/website/compare/v2.28.0...v2.29.0) (2025-09-02)
+
+
+### Features
+
+* remove 5 years strategy ([3788df0](https://github.com/nr2f1/website/commit/3788df045cb2a6f5ce9a82e4c5df3f2a57ef6a18))
+
 ## [2.28.0](https://github.com/nr2f1/website/compare/v2.27.0...v2.28.0) (2025-08-31)
 
 
