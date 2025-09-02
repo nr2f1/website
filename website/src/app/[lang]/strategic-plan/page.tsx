@@ -9,7 +9,6 @@ import { routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
 import type { WebPage, WithContext } from 'schema-dts';
-import StrategicPlanBottomBody from './page-bottom-body';
 import StrategicPlanHeader from './page-header';
 import StrategicPlanMiddleBody from './page-middle-body';
 import StrategicPlanUpperBody from './page-upper-body';
@@ -55,7 +54,6 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
       <ResearchBanner lang={lang} />
       <StrategicPlanMiddleBody lang={lang} />
       <VolunteerWithUsBanner lang={lang} />
-      <StrategicPlanBottomBody lang={lang} />
       <SupportBanner lang={lang} />
     </>
   );
