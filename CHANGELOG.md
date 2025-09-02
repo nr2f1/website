@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.30.0](https://github.com/nr2f1/website/compare/v2.29.1...v2.30.0) (2025-09-02)
+
+
+### Features
+
+* update logo ([3179c6c](https://github.com/nr2f1/website/commit/3179c6cebeb1cf5ef3950ef11ec6883bb764cb3f))
+* update logo ([#329](https://github.com/nr2f1/website/issues/329)) ([6529dc0](https://github.com/nr2f1/website/commit/6529dc00a96fd0031cd2ce052d9ebf9b46f4b17a))
+
 ## [2.29.1](https://github.com/nr2f1/website/compare/v2.29.0...v2.29.1) (2025-09-02)
 
 
