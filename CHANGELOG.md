@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.29.1](https://github.com/nr2f1/website/compare/v2.29.0...v2.29.1) (2025-09-02)
+
+
+### Bug Fixes
+
+* csp policy to render embbed pdf ([99ca237](https://github.com/nr2f1/website/commit/99ca237eca0538a82942272003c7e2e2e5d64264))
+* csp policy to render embbed pdf ([#327](https://github.com/nr2f1/website/issues/327)) ([c885e0c](https://github.com/nr2f1/website/commit/c885e0cd81c1834dc600288735f63074286e7edc))
+
 ## [2.29.0](https://github.com/nr2f1/website/compare/v2.28.0...v2.29.0) (2025-09-02)
 
 
