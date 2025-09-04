@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.30.2](https://github.com/nr2f1/website/compare/v2.30.1...v2.30.2) (2025-09-04)
+
+
+### Bug Fixes
+
+* remove host from robots.ts ([d19ec68](https://github.com/nr2f1/website/commit/d19ec68d9f2863b662eb991b4c710ba8e414ed0c))
+* remove host from robots.ts ([#333](https://github.com/nr2f1/website/issues/333)) ([e7bbc3d](https://github.com/nr2f1/website/commit/e7bbc3dc6cac57edc767c48ff6cb2274a902641b))
+
 ## [2.30.1](https://github.com/nr2f1/website/compare/v2.30.0...v2.30.1) (2025-09-04)
 
 
