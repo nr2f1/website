@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.30.3](https://github.com/nr2f1/website/compare/v2.30.2...v2.30.3) (2025-09-04)
+
+
+### Bug Fixes
+
+* e2e tests ([9966325](https://github.com/nr2f1/website/commit/9966325e0a809e0cfb81b8f7a5a72ddd08891deb))
+* e2e tests ([#335](https://github.com/nr2f1/website/issues/335)) ([0f26a4b](https://github.com/nr2f1/website/commit/0f26a4be81b022408e55a50276f15d81757c0809))
+
 ## [2.30.2](https://github.com/nr2f1/website/compare/v2.30.1...v2.30.2) (2025-09-04)
 
 
