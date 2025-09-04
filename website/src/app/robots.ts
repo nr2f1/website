@@ -10,7 +10,6 @@ AI Bot Protection**
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    host: BASE_URL,
     rules: [
       {
         allow: '/',
