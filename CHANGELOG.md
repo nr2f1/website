@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.30.1](https://github.com/nr2f1/website/compare/v2.30.0...v2.30.1) (2025-09-04)
+
+
+### Bug Fixes
+
+* robots ([bf88cb5](https://github.com/nr2f1/website/commit/bf88cb504e75148c3908c68ccc626017e0e580ff))
+* robots ([#331](https://github.com/nr2f1/website/issues/331)) ([87968d3](https://github.com/nr2f1/website/commit/87968d3041f44449c5f35bbc0f1011c11916bba5))
+
 ## [2.30.0](https://github.com/nr2f1/website/compare/v2.29.1...v2.30.0) (2025-09-02)
 
 
