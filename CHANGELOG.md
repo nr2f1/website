@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.30.4](https://github.com/nr2f1/website/compare/v2.30.3...v2.30.4) (2025-09-23)
+
+
+### Bug Fixes
+
+* add givebutter widgets to CSP policy ([d1cc70f](https://github.com/nr2f1/website/commit/d1cc70f21c2f2d72852a7482e95f52ce3dd263eb))
+* add givebutter widgets to CSP policy ([#342](https://github.com/nr2f1/website/issues/342)) ([323cdbf](https://github.com/nr2f1/website/commit/323cdbf45ee2b980380aeee30017aa9dcb71cacc))
+
 ## [2.30.3](https://github.com/nr2f1/website/compare/v2.30.2...v2.30.3) (2025-09-04)
 
 
