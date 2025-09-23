@@ -9,7 +9,8 @@ const FACEBOOK_SDK = 'https://connect.facebook.net';
 const GIVEBUTTER = 'https://givebutter.com';
 const GIVEBUTTER_API = 'https://api.givebutter.com';
 const GIVEBUTTER_IMAGES = 'https://givebutter.s3.amazonaws.com';
-const GIVEBUTTER_URL = 'https://widgets.givebutter.com';
+const GIVEBUTTER_WIDGETS =
+  'https://widgets.givebutter.com https://widgets.givebutter.com/widgets.min.js.map';
 const GOOGLE_FONTS_API = 'https://fonts.googleapis.com';
 const GOOGLE_FONTS_STATIC = 'https://fonts.gstatic.com';
 const GOOGLE_MAPS = 'https://maps.googleapis.com';
@@ -124,7 +125,7 @@ const headers: NextConfig['headers'] = async () => {
             // Allow resources from same origin by default
             `default-src 'self'`,
             // Scripts: Self, inline, eval, and third-party services
-            `script-src 'self' 'unsafe-inline' 'unsafe-eval' ${GTM_URL} ${GIVEBUTTER_URL} ${FACEBOOK_SDK} ${CLOUDFLARE_INSIGHTS} ${STRIPE_JS} ${STRIPE_NETWORK} ${TURNSTILE} ${POSTHOG} https://vercel.live`,
+            `script-src 'self' 'unsafe-inline' 'unsafe-eval' ${GTM_URL} ${GIVEBUTTER_WIDGETS} ${FACEBOOK_SDK} ${CLOUDFLARE_INSIGHTS} ${STRIPE_JS} ${STRIPE_NETWORK} ${TURNSTILE} ${POSTHOG} https://vercel.live`,
             // Styles: Self, inline, Google Fonts API, Vercel Live
             `style-src 'self' 'unsafe-inline' ${GOOGLE_FONTS_API} https://vercel.live`,
             // Images: Self, blob/data URIs, and all third-party image sources
@@ -138,7 +139,7 @@ const headers: NextConfig['headers'] = async () => {
             // Frames/iframes: Self and trusted third-party services
             `frame-src 'self' ${GTM_URL} ${GIVEBUTTER} ${STRIPE_JS} ${STRIPE_NETWORK} ${TURNSTILE} https://vercel.live ${YOUTUBE_WWW} ${YOUTUBE_NO_WWW} ${CONTENTFUL_ASSETS_URL}`,
             // Network requests: APIs and analytics
-            `connect-src 'self' ${GTM_URL} ${CONTENTFUL_GRAPHQL_URL} ${GIVEBUTTER_API} ${GIVEBUTTER} ${SCHEMA_ORG} ${FACEBOOK_SDK} ${CLOUDFLARE_INSIGHTS} ${GOOGLE_MAPS} ${STRIPE_JS} ${STRIPE_NETWORK} ${POSTHOG} https://*.google-analytics.com https://*.googlesyndication.com https://vercel.live ${CONTENTFUL_ASSETS_URL}`,
+            `connect-src 'self' ${GTM_URL} ${CONTENTFUL_GRAPHQL_URL} ${GIVEBUTTER_API} ${GIVEBUTTER} ${SCHEMA_ORG} ${FACEBOOK_SDK} ${CLOUDFLARE_INSIGHTS} ${GOOGLE_MAPS} ${STRIPE_JS} ${STRIPE_NETWORK} ${POSTHOG} https://*.google-analytics.com https://*.googlesyndication.com https://vercel.live ${CONTENTFUL_ASSETS_URL} ${GIVEBUTTER_WIDGETS}`,
             // Form submissions: Self and trusted payment processors
             `form-action 'self' ${GIVEBUTTER} ${STRIPE_JS}`,
             // Block plugins and embeds except for trusted sources
