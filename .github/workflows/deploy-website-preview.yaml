@@ -68,6 +68,8 @@ jobs:
     needs: [release-please, deploy-to-preview]
     if: ${{ always() }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout 🛎️
