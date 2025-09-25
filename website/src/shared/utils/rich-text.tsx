@@ -57,7 +57,16 @@ export const renderOptions = (links: Links) => {
       // Create an iframe when a hyperlink is a youtube video
       [INLINES.HYPERLINK]: (node: Block | Inline, _children: ReactNode) => {
         // Only process youtube links
-        if (node.data.uri.includes('youtube.com')) {
+        let isYoutube = false;
+        try {
+          const urlObj = new URL(node.data.uri);
+          isYoutube =
+            urlObj.hostname === 'youtube.com' ||
+            urlObj.hostname === 'www.youtube.com';
+        } catch {
+          isYoutube = false;
+        }
+        if (isYoutube) {
           // Extract videoId from the URL
           const match =
             /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/.exec(
