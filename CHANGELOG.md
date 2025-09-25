@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.30.6](https://github.com/nr2f1/website/compare/v2.30.5...v2.30.6) (2025-09-25)
+
+
+### Bug Fixes
+
+* incomplete URL substring sanitisation ([96acc67](https://github.com/nr2f1/website/commit/96acc67b1c524aeae3beee3c08a911ceafef299e))
+
 ## [2.30.5](https://github.com/nr2f1/website/compare/v2.30.4...v2.30.5) (2025-09-25)
 
 
