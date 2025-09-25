@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.30.5](https://github.com/nr2f1/website/compare/v2.30.4...v2.30.5) (2025-09-25)
+
+
+### Bug Fixes
+
+* enable list in fundraising ([7336217](https://github.com/nr2f1/website/commit/73362174d5230a3bbf949f77792231aee946b76b))
+* enable list in fundraising ([#344](https://github.com/nr2f1/website/issues/344)) ([114716c](https://github.com/nr2f1/website/commit/114716c0f2c07b419a900618377eb3e86af6b41f))
+
 ## [2.30.4](https://github.com/nr2f1/website/compare/v2.30.3...v2.30.4) (2025-09-23)
 
 
