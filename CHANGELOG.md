@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.31.0](https://github.com/nr2f1/website/compare/v2.30.6...v2.31.0) (2025-09-28)
+
+
+### Features
+
+* add italian support language ([56ed1aa](https://github.com/nr2f1/website/commit/56ed1aaa6a4e8bf99e7bfe7e47b3df9999259997))
+* add italian support language ([#351](https://github.com/nr2f1/website/issues/351)) ([0eb9438](https://github.com/nr2f1/website/commit/0eb943831a9921bdf09654c9bcba3b34bb8d9d27))
+
 ## [2.30.6](https://github.com/nr2f1/website/compare/v2.30.5...v2.30.6) (2025-09-25)
 
 
