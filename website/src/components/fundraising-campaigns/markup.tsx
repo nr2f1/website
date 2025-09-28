@@ -69,6 +69,7 @@ const createdI18n: Record<AvailableLocale, string> = {
   en: 'Created',
   es: 'Creado',
   fr: 'Créé',
+  it: 'Creato',
 };
 
 const now = new Date();

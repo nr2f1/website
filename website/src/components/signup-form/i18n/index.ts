@@ -55,6 +55,17 @@ export const roles: LocaleRoleOptions = {
       value: Role.Specialist,
     },
   ],
+  it: [
+    {
+      label: 'Genitore/caregiver BBSOAS o paziente',
+      value: Role.ParentPatient,
+    },
+    { label: 'Sostenitore', value: Role.Supporter },
+    {
+      label: 'Ricercatore, medico o specialista',
+      value: Role.Specialist,
+    },
+  ],
 };
 
 export interface CountryOptionProps {

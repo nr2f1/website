@@ -1,9 +1,10 @@
-export type AvailableLocale = 'en' | 'es' | 'fr' | 'de';
+export type AvailableLocale = 'en' | 'es' | 'fr' | 'de' | 'it';
 
 export const english: AvailableLocale = 'en'; // 🇬🇧
 export const french: AvailableLocale = 'fr'; // 🇫🇷
 export const spanish: AvailableLocale = 'es'; // 🇪🇸
 export const german: AvailableLocale = 'de'; // 🇩🇪
+export const italian: AvailableLocale = 'it'; // 🇮🇹
 
 export const DEFAULT_LOCALE = english;
 export const AVAILABLE_LOCALES: AvailableLocale[] = [
@@ -11,6 +12,7 @@ export const AVAILABLE_LOCALES: AvailableLocale[] = [
   spanish,
   french,
   german,
+  italian,
 ];
 
 export interface AvailableLocaleOption {
@@ -19,6 +21,10 @@ export interface AvailableLocaleOption {
 }
 
 export const AVAILABLE_LOCALES_LABEL_KEYS: AvailableLocaleOption[] = [
+  {
+    label: 'Italiano',
+    value: italian,
+  },
   {
     label: 'Español',
     value: spanish,
@@ -46,3 +52,11 @@ export interface LocaleParamsPath {
 export type LocalisedString = Record<AvailableLocale, string>;
 
 export const changeLocaleFormat = (locale: string) => locale.replace('_', '-');
+
+export const metadataLanguages = AVAILABLE_LOCALES.reduce(
+  (acc, lang) => {
+    acc[lang] = `/${lang}`;
+    return acc;
+  },
+  {} as Record<AvailableLocale, string>,
+);

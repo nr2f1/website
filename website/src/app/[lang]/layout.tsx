@@ -1,7 +1,7 @@
 import CookieBanner from '@components/cookie-banner';
 import Footer from '@components/footer';
 import Header from '@components/header';
-import { AVAILABLE_LOCALES } from '@i18n/locales';
+import { AVAILABLE_LOCALES, metadataLanguages } from '@i18n/locales';
 import { BASE_URL } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata } from 'next';
@@ -19,12 +19,7 @@ const nunitoSans = Nunito_Sans({
 export const metadata: Metadata = {
   alternates: {
     canonical: '/',
-    languages: {
-      de: '/de',
-      en: '/en',
-      es: '/es',
-      fr: '/fr',
-    },
+    languages: metadataLanguages,
   },
   metadataBase: new URL(BASE_URL),
   title: 'NR2F1 Foundation',

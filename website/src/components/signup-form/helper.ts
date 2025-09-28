@@ -20,6 +20,7 @@ export const validatioErrorMessage: ValidationErrorMessage = {
   en: 'This is a mandatory field',
   es: 'Este campo es obligatorio',
   fr: 'Ce champ est obligatoire',
+  it: 'Questo campo è obbligatorio',
 };
 
 export interface CountryOptionProps {

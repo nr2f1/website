@@ -46,6 +46,10 @@ export const newsTypeLocale: Record<AvailableLocale, NewsType> = {
     blog: 'Article de blog',
     newsletter: "Bulletin d'information",
   },
+  it: {
+    blog: 'Articolo di blog',
+    newsletter: 'Newsletter',
+  },
 };
 
 export const fromNewsToNewsCards = ({

@@ -12,6 +12,7 @@ const description: Record<AvailableLocale, string> = {
   en: 'Latest blog posts about NR2F1 and Bosch-Boonstra-Schaaf optic atrophy syndrome',
   es: 'Últimos artículos sobre NR2F1 y síndrome de atrofia óptica Bosch-Boonstra-Schaaf',
   fr: 'Derniers articles sur NR2F1 et syndrome de atrofia óptica Bosch-Boonstra-Schaaf',
+  it: 'Ultimi articoli su NR2F1 e sindrome di atrofia ottica Bosch-Boonstra-Schaaf',
 };
 
 export async function GET(
