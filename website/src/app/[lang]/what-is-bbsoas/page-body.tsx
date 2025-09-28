@@ -181,6 +181,12 @@ const WhatIsBbsoasBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
       { '@type': 'AnatomicalStructure', name: 'Cerveau' },
       { '@type': 'AnatomicalStructure', name: 'Système visuel' },
     ],
+    it: [
+      { '@type': 'AnatomicalStructure', name: 'Gen NR2F1' },
+      { '@type': 'AnatomicalStructure', name: 'Cromosoma 5q15' },
+      { '@type': 'AnatomicalStructure', name: 'Cervello' },
+      { '@type': 'AnatomicalStructure', name: 'Sistema visivo' },
+    ],
   };
 
   const description = intro?.content?.json?.content[0]?.content[0]?.value;

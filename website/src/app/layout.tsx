@@ -2,18 +2,14 @@ import '@styles/main.scss';
 
 import { ApolloWrapper } from '@app/apollo-wrapper';
 import { GoogleTag } from '@components/google-tag-manager';
+import { metadataLanguages } from '@i18n/locales';
 import { BASE_URL } from '@routes/index';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   alternates: {
     canonical: '/',
-    languages: {
-      de: '/de',
-      en: '/en',
-      es: '/es',
-      fr: '/fr',
-    },
+    languages: metadataLanguages,
   },
 
   keywords: [

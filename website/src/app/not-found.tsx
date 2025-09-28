@@ -30,6 +30,12 @@ const translations: Record<AvailableLocale, Record<string, string>> = {
       'Le lien que vous avez suivi peut être cassé ou la page a peut-être été supprimée.',
     title: 'Désolé, cette page n’est pas disponible',
   },
+  it: {
+    cta: 'Torna alla homepage',
+    description:
+      'Il link che hai seguito potrebbe essere rotto o la pagina potrebbe essere stata rimossa.',
+    title: 'Spiacenti, questa pagina non è disponibile',
+  },
 };
 
 import { Nunito_Sans } from 'next/font/google';

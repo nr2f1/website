@@ -17,6 +17,7 @@ const lastUpdatedI18n: LastUpdated = {
   en: 'Last updated',
   es: 'Última actualización',
   fr: 'Dernière mise à jour',
+  it: 'Aggiornato',
 };
 
 const PageHeader: React.FC<PageHeaderProps> = ({
