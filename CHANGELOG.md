@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.32.0](https://github.com/nr2f1/website/compare/v2.31.0...v2.32.0) (2025-10-04)
+
+
+### Features
+
+* add available locales to blog post page ([08e8b79](https://github.com/nr2f1/website/commit/08e8b79622171838a1430dcbc74dc3f8e0bfe226))
+* add canonical and alternate pages ([7ee4c43](https://github.com/nr2f1/website/commit/7ee4c43b5351db94c07f27cc8438a2c77cd24f55))
+* board member and indexing ([#353](https://github.com/nr2f1/website/issues/353)) ([daa4d51](https://github.com/nr2f1/website/commit/daa4d5158924efe72250443ec0561323ec136c72))
+* change memmbers baord order ([07edc29](https://github.com/nr2f1/website/commit/07edc2920363d7bbe7b08c1ec946fcd51ce9a6d8))
+* create alternative and canonical metadata ([99b7807](https://github.com/nr2f1/website/commit/99b7807f053e47780be809e4bcd1c2ebf703cb26))
+
 ## [2.31.0](https://github.com/nr2f1/website/compare/v2.30.6...v2.31.0) (2025-09-28)
 
 
