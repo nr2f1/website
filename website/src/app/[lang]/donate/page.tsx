@@ -7,7 +7,7 @@ import {
   type GetMetadataQuery,
 } from '@graphql/queries/metadata/index.generated';
 import { donatePageMetadataId } from '@models/metadata';
-import { routes } from '@routes/index';
+import { getAlternateUrls, routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { validateLocale } from '@shared/utils/validate-locale';
 import type { Metadata, NextPage } from 'next';
@@ -82,7 +82,10 @@ export async function generateMetadata({
     },
   });
 
+  const alternates = getAlternateUrls({ locale: lang, route: 'donate' });
+
   return {
+    alternates,
     description,
     keywords,
     title: `NR2F1 Foundation | ${title}`,
