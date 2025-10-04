@@ -7,11 +7,16 @@ import {
   GetPostDocument,
   type GetPostQuery,
 } from '@graphql/queries/post/index.generated';
-import { blogPostUrl } from '@routes/index';
+import { AVAILABLE_LOCALES } from '@i18n/locales';
+import { BASE_URL, blogPostUrl } from '@routes/index';
 import type { NewsPagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
 import { type Links, renderOptions } from '@shared/utils/rich-text';
 import type { Metadata, NextPage } from 'next';
+import type {
+  AlternateLinkDescriptor,
+  Languages,
+} from 'next/dist/lib/metadata/types/alternative-urls-types';
 import type { Blog, WithContext } from 'schema-dts';
 import styles from './index.module.scss';
 
@@ -31,7 +36,21 @@ export async function generateMetadata({
   const description = data?.blogPageCollection?.items[0]?.excerpt ?? '';
   const imgUrl = data?.blogPageCollection?.items[0]?.image?.url ?? '';
 
+  const languages = AVAILABLE_LOCALES.filter(
+    (language) => language !== lang,
+  ).reduce(
+    (acc, language) => {
+      acc[language] = BASE_URL + blogPostUrl({ locale: language, slug });
+      return acc;
+    },
+    {} as Languages<null | string | URL | AlternateLinkDescriptor[]>,
+  );
+
   return {
+    alternates: {
+      canonical: BASE_URL + blogPostUrl({ locale: lang, slug }),
+      languages,
+    },
     description,
     openGraph: {
       description,
@@ -41,7 +60,7 @@ export async function generateMetadata({
       locale: lang,
       title,
       type: 'article',
-      url: blogPostUrl({ locale: lang, slug }),
+      url: BASE_URL + blogPostUrl({ locale: lang, slug }),
     },
     title,
   };
