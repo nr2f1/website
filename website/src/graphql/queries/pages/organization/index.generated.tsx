@@ -28,10 +28,7 @@ export const GetOrganizationPageDocument = gql`
       json
     }
   }
-  boardMembers: memberCollection(
-    where: {category: "board"}
-    order: sys_firstPublishedAt_ASC
-  ) {
+  boardMembers: memberCollection(where: {category: "board"}, order: order_ASC) {
     items {
       image {
         url
