@@ -5,6 +5,7 @@ import {
   type GetMetadataQuery,
 } from '@graphql/queries/metadata/index.generated';
 import { publicationsPageMetadataId } from '@models/metadata';
+import { getAlternateUrls } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
 import type { Graph, WebPage, WithContext } from 'schema-dts';
@@ -79,7 +80,13 @@ export async function generateMetadata({
     },
   });
 
+  const alternates = getAlternateUrls({
+    locale: lang,
+    route: 'publications',
+  });
+
   return {
+    alternates,
     description,
     keywords,
     title: `NR2F1 Foundation | ${title}`,

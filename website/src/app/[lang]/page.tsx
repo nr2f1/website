@@ -9,6 +9,7 @@ import {
   type GetMetadataQuery,
 } from '@graphql/queries/metadata/index.generated';
 import { homepageMetadataId } from '@models/metadata';
+import { getAlternateUrls } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { validateLocale } from '@shared/utils/validate-locale';
 import type { Metadata, NextPage } from 'next';
@@ -48,7 +49,10 @@ export async function generateMetadata({
 
   const { title, description } = data.htmlHeadMetadata;
 
+  const alternates = getAlternateUrls({ locale: lang, route: 'homepage' });
+
   return {
+    alternates,
     description,
     title: `NR2F1 Foundation | ${title}`,
   };

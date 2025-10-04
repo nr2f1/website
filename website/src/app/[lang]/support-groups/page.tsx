@@ -29,7 +29,7 @@ import {
   supportGroupsIntroParagraphsId,
   virtualParentsParagraphsId,
 } from '@models/paragraphs';
-import { routes } from '@routes/index';
+import { getAlternateUrls, routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { createHashLink } from '@shared/utils/hash-links';
 import type { Metadata, NextPage } from 'next';
@@ -186,7 +186,13 @@ export async function generateMetadata({
     },
   });
 
+  const alternates = getAlternateUrls({
+    locale: lang,
+    route: 'support-groups',
+  });
+
   return {
+    alternates,
     description,
     keywords,
     title: `NR2F1 Foundation | ${title}`,

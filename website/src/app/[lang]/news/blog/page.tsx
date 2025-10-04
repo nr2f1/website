@@ -4,6 +4,7 @@ import {
   type GetMetadataQuery,
 } from '@graphql/queries/metadata/index.generated';
 import { blogIndexPageMetadataId } from '@models/metadata';
+import { getAlternateUrls } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
 import BlogIndexPageBody from './page-body';
@@ -29,8 +30,14 @@ export async function generateMetadata({
     },
   });
 
+  const alternates = getAlternateUrls({
+    locale: lang,
+    route: 'blog',
+  });
+
   return {
     alternates: {
+      ...alternates,
       types: {
         'application/rss+xml': `/${lang}/news/blog/rss.xml`,
       },
@@ -43,8 +50,6 @@ export async function generateMetadata({
 interface NewsPageProps extends PagePropsWithLocale {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
-
-// todo: create getStaticProps
 
 const Page: NextPage<NewsPageProps> = async ({ params, searchParams }) => {
   const { lang } = await params;

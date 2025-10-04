@@ -5,7 +5,7 @@ import {
   type GetMetadataQuery,
 } from '@graphql/queries/metadata/index.generated';
 import { organizationPageMetadataId } from '@models/metadata';
-import { routes } from '@routes/index';
+import { BASE_URL, getAlternateUrls, routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
 import type { WebPage, WithContext } from 'schema-dts';
@@ -38,7 +38,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     inLanguage: lang,
     keywords,
     name: title,
-    url: `https://nr2f1.org${routes.organization(lang)}`,
+    url: `${BASE_URL}${routes.organization(lang)}`,
   };
 
   return (
@@ -74,7 +74,10 @@ export async function generateMetadata({
   const description = htmlHeadMetadata?.description || '';
   const keywords = htmlHeadMetadata?.keywords || '';
 
+  const alternates = getAlternateUrls({ locale: lang, route: 'organization' });
+
   return {
+    alternates,
     description,
     keywords,
     title: `NR2F1 Foundation | ${title}`,

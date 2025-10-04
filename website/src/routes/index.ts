@@ -1,4 +1,9 @@
-import type { AvailableLocale } from '@i18n/locales';
+import { AVAILABLE_LOCALES, type AvailableLocale } from '@i18n/locales';
+import type { Metadata } from 'next';
+import type {
+  AlternateLinkDescriptor,
+  Languages,
+} from 'next/dist/lib/metadata/types/alternative-urls-types';
 
 type LocalisedRoute = (locale: AvailableLocale) => string;
 
@@ -106,4 +111,31 @@ export const routes: Record<RouteProperty, LocalisedRoute> = {
   'what-is-bbsoas': (locale: AvailableLocale) => {
     return `/${locale}/what-is-bbsoas`;
   },
+};
+
+interface GetAlternateUrls {
+  locale: AvailableLocale;
+  route: RouteProperty;
+}
+
+export const getAlternateUrls = ({
+  locale,
+  route,
+}: GetAlternateUrls): Metadata['alternates'] => {
+  const canonicalUrl = BASE_URL + routes[route](locale);
+
+  const languages = AVAILABLE_LOCALES.filter(
+    (language) => language !== locale,
+  ).reduce(
+    (acc, language) => {
+      acc[language] = BASE_URL + routes[route](language);
+      return acc;
+    },
+    {} as Languages<null | string | URL | AlternateLinkDescriptor[]>,
+  );
+
+  return {
+    canonical: canonicalUrl,
+    languages,
+  };
 };

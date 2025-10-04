@@ -5,6 +5,7 @@ import {
   type GetMetadataQuery,
 } from '@graphql/queries/metadata/index.generated';
 import { registerPatientPageMetadataId } from '@models/metadata';
+import { getAlternateUrls } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
 import type { Graph, MedicalStudy, WebPage, WithContext } from 'schema-dts';
@@ -91,7 +92,12 @@ export async function generateMetadata({
     },
   });
 
+  const alternates = getAlternateUrls({
+    locale: lang,
+    route: 'register-a-patient',
+  });
   return {
+    alternates,
     description,
     keywords,
     title: `NR2F1 Foundation | ${title}`,

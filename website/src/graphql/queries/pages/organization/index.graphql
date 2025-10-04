@@ -18,7 +18,7 @@ query GetOrganizationPage(
   }
   boardMembers: memberCollection(
     where: { category: "board" }
-    order: sys_firstPublishedAt_ASC
+    order: order_ASC
   ) {
     items {
       image {
@@ -33,6 +33,7 @@ query GetOrganizationPage(
       }
     }
   }
+
   volunteersHeading: heading(locale: $locale, id: $volunteersHeadingId) {
     content
   }
