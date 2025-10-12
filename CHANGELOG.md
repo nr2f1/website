@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.33.1](https://github.com/nr2f1/website/compare/v2.33.0...v2.33.1) (2025-10-12)
+
+
+### Bug Fixes
+
+* e2e timeout ([e4d96bc](https://github.com/nr2f1/website/commit/e4d96bccc6a16eb6b4764b475419aca1ae8342d9))
+* e2e timeout ([#359](https://github.com/nr2f1/website/issues/359)) ([a54db91](https://github.com/nr2f1/website/commit/a54db91714d67de3a9fd3ad31c08477d5dc5077d))
+
 ## [2.33.0](https://github.com/nr2f1/website/compare/v2.32.0...v2.33.0) (2025-10-12)
 
 
