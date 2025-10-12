@@ -36,6 +36,12 @@ const translations: Record<AvailableLocale, Record<string, string>> = {
       'Il link che hai seguito potrebbe essere rotto o la pagina potrebbe essere stata rimossa.',
     title: 'Spiacenti, questa pagina non è disponibile',
   },
+  'pt-BR': {
+    cta: 'Voltar para a página inicial',
+    description:
+      'O link que você seguiu pode estar quebrado ou a página pode ter sido removida.',
+    title: 'Desculpe, esta página não está disponível',
+  },
 };
 
 import { Nunito_Sans } from 'next/font/google';
