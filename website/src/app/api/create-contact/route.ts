@@ -72,6 +72,7 @@ export async function POST(request: Request) {
         custom_fields: {
           field_40498: data.patientFirstName,
         },
+        tags: ['Parent'],
       });
     }
 
