@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.33.0](https://github.com/nr2f1/website/compare/v2.32.0...v2.33.0) (2025-10-12)
+
+
+### Features
+
+* add a tag to contact via GiveButter API ([c443d67](https://github.com/nr2f1/website/commit/c443d67651a1dcaeb0b4c7545237dddb954452c7))
+* add a tag to contact via GiveButter API ([#355](https://github.com/nr2f1/website/issues/355)) ([b4ddd6a](https://github.com/nr2f1/website/commit/b4ddd6a3f811d41ee9d37bb46bcf3bd39f6e5eed))
+* add education progress in strategic page ([4fd96b5](https://github.com/nr2f1/website/commit/4fd96b51afba5ab3beceb127cf583b18e2d5044f))
+* add education progress in strategic page ([#357](https://github.com/nr2f1/website/issues/357)) ([0fddf1a](https://github.com/nr2f1/website/commit/0fddf1a139c0fa96adb2321ffdce4864a00f9404))
+* add portuguese translations ([84de3dc](https://github.com/nr2f1/website/commit/84de3dc534551740103c31048402097237802884))
+
 ## [2.32.0](https://github.com/nr2f1/website/compare/v2.31.0...v2.32.0) (2025-10-04)
 
 
