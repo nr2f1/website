@@ -33,6 +33,7 @@ export const lifeParagraphsId = '3pPQvGt9WQ2CtfvxQRHG9z';
 // Strategic plan page
 export const ourObjectivesParagraphsId = '2E4N2a6tG5hh6NsCziJl6K';
 export const educationParagraphsId = '6pAMZzPt6JKqLZDV8AsfsX';
+export const educationProgressParagraphsId = 'LIBWUC04mkzIgcIOJfz5C';
 export const advocacyParagraphsId = '2hfBd3LRCLgEgWxvAg2xqX';
 export const advocacyProgressParagraphsId = '6gDKY18CDkpik6Uc9GJgk0';
 export const strategicResearchParagraphsId = '5WtSXfSkSm09wvf2yMv8cQ';

@@ -4,6 +4,7 @@ query GetStrategicPlanUpperPage(
   $ourObjectivesParagraphsId: String!
   $educationHeadingId: String!
   $educationParagraphsId: String!
+  $educationProgressParagraphsId: String!
   $advocacyHeadingId: String!
   $advocacyParagraphsId: String!
   $advocacyProgressParagraphsId: String!
@@ -27,6 +28,11 @@ query GetStrategicPlanUpperPage(
     content
   }
   educationParagraphs: paragraphs(locale: $locale, id: $educationParagraphsId) {
+    content {
+      json
+    }
+  }
+  educationProgressParagraphs: paragraphs(locale: $locale, id: $educationProgressParagraphsId) {
     content {
       json
     }
