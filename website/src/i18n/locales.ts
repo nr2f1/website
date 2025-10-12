@@ -47,7 +47,7 @@ export const AVAILABLE_LOCALES_LABEL_KEYS: AvailableLocaleOption[] = [
     label: 'Português (Brasil)',
     value: portuguese,
   },
-];
+].sort((a, b) => a.label.localeCompare(b.label));
 
 export interface LocaleParamsPath {
   params: {
