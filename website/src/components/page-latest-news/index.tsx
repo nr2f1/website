@@ -24,6 +24,7 @@ const latestNewsTitle: LocalisedString = {
   es: 'Últimas noticias',
   fr: 'Dernières nouvelles',
   it: 'Ultime notizie',
+  'pt-BR': 'Últimas notícias',
 };
 
 const PageLatestNews: React.FC<PageLatestNewsProps> = async ({ lang }) => {

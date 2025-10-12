@@ -37,6 +37,11 @@ const paginationLocales: Record<AvailableLocale, PaginationLocale> = {
     page: 'pagina',
     previous: 'precedente',
   },
+  'pt-BR': {
+    next: 'próxima',
+    page: 'página',
+    previous: 'anterior',
+  },
 };
 
 const Pagination: React.FC<PaginationProps> = ({

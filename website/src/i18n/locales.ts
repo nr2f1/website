@@ -1,18 +1,20 @@
-export type AvailableLocale = 'en' | 'es' | 'fr' | 'de' | 'it';
+export type AvailableLocale = 'en' | 'es' | 'fr' | 'de' | 'it' | 'pt-BR';
 
 export const english: AvailableLocale = 'en'; // 🇬🇧
 export const french: AvailableLocale = 'fr'; // 🇫🇷
 export const spanish: AvailableLocale = 'es'; // 🇪🇸
 export const german: AvailableLocale = 'de'; // 🇩🇪
 export const italian: AvailableLocale = 'it'; // 🇮🇹
+export const portuguese: AvailableLocale = 'pt-BR'; // 🇧🇷
 
 export const DEFAULT_LOCALE = english;
 export const AVAILABLE_LOCALES: AvailableLocale[] = [
   english,
-  spanish,
   french,
   german,
   italian,
+  portuguese,
+  spanish,
 ];
 
 export interface AvailableLocaleOption {
@@ -40,6 +42,10 @@ export const AVAILABLE_LOCALES_LABEL_KEYS: AvailableLocaleOption[] = [
   {
     label: 'Deutsch',
     value: german,
+  },
+  {
+    label: 'Português (Brasil)',
+    value: portuguese,
   },
 ];
 

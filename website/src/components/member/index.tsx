@@ -20,6 +20,7 @@ const abouti18n: Record<AvailableLocale, string> = {
   es: 'Acerca de',
   fr: 'À propos',
   it: 'Di',
+  'pt-BR': 'Sobre',
 };
 
 const Member: React.FC<MemberProps> = ({
