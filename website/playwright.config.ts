@@ -42,6 +42,8 @@ export default defineConfig({
     command: 'pnpm nx start website',
     cwd: workspaceRoot,
     reuseExistingServer: !process.env.CI,
+    timeout: 180 * 1000,
     url: 'http://localhost:3000',
   },
+  workers: process.env.CI ? 2 : undefined,
 });
