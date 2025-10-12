@@ -17,6 +17,7 @@ import {
   advocacyParagraphsId,
   advocacyProgressParagraphsId,
   educationParagraphsId,
+  educationProgressParagraphsId,
   ourObjectivesParagraphsId,
   researchProgressParagraphsId,
   strategicResearchParagraphsId,
@@ -39,6 +40,7 @@ const StrategicPlanUpperBody: React.FC<RegisterPageBodyProps> = async ({
       ourObjectivesParagraphs,
       educationHeading,
       educationParagraphs,
+      educationProgressParagraphs,
       advocacyHeading,
       advocacyParagraphs,
       advocacyProgressParagraphs,
@@ -56,6 +58,7 @@ const StrategicPlanUpperBody: React.FC<RegisterPageBodyProps> = async ({
       advocacyProgressParagraphsId,
       educationHeadingId,
       educationParagraphsId,
+      educationProgressParagraphsId,
       getThereHeadingId,
       locale: lang,
       ourObjectivesHeadingId,
@@ -91,6 +94,11 @@ const StrategicPlanUpperBody: React.FC<RegisterPageBodyProps> = async ({
           {educationHeading?.content}
         </h2>
         {documentToReactComponents(educationParagraphs?.content?.json)}
+        <div className={styles.progress}>
+          {documentToReactComponents(
+            educationProgressParagraphs?.content?.json,
+          )}
+        </div>
       </section>
       <section className={styles.section}>
         <h2 id={createHashLink(advocacyHeading?.content ?? '')}>

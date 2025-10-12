@@ -9,6 +9,7 @@ export type GetStrategicPlanUpperPageQueryVariables = Types.Exact<{
   ourObjectivesParagraphsId: Types.Scalars['String']['input'];
   educationHeadingId: Types.Scalars['String']['input'];
   educationParagraphsId: Types.Scalars['String']['input'];
+  educationProgressParagraphsId: Types.Scalars['String']['input'];
   advocacyHeadingId: Types.Scalars['String']['input'];
   advocacyParagraphsId: Types.Scalars['String']['input'];
   advocacyProgressParagraphsId: Types.Scalars['String']['input'];
@@ -19,7 +20,7 @@ export type GetStrategicPlanUpperPageQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetStrategicPlanUpperPageQuery = { __typename?: 'Query', ourObjectivesHeading?: { __typename?: 'Heading', content?: string | null } | null, ourObjectivesParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, educationHeading?: { __typename?: 'Heading', content?: string | null } | null, educationParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, advocacyHeading?: { __typename?: 'Heading', content?: string | null } | null, advocacyParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, advocacyProgressParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, researchHeading?: { __typename?: 'Heading', content?: string | null } | null, researchParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, researchProgressParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, getThereHeading?: { __typename?: 'Heading', content?: string | null } | null };
+export type GetStrategicPlanUpperPageQuery = { __typename?: 'Query', ourObjectivesHeading?: { __typename?: 'Heading', content?: string | null } | null, ourObjectivesParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, educationHeading?: { __typename?: 'Heading', content?: string | null } | null, educationParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, educationProgressParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, advocacyHeading?: { __typename?: 'Heading', content?: string | null } | null, advocacyParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, advocacyProgressParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, researchHeading?: { __typename?: 'Heading', content?: string | null } | null, researchParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, researchProgressParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, getThereHeading?: { __typename?: 'Heading', content?: string | null } | null };
 
 export type GetStrategicPlanMiddlePageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -33,7 +34,7 @@ export type GetStrategicPlanMiddlePageQuery = { __typename?: 'Query', getThereHe
 
 
 export const GetStrategicPlanUpperPageDocument = gql`
-    query GetStrategicPlanUpperPage($locale: String, $ourObjectivesHeadingId: String!, $ourObjectivesParagraphsId: String!, $educationHeadingId: String!, $educationParagraphsId: String!, $advocacyHeadingId: String!, $advocacyParagraphsId: String!, $advocacyProgressParagraphsId: String!, $researchHeadingId: String!, $researchParagraphsId: String!, $researchProgressParagraphsId: String!, $getThereHeadingId: String!) {
+    query GetStrategicPlanUpperPage($locale: String, $ourObjectivesHeadingId: String!, $ourObjectivesParagraphsId: String!, $educationHeadingId: String!, $educationParagraphsId: String!, $educationProgressParagraphsId: String!, $advocacyHeadingId: String!, $advocacyParagraphsId: String!, $advocacyProgressParagraphsId: String!, $researchHeadingId: String!, $researchParagraphsId: String!, $researchProgressParagraphsId: String!, $getThereHeadingId: String!) {
   ourObjectivesHeading: heading(locale: $locale, id: $ourObjectivesHeadingId) {
     content
   }
@@ -49,6 +50,14 @@ export const GetStrategicPlanUpperPageDocument = gql`
     content
   }
   educationParagraphs: paragraphs(locale: $locale, id: $educationParagraphsId) {
+    content {
+      json
+    }
+  }
+  educationProgressParagraphs: paragraphs(
+    locale: $locale
+    id: $educationProgressParagraphsId
+  ) {
     content {
       json
     }
@@ -108,6 +117,7 @@ export const GetStrategicPlanUpperPageDocument = gql`
  *      ourObjectivesParagraphsId: // value for 'ourObjectivesParagraphsId'
  *      educationHeadingId: // value for 'educationHeadingId'
  *      educationParagraphsId: // value for 'educationParagraphsId'
+ *      educationProgressParagraphsId: // value for 'educationProgressParagraphsId'
  *      advocacyHeadingId: // value for 'advocacyHeadingId'
  *      advocacyParagraphsId: // value for 'advocacyParagraphsId'
  *      advocacyProgressParagraphsId: // value for 'advocacyProgressParagraphsId'
