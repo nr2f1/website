@@ -8,6 +8,7 @@ import {
   InMemoryCache,
 } from '@apollo/experimental-nextjs-app-support';
 import { CONTENTUL_GRAPHQL_API } from '@config/utils';
+import { isDev } from '@graphql/client';
 
 const makeClient = () => {
   const httpLink = new HttpLink({
@@ -19,6 +20,9 @@ const makeClient = () => {
 
   return new ApolloClient({
     cache: new InMemoryCache(),
+    devtools: {
+      enabled: isDev,
+    },
     link: httpLink,
   });
 };
