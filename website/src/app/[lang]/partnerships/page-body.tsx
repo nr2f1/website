@@ -10,6 +10,7 @@ import {
   cincinnatiAssetId,
   combinedBrainAssetId,
   globalGenesAssetId,
+  nicoAssetId,
   nr2f1FranceAssetId,
   renAssetId,
   schaafLaboratoryAssetId,
@@ -20,6 +21,7 @@ import {
   cincinnatiLinkId,
   combinedBrainLinkId,
   globalGenesLinkId,
+  nicoLinkId,
   nr2f1FranceLinkId,
   renLinkId,
   schaafLaboratoryLinkId,
@@ -57,6 +59,8 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
       globalGenesAsset,
       uniqueLink,
       uniqueAsset,
+      nicoLink,
+      nicoAsset,
     },
     error,
   } = await query<GetPartnershipsPageQuery>({
@@ -69,6 +73,8 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
       globalGenesAssetId,
       globalGenesLinkId,
       locale: lang,
+      nicoAssetId,
+      nicoLinkId,
       nr2f1FranceAssetId,
       nr2f1FranceLinkId,
       partnersHeadingId,
@@ -202,6 +208,19 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
                     />
                   </picture>
                   <span>{uniqueLink?.text?.content ?? ''}</span>
+                </a>
+              </li>
+              <li>
+                <a href={nicoLink?.target?.url ?? ''}>
+                  <picture>
+                    <img
+                      src={nicoAsset?.url ?? ''}
+                      alt=""
+                      // biome-ignore lint/a11y/noRedundantRoles: this is a safe usage
+                      role="presentation"
+                    />
+                  </picture>
+                  <span>{nicoLink?.text?.content ?? ''}</span>
                 </a>
               </li>
             </ul>

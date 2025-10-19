@@ -7,3 +7,4 @@ export const combinedBrainAssetId = '5HJErxIUVAqRKTDIdtwpLV';
 export const renAssetId = 'A7ffHcwQ9AAFDVVe2a2k3';
 export const globalGenesAssetId = '4A2NwsE75ADdk2NG3LwHJc';
 export const uniqueAssetId = '5pz8HGORauJvj4mjbQ3vFJ';
+export const nicoAssetId = '1IyVhKrCuBWxxvtkvX5js6';
