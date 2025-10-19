@@ -27,6 +27,7 @@ const PrivacyPolicyPageHeader: React.FC<PrivacyPolicyPageHeaderProps> = async ({
 
   if (
     error ||
+    !data ||
     !data.pageHeader ||
     !data.pageHeader.title ||
     !data.pageHeader.lastUpdated

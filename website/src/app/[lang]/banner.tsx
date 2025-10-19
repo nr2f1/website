@@ -13,12 +13,9 @@ interface HomePageBannerProps {
 }
 
 const HomePageBanner: React.FC<HomePageBannerProps> = async ({ lang }) => {
-  const { query } = getClient();
+  const client = getClient();
 
-  const {
-    data: { banner },
-    error,
-  } = await query<GetBannerQuery>({
+  const { data, error } = await client.query<GetBannerQuery>({
     query: GetBannerDocument,
     variables: {
       id: homePageBannerId,
@@ -26,11 +23,11 @@ const HomePageBanner: React.FC<HomePageBannerProps> = async ({ lang }) => {
     },
   });
 
-  if (error || !banner) {
+  if (error || !data?.banner) {
     return null;
   }
 
-  const { heading, content, cta, image } = banner;
+  const { heading, content, cta, image } = data.banner;
 
   const headingContent = heading?.content ?? '';
   const textContent = documentToReactComponents(content?.content?.json);

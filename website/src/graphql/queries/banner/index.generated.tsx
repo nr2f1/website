@@ -1,7 +1,8 @@
 import * as Types from '../../types';
 
 import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
+import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
+import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
 const defaultOptions = {} as const;
 export type GetBannerQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -55,19 +56,19 @@ export const GetBannerDocument = gql`
  *   },
  * });
  */
-export function useGetBannerQuery(baseOptions: Apollo.QueryHookOptions<GetBannerQuery, GetBannerQueryVariables> & ({ variables: GetBannerQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetBannerQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetBannerQuery, GetBannerQueryVariables> & ({ variables: GetBannerQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetBannerQuery, GetBannerQueryVariables>(GetBannerDocument, options);
+        return ApolloReactHooks.useQuery<GetBannerQuery, GetBannerQueryVariables>(GetBannerDocument, options);
       }
-export function useGetBannerLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetBannerQuery, GetBannerQueryVariables>) {
+export function useGetBannerLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetBannerQuery, GetBannerQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetBannerQuery, GetBannerQueryVariables>(GetBannerDocument, options);
+          return ApolloReactHooks.useLazyQuery<GetBannerQuery, GetBannerQueryVariables>(GetBannerDocument, options);
         }
-export function useGetBannerSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetBannerQuery, GetBannerQueryVariables>) {
-          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetBannerQuery, GetBannerQueryVariables>(GetBannerDocument, options);
+export function useGetBannerSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetBannerQuery, GetBannerQueryVariables>) {
+          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useSuspenseQuery<GetBannerQuery, GetBannerQueryVariables>(GetBannerDocument, options);
         }
 export type GetBannerQueryHookResult = ReturnType<typeof useGetBannerQuery>;
 export type GetBannerLazyQueryHookResult = ReturnType<typeof useGetBannerLazyQuery>;
 export type GetBannerSuspenseQueryHookResult = ReturnType<typeof useGetBannerSuspenseQuery>;
-export type GetBannerQueryResult = Apollo.QueryResult<GetBannerQuery, GetBannerQueryVariables>;
+export type GetBannerQueryResult = ApolloReactCommon.QueryResult<GetBannerQuery, GetBannerQueryVariables>;

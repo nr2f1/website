@@ -100,10 +100,7 @@ const CampaignIdea: React.FC<CampaignProps> = ({
 export const FundraisePageBody: React.FC<FundraisePageBodyProps> = async ({
   lang,
 }) => {
-  const {
-    data: { mainBody, campaignsHeading, campaigns },
-    error,
-  } = await query<GetFunraisePageQuery>({
+  const { data, error } = await query<GetFunraisePageQuery>({
     query: GetFunraisePageDocument,
     variables: {
       campaignsHeadingId,
@@ -112,7 +109,7 @@ export const FundraisePageBody: React.FC<FundraisePageBodyProps> = async ({
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
 
@@ -121,12 +118,12 @@ export const FundraisePageBody: React.FC<FundraisePageBodyProps> = async ({
       <div className={styles.fundraisePage__content_wrapper}>
         <article>
           <section>
-            {documentToReactComponents(mainBody?.content?.json)}
+            {documentToReactComponents(data.mainBody?.content?.json)}
           </section>
           <section>
-            <h2>{campaignsHeading?.content}</h2>
+            <h2>{data.campaignsHeading?.content}</h2>
             <ul>
-              {campaigns?.items.map((campaign) => (
+              {data.campaigns?.items.map((campaign) => (
                 <CampaignIdea
                   key={crypto.randomUUID()}
                   lang={lang}

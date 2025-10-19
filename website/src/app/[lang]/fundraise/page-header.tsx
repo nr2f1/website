@@ -24,6 +24,7 @@ const FundraiseHeader: React.FC<FundraiseHeaderProps> = async ({ lang }) => {
 
   if (
     error ||
+    !data ||
     !data.pageHeader ||
     !data.pageHeader.title ||
     !data.pageHeader.lastUpdated ||

@@ -1,7 +1,8 @@
 import * as Types from '../../types';
 
 import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
+import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
+import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
 const defaultOptions = {} as const;
 export type GetFooterQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -65,19 +66,19 @@ export const GetFooterDocument = gql`
  *   },
  * });
  */
-export function useGetFooterQuery(baseOptions: Apollo.QueryHookOptions<GetFooterQuery, GetFooterQueryVariables> & ({ variables: GetFooterQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetFooterQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetFooterQuery, GetFooterQueryVariables> & ({ variables: GetFooterQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetFooterQuery, GetFooterQueryVariables>(GetFooterDocument, options);
+        return ApolloReactHooks.useQuery<GetFooterQuery, GetFooterQueryVariables>(GetFooterDocument, options);
       }
-export function useGetFooterLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFooterQuery, GetFooterQueryVariables>) {
+export function useGetFooterLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetFooterQuery, GetFooterQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetFooterQuery, GetFooterQueryVariables>(GetFooterDocument, options);
+          return ApolloReactHooks.useLazyQuery<GetFooterQuery, GetFooterQueryVariables>(GetFooterDocument, options);
         }
-export function useGetFooterSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetFooterQuery, GetFooterQueryVariables>) {
-          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetFooterQuery, GetFooterQueryVariables>(GetFooterDocument, options);
+export function useGetFooterSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetFooterQuery, GetFooterQueryVariables>) {
+          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useSuspenseQuery<GetFooterQuery, GetFooterQueryVariables>(GetFooterDocument, options);
         }
 export type GetFooterQueryHookResult = ReturnType<typeof useGetFooterQuery>;
 export type GetFooterLazyQueryHookResult = ReturnType<typeof useGetFooterLazyQuery>;
 export type GetFooterSuspenseQueryHookResult = ReturnType<typeof useGetFooterSuspenseQuery>;
-export type GetFooterQueryResult = Apollo.QueryResult<GetFooterQuery, GetFooterQueryVariables>;
+export type GetFooterQueryResult = ApolloReactCommon.QueryResult<GetFooterQuery, GetFooterQueryVariables>;

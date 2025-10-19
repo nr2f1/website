@@ -38,32 +38,7 @@ interface PartnershipsBodyProps {
 const { query } = getClient();
 
 const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
-  const {
-    data: {
-      heading,
-      paragraphs,
-      partnersHeading,
-      nr2f1FranceLink,
-      nr2f1FranceAsset,
-      schaafLaboratoryLink,
-      schaafLaboratoryAsset,
-      cincinnatiAsset,
-      cincinnatiLink,
-      valroseAsset,
-      valroseLink,
-      combinedBrainAsset,
-      combinedBrainLink,
-      renAsset,
-      renLink,
-      globalGenesLink,
-      globalGenesAsset,
-      uniqueLink,
-      uniqueAsset,
-      nicoLink,
-      nicoAsset,
-    },
-    error,
-  } = await query<GetPartnershipsPageQuery>({
+  const { data, error } = await query<GetPartnershipsPageQuery>({
     query: GetPartnershipsPageDocument,
     variables: {
       cincinnatiAssetId,
@@ -91,9 +66,33 @@ const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const {
+    heading,
+    paragraphs,
+    partnersHeading,
+    nr2f1FranceLink,
+    nr2f1FranceAsset,
+    schaafLaboratoryLink,
+    schaafLaboratoryAsset,
+    cincinnatiAsset,
+    cincinnatiLink,
+    valroseAsset,
+    valroseLink,
+    combinedBrainAsset,
+    combinedBrainLink,
+    renAsset,
+    renLink,
+    globalGenesLink,
+    globalGenesAsset,
+    uniqueLink,
+    uniqueAsset,
+    nicoLink,
+    nicoAsset,
+  } = data;
 
   return (
     <div className={styles['page-layout']}>

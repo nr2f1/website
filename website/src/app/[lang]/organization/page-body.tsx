@@ -27,22 +27,7 @@ const { query } = getClient();
 export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
   lang,
 }) => {
-  const {
-    data: {
-      boardHeading,
-      boardParagraphs,
-      volunteersHeading,
-      scientificHeading,
-      researchHeading,
-      scientificParagraphs,
-      researchParagraphs,
-      boardMembers,
-      volunteersMembers,
-      scientificMembers,
-      researchMembers,
-    },
-    error,
-  } = await query<GetOrganizationPageQuery>({
+  const { data, error } = await query<GetOrganizationPageQuery>({
     query: GetOrganizationPageDocument,
     variables: {
       boardHeadingId,
@@ -56,22 +41,22 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
 
   const headings = [
-    boardHeading?.content ?? '',
-    volunteersHeading?.content ?? '',
-    scientificHeading?.content ?? '',
-    researchHeading?.content ?? '',
+    data.boardHeading?.content ?? '',
+    data.volunteersHeading?.content ?? '',
+    data.scientificHeading?.content ?? '',
+    data.researchHeading?.content ?? '',
   ];
 
   const allMembers = [
-    ...(boardMembers?.items || []),
-    ...(volunteersMembers?.items || []),
-    ...(scientificMembers?.items || []),
-    ...(researchMembers?.items || []),
+    ...(data.boardMembers?.items || []),
+    ...(data.volunteersMembers?.items || []),
+    ...(data.scientificMembers?.items || []),
+    ...(data.researchMembers?.items || []),
   ].map((member) => ({
     '@type': 'Person' as const,
     email: member?.email || undefined,
@@ -94,13 +79,13 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <section>
-        <h2 id={createHashLink(boardHeading?.content ?? '')}>
-          {boardHeading?.content}
+        <h2 id={createHashLink(data.boardHeading?.content ?? '')}>
+          {data.boardHeading?.content}
         </h2>
-        {documentToReactComponents(boardParagraphs?.content?.json)}
+        {documentToReactComponents(data.boardParagraphs?.content?.json)}
 
         <div className={styles.organization__members}>
-          {boardMembers?.items?.map((member) => {
+          {data.boardMembers?.items?.map((member) => {
             return (
               <Member
                 key={crypto.randomUUID()}
@@ -116,12 +101,12 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
         </div>
       </section>
       <section>
-        <h2 id={createHashLink(volunteersHeading?.content ?? '')}>
-          {volunteersHeading?.content}
+        <h2 id={createHashLink(data.volunteersHeading?.content ?? '')}>
+          {data.volunteersHeading?.content}
         </h2>
 
         <div className={styles.organization__members}>
-          {volunteersMembers?.items?.map((member) => {
+          {data.volunteersMembers?.items?.map((member) => {
             return (
               <Member
                 key={crypto.randomUUID()}
@@ -136,13 +121,13 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
         </div>
       </section>
       <section>
-        <h2 id={createHashLink(scientificHeading?.content ?? '')}>
-          {scientificHeading?.content}
+        <h2 id={createHashLink(data.scientificHeading?.content ?? '')}>
+          {data.scientificHeading?.content}
         </h2>
-        {documentToReactComponents(scientificParagraphs?.content?.json)}
+        {documentToReactComponents(data.scientificParagraphs?.content?.json)}
 
         <div className={styles.organization__members}>
-          {scientificMembers?.items?.map((member) => {
+          {data.scientificMembers?.items?.map((member) => {
             return (
               <Member
                 key={crypto.randomUUID()}
@@ -157,13 +142,13 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
         </div>
       </section>
       <section>
-        <h2 id={createHashLink(researchHeading?.content ?? '')}>
-          {researchHeading?.content}
+        <h2 id={createHashLink(data.researchHeading?.content ?? '')}>
+          {data.researchHeading?.content}
         </h2>
-        {documentToReactComponents(researchParagraphs?.content?.json)}
+        {documentToReactComponents(data.researchParagraphs?.content?.json)}
 
         <div className={styles.organization__members}>
-          {researchMembers?.items?.map((member) => {
+          {data.researchMembers?.items?.map((member) => {
             return (
               <Member
                 key={crypto.randomUUID()}

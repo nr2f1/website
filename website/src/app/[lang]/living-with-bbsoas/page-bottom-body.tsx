@@ -28,17 +28,7 @@ const { query } = getClient();
 const LivingWithBbsoasBottomBody: React.FC<
   LivingWithBbsoasBottomBodyProps
 > = async ({ lang }) => {
-  const {
-    data: {
-      bbsoasClinicHeading,
-      bbsoasClinicParagraphs,
-      handingLettersHeading,
-      handingLettersParagraphs,
-      readingGeneticReportHeading,
-      readingGeneticReportParagraphs,
-    },
-    error,
-  } = await query<GetLivingWithBbsoasBottomPageQuery>({
+  const { data, error } = await query<GetLivingWithBbsoasBottomPageQuery>({
     query: GetLivingWithBbsoasBottomPageDocument,
     variables: {
       bbsoasClinicHeadingId,
@@ -51,32 +41,36 @@ const LivingWithBbsoasBottomBody: React.FC<
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
 
   return (
     <PageBodySection>
       <section>
-        <h2 id={createHashLink(handingLettersHeading?.content ?? '')}>
-          {handingLettersHeading?.content}
-        </h2>
-        {documentToReactComponents(handingLettersParagraphs?.content?.json)}
-      </section>
-      <section>
-        <h2 id={createHashLink(bbsoasClinicHeading?.content ?? '')}>
-          {bbsoasClinicHeading?.content}
-        </h2>
-        {documentToReactComponents(bbsoasClinicParagraphs?.content?.json)}
-      </section>
-      <section>
-        <h2 id={createHashLink(readingGeneticReportHeading?.content ?? '')}>
-          {readingGeneticReportHeading?.content}
+        <h2 id={createHashLink(data.handingLettersHeading?.content ?? '')}>
+          {data.handingLettersHeading?.content}
         </h2>
         {documentToReactComponents(
-          readingGeneticReportParagraphs?.content?.json,
+          data.handingLettersParagraphs?.content?.json,
+        )}
+      </section>
+      <section>
+        <h2 id={createHashLink(data.bbsoasClinicHeading?.content ?? '')}>
+          {data.bbsoasClinicHeading?.content}
+        </h2>
+        {documentToReactComponents(data.bbsoasClinicParagraphs?.content?.json)}
+      </section>
+      <section>
+        <h2
+          id={createHashLink(data.readingGeneticReportHeading?.content ?? '')}
+        >
+          {data.readingGeneticReportHeading?.content}
+        </h2>
+        {documentToReactComponents(
+          data.readingGeneticReportParagraphs?.content?.json,
           renderOptions(
-            readingGeneticReportParagraphs?.content?.links as Links,
+            data.readingGeneticReportParagraphs?.content?.links as Links,
           ),
         )}
       </section>

@@ -25,6 +25,7 @@ const Donate: React.FC<DonateProps> = async ({ lang }) => {
 
   if (
     error ||
+    !data ||
     !data.pageHeader ||
     !data.pageHeader.title ||
     !data.pageHeader.lastUpdated ||

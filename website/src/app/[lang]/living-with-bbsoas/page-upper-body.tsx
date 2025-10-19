@@ -33,21 +33,7 @@ const { query } = getClient();
 const LivingWithBbsoasUpperBody: React.FC<RegisterPageBodyProps> = async ({
   lang,
 }) => {
-  const {
-    data: {
-      bbsoasClinicHeading,
-      handingLettersHeading,
-      registerPatientCta,
-      registerPatientHeading,
-      registerPatientParagraphs,
-      testAndTherapiesHeading,
-      testAndTherapiesParagraphs,
-      understandingBbsoasHeading,
-      understandingBbsoasParagraphs,
-      readingGeneticReportHeading,
-    },
-    error,
-  } = await query<GetLivingWithBbsoasUpperPageQuery>({
+  const { data, error } = await query<GetLivingWithBbsoasUpperPageQuery>({
     query: GetLivingWithBbsoasUpperPageDocument,
     variables: {
       bbsoasClinicHeadingId,
@@ -64,46 +50,50 @@ const LivingWithBbsoasUpperBody: React.FC<RegisterPageBodyProps> = async ({
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
 
   const headings = [
-    testAndTherapiesHeading?.content ?? '',
-    registerPatientHeading?.content ?? '',
-    understandingBbsoasHeading?.content ?? '',
-    handingLettersHeading?.content ?? '',
-    bbsoasClinicHeading?.content ?? '',
-    readingGeneticReportHeading?.content ?? '',
+    data.testAndTherapiesHeading?.content ?? '',
+    data.registerPatientHeading?.content ?? '',
+    data.understandingBbsoasHeading?.content ?? '',
+    data.handingLettersHeading?.content ?? '',
+    data.bbsoasClinicHeading?.content ?? '',
+    data.readingGeneticReportHeading?.content ?? '',
   ];
 
   return (
     <PageBody lang={lang} headings={headings}>
       <section>
-        <h2 id={createHashLink(testAndTherapiesHeading?.content ?? '')}>
-          {testAndTherapiesHeading?.content}
+        <h2 id={createHashLink(data.testAndTherapiesHeading?.content ?? '')}>
+          {data.testAndTherapiesHeading?.content}
         </h2>
-        {documentToReactComponents(testAndTherapiesParagraphs?.content?.json)}
+        {documentToReactComponents(
+          data.testAndTherapiesParagraphs?.content?.json,
+        )}
       </section>
       <section className={styles.register}>
-        <h2 id={createHashLink(registerPatientHeading?.content ?? '')}>
-          {registerPatientHeading?.content}
+        <h2 id={createHashLink(data.registerPatientHeading?.content ?? '')}>
+          {data.registerPatientHeading?.content}
         </h2>
-        {documentToReactComponents(registerPatientParagraphs?.content?.json)}
+        {documentToReactComponents(
+          data.registerPatientParagraphs?.content?.json,
+        )}
         <Link
-          href={registerPatientCta?.target?.url ?? ''}
+          href={data.registerPatientCta?.target?.url ?? ''}
           className={`button button--on-light ${styles.register__button}`}
           id="button"
         >
-          {registerPatientCta?.text?.content ?? ''}
+          {data.registerPatientCta?.text?.content ?? ''}
         </Link>
       </section>
       <section>
-        <h2 id={createHashLink(understandingBbsoasHeading?.content ?? '')}>
-          {understandingBbsoasHeading?.content}
+        <h2 id={createHashLink(data.understandingBbsoasHeading?.content ?? '')}>
+          {data.understandingBbsoasHeading?.content}
         </h2>
         {documentToReactComponents(
-          understandingBbsoasParagraphs?.content?.json,
+          data.understandingBbsoasParagraphs?.content?.json,
         )}
       </section>
     </PageBody>

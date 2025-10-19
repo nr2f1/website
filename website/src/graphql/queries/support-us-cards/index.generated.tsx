@@ -1,7 +1,8 @@
 import * as Types from '../../types';
 
 import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
+import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
+import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
 const defaultOptions = {} as const;
 export type GetSupportUsCardsQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -98,19 +99,19 @@ export const GetSupportUsCardsDocument = gql`
  *   },
  * });
  */
-export function useGetSupportUsCardsQuery(baseOptions: Apollo.QueryHookOptions<GetSupportUsCardsQuery, GetSupportUsCardsQueryVariables> & ({ variables: GetSupportUsCardsQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetSupportUsCardsQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetSupportUsCardsQuery, GetSupportUsCardsQueryVariables> & ({ variables: GetSupportUsCardsQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetSupportUsCardsQuery, GetSupportUsCardsQueryVariables>(GetSupportUsCardsDocument, options);
+        return ApolloReactHooks.useQuery<GetSupportUsCardsQuery, GetSupportUsCardsQueryVariables>(GetSupportUsCardsDocument, options);
       }
-export function useGetSupportUsCardsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetSupportUsCardsQuery, GetSupportUsCardsQueryVariables>) {
+export function useGetSupportUsCardsLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetSupportUsCardsQuery, GetSupportUsCardsQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetSupportUsCardsQuery, GetSupportUsCardsQueryVariables>(GetSupportUsCardsDocument, options);
+          return ApolloReactHooks.useLazyQuery<GetSupportUsCardsQuery, GetSupportUsCardsQueryVariables>(GetSupportUsCardsDocument, options);
         }
-export function useGetSupportUsCardsSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetSupportUsCardsQuery, GetSupportUsCardsQueryVariables>) {
-          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetSupportUsCardsQuery, GetSupportUsCardsQueryVariables>(GetSupportUsCardsDocument, options);
+export function useGetSupportUsCardsSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetSupportUsCardsQuery, GetSupportUsCardsQueryVariables>) {
+          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useSuspenseQuery<GetSupportUsCardsQuery, GetSupportUsCardsQueryVariables>(GetSupportUsCardsDocument, options);
         }
 export type GetSupportUsCardsQueryHookResult = ReturnType<typeof useGetSupportUsCardsQuery>;
 export type GetSupportUsCardsLazyQueryHookResult = ReturnType<typeof useGetSupportUsCardsLazyQuery>;
 export type GetSupportUsCardsSuspenseQueryHookResult = ReturnType<typeof useGetSupportUsCardsSuspenseQuery>;
-export type GetSupportUsCardsQueryResult = Apollo.QueryResult<GetSupportUsCardsQuery, GetSupportUsCardsQueryVariables>;
+export type GetSupportUsCardsQueryResult = ApolloReactCommon.QueryResult<GetSupportUsCardsQuery, GetSupportUsCardsQueryVariables>;

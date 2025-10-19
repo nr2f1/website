@@ -39,25 +39,7 @@ const { query } = getClient();
 const GetInvolvedInBbsoasResearchBody: React.FC<
   GetInvolvedInBbsoasResearchPageProps
 > = async ({ lang }) => {
-  const {
-    data: {
-      patientRegistryHeading,
-      biorepositoryHeading,
-      surveyHeading,
-      patientRegistryParagraphs,
-      biorepositoryParagraphsBeforeAccordions,
-      whatIsBioRepositoryAccordion,
-      whyBioRepositoryAccordion,
-      anotherSampleAccordion,
-      biorepositoryParagraphsAfterAccordions,
-      surveyParagraphsBeforeAccordions,
-      ortasWhatAccordion,
-      ortasWhyAccordion,
-      ortasWhoAccordion,
-      surveyParagraphsAfterAccordions,
-    },
-    error,
-  } = await query<GetGetInvolvedInBbsoasResearchPageQuery>({
+  const { data, error } = await query<GetGetInvolvedInBbsoasResearchPageQuery>({
     query: GetGetInvolvedInBbsoasResearchPageDocument,
     variables: {
       anotherSampleAccordionId,
@@ -78,77 +60,85 @@ const GetInvolvedInBbsoasResearchBody: React.FC<
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
 
   const headings = [
-    patientRegistryHeading?.content ?? '',
-    biorepositoryHeading?.content ?? '',
-    surveyHeading?.content ?? '',
+    data.patientRegistryHeading?.content ?? '',
+    data.biorepositoryHeading?.content ?? '',
+    data.surveyHeading?.content ?? '',
   ];
 
   return (
     <PageBody lang={lang} headings={headings}>
       <section>
-        <h2 id={createHashLink(patientRegistryHeading?.content ?? '')}>
-          {patientRegistryHeading?.content}
-        </h2>
-        {documentToReactComponents(patientRegistryParagraphs?.content?.json)}
-      </section>
-      <section>
-        <h2 id={createHashLink(biorepositoryHeading?.content ?? '')}>
-          {biorepositoryHeading?.content}
+        <h2 id={createHashLink(data.patientRegistryHeading?.content ?? '')}>
+          {data.patientRegistryHeading?.content}
         </h2>
         {documentToReactComponents(
-          biorepositoryParagraphsBeforeAccordions?.content?.json,
+          data.patientRegistryParagraphs?.content?.json,
+        )}
+      </section>
+      <section>
+        <h2 id={createHashLink(data.biorepositoryHeading?.content ?? '')}>
+          {data.biorepositoryHeading?.content}
+        </h2>
+        {documentToReactComponents(
+          data.biorepositoryParagraphsBeforeAccordions?.content?.json,
         )}
         <Accordion
-          title={whatIsBioRepositoryAccordion?.title ?? ''}
+          title={data.whatIsBioRepositoryAccordion?.title ?? ''}
           content={documentToReactComponents(
-            whatIsBioRepositoryAccordion?.content?.json,
+            data.whatIsBioRepositoryAccordion?.content?.json,
           )}
         />
         <Accordion
-          title={whyBioRepositoryAccordion?.title ?? ''}
+          title={data.whyBioRepositoryAccordion?.title ?? ''}
           content={documentToReactComponents(
-            whyBioRepositoryAccordion?.content?.json,
+            data.whyBioRepositoryAccordion?.content?.json,
           )}
         />
         <Accordion
-          title={anotherSampleAccordion?.title ?? ''}
+          title={data.anotherSampleAccordion?.title ?? ''}
           content={documentToReactComponents(
-            anotherSampleAccordion?.content?.json,
+            data.anotherSampleAccordion?.content?.json,
           )}
         />
         <div className={styles.override}>
           {documentToReactComponents(
-            biorepositoryParagraphsAfterAccordions?.content?.json,
+            data.biorepositoryParagraphsAfterAccordions?.content?.json,
           )}
         </div>
       </section>
       <section>
-        <h2 id={createHashLink(surveyHeading?.content ?? '')}>
-          {surveyHeading?.content}
+        <h2 id={createHashLink(data.surveyHeading?.content ?? '')}>
+          {data.surveyHeading?.content}
         </h2>
         {documentToReactComponents(
-          surveyParagraphsBeforeAccordions?.content?.json,
+          data.surveyParagraphsBeforeAccordions?.content?.json,
         )}
         <Accordion
-          title={ortasWhatAccordion?.title ?? ''}
-          content={documentToReactComponents(ortasWhatAccordion?.content?.json)}
+          title={data.ortasWhatAccordion?.title ?? ''}
+          content={documentToReactComponents(
+            data.ortasWhatAccordion?.content?.json,
+          )}
         />
         <Accordion
-          title={ortasWhyAccordion?.title ?? ''}
-          content={documentToReactComponents(ortasWhyAccordion?.content?.json)}
+          title={data.ortasWhyAccordion?.title ?? ''}
+          content={documentToReactComponents(
+            data.ortasWhyAccordion?.content?.json,
+          )}
         />
         <Accordion
-          title={ortasWhoAccordion?.title ?? ''}
-          content={documentToReactComponents(ortasWhoAccordion?.content?.json)}
+          title={data.ortasWhoAccordion?.title ?? ''}
+          content={documentToReactComponents(
+            data.ortasWhoAccordion?.content?.json,
+          )}
         />
         <div className={styles.override}>
           {documentToReactComponents(
-            surveyParagraphsAfterAccordions?.content?.json,
+            data.surveyParagraphsAfterAccordions?.content?.json,
           )}
         </div>
       </section>

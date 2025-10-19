@@ -1,7 +1,8 @@
 import * as Types from '../../types';
 
 import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
+import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
+import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
 const defaultOptions = {} as const;
 export type GetLatestNewsQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -73,19 +74,19 @@ export const GetLatestNewsDocument = gql`
  *   },
  * });
  */
-export function useGetLatestNewsQuery(baseOptions: Apollo.QueryHookOptions<GetLatestNewsQuery, GetLatestNewsQueryVariables> & ({ variables: GetLatestNewsQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetLatestNewsQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetLatestNewsQuery, GetLatestNewsQueryVariables> & ({ variables: GetLatestNewsQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetLatestNewsQuery, GetLatestNewsQueryVariables>(GetLatestNewsDocument, options);
+        return ApolloReactHooks.useQuery<GetLatestNewsQuery, GetLatestNewsQueryVariables>(GetLatestNewsDocument, options);
       }
-export function useGetLatestNewsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetLatestNewsQuery, GetLatestNewsQueryVariables>) {
+export function useGetLatestNewsLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetLatestNewsQuery, GetLatestNewsQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetLatestNewsQuery, GetLatestNewsQueryVariables>(GetLatestNewsDocument, options);
+          return ApolloReactHooks.useLazyQuery<GetLatestNewsQuery, GetLatestNewsQueryVariables>(GetLatestNewsDocument, options);
         }
-export function useGetLatestNewsSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetLatestNewsQuery, GetLatestNewsQueryVariables>) {
-          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetLatestNewsQuery, GetLatestNewsQueryVariables>(GetLatestNewsDocument, options);
+export function useGetLatestNewsSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetLatestNewsQuery, GetLatestNewsQueryVariables>) {
+          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useSuspenseQuery<GetLatestNewsQuery, GetLatestNewsQueryVariables>(GetLatestNewsDocument, options);
         }
 export type GetLatestNewsQueryHookResult = ReturnType<typeof useGetLatestNewsQuery>;
 export type GetLatestNewsLazyQueryHookResult = ReturnType<typeof useGetLatestNewsLazyQuery>;
 export type GetLatestNewsSuspenseQueryHookResult = ReturnType<typeof useGetLatestNewsSuspenseQuery>;
-export type GetLatestNewsQueryResult = Apollo.QueryResult<GetLatestNewsQuery, GetLatestNewsQueryVariables>;
+export type GetLatestNewsQueryResult = ApolloReactCommon.QueryResult<GetLatestNewsQuery, GetLatestNewsQueryVariables>;

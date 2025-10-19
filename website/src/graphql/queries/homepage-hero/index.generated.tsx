@@ -1,7 +1,8 @@
 import * as Types from '../../types';
 
 import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
+import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
+import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
 const defaultOptions = {} as const;
 export type GetHomePageHeroQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -77,19 +78,19 @@ export const GetHomePageHeroDocument = gql`
  *   },
  * });
  */
-export function useGetHomePageHeroQuery(baseOptions: Apollo.QueryHookOptions<GetHomePageHeroQuery, GetHomePageHeroQueryVariables> & ({ variables: GetHomePageHeroQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetHomePageHeroQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetHomePageHeroQuery, GetHomePageHeroQueryVariables> & ({ variables: GetHomePageHeroQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetHomePageHeroQuery, GetHomePageHeroQueryVariables>(GetHomePageHeroDocument, options);
+        return ApolloReactHooks.useQuery<GetHomePageHeroQuery, GetHomePageHeroQueryVariables>(GetHomePageHeroDocument, options);
       }
-export function useGetHomePageHeroLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetHomePageHeroQuery, GetHomePageHeroQueryVariables>) {
+export function useGetHomePageHeroLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetHomePageHeroQuery, GetHomePageHeroQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetHomePageHeroQuery, GetHomePageHeroQueryVariables>(GetHomePageHeroDocument, options);
+          return ApolloReactHooks.useLazyQuery<GetHomePageHeroQuery, GetHomePageHeroQueryVariables>(GetHomePageHeroDocument, options);
         }
-export function useGetHomePageHeroSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetHomePageHeroQuery, GetHomePageHeroQueryVariables>) {
-          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetHomePageHeroQuery, GetHomePageHeroQueryVariables>(GetHomePageHeroDocument, options);
+export function useGetHomePageHeroSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetHomePageHeroQuery, GetHomePageHeroQueryVariables>) {
+          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useSuspenseQuery<GetHomePageHeroQuery, GetHomePageHeroQueryVariables>(GetHomePageHeroDocument, options);
         }
 export type GetHomePageHeroQueryHookResult = ReturnType<typeof useGetHomePageHeroQuery>;
 export type GetHomePageHeroLazyQueryHookResult = ReturnType<typeof useGetHomePageHeroLazyQuery>;
 export type GetHomePageHeroSuspenseQueryHookResult = ReturnType<typeof useGetHomePageHeroSuspenseQuery>;
-export type GetHomePageHeroQueryResult = Apollo.QueryResult<GetHomePageHeroQuery, GetHomePageHeroQueryVariables>;
+export type GetHomePageHeroQueryResult = ApolloReactCommon.QueryResult<GetHomePageHeroQuery, GetHomePageHeroQueryVariables>;

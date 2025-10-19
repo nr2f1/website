@@ -26,6 +26,7 @@ const OurFinancialsPageHeader: React.FC<OurFinancialsPageHeaderProps> = async ({
   });
 
   if (
+    !data ||
     error ||
     !data.pageHeader ||
     !data.pageHeader.title ||

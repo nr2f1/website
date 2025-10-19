@@ -18,10 +18,7 @@ interface DonatePageBodyProps {
 export const DonatePageBody: React.FC<DonatePageBodyProps> = async ({
   lang,
 }) => {
-  const {
-    data: { mainbody },
-    error,
-  } = await query<GetDonatePageQuery>({
+  const { data, error } = await query<GetDonatePageQuery>({
     query: GetDonatePageDocument,
     variables: {
       donatePageParagraphsId,
@@ -29,7 +26,7 @@ export const DonatePageBody: React.FC<DonatePageBodyProps> = async ({
     },
   });
 
-  if (error) {
+  if (error || !data?.mainbody) {
     return null;
   }
 
@@ -38,7 +35,7 @@ export const DonatePageBody: React.FC<DonatePageBodyProps> = async ({
       <div className={styles.donate__content_wrapper}>
         <article>
           <section>
-            {documentToReactComponents(mainbody?.content?.json)}
+            {documentToReactComponents(data.mainbody?.content?.json)}
           </section>
         </article>
         <div className={styles.donate__form_wrapper}>

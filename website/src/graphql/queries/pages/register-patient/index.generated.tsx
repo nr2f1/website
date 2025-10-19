@@ -1,7 +1,8 @@
 import * as Types from '../../../types';
 
 import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
+import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
+import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
 const defaultOptions = {} as const;
 export type GetRegisterPatientPageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -175,19 +176,19 @@ export const GetRegisterPatientPageDocument = gql`
  *   },
  * });
  */
-export function useGetRegisterPatientPageQuery(baseOptions: Apollo.QueryHookOptions<GetRegisterPatientPageQuery, GetRegisterPatientPageQueryVariables> & ({ variables: GetRegisterPatientPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetRegisterPatientPageQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetRegisterPatientPageQuery, GetRegisterPatientPageQueryVariables> & ({ variables: GetRegisterPatientPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetRegisterPatientPageQuery, GetRegisterPatientPageQueryVariables>(GetRegisterPatientPageDocument, options);
+        return ApolloReactHooks.useQuery<GetRegisterPatientPageQuery, GetRegisterPatientPageQueryVariables>(GetRegisterPatientPageDocument, options);
       }
-export function useGetRegisterPatientPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetRegisterPatientPageQuery, GetRegisterPatientPageQueryVariables>) {
+export function useGetRegisterPatientPageLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetRegisterPatientPageQuery, GetRegisterPatientPageQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetRegisterPatientPageQuery, GetRegisterPatientPageQueryVariables>(GetRegisterPatientPageDocument, options);
+          return ApolloReactHooks.useLazyQuery<GetRegisterPatientPageQuery, GetRegisterPatientPageQueryVariables>(GetRegisterPatientPageDocument, options);
         }
-export function useGetRegisterPatientPageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetRegisterPatientPageQuery, GetRegisterPatientPageQueryVariables>) {
-          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetRegisterPatientPageQuery, GetRegisterPatientPageQueryVariables>(GetRegisterPatientPageDocument, options);
+export function useGetRegisterPatientPageSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetRegisterPatientPageQuery, GetRegisterPatientPageQueryVariables>) {
+          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useSuspenseQuery<GetRegisterPatientPageQuery, GetRegisterPatientPageQueryVariables>(GetRegisterPatientPageDocument, options);
         }
 export type GetRegisterPatientPageQueryHookResult = ReturnType<typeof useGetRegisterPatientPageQuery>;
 export type GetRegisterPatientPageLazyQueryHookResult = ReturnType<typeof useGetRegisterPatientPageLazyQuery>;
 export type GetRegisterPatientPageSuspenseQueryHookResult = ReturnType<typeof useGetRegisterPatientPageSuspenseQuery>;
-export type GetRegisterPatientPageQueryResult = Apollo.QueryResult<GetRegisterPatientPageQuery, GetRegisterPatientPageQueryVariables>;
+export type GetRegisterPatientPageQueryResult = ApolloReactCommon.QueryResult<GetRegisterPatientPageQuery, GetRegisterPatientPageQueryVariables>;

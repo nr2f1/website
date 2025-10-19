@@ -17,9 +17,7 @@ const { query } = getClient();
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { lang } = await params;
 
-  const {
-    data: { htmlHeadMetadata },
-  } = await query<GetMetadataQuery>({
+  const { data } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
       id: organizationPageMetadataId,
@@ -27,9 +25,9 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     },
   });
 
-  const title = htmlHeadMetadata?.title || '';
-  const description = htmlHeadMetadata?.description || '';
-  const keywords = htmlHeadMetadata?.keywords || '';
+  const title = data?.htmlHeadMetadata?.title || '';
+  const description = data?.htmlHeadMetadata?.description || '';
+  const keywords = data?.htmlHeadMetadata?.keywords || '';
 
   const jsonLd: WithContext<WebPage> = {
     '@context': 'https://schema.org',
@@ -60,9 +58,7 @@ export async function generateMetadata({
 }: PagePropsWithLocale): Promise<Metadata> {
   const { lang } = await params;
 
-  const {
-    data: { htmlHeadMetadata },
-  } = await query<GetMetadataQuery>({
+  const { data } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
       id: organizationPageMetadataId,
@@ -70,9 +66,9 @@ export async function generateMetadata({
     },
   });
 
-  const title = htmlHeadMetadata?.title || '';
-  const description = htmlHeadMetadata?.description || '';
-  const keywords = htmlHeadMetadata?.keywords || '';
+  const title = data?.htmlHeadMetadata?.title || '';
+  const description = data?.htmlHeadMetadata?.description || '';
+  const keywords = data?.htmlHeadMetadata?.keywords || '';
 
   const alternates = getAlternateUrls({ locale: lang, route: 'organization' });
 

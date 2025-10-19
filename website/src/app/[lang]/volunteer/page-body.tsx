@@ -15,10 +15,7 @@ interface VolunteerBodyProps {
 }
 
 export const VolunteerBody: React.FC<VolunteerBodyProps> = async ({ lang }) => {
-  const {
-    data: { mainbody },
-    error,
-  } = await query<GetVolunteerPageQuery>({
+  const { data, error } = await query<GetVolunteerPageQuery>({
     query: GetVolunteerPageDocument,
     variables: {
       locale: lang,
@@ -26,7 +23,7 @@ export const VolunteerBody: React.FC<VolunteerBodyProps> = async ({ lang }) => {
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
 
@@ -35,7 +32,7 @@ export const VolunteerBody: React.FC<VolunteerBodyProps> = async ({ lang }) => {
       <div className={styles.volunteer__content_wrapper}>
         <article>
           <section>
-            {documentToReactComponents(mainbody?.content?.json)}
+            {documentToReactComponents(data.mainbody?.content?.json)}
           </section>
         </article>
       </div>

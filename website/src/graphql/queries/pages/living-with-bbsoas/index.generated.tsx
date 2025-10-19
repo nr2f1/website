@@ -1,7 +1,8 @@
 import * as Types from '../../../types';
 
 import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
+import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
+import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
 const defaultOptions = {} as const;
 export type GetLivingWithBbsoasUpperPageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -124,22 +125,22 @@ export const GetLivingWithBbsoasUpperPageDocument = gql`
  *   },
  * });
  */
-export function useGetLivingWithBbsoasUpperPageQuery(baseOptions: Apollo.QueryHookOptions<GetLivingWithBbsoasUpperPageQuery, GetLivingWithBbsoasUpperPageQueryVariables> & ({ variables: GetLivingWithBbsoasUpperPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetLivingWithBbsoasUpperPageQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetLivingWithBbsoasUpperPageQuery, GetLivingWithBbsoasUpperPageQueryVariables> & ({ variables: GetLivingWithBbsoasUpperPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetLivingWithBbsoasUpperPageQuery, GetLivingWithBbsoasUpperPageQueryVariables>(GetLivingWithBbsoasUpperPageDocument, options);
+        return ApolloReactHooks.useQuery<GetLivingWithBbsoasUpperPageQuery, GetLivingWithBbsoasUpperPageQueryVariables>(GetLivingWithBbsoasUpperPageDocument, options);
       }
-export function useGetLivingWithBbsoasUpperPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetLivingWithBbsoasUpperPageQuery, GetLivingWithBbsoasUpperPageQueryVariables>) {
+export function useGetLivingWithBbsoasUpperPageLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetLivingWithBbsoasUpperPageQuery, GetLivingWithBbsoasUpperPageQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetLivingWithBbsoasUpperPageQuery, GetLivingWithBbsoasUpperPageQueryVariables>(GetLivingWithBbsoasUpperPageDocument, options);
+          return ApolloReactHooks.useLazyQuery<GetLivingWithBbsoasUpperPageQuery, GetLivingWithBbsoasUpperPageQueryVariables>(GetLivingWithBbsoasUpperPageDocument, options);
         }
-export function useGetLivingWithBbsoasUpperPageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetLivingWithBbsoasUpperPageQuery, GetLivingWithBbsoasUpperPageQueryVariables>) {
-          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetLivingWithBbsoasUpperPageQuery, GetLivingWithBbsoasUpperPageQueryVariables>(GetLivingWithBbsoasUpperPageDocument, options);
+export function useGetLivingWithBbsoasUpperPageSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetLivingWithBbsoasUpperPageQuery, GetLivingWithBbsoasUpperPageQueryVariables>) {
+          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useSuspenseQuery<GetLivingWithBbsoasUpperPageQuery, GetLivingWithBbsoasUpperPageQueryVariables>(GetLivingWithBbsoasUpperPageDocument, options);
         }
 export type GetLivingWithBbsoasUpperPageQueryHookResult = ReturnType<typeof useGetLivingWithBbsoasUpperPageQuery>;
 export type GetLivingWithBbsoasUpperPageLazyQueryHookResult = ReturnType<typeof useGetLivingWithBbsoasUpperPageLazyQuery>;
 export type GetLivingWithBbsoasUpperPageSuspenseQueryHookResult = ReturnType<typeof useGetLivingWithBbsoasUpperPageSuspenseQuery>;
-export type GetLivingWithBbsoasUpperPageQueryResult = Apollo.QueryResult<GetLivingWithBbsoasUpperPageQuery, GetLivingWithBbsoasUpperPageQueryVariables>;
+export type GetLivingWithBbsoasUpperPageQueryResult = ApolloReactCommon.QueryResult<GetLivingWithBbsoasUpperPageQuery, GetLivingWithBbsoasUpperPageQueryVariables>;
 export const GetLivingWithBbsoasBottomPageDocument = gql`
     query GetLivingWithBbsoasBottomPage($locale: String, $handingLettersHeadingId: String!, $handingLettersParagraphsId: String!, $bbsoasClinicHeadingId: String!, $bbsoasClinicParagraphsId: String!, $readingGeneticReportHeadingId: String!, $readingGeneticReportParagraphsId: String!) {
   handingLettersHeading: heading(locale: $locale, id: $handingLettersHeadingId) {
@@ -230,19 +231,19 @@ export const GetLivingWithBbsoasBottomPageDocument = gql`
  *   },
  * });
  */
-export function useGetLivingWithBbsoasBottomPageQuery(baseOptions: Apollo.QueryHookOptions<GetLivingWithBbsoasBottomPageQuery, GetLivingWithBbsoasBottomPageQueryVariables> & ({ variables: GetLivingWithBbsoasBottomPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetLivingWithBbsoasBottomPageQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetLivingWithBbsoasBottomPageQuery, GetLivingWithBbsoasBottomPageQueryVariables> & ({ variables: GetLivingWithBbsoasBottomPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetLivingWithBbsoasBottomPageQuery, GetLivingWithBbsoasBottomPageQueryVariables>(GetLivingWithBbsoasBottomPageDocument, options);
+        return ApolloReactHooks.useQuery<GetLivingWithBbsoasBottomPageQuery, GetLivingWithBbsoasBottomPageQueryVariables>(GetLivingWithBbsoasBottomPageDocument, options);
       }
-export function useGetLivingWithBbsoasBottomPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetLivingWithBbsoasBottomPageQuery, GetLivingWithBbsoasBottomPageQueryVariables>) {
+export function useGetLivingWithBbsoasBottomPageLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetLivingWithBbsoasBottomPageQuery, GetLivingWithBbsoasBottomPageQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetLivingWithBbsoasBottomPageQuery, GetLivingWithBbsoasBottomPageQueryVariables>(GetLivingWithBbsoasBottomPageDocument, options);
+          return ApolloReactHooks.useLazyQuery<GetLivingWithBbsoasBottomPageQuery, GetLivingWithBbsoasBottomPageQueryVariables>(GetLivingWithBbsoasBottomPageDocument, options);
         }
-export function useGetLivingWithBbsoasBottomPageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetLivingWithBbsoasBottomPageQuery, GetLivingWithBbsoasBottomPageQueryVariables>) {
-          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetLivingWithBbsoasBottomPageQuery, GetLivingWithBbsoasBottomPageQueryVariables>(GetLivingWithBbsoasBottomPageDocument, options);
+export function useGetLivingWithBbsoasBottomPageSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetLivingWithBbsoasBottomPageQuery, GetLivingWithBbsoasBottomPageQueryVariables>) {
+          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useSuspenseQuery<GetLivingWithBbsoasBottomPageQuery, GetLivingWithBbsoasBottomPageQueryVariables>(GetLivingWithBbsoasBottomPageDocument, options);
         }
 export type GetLivingWithBbsoasBottomPageQueryHookResult = ReturnType<typeof useGetLivingWithBbsoasBottomPageQuery>;
 export type GetLivingWithBbsoasBottomPageLazyQueryHookResult = ReturnType<typeof useGetLivingWithBbsoasBottomPageLazyQuery>;
 export type GetLivingWithBbsoasBottomPageSuspenseQueryHookResult = ReturnType<typeof useGetLivingWithBbsoasBottomPageSuspenseQuery>;
-export type GetLivingWithBbsoasBottomPageQueryResult = Apollo.QueryResult<GetLivingWithBbsoasBottomPageQuery, GetLivingWithBbsoasBottomPageQueryVariables>;
+export type GetLivingWithBbsoasBottomPageQueryResult = ApolloReactCommon.QueryResult<GetLivingWithBbsoasBottomPageQuery, GetLivingWithBbsoasBottomPageQueryVariables>;

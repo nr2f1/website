@@ -4,16 +4,13 @@ import {
   ApolloClient,
   InMemoryCache,
 } from '@apollo/client-integration-nextjs';
-import { registerApolloClient } from "@apollo/client-integration-nextjs";
-
 
 import { Authorization, CONTENTUL_GRAPHQL_API } from '@config/utils';
 
 export const isDev = process.env.NODE_ENV !== 'production';
 
-
-
-export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
+// Create a function to get a new Apollo Client instance
+function createApolloClient() {
   return new ApolloClient({
     cache: new InMemoryCache({
       // typePolicies: {
@@ -41,7 +38,22 @@ export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
       uri: CONTENTUL_GRAPHQL_API,
     }),
   });
-});
+}
+
+// Export a function to get client instance for server components
+export const getClient = () => createApolloClient();
+
+// Export a query function for convenience
+export const query = async (options: Parameters<ApolloClient['query']>[0]) => {
+  const client = getClient();
+  return await client.query(options);
+};
+
+// Create a simple PreloadQuery fallback component
+// In the newer API, PreloadQuery functionality may be handled differently
+export const PreloadQuery = ({ children }: { children: any }) => {
+  return children;
+};
 
 if (isDev) {
   loadDevMessages();

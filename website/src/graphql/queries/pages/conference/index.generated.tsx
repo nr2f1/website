@@ -1,7 +1,8 @@
 import * as Types from '../../../types';
 
 import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
+import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
+import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
 const defaultOptions = {} as const;
 export type GetConferencePageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -174,19 +175,19 @@ export const GetConferencePageDocument = gql`
  *   },
  * });
  */
-export function useGetConferencePageQuery(baseOptions: Apollo.QueryHookOptions<GetConferencePageQuery, GetConferencePageQueryVariables> & ({ variables: GetConferencePageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetConferencePageQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetConferencePageQuery, GetConferencePageQueryVariables> & ({ variables: GetConferencePageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetConferencePageQuery, GetConferencePageQueryVariables>(GetConferencePageDocument, options);
+        return ApolloReactHooks.useQuery<GetConferencePageQuery, GetConferencePageQueryVariables>(GetConferencePageDocument, options);
       }
-export function useGetConferencePageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetConferencePageQuery, GetConferencePageQueryVariables>) {
+export function useGetConferencePageLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetConferencePageQuery, GetConferencePageQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetConferencePageQuery, GetConferencePageQueryVariables>(GetConferencePageDocument, options);
+          return ApolloReactHooks.useLazyQuery<GetConferencePageQuery, GetConferencePageQueryVariables>(GetConferencePageDocument, options);
         }
-export function useGetConferencePageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetConferencePageQuery, GetConferencePageQueryVariables>) {
-          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetConferencePageQuery, GetConferencePageQueryVariables>(GetConferencePageDocument, options);
+export function useGetConferencePageSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetConferencePageQuery, GetConferencePageQueryVariables>) {
+          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useSuspenseQuery<GetConferencePageQuery, GetConferencePageQueryVariables>(GetConferencePageDocument, options);
         }
 export type GetConferencePageQueryHookResult = ReturnType<typeof useGetConferencePageQuery>;
 export type GetConferencePageLazyQueryHookResult = ReturnType<typeof useGetConferencePageLazyQuery>;
 export type GetConferencePageSuspenseQueryHookResult = ReturnType<typeof useGetConferencePageSuspenseQuery>;
-export type GetConferencePageQueryResult = Apollo.QueryResult<GetConferencePageQuery, GetConferencePageQueryVariables>;
+export type GetConferencePageQueryResult = ApolloReactCommon.QueryResult<GetConferencePageQuery, GetConferencePageQueryVariables>;

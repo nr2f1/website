@@ -64,24 +64,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     url: `https://nr2f1.org${routes['support-groups'](lang)}`,
   };
 
-  const {
-    data: {
-      intropParagraphs,
-      virtualParentsHeading,
-      virtualParentsParagraphs,
-      dadsHeading,
-      dadsParagraphs,
-      caregiversHeading,
-      caregiverParagraphs,
-      spanishParentsHeading,
-      spanishParentsParagraphs,
-      facebookHeading,
-      facebookParagraphs,
-      dadsUkHeading,
-      dadsUkParagraphs,
-    },
-    error,
-  } = await query<GetSupportGroupsPageQuery>({
+  const { data, error } = await query<GetSupportGroupsPageQuery>({
     query: GetSupportGroupsPageDocument,
     variables: {
       caregiverParagraphsId,
@@ -101,9 +84,25 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const {
+    intropParagraphs,
+    virtualParentsHeading,
+    virtualParentsParagraphs,
+    dadsHeading,
+    dadsParagraphs,
+    caregiversHeading,
+    caregiverParagraphs,
+    spanishParentsHeading,
+    spanishParentsParagraphs,
+    facebookHeading,
+    facebookParagraphs,
+    dadsUkHeading,
+    dadsUkParagraphs,
+  } = data;
 
   const headings = [
     virtualParentsHeading?.content ?? '',

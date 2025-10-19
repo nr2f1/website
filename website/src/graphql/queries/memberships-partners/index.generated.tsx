@@ -1,7 +1,8 @@
 import * as Types from '../../types';
 
 import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
+import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
+import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
 const defaultOptions = {} as const;
 export type GetMembershipPartnersQueryVariables = Types.Exact<{
   membershipPartnersId: Types.Scalars['String']['input'];
@@ -56,19 +57,19 @@ export const GetMembershipPartnersDocument = gql`
  *   },
  * });
  */
-export function useGetMembershipPartnersQuery(baseOptions: Apollo.QueryHookOptions<GetMembershipPartnersQuery, GetMembershipPartnersQueryVariables> & ({ variables: GetMembershipPartnersQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetMembershipPartnersQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetMembershipPartnersQuery, GetMembershipPartnersQueryVariables> & ({ variables: GetMembershipPartnersQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetMembershipPartnersQuery, GetMembershipPartnersQueryVariables>(GetMembershipPartnersDocument, options);
+        return ApolloReactHooks.useQuery<GetMembershipPartnersQuery, GetMembershipPartnersQueryVariables>(GetMembershipPartnersDocument, options);
       }
-export function useGetMembershipPartnersLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetMembershipPartnersQuery, GetMembershipPartnersQueryVariables>) {
+export function useGetMembershipPartnersLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetMembershipPartnersQuery, GetMembershipPartnersQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetMembershipPartnersQuery, GetMembershipPartnersQueryVariables>(GetMembershipPartnersDocument, options);
+          return ApolloReactHooks.useLazyQuery<GetMembershipPartnersQuery, GetMembershipPartnersQueryVariables>(GetMembershipPartnersDocument, options);
         }
-export function useGetMembershipPartnersSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetMembershipPartnersQuery, GetMembershipPartnersQueryVariables>) {
-          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetMembershipPartnersQuery, GetMembershipPartnersQueryVariables>(GetMembershipPartnersDocument, options);
+export function useGetMembershipPartnersSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetMembershipPartnersQuery, GetMembershipPartnersQueryVariables>) {
+          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useSuspenseQuery<GetMembershipPartnersQuery, GetMembershipPartnersQueryVariables>(GetMembershipPartnersDocument, options);
         }
 export type GetMembershipPartnersQueryHookResult = ReturnType<typeof useGetMembershipPartnersQuery>;
 export type GetMembershipPartnersLazyQueryHookResult = ReturnType<typeof useGetMembershipPartnersLazyQuery>;
 export type GetMembershipPartnersSuspenseQueryHookResult = ReturnType<typeof useGetMembershipPartnersSuspenseQuery>;
-export type GetMembershipPartnersQueryResult = Apollo.QueryResult<GetMembershipPartnersQuery, GetMembershipPartnersQueryVariables>;
+export type GetMembershipPartnersQueryResult = ApolloReactCommon.QueryResult<GetMembershipPartnersQuery, GetMembershipPartnersQueryVariables>;

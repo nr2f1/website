@@ -1,7 +1,8 @@
 import * as Types from '../../../types';
 
 import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
+import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
+import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
 const defaultOptions = {} as const;
 export type GetSupportGroupsPageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -120,19 +121,19 @@ export const GetSupportGroupsPageDocument = gql`
  *   },
  * });
  */
-export function useGetSupportGroupsPageQuery(baseOptions: Apollo.QueryHookOptions<GetSupportGroupsPageQuery, GetSupportGroupsPageQueryVariables> & ({ variables: GetSupportGroupsPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetSupportGroupsPageQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetSupportGroupsPageQuery, GetSupportGroupsPageQueryVariables> & ({ variables: GetSupportGroupsPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetSupportGroupsPageQuery, GetSupportGroupsPageQueryVariables>(GetSupportGroupsPageDocument, options);
+        return ApolloReactHooks.useQuery<GetSupportGroupsPageQuery, GetSupportGroupsPageQueryVariables>(GetSupportGroupsPageDocument, options);
       }
-export function useGetSupportGroupsPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetSupportGroupsPageQuery, GetSupportGroupsPageQueryVariables>) {
+export function useGetSupportGroupsPageLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetSupportGroupsPageQuery, GetSupportGroupsPageQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetSupportGroupsPageQuery, GetSupportGroupsPageQueryVariables>(GetSupportGroupsPageDocument, options);
+          return ApolloReactHooks.useLazyQuery<GetSupportGroupsPageQuery, GetSupportGroupsPageQueryVariables>(GetSupportGroupsPageDocument, options);
         }
-export function useGetSupportGroupsPageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetSupportGroupsPageQuery, GetSupportGroupsPageQueryVariables>) {
-          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetSupportGroupsPageQuery, GetSupportGroupsPageQueryVariables>(GetSupportGroupsPageDocument, options);
+export function useGetSupportGroupsPageSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetSupportGroupsPageQuery, GetSupportGroupsPageQueryVariables>) {
+          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useSuspenseQuery<GetSupportGroupsPageQuery, GetSupportGroupsPageQueryVariables>(GetSupportGroupsPageDocument, options);
         }
 export type GetSupportGroupsPageQueryHookResult = ReturnType<typeof useGetSupportGroupsPageQuery>;
 export type GetSupportGroupsPageLazyQueryHookResult = ReturnType<typeof useGetSupportGroupsPageLazyQuery>;
 export type GetSupportGroupsPageSuspenseQueryHookResult = ReturnType<typeof useGetSupportGroupsPageSuspenseQuery>;
-export type GetSupportGroupsPageQueryResult = Apollo.QueryResult<GetSupportGroupsPageQuery, GetSupportGroupsPageQueryVariables>;
+export type GetSupportGroupsPageQueryResult = ApolloReactCommon.QueryResult<GetSupportGroupsPageQuery, GetSupportGroupsPageQueryVariables>;

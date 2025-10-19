@@ -25,10 +25,7 @@ const { query } = getClient();
 const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
   const LIMIT = 12;
 
-  const {
-    data: { posts, podcasts, newsletters },
-    error,
-  } = await query<GetAllNewsQuery>({
+  const { data, error } = await query<GetAllNewsQuery>({
     query: GetAllNewsDocument,
     variables: {
       locale: lang,
@@ -36,31 +33,33 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
   });
 
   if (
-    !posts ||
-    !posts.items ||
-    !posts.items.length ||
-    !newsletters ||
-    !newsletters.items ||
-    !newsletters.items.length ||
-    !podcasts ||
-    !podcasts.items ||
-    !podcasts.items.length ||
+    !data?.posts ||
+    !data.posts.items ||
+    !data.posts.items.length ||
+    !data?.newsletters ||
+    !data.newsletters.items ||
+    !data.newsletters.items.length ||
+    !data?.podcasts ||
+    !data.podcasts.items ||
+    !data.podcasts.items.length ||
     error
   ) {
     return null;
   }
 
   const total =
-    posts.items.length + newsletters.items.length + podcasts.items.length;
+    data.posts.items.length +
+    data.newsletters.items.length +
+    data.podcasts.items.length;
   const start = getSkipPagination(page, LIMIT);
   const end = start + LIMIT;
 
   const allNews = fromNewsToNewsCards({
     end,
     lang,
-    newsletters: newsletters.items as NewsletterCollection['items'],
-    podcasts: podcasts.items as PodcastCollection['items'],
-    posts: posts.items as BlogPageCollection['items'],
+    newsletters: data.newsletters.items as NewsletterCollection['items'],
+    podcasts: data.podcasts.items as PodcastCollection['items'],
+    posts: data.posts.items as BlogPageCollection['items'],
     start,
   });
 

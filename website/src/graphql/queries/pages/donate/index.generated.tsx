@@ -1,7 +1,8 @@
 import * as Types from '../../../types';
 
 import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
+import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
+import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
 const defaultOptions = {} as const;
 export type GetDonatePageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -39,19 +40,19 @@ export const GetDonatePageDocument = gql`
  *   },
  * });
  */
-export function useGetDonatePageQuery(baseOptions: Apollo.QueryHookOptions<GetDonatePageQuery, GetDonatePageQueryVariables> & ({ variables: GetDonatePageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetDonatePageQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetDonatePageQuery, GetDonatePageQueryVariables> & ({ variables: GetDonatePageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetDonatePageQuery, GetDonatePageQueryVariables>(GetDonatePageDocument, options);
+        return ApolloReactHooks.useQuery<GetDonatePageQuery, GetDonatePageQueryVariables>(GetDonatePageDocument, options);
       }
-export function useGetDonatePageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetDonatePageQuery, GetDonatePageQueryVariables>) {
+export function useGetDonatePageLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetDonatePageQuery, GetDonatePageQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetDonatePageQuery, GetDonatePageQueryVariables>(GetDonatePageDocument, options);
+          return ApolloReactHooks.useLazyQuery<GetDonatePageQuery, GetDonatePageQueryVariables>(GetDonatePageDocument, options);
         }
-export function useGetDonatePageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetDonatePageQuery, GetDonatePageQueryVariables>) {
-          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetDonatePageQuery, GetDonatePageQueryVariables>(GetDonatePageDocument, options);
+export function useGetDonatePageSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetDonatePageQuery, GetDonatePageQueryVariables>) {
+          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useSuspenseQuery<GetDonatePageQuery, GetDonatePageQueryVariables>(GetDonatePageDocument, options);
         }
 export type GetDonatePageQueryHookResult = ReturnType<typeof useGetDonatePageQuery>;
 export type GetDonatePageLazyQueryHookResult = ReturnType<typeof useGetDonatePageLazyQuery>;
 export type GetDonatePageSuspenseQueryHookResult = ReturnType<typeof useGetDonatePageSuspenseQuery>;
-export type GetDonatePageQueryResult = Apollo.QueryResult<GetDonatePageQuery, GetDonatePageQueryVariables>;
+export type GetDonatePageQueryResult = ApolloReactCommon.QueryResult<GetDonatePageQuery, GetDonatePageQueryVariables>;

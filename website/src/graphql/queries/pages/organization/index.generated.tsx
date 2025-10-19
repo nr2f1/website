@@ -1,7 +1,8 @@
 import * as Types from '../../../types';
 
 import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
+import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
+import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
 const defaultOptions = {} as const;
 export type GetOrganizationPageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -141,19 +142,19 @@ export const GetOrganizationPageDocument = gql`
  *   },
  * });
  */
-export function useGetOrganizationPageQuery(baseOptions: Apollo.QueryHookOptions<GetOrganizationPageQuery, GetOrganizationPageQueryVariables> & ({ variables: GetOrganizationPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetOrganizationPageQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetOrganizationPageQuery, GetOrganizationPageQueryVariables> & ({ variables: GetOrganizationPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetOrganizationPageQuery, GetOrganizationPageQueryVariables>(GetOrganizationPageDocument, options);
+        return ApolloReactHooks.useQuery<GetOrganizationPageQuery, GetOrganizationPageQueryVariables>(GetOrganizationPageDocument, options);
       }
-export function useGetOrganizationPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetOrganizationPageQuery, GetOrganizationPageQueryVariables>) {
+export function useGetOrganizationPageLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetOrganizationPageQuery, GetOrganizationPageQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetOrganizationPageQuery, GetOrganizationPageQueryVariables>(GetOrganizationPageDocument, options);
+          return ApolloReactHooks.useLazyQuery<GetOrganizationPageQuery, GetOrganizationPageQueryVariables>(GetOrganizationPageDocument, options);
         }
-export function useGetOrganizationPageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetOrganizationPageQuery, GetOrganizationPageQueryVariables>) {
-          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetOrganizationPageQuery, GetOrganizationPageQueryVariables>(GetOrganizationPageDocument, options);
+export function useGetOrganizationPageSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetOrganizationPageQuery, GetOrganizationPageQueryVariables>) {
+          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useSuspenseQuery<GetOrganizationPageQuery, GetOrganizationPageQueryVariables>(GetOrganizationPageDocument, options);
         }
 export type GetOrganizationPageQueryHookResult = ReturnType<typeof useGetOrganizationPageQuery>;
 export type GetOrganizationPageLazyQueryHookResult = ReturnType<typeof useGetOrganizationPageLazyQuery>;
 export type GetOrganizationPageSuspenseQueryHookResult = ReturnType<typeof useGetOrganizationPageSuspenseQuery>;
-export type GetOrganizationPageQueryResult = Apollo.QueryResult<GetOrganizationPageQuery, GetOrganizationPageQueryVariables>;
+export type GetOrganizationPageQueryResult = ApolloReactCommon.QueryResult<GetOrganizationPageQuery, GetOrganizationPageQueryVariables>;

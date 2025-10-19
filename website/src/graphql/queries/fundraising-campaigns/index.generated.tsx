@@ -1,7 +1,8 @@
 import * as Types from '../../types';
 
 import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
+import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
+import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
 const defaultOptions = {} as const;
 export type GetFundraisingCampaignsQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -50,19 +51,19 @@ export const GetFundraisingCampaignsDocument = gql`
  *   },
  * });
  */
-export function useGetFundraisingCampaignsQuery(baseOptions: Apollo.QueryHookOptions<GetFundraisingCampaignsQuery, GetFundraisingCampaignsQueryVariables> & ({ variables: GetFundraisingCampaignsQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetFundraisingCampaignsQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetFundraisingCampaignsQuery, GetFundraisingCampaignsQueryVariables> & ({ variables: GetFundraisingCampaignsQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetFundraisingCampaignsQuery, GetFundraisingCampaignsQueryVariables>(GetFundraisingCampaignsDocument, options);
+        return ApolloReactHooks.useQuery<GetFundraisingCampaignsQuery, GetFundraisingCampaignsQueryVariables>(GetFundraisingCampaignsDocument, options);
       }
-export function useGetFundraisingCampaignsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFundraisingCampaignsQuery, GetFundraisingCampaignsQueryVariables>) {
+export function useGetFundraisingCampaignsLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetFundraisingCampaignsQuery, GetFundraisingCampaignsQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetFundraisingCampaignsQuery, GetFundraisingCampaignsQueryVariables>(GetFundraisingCampaignsDocument, options);
+          return ApolloReactHooks.useLazyQuery<GetFundraisingCampaignsQuery, GetFundraisingCampaignsQueryVariables>(GetFundraisingCampaignsDocument, options);
         }
-export function useGetFundraisingCampaignsSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetFundraisingCampaignsQuery, GetFundraisingCampaignsQueryVariables>) {
-          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetFundraisingCampaignsQuery, GetFundraisingCampaignsQueryVariables>(GetFundraisingCampaignsDocument, options);
+export function useGetFundraisingCampaignsSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetFundraisingCampaignsQuery, GetFundraisingCampaignsQueryVariables>) {
+          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useSuspenseQuery<GetFundraisingCampaignsQuery, GetFundraisingCampaignsQueryVariables>(GetFundraisingCampaignsDocument, options);
         }
 export type GetFundraisingCampaignsQueryHookResult = ReturnType<typeof useGetFundraisingCampaignsQuery>;
 export type GetFundraisingCampaignsLazyQueryHookResult = ReturnType<typeof useGetFundraisingCampaignsLazyQuery>;
 export type GetFundraisingCampaignsSuspenseQueryHookResult = ReturnType<typeof useGetFundraisingCampaignsSuspenseQuery>;
-export type GetFundraisingCampaignsQueryResult = Apollo.QueryResult<GetFundraisingCampaignsQuery, GetFundraisingCampaignsQueryVariables>;
+export type GetFundraisingCampaignsQueryResult = ApolloReactCommon.QueryResult<GetFundraisingCampaignsQuery, GetFundraisingCampaignsQueryVariables>;

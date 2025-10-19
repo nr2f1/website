@@ -1,7 +1,8 @@
 import * as Types from '../../../types';
 
 import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
+import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
+import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
 const defaultOptions = {} as const;
 export type GetWhatIsBbsoasPageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -287,19 +288,19 @@ export const GetWhatIsBbsoasPageDocument = gql`
  *   },
  * });
  */
-export function useGetWhatIsBbsoasPageQuery(baseOptions: Apollo.QueryHookOptions<GetWhatIsBbsoasPageQuery, GetWhatIsBbsoasPageQueryVariables> & ({ variables: GetWhatIsBbsoasPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetWhatIsBbsoasPageQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetWhatIsBbsoasPageQuery, GetWhatIsBbsoasPageQueryVariables> & ({ variables: GetWhatIsBbsoasPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetWhatIsBbsoasPageQuery, GetWhatIsBbsoasPageQueryVariables>(GetWhatIsBbsoasPageDocument, options);
+        return ApolloReactHooks.useQuery<GetWhatIsBbsoasPageQuery, GetWhatIsBbsoasPageQueryVariables>(GetWhatIsBbsoasPageDocument, options);
       }
-export function useGetWhatIsBbsoasPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetWhatIsBbsoasPageQuery, GetWhatIsBbsoasPageQueryVariables>) {
+export function useGetWhatIsBbsoasPageLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetWhatIsBbsoasPageQuery, GetWhatIsBbsoasPageQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetWhatIsBbsoasPageQuery, GetWhatIsBbsoasPageQueryVariables>(GetWhatIsBbsoasPageDocument, options);
+          return ApolloReactHooks.useLazyQuery<GetWhatIsBbsoasPageQuery, GetWhatIsBbsoasPageQueryVariables>(GetWhatIsBbsoasPageDocument, options);
         }
-export function useGetWhatIsBbsoasPageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetWhatIsBbsoasPageQuery, GetWhatIsBbsoasPageQueryVariables>) {
-          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetWhatIsBbsoasPageQuery, GetWhatIsBbsoasPageQueryVariables>(GetWhatIsBbsoasPageDocument, options);
+export function useGetWhatIsBbsoasPageSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetWhatIsBbsoasPageQuery, GetWhatIsBbsoasPageQueryVariables>) {
+          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useSuspenseQuery<GetWhatIsBbsoasPageQuery, GetWhatIsBbsoasPageQueryVariables>(GetWhatIsBbsoasPageDocument, options);
         }
 export type GetWhatIsBbsoasPageQueryHookResult = ReturnType<typeof useGetWhatIsBbsoasPageQuery>;
 export type GetWhatIsBbsoasPageLazyQueryHookResult = ReturnType<typeof useGetWhatIsBbsoasPageLazyQuery>;
 export type GetWhatIsBbsoasPageSuspenseQueryHookResult = ReturnType<typeof useGetWhatIsBbsoasPageSuspenseQuery>;
-export type GetWhatIsBbsoasPageQueryResult = Apollo.QueryResult<GetWhatIsBbsoasPageQuery, GetWhatIsBbsoasPageQueryVariables>;
+export type GetWhatIsBbsoasPageQueryResult = ApolloReactCommon.QueryResult<GetWhatIsBbsoasPageQuery, GetWhatIsBbsoasPageQueryVariables>;

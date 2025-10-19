@@ -17,10 +17,7 @@ const { query } = getClient();
 const VolunteerWithUsBanner: React.FC<VolunteerWithUsBannerProps> = async ({
   lang,
 }) => {
-  const {
-    data: { banner },
-    error,
-  } = await query<GetBannerQuery>({
+  const { data, error } = await query<GetBannerQuery>({
     query: GetBannerDocument,
     variables: {
       id: volunteerWithUsBannerId,
@@ -28,17 +25,17 @@ const VolunteerWithUsBanner: React.FC<VolunteerWithUsBannerProps> = async ({
     },
   });
 
-  if (error || !banner) {
+  if (error || !data) {
     return null;
   }
 
-  const { heading, content, cta, image } = banner;
-
-  const headingContent = heading?.content ?? '';
-  const textContent = documentToReactComponents(content?.content?.json);
-  const ctaContent = cta?.text?.content ?? '';
-  const ctaUrl = cta?.target?.url ?? '/';
-  const imageUrl = image?.url ?? '';
+  const headingContent = data.banner?.heading?.content ?? '';
+  const textContent = documentToReactComponents(
+    data.banner?.content?.content?.json,
+  );
+  const ctaContent = data.banner?.cta?.text?.content ?? '';
+  const ctaUrl = data.banner?.cta?.target?.url ?? '/';
+  const imageUrl = data.banner?.image?.url ?? '';
 
   return (
     <Banner

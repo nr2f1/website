@@ -18,10 +18,7 @@ const { query } = getClient();
 const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
   const LIMIT = 12;
 
-  const {
-    data: { podcastCollection },
-    error,
-  } = await query<GetPodcastsQuery>({
+  const { data, error } = await query<GetPodcastsQuery>({
     query: GetPodcastsDocument,
     variables: {
       limit: LIMIT,
@@ -30,11 +27,11 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
     },
   });
 
-  if (error || !podcastCollection || !podcastCollection.items) {
+  if (error || !data?.podcastCollection || !data.podcastCollection.items) {
     return null;
   }
 
-  const { items, total } = podcastCollection;
+  const { items, total } = data.podcastCollection;
 
   const podcasts = items
     .filter((x) => Boolean(x))

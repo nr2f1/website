@@ -1,7 +1,8 @@
 import * as Types from '../../types';
 
 import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
+import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
+import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
 const defaultOptions = {} as const;
 export type GetCookieBannerQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -48,19 +49,19 @@ export const GetCookieBannerDocument = gql`
  *   },
  * });
  */
-export function useGetCookieBannerQuery(baseOptions?: Apollo.QueryHookOptions<GetCookieBannerQuery, GetCookieBannerQueryVariables>) {
+export function useGetCookieBannerQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<GetCookieBannerQuery, GetCookieBannerQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetCookieBannerQuery, GetCookieBannerQueryVariables>(GetCookieBannerDocument, options);
+        return ApolloReactHooks.useQuery<GetCookieBannerQuery, GetCookieBannerQueryVariables>(GetCookieBannerDocument, options);
       }
-export function useGetCookieBannerLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetCookieBannerQuery, GetCookieBannerQueryVariables>) {
+export function useGetCookieBannerLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetCookieBannerQuery, GetCookieBannerQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetCookieBannerQuery, GetCookieBannerQueryVariables>(GetCookieBannerDocument, options);
+          return ApolloReactHooks.useLazyQuery<GetCookieBannerQuery, GetCookieBannerQueryVariables>(GetCookieBannerDocument, options);
         }
-export function useGetCookieBannerSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetCookieBannerQuery, GetCookieBannerQueryVariables>) {
-          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetCookieBannerQuery, GetCookieBannerQueryVariables>(GetCookieBannerDocument, options);
+export function useGetCookieBannerSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetCookieBannerQuery, GetCookieBannerQueryVariables>) {
+          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useSuspenseQuery<GetCookieBannerQuery, GetCookieBannerQueryVariables>(GetCookieBannerDocument, options);
         }
 export type GetCookieBannerQueryHookResult = ReturnType<typeof useGetCookieBannerQuery>;
 export type GetCookieBannerLazyQueryHookResult = ReturnType<typeof useGetCookieBannerLazyQuery>;
 export type GetCookieBannerSuspenseQueryHookResult = ReturnType<typeof useGetCookieBannerSuspenseQuery>;
-export type GetCookieBannerQueryResult = Apollo.QueryResult<GetCookieBannerQuery, GetCookieBannerQueryVariables>;
+export type GetCookieBannerQueryResult = ApolloReactCommon.QueryResult<GetCookieBannerQuery, GetCookieBannerQueryVariables>;

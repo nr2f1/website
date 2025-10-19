@@ -1,7 +1,8 @@
 import * as Types from '../../../types';
 
 import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
+import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
+import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
 const defaultOptions = {} as const;
 export type GetContactUsPageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -39,19 +40,19 @@ export const GetContactUsPageDocument = gql`
  *   },
  * });
  */
-export function useGetContactUsPageQuery(baseOptions: Apollo.QueryHookOptions<GetContactUsPageQuery, GetContactUsPageQueryVariables> & ({ variables: GetContactUsPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetContactUsPageQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetContactUsPageQuery, GetContactUsPageQueryVariables> & ({ variables: GetContactUsPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetContactUsPageQuery, GetContactUsPageQueryVariables>(GetContactUsPageDocument, options);
+        return ApolloReactHooks.useQuery<GetContactUsPageQuery, GetContactUsPageQueryVariables>(GetContactUsPageDocument, options);
       }
-export function useGetContactUsPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetContactUsPageQuery, GetContactUsPageQueryVariables>) {
+export function useGetContactUsPageLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetContactUsPageQuery, GetContactUsPageQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetContactUsPageQuery, GetContactUsPageQueryVariables>(GetContactUsPageDocument, options);
+          return ApolloReactHooks.useLazyQuery<GetContactUsPageQuery, GetContactUsPageQueryVariables>(GetContactUsPageDocument, options);
         }
-export function useGetContactUsPageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetContactUsPageQuery, GetContactUsPageQueryVariables>) {
-          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetContactUsPageQuery, GetContactUsPageQueryVariables>(GetContactUsPageDocument, options);
+export function useGetContactUsPageSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetContactUsPageQuery, GetContactUsPageQueryVariables>) {
+          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useSuspenseQuery<GetContactUsPageQuery, GetContactUsPageQueryVariables>(GetContactUsPageDocument, options);
         }
 export type GetContactUsPageQueryHookResult = ReturnType<typeof useGetContactUsPageQuery>;
 export type GetContactUsPageLazyQueryHookResult = ReturnType<typeof useGetContactUsPageLazyQuery>;
 export type GetContactUsPageSuspenseQueryHookResult = ReturnType<typeof useGetContactUsPageSuspenseQuery>;
-export type GetContactUsPageQueryResult = Apollo.QueryResult<GetContactUsPageQuery, GetContactUsPageQueryVariables>;
+export type GetContactUsPageQueryResult = ApolloReactCommon.QueryResult<GetContactUsPageQuery, GetContactUsPageQueryVariables>;

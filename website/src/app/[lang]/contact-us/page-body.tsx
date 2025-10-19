@@ -18,10 +18,7 @@ interface ContactUsPageBodyProps {
 export const ContactUsPageBody: React.FC<ContactUsPageBodyProps> = async ({
   lang,
 }) => {
-  const {
-    data: { mainbody },
-    error,
-  } = await query<GetContactUsPageQuery>({
+  const { data, error } = await query<GetContactUsPageQuery>({
     query: GetContactUsPageDocument,
     variables: {
       contactUsPageParagraphsId,
@@ -29,7 +26,7 @@ export const ContactUsPageBody: React.FC<ContactUsPageBodyProps> = async ({
     },
   });
 
-  if (error) {
+  if (error || !data?.mainbody) {
     return null;
   }
 
@@ -37,7 +34,7 @@ export const ContactUsPageBody: React.FC<ContactUsPageBodyProps> = async ({
     <div className={styles.contactUs}>
       <div className={styles.contactUs__content_wrapper}>
         <article>
-          {documentToReactComponents(mainbody?.content?.json)}
+          {documentToReactComponents(data.mainbody?.content?.json)}
 
           <div className={styles.contactUs__social_media_links}>
             <SocialMediaLinks variant="dark" />

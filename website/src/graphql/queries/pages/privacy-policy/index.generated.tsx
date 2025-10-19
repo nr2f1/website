@@ -1,7 +1,8 @@
 import * as Types from '../../../types';
 
 import { gql } from '@apollo/client';
-import * as Apollo from '@apollo/client';
+import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
+import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
 const defaultOptions = {} as const;
 export type GetPrivacyPolicyPageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -39,19 +40,19 @@ export const GetPrivacyPolicyPageDocument = gql`
  *   },
  * });
  */
-export function useGetPrivacyPolicyPageQuery(baseOptions: Apollo.QueryHookOptions<GetPrivacyPolicyPageQuery, GetPrivacyPolicyPageQueryVariables> & ({ variables: GetPrivacyPolicyPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetPrivacyPolicyPageQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetPrivacyPolicyPageQuery, GetPrivacyPolicyPageQueryVariables> & ({ variables: GetPrivacyPolicyPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetPrivacyPolicyPageQuery, GetPrivacyPolicyPageQueryVariables>(GetPrivacyPolicyPageDocument, options);
+        return ApolloReactHooks.useQuery<GetPrivacyPolicyPageQuery, GetPrivacyPolicyPageQueryVariables>(GetPrivacyPolicyPageDocument, options);
       }
-export function useGetPrivacyPolicyPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetPrivacyPolicyPageQuery, GetPrivacyPolicyPageQueryVariables>) {
+export function useGetPrivacyPolicyPageLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetPrivacyPolicyPageQuery, GetPrivacyPolicyPageQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetPrivacyPolicyPageQuery, GetPrivacyPolicyPageQueryVariables>(GetPrivacyPolicyPageDocument, options);
+          return ApolloReactHooks.useLazyQuery<GetPrivacyPolicyPageQuery, GetPrivacyPolicyPageQueryVariables>(GetPrivacyPolicyPageDocument, options);
         }
-export function useGetPrivacyPolicyPageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetPrivacyPolicyPageQuery, GetPrivacyPolicyPageQueryVariables>) {
-          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<GetPrivacyPolicyPageQuery, GetPrivacyPolicyPageQueryVariables>(GetPrivacyPolicyPageDocument, options);
+export function useGetPrivacyPolicyPageSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetPrivacyPolicyPageQuery, GetPrivacyPolicyPageQueryVariables>) {
+          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useSuspenseQuery<GetPrivacyPolicyPageQuery, GetPrivacyPolicyPageQueryVariables>(GetPrivacyPolicyPageDocument, options);
         }
 export type GetPrivacyPolicyPageQueryHookResult = ReturnType<typeof useGetPrivacyPolicyPageQuery>;
 export type GetPrivacyPolicyPageLazyQueryHookResult = ReturnType<typeof useGetPrivacyPolicyPageLazyQuery>;
 export type GetPrivacyPolicyPageSuspenseQueryHookResult = ReturnType<typeof useGetPrivacyPolicyPageSuspenseQuery>;
-export type GetPrivacyPolicyPageQueryResult = Apollo.QueryResult<GetPrivacyPolicyPageQuery, GetPrivacyPolicyPageQueryVariables>;
+export type GetPrivacyPolicyPageQueryResult = ApolloReactCommon.QueryResult<GetPrivacyPolicyPageQuery, GetPrivacyPolicyPageQueryVariables>;

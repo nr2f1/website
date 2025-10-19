@@ -32,24 +32,7 @@ const { query } = getClient();
 const ConferencePageBody: React.FC<ComponentPropsWithLocale> = async ({
   lang,
 }) => {
-  const {
-    data: {
-      pastConferencesHeading,
-      introParagraph,
-      bookTicketsLink,
-      infoParagraph,
-      bookTicketsHeading,
-      offerHeading,
-      offerParagraphs,
-      sponsorshipHeading,
-      sponsorshipParagraphs,
-      faqsHeading,
-      accordionCollection,
-      nextConferenceHeading,
-      pastConferencesParagraphs,
-    },
-    error,
-  } = await query<GetConferencePageQuery>({
+  const { data, error } = await query<GetConferencePageQuery>({
     query: GetConferencePageDocument,
     variables: {
       bookTicketsHeadingId,
@@ -68,25 +51,25 @@ const ConferencePageBody: React.FC<ComponentPropsWithLocale> = async ({
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
 
   const headings = [
-    nextConferenceHeading?.content ?? '',
-    bookTicketsHeading?.content ?? '',
-    offerHeading?.content ?? '',
-    sponsorshipHeading?.content ?? '',
-    faqsHeading?.content ?? '',
-    pastConferencesHeading?.content ?? '',
+    data.nextConferenceHeading?.content ?? '',
+    data.bookTicketsHeading?.content ?? '',
+    data.offerHeading?.content ?? '',
+    data.sponsorshipHeading?.content ?? '',
+    data.faqsHeading?.content ?? '',
+    data.pastConferencesHeading?.content ?? '',
   ];
 
   const BookTicketButton = () => (
     <a
       className={`button button--on-light ${styles.conference__button}`}
-      href={bookTicketsLink?.target?.url ?? ''}
+      href={data.bookTicketsLink?.target?.url ?? ''}
     >
-      {bookTicketsLink?.text?.content}
+      {data.bookTicketsLink?.text?.content}
     </a>
   );
 
@@ -96,46 +79,46 @@ const ConferencePageBody: React.FC<ComponentPropsWithLocale> = async ({
         className={`${styles.conference__intro} ${styles.conference__with_image}`}
       >
         {documentToReactComponents(
-          introParagraph?.content?.json,
-          renderOptions(introParagraph?.content?.links as Links),
+          data.introParagraph?.content?.json,
+          renderOptions(data.introParagraph?.content?.links as Links),
         )}
       </section>
       <section
         className={`${styles.conference__info} ${styles.conference__with_image}`}
       >
-        <h2 id={createHashLink(nextConferenceHeading?.content ?? '')}>
-          {nextConferenceHeading?.content}
+        <h2 id={createHashLink(data.nextConferenceHeading?.content ?? '')}>
+          {data.nextConferenceHeading?.content}
         </h2>
         <BookTicketButton />
         {documentToReactComponents(
-          infoParagraph?.content?.json,
-          renderOptions(infoParagraph?.content?.links as Links),
+          data.infoParagraph?.content?.json,
+          renderOptions(data.infoParagraph?.content?.links as Links),
         )}
       </section>
       <section className={styles.conference__book_tickets}>
-        <h2 id={createHashLink(bookTicketsHeading?.content ?? '')}>
-          {bookTicketsHeading?.content}
+        <h2 id={createHashLink(data.bookTicketsHeading?.content ?? '')}>
+          {data.bookTicketsHeading?.content}
         </h2>
         <BookTicketButton />
       </section>
       <section>
-        <h2 id={createHashLink(offerHeading?.content ?? '')}>
-          {offerHeading?.content}
+        <h2 id={createHashLink(data.offerHeading?.content ?? '')}>
+          {data.offerHeading?.content}
         </h2>
-        {documentToReactComponents(offerParagraphs?.content?.json)}
+        {documentToReactComponents(data.offerParagraphs?.content?.json)}
       </section>
       <section>
-        <h2 id={createHashLink(sponsorshipHeading?.content ?? '')}>
-          {sponsorshipHeading?.content}
+        <h2 id={createHashLink(data.sponsorshipHeading?.content ?? '')}>
+          {data.sponsorshipHeading?.content}
         </h2>
-        {documentToReactComponents(sponsorshipParagraphs?.content?.json)}
+        {documentToReactComponents(data.sponsorshipParagraphs?.content?.json)}
       </section>
       <section className={styles.conference__faqs}>
-        <h2 id={createHashLink(faqsHeading?.content ?? '')}>
-          {faqsHeading?.content}
+        <h2 id={createHashLink(data.faqsHeading?.content ?? '')}>
+          {data.faqsHeading?.content}
         </h2>
 
-        {accordionCollection?.items.map((item) => (
+        {data.accordionCollection?.items.map((item) => (
           <Accordion
             key={crypto.randomUUID()}
             title={item?.title ?? ''}
@@ -144,10 +127,12 @@ const ConferencePageBody: React.FC<ComponentPropsWithLocale> = async ({
         ))}
       </section>
       <section className={styles.conference__past_conferences}>
-        <h2 id={createHashLink(pastConferencesHeading?.content ?? '')}>
-          {pastConferencesHeading?.content}
+        <h2 id={createHashLink(data.pastConferencesHeading?.content ?? '')}>
+          {data.pastConferencesHeading?.content}
         </h2>
-        {documentToReactComponents(pastConferencesParagraphs?.content?.json)}
+        {documentToReactComponents(
+          data.pastConferencesParagraphs?.content?.json,
+        )}
       </section>
     </PageBody>
   );
