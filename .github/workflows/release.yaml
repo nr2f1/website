@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - name: Set environment and install dependencies
@@ -42,7 +42,7 @@ jobs:
     needs: [e2e]
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - uses: googleapis/release-please-action@v4
@@ -57,10 +57,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Check jobs for errors
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const checkJobsForErrors = require('./.github/workflows/js/check-for-errors.js');
