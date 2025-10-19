@@ -13,8 +13,8 @@ const config: CodegenConfig = {
         withResultType: true,
       },
       overwrite: true,
-      plugins: ['typescript-operations', 'typescript-react-apollo'],
-      preset: 'near-operation-file',
+      plugins: ['typescript', 'typescript-react-apollo'],
+      preset: 'client',
       presetConfig: {
         baseTypesPath: 'types.ts',
         extension: '.generated.tsx',
