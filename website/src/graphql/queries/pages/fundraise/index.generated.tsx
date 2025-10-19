@@ -1,8 +1,7 @@
 import * as Types from '../../../types';
 
 import { gql } from '@apollo/client';
-import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
-import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
+import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
 export type GetFunraisePageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -65,19 +64,19 @@ export const GetFunraisePageDocument = gql`
  *   },
  * });
  */
-export function useGetFunraisePageQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetFunraisePageQuery, GetFunraisePageQueryVariables> & ({ variables: GetFunraisePageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetFunraisePageQuery(baseOptions: Apollo.QueryHookOptions<GetFunraisePageQuery, GetFunraisePageQueryVariables> & ({ variables: GetFunraisePageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return ApolloReactHooks.useQuery<GetFunraisePageQuery, GetFunraisePageQueryVariables>(GetFunraisePageDocument, options);
+        return Apollo.useQuery<GetFunraisePageQuery, GetFunraisePageQueryVariables>(GetFunraisePageDocument, options);
       }
-export function useGetFunraisePageLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetFunraisePageQuery, GetFunraisePageQueryVariables>) {
+export function useGetFunraisePageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFunraisePageQuery, GetFunraisePageQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useLazyQuery<GetFunraisePageQuery, GetFunraisePageQueryVariables>(GetFunraisePageDocument, options);
+          return Apollo.useLazyQuery<GetFunraisePageQuery, GetFunraisePageQueryVariables>(GetFunraisePageDocument, options);
         }
-export function useGetFunraisePageSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetFunraisePageQuery, GetFunraisePageQueryVariables>) {
-          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useSuspenseQuery<GetFunraisePageQuery, GetFunraisePageQueryVariables>(GetFunraisePageDocument, options);
+export function useGetFunraisePageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetFunraisePageQuery, GetFunraisePageQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetFunraisePageQuery, GetFunraisePageQueryVariables>(GetFunraisePageDocument, options);
         }
 export type GetFunraisePageQueryHookResult = ReturnType<typeof useGetFunraisePageQuery>;
 export type GetFunraisePageLazyQueryHookResult = ReturnType<typeof useGetFunraisePageLazyQuery>;
 export type GetFunraisePageSuspenseQueryHookResult = ReturnType<typeof useGetFunraisePageSuspenseQuery>;
-export type GetFunraisePageQueryResult = ApolloReactCommon.QueryResult<GetFunraisePageQuery, GetFunraisePageQueryVariables>;
+export type GetFunraisePageQueryResult = Apollo.QueryResult<GetFunraisePageQuery, GetFunraisePageQueryVariables>;

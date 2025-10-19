@@ -1,8 +1,7 @@
 import * as Types from '../../types';
 
 import { gql } from '@apollo/client';
-import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
-import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
+import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
 export type GetMetadataQueryVariables = Types.Exact<{
   id: Types.Scalars['String']['input'];
@@ -40,19 +39,19 @@ export const GetMetadataDocument = gql`
  *   },
  * });
  */
-export function useGetMetadataQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetMetadataQuery, GetMetadataQueryVariables> & ({ variables: GetMetadataQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetMetadataQuery(baseOptions: Apollo.QueryHookOptions<GetMetadataQuery, GetMetadataQueryVariables> & ({ variables: GetMetadataQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return ApolloReactHooks.useQuery<GetMetadataQuery, GetMetadataQueryVariables>(GetMetadataDocument, options);
+        return Apollo.useQuery<GetMetadataQuery, GetMetadataQueryVariables>(GetMetadataDocument, options);
       }
-export function useGetMetadataLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetMetadataQuery, GetMetadataQueryVariables>) {
+export function useGetMetadataLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetMetadataQuery, GetMetadataQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useLazyQuery<GetMetadataQuery, GetMetadataQueryVariables>(GetMetadataDocument, options);
+          return Apollo.useLazyQuery<GetMetadataQuery, GetMetadataQueryVariables>(GetMetadataDocument, options);
         }
-export function useGetMetadataSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetMetadataQuery, GetMetadataQueryVariables>) {
-          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useSuspenseQuery<GetMetadataQuery, GetMetadataQueryVariables>(GetMetadataDocument, options);
+export function useGetMetadataSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetMetadataQuery, GetMetadataQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetMetadataQuery, GetMetadataQueryVariables>(GetMetadataDocument, options);
         }
 export type GetMetadataQueryHookResult = ReturnType<typeof useGetMetadataQuery>;
 export type GetMetadataLazyQueryHookResult = ReturnType<typeof useGetMetadataLazyQuery>;
 export type GetMetadataSuspenseQueryHookResult = ReturnType<typeof useGetMetadataSuspenseQuery>;
-export type GetMetadataQueryResult = ApolloReactCommon.QueryResult<GetMetadataQuery, GetMetadataQueryVariables>;
+export type GetMetadataQueryResult = Apollo.QueryResult<GetMetadataQuery, GetMetadataQueryVariables>;

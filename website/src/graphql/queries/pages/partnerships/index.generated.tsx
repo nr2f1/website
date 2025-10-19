@@ -1,8 +1,7 @@
 import * as Types from '../../../types';
 
 import { gql } from '@apollo/client';
-import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
-import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
+import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
 export type GetPartnershipsPageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -185,19 +184,19 @@ export const GetPartnershipsPageDocument = gql`
  *   },
  * });
  */
-export function useGetPartnershipsPageQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetPartnershipsPageQuery, GetPartnershipsPageQueryVariables> & ({ variables: GetPartnershipsPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetPartnershipsPageQuery(baseOptions: Apollo.QueryHookOptions<GetPartnershipsPageQuery, GetPartnershipsPageQueryVariables> & ({ variables: GetPartnershipsPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return ApolloReactHooks.useQuery<GetPartnershipsPageQuery, GetPartnershipsPageQueryVariables>(GetPartnershipsPageDocument, options);
+        return Apollo.useQuery<GetPartnershipsPageQuery, GetPartnershipsPageQueryVariables>(GetPartnershipsPageDocument, options);
       }
-export function useGetPartnershipsPageLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetPartnershipsPageQuery, GetPartnershipsPageQueryVariables>) {
+export function useGetPartnershipsPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetPartnershipsPageQuery, GetPartnershipsPageQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useLazyQuery<GetPartnershipsPageQuery, GetPartnershipsPageQueryVariables>(GetPartnershipsPageDocument, options);
+          return Apollo.useLazyQuery<GetPartnershipsPageQuery, GetPartnershipsPageQueryVariables>(GetPartnershipsPageDocument, options);
         }
-export function useGetPartnershipsPageSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetPartnershipsPageQuery, GetPartnershipsPageQueryVariables>) {
-          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useSuspenseQuery<GetPartnershipsPageQuery, GetPartnershipsPageQueryVariables>(GetPartnershipsPageDocument, options);
+export function useGetPartnershipsPageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetPartnershipsPageQuery, GetPartnershipsPageQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetPartnershipsPageQuery, GetPartnershipsPageQueryVariables>(GetPartnershipsPageDocument, options);
         }
 export type GetPartnershipsPageQueryHookResult = ReturnType<typeof useGetPartnershipsPageQuery>;
 export type GetPartnershipsPageLazyQueryHookResult = ReturnType<typeof useGetPartnershipsPageLazyQuery>;
 export type GetPartnershipsPageSuspenseQueryHookResult = ReturnType<typeof useGetPartnershipsPageSuspenseQuery>;
-export type GetPartnershipsPageQueryResult = ApolloReactCommon.QueryResult<GetPartnershipsPageQuery, GetPartnershipsPageQueryVariables>;
+export type GetPartnershipsPageQueryResult = Apollo.QueryResult<GetPartnershipsPageQuery, GetPartnershipsPageQueryVariables>;

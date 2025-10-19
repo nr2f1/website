@@ -6,9 +6,10 @@ const config: CodegenConfig = {
   generates: {
     'website/src/graphql/': {
       config: {
-        apolloReactCommonImportFrom: '@graphql/apollo-react-wrapper',
-        apolloReactHooksImportFrom: '@graphql/apollo-react-wrapper',
+        // apolloReactCommonImportFrom: '@graphql/apollo-react-wrapper',
+        // apolloReactHooksImportFrom: '@graphql/apollo-react-wrapper',
         reactApolloVersion: 4,
+        withHooks: true,
         withResultType: true,
       },
       overwrite: true,

@@ -1,8 +1,7 @@
 import * as Types from '../../types';
 
 import { gql } from '@apollo/client';
-import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
-import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
+import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
 export type GetPageHeaderQueryVariables = Types.Exact<{
   id: Types.Scalars['String']['input'];
@@ -66,22 +65,22 @@ export const GetPageHeaderDocument = gql`
  *   },
  * });
  */
-export function useGetPageHeaderQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetPageHeaderQuery, GetPageHeaderQueryVariables> & ({ variables: GetPageHeaderQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetPageHeaderQuery(baseOptions: Apollo.QueryHookOptions<GetPageHeaderQuery, GetPageHeaderQueryVariables> & ({ variables: GetPageHeaderQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return ApolloReactHooks.useQuery<GetPageHeaderQuery, GetPageHeaderQueryVariables>(GetPageHeaderDocument, options);
+        return Apollo.useQuery<GetPageHeaderQuery, GetPageHeaderQueryVariables>(GetPageHeaderDocument, options);
       }
-export function useGetPageHeaderLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetPageHeaderQuery, GetPageHeaderQueryVariables>) {
+export function useGetPageHeaderLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetPageHeaderQuery, GetPageHeaderQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useLazyQuery<GetPageHeaderQuery, GetPageHeaderQueryVariables>(GetPageHeaderDocument, options);
+          return Apollo.useLazyQuery<GetPageHeaderQuery, GetPageHeaderQueryVariables>(GetPageHeaderDocument, options);
         }
-export function useGetPageHeaderSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetPageHeaderQuery, GetPageHeaderQueryVariables>) {
-          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useSuspenseQuery<GetPageHeaderQuery, GetPageHeaderQueryVariables>(GetPageHeaderDocument, options);
+export function useGetPageHeaderSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetPageHeaderQuery, GetPageHeaderQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetPageHeaderQuery, GetPageHeaderQueryVariables>(GetPageHeaderDocument, options);
         }
 export type GetPageHeaderQueryHookResult = ReturnType<typeof useGetPageHeaderQuery>;
 export type GetPageHeaderLazyQueryHookResult = ReturnType<typeof useGetPageHeaderLazyQuery>;
 export type GetPageHeaderSuspenseQueryHookResult = ReturnType<typeof useGetPageHeaderSuspenseQuery>;
-export type GetPageHeaderQueryResult = ApolloReactCommon.QueryResult<GetPageHeaderQuery, GetPageHeaderQueryVariables>;
+export type GetPageHeaderQueryResult = Apollo.QueryResult<GetPageHeaderQuery, GetPageHeaderQueryVariables>;
 export const GetBlogPageHeaderDocument = gql`
     query GetBlogPageHeader($id: String!, $locale: String) {
   pageHeader(id: $id, locale: $locale) {
@@ -115,22 +114,22 @@ export const GetBlogPageHeaderDocument = gql`
  *   },
  * });
  */
-export function useGetBlogPageHeaderQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetBlogPageHeaderQuery, GetBlogPageHeaderQueryVariables> & ({ variables: GetBlogPageHeaderQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetBlogPageHeaderQuery(baseOptions: Apollo.QueryHookOptions<GetBlogPageHeaderQuery, GetBlogPageHeaderQueryVariables> & ({ variables: GetBlogPageHeaderQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return ApolloReactHooks.useQuery<GetBlogPageHeaderQuery, GetBlogPageHeaderQueryVariables>(GetBlogPageHeaderDocument, options);
+        return Apollo.useQuery<GetBlogPageHeaderQuery, GetBlogPageHeaderQueryVariables>(GetBlogPageHeaderDocument, options);
       }
-export function useGetBlogPageHeaderLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetBlogPageHeaderQuery, GetBlogPageHeaderQueryVariables>) {
+export function useGetBlogPageHeaderLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetBlogPageHeaderQuery, GetBlogPageHeaderQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useLazyQuery<GetBlogPageHeaderQuery, GetBlogPageHeaderQueryVariables>(GetBlogPageHeaderDocument, options);
+          return Apollo.useLazyQuery<GetBlogPageHeaderQuery, GetBlogPageHeaderQueryVariables>(GetBlogPageHeaderDocument, options);
         }
-export function useGetBlogPageHeaderSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetBlogPageHeaderQuery, GetBlogPageHeaderQueryVariables>) {
-          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useSuspenseQuery<GetBlogPageHeaderQuery, GetBlogPageHeaderQueryVariables>(GetBlogPageHeaderDocument, options);
+export function useGetBlogPageHeaderSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetBlogPageHeaderQuery, GetBlogPageHeaderQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetBlogPageHeaderQuery, GetBlogPageHeaderQueryVariables>(GetBlogPageHeaderDocument, options);
         }
 export type GetBlogPageHeaderQueryHookResult = ReturnType<typeof useGetBlogPageHeaderQuery>;
 export type GetBlogPageHeaderLazyQueryHookResult = ReturnType<typeof useGetBlogPageHeaderLazyQuery>;
 export type GetBlogPageHeaderSuspenseQueryHookResult = ReturnType<typeof useGetBlogPageHeaderSuspenseQuery>;
-export type GetBlogPageHeaderQueryResult = ApolloReactCommon.QueryResult<GetBlogPageHeaderQuery, GetBlogPageHeaderQueryVariables>;
+export type GetBlogPageHeaderQueryResult = Apollo.QueryResult<GetBlogPageHeaderQuery, GetBlogPageHeaderQueryVariables>;
 export const GetPodcastPageHeaderDocument = gql`
     query GetPodcastPageHeader($id: String!, $locale: String) {
   pageHeader(id: $id, locale: $locale) {
@@ -164,22 +163,22 @@ export const GetPodcastPageHeaderDocument = gql`
  *   },
  * });
  */
-export function useGetPodcastPageHeaderQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetPodcastPageHeaderQuery, GetPodcastPageHeaderQueryVariables> & ({ variables: GetPodcastPageHeaderQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetPodcastPageHeaderQuery(baseOptions: Apollo.QueryHookOptions<GetPodcastPageHeaderQuery, GetPodcastPageHeaderQueryVariables> & ({ variables: GetPodcastPageHeaderQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return ApolloReactHooks.useQuery<GetPodcastPageHeaderQuery, GetPodcastPageHeaderQueryVariables>(GetPodcastPageHeaderDocument, options);
+        return Apollo.useQuery<GetPodcastPageHeaderQuery, GetPodcastPageHeaderQueryVariables>(GetPodcastPageHeaderDocument, options);
       }
-export function useGetPodcastPageHeaderLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetPodcastPageHeaderQuery, GetPodcastPageHeaderQueryVariables>) {
+export function useGetPodcastPageHeaderLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetPodcastPageHeaderQuery, GetPodcastPageHeaderQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useLazyQuery<GetPodcastPageHeaderQuery, GetPodcastPageHeaderQueryVariables>(GetPodcastPageHeaderDocument, options);
+          return Apollo.useLazyQuery<GetPodcastPageHeaderQuery, GetPodcastPageHeaderQueryVariables>(GetPodcastPageHeaderDocument, options);
         }
-export function useGetPodcastPageHeaderSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetPodcastPageHeaderQuery, GetPodcastPageHeaderQueryVariables>) {
-          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useSuspenseQuery<GetPodcastPageHeaderQuery, GetPodcastPageHeaderQueryVariables>(GetPodcastPageHeaderDocument, options);
+export function useGetPodcastPageHeaderSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetPodcastPageHeaderQuery, GetPodcastPageHeaderQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetPodcastPageHeaderQuery, GetPodcastPageHeaderQueryVariables>(GetPodcastPageHeaderDocument, options);
         }
 export type GetPodcastPageHeaderQueryHookResult = ReturnType<typeof useGetPodcastPageHeaderQuery>;
 export type GetPodcastPageHeaderLazyQueryHookResult = ReturnType<typeof useGetPodcastPageHeaderLazyQuery>;
 export type GetPodcastPageHeaderSuspenseQueryHookResult = ReturnType<typeof useGetPodcastPageHeaderSuspenseQuery>;
-export type GetPodcastPageHeaderQueryResult = ApolloReactCommon.QueryResult<GetPodcastPageHeaderQuery, GetPodcastPageHeaderQueryVariables>;
+export type GetPodcastPageHeaderQueryResult = Apollo.QueryResult<GetPodcastPageHeaderQuery, GetPodcastPageHeaderQueryVariables>;
 export const GetNewsletterPageHeaderDocument = gql`
     query GetNewsletterPageHeader($id: String!, $locale: String) {
   pageHeader(id: $id, locale: $locale) {
@@ -213,19 +212,19 @@ export const GetNewsletterPageHeaderDocument = gql`
  *   },
  * });
  */
-export function useGetNewsletterPageHeaderQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetNewsletterPageHeaderQuery, GetNewsletterPageHeaderQueryVariables> & ({ variables: GetNewsletterPageHeaderQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetNewsletterPageHeaderQuery(baseOptions: Apollo.QueryHookOptions<GetNewsletterPageHeaderQuery, GetNewsletterPageHeaderQueryVariables> & ({ variables: GetNewsletterPageHeaderQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return ApolloReactHooks.useQuery<GetNewsletterPageHeaderQuery, GetNewsletterPageHeaderQueryVariables>(GetNewsletterPageHeaderDocument, options);
+        return Apollo.useQuery<GetNewsletterPageHeaderQuery, GetNewsletterPageHeaderQueryVariables>(GetNewsletterPageHeaderDocument, options);
       }
-export function useGetNewsletterPageHeaderLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetNewsletterPageHeaderQuery, GetNewsletterPageHeaderQueryVariables>) {
+export function useGetNewsletterPageHeaderLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetNewsletterPageHeaderQuery, GetNewsletterPageHeaderQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useLazyQuery<GetNewsletterPageHeaderQuery, GetNewsletterPageHeaderQueryVariables>(GetNewsletterPageHeaderDocument, options);
+          return Apollo.useLazyQuery<GetNewsletterPageHeaderQuery, GetNewsletterPageHeaderQueryVariables>(GetNewsletterPageHeaderDocument, options);
         }
-export function useGetNewsletterPageHeaderSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetNewsletterPageHeaderQuery, GetNewsletterPageHeaderQueryVariables>) {
-          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useSuspenseQuery<GetNewsletterPageHeaderQuery, GetNewsletterPageHeaderQueryVariables>(GetNewsletterPageHeaderDocument, options);
+export function useGetNewsletterPageHeaderSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetNewsletterPageHeaderQuery, GetNewsletterPageHeaderQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetNewsletterPageHeaderQuery, GetNewsletterPageHeaderQueryVariables>(GetNewsletterPageHeaderDocument, options);
         }
 export type GetNewsletterPageHeaderQueryHookResult = ReturnType<typeof useGetNewsletterPageHeaderQuery>;
 export type GetNewsletterPageHeaderLazyQueryHookResult = ReturnType<typeof useGetNewsletterPageHeaderLazyQuery>;
 export type GetNewsletterPageHeaderSuspenseQueryHookResult = ReturnType<typeof useGetNewsletterPageHeaderSuspenseQuery>;
-export type GetNewsletterPageHeaderQueryResult = ApolloReactCommon.QueryResult<GetNewsletterPageHeaderQuery, GetNewsletterPageHeaderQueryVariables>;
+export type GetNewsletterPageHeaderQueryResult = Apollo.QueryResult<GetNewsletterPageHeaderQuery, GetNewsletterPageHeaderQueryVariables>;

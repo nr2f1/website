@@ -1,8 +1,7 @@
 import * as Types from '../../../types';
 
 import { gql } from '@apollo/client';
-import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
-import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
+import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
 export type GetResearchPageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -80,19 +79,19 @@ export const GetResearchPageDocument = gql`
  *   },
  * });
  */
-export function useGetResearchPageQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetResearchPageQuery, GetResearchPageQueryVariables> & ({ variables: GetResearchPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetResearchPageQuery(baseOptions: Apollo.QueryHookOptions<GetResearchPageQuery, GetResearchPageQueryVariables> & ({ variables: GetResearchPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return ApolloReactHooks.useQuery<GetResearchPageQuery, GetResearchPageQueryVariables>(GetResearchPageDocument, options);
+        return Apollo.useQuery<GetResearchPageQuery, GetResearchPageQueryVariables>(GetResearchPageDocument, options);
       }
-export function useGetResearchPageLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetResearchPageQuery, GetResearchPageQueryVariables>) {
+export function useGetResearchPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetResearchPageQuery, GetResearchPageQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useLazyQuery<GetResearchPageQuery, GetResearchPageQueryVariables>(GetResearchPageDocument, options);
+          return Apollo.useLazyQuery<GetResearchPageQuery, GetResearchPageQueryVariables>(GetResearchPageDocument, options);
         }
-export function useGetResearchPageSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetResearchPageQuery, GetResearchPageQueryVariables>) {
-          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useSuspenseQuery<GetResearchPageQuery, GetResearchPageQueryVariables>(GetResearchPageDocument, options);
+export function useGetResearchPageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetResearchPageQuery, GetResearchPageQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetResearchPageQuery, GetResearchPageQueryVariables>(GetResearchPageDocument, options);
         }
 export type GetResearchPageQueryHookResult = ReturnType<typeof useGetResearchPageQuery>;
 export type GetResearchPageLazyQueryHookResult = ReturnType<typeof useGetResearchPageLazyQuery>;
 export type GetResearchPageSuspenseQueryHookResult = ReturnType<typeof useGetResearchPageSuspenseQuery>;
-export type GetResearchPageQueryResult = ApolloReactCommon.QueryResult<GetResearchPageQuery, GetResearchPageQueryVariables>;
+export type GetResearchPageQueryResult = Apollo.QueryResult<GetResearchPageQuery, GetResearchPageQueryVariables>;

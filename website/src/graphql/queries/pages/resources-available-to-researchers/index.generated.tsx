@@ -1,8 +1,7 @@
 import * as Types from '../../../types';
 
 import { gql } from '@apollo/client';
-import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
-import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
+import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
 export type GetResourcesAvailableToResearchersPageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -106,19 +105,19 @@ export const GetResourcesAvailableToResearchersPageDocument = gql`
  *   },
  * });
  */
-export function useGetResourcesAvailableToResearchersPageQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetResourcesAvailableToResearchersPageQuery, GetResourcesAvailableToResearchersPageQueryVariables> & ({ variables: GetResourcesAvailableToResearchersPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetResourcesAvailableToResearchersPageQuery(baseOptions: Apollo.QueryHookOptions<GetResourcesAvailableToResearchersPageQuery, GetResourcesAvailableToResearchersPageQueryVariables> & ({ variables: GetResourcesAvailableToResearchersPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return ApolloReactHooks.useQuery<GetResourcesAvailableToResearchersPageQuery, GetResourcesAvailableToResearchersPageQueryVariables>(GetResourcesAvailableToResearchersPageDocument, options);
+        return Apollo.useQuery<GetResourcesAvailableToResearchersPageQuery, GetResourcesAvailableToResearchersPageQueryVariables>(GetResourcesAvailableToResearchersPageDocument, options);
       }
-export function useGetResourcesAvailableToResearchersPageLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetResourcesAvailableToResearchersPageQuery, GetResourcesAvailableToResearchersPageQueryVariables>) {
+export function useGetResourcesAvailableToResearchersPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetResourcesAvailableToResearchersPageQuery, GetResourcesAvailableToResearchersPageQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useLazyQuery<GetResourcesAvailableToResearchersPageQuery, GetResourcesAvailableToResearchersPageQueryVariables>(GetResourcesAvailableToResearchersPageDocument, options);
+          return Apollo.useLazyQuery<GetResourcesAvailableToResearchersPageQuery, GetResourcesAvailableToResearchersPageQueryVariables>(GetResourcesAvailableToResearchersPageDocument, options);
         }
-export function useGetResourcesAvailableToResearchersPageSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetResourcesAvailableToResearchersPageQuery, GetResourcesAvailableToResearchersPageQueryVariables>) {
-          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useSuspenseQuery<GetResourcesAvailableToResearchersPageQuery, GetResourcesAvailableToResearchersPageQueryVariables>(GetResourcesAvailableToResearchersPageDocument, options);
+export function useGetResourcesAvailableToResearchersPageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetResourcesAvailableToResearchersPageQuery, GetResourcesAvailableToResearchersPageQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetResourcesAvailableToResearchersPageQuery, GetResourcesAvailableToResearchersPageQueryVariables>(GetResourcesAvailableToResearchersPageDocument, options);
         }
 export type GetResourcesAvailableToResearchersPageQueryHookResult = ReturnType<typeof useGetResourcesAvailableToResearchersPageQuery>;
 export type GetResourcesAvailableToResearchersPageLazyQueryHookResult = ReturnType<typeof useGetResourcesAvailableToResearchersPageLazyQuery>;
 export type GetResourcesAvailableToResearchersPageSuspenseQueryHookResult = ReturnType<typeof useGetResourcesAvailableToResearchersPageSuspenseQuery>;
-export type GetResourcesAvailableToResearchersPageQueryResult = ApolloReactCommon.QueryResult<GetResourcesAvailableToResearchersPageQuery, GetResourcesAvailableToResearchersPageQueryVariables>;
+export type GetResourcesAvailableToResearchersPageQueryResult = Apollo.QueryResult<GetResourcesAvailableToResearchersPageQuery, GetResourcesAvailableToResearchersPageQueryVariables>;

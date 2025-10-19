@@ -1,8 +1,7 @@
 import * as Types from '../../../types';
 
 import { gql } from '@apollo/client';
-import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
-import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
+import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
 export type GetPublicationsPageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -86,19 +85,19 @@ export const GetPublicationsPageDocument = gql`
  *   },
  * });
  */
-export function useGetPublicationsPageQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetPublicationsPageQuery, GetPublicationsPageQueryVariables> & ({ variables: GetPublicationsPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetPublicationsPageQuery(baseOptions: Apollo.QueryHookOptions<GetPublicationsPageQuery, GetPublicationsPageQueryVariables> & ({ variables: GetPublicationsPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return ApolloReactHooks.useQuery<GetPublicationsPageQuery, GetPublicationsPageQueryVariables>(GetPublicationsPageDocument, options);
+        return Apollo.useQuery<GetPublicationsPageQuery, GetPublicationsPageQueryVariables>(GetPublicationsPageDocument, options);
       }
-export function useGetPublicationsPageLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetPublicationsPageQuery, GetPublicationsPageQueryVariables>) {
+export function useGetPublicationsPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetPublicationsPageQuery, GetPublicationsPageQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useLazyQuery<GetPublicationsPageQuery, GetPublicationsPageQueryVariables>(GetPublicationsPageDocument, options);
+          return Apollo.useLazyQuery<GetPublicationsPageQuery, GetPublicationsPageQueryVariables>(GetPublicationsPageDocument, options);
         }
-export function useGetPublicationsPageSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetPublicationsPageQuery, GetPublicationsPageQueryVariables>) {
-          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useSuspenseQuery<GetPublicationsPageQuery, GetPublicationsPageQueryVariables>(GetPublicationsPageDocument, options);
+export function useGetPublicationsPageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetPublicationsPageQuery, GetPublicationsPageQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetPublicationsPageQuery, GetPublicationsPageQueryVariables>(GetPublicationsPageDocument, options);
         }
 export type GetPublicationsPageQueryHookResult = ReturnType<typeof useGetPublicationsPageQuery>;
 export type GetPublicationsPageLazyQueryHookResult = ReturnType<typeof useGetPublicationsPageLazyQuery>;
 export type GetPublicationsPageSuspenseQueryHookResult = ReturnType<typeof useGetPublicationsPageSuspenseQuery>;
-export type GetPublicationsPageQueryResult = ApolloReactCommon.QueryResult<GetPublicationsPageQuery, GetPublicationsPageQueryVariables>;
+export type GetPublicationsPageQueryResult = Apollo.QueryResult<GetPublicationsPageQuery, GetPublicationsPageQueryVariables>;

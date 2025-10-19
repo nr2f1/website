@@ -35,11 +35,13 @@ const CookieBanner: React.FC<ComponentPropsWithLocale> = ({ lang }) => {
   const { heading, paragraphs, resourceSet } = data;
 
   const rejectCopy = resourceSet?.resourcesCollection?.items?.find(
-    (item) => item?.key === 'cookie-banner-reject',
+    (item: { key?: string; value?: string }) =>
+      item?.key === 'cookie-banner-reject',
   )?.value;
 
   const acceptCopy = resourceSet?.resourcesCollection?.items?.find(
-    (item) => item?.key === 'cookie-banner-accept',
+    (item: { key?: string; value?: string }) =>
+      item?.key === 'cookie-banner-accept',
   )?.value;
 
   return (

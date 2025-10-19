@@ -1,8 +1,7 @@
 import * as Types from '../../../types';
 
 import { gql } from '@apollo/client';
-import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
-import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
+import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
 export type GetGetInvolvedInBbsoasResearchPageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -155,19 +154,19 @@ export const GetGetInvolvedInBbsoasResearchPageDocument = gql`
  *   },
  * });
  */
-export function useGetGetInvolvedInBbsoasResearchPageQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetGetInvolvedInBbsoasResearchPageQuery, GetGetInvolvedInBbsoasResearchPageQueryVariables> & ({ variables: GetGetInvolvedInBbsoasResearchPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetGetInvolvedInBbsoasResearchPageQuery(baseOptions: Apollo.QueryHookOptions<GetGetInvolvedInBbsoasResearchPageQuery, GetGetInvolvedInBbsoasResearchPageQueryVariables> & ({ variables: GetGetInvolvedInBbsoasResearchPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return ApolloReactHooks.useQuery<GetGetInvolvedInBbsoasResearchPageQuery, GetGetInvolvedInBbsoasResearchPageQueryVariables>(GetGetInvolvedInBbsoasResearchPageDocument, options);
+        return Apollo.useQuery<GetGetInvolvedInBbsoasResearchPageQuery, GetGetInvolvedInBbsoasResearchPageQueryVariables>(GetGetInvolvedInBbsoasResearchPageDocument, options);
       }
-export function useGetGetInvolvedInBbsoasResearchPageLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetGetInvolvedInBbsoasResearchPageQuery, GetGetInvolvedInBbsoasResearchPageQueryVariables>) {
+export function useGetGetInvolvedInBbsoasResearchPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetGetInvolvedInBbsoasResearchPageQuery, GetGetInvolvedInBbsoasResearchPageQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useLazyQuery<GetGetInvolvedInBbsoasResearchPageQuery, GetGetInvolvedInBbsoasResearchPageQueryVariables>(GetGetInvolvedInBbsoasResearchPageDocument, options);
+          return Apollo.useLazyQuery<GetGetInvolvedInBbsoasResearchPageQuery, GetGetInvolvedInBbsoasResearchPageQueryVariables>(GetGetInvolvedInBbsoasResearchPageDocument, options);
         }
-export function useGetGetInvolvedInBbsoasResearchPageSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetGetInvolvedInBbsoasResearchPageQuery, GetGetInvolvedInBbsoasResearchPageQueryVariables>) {
-          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useSuspenseQuery<GetGetInvolvedInBbsoasResearchPageQuery, GetGetInvolvedInBbsoasResearchPageQueryVariables>(GetGetInvolvedInBbsoasResearchPageDocument, options);
+export function useGetGetInvolvedInBbsoasResearchPageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetGetInvolvedInBbsoasResearchPageQuery, GetGetInvolvedInBbsoasResearchPageQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetGetInvolvedInBbsoasResearchPageQuery, GetGetInvolvedInBbsoasResearchPageQueryVariables>(GetGetInvolvedInBbsoasResearchPageDocument, options);
         }
 export type GetGetInvolvedInBbsoasResearchPageQueryHookResult = ReturnType<typeof useGetGetInvolvedInBbsoasResearchPageQuery>;
 export type GetGetInvolvedInBbsoasResearchPageLazyQueryHookResult = ReturnType<typeof useGetGetInvolvedInBbsoasResearchPageLazyQuery>;
 export type GetGetInvolvedInBbsoasResearchPageSuspenseQueryHookResult = ReturnType<typeof useGetGetInvolvedInBbsoasResearchPageSuspenseQuery>;
-export type GetGetInvolvedInBbsoasResearchPageQueryResult = ApolloReactCommon.QueryResult<GetGetInvolvedInBbsoasResearchPageQuery, GetGetInvolvedInBbsoasResearchPageQueryVariables>;
+export type GetGetInvolvedInBbsoasResearchPageQueryResult = Apollo.QueryResult<GetGetInvolvedInBbsoasResearchPageQuery, GetGetInvolvedInBbsoasResearchPageQueryVariables>;

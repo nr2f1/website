@@ -1,8 +1,7 @@
 import * as Types from '../../../types';
 
 import { gql } from '@apollo/client';
-import * as ApolloReactCommon from '@graphql/apollo-react-wrapper';
-import * as ApolloReactHooks from '@graphql/apollo-react-wrapper';
+import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
 export type GetVolunteerPageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
@@ -40,19 +39,19 @@ export const GetVolunteerPageDocument = gql`
  *   },
  * });
  */
-export function useGetVolunteerPageQuery(baseOptions: ApolloReactHooks.QueryHookOptions<GetVolunteerPageQuery, GetVolunteerPageQueryVariables> & ({ variables: GetVolunteerPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+export function useGetVolunteerPageQuery(baseOptions: Apollo.QueryHookOptions<GetVolunteerPageQuery, GetVolunteerPageQueryVariables> & ({ variables: GetVolunteerPageQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
         const options = {...defaultOptions, ...baseOptions}
-        return ApolloReactHooks.useQuery<GetVolunteerPageQuery, GetVolunteerPageQueryVariables>(GetVolunteerPageDocument, options);
+        return Apollo.useQuery<GetVolunteerPageQuery, GetVolunteerPageQueryVariables>(GetVolunteerPageDocument, options);
       }
-export function useGetVolunteerPageLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetVolunteerPageQuery, GetVolunteerPageQueryVariables>) {
+export function useGetVolunteerPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetVolunteerPageQuery, GetVolunteerPageQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useLazyQuery<GetVolunteerPageQuery, GetVolunteerPageQueryVariables>(GetVolunteerPageDocument, options);
+          return Apollo.useLazyQuery<GetVolunteerPageQuery, GetVolunteerPageQueryVariables>(GetVolunteerPageDocument, options);
         }
-export function useGetVolunteerPageSuspenseQuery(baseOptions?: ApolloReactHooks.SkipToken | ApolloReactHooks.SuspenseQueryHookOptions<GetVolunteerPageQuery, GetVolunteerPageQueryVariables>) {
-          const options = baseOptions === ApolloReactHooks.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return ApolloReactHooks.useSuspenseQuery<GetVolunteerPageQuery, GetVolunteerPageQueryVariables>(GetVolunteerPageDocument, options);
+export function useGetVolunteerPageSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetVolunteerPageQuery, GetVolunteerPageQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetVolunteerPageQuery, GetVolunteerPageQueryVariables>(GetVolunteerPageDocument, options);
         }
 export type GetVolunteerPageQueryHookResult = ReturnType<typeof useGetVolunteerPageQuery>;
 export type GetVolunteerPageLazyQueryHookResult = ReturnType<typeof useGetVolunteerPageLazyQuery>;
 export type GetVolunteerPageSuspenseQueryHookResult = ReturnType<typeof useGetVolunteerPageSuspenseQuery>;
-export type GetVolunteerPageQueryResult = ApolloReactCommon.QueryResult<GetVolunteerPageQuery, GetVolunteerPageQueryVariables>;
+export type GetVolunteerPageQueryResult = Apollo.QueryResult<GetVolunteerPageQuery, GetVolunteerPageQueryVariables>;
