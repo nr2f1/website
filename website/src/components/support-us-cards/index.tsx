@@ -26,19 +26,7 @@ interface SupportUsCardsProps {
 const SupportUsCards: React.FC<SupportUsCardsProps> = async ({ lang }) => {
   const { query } = getClient();
 
-  const {
-    data: {
-      donateCta,
-      donateHeading,
-      donateParagraph,
-      fundraiseCta,
-      fundraiseHeading,
-      fundraiseParagraph,
-      volunteerCta,
-      volunteerHeading,
-      volunteerParagraph,
-    },
-  } = await query<GetSupportUsCardsQuery>({
+  const { data, error } = await query<GetSupportUsCardsQuery>({
     query: GetSupportUsCardsDocument,
     variables: {
       donateCtaId,
@@ -53,6 +41,20 @@ const SupportUsCards: React.FC<SupportUsCardsProps> = async ({ lang }) => {
       volunteerParagraphId,
     },
   });
+
+  if (error || !data) return null;
+
+  const {
+    donateCta,
+    donateHeading,
+    donateParagraph,
+    fundraiseCta,
+    fundraiseHeading,
+    fundraiseParagraph,
+    volunteerCta,
+    volunteerHeading,
+    volunteerParagraph,
+  } = data;
 
   return (
     <div className={styles.support_us_cards}>

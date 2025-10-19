@@ -32,37 +32,22 @@ const PageLatestNews: React.FC<PageLatestNewsProps> = async ({ lang }) => {
 
   const { query } = getClient();
 
-  const {
-    data: { posts, podcasts, newsletters },
-    error,
-  } = await query<GetPageLatestNewsQuery>({
+  const { data, error } = await query<GetPageLatestNewsQuery>({
     query: GetPageLatestNewsDocument,
     variables: {
       locale: lang,
     },
   });
 
-  if (
-    !posts ||
-    !posts.items ||
-    !posts.items.length ||
-    !newsletters ||
-    !newsletters.items ||
-    !newsletters.items.length ||
-    !podcasts ||
-    !podcasts.items ||
-    !podcasts.items.length ||
-    error
-  ) {
-    return null;
-  }
+  if (!data || error) return null;
+  const { posts, podcasts, newsletters } = data;
 
   const allNews = fromNewsToNewsCards({
     end: 3,
     lang,
-    newsletters: newsletters.items as NewsletterCollection['items'],
-    podcasts: podcasts.items as PodcastCollection['items'],
-    posts: posts.items as BlogPageCollection['items'],
+    newsletters: newsletters?.items as NewsletterCollection['items'],
+    podcasts: podcasts?.items as PodcastCollection['items'],
+    posts: posts?.items as BlogPageCollection['items'],
   });
 
   return (

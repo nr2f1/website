@@ -23,10 +23,7 @@ interface LatestNewsProps {
 const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
   const { query } = getClient();
 
-  const {
-    data: { title, cta, posts, newsletters, podcasts },
-    error,
-  } = await query<GetLatestNewsQuery>({
+  const { data, error } = await query<GetLatestNewsQuery>({
     query: GetLatestNewsDocument,
     variables: {
       latestNewsCtaId,
@@ -35,35 +32,24 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
     },
   });
 
-  if (
-    !title ||
-    !posts ||
-    !posts.items ||
-    !posts.items.length ||
-    !newsletters ||
-    !newsletters.items ||
-    !newsletters.items.length ||
-    !podcasts ||
-    !podcasts.items ||
-    !podcasts.items.length ||
-    !cta ||
-    error
-  ) {
+  if (!data || error) {
     return null;
   }
+
+  const { title, cta, posts, newsletters, podcasts } = data;
 
   const allNews = fromNewsToNewsCards({
     end: 6,
     lang,
-    newsletters: newsletters.items as NewsletterCollection['items'],
-    podcasts: podcasts.items as PodcastCollection['items'],
-    posts: posts.items as BlogPageCollection['items'],
+    newsletters: newsletters?.items as NewsletterCollection['items'],
+    podcasts: podcasts?.items as PodcastCollection['items'],
+    posts: posts?.items as BlogPageCollection['items'],
   });
 
   return (
     <section className={styles.news}>
       <div className="content-wrapper">
-        <h2>{title.content}</h2>
+        <h2>{title?.content}</h2>
         <ul className={styles.news__articles}>
           {allNews.map((news) => (
             <NewsCard
@@ -78,10 +64,10 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
           ))}
         </ul>
         <Link
-          href={cta.target?.url ?? '/'}
+          href={cta?.target?.url ?? '/'}
           className={`${styles.news__more} button button--on-light`}
         >
-          {cta.text?.content}
+          {cta?.text?.content}
         </Link>
       </div>
     </section>

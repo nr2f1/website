@@ -16,10 +16,7 @@ const MembershipsPartners: React.FC<MembershipsPartnersProps> = async ({
 }) => {
   const { query } = getClient();
 
-  const {
-    data: { navigationList },
-    error,
-  } = await query<GetMembershipPartnersQuery>({
+  const { data, error } = await query<GetMembershipPartnersQuery>({
     query: GetMembershipPartnersDocument,
     variables: {
       locale: lang,
@@ -27,26 +24,27 @@ const MembershipsPartners: React.FC<MembershipsPartnersProps> = async ({
     },
   });
 
-  if (error || !navigationList || !navigationList.linksCollection?.items) {
+  if (error || !data) {
     return null;
   }
 
-  const membershipPartnersAssets = navigationList.linksCollection.items.map(
-    (item) => ({
+  const { navigationList } = data;
+
+  const membershipPartnersAssets =
+    data.navigationList?.linksCollection?.items.map((item) => ({
       alt: item?.text?.content ?? '',
       href: item?.target?.url ?? '/',
       // @ts-ignore
       imageUrl: item?.referenceCollection?.items?.[0]?.asset?.url ?? '',
-    }),
-  );
+    }));
 
   return (
     <div className={styles['memberships-partners']}>
       <div className="content-wrapper">
         <section>
-          <h2>{navigationList.name}</h2>
+          <h2>{navigationList?.name}</h2>
           <ul>
-            {membershipPartnersAssets.map(({ href, alt, imageUrl }) => (
+            {membershipPartnersAssets?.map(({ href, alt, imageUrl }) => (
               <li key={crypto.randomUUID()}>
                 <a href={href} title={alt} target="_blank" rel="noreferrer">
                   <picture>

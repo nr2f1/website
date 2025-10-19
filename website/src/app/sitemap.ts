@@ -32,12 +32,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
-  const { data } = await query<GetBlogPostsSlugsQuery>({
+  const { data } = await query({
     query: GetBlogPostsSlugsDocument,
   });
 
+  const typedData = data as GetBlogPostsSlugsQuery;
+
   const blogPosts =
-    data.blogPageCollection?.items
+    typedData.blogPageCollection?.items
       .map((item) => {
         if (!item?.date || !item?.slug) return null;
 
@@ -62,7 +64,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           url,
         };
       })
-      .filter((post) => post !== null) || [];
+      .filter((post): post is NonNullable<typeof post> => post !== null) || [];
 
   return [...base, ...blogPosts];
 }

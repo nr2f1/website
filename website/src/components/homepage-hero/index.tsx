@@ -20,15 +20,7 @@ interface HomePageHeroProps {
 const HomePageHero: React.FC<HomePageHeroProps> = async ({ lang }) => {
   const { query } = getClient();
 
-  const {
-    data: {
-      heroCta,
-      heroHeading,
-      heroNavigationList,
-      heroParagraph,
-      heroImage,
-    },
-  } = await query<GetHomePageHeroQuery>({
+  const { data, error } = await query<GetHomePageHeroQuery>({
     query: GetHomePageHeroDocument,
     variables: {
       heroCtaId,
@@ -39,6 +31,11 @@ const HomePageHero: React.FC<HomePageHeroProps> = async ({ lang }) => {
       locale: lang,
     },
   });
+
+  if (error || !data) return null;
+
+  const { heroCta, heroHeading, heroNavigationList, heroParagraph, heroImage } =
+    data;
 
   const heroNavigationLinkItems =
     heroNavigationList?.linksCollection?.items.map((item) => {
