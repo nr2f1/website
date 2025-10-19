@@ -88,7 +88,7 @@ const headers: NextConfig['headers'] = async () => {
           value: 'noindex, nofollow',
         },
       ],
-      source: '/:path*/opengraph-image:ext*',
+      source: '/:path(.*)/opengraph-image:ext(.*)',
     },
     {
       headers: [
@@ -97,7 +97,7 @@ const headers: NextConfig['headers'] = async () => {
           value: 'noindex, nofollow',
         },
       ],
-      source: '/:path*/twitter-image:ext*',
+      source: '/:path(.*)/twitter-image:ext(.*)',
     },
     {
       headers: [
@@ -106,7 +106,7 @@ const headers: NextConfig['headers'] = async () => {
           value: 'noindex, nofollow',
         },
       ],
-      source: '/:path*/icon:ext*',
+      source: '/:path(.*)/icon:ext(.*)',
     },
     {
       headers: [
@@ -115,7 +115,7 @@ const headers: NextConfig['headers'] = async () => {
           value: 'noindex, nofollow',
         },
       ],
-      source: '/:path*/apple-icon:ext*',
+      source: '/:path(.*)/apple-icon:ext(.*)',
     },
     {
       headers: [
