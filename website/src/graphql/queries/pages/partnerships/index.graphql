@@ -101,7 +101,7 @@ query GetPartnershipsPage($locale: String, $partnershipsPageheadingId: String!, 
   nicoAsset: asset(id: $nicoAssetId) {
     url
   }
-  nicoLink: link(locale: $locale, id: $nicoAssetId) {
+  nicoLink: link(locale: $locale, id: $nicoLinkId) {
     text {
       content
     }
