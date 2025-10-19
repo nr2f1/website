@@ -5,7 +5,6 @@ import {
 } from '@graphql/queries/news/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { BASE_URL, blogPostUrl } from '@routes/index';
-import type { NewsPagePropsWithLocale } from '@shared/types/page-with-locale-params';
 
 const description: Record<AvailableLocale, string> = {
   de: 'Neueste Blogbeiträge über NR2F1 und Bosch-Boonstra-Schaaf Optikatrophy',
@@ -19,9 +18,9 @@ const description: Record<AvailableLocale, string> = {
 
 export async function GET(
   _request: Request,
-  { params }: NewsPagePropsWithLocale,
+  { params }: { params: Promise<{ lang: string }> },
 ) {
-  const { lang } = await params;
+  const { lang } = (await params) as { lang: AvailableLocale };
 
   const currentDate = new Date().toUTCString();
 

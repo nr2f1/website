@@ -1,9 +1,9 @@
 import CookieBanner from '@components/cookie-banner';
 import Footer from '@components/footer';
 import Header from '@components/header';
+import type { AvailableLocale } from '@i18n/locales';
 import { AVAILABLE_LOCALES, metadataLanguages } from '@i18n/locales';
 import { BASE_URL } from '@routes/index';
-import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata } from 'next';
 import { Nunito_Sans } from 'next/font/google';
 import { unstable_ViewTransition as ViewTransition } from 'react';
@@ -29,12 +29,13 @@ export async function generateStaticParams() {
   return AVAILABLE_LOCALES.map((lang) => ({ lang }));
 }
 
-interface RootLayoutProps extends PagePropsWithLocale {
+interface RootLayoutProps {
   children: React.ReactNode;
+  params: Promise<{ lang: string }>;
 }
 
 const RootLayout: React.FC<RootLayoutProps> = async ({ children, params }) => {
-  const { lang } = await params;
+  const { lang } = (await params) as { lang: AvailableLocale };
 
   return (
     <html

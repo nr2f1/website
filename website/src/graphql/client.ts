@@ -7,7 +7,7 @@ import {
 } from '@apollo/experimental-nextjs-app-support';
 import { Authorization, CONTENTUL_GRAPHQL_API } from '@config/utils';
 
-const isDev = process.env.NODE_ENV !== 'production';
+export const isDev = process.env.NODE_ENV !== 'production';
 
 export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
   return new ApolloClient({
@@ -27,6 +27,9 @@ export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
         },
       },
     }),
+    devtools: {
+      enabled: isDev,
+    },
     link: new HttpLink({
       headers: {
         Authorization,
