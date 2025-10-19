@@ -6,7 +6,7 @@ import {
   ApolloClient,
   ApolloNextAppProvider,
   InMemoryCache,
-} from '@apollo/experimental-nextjs-app-support';
+} from '@apollo/client-integration-nextjs';
 import { CONTENTUL_GRAPHQL_API } from '@config/utils';
 import { isDev } from '@graphql/client';
 

@@ -6,6 +6,8 @@ const config: CodegenConfig = {
   generates: {
     'website/src/graphql/': {
       config: {
+        apolloReactCommonImportFrom: '@apollo/client/react',
+        apolloReactHooksImportFrom: '@apollo/client/react',
         reactApolloVersion: 3,
         withResultType: true,
       },
