@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.34.0](https://github.com/nr2f1/website/compare/v2.33.1...v2.34.0) (2025-10-20)
+
+
+### Features
+
+* add nico partner ([845ff00](https://github.com/nr2f1/website/commit/845ff00afc721a1ca46c549ade398a9f30cf91c9))
+
 ## [2.33.1](https://github.com/nr2f1/website/compare/v2.33.0...v2.33.1) (2025-10-12)
 
 
