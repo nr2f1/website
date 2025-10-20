@@ -1,4 +1,4 @@
-query GetPartnershipsPage($locale: String, $partnershipsPageheadingId: String!, $partnershipsPageParagraphsId: String!, $partnersHeadingId: String!, $nr2f1FranceAssetId: String!, $nr2f1FranceLinkId: String!, $schaafLaboratoryAssetId: String!, $schaafLaboratoryLinkId: String!, $cincinnatiAssetId: String!, $cincinnatiLinkId: String!, $valroseAssetId: String!, $valroseLinkId: String!, $combinedBrainAssetId: String!, $combinedBrainLinkId: String!, $renAssetId: String!, $renLinkId: String!, $globalGenesAssetId: String!, $globalGenesLinkId: String!, $uniqueAssetId: String!, $uniqueLinkId: String!) {
+query GetPartnershipsPage($locale: String, $partnershipsPageheadingId: String!, $partnershipsPageParagraphsId: String!, $partnersHeadingId: String!, $nr2f1FranceAssetId: String!, $nr2f1FranceLinkId: String!, $schaafLaboratoryAssetId: String!, $schaafLaboratoryLinkId: String!, $cincinnatiAssetId: String!, $cincinnatiLinkId: String!, $valroseAssetId: String!, $valroseLinkId: String!, $combinedBrainAssetId: String!, $combinedBrainLinkId: String!, $renAssetId: String!, $renLinkId: String!, $globalGenesAssetId: String!, $globalGenesLinkId: String!, $uniqueAssetId: String!, $uniqueLinkId: String!, $nicoAssetId: String!, $nicoLinkId: String!) {
   heading(locale: $locale, id: $partnershipsPageheadingId) {
     content
   }
@@ -91,6 +91,17 @@ query GetPartnershipsPage($locale: String, $partnershipsPageheadingId: String!, 
     url
   }
   uniqueLink: link(locale: $locale, id: $uniqueLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+  nicoAsset: asset(id: $nicoAssetId) {
+    url
+  }
+  nicoLink: link(locale: $locale, id: $nicoLinkId) {
     text {
       content
     }
