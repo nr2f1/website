@@ -57,3 +57,6 @@ export const fundraisingCampaignsLinkId = '2zzboFpNHBVEAzMI5LkpvT';
 
 // Conference page
 export const bookTicketsLinkId = '1n4hexw8UdTMAamhck7l9T';
+
+// Patient counter
+export const patientCounterCtaId = '5Shet4FAnXQk0KFmi6XddP';

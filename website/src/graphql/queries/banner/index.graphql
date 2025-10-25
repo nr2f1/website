@@ -21,3 +21,25 @@ query GetBanner($locale: String, $id: String!) {
     }
   }
 }
+
+query GetPatientCounterBanner($locale: String, $patientNumberHeadingId: String!, $countriesNumberHeadingId: String!, $patientCounterParagraphsId: String!, $patientCounterCtaId: String!) {
+  patientNumberHeading: heading(locale: $locale, id: $patientNumberHeadingId) {
+    content
+  }
+  countriesNumberHeading: heading(locale: $locale, id: $countriesNumberHeadingId) {
+    content
+  }
+  paragraphs(locale: $locale, id: $patientCounterParagraphsId) {
+    content {
+      json
+    }
+  }
+  link(locale: $locale, id: $patientCounterCtaId) {
+    target {
+      url
+    }
+    text {
+      content
+    }
+  }
+}
