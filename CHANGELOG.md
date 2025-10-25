@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.35.0](https://github.com/nr2f1/website/compare/v2.34.0...v2.35.0) (2025-10-25)
+
+
+### Features
+
+* patient counter ([7e666d3](https://github.com/nr2f1/website/commit/7e666d32bc019181170f25bbc7f03e52c66bc256))
+
+
+### Bug Fixes
+
+* hitting contentful rate limit ([90a250b](https://github.com/nr2f1/website/commit/90a250b9d671598d95465140984052386067b1f3))
+* hitting contentful rate limit ([#371](https://github.com/nr2f1/website/issues/371)) ([e699d56](https://github.com/nr2f1/website/commit/e699d561e72768520cb5457ebabef3b235372994))
+
 ## [2.34.0](https://github.com/nr2f1/website/compare/v2.33.1...v2.34.0) (2025-10-20)
 
 
