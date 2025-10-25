@@ -81,3 +81,7 @@ export const boardHeadingId = '2tfUSf9KLwAwneLAvzz8lx';
 export const volunteersHeadingId = '2NXHTxt43jW8r75iusawwe';
 export const scientificHeadingId = '1JVvale1oAWVyTbWBtSbpH';
 export const organizationResearchHeadingId = '3MEZmCDba18cixzviwceIU';
+
+// Patient counter
+export const patientNumberHeadingId = '57RHWitfVQrphS0liwSlpb';
+export const countriesNumberHeadingId = '5YUeEDHcEpUw3b3kMavENg';

@@ -11,6 +11,17 @@ export type GetBannerQueryVariables = Types.Exact<{
 
 export type GetBannerQuery = { __typename?: 'Query', banner?: { __typename?: 'Banner', heading?: { __typename?: 'Heading', content?: string | null } | null, content?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, cta?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null };
 
+export type GetPatientCounterBannerQueryVariables = Types.Exact<{
+  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
+  patientNumberHeadingId: Types.Scalars['String']['input'];
+  countriesNumberHeadingId: Types.Scalars['String']['input'];
+  patientCounterParagraphsId: Types.Scalars['String']['input'];
+  patientCounterCtaId: Types.Scalars['String']['input'];
+}>;
+
+
+export type GetPatientCounterBannerQuery = { __typename?: 'Query', patientNumberHeading?: { __typename?: 'Heading', content?: string | null } | null, countriesNumberHeading?: { __typename?: 'Heading', content?: string | null } | null, paragraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, link?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null };
+
 
 export const GetBannerDocument = gql`
     query GetBanner($locale: String, $id: String!) {
@@ -71,3 +82,63 @@ export type GetBannerQueryHookResult = ReturnType<typeof useGetBannerQuery>;
 export type GetBannerLazyQueryHookResult = ReturnType<typeof useGetBannerLazyQuery>;
 export type GetBannerSuspenseQueryHookResult = ReturnType<typeof useGetBannerSuspenseQuery>;
 export type GetBannerQueryResult = Apollo.QueryResult<GetBannerQuery, GetBannerQueryVariables>;
+export const GetPatientCounterBannerDocument = gql`
+    query GetPatientCounterBanner($locale: String, $patientNumberHeadingId: String!, $countriesNumberHeadingId: String!, $patientCounterParagraphsId: String!, $patientCounterCtaId: String!) {
+  patientNumberHeading: heading(locale: $locale, id: $patientNumberHeadingId) {
+    content
+  }
+  countriesNumberHeading: heading(locale: $locale, id: $countriesNumberHeadingId) {
+    content
+  }
+  paragraphs(locale: $locale, id: $patientCounterParagraphsId) {
+    content {
+      json
+    }
+  }
+  link(locale: $locale, id: $patientCounterCtaId) {
+    target {
+      url
+    }
+    text {
+      content
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetPatientCounterBannerQuery__
+ *
+ * To run a query within a React component, call `useGetPatientCounterBannerQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetPatientCounterBannerQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetPatientCounterBannerQuery({
+ *   variables: {
+ *      locale: // value for 'locale'
+ *      patientNumberHeadingId: // value for 'patientNumberHeadingId'
+ *      countriesNumberHeadingId: // value for 'countriesNumberHeadingId'
+ *      patientCounterParagraphsId: // value for 'patientCounterParagraphsId'
+ *      patientCounterCtaId: // value for 'patientCounterCtaId'
+ *   },
+ * });
+ */
+export function useGetPatientCounterBannerQuery(baseOptions: Apollo.QueryHookOptions<GetPatientCounterBannerQuery, GetPatientCounterBannerQueryVariables> & ({ variables: GetPatientCounterBannerQueryVariables; skip?: boolean; } | { skip: boolean; }) ) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetPatientCounterBannerQuery, GetPatientCounterBannerQueryVariables>(GetPatientCounterBannerDocument, options);
+      }
+export function useGetPatientCounterBannerLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetPatientCounterBannerQuery, GetPatientCounterBannerQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetPatientCounterBannerQuery, GetPatientCounterBannerQueryVariables>(GetPatientCounterBannerDocument, options);
+        }
+export function useGetPatientCounterBannerSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<GetPatientCounterBannerQuery, GetPatientCounterBannerQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetPatientCounterBannerQuery, GetPatientCounterBannerQueryVariables>(GetPatientCounterBannerDocument, options);
+        }
+export type GetPatientCounterBannerQueryHookResult = ReturnType<typeof useGetPatientCounterBannerQuery>;
+export type GetPatientCounterBannerLazyQueryHookResult = ReturnType<typeof useGetPatientCounterBannerLazyQuery>;
+export type GetPatientCounterBannerSuspenseQueryHookResult = ReturnType<typeof useGetPatientCounterBannerSuspenseQuery>;
+export type GetPatientCounterBannerQueryResult = Apollo.QueryResult<GetPatientCounterBannerQuery, GetPatientCounterBannerQueryVariables>;

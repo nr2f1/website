@@ -1,6 +1,7 @@
 import HomePageHero from '@components/homepage-hero';
 import LatestNews from '@components/latest-news';
 import MembershipsPartners from '@components/memberships-partners';
+import PatientCounterBanner from '@components/patient-counter-banner';
 import SupportBanner from '@components/support-banner';
 import WhatWeDo from '@components/what-we-do';
 import { getClient } from '@graphql/client';
@@ -101,6 +102,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
       <h1 className={styles['visibility-hidden']}>NR2F1 Foundation</h1>
       <HomePageHero lang={lang} />
       <WhatWeDo lang={lang} />
+      <PatientCounterBanner lang={lang} />
       <HomePageBanner lang={lang} />
       <SupportBanner lang={lang} />
       <LatestNews lang={lang} />

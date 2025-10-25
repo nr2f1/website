@@ -117,3 +117,6 @@ export const pastConferencesParagraphsId = '41nwrdWWQ3r7JXXFOAeYZF';
 export const boardParagraphsId = 'eTWocFLPJRewxHqWpTQSW';
 export const scientificParagraphsId = '3xqtKckUs51mEitvkgDPka';
 export const organizationResearchParagraphsId = '3xqtKckUs51mEitvkgDPka';
+
+// Patient counter
+export const patientCounterParagraphsId = '4XHRI045AzutcxFzoAQPfJ';
