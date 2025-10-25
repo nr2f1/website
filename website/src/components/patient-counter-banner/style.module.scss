@@ -1,4 +1,5 @@
 @use '@styles/text-styles';
+@use '@styles/breakpoints';
 
 $heart: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath fill='%23D7001C' d='m9.704 17.425-.005-.002-.02-.01a19.102 19.102 0 0 1-1.198-.733 20.98 20.98 0 0 1-2.657-2.091C3.907 12.8 1.875 10.146 1.875 6.875c0-2.44 2.053-4.375 4.531-4.375 1.458 0 2.763.666 3.594 1.71a4.583 4.583 0 0 1 3.594-1.71c2.478 0 4.531 1.935 4.531 4.375 0 3.27-2.032 5.926-3.949 7.714a20.989 20.989 0 0 1-3.537 2.642 12.325 12.325 0 0 1-.319.181l-.019.01-.005.003-.002.002a.627.627 0 0 1-.588 0l-.002-.002Z'/%3E%3C/svg%3E%0A";
 
@@ -10,6 +11,14 @@ $helix-right: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' widt
   color: var(--foreground-inverse-primary);
   padding: 0 var(--spacing-16) var(--spacing-24);
 
+  @include breakpoints.medium-screen {
+    padding: 0 var(--spacing-12) var(--spacing-12);
+  }
+
+  @include breakpoints.small-screen {
+    padding: 0 0 var(--spacing-8) 0;
+  }
+
   & section {
     background-color: var(--background-inverse-primary);
     border-radius: var(--spacing-4);
@@ -18,16 +27,27 @@ $helix-right: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' widt
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: left, right;
+
+    @include breakpoints.medium-screen {
+      padding: var(--spacing-12);
+    }
+
+    @include breakpoints.small-screen {
+      border-radius: 0;
+      padding: var(--spacing-6);
+    }
   }
 
   &__hug {
     max-width: 42rem;
     margin: 0 auto;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @include breakpoints.medium-screen {
+      max-width: 30rem;
+    }
   }
 
   & h2 {
@@ -35,10 +55,20 @@ $helix-right: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' widt
     margin: 0;
     margin-block-end: var(--spacing-6);
     color: var(--foreground-inverse-primary);
-    display: inline-flex;
+    display: flex;
     column-gap: var(--spacing-6);
     font-size: 3rem;
     align-items: baseline;
+
+    @include breakpoints.medium-screen {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include breakpoints.small-screen {
+      flex-direction: column;
+      align-items: center;
+    }
 
     & span {
       text-wrap: nowrap;
@@ -47,6 +77,14 @@ $helix-right: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' widt
 
   &__separator {
     width: 1.625rem;
+
+    @include breakpoints.medium-screen {
+      padding-block-start: var(--spacing-2);
+    }
+
+    @include breakpoints.small-screen {
+      padding-block-start: var(--spacing-2);
+    }
   }
 
   & p {

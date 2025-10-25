@@ -84,4 +84,4 @@ export const organizationResearchHeadingId = '3MEZmCDba18cixzviwceIU';
 
 // Patient counter
 export const patientNumberHeadingId = '57RHWitfVQrphS0liwSlpb';
-export const countriesNumberHeadingId  = '5YUeEDHcEpUw3b3kMavENg';
+export const countriesNumberHeadingId = '5YUeEDHcEpUw3b3kMavENg';
