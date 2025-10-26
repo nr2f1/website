@@ -1,4 +1,4 @@
-import { createHttpLink, from, HttpLink } from '@apollo/client';
+import { createHttpLink, from } from '@apollo/client';
 import { RetryLink } from "@apollo/client/link/retry";
 import { loadDevMessages, loadErrorMessages } from '@apollo/client/dev';
 import {
@@ -7,8 +7,20 @@ import {
   registerApolloClient,
 } from '@apollo/experimental-nextjs-app-support';
 import { Authorization, CONTENTUL_GRAPHQL_API } from '@config/utils';
+import possibleTypesQuery from "./posible-types.json";
 
 const isDev = process.env.NODE_ENV !== 'production';
+
+
+const possibleTypes = possibleTypesQuery.data.__schema.types.reduce((acc, supertype) => {
+  if (supertype.possibleTypes) {
+    acc[supertype.name] = supertype.possibleTypes.map(
+      (subtype) => subtype.name
+    );
+  }
+  return acc;
+}, {} as Record<string, any>);
+
 
 export const link = from([
  	new RetryLink({
@@ -20,7 +32,7 @@ export const link = from([
 
  			return shouldRetry;
  		},
- 		delay: (count, _operation, error) => {
+ 		delay: (_count, _operation, error) => {
  			const delay =
  				Number(error.response?.headers?.get('X-Contentful-RateLimit-Reset')) *
  				1000;
@@ -54,6 +66,7 @@ export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
           },
         },
       },
+      possibleTypes,
     }),
     link,
   });
