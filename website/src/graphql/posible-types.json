@@ -1,0 +1,1170 @@
+{
+  "data": {
+    "__schema": {
+      "types": [
+        {
+          "kind": "OBJECT",
+          "name": "Accordion",
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "ID",
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "String",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "AccordionCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "Int",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "AccordionContent",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "AccordionContentAssets",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "AccordionContentEntries",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "AccordionContentLinks",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "AccordionContentResources",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "AccordionContentResourcesBlock",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "AccordionContentResourcesHyperlink",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "AccordionContentResourcesInline",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "AccordionFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "Boolean",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "AccordionLinkingCollections",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "AccordionOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Asset",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "AssetCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "AssetFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "AssetLinkingCollections",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "AssetOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Banner",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "BannerCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "BannerFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "BannerLinkingCollections",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "BannerOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "BlogPage",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "BlogPageBody",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "BlogPageBodyAssets",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "BlogPageBodyEntries",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "BlogPageBodyLinks",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "BlogPageBodyResources",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "BlogPageBodyResourcesBlock",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "BlogPageBodyResourcesHyperlink",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "BlogPageBodyResourcesInline",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "BlogPageCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "BlogPageFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "BlogPageLinkingCollections",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "BlogPageLinkingCollectionsFundraisingIdeaCollectionOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "BlogPageOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ContentfulMetadata",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "TaxonomyConcept",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "ContentfulMetadataFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "ContentfulMetadataConceptsFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "ContentfulMetadataConceptsDescendantsFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "ContentfulMetadataTagsFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ContentfulTag",
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "DateTime",
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "Dimension",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INTERFACE",
+          "name": "Entry",
+          "possibleTypes": [
+            {
+              "name": "Accordion"
+            },
+            {
+              "name": "Banner"
+            },
+            {
+              "name": "BlogPage"
+            },
+            {
+              "name": "FundraisingIdea"
+            },
+            {
+              "name": "Heading"
+            },
+            {
+              "name": "HtmlHeadMetadata"
+            },
+            {
+              "name": "Hyperlink"
+            },
+            {
+              "name": "Image"
+            },
+            {
+              "name": "Link"
+            },
+            {
+              "name": "LinkContent"
+            },
+            {
+              "name": "Member"
+            },
+            {
+              "name": "MicrocopyResource"
+            },
+            {
+              "name": "NavigationList"
+            },
+            {
+              "name": "Newsletter"
+            },
+            {
+              "name": "PageHeader"
+            },
+            {
+              "name": "Paragraphs"
+            },
+            {
+              "name": "Podcast"
+            },
+            {
+              "name": "Publication"
+            },
+            {
+              "name": "ResourceSet"
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "EntryCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "EntryFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "EntryOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "FundraisingIdea",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "FundraisingIdeaBody",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "FundraisingIdeaBodyAssets",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "FundraisingIdeaBodyEntries",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "FundraisingIdeaBodyLinks",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "FundraisingIdeaBodyResources",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "FundraisingIdeaBodyResourcesBlock",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "FundraisingIdeaBodyResourcesHyperlink",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "FundraisingIdeaBodyResourcesInline",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "FundraisingIdeaCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "FundraisingIdeaFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "FundraisingIdeaLinkingCollections",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "FundraisingIdeaOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Heading",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "HeadingCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "HeadingFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "HeadingLinkingCollections",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "HeadingLinkingCollectionsBannerCollectionOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "HeadingOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "HexColor",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "HtmlHeadMetadata",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "HtmlHeadMetadataCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "HtmlHeadMetadataFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "HtmlHeadMetadataLinkingCollections",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "HtmlHeadMetadataOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Hyperlink",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "HyperlinkCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "HyperlinkFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "HyperlinkLinkingCollections",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "HyperlinkLinkingCollectionsLinkCollectionOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "HyperlinkOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Image",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ImageCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "ImageFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "ImageFormat",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ImageLinkingCollections",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "ImageOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "ImageResizeFocus",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "ImageResizeStrategy",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "ImageTransformOptions",
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "JSON",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Link",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "LinkCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "LinkContent",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "LinkContentCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "LinkContentFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "LinkContentLinkingCollections",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "LinkContentLinkingCollectionsLinkCollectionOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "LinkContentOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "LinkFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "LinkLinkingCollections",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "LinkLinkingCollectionsBannerCollectionOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "LinkLinkingCollectionsNavigationListCollectionOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "LinkOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "LinkReferenceCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Member",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "MemberAbout",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "MemberAboutAssets",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "MemberAboutEntries",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "MemberAboutLinks",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "MemberAboutResources",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "MemberAboutResourcesBlock",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "MemberAboutResourcesHyperlink",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "MemberAboutResourcesInline",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "MemberCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "MemberFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "MemberLinkingCollections",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "MemberOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "MicrocopyResource",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "MicrocopyResourceCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "MicrocopyResourceFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "MicrocopyResourceLinkingCollections",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "MicrocopyResourceLinkingCollectionsResourceSetCollectionOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "MicrocopyResourceOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "NavigationList",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "NavigationListCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "NavigationListFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "NavigationListLinkingCollections",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "NavigationListLinksCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "NavigationListLinksCollectionOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "NavigationListOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Newsletter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "NewsletterCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "NewsletterFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "NewsletterLinkingCollections",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "NewsletterOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "PageHeader",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "PageHeaderCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "PageHeaderFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "PageHeaderLinkingCollections",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "PageHeaderOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Paragraphs",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ParagraphsCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ParagraphsContent",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ParagraphsContentAssets",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ParagraphsContentEntries",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ParagraphsContentLinks",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ParagraphsContentResources",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ParagraphsContentResourcesBlock",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ParagraphsContentResourcesHyperlink",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ParagraphsContentResourcesInline",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "ParagraphsFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ParagraphsLinkingCollections",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "ParagraphsLinkingCollectionsBannerCollectionOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "ParagraphsOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Podcast",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "PodcastCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "PodcastFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "PodcastLinkingCollections",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "PodcastOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Publication",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "PublicationCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "PublicationFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "PublicationLinkingCollections",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "PublicationOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "Quality",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Query",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INTERFACE",
+          "name": "ResourceLink",
+          "possibleTypes": [
+            {
+              "name": "AccordionContentResourcesBlock"
+            },
+            {
+              "name": "AccordionContentResourcesHyperlink"
+            },
+            {
+              "name": "AccordionContentResourcesInline"
+            },
+            {
+              "name": "BlogPageBodyResourcesBlock"
+            },
+            {
+              "name": "BlogPageBodyResourcesHyperlink"
+            },
+            {
+              "name": "BlogPageBodyResourcesInline"
+            },
+            {
+              "name": "FundraisingIdeaBodyResourcesBlock"
+            },
+            {
+              "name": "FundraisingIdeaBodyResourcesHyperlink"
+            },
+            {
+              "name": "FundraisingIdeaBodyResourcesInline"
+            },
+            {
+              "name": "MemberAboutResourcesBlock"
+            },
+            {
+              "name": "MemberAboutResourcesHyperlink"
+            },
+            {
+              "name": "MemberAboutResourcesInline"
+            },
+            {
+              "name": "ParagraphsContentResourcesBlock"
+            },
+            {
+              "name": "ParagraphsContentResourcesHyperlink"
+            },
+            {
+              "name": "ParagraphsContentResourcesInline"
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ResourceSet",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ResourceSetCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "ResourceSetFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ResourceSetLinkingCollections",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "ResourceSetOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ResourceSetResourcesCollection",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "ResourceSetResourcesCollectionOrder",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ResourceSys",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Sys",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "SysFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "Float",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INTERFACE",
+          "name": "_Node",
+          "possibleTypes": [
+            {
+              "name": "Accordion"
+            },
+            {
+              "name": "Banner"
+            },
+            {
+              "name": "BlogPage"
+            },
+            {
+              "name": "FundraisingIdea"
+            },
+            {
+              "name": "Heading"
+            },
+            {
+              "name": "HtmlHeadMetadata"
+            },
+            {
+              "name": "Hyperlink"
+            },
+            {
+              "name": "Image"
+            },
+            {
+              "name": "Link"
+            },
+            {
+              "name": "LinkContent"
+            },
+            {
+              "name": "Member"
+            },
+            {
+              "name": "MicrocopyResource"
+            },
+            {
+              "name": "NavigationList"
+            },
+            {
+              "name": "Newsletter"
+            },
+            {
+              "name": "PageHeader"
+            },
+            {
+              "name": "Paragraphs"
+            },
+            {
+              "name": "Podcast"
+            },
+            {
+              "name": "Publication"
+            },
+            {
+              "name": "ResourceSet"
+            }
+          ]
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "cfBlogPageNestedFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "cfHeadingNestedFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "cfHyperlinkNestedFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "cfLinkContentNestedFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "cfLinkNestedFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "cfMicrocopyResourceNestedFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "cfParagraphsNestedFilter",
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "TimelineFilterInput",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "__Schema",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "__Type",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "__TypeKind",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "__Field",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "__InputValue",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "__EnumValue",
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "__Directive",
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "__DirectiveLocation",
+          "possibleTypes": null
+        }
+      ]
+    }
+  }
+}
