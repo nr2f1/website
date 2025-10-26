@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.35.1](https://github.com/nr2f1/website/compare/v2.35.0...v2.35.1) (2025-10-26)
+
+
+### Bug Fixes
+
+* update font size for small screen in patient counter banner ([9e1f4b0](https://github.com/nr2f1/website/commit/9e1f4b04600549733563ac9884ee966ac55d26dc))
+
 ## [2.35.0](https://github.com/nr2f1/website/compare/v2.34.0...v2.35.0) (2025-10-25)
 
 
