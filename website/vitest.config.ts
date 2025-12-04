@@ -10,7 +10,6 @@ export default defineConfig({
       },
     },
   },
-  // @ts-expect-error
   plugins: [react()],
   test: {
     alias: {

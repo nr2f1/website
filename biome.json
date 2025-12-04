@@ -20,11 +20,12 @@
       "**/*.json",
       "!**/*.generated.tsx",
       "!**/tsconfig.json",
-      "!**/.next/**",
-      "!**/dist/**",
-      "!**/.nx/cache/**",
-      "!**/website/src/graphql/**",
-      "!**/.nx/workspace-data/project-graph.json"
+      "!**/.next",
+      "!**/dist",
+      "!**/.nx/cache",
+      "!**/website/src/graphql",
+      "!**/.nx/workspace-data/project-graph.json",
+      "!**/next-env.d.ts"
     ]
   },
   "formatter": {

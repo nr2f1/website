@@ -36,7 +36,6 @@ import HeaderSkeleton from './skeleton';
 const HeaderWithData: React.FC<HeaderProps> = ({ lang }) => {
   return (
     <PreloadQuery
-      // @ts-expect-error
       query={GetHeaderDocument}
       variables={{
         aboutCopiesId,
