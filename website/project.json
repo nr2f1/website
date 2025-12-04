@@ -15,7 +15,7 @@
       "command": "pnpm biome check website"
     },
     "test": {
-      "executor": "@nx/vite:test",
+      "executor": "@nx/vitest:test",
       "options": {
         "config": "website/vitest.config.ts"
       }

@@ -33,6 +33,21 @@ const nextConfig: WithNxOptions = {
   sassOptions: {
     silenceDeprecations: ['legacy-js-api'],
   },
+  turbopack: {
+    resolveAlias: {
+      '@app/*': 'website/src/app/*',
+      '@components/*': 'website/src/components/*',
+      '@config/*': 'website/src/config/*',
+      '@graphql/*': 'website/src/graphql/*',
+      '@i18n/*': 'website/src/i18n/*',
+      '@models/*': 'website/src/models/*',
+      '@routes/*': 'website/src/routes/*',
+      '@services/*': 'website/src/services/*',
+      '@shared/*': 'website/src/shared/*',
+      '@styles/*': 'website/src/styles/*',
+      '@tests/*': 'website/src/tests/*',
+    },
+  },
 };
 
 const plugins = [

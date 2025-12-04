@@ -20,7 +20,87 @@ export type GetConferencePageQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetConferencePageQuery = { __typename?: 'Query', nextConferenceHeading?: { __typename?: 'Heading', content?: string | null } | null, introParagraph?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any, links: { __typename?: 'ParagraphsContentLinks', entries: { __typename?: 'ParagraphsContentEntries', inline: Array<{ __typename?: 'Accordion', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Banner', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'BlogPage', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'FundraisingIdea', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Heading', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'HtmlHeadMetadata', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Hyperlink', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Link', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'LinkContent', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Member', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'MicrocopyResource', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'NavigationList', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Newsletter', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'PageHeader', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Paragraphs', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Podcast', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Publication', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ResourceSet', sys: { __typename?: 'Sys', id: string } } | null>, block: Array<{ __typename?: 'Accordion', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Banner', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'BlogPage', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'FundraisingIdea', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Heading', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'HtmlHeadMetadata', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Hyperlink', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Link', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'LinkContent', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Member', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'MicrocopyResource', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'NavigationList', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Newsletter', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'PageHeader', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Paragraphs', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Podcast', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Publication', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ResourceSet', sys: { __typename?: 'Sys', id: string } } | null> }, assets: { __typename?: 'ParagraphsContentAssets', block: Array<{ __typename?: 'Asset', url?: string | null, title?: string | null, width?: number | null, description?: string | null, contentType?: string | null, sys: { __typename?: 'Sys', id: string } } | null> } } } | null } | null, bookTicketsLink?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null, infoParagraph?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any, links: { __typename?: 'ParagraphsContentLinks', entries: { __typename?: 'ParagraphsContentEntries', inline: Array<{ __typename?: 'Accordion', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Banner', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'BlogPage', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'FundraisingIdea', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Heading', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'HtmlHeadMetadata', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Hyperlink', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Link', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'LinkContent', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Member', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'MicrocopyResource', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'NavigationList', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Newsletter', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'PageHeader', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Paragraphs', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Podcast', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Publication', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ResourceSet', sys: { __typename?: 'Sys', id: string } } | null>, block: Array<{ __typename?: 'Accordion', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Banner', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'BlogPage', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'FundraisingIdea', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Heading', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'HtmlHeadMetadata', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Hyperlink', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Link', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'LinkContent', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Member', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'MicrocopyResource', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'NavigationList', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Newsletter', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'PageHeader', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Paragraphs', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Podcast', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Publication', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ResourceSet', sys: { __typename?: 'Sys', id: string } } | null> }, assets: { __typename?: 'ParagraphsContentAssets', block: Array<{ __typename?: 'Asset', url?: string | null, title?: string | null, width?: number | null, description?: string | null, contentType?: string | null, sys: { __typename?: 'Sys', id: string } } | null> } } } | null } | null, bookTicketsHeading?: { __typename?: 'Heading', content?: string | null } | null, offerHeading?: { __typename?: 'Heading', content?: string | null } | null, offerParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, sponsorshipHeading?: { __typename?: 'Heading', content?: string | null } | null, sponsorshipParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, faqsHeading?: { __typename?: 'Heading', content?: string | null } | null, accordionCollection?: { __typename?: 'AccordionCollection', items: Array<{ __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null> } | null, pastConferencesHeading?: { __typename?: 'Heading', content?: string | null } | null, pastConferencesParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null };
+export type GetConferencePageQuery = { __typename?: 'Query', nextConferenceHeading?: { __typename?: 'Heading', content?: string | null } | null, introParagraph?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any, links: { __typename?: 'ParagraphsContentLinks', entries: { __typename?: 'ParagraphsContentEntries', inline: Array<
+            | { __typename?: 'Accordion', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Banner', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'BlogPage', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'FundraisingIdea', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Heading', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'HtmlHeadMetadata', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Hyperlink', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Image', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Link', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'LinkContent', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Member', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'MicrocopyResource', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'NavigationList', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Newsletter', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'PageHeader', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Paragraphs', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Podcast', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Publication', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'ResourceSet', sys: { __typename?: 'Sys', id: string } }
+           | null>, block: Array<
+            | { __typename?: 'Accordion', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Banner', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'BlogPage', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'FundraisingIdea', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Heading', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'HtmlHeadMetadata', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Hyperlink', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Image', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Link', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'LinkContent', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Member', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'MicrocopyResource', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'NavigationList', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Newsletter', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'PageHeader', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Paragraphs', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Podcast', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Publication', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'ResourceSet', sys: { __typename?: 'Sys', id: string } }
+           | null> }, assets: { __typename?: 'ParagraphsContentAssets', block: Array<{ __typename?: 'Asset', url?: string | null, title?: string | null, width?: number | null, description?: string | null, contentType?: string | null, sys: { __typename?: 'Sys', id: string } } | null> } } } | null } | null, bookTicketsLink?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null, infoParagraph?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any, links: { __typename?: 'ParagraphsContentLinks', entries: { __typename?: 'ParagraphsContentEntries', inline: Array<
+            | { __typename?: 'Accordion', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Banner', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'BlogPage', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'FundraisingIdea', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Heading', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'HtmlHeadMetadata', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Hyperlink', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Image', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Link', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'LinkContent', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Member', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'MicrocopyResource', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'NavigationList', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Newsletter', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'PageHeader', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Paragraphs', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Podcast', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Publication', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'ResourceSet', sys: { __typename?: 'Sys', id: string } }
+           | null>, block: Array<
+            | { __typename?: 'Accordion', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Banner', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'BlogPage', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'FundraisingIdea', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Heading', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'HtmlHeadMetadata', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Hyperlink', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Image', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Link', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'LinkContent', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Member', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'MicrocopyResource', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'NavigationList', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Newsletter', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'PageHeader', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Paragraphs', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Podcast', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'Publication', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'ResourceSet', sys: { __typename?: 'Sys', id: string } }
+           | null> }, assets: { __typename?: 'ParagraphsContentAssets', block: Array<{ __typename?: 'Asset', url?: string | null, title?: string | null, width?: number | null, description?: string | null, contentType?: string | null, sys: { __typename?: 'Sys', id: string } } | null> } } } | null } | null, bookTicketsHeading?: { __typename?: 'Heading', content?: string | null } | null, offerHeading?: { __typename?: 'Heading', content?: string | null } | null, offerParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, sponsorshipHeading?: { __typename?: 'Heading', content?: string | null } | null, sponsorshipParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, faqsHeading?: { __typename?: 'Heading', content?: string | null } | null, accordionCollection?: { __typename?: 'AccordionCollection', items: Array<{ __typename?: 'Accordion', title?: string | null, content?: { __typename?: 'AccordionContent', json: any } | null } | null> } | null, pastConferencesHeading?: { __typename?: 'Heading', content?: string | null } | null, pastConferencesParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null };
 
 
 export const GetConferencePageDocument = gql`

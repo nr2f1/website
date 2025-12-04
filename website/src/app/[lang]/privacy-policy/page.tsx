@@ -18,7 +18,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
 
   const {
     data: {
-      // @ts-ignore
+      // @ts-expect-error
       htmlHeadMetadata: { title, description },
     },
   } = await query<GetMetadataQuery>({
@@ -58,7 +58,7 @@ export async function generateMetadata({
 
   const {
     data: {
-      // @ts-ignore
+      // @ts-expect-error
       htmlHeadMetadata: { title, description, keywords },
     },
   } = await query<GetMetadataQuery>({

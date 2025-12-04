@@ -9,7 +9,7 @@ const locale = 'en';
 vi.mock('next/navigation', async (importOriginal) => {
   const actual = await importOriginal();
   return {
-    // @ts-ignore
+    // @ts-expect-error
     ...actual,
     usePathname() {
       return `/${locale}`;
@@ -149,13 +149,13 @@ const useGetFooterSuspenseQuerySpy = vi.spyOn(
 describe('Header', () => {
   useGetFooterSuspenseQuerySpy.mockImplementation(() => ({
     ...result,
-    // @ts-ignore
+    // @ts-expect-error
     client: null,
-    // @ts-ignore
+    // @ts-expect-error
     error: null,
-    // @ts-ignore
+    // @ts-expect-error
     fetchMore: null,
-    // @ts-ignore
+    // @ts-expect-error
     networkStatus: null,
   }));
 

@@ -84,42 +84,6 @@ const headers: NextConfig['headers'] = async () => {
     {
       headers: [
         {
-          key: 'x-robots-tag',
-          value: 'noindex, nofollow',
-        },
-      ],
-      source: '/:path*/opengraph-image:ext*',
-    },
-    {
-      headers: [
-        {
-          key: 'x-robots-tag',
-          value: 'noindex, nofollow',
-        },
-      ],
-      source: '/:path*/twitter-image:ext*',
-    },
-    {
-      headers: [
-        {
-          key: 'x-robots-tag',
-          value: 'noindex, nofollow',
-        },
-      ],
-      source: '/:path*/icon:ext*',
-    },
-    {
-      headers: [
-        {
-          key: 'x-robots-tag',
-          value: 'noindex, nofollow',
-        },
-      ],
-      source: '/:path*/apple-icon:ext*',
-    },
-    {
-      headers: [
-        {
           key: 'Content-Security-Policy',
           value: [
             // Allow resources from same origin by default
