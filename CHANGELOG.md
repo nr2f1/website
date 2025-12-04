@@ -1,5 +1,26 @@
 # Changelog
 
+## [3.0.0](https://github.com/nr2f1/website/compare/v2.35.1...v3.0.0) (2025-12-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* type to build ([#377](https://github.com/nr2f1/website/issues/377))
+* type to build
+* typescript errors
+* update dependencies
+
+### Bug Fixes
+
+* server component vulnerability ([b5a846b](https://github.com/nr2f1/website/commit/b5a846b297914f8f149008e7acfba31fb7b96289))
+* server component vulnerability ([#374](https://github.com/nr2f1/website/issues/374)) ([d219e5c](https://github.com/nr2f1/website/commit/d219e5c65cbea0d6e86d481d7b025a33e7af3acf))
+* type errors ([e1a09ad](https://github.com/nr2f1/website/commit/e1a09ad8dd0fa435628e7252007cc9855728df7f))
+* type to build ([6c48572](https://github.com/nr2f1/website/commit/6c4857296a3b990bef94d1fa32b9ba53d55ba12f))
+* type to build ([#377](https://github.com/nr2f1/website/issues/377)) ([018f9e4](https://github.com/nr2f1/website/commit/018f9e4dd6dd5abe93978961af52006d8c7428a0))
+* typescript errors ([75b5bfa](https://github.com/nr2f1/website/commit/75b5bfa28e77a2a75d35bccb59052148849865dc))
+* update dependencies ([1eabbe8](https://github.com/nr2f1/website/commit/1eabbe828f40c2a52a65765581fcbe468674adbd))
+* upgrade react ([#375](https://github.com/nr2f1/website/issues/375)) ([42d2b54](https://github.com/nr2f1/website/commit/42d2b54f6e112cf7f9fa9d5b43f33c7c85fbf5da))
+
 ## [2.35.1](https://github.com/nr2f1/website/compare/v2.35.0...v2.35.1) (2025-10-26)
 
 
