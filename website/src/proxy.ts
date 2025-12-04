@@ -1,11 +1,11 @@
 import { match } from '@formatjs/intl-localematcher';
+import Negotiator from 'negotiator';
+import { type NextRequest, NextResponse } from 'next/server';
 import {
   AVAILABLE_LOCALES,
   changeLocaleFormat,
   DEFAULT_LOCALE,
-} from '@i18n/locales';
-import Negotiator from 'negotiator';
-import { type NextRequest, NextResponse } from 'next/server';
+} from './i18n/locales';
 
 const getLocale = (request: NextRequest) => {
   const negotiator = new Negotiator({
@@ -19,7 +19,7 @@ const getLocale = (request: NextRequest) => {
   return match(userLocales, AVAILABLE_LOCALES, DEFAULT_LOCALE);
 };
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const pathnameHasLocale = AVAILABLE_LOCALES.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
