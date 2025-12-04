@@ -6,7 +6,8 @@ import { BASE_URL } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata } from 'next';
 import { Nunito_Sans } from 'next/font/google';
-import { unstable_ViewTransition as ViewTransition } from 'react';
+// @ts-expect-error
+import { ViewTransition } from 'react';
 
 const nunitoSans = Nunito_Sans({
   adjustFontFallback: false,
