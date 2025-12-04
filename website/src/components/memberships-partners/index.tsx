@@ -35,7 +35,7 @@ const MembershipsPartners: React.FC<MembershipsPartnersProps> = async ({
     (item) => ({
       alt: item?.text?.content ?? '',
       href: item?.target?.url ?? '/',
-      // @ts-ignore
+      // @ts-expect-error
       imageUrl: item?.referenceCollection?.items?.[0]?.asset?.url ?? '',
     }),
   );

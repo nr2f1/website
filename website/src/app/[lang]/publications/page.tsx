@@ -20,7 +20,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   // TODO: Change query
   const {
     data: {
-      // @ts-ignore
+      // @ts-expect-error
       htmlHeadMetadata: { title, description },
     },
   } = await query<GetMetadataQuery>({
@@ -69,7 +69,7 @@ export async function generateMetadata({
   // TODO: Change query
   const {
     data: {
-      // @ts-ignore
+      // @ts-expect-error
       htmlHeadMetadata: { title, description, keywords },
     },
   } = await query<GetMetadataQuery>({

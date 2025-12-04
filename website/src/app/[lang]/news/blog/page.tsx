@@ -19,7 +19,7 @@ export async function generateMetadata({
 
   const {
     data: {
-      // @ts-ignore
+      // @ts-expect-error
       htmlHeadMetadata: { title, description },
     },
   } = await query<GetMetadataQuery>({
