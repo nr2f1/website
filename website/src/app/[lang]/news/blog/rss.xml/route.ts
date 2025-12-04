@@ -5,7 +5,7 @@ import {
 } from '@graphql/queries/news/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { BASE_URL, blogPostUrl } from '@routes/index';
-import type { NewsPagePropsWithLocale } from '@shared/types/page-with-locale-params';
+import type { NextRequest } from 'next/server';
 
 const description: Record<AvailableLocale, string> = {
   de: 'Neueste Blogbeiträge über NR2F1 und Bosch-Boonstra-Schaaf Optikatrophy',
@@ -18,17 +18,20 @@ const description: Record<AvailableLocale, string> = {
 };
 
 export async function GET(
-  _request: Request,
-  { params }: NewsPagePropsWithLocale,
+  _request: NextRequest,
+  { params }: { params: Promise<{ lang: string }> },
 ) {
   const { lang } = await params;
+
+  // Validate that lang is a valid AvailableLocale
+  const validLang = lang as AvailableLocale;
 
   const currentDate = new Date().toUTCString();
 
   const { data } = await query<GetAllBlogPostsForRssQuery>({
     query: GetAllBlogPostsForRssDocument,
     variables: {
-      locale: lang,
+      locale: validLang,
     },
   });
 
@@ -42,7 +45,7 @@ export async function GET(
     .filter((post) => post?.slug && post?.date && post?.title)
     .map((post) => {
       if (!post) return '';
-      const postUrl = `${BASE_URL}${blogPostUrl({ locale: lang, slug: post.slug ?? '' })}`;
+      const postUrl = `${BASE_URL}${blogPostUrl({ locale: validLang, slug: post.slug ?? '' })}`;
 
       return `<item>
         <title><![CDATA[${post.title}]]></title>
@@ -59,12 +62,12 @@ export async function GET(
     <channel>
       <title>NR2F1 Blog</title>
       <link>${BASE_URL}</link>
-      <description>${description[lang] ?? description.en}</description>
-      <language>${lang}</language>
+      <description>${description[validLang] ?? description.en}</description>
+      <language>${validLang}</language>
       <lastBuildDate>${currentDate}</lastBuildDate>
       <pubDate>${currentDate}</pubDate>
       <image>
-        <url>${BASE_URL}/${lang}/icon.svg</url>
+        <url>${BASE_URL}/${validLang}/icon.svg</url>
         <width>502.93</width>
         <height>463.04</height>
       </image>
