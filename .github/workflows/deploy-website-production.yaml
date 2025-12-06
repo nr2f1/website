@@ -26,7 +26,7 @@ jobs:
       url: ${{ steps.deploy.outputs.url }}
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -61,12 +61,12 @@ jobs:
       contents: read
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Check jobs for errors
         uses: actions/github-script@v8
         with:
           script: |
-            const checkJobsForErrors = require('./.github/workflows/js/check-for-errors.js');
+            const { default: checkJobsForErrors } = await import('${{ github.workspace }}/.github/workflows/js/check-for-errors.mjs');
             const jobs = ${{ toJSON(needs) }};
             checkJobsForErrors({ core, jobs });
