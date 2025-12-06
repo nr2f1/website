@@ -79,6 +79,6 @@ jobs:
         uses: actions/github-script@v8
         with:
           script: |
-            const checkJobsForErrors = await import('./.github/workflows/js/check-for-errors.mjs');
+            const { default: checkJobsForErrors } = await import('${{ github.workspace }}/.github/workflows/js/check-for-errors.mjs');
             const jobs = ${{ toJSON(needs) }};
             checkJobsForErrors({ core, jobs });
