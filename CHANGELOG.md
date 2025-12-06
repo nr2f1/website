@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.0.1](https://github.com/nr2f1/website/compare/v3.0.0...v3.0.1) (2025-12-06)
+
+
+### Bug Fixes
+
+* page header style ([36bdd69](https://github.com/nr2f1/website/commit/36bdd697dc1aeb19d5fdd3f5e8e5b952d13ec286))
+* page header style ([#378](https://github.com/nr2f1/website/issues/378)) ([00e04c6](https://github.com/nr2f1/website/commit/00e04c6f62ab4e1f266539e180d573f2e4bf0ef1))
+* remove website assets ([00bba0f](https://github.com/nr2f1/website/commit/00bba0f01261e2053aeb26a13d42a0ac01978958))
+
 ## [3.0.0](https://github.com/nr2f1/website/compare/v2.35.1...v3.0.0) (2025-12-04)
 
 
