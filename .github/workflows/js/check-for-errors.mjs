@@ -1,4 +1,4 @@
-module.exports = ({ core, jobs }) => {
+const main = ({ core, jobs }) => {
   const jobResults = Object.entries(jobs).map(([job, { result }]) => ({
     job,
     result,
@@ -19,3 +19,5 @@ module.exports = ({ core, jobs }) => {
     core.setFailed(`Errors occurred in these jobs: ${jobErrorString}`);
   }
 };
+
+export default main;
