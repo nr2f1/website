@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.1.0](https://github.com/nr2f1/website/compare/v3.0.1...v3.1.0) (2026-01-14)
+
+
+### Features
+
+* change email from info to jennifer ([3200696](https://github.com/nr2f1/website/commit/3200696d3456280e238e81a1ea4effef4ddfe3c8))
+* change email from info to jennifer ([#381](https://github.com/nr2f1/website/issues/381)) ([f05c26a](https://github.com/nr2f1/website/commit/f05c26aef1c4fba993ab94caf54157e542ee21db))
+
 ## [3.0.1](https://github.com/nr2f1/website/compare/v3.0.0...v3.0.1) (2025-12-06)
 
 
