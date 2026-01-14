@@ -82,8 +82,11 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
                 NR2F1 Foundation <br /> PO Box 0588 <br />
                 Pflugerville, TX 78691-058
               </address>
-              <a href="mailto:info@nr2f1.org" title="info@nr2f1.org">
-                info@nr2f1.org
+              <a
+                href="mailto:jennifer.coughlin@nr2f1.org"
+                title="jennifer.coughlin@nr2f1.org"
+              >
+                jennifer.coughlin@nr2f1.org
               </a>
             </div>
           </div>
