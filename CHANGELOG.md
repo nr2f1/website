@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.2.0](https://github.com/nr2f1/website/compare/v3.1.0...v3.2.0) (2026-01-15)
+
+
+### Features
+
+* chinese ([bc5d474](https://github.com/nr2f1/website/commit/bc5d4741c1a6deec863b7828161dfd0d5f6388ae))
+* chinese ([#383](https://github.com/nr2f1/website/issues/383)) ([8595861](https://github.com/nr2f1/website/commit/85958615c1c44a62b75d70045496169a77702513))
+
 ## [3.1.0](https://github.com/nr2f1/website/compare/v3.0.1...v3.1.0) (2026-01-14)
 
 
