@@ -17,6 +17,7 @@ export const pageContents: LocalisedString = {
   fr: 'Contenu de la page',
   it: 'Contenuto della pagina',
   'pt-BR': 'Conteúdo da página',
+  'zh-CN': '关于',
 };
 
 const Headings: React.FC<HeadingsProps> = ({ headings }) => {

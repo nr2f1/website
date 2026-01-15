@@ -46,6 +46,7 @@ const alreadyRegister: LocalisedString = {
   fr: 'Déjà enregistré?',
   it: 'Già registrato?',
   'pt-BR': 'Já registrado?',
+  'zh-CN': '已经注册？',
 };
 
 const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
