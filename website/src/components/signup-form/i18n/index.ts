@@ -77,6 +77,17 @@ export const roles: LocaleRoleOptions = {
       value: Role.Specialist,
     },
   ],
+  'zh-CN': [
+    {
+      label: 'BBSOAS 父母/监护人或患者',
+      value: Role.ParentPatient,
+    },
+    { label: '支持者', value: Role.Supporter },
+    {
+      label: '研究员、医生或专家',
+      value: Role.Specialist,
+    },
+  ],
 };
 
 export interface CountryOptionProps {

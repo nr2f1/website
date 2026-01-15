@@ -15,6 +15,7 @@ const description: Record<AvailableLocale, string> = {
   it: 'Ultimi articoli su NR2F1 e sindrome di atrofia ottica Bosch-Boonstra-Schaaf',
   'pt-BR':
     'Últimos artigos sobre NR2F1 e síndrome de atrofia óptica Bosch-Boonstra-Schaaf',
+  'zh-CN': '最新博客文章关于NR2F1和Bosch-Boonstra-Schaaf光学萎缩综合征',
 };
 
 export async function GET(

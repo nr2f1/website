@@ -22,6 +22,7 @@ export const validatioErrorMessage: ValidationErrorMessage = {
   fr: 'Ce champ est obligatoire',
   it: 'Questo campo è obbligatorio',
   'pt-BR': 'Este campo é obrigatório',
+  'zh-CN': '这是必填字段',
 };
 
 export interface CountryOptionProps {

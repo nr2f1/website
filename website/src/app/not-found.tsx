@@ -42,6 +42,11 @@ const translations: Record<AvailableLocale, Record<string, string>> = {
       'O link que você seguiu pode estar quebrado ou a página pode ter sido removida.',
     title: 'Desculpe, esta página não está disponível',
   },
+  'zh-CN': {
+    cta: '返回首页',
+    description: '您跟随的链接可能已损坏，或页面可能已被删除。',
+    title: '抱歉，此页面不可用',
+  },
 };
 
 import { Nunito_Sans } from 'next/font/google';

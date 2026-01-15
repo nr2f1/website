@@ -42,6 +42,11 @@ const paginationLocales: Record<AvailableLocale, PaginationLocale> = {
     page: 'página',
     previous: 'anterior',
   },
+  'zh-CN': {
+    next: '下一页',
+    page: '页',
+    previous: '上一页',
+  },
 };
 
 const Pagination: React.FC<PaginationProps> = ({

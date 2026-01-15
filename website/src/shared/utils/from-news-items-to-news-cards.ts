@@ -54,6 +54,10 @@ export const newsTypeLocale: Record<AvailableLocale, NewsType> = {
     blog: 'Artigo de blog',
     newsletter: 'Newsletter',
   },
+  'zh-CN': {
+    blog: '博客文章',
+    newsletter: '新闻通讯',
+  },
 };
 
 export const fromNewsToNewsCards = ({

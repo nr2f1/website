@@ -71,6 +71,7 @@ const createdI18n: Record<AvailableLocale, string> = {
   fr: 'Créé',
   it: 'Creato',
   'pt-BR': 'Criado',
+  'zh-CN': '创建',
 };
 
 const now = new Date();
@@ -177,25 +178,6 @@ const FundrasingCampaigns: React.FC<GivebutterCampaignProps> = ({ lang }) => {
                     lang={lang}
                     key={crypto.randomUUID()}
                   />
-                  // <li key={crypto.randomUUID()} className={styles.campaign}>
-                  //   <a href={url} target="_blank" rel="noopener noreferrer">
-                  //     <div
-                  //       className={styles.campaign__cover}
-                  //       style={{ backgroundImage: `url(${coverUrl})` }}
-                  //     />
-                  //     <div className={styles.campaign__details}>
-                  //       <h3>{title}</h3>
-                  //       <p>
-                  //         {createdI18n[lang]}{' '}
-                  //         {/*{getRelativeTime({
-                  //           from: new Date(created_at),
-                  //           lang,
-                  //           to: new Date(),
-                  //         })}*/}
-                  //       </p>
-                  //     </div>
-                  //   </a>
-                  // </li>
                 ))}
               </ul>
               <div className={styles.fundraising_campaigns__cta}>

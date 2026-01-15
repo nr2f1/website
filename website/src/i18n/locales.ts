@@ -1,4 +1,11 @@
-export type AvailableLocale = 'en' | 'es' | 'fr' | 'de' | 'it' | 'pt-BR';
+export type AvailableLocale =
+  | 'en'
+  | 'es'
+  | 'fr'
+  | 'de'
+  | 'it'
+  | 'pt-BR'
+  | 'zh-CN';
 
 export const english: AvailableLocale = 'en'; // 🇬🇧
 export const french: AvailableLocale = 'fr'; // 🇫🇷
@@ -6,9 +13,11 @@ export const spanish: AvailableLocale = 'es'; // 🇪🇸
 export const german: AvailableLocale = 'de'; // 🇩🇪
 export const italian: AvailableLocale = 'it'; // 🇮🇹
 export const portuguese: AvailableLocale = 'pt-BR'; // 🇧🇷
+export const chinese: AvailableLocale = 'zh-CN'; // 🇨🇳
 
 export const DEFAULT_LOCALE = english;
 export const AVAILABLE_LOCALES: AvailableLocale[] = [
+  chinese,
   english,
   french,
   german,
@@ -46,6 +55,10 @@ export const AVAILABLE_LOCALES_LABEL_KEYS: AvailableLocaleOption[] = [
   {
     label: 'Português (Brasil)',
     value: portuguese,
+  },
+  {
+    label: '中文',
+    value: chinese,
   },
 ].sort((a, b) => a.label.localeCompare(b.label));
 
