@@ -1,3 +1,4 @@
+import ConferenceBanner from '@components/conference-banner';
 import CookieBanner from '@components/cookie-banner';
 import Footer from '@components/footer';
 import Header from '@components/header';
@@ -51,6 +52,7 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children, params }) => {
       data-scroll-behavior="smooth"
     >
       <body>
+        <ConferenceBanner lang={validLang} />
         <CookieBanner lang={validLang} />
         <Header lang={validLang} />
         <ViewTransition enter="slide-in" exit="slide-out">
