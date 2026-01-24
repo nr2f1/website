@@ -24,7 +24,7 @@
   background-size: 33%, 33%;
   background-repeat: no-repeat;
 
-  @include breakpoints.medium-screen {
+  @include breakpoints.small-screen {
     background-color: var(--background-inverse-primary);
     background-image: none;
   }
@@ -61,7 +61,7 @@
       transform: rotate(180deg);
     }
 
-    @include breakpoints.medium-screen {
+    @include breakpoints.small-screen {
       & {
         max-width: unset;
         justify-content: space-between;
@@ -91,7 +91,7 @@
       line-height: 1.5;
     }
 
-    @include breakpoints.medium-screen {
+    @include breakpoints.small-screen {
       max-width: 28.125rem;
       width: 100%;
       p:first-of-type {
@@ -134,7 +134,7 @@
       text-align: center;
     }
 
-    @include breakpoints.medium-screen {
+    @include breakpoints.small-screen {
       & {
         display: none;
       }
@@ -145,5 +145,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    a {
+      text-wrap: nowrap;
+    }
   }
 }
