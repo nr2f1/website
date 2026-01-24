@@ -24,6 +24,7 @@ export type GetConferencePageQuery = { __typename?: 'Query', nextConferenceHeadi
             | { __typename?: 'Accordion', sys: { __typename?: 'Sys', id: string } }
             | { __typename?: 'Banner', sys: { __typename?: 'Sys', id: string } }
             | { __typename?: 'BlogPage', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'ConferenceBanner', sys: { __typename?: 'Sys', id: string } }
             | { __typename?: 'FundraisingIdea', sys: { __typename?: 'Sys', id: string } }
             | { __typename?: 'Heading', sys: { __typename?: 'Sys', id: string } }
             | { __typename?: 'HtmlHeadMetadata', sys: { __typename?: 'Sys', id: string } }
@@ -44,6 +45,7 @@ export type GetConferencePageQuery = { __typename?: 'Query', nextConferenceHeadi
             | { __typename?: 'Accordion', sys: { __typename?: 'Sys', id: string } }
             | { __typename?: 'Banner', sys: { __typename?: 'Sys', id: string } }
             | { __typename?: 'BlogPage', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'ConferenceBanner', sys: { __typename?: 'Sys', id: string } }
             | { __typename?: 'FundraisingIdea', sys: { __typename?: 'Sys', id: string } }
             | { __typename?: 'Heading', sys: { __typename?: 'Sys', id: string } }
             | { __typename?: 'HtmlHeadMetadata', sys: { __typename?: 'Sys', id: string } }
@@ -64,6 +66,7 @@ export type GetConferencePageQuery = { __typename?: 'Query', nextConferenceHeadi
             | { __typename?: 'Accordion', sys: { __typename?: 'Sys', id: string } }
             | { __typename?: 'Banner', sys: { __typename?: 'Sys', id: string } }
             | { __typename?: 'BlogPage', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'ConferenceBanner', sys: { __typename?: 'Sys', id: string } }
             | { __typename?: 'FundraisingIdea', sys: { __typename?: 'Sys', id: string } }
             | { __typename?: 'Heading', sys: { __typename?: 'Sys', id: string } }
             | { __typename?: 'HtmlHeadMetadata', sys: { __typename?: 'Sys', id: string } }
@@ -84,6 +87,7 @@ export type GetConferencePageQuery = { __typename?: 'Query', nextConferenceHeadi
             | { __typename?: 'Accordion', sys: { __typename?: 'Sys', id: string } }
             | { __typename?: 'Banner', sys: { __typename?: 'Sys', id: string } }
             | { __typename?: 'BlogPage', sys: { __typename?: 'Sys', id: string } }
+            | { __typename?: 'ConferenceBanner', sys: { __typename?: 'Sys', id: string } }
             | { __typename?: 'FundraisingIdea', sys: { __typename?: 'Sys', id: string } }
             | { __typename?: 'Heading', sys: { __typename?: 'Sys', id: string } }
             | { __typename?: 'HtmlHeadMetadata', sys: { __typename?: 'Sys', id: string } }

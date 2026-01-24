@@ -1,0 +1,28 @@
+query GetConferenceBanner($locale: String, $id: String!) {
+  conferenceBanner(id: $id, locale: $locale) {
+    content {
+      content {
+        json
+      }
+    }
+    conferenceDate
+    cta {
+      text {
+        content
+      }
+      target {
+        url
+      }
+    }
+    leftBanner {
+      asset {
+        url
+      }
+    }
+    rightBanner {
+      asset {
+        url
+      }
+    }
+  }
+}
