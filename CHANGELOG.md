@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.4.0](https://github.com/nr2f1/website/compare/v3.3.0...v3.4.0) (2026-01-24)
+
+
+### Features
+
+* fix small screen banner ([ca6d29e](https://github.com/nr2f1/website/commit/ca6d29ed391bc1c85acc8adcc4c58938d9307f38))
+* fix small screen banner ([#387](https://github.com/nr2f1/website/issues/387)) ([125f467](https://github.com/nr2f1/website/commit/125f4677b98927914c939dd3b4a047e1aa601513))
+
 ## [3.3.0](https://github.com/nr2f1/website/compare/v3.2.0...v3.3.0) (2026-01-24)
 
 
