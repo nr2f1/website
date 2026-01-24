@@ -76,10 +76,6 @@ const createdI18n: Record<AvailableLocale, string> = {
 
 const now = new Date();
 
-// interface FundRaisingCampaignCardProps extends CampaignApiResponse {
-//   lang: AvailableLocale;
-// }
-
 type FundRaisingCampaignCardProps = Omit<
   CampaignApiResponse,
   'raised' | 'currency'

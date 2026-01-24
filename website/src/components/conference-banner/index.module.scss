@@ -1,5 +1,111 @@
+@use '@styles/text-styles';
+
 .conferenceBanner {
-  &__wrapper {
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  p {
+    @include text-styles.text-base;
+    color: var(--foreground-inverse-primary);
+    margin: 0;
+    text-align: center;
+  }
+  background-image:
+    url('https://images.ctfassets.net/9j9d6tsmuyzl/7rvRfrf0WSXesm4ux1jUBE/b716c2a98d588051e648a73e03908a07/conference.jpg'),
+    url('https://images.ctfassets.net/9j9d6tsmuyzl/7rvRfrf0WSXesm4ux1jUBE/b716c2a98d588051e648a73e03908a07/conference.jpg');
+
+  background-position:
+    left center,
+    right center;
+
+  background-size: 33%, 33%;
+  background-repeat: no-repeat;
+
+  &__content {
     display: flex;
+    column-gap: var(--spacing-6);
+    /* padding: 0.25rem var(--spacing-6); */
+    padding: 0.25rem 0;
+    margin: 0 auto;
+    justify-content: center;
+    max-width: 43.125rem;
+    background-color: var(--background-inverse-primary);
+    align-content: center;
+    position: relative;
+    --width: 1.14144rem;
+    &::before,
+    &::after {
+      background-repeat: no-repeat;
+      background-size: cover;
+      bottom: 0;
+      content: '';
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: var(--width);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='60' viewBox='0 0 19 60' fill='none'%3E%3Cpath d='M15.9112 0H18.263V3.75086V60C17.6941 59.1911 17.1252 58.3796 16.5576 57.5682C15.9887 56.7568 15.4223 55.9441 14.8572 55.1289C14.5746 54.7213 14.2933 54.3137 14.012 53.9049C13.4494 53.0884 12.8917 52.2682 12.3379 51.4455C9.84605 47.7434 7.453 43.9763 5.30125 40.0754C3.33455 36.5109 1.61791 32.8413 0.642686 28.8741C-0.95518 22.3726 0.463895 16.5125 4.48232 11.1901C7.25545 7.51672 10.6312 4.43477 14.1558 1.49409C14.7384 1.00773 15.3311 0.488862 15.9112 0Z' fill='%230D1F36'/%3E%3C/svg%3E");
+    }
+    &::before {
+      left: calc(var(--width) * -1);
+    }
+    &::after {
+      right: calc(var(--width) * -1);
+      transform: rotate(180deg);
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    p:first-of-type {
+      font-weight: 700;
+    }
+    p:last-of-type {
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+
+  &__countdown {
+    display: flex;
+    column-gap: 0.25rem;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      padding: 0 0.25rem;
+    }
+
+    & output {
+      @include text-styles.text-base;
+      width: 2rem;
+      padding: 0.125;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      border: 1px solid var(--border-default);
+      background: var(--white);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    & span {
+      @include text-styles.text-small;
+      color: var(--foreground-inverse-primary);
+      text-align: center;
+    }
+  }
+
+  &__cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

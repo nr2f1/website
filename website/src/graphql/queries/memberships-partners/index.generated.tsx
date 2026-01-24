@@ -13,6 +13,7 @@ export type GetMembershipPartnersQuery = { __typename?: 'Query', navigationList?
             | { __typename?: 'Accordion' }
             | { __typename?: 'Banner' }
             | { __typename?: 'BlogPage' }
+            | { __typename?: 'ConferenceBanner' }
             | { __typename?: 'FundraisingIdea' }
             | { __typename?: 'Heading' }
             | { __typename?: 'HtmlHeadMetadata' }
