@@ -1,4 +1,5 @@
 @use '@styles/text-styles';
+@use '@styles/breakpoints';
 
 .conferenceBanner {
   position: sticky;
@@ -22,6 +23,11 @@
 
   background-size: 33%, 33%;
   background-repeat: no-repeat;
+
+  @include breakpoints.medium-screen {
+    background-color: var(--background-inverse-primary);
+    background-image: none;
+  }
 
   &__content {
     display: flex;
@@ -54,6 +60,20 @@
       right: calc(var(--width) * -1);
       transform: rotate(180deg);
     }
+
+    @include breakpoints.medium-screen {
+      & {
+        max-width: unset;
+        justify-content: space-between;
+        padding: var(--spacing-2) var(--spacing-6);
+        column-gap: var(--spacing-8);
+      }
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
   }
 
   &__text {
@@ -69,6 +89,18 @@
       font-weight: 500;
       font-size: 1rem;
       line-height: 1.5;
+    }
+
+    @include breakpoints.medium-screen {
+      max-width: 28.125rem;
+      width: 100%;
+      p:first-of-type {
+        text-align: center;
+      }
+
+      p:last-of-type {
+        display: none;
+      }
     }
   }
 
@@ -100,6 +132,12 @@
       @include text-styles.text-small;
       color: var(--foreground-inverse-primary);
       text-align: center;
+    }
+
+    @include breakpoints.medium-screen {
+      & {
+        display: none;
+      }
     }
   }
 
