@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.4.1](https://github.com/nr2f1/website/compare/v3.4.0...v3.4.1) (2026-01-27)
+
+
+### Bug Fixes
+
+* conference banner ([6f4bd04](https://github.com/nr2f1/website/commit/6f4bd049464c34e89f5f66e2610978140e0e49d0))
+* conference banner ([#389](https://github.com/nr2f1/website/issues/389)) ([70f0630](https://github.com/nr2f1/website/commit/70f06303f3ebf007ae9632c126eef902ef566dca))
+
 ## [3.4.0](https://github.com/nr2f1/website/compare/v3.3.0...v3.4.0) (2026-01-24)
 
 
