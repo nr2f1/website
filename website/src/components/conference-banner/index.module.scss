@@ -13,16 +13,10 @@
     margin: 0;
     text-align: center;
   }
-  background-image:
-    url('https://images.ctfassets.net/9j9d6tsmuyzl/7rvRfrf0WSXesm4ux1jUBE/b716c2a98d588051e648a73e03908a07/conference.jpg'),
-    url('https://images.ctfassets.net/9j9d6tsmuyzl/7rvRfrf0WSXesm4ux1jUBE/b716c2a98d588051e648a73e03908a07/conference.jpg');
-
-  background-position:
-    left center,
-    right center;
-
-  background-size: 33%, 33%;
-  background-repeat: no-repeat;
+  background-image: url('https://images.ctfassets.net/9j9d6tsmuyzl/7rvRfrf0WSXesm4ux1jUBE/b716c2a98d588051e648a73e03908a07/conference.jpg');
+  background-position: left center;
+  background-size: 33.33%;
+  background-repeat: repeat;
 
   @include breakpoints.small-screen {
     background-color: var(--background-inverse-primary);
@@ -32,7 +26,6 @@
   &__content {
     display: flex;
     column-gap: var(--spacing-6);
-    /* padding: 0.25rem var(--spacing-6); */
     padding: 0.25rem 0;
     margin: 0 auto;
     justify-content: center;
