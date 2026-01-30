@@ -1,0 +1,7 @@
+query GetPatientCountPage($locale: String, $patientCountIntroParagraphId: String!) {
+  patientCountIntroParagraph: paragraphs(locale: $locale, id: $patientCountIntroParagraphId) {
+    content {
+      json
+    }
+  }
+}

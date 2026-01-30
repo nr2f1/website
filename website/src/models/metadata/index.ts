@@ -23,3 +23,4 @@ export const volunteerPageMetadataId = '3PC3dCPqCPHGQTQVX7ivoP';
 export const conferencesPageMetadataId = '5Tux35GEsQhjSzhGpdGT7K';
 export const organizationPageMetadataId = '2uclSrtaFd8UsTDLc8siRE';
 export const blogIndexPageMetadataId = '6ub2ol8L9omc2AdCHSJ0Yz';
+export const patientCountPageMetadataId = '6uEFHO6oAdFJLrMBRgXAjO';

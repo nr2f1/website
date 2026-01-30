@@ -120,3 +120,6 @@ export const organizationResearchParagraphsId = '3xqtKckUs51mEitvkgDPka';
 
 // Patient counter
 export const patientCounterParagraphsId = '4XHRI045AzutcxFzoAQPfJ';
+
+// Patient count page
+export const patientCountIntroParagraphId = '19VN23EKAmXo5vUwYJdrsB';
