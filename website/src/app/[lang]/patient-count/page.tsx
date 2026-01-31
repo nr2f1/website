@@ -39,8 +39,13 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     description,
     inLanguage: lang,
     keywords,
+    mainEntity: {
+      '@type': 'Dataset',
+      description,
+      isAccessibleForFree: true,
+    },
     name: title,
-    url: `https://nr2f1.org${routes.research(lang)}`,
+    url: `https://nr2f1.org${routes['patient-count'](lang)}`,
   };
 
   return (
