@@ -5,8 +5,14 @@ import {
   GetPatientCountPageDocument,
   type GetPatientCountPageQuery,
 } from '@graphql/queries/pages/patient-count/index.generated';
-import { patientCountIntroParagraphId } from '@models/paragraphs';
+import { patientCountHeadingCountId } from '@models/headings';
+import {
+  patientCountIntroParagraphId,
+  patientCountParagraphId,
+} from '@models/paragraphs';
 import type { ComponentPropsWithLocale } from '@shared/types/page-with-locale-params';
+import { createHashLink } from '@shared/utils/hash-links';
+import styles from './index.module.scss';
 
 const { query } = getClient();
 
@@ -14,13 +20,19 @@ const PatientCountPageBody: React.FC<ComponentPropsWithLocale> = async ({
   lang,
 }) => {
   const {
-    data: { patientCountIntroParagraph },
+    data: {
+      patientCountIntroParagraph,
+      patientCountHeadingCount,
+      patientCountParagraph,
+    },
     error,
   } = await query<GetPatientCountPageQuery>({
     query: GetPatientCountPageDocument,
     variables: {
       locale: lang,
+      patientCountHeadingCountId,
       patientCountIntroParagraphId,
+      patientCountParagraphId,
     },
   });
 
@@ -29,7 +41,7 @@ const PatientCountPageBody: React.FC<ComponentPropsWithLocale> = async ({
   }
 
   const headings = [
-    'NR2F1 Foundation Global Patient Count',
+    patientCountHeadingCount?.content ?? '',
     'Join or Update the NR2F1 Patient Registry',
   ];
 
@@ -37,6 +49,12 @@ const PatientCountPageBody: React.FC<ComponentPropsWithLocale> = async ({
     <PageBody lang={lang} headings={headings}>
       <section>
         {documentToReactComponents(patientCountIntroParagraph?.content?.json)}
+      </section>
+      <section className={styles.containsTable}>
+        <h2 id={createHashLink(patientCountHeadingCount?.content ?? '')}>
+          {patientCountHeadingCount?.content ?? ''}
+        </h2>
+        {documentToReactComponents(patientCountParagraph?.content?.json)}
       </section>
     </PageBody>
   );

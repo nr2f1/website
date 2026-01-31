@@ -6,18 +6,31 @@ const defaultOptions = {} as const;
 export type GetPatientCountPageQueryVariables = Types.Exact<{
   locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
   patientCountIntroParagraphId: Types.Scalars['String']['input'];
+  patientCountHeadingCountId: Types.Scalars['String']['input'];
+  patientCountParagraphId: Types.Scalars['String']['input'];
 }>;
 
 
-export type GetPatientCountPageQuery = { __typename?: 'Query', patientCountIntroParagraph?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null };
+export type GetPatientCountPageQuery = { __typename?: 'Query', patientCountIntroParagraph?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, patientCountHeadingCount?: { __typename?: 'Heading', content?: string | null } | null, patientCountParagraph?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null };
 
 
 export const GetPatientCountPageDocument = gql`
-    query GetPatientCountPage($locale: String, $patientCountIntroParagraphId: String!) {
+    query GetPatientCountPage($locale: String, $patientCountIntroParagraphId: String!, $patientCountHeadingCountId: String!, $patientCountParagraphId: String!) {
   patientCountIntroParagraph: paragraphs(
     locale: $locale
     id: $patientCountIntroParagraphId
   ) {
+    content {
+      json
+    }
+  }
+  patientCountHeadingCount: heading(
+    locale: $locale
+    id: $patientCountHeadingCountId
+  ) {
+    content
+  }
+  patientCountParagraph: paragraphs(locale: $locale, id: $patientCountParagraphId) {
     content {
       json
     }
@@ -39,6 +52,8 @@ export const GetPatientCountPageDocument = gql`
  *   variables: {
  *      locale: // value for 'locale'
  *      patientCountIntroParagraphId: // value for 'patientCountIntroParagraphId'
+ *      patientCountHeadingCountId: // value for 'patientCountHeadingCountId'
+ *      patientCountParagraphId: // value for 'patientCountParagraphId'
  *   },
  * });
  */

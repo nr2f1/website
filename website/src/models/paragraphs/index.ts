@@ -123,3 +123,4 @@ export const patientCounterParagraphsId = '4XHRI045AzutcxFzoAQPfJ';
 
 // Patient count page
 export const patientCountIntroParagraphId = '19VN23EKAmXo5vUwYJdrsB';
+export const patientCountParagraphId = '4o4KR03D4xgl5eIJ68B8FI';
