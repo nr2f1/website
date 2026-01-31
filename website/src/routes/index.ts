@@ -31,6 +31,7 @@ type RouteProperty =
   | 'organization'
   | 'our-financials'
   | 'partnerships'
+  | 'patient-count'
   | 'podcast'
   | 'privacy-policy'
   | 'publications'
@@ -79,6 +80,9 @@ export const routes: Record<RouteProperty, LocalisedRoute> = {
   },
   partnerships: (locale: AvailableLocale) => {
     return `/${locale}/partnerships`;
+  },
+  'patient-count': (locale: AvailableLocale) => {
+    return `/${locale}/patient-count`;
   },
   podcast: (locale: AvailableLocale) => {
     return `/${locale}/news/podcast`;

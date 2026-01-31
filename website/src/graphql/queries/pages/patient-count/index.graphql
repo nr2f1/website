@@ -1,0 +1,64 @@
+query GetPatientCountPage(
+    $locale: String,
+    $patientCountIntroParagraphId: String!,
+    $patientCountHeadingCountId: String!,
+    $patientCountParagraphId: String!
+    $patientCountHeadingJoinId: String!
+    $patientCountParagraphJoinId: String!,
+    $howToTakePartHeadingId: String!,
+    $howToTakePartParagraphId: String!,
+    $registerPatientLinkId: String!,
+    $missionParagraphId: String!
+) {
+  patientCountIntroParagraph: paragraphs(locale: $locale, id: $patientCountIntroParagraphId) {
+    content {
+      json
+    }
+  }
+
+  patientCountHeadingCount: heading(locale: $locale, id: $patientCountHeadingCountId) {
+    content
+  }
+
+  patientCountParagraph: paragraphs(locale: $locale, id: $patientCountParagraphId) {
+    content {
+      json
+    }
+  }
+
+  patientCountHeadingJoin: heading(locale: $locale, id: $patientCountHeadingJoinId) {
+    content
+  }
+
+  patientCountParagraphJoin: paragraphs(locale: $locale, id: $patientCountParagraphJoinId) {
+    content {
+      json
+    }
+  }
+
+  howToTakePartHeading: heading(locale: $locale, id: $howToTakePartHeadingId) {
+    content
+  }
+
+  registerPatientCta: link(locale: $locale, id: $registerPatientLinkId) {
+    target {
+      url
+    }
+    text {
+      content
+    }
+  }
+
+  howToTakePartParagraph: paragraphs(locale: $locale, id: $howToTakePartParagraphId) {
+    content {
+      json
+    }
+  }
+
+  missionParagraph: paragraphs(locale: $locale, id: $missionParagraphId) {
+    content {
+      json
+    }
+  }
+
+}

@@ -17,6 +17,7 @@ query GetHeader(
   $supportGroupsLinkId: String!
   $researchMicrocopyId: String!
   $researchLinkId: String!
+  $patientCountLinkId: String!
   $getInvolvedInBbsoasLinkId: String!
   $publicationsLinkId: String!
   $resourcesAvailableToresearchersLinkId: String!
@@ -164,6 +165,24 @@ query GetHeader(
     id: $researchMicrocopyId
   ) {
     value
+  }
+
+  researchLink: link(locale: $locale, id: $researchLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
+  }
+
+  patientCountLink: link(locale: $locale, id: $patientCountLinkId) {
+    text {
+      content
+    }
+    target {
+      url
+    }
   }
 
   researchLink: link(locale: $locale, id: $researchLinkId) {

@@ -120,3 +120,10 @@ export const organizationResearchParagraphsId = '3xqtKckUs51mEitvkgDPka';
 
 // Patient counter
 export const patientCounterParagraphsId = '4XHRI045AzutcxFzoAQPfJ';
+
+// Patient count page
+export const patientCountIntroParagraphId = '19VN23EKAmXo5vUwYJdrsB';
+export const patientCountParagraphId = '4o4KR03D4xgl5eIJ68B8FI';
+export const patientCountParagraphJoinId = '6cfWyvnHsArzSk3h02KEea';
+export const howToTakePartParagraphId = '669CjUPsxbL44LL2NxvktO';
+export const missionParagraphId = '2uRInEXVJBE7fLXU3XVBvN';
