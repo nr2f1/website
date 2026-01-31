@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.5.0](https://github.com/nr2f1/website/compare/v3.4.1...v3.5.0) (2026-01-31)
+
+
+### Features
+
+* patient count page ([aba808a](https://github.com/nr2f1/website/commit/aba808a7b71b7252262b7c573c6c393a8437812c))
+
 ## [3.4.1](https://github.com/nr2f1/website/compare/v3.4.0...v3.4.1) (2026-01-27)
 
 
