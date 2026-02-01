@@ -1,13 +1,17 @@
-import { createHttpLink, from } from '@apollo/client';
-import { RetryLink } from "@apollo/client/link/retry";
 import { loadDevMessages, loadErrorMessages } from '@apollo/client/dev';
+import {
+  registerApolloClient,
+} from '@apollo/client-integration-nextjs';
+import { Authorization, CONTENTUL_GRAPHQL_API } from '@config/utils';
+import possibleTypesQuery from "./posible-types.json";
 import {
   ApolloClient,
   InMemoryCache,
-  registerApolloClient,
-} from '@apollo/experimental-nextjs-app-support';
-import { Authorization, CONTENTUL_GRAPHQL_API } from '@config/utils';
-import possibleTypesQuery from "./posible-types.json";
+  HttpLink,
+  ApolloLink
+} from "@apollo/client/core";
+import { RetryLink } from "@apollo/client/link/retry";
+ import { ServerError } from "@apollo/client/errors";
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -22,31 +26,41 @@ const possibleTypes = possibleTypesQuery.data.__schema.types.reduce((acc, supert
 }, {} as Record<string, any>);
 
 
-export const link = from([
- 	new RetryLink({
- 		attempts: (count, _operation, error) => {
- 			const shouldRetry =
- 				count < 5 &&
- 				error.statusCode === 429 &&
- 				error.response?.headers?.get('X-Contentful-RateLimit-Reset');
+export const link = ApolloLink.from([
+  new RetryLink({
+   attempts: (attempt, _operation, error) => {
+     // Check if the error is a ServerError instance
+     if (!ServerError.is(error)) {
+      return false;
+     }
 
- 			return shouldRetry;
- 		},
- 		delay: (_count, _operation, error) => {
- 			const delay =
- 				Number(error.response?.headers?.get('X-Contentful-RateLimit-Reset')) *
- 				1000;
- 			console.info('CONTENTFUL-RATELIMIT: retry in ', delay, 'ms');
- 			return delay;
- 		},
- 	}),
- 	createHttpLink({
- 		uri: CONTENTUL_GRAPHQL_API,
- 		credentials: 'same-origin',
- 		headers: {
-  			Authorization
- 		},
- 	}),
+     const shouldRetry =
+      attempt < 5 &&
+      error.statusCode === 429 &&
+      !!error.response?.headers?.get('X-Contentful-RateLimit-Reset');
+
+     return shouldRetry;
+   },
+   delay: (_count, _operation, error) => {
+    // Check if the error is a ServerError instance
+    if (!ServerError.is(error)) {
+     return 0;
+    }
+
+    const delay =
+     Number(error.response?.headers?.get('X-Contentful-RateLimit-Reset')) *
+     1000;
+    console.info('CONTENTFUL-RATELIMIT: retry in ', delay, 'ms');
+    return delay;
+   },
+  }),
+  new HttpLink({
+   uri: CONTENTUL_GRAPHQL_API,
+   credentials: 'same-origin',
+   headers: {
+     Authorization
+   },
+  }),
  ]);
 
 export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
