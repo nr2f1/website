@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.5.1](https://github.com/nr2f1/website/compare/v3.5.0...v3.5.1) (2026-02-01)
+
+
+### Bug Fixes
+
+* page count microdata ([13878ce](https://github.com/nr2f1/website/commit/13878ceef91b3e1c9aa022bfe197782396c4397d))
+* page count microdata ([#393](https://github.com/nr2f1/website/issues/393)) ([32a22a8](https://github.com/nr2f1/website/commit/32a22a806fd47a96e22ce8585314953eab369a74))
+
 ## [3.5.0](https://github.com/nr2f1/website/compare/v3.4.1...v3.5.0) (2026-01-31)
 
 
