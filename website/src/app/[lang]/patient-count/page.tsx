@@ -43,6 +43,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
       '@type': 'Dataset',
       description,
       isAccessibleForFree: true,
+      name: title,
     },
     name: title,
     url: `https://nr2f1.org${routes['patient-count'](lang)}`,
