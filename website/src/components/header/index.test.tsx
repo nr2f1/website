@@ -1,10 +1,18 @@
-import * as HeaderGraphql from '@graphql/queries/header/index.generated';
+import { useSuspenseQuery } from '@apollo/client/react';
 import { render, waitFor } from '@testing-library/react';
 import axe from '@tests/a11y/test-utils';
 import { describe, expect, it, vi } from 'vitest';
 import Header from './markup';
 
 const locale = 'en';
+
+vi.mock('@apollo/client/react', async (importOriginal) => {
+  const actual = await importOriginal();
+  return {
+    ...actual,
+    useSuspenseQuery: vi.fn(),
+  };
+});
 
 vi.mock('next/navigation', async (importOriginal) => {
   const actual = await importOriginal();
@@ -84,13 +92,8 @@ const result = {
   },
 };
 
-const useGetHeaderSuspenseQuerySpy = vi.spyOn(
-  HeaderGraphql,
-  'useGetHeaderSuspenseQuery',
-);
-
 describe('Header', () => {
-  useGetHeaderSuspenseQuerySpy.mockImplementation(() => ({
+  vi.mocked(useSuspenseQuery).mockImplementation(() => ({
     ...result,
     // @ts-expect-error
     client: null,

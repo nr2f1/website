@@ -26,6 +26,7 @@ const StrategicPlanHeader: React.FC<StrategicPlanHeaderProps> = async ({
 
   if (
     error ||
+    !data ||
     !data.pageHeader ||
     !data.pageHeader.title ||
     !data.pageHeader.lastUpdated ||

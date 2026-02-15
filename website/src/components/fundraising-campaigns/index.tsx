@@ -15,7 +15,7 @@ export const FundrasingCampaignsWithData: React.FC<GivebutterCampaignProps> = ({
       variables={{
         fundraisingCampaignsHeadingId,
         fundraisingCampaignsLinkId,
-        lang,
+        locale: lang,
       }}
     >
       <Suspense fallback={<FundraisingCampaignsSkeleton />}>

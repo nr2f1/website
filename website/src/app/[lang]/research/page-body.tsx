@@ -27,17 +27,7 @@ interface ResearchPageBodyProps {
 const { query } = getClient();
 
 const ResearchPageBody: React.FC<ResearchPageBodyProps> = async ({ lang }) => {
-  const {
-    data: {
-      initiativesHeading,
-      registerPatientHeading,
-      registerPatientParagraphs,
-      registerPatientCta,
-      researchIntroParagraphs,
-      initiativesParagraphs,
-    },
-    error,
-  } = await query<GetResearchPageQuery>({
+  const { data, error } = await query<GetResearchPageQuery>({
     query: GetResearchPageDocument,
     variables: {
       initiativesHeadingId,
@@ -50,9 +40,18 @@ const ResearchPageBody: React.FC<ResearchPageBodyProps> = async ({ lang }) => {
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const {
+    initiativesHeading,
+    registerPatientHeading,
+    registerPatientParagraphs,
+    registerPatientCta,
+    researchIntroParagraphs,
+    initiativesParagraphs,
+  } = data;
 
   const headings = [initiativesHeading?.content ?? ''];
 

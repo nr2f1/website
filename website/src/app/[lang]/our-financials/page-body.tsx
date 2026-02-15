@@ -17,10 +17,7 @@ interface OurFinancialsPageBodyProps {
 export const OurFinancialsPageBody: React.FC<
   OurFinancialsPageBodyProps
 > = async ({ lang }) => {
-  const {
-    data: { mainbody },
-    error,
-  } = await query<GetOurFinancialsPageQuery>({
+  const { data, error } = await query<GetOurFinancialsPageQuery>({
     query: GetOurFinancialsPageDocument,
     variables: {
       locale: lang,
@@ -28,9 +25,11 @@ export const OurFinancialsPageBody: React.FC<
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const { mainbody } = data;
 
   return (
     <div className={styles.ourFinancials}>

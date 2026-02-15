@@ -57,45 +57,7 @@ interface RegisterPageBodyProps {
 const { query } = getClient();
 
 const WhatIsBbsoasBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
-  const {
-    data: {
-      intro,
-      whatCausesBbsoasHeading,
-      whatCausesBbsoasParagraphs,
-      symptomsOfBbsoasHeading,
-      symptomsOfBbsoasParagraphs,
-      developmentDelayAccordion,
-      disabilityAccordion,
-      visualImpairmentAccordion,
-      alacrimaAccordion,
-      nystagmusAccordion,
-      repetitiveBehaviourAccordion,
-      autismAccordion,
-      speechDelayAccordion,
-      swallingAccordion,
-      hypotoniaAccordion,
-      epilepsyAccordion,
-      adhdAccordion,
-      hearingAccordion,
-      symptomsVaryHeading,
-      symptomsVaryParagraphs,
-      inheritanceHeading,
-      inheritanceParagraphs,
-      diagnosisHeading,
-      diagnosisParagraphs,
-      prevalenceHeading,
-      prevalenceParagraphs,
-      incidenceHeading,
-      incidenceParagraphs,
-      managementHeading,
-      managementParagraphs,
-      researchHeading,
-      researchParagraphs,
-      lifeHeading,
-      lifeParagraphs,
-    },
-    error,
-  } = await query<GetWhatIsBbsoasPageQuery>({
+  const { data, error } = await query<GetWhatIsBbsoasPageQuery>({
     query: GetWhatIsBbsoasPageDocument,
     variables: {
       adhdAccordionId,
@@ -136,9 +98,46 @@ const WhatIsBbsoasBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const {
+    intro,
+    whatCausesBbsoasHeading,
+    whatCausesBbsoasParagraphs,
+    symptomsOfBbsoasHeading,
+    symptomsOfBbsoasParagraphs,
+    developmentDelayAccordion,
+    disabilityAccordion,
+    visualImpairmentAccordion,
+    alacrimaAccordion,
+    nystagmusAccordion,
+    repetitiveBehaviourAccordion,
+    autismAccordion,
+    speechDelayAccordion,
+    swallingAccordion,
+    hypotoniaAccordion,
+    epilepsyAccordion,
+    adhdAccordion,
+    hearingAccordion,
+    symptomsVaryHeading,
+    symptomsVaryParagraphs,
+    inheritanceHeading,
+    inheritanceParagraphs,
+    diagnosisHeading,
+    diagnosisParagraphs,
+    prevalenceHeading,
+    prevalenceParagraphs,
+    incidenceHeading,
+    incidenceParagraphs,
+    managementHeading,
+    managementParagraphs,
+    researchHeading,
+    researchParagraphs,
+    lifeHeading,
+    lifeParagraphs,
+  } = data;
 
   const headings = [
     whatCausesBbsoasHeading?.content ?? '',

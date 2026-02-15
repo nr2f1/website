@@ -50,26 +50,7 @@ const alreadyRegister: LocalisedString = {
 };
 
 const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
-  const {
-    data: {
-      intro,
-      registerWithUsHeading,
-      registerPatientRegistryHeading,
-      registerClinicalIdHeading,
-      registerPatientRegistryLoginLink,
-      registerWithUsContent,
-      registerPatientRegistryContent,
-      registerPatientRegistrySignUpLink,
-      whoCanTakePartAccordion,
-      whoWillHaveAccessAccordion,
-      otherThanFillSurveysAccordion,
-      matrixLanguagesAccordion,
-      whoContactAccordion,
-      registerClinicalIdContent,
-      registerContentIdLink,
-    },
-    error,
-  } = await query<GetRegisterPatientPageQuery>({
+  const { data, error } = await query<GetRegisterPatientPageQuery>({
     query: GetRegisterPatientPageDocument,
     variables: {
       introId,
@@ -91,9 +72,27 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const {
+    intro,
+    registerWithUsHeading,
+    registerPatientRegistryHeading,
+    registerClinicalIdHeading,
+    registerPatientRegistryLoginLink,
+    registerWithUsContent,
+    registerPatientRegistryContent,
+    registerPatientRegistrySignUpLink,
+    whoCanTakePartAccordion,
+    whoWillHaveAccessAccordion,
+    otherThanFillSurveysAccordion,
+    matrixLanguagesAccordion,
+    whoContactAccordion,
+    registerClinicalIdContent,
+    registerContentIdLink,
+  } = data;
 
   const headings = [
     registerWithUsHeading?.content ?? '',

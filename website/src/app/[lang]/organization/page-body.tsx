@@ -27,22 +27,7 @@ const { query } = getClient();
 export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
   lang,
 }) => {
-  const {
-    data: {
-      boardHeading,
-      boardParagraphs,
-      volunteersHeading,
-      scientificHeading,
-      researchHeading,
-      scientificParagraphs,
-      researchParagraphs,
-      boardMembers,
-      volunteersMembers,
-      scientificMembers,
-      researchMembers,
-    },
-    error,
-  } = await query<GetOrganizationPageQuery>({
+  const { data, error } = await query<GetOrganizationPageQuery>({
     query: GetOrganizationPageDocument,
     variables: {
       boardHeadingId,
@@ -56,9 +41,23 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const {
+    boardHeading,
+    boardParagraphs,
+    volunteersHeading,
+    scientificHeading,
+    researchHeading,
+    scientificParagraphs,
+    researchParagraphs,
+    boardMembers,
+    volunteersMembers,
+    scientificMembers,
+    researchMembers,
+  } = data;
 
   const headings = [
     boardHeading?.content ?? '',

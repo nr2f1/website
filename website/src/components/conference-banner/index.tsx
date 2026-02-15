@@ -9,7 +9,7 @@ const ConferenceBanner: React.FC<ComponentPropsWithLocale> = ({ lang }) => {
       query={GetConferenceBannerDocument}
       variables={{
         id: '7e3fMz1x8E2LYxiSatGZfg',
-        lang,
+        locale: lang,
       }}
     >
       <ConferenceBannerMarkup lang={lang} />

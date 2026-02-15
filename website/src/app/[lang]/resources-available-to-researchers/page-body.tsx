@@ -31,20 +31,7 @@ const { query } = getClient();
 const ResourcesAvailableToResearchersBody: React.FC<
   ResourcesAvailableToResearchersBodyProps
 > = async ({ lang }) => {
-  const {
-    data: {
-      biorepositorySamplesHeading,
-      grantsHeading,
-      patientRegistryRecordsHeading,
-      miceModelsHeading,
-      resourcesAvailableintroParagraphs,
-      biorepositorySamplesParagraphs,
-      grantsSamplesParagraphs,
-      patientRegistryRecordsParagraphs,
-      miceModelsParagraphs,
-    },
-    error,
-  } = await query<GetResourcesAvailableToResearchersPageQuery>({
+  const { data, error } = await query<GetResourcesAvailableToResearchersPageQuery>({
     query: GetResourcesAvailableToResearchersPageDocument,
     variables: {
       biorepositorySamplesHeadingId,
@@ -60,9 +47,21 @@ const ResourcesAvailableToResearchersBody: React.FC<
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const {
+    biorepositorySamplesHeading,
+    grantsHeading,
+    patientRegistryRecordsHeading,
+    miceModelsHeading,
+    resourcesAvailableintroParagraphs,
+    biorepositorySamplesParagraphs,
+    grantsSamplesParagraphs,
+    patientRegistryRecordsParagraphs,
+    miceModelsParagraphs,
+  } = data;
 
   const headings = [
     biorepositorySamplesHeading?.content ?? '',

@@ -1,7 +1,12 @@
 'use client';
 
+import { useSuspenseQuery } from '@apollo/client/react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { useGetCookieBannerSuspenseQuery } from '@graphql/queries/cookie-banner/index.generated';
+import {
+  GetCookieBannerDocument,
+  type GetCookieBannerQuery,
+  type GetCookieBannerQueryVariables,
+} from '@graphql/queries/cookie-banner/index.generated';
 import type { ComponentPropsWithLocale } from '@shared/types/page-with-locale-params';
 import {
   LOCAL_STORAGE_KEY_TRACKING_KEY,
@@ -15,7 +20,10 @@ const CookieBanner: React.FC<ComponentPropsWithLocale> = ({ lang }) => {
   const [consent, setConsent] = useLocalStorage(LOCAL_STORAGE_KEY_TRACKING_KEY);
   const [isHydrated, setIsHydrated] = useState(false);
 
-  const { data } = useGetCookieBannerSuspenseQuery({
+  const { data } = useSuspenseQuery<
+    GetCookieBannerQuery,
+    GetCookieBannerQueryVariables
+  >(GetCookieBannerDocument, {
     variables: { locale: lang },
   });
 

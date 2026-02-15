@@ -25,6 +25,7 @@ const VolunteerHeader: React.FC<VolunteerHeaderProps> = async ({ lang }) => {
 
   if (
     error ||
+    !data ||
     !data.pageHeader ||
     !data.pageHeader.title ||
     !data.pageHeader.lastUpdated ||

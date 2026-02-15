@@ -6,11 +6,10 @@ const config: CodegenConfig = {
   generates: {
     'website/src/graphql/': {
       config: {
-        reactApolloVersion: 3,
         withResultType: true,
       },
       overwrite: true,
-      plugins: ['typescript-operations', 'typescript-react-apollo'],
+      plugins: ['typescript-operations', 'typed-document-node'],
       preset: 'near-operation-file',
       presetConfig: {
         baseTypesPath: 'types.ts',

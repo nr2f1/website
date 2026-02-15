@@ -17,16 +17,15 @@ const { query } = getClient();
 const SupportGroupBanner: React.FC<SupportGroupBannerProps> = async ({
   lang,
 }) => {
-  const {
-    data: { banner },
-    error,
-  } = await query<GetBannerQuery>({
+  const { data, error } = await query<GetBannerQuery>({
     query: GetBannerDocument,
     variables: {
       id: supportGroupBannerId,
       locale: lang,
     },
   });
+
+  const banner = data?.banner;
 
   if (error || !banner) {
     return null;

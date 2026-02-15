@@ -37,8 +37,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   });
 
   const blogPosts =
-    data.blogPageCollection?.items
-      .map((item) => {
+    data?.blogPageCollection?.items
+      ?.map((item) => {
         if (!item?.date || !item?.slug) return null;
 
         const { date, slug } = item;
@@ -62,7 +62,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           url,
         };
       })
-      .filter((post) => post !== null) || [];
+      .filter((post) => post !== null) ?? [];
 
   return [...base, ...blogPosts];
 }

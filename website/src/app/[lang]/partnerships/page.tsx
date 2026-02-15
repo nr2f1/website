@@ -17,18 +17,17 @@ const { query } = getClient();
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { lang } = await params;
 
-  const {
-    data: {
-      // @ts-expect-error
-      htmlHeadMetadata: { title, description, keywords },
-    },
-  } = await query<GetMetadataQuery>({
+  const { data: metadataData } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
       id: partnershipsPageMetadataId,
       locale: lang,
     },
   });
+
+  const title = metadataData?.htmlHeadMetadata?.title || '';
+  const description = metadataData?.htmlHeadMetadata?.description || '';
+  const keywords = metadataData?.htmlHeadMetadata?.keywords || '';
 
   const jsonLd: WithContext<WebPage> = {
     '@context': 'https://schema.org',
@@ -59,18 +58,17 @@ export async function generateMetadata({
 }: PagePropsWithLocale): Promise<Metadata> {
   const { lang } = await params;
 
-  const {
-    data: {
-      // @ts-expect-error
-      htmlHeadMetadata: { title, description, keywords },
-    },
-  } = await query<GetMetadataQuery>({
+  const { data } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
       id: partnershipsPageMetadataId,
       locale: lang,
     },
   });
+
+  const title = data?.htmlHeadMetadata?.title || '';
+  const description = data?.htmlHeadMetadata?.description || '';
+  const keywords = data?.htmlHeadMetadata?.keywords || '';
 
   const alternates = getAlternateUrls({ locale: lang, route: 'partnerships' });
 

@@ -19,10 +19,7 @@ const { query } = getClient();
 const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
   const LIMIT = 12;
 
-  const {
-    data: { blogPageCollection },
-    error,
-  } = await query<GetBlogPostsQuery>({
+  const { data, error } = await query<GetBlogPostsQuery>({
     query: GetBlogPostsDocument,
     variables: {
       limit: LIMIT,
@@ -31,10 +28,11 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
     },
   });
 
-  if (error || !blogPageCollection || !blogPageCollection.items) {
+  if (error || !data || !data.blogPageCollection || !data.blogPageCollection.items) {
     return null;
   }
 
+  const { blogPageCollection } = data;
   const { items, total } = blogPageCollection;
 
   const posts = items

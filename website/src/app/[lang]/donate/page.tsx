@@ -23,18 +23,16 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   // Validate locale before any GraphQL queries
   validateLocale(lang);
 
-  const {
-    data: {
-      // @ts-expect-error
-      htmlHeadMetadata: { title, description },
-    },
-  } = await query<GetMetadataQuery>({
+  const { data } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
       id: donatePageMetadataId,
       locale: lang,
     },
   });
+
+  const title = data?.htmlHeadMetadata?.title || '';
+  const description = data?.htmlHeadMetadata?.description || '';
 
   const jsonLd: WithContext<WebPage> = {
     '@context': 'https://schema.org',
@@ -69,18 +67,17 @@ export async function generateMetadata({
   // Validate locale before any GraphQL queries
   validateLocale(lang);
 
-  const {
-    data: {
-      // @ts-expect-error
-      htmlHeadMetadata: { title, description, keywords },
-    },
-  } = await query<GetMetadataQuery>({
+  const { data } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
       id: donatePageMetadataId,
       locale: lang,
     },
   });
+
+  const title = data?.htmlHeadMetadata?.title || '';
+  const description = data?.htmlHeadMetadata?.description || '';
+  const keywords = data?.htmlHeadMetadata?.keywords || '';
 
   const alternates = getAlternateUrls({ locale: lang, route: 'donate' });
 

@@ -25,15 +25,18 @@ const { query } = getClient();
 const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
   const LIMIT = 12;
 
-  const {
-    data: { posts, podcasts, newsletters },
-    error,
-  } = await query<GetAllNewsQuery>({
+  const { data, error } = await query<GetAllNewsQuery>({
     query: GetAllNewsDocument,
     variables: {
       locale: lang,
     },
   });
+
+  if (error || !data) {
+    return null;
+  }
+
+  const { posts, podcasts, newsletters } = data;
 
   if (
     !posts ||
@@ -44,8 +47,7 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
     !newsletters.items.length ||
     !podcasts ||
     !podcasts.items ||
-    !podcasts.items.length ||
-    error
+    !podcasts.items.length
   ) {
     return null;
   }

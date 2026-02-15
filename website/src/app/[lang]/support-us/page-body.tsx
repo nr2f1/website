@@ -17,10 +17,7 @@ interface SupportUsPageBodyProps {
 export const SupportUsPageBody: React.FC<SupportUsPageBodyProps> = async ({
   lang,
 }) => {
-  const {
-    data: { mainbody },
-    error,
-  } = await query<GetSupportUsPageQuery>({
+  const { data, error } = await query<GetSupportUsPageQuery>({
     query: GetSupportUsPageDocument,
     variables: {
       locale: lang,
@@ -28,9 +25,11 @@ export const SupportUsPageBody: React.FC<SupportUsPageBodyProps> = async ({
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const { mainbody } = data;
 
   return (
     <div className={styles.supportUs}>

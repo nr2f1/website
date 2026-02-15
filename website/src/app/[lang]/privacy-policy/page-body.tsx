@@ -17,10 +17,7 @@ interface PrivacyPolicyPageBodyProps {
 export const PrivacyPolicyPageBody: React.FC<
   PrivacyPolicyPageBodyProps
 > = async ({ lang }) => {
-  const {
-    data: { mainbody },
-    error,
-  } = await query<GetPrivacyPolicyPageQuery>({
+  const { data, error } = await query<GetPrivacyPolicyPageQuery>({
     query: GetPrivacyPolicyPageDocument,
     variables: {
       locale: lang,
@@ -28,9 +25,11 @@ export const PrivacyPolicyPageBody: React.FC<
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const { mainbody } = data;
 
   return (
     <div className={styles.privacypolicy}>

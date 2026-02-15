@@ -17,15 +17,15 @@ const { query } = getClient();
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { lang } = await params;
 
-  const {
-    data: { htmlHeadMetadata },
-  } = await query<GetMetadataQuery>({
+  const { data } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
       id: organizationPageMetadataId,
       locale: lang,
     },
   });
+
+  const htmlHeadMetadata = data?.htmlHeadMetadata;
 
   const title = htmlHeadMetadata?.title || '';
   const description = htmlHeadMetadata?.description || '';
@@ -60,15 +60,15 @@ export async function generateMetadata({
 }: PagePropsWithLocale): Promise<Metadata> {
   const { lang } = await params;
 
-  const {
-    data: { htmlHeadMetadata },
-  } = await query<GetMetadataQuery>({
+  const { data } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
       id: organizationPageMetadataId,
       locale: lang,
     },
   });
+
+  const htmlHeadMetadata = data?.htmlHeadMetadata;
 
   const title = htmlHeadMetadata?.title || '';
   const description = htmlHeadMetadata?.description || '';
