@@ -1,6 +1,11 @@
 'use client';
 
-import { useGetFundraisingCampaignsSuspenseQuery } from '@graphql/queries/fundraising-campaigns/index.generated';
+import { useSuspenseQuery } from '@apollo/client/react';
+import {
+  GetFundraisingCampaignsDocument,
+  type GetFundraisingCampaignsQuery,
+  type GetFundraisingCampaignsQueryVariables,
+} from '@graphql/queries/fundraising-campaigns/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { fundraisingCampaignsHeadingId } from '@models/headings';
 import { fundraisingCampaignsLinkId } from '@models/links';
@@ -121,14 +126,16 @@ const FundrasingCampaigns: React.FC<GivebutterCampaignProps> = ({ lang }) => {
     initialState,
   );
 
-  const { data, error: contentfulError } =
-    useGetFundraisingCampaignsSuspenseQuery({
-      variables: {
-        fundraisingCampaignsHeadingId,
-        fundraisingCampaignsLinkId,
-        locale: lang,
-      },
-    });
+  const { data, error: contentfulError } = useSuspenseQuery<
+    GetFundraisingCampaignsQuery,
+    GetFundraisingCampaignsQueryVariables
+  >(GetFundraisingCampaignsDocument, {
+    variables: {
+      fundraisingCampaignsHeadingId,
+      fundraisingCampaignsLinkId,
+      locale: lang,
+    },
+  });
 
   useEffect(() => {
     getCampaigns()

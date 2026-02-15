@@ -26,6 +26,7 @@ const LivingWithBbsoasHeader: React.FC<LivingWithBbsoasHeaderProps> = async ({
 
   if (
     error ||
+    !data ||
     !data.pageHeader ||
     !data.pageHeader.title ||
     !data.pageHeader.lastUpdated ||

@@ -1,7 +1,12 @@
 'use client';
 
+import { useSuspenseQuery } from '@apollo/client/react';
 import MainOnLight from '@components/logos/main-on-light';
-import { useGetHeaderSuspenseQuery } from '@graphql/queries/header/index.generated';
+import {
+  GetHeaderDocument,
+  type GetHeaderQuery,
+  type GetHeaderQueryVariables,
+} from '@graphql/queries/header/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   aboutUsLinkConferenceId,
@@ -97,7 +102,9 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
     data,
     // TODO: Handle error
     error,
-  } = useGetHeaderSuspenseQuery({
+  } = useSuspenseQuery<GetHeaderQuery, GetHeaderQueryVariables>(
+    GetHeaderDocument,
+    {
     variables: {
       aboutCopiesId,
       aboutUsLinkConferenceId,

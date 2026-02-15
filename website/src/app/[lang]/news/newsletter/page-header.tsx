@@ -24,7 +24,7 @@ const NewsletterPageHeader: React.FC<NewsPageHeaderProps> = async ({
     },
   });
 
-  if (error || !data.pageHeader || !data.lastUpdated) {
+  if (error || !data || !data.pageHeader || !data.lastUpdated) {
     return null;
   }
 

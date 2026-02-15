@@ -26,6 +26,7 @@ const PartnershipsHeader: React.FC<PartnershipsHeaderProps> = async ({
 
   if (
     error ||
+    !data ||
     !data.pageHeader ||
     !data.pageHeader.title ||
     !data.pageHeader.lastUpdated

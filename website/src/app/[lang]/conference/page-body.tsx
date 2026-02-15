@@ -32,24 +32,7 @@ const { query } = getClient();
 const ConferencePageBody: React.FC<ComponentPropsWithLocale> = async ({
   lang,
 }) => {
-  const {
-    data: {
-      pastConferencesHeading,
-      introParagraph,
-      bookTicketsLink,
-      infoParagraph,
-      bookTicketsHeading,
-      offerHeading,
-      offerParagraphs,
-      sponsorshipHeading,
-      sponsorshipParagraphs,
-      faqsHeading,
-      accordionCollection,
-      nextConferenceHeading,
-      pastConferencesParagraphs,
-    },
-    error,
-  } = await query<GetConferencePageQuery>({
+  const { data, error } = await query<GetConferencePageQuery>({
     query: GetConferencePageDocument,
     variables: {
       bookTicketsHeadingId,
@@ -68,9 +51,25 @@ const ConferencePageBody: React.FC<ComponentPropsWithLocale> = async ({
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const {
+    pastConferencesHeading,
+    introParagraph,
+    bookTicketsLink,
+    infoParagraph,
+    bookTicketsHeading,
+    offerHeading,
+    offerParagraphs,
+    sponsorshipHeading,
+    sponsorshipParagraphs,
+    faqsHeading,
+    accordionCollection,
+    nextConferenceHeading,
+    pastConferencesParagraphs,
+  } = data;
 
   const headings = [
     nextConferenceHeading?.content ?? '',

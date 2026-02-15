@@ -23,6 +23,7 @@ const ConferenceHeader: React.FC<ComponentPropsWithLocale> = async ({
 
   if (
     error ||
+    !data ||
     !data.pageHeader ||
     !data.pageHeader.title ||
     !data.pageHeader.lastUpdated ||

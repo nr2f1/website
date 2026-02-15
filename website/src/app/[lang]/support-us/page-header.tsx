@@ -25,6 +25,7 @@ const SupportUsHeader: React.FC<SupportUsHeaderProps> = async ({ lang }) => {
 
   if (
     error ||
+    !data ||
     !data.pageHeader ||
     !data.pageHeader.title ||
     !data.pageHeader.lastUpdated ||

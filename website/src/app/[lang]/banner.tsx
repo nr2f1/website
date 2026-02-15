@@ -15,16 +15,15 @@ interface HomePageBannerProps {
 const HomePageBanner: React.FC<HomePageBannerProps> = async ({ lang }) => {
   const { query } = getClient();
 
-  const {
-    data: { banner },
-    error,
-  } = await query<GetBannerQuery>({
+  const { data, error } = await query<GetBannerQuery>({
     query: GetBannerDocument,
     variables: {
       id: homePageBannerId,
       locale: lang,
     },
   });
+
+  const banner = data?.banner;
 
   if (error || !banner) {
     return null;

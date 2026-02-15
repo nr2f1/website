@@ -1,7 +1,12 @@
 'use client';
 
+import { useSuspenseQuery } from '@apollo/client/react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { useGetConferenceBannerSuspenseQuery } from '@graphql/queries/conference-banner/index.generated';
+import {
+  GetConferenceBannerDocument,
+  type GetConferenceBannerQuery,
+  type GetConferenceBannerQueryVariables,
+} from '@graphql/queries/conference-banner/index.generated';
 import { routes } from '@routes/index';
 import type { ComponentPropsWithLocale } from '@shared/types/page-with-locale-params';
 import Link from 'next/link';
@@ -74,7 +79,10 @@ const ConferenceBannerMarkup: React.FC<ComponentPropsWithLocale> = ({
     dispatch,
   ] = useReducer(reducer, initialState);
 
-  const { data } = useGetConferenceBannerSuspenseQuery({
+  const { data } = useSuspenseQuery<
+    GetConferenceBannerQuery,
+    GetConferenceBannerQueryVariables
+  >(GetConferenceBannerDocument, {
     variables: { id: '7e3fMz1x8E2LYxiSatGZfg', locale: lang },
   });
 

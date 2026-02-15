@@ -16,16 +16,15 @@ const MembershipsPartners: React.FC<MembershipsPartnersProps> = async ({
 }) => {
   const { query } = getClient();
 
-  const {
-    data: { navigationList },
-    error,
-  } = await query<GetMembershipPartnersQuery>({
+  const { data, error } = await query<GetMembershipPartnersQuery>({
     query: GetMembershipPartnersDocument,
     variables: {
       locale: lang,
       membershipPartnersId,
     },
   });
+
+  const navigationList = data?.navigationList;
 
   if (error || !navigationList || !navigationList.linksCollection?.items) {
     return null;

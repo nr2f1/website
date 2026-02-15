@@ -39,25 +39,7 @@ const { query } = getClient();
 const GetInvolvedInBbsoasResearchBody: React.FC<
   GetInvolvedInBbsoasResearchPageProps
 > = async ({ lang }) => {
-  const {
-    data: {
-      patientRegistryHeading,
-      biorepositoryHeading,
-      surveyHeading,
-      patientRegistryParagraphs,
-      biorepositoryParagraphsBeforeAccordions,
-      whatIsBioRepositoryAccordion,
-      whyBioRepositoryAccordion,
-      anotherSampleAccordion,
-      biorepositoryParagraphsAfterAccordions,
-      surveyParagraphsBeforeAccordions,
-      ortasWhatAccordion,
-      ortasWhyAccordion,
-      ortasWhoAccordion,
-      surveyParagraphsAfterAccordions,
-    },
-    error,
-  } = await query<GetGetInvolvedInBbsoasResearchPageQuery>({
+  const { data, error } = await query<GetGetInvolvedInBbsoasResearchPageQuery>({
     query: GetGetInvolvedInBbsoasResearchPageDocument,
     variables: {
       anotherSampleAccordionId,
@@ -78,9 +60,26 @@ const GetInvolvedInBbsoasResearchBody: React.FC<
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const {
+    patientRegistryHeading,
+    biorepositoryHeading,
+    surveyHeading,
+    patientRegistryParagraphs,
+    biorepositoryParagraphsBeforeAccordions,
+    whatIsBioRepositoryAccordion,
+    whyBioRepositoryAccordion,
+    anotherSampleAccordion,
+    biorepositoryParagraphsAfterAccordions,
+    surveyParagraphsBeforeAccordions,
+    ortasWhatAccordion,
+    ortasWhyAccordion,
+    ortasWhoAccordion,
+    surveyParagraphsAfterAccordions,
+  } = data;
 
   const headings = [
     patientRegistryHeading?.content ?? '',

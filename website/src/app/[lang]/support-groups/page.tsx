@@ -41,18 +41,17 @@ const { query } = getClient();
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { lang } = await params;
 
-  const {
-    data: {
-      // @ts-expect-error
-      htmlHeadMetadata: { title, description, keywords },
-    },
-  } = await query<GetMetadataQuery>({
+  const { data: metadataData } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
       id: supportGroupsPageMetadataId,
       locale: lang,
     },
   });
+
+  const title = metadataData?.htmlHeadMetadata?.title || '';
+  const description = metadataData?.htmlHeadMetadata?.description || '';
+  const keywords = metadataData?.htmlHeadMetadata?.keywords || '';
 
   const jsonLd: WithContext<WebPage> = {
     '@context': 'https://schema.org',
@@ -64,24 +63,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     url: `https://nr2f1.org${routes['support-groups'](lang)}`,
   };
 
-  const {
-    data: {
-      intropParagraphs,
-      virtualParentsHeading,
-      virtualParentsParagraphs,
-      dadsHeading,
-      dadsParagraphs,
-      caregiversHeading,
-      caregiverParagraphs,
-      spanishParentsHeading,
-      spanishParentsParagraphs,
-      facebookHeading,
-      facebookParagraphs,
-      dadsUkHeading,
-      dadsUkParagraphs,
-    },
-    error,
-  } = await query<GetSupportGroupsPageQuery>({
+  const { data, error } = await query<GetSupportGroupsPageQuery>({
     query: GetSupportGroupsPageDocument,
     variables: {
       caregiverParagraphsId,
@@ -101,9 +83,25 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const {
+    intropParagraphs,
+    virtualParentsHeading,
+    virtualParentsParagraphs,
+    dadsHeading,
+    dadsParagraphs,
+    caregiversHeading,
+    caregiverParagraphs,
+    spanishParentsHeading,
+    spanishParentsParagraphs,
+    facebookHeading,
+    facebookParagraphs,
+    dadsUkHeading,
+    dadsUkParagraphs,
+  } = data;
 
   const headings = [
     virtualParentsHeading?.content ?? '',
@@ -173,18 +171,17 @@ export async function generateMetadata({
 }: PagePropsWithLocale): Promise<Metadata> {
   const { lang } = await params;
 
-  const {
-    data: {
-      // @ts-expect-error
-      htmlHeadMetadata: { title, description, keywords },
-    },
-  } = await query<GetMetadataQuery>({
+  const { data } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
       id: supportGroupsPageMetadataId,
       locale: lang,
     },
   });
+
+  const title = data?.htmlHeadMetadata?.title || '';
+  const description = data?.htmlHeadMetadata?.description || '';
+  const keywords = data?.htmlHeadMetadata?.keywords || '';
 
   const alternates = getAlternateUrls({
     locale: lang,

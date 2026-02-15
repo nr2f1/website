@@ -29,19 +29,7 @@ interface WhatWeDoProps {
 const WhatWeDo: React.FC<WhatWeDoProps> = async ({ lang }) => {
   const { query } = getClient();
 
-  const {
-    data: {
-      whatWeDoHeading,
-      ourVisionParagraph,
-      educatePeopleHeading,
-      educatePeopleParagraph,
-      learnMoreCta,
-      empowerFamiliesHeading,
-      empowerFamiliesParagraph,
-      driveResearchHeading,
-      driveResearchParagraph,
-    },
-  } = await query<GetWhatWeDoQuery>({
+  const { data } = await query<GetWhatWeDoQuery>({
     query: GetWhatWeDoDocument,
     variables: {
       driveResearchHeadingId,
@@ -56,6 +44,22 @@ const WhatWeDo: React.FC<WhatWeDoProps> = async ({ lang }) => {
       whatWeDoHeadingId,
     },
   });
+
+  if (!data) {
+    return null;
+  }
+
+  const {
+    whatWeDoHeading,
+    ourVisionParagraph,
+    educatePeopleHeading,
+    educatePeopleParagraph,
+    learnMoreCta,
+    empowerFamiliesHeading,
+    empowerFamiliesParagraph,
+    driveResearchHeading,
+    driveResearchParagraph,
+  } = data;
 
   return (
     <div className={styles.what_we_do}>

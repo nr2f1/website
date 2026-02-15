@@ -28,17 +28,7 @@ const { query } = getClient();
 const LivingWithBbsoasBottomBody: React.FC<
   LivingWithBbsoasBottomBodyProps
 > = async ({ lang }) => {
-  const {
-    data: {
-      bbsoasClinicHeading,
-      bbsoasClinicParagraphs,
-      handingLettersHeading,
-      handingLettersParagraphs,
-      readingGeneticReportHeading,
-      readingGeneticReportParagraphs,
-    },
-    error,
-  } = await query<GetLivingWithBbsoasBottomPageQuery>({
+  const { data, error } = await query<GetLivingWithBbsoasBottomPageQuery>({
     query: GetLivingWithBbsoasBottomPageDocument,
     variables: {
       bbsoasClinicHeadingId,
@@ -51,9 +41,18 @@ const LivingWithBbsoasBottomBody: React.FC<
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const {
+    bbsoasClinicHeading,
+    bbsoasClinicParagraphs,
+    handingLettersHeading,
+    handingLettersParagraphs,
+    readingGeneticReportHeading,
+    readingGeneticReportParagraphs,
+  } = data;
 
   return (
     <PageBodySection>

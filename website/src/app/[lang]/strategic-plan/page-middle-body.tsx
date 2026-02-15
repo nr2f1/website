@@ -23,10 +23,7 @@ interface StrategicPlanMiddleBodyProps {
 const StrategicPlanMiddleBody: React.FC<StrategicPlanMiddleBodyProps> = async ({
   lang,
 }) => {
-  const {
-    data: { getThereHeading, getThereParagraphs, getThereProgressParagraphs },
-    error,
-  } = await query<GetStrategicPlanMiddlePageQuery>({
+  const { data, error } = await query<GetStrategicPlanMiddlePageQuery>({
     query: GetStrategicPlanMiddlePageDocument,
     variables: {
       getThereHeadingId,
@@ -36,9 +33,12 @@ const StrategicPlanMiddleBody: React.FC<StrategicPlanMiddleBodyProps> = async ({
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const { getThereHeading, getThereParagraphs, getThereProgressParagraphs } =
+    data;
 
   return (
     <PageBodySection>

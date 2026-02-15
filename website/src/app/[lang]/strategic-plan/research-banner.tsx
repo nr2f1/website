@@ -15,16 +15,15 @@ interface ResearchBannerProps {
 const { query } = getClient();
 
 const ResearchBanner: React.FC<ResearchBannerProps> = async ({ lang }) => {
-  const {
-    data: { banner },
-    error,
-  } = await query<GetBannerQuery>({
+  const { data, error } = await query<GetBannerQuery>({
     query: GetBannerDocument,
     variables: {
       id: researchBannerId,
       locale: lang,
     },
   });
+
+  const banner = data?.banner;
 
   if (error || !banner) {
     return null;

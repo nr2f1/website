@@ -33,21 +33,7 @@ const { query } = getClient();
 const LivingWithBbsoasUpperBody: React.FC<RegisterPageBodyProps> = async ({
   lang,
 }) => {
-  const {
-    data: {
-      bbsoasClinicHeading,
-      handingLettersHeading,
-      registerPatientCta,
-      registerPatientHeading,
-      registerPatientParagraphs,
-      testAndTherapiesHeading,
-      testAndTherapiesParagraphs,
-      understandingBbsoasHeading,
-      understandingBbsoasParagraphs,
-      readingGeneticReportHeading,
-    },
-    error,
-  } = await query<GetLivingWithBbsoasUpperPageQuery>({
+  const { data, error } = await query<GetLivingWithBbsoasUpperPageQuery>({
     query: GetLivingWithBbsoasUpperPageDocument,
     variables: {
       bbsoasClinicHeadingId,
@@ -64,9 +50,22 @@ const LivingWithBbsoasUpperBody: React.FC<RegisterPageBodyProps> = async ({
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const {
+    bbsoasClinicHeading,
+    handingLettersHeading,
+    registerPatientCta,
+    registerPatientHeading,
+    registerPatientParagraphs,
+    testAndTherapiesHeading,
+    testAndTherapiesParagraphs,
+    understandingBbsoasHeading,
+    understandingBbsoasParagraphs,
+    readingGeneticReportHeading,
+  } = data;
 
   const headings = [
     testAndTherapiesHeading?.content ?? '',

@@ -34,23 +34,7 @@ const { query } = getClient();
 const StrategicPlanUpperBody: React.FC<RegisterPageBodyProps> = async ({
   lang,
 }) => {
-  const {
-    data: {
-      ourObjectivesHeading,
-      ourObjectivesParagraphs,
-      educationHeading,
-      educationParagraphs,
-      educationProgressParagraphs,
-      advocacyHeading,
-      advocacyParagraphs,
-      advocacyProgressParagraphs,
-      researchHeading,
-      researchParagraphs,
-      researchProgressParagraphs,
-      getThereHeading,
-    },
-    error,
-  } = await query<GetStrategicPlanUpperPageQuery>({
+  const { data, error } = await query<GetStrategicPlanUpperPageQuery>({
     query: GetStrategicPlanUpperPageDocument,
     variables: {
       advocacyHeadingId,
@@ -69,9 +53,24 @@ const StrategicPlanUpperBody: React.FC<RegisterPageBodyProps> = async ({
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const {
+    ourObjectivesHeading,
+    ourObjectivesParagraphs,
+    educationHeading,
+    educationParagraphs,
+    educationProgressParagraphs,
+    advocacyHeading,
+    advocacyParagraphs,
+    advocacyProgressParagraphs,
+    researchHeading,
+    researchParagraphs,
+    researchProgressParagraphs,
+    getThereHeading,
+  } = data;
 
   const headings = [
     ourObjectivesHeading?.content ?? '',
