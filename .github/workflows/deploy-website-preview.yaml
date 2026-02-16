@@ -5,13 +5,16 @@ on:
   push:
     branches:
       - main
+      - fix-build-round-two
     paths:
       - .github/workflows/deploy-website-preview.yaml
-      - '!CHANGELOG.md'
+      - "!CHANGELOG.md"
       - website/**
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  NEXT_PUBLIC_CONTENTFUL_SPACE_ID: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_SPACE_ID }}
+  NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN }}
 
 permissions:
   contents: write
@@ -49,6 +52,9 @@ jobs:
 
       - name: Install Vercel CLI
         uses: ./.github/actions/install-vercel-cli
+
+      - name: Generate GraphQL types
+        run: pnpm nx graphql-generate website
 
       - name: Pull Vercel environment information
         run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
