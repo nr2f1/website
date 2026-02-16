@@ -13,7 +13,7 @@ const config: CodegenConfig = {
       preset: 'near-operation-file',
       presetConfig: {
         baseTypesPath: 'types.ts',
-        extension: '.generated.tsx',
+        extension: '.generated.ts',
       },
     },
     'website/src/graphql/types.ts': {
