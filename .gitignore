@@ -14,3 +14,5 @@ dist
 certificates
 .cursor/rules/nx-rules.mdc
 .github/instructions/nx.instructions.md
+*.generated.tsx
+types.ts

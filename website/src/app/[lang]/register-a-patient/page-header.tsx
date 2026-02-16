@@ -26,6 +26,7 @@ const RegisterPageHeader: React.FC<RegisterPageHeaderProps> = async ({
 
   if (
     error ||
+    !data ||
     !data.pageHeader ||
     !data.pageHeader.title ||
     !data.pageHeader.lastUpdated ||

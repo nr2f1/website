@@ -16,16 +16,15 @@ interface SupportBannerProps {
 const SupportBanner: React.FC<SupportBannerProps> = async ({ lang }) => {
   const { query } = getClient();
 
-  const {
-    data: { banner },
-    error,
-  } = await query<GetBannerQuery>({
+  const { data, error } = await query<GetBannerQuery>({
     query: GetBannerDocument,
     variables: {
       id: supportUsBannerId,
       locale: lang,
     },
   });
+
+  const banner = data?.banner;
 
   if (error || !banner) {
     return null;

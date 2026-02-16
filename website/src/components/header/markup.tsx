@@ -1,7 +1,12 @@
 'use client';
 
+import { useSuspenseQuery } from '@apollo/client/react';
 import MainOnLight from '@components/logos/main-on-light';
-import { useGetHeaderSuspenseQuery } from '@graphql/queries/header/index.generated';
+import {
+  GetHeaderDocument,
+  type GetHeaderQuery,
+  type GetHeaderQueryVariables,
+} from '@graphql/queries/header/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   aboutUsLinkConferenceId,
@@ -97,37 +102,40 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
     data,
     // TODO: Handle error
     error,
-  } = useGetHeaderSuspenseQuery({
-    variables: {
-      aboutCopiesId,
-      aboutUsLinkConferenceId,
-      aboutUsLinkFinancialsId,
-      aboutUsLinkOrganisationId,
-      aboutUsLinkOurNewsId,
-      aboutUsLinkOurStrategyId,
-      aboutUsLinkParnershipsId,
-      contactUsLinkId,
-      donateId,
-      fundraiseLinkId,
-      getInvolvedInBbsoasLinkId,
-      livingWithBbsoasLinkId,
-      livingWithBbsoasMicrocopyId,
-      locale: lang,
-      patientCountLinkId,
-      publicationsLinkId,
-      registerABbsoasPatientLinkId,
-      registerPatientId,
-      researchLinkId,
-      researchMicrocopyId,
-      resourcesAvailableToresearchersLinkId,
-      shopLinkId,
-      supportGroupsLinkId,
-      supportUsLinkId,
-      supportUsMicrocopyId,
-      volunteerLinkId,
-      whatIsBbsoasLinkId,
+  } = useSuspenseQuery<GetHeaderQuery, GetHeaderQueryVariables>(
+    GetHeaderDocument,
+    {
+      variables: {
+        aboutCopiesId,
+        aboutUsLinkConferenceId,
+        aboutUsLinkFinancialsId,
+        aboutUsLinkOrganisationId,
+        aboutUsLinkOurNewsId,
+        aboutUsLinkOurStrategyId,
+        aboutUsLinkParnershipsId,
+        contactUsLinkId,
+        donateId,
+        fundraiseLinkId,
+        getInvolvedInBbsoasLinkId,
+        livingWithBbsoasLinkId,
+        livingWithBbsoasMicrocopyId,
+        locale: lang,
+        patientCountLinkId,
+        publicationsLinkId,
+        registerABbsoasPatientLinkId,
+        registerPatientId,
+        researchLinkId,
+        researchMicrocopyId,
+        resourcesAvailableToresearchersLinkId,
+        shopLinkId,
+        supportGroupsLinkId,
+        supportUsLinkId,
+        supportUsMicrocopyId,
+        volunteerLinkId,
+        whatIsBbsoasLinkId,
+      },
     },
-  });
+  );
 
   if (!data || error) {
     return null;

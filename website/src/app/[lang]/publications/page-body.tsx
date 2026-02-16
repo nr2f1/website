@@ -122,17 +122,7 @@ const PublicationsByYear: React.FC<PublicationsByYearProps> = ({
 };
 
 const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
-  const {
-    data: {
-      patientResearchHeading,
-      patientResearchContent,
-      patientPublications,
-      geneResearchHeading,
-      geneResearchContent,
-      genePublications,
-    },
-    error,
-  } = await query<GetPublicationsPageQuery>({
+  const { data, error } = await query<GetPublicationsPageQuery>({
     query: GetPublicationsPageDocument,
     variables: {
       geneResearchContentId,
@@ -143,9 +133,18 @@ const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const {
+    patientResearchHeading,
+    patientResearchContent,
+    patientPublications,
+    geneResearchHeading,
+    geneResearchContent,
+    genePublications,
+  } = data;
 
   const headings = [
     patientResearchHeading?.content ?? '',

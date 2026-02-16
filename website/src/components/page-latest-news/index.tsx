@@ -33,15 +33,18 @@ const PageLatestNews: React.FC<PageLatestNewsProps> = async ({ lang }) => {
 
   const { query } = getClient();
 
-  const {
-    data: { posts, podcasts, newsletters },
-    error,
-  } = await query<GetPageLatestNewsQuery>({
+  const { data, error } = await query<GetPageLatestNewsQuery>({
     query: GetPageLatestNewsDocument,
     variables: {
       locale: lang,
     },
   });
+
+  if (error || !data) {
+    return null;
+  }
+
+  const { posts, podcasts, newsletters } = data;
 
   if (
     !posts ||
@@ -52,8 +55,7 @@ const PageLatestNews: React.FC<PageLatestNewsProps> = async ({ lang }) => {
     !newsletters.items.length ||
     !podcasts ||
     !podcasts.items ||
-    !podcasts.items.length ||
-    error
+    !podcasts.items.length
   ) {
     return null;
   }

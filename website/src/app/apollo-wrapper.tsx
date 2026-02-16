@@ -1,27 +1,35 @@
 'use client';
 
-import { HttpLink } from '@apollo/client';
-import { loadDevMessages, loadErrorMessages } from '@apollo/client/dev';
+import { ApolloLink, HttpLink } from '@apollo/client';
 import {
   ApolloClient,
   ApolloNextAppProvider,
   InMemoryCache,
-} from '@apollo/experimental-nextjs-app-support';
-import { CONTENTUL_GRAPHQL_API } from '@config/utils';
+  SSRMultipartLink,
+} from '@apollo/client-integration-nextjs';
+import { Authorization, CONTENTUL_GRAPHQL_API } from '@config/utils';
 
-const makeClient = () => {
+function makeClient() {
   const httpLink = new HttpLink({
     headers: {
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}`,
+      Authorization,
     },
     uri: CONTENTUL_GRAPHQL_API,
   });
 
   return new ApolloClient({
     cache: new InMemoryCache(),
-    link: httpLink,
+    link:
+      typeof window === 'undefined'
+        ? ApolloLink.from([
+            new SSRMultipartLink({
+              stripDefer: true,
+            }),
+            httpLink,
+          ])
+        : httpLink,
   });
-};
+}
 
 export function ApolloWrapper({ children }: React.PropsWithChildren) {
   return (
@@ -29,9 +37,4 @@ export function ApolloWrapper({ children }: React.PropsWithChildren) {
       {children}
     </ApolloNextAppProvider>
   );
-}
-
-if (process.env.NODE_ENV !== 'production') {
-  loadDevMessages();
-  loadErrorMessages();
 }

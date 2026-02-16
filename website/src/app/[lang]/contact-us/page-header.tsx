@@ -25,6 +25,7 @@ const ContactUsHeader: React.FC<ContactUsHeaderProps> = async ({ lang }) => {
 
   if (
     error ||
+    !data ||
     !data.pageHeader ||
     !data.pageHeader.title ||
     !data.pageHeader.lastUpdated

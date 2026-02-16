@@ -17,18 +17,16 @@ export async function generateMetadata({
 }: NewsPageProps): Promise<Metadata> {
   const { lang } = await params;
 
-  const {
-    data: {
-      // @ts-expect-error
-      htmlHeadMetadata: { title, description },
-    },
-  } = await query<GetMetadataQuery>({
+  const { data } = await query<GetMetadataQuery>({
     query: GetMetadataDocument,
     variables: {
       id: blogIndexPageMetadataId,
       locale: lang,
     },
   });
+
+  const title = data?.htmlHeadMetadata?.title || '';
+  const description = data?.htmlHeadMetadata?.description || '';
 
   const alternates = getAlternateUrls({
     locale: lang,

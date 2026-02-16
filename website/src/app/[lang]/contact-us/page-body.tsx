@@ -18,10 +18,7 @@ interface ContactUsPageBodyProps {
 export const ContactUsPageBody: React.FC<ContactUsPageBodyProps> = async ({
   lang,
 }) => {
-  const {
-    data: { mainbody },
-    error,
-  } = await query<GetContactUsPageQuery>({
+  const { data, error } = await query<GetContactUsPageQuery>({
     query: GetContactUsPageDocument,
     variables: {
       contactUsPageParagraphsId,
@@ -29,9 +26,11 @@ export const ContactUsPageBody: React.FC<ContactUsPageBodyProps> = async ({
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const { mainbody } = data;
 
   return (
     <div className={styles.contactUs}>

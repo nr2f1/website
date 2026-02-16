@@ -1,10 +1,18 @@
-import * as FooterGraphql from '@graphql/queries/footer/index.generated';
+import { useSuspenseQuery } from '@apollo/client/react';
 import { render, waitFor } from '@testing-library/react';
 import axe from '@tests/a11y/test-utils';
 import { describe, expect, it, vi } from 'vitest';
 import Footer from './markup';
 
 const locale = 'en';
+
+vi.mock('@apollo/client/react', async (importOriginal) => {
+  const actual = await importOriginal();
+  return {
+    ...actual,
+    useSuspenseQuery: vi.fn(),
+  };
+});
 
 vi.mock('next/navigation', async (importOriginal) => {
   const actual = await importOriginal();
@@ -141,13 +149,8 @@ const result = {
   },
 };
 
-const useGetFooterSuspenseQuerySpy = vi.spyOn(
-  FooterGraphql,
-  'useGetFooterSuspenseQuery',
-);
-
 describe('Header', () => {
-  useGetFooterSuspenseQuerySpy.mockImplementation(() => ({
+  vi.mocked(useSuspenseQuery).mockImplementation(() => ({
     ...result,
     // @ts-expect-error
     client: null,

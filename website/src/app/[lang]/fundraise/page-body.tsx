@@ -100,10 +100,7 @@ const CampaignIdea: React.FC<CampaignProps> = ({
 export const FundraisePageBody: React.FC<FundraisePageBodyProps> = async ({
   lang,
 }) => {
-  const {
-    data: { mainBody, campaignsHeading, campaigns },
-    error,
-  } = await query<GetFunraisePageQuery>({
+  const { data, error } = await query<GetFunraisePageQuery>({
     query: GetFunraisePageDocument,
     variables: {
       campaignsHeadingId,
@@ -112,9 +109,11 @@ export const FundraisePageBody: React.FC<FundraisePageBodyProps> = async ({
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const { mainBody, campaignsHeading, campaigns } = data;
 
   return (
     <div className={styles.fundraisePage}>

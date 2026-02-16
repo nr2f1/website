@@ -185,15 +185,6 @@ query GetHeader(
     }
   }
 
-  researchLink: link(locale: $locale, id: $researchLinkId) {
-    text {
-      content
-    }
-    target {
-      url
-    }
-  }
-
   getInvolvedInBbsoasLink: link(
     locale: $locale
     id: $getInvolvedInBbsoasLinkId

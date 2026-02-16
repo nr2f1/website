@@ -28,20 +28,7 @@ const { query } = getClient();
 const PatientCountPageBody: React.FC<ComponentPropsWithLocale> = async ({
   lang,
 }) => {
-  const {
-    data: {
-      patientCountIntroParagraph,
-      patientCountHeadingCount,
-      patientCountParagraph,
-      patientCountHeadingJoin,
-      patientCountParagraphJoin,
-      howToTakePartHeading,
-      howToTakePartParagraph,
-      registerPatientCta,
-      missionParagraph,
-    },
-    error,
-  } = await query<GetPatientCountPageQuery>({
+  const { data, error } = await query<GetPatientCountPageQuery>({
     query: GetPatientCountPageDocument,
     variables: {
       howToTakePartHeadingId,
@@ -57,9 +44,21 @@ const PatientCountPageBody: React.FC<ComponentPropsWithLocale> = async ({
     },
   });
 
-  if (error) {
+  if (error || !data) {
     return null;
   }
+
+  const {
+    patientCountIntroParagraph,
+    patientCountHeadingCount,
+    patientCountParagraph,
+    patientCountHeadingJoin,
+    patientCountParagraphJoin,
+    howToTakePartHeading,
+    howToTakePartParagraph,
+    registerPatientCta,
+    missionParagraph,
+  } = data;
 
   const headings = [
     patientCountHeadingCount?.content ?? '',

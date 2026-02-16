@@ -23,10 +23,7 @@ interface LatestNewsProps {
 const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
   const { query } = getClient();
 
-  const {
-    data: { title, cta, posts, newsletters, podcasts },
-    error,
-  } = await query<GetLatestNewsQuery>({
+  const { data, error } = await query<GetLatestNewsQuery>({
     query: GetLatestNewsDocument,
     variables: {
       latestNewsCtaId,
@@ -34,6 +31,12 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
       locale: lang,
     },
   });
+
+  if (error || !data) {
+    return null;
+  }
+
+  const { title, cta, posts, newsletters, podcasts } = data;
 
   if (
     !title ||
@@ -46,8 +49,7 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
     !podcasts ||
     !podcasts.items ||
     !podcasts.items.length ||
-    !cta ||
-    error
+    !cta
   ) {
     return null;
   }

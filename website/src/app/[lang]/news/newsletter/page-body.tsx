@@ -18,10 +18,7 @@ const { query } = getClient();
 const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
   const LIMIT = 12;
 
-  const {
-    data: { newsletterCollection },
-    error,
-  } = await query<GetNewslettersQuery>({
+  const { data, error } = await query<GetNewslettersQuery>({
     query: GetNewslettersDocument,
     variables: {
       limit: LIMIT,
@@ -30,10 +27,16 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
     },
   });
 
-  if (error || !newsletterCollection || !newsletterCollection.items) {
+  if (
+    error ||
+    !data ||
+    !data.newsletterCollection ||
+    !data.newsletterCollection.items
+  ) {
     return null;
   }
 
+  const { newsletterCollection } = data;
   const { items, total } = newsletterCollection;
 
   const newsletters = items

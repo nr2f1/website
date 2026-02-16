@@ -1,10 +1,15 @@
 'use client';
 
+import { useSuspenseQuery } from '@apollo/client/react';
 import Contentful from '@components/logos/contentful';
 import MainLogo from '@components/logos/main';
 import SignupForm from '@components/signup-form';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { useGetFooterSuspenseQuery } from '@graphql/queries/footer/index.generated';
+import {
+  GetFooterDocument,
+  type GetFooterQuery,
+  type GetFooterQueryVariables,
+} from '@graphql/queries/footer/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { stayInTouchId } from '@models/headings';
 import {
@@ -25,16 +30,19 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
   const {
     data,
     // TODO: Handle error
-  } = useGetFooterSuspenseQuery({
-    variables: {
-      contactUsId,
-      copyrightId,
-      locale: lang,
-      socialMediaTextId,
-      stayInTouchId,
-      warningId,
+  } = useSuspenseQuery<GetFooterQuery, GetFooterQueryVariables>(
+    GetFooterDocument,
+    {
+      variables: {
+        contactUsId,
+        copyrightId,
+        locale: lang,
+        socialMediaTextId,
+        stayInTouchId,
+        warningId,
+      },
     },
-  });
+  );
 
   if (!data) {
     return null;
