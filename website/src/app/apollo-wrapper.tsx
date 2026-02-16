@@ -1,29 +1,26 @@
-"use client";
+'use client';
 
+import { ApolloLink, HttpLink } from '@apollo/client';
 import {
-  ApolloLink,
-  HttpLink,
-} from "@apollo/client";
-import {
+  ApolloClient,
   ApolloNextAppProvider,
   InMemoryCache,
-  ApolloClient,
   SSRMultipartLink,
-} from "@apollo/client-integration-nextjs";
-import { Authorization, CONTENTUL_GRAPHQL_API } from "@config/utils";
+} from '@apollo/client-integration-nextjs';
+import { Authorization, CONTENTUL_GRAPHQL_API } from '@config/utils';
 
 function makeClient() {
   const httpLink = new HttpLink({
-    uri: CONTENTUL_GRAPHQL_API,
     headers: {
-        Authorization,
+      Authorization,
     },
+    uri: CONTENTUL_GRAPHQL_API,
   });
 
   return new ApolloClient({
     cache: new InMemoryCache(),
     link:
-      typeof window === "undefined"
+      typeof window === 'undefined'
         ? ApolloLink.from([
             new SSRMultipartLink({
               stripDefer: true,
