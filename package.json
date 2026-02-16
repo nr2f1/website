@@ -61,6 +61,7 @@
     "@vitest/ui": "^3.2.4",
     "axe-core": "^4.10.3",
     "babel-jest": "^29.7.0",
+    "baseline-browser-mapping": "^2.9.19",
     "jest": "^29.7.0",
     "jest-axe": "^9.0.0",
     "jest-environment-jsdom": "^29.7.0",
