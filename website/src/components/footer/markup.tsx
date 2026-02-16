@@ -1,8 +1,8 @@
 'use client';
 
+import { useSuspenseQuery } from '@apollo/client/react';
 import Contentful from '@components/logos/contentful';
 import MainLogo from '@components/logos/main';
-import { useSuspenseQuery } from '@apollo/client/react';
 import SignupForm from '@components/signup-form';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import {
@@ -33,15 +33,16 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
   } = useSuspenseQuery<GetFooterQuery, GetFooterQueryVariables>(
     GetFooterDocument,
     {
-    variables: {
-      contactUsId,
-      copyrightId,
-      locale: lang,
-      socialMediaTextId,
-      stayInTouchId,
-      warningId,
+      variables: {
+        contactUsId,
+        copyrightId,
+        locale: lang,
+        socialMediaTextId,
+        stayInTouchId,
+        warningId,
+      },
     },
-  });
+  );
 
   if (!data) {
     return null;

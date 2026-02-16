@@ -27,7 +27,12 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
     },
   });
 
-  if (error || !data || !data.podcastCollection || !data.podcastCollection.items) {
+  if (
+    error ||
+    !data ||
+    !data.podcastCollection ||
+    !data.podcastCollection.items
+  ) {
     return null;
   }
 

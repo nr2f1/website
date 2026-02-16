@@ -31,21 +31,22 @@ const { query } = getClient();
 const ResourcesAvailableToResearchersBody: React.FC<
   ResourcesAvailableToResearchersBodyProps
 > = async ({ lang }) => {
-  const { data, error } = await query<GetResourcesAvailableToResearchersPageQuery>({
-    query: GetResourcesAvailableToResearchersPageDocument,
-    variables: {
-      biorepositorySamplesHeadingId,
-      biorepositorySamplesParagraphsId,
-      grantsHeadingId,
-      grantsSamplesParagraphsId,
-      locale: lang,
-      miceModelsHeadingId,
-      miceModelsParagraphsId,
-      patientRegistryRecordsHeadingId,
-      patientRegistryRecordsParagraphsId,
-      resourcesAvailableintroParagraphsId,
-    },
-  });
+  const { data, error } =
+    await query<GetResourcesAvailableToResearchersPageQuery>({
+      query: GetResourcesAvailableToResearchersPageDocument,
+      variables: {
+        biorepositorySamplesHeadingId,
+        biorepositorySamplesParagraphsId,
+        grantsHeadingId,
+        grantsSamplesParagraphsId,
+        locale: lang,
+        miceModelsHeadingId,
+        miceModelsParagraphsId,
+        patientRegistryRecordsHeadingId,
+        patientRegistryRecordsParagraphsId,
+        resourcesAvailableintroParagraphsId,
+      },
+    });
 
   if (error || !data) {
     return null;

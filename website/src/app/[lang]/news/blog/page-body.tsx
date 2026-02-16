@@ -28,7 +28,12 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
     },
   });
 
-  if (error || !data || !data.blogPageCollection || !data.blogPageCollection.items) {
+  if (
+    error ||
+    !data ||
+    !data.blogPageCollection ||
+    !data.blogPageCollection.items
+  ) {
     return null;
   }
 
