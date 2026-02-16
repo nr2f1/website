@@ -1,6 +1,7 @@
 import { PreloadQuery } from '@graphql/client';
 import { GetConferenceBannerDocument } from '@graphql/queries/conference-banner/index.generated';
 import type { ComponentPropsWithLocale } from '@shared/types/page-with-locale-params';
+import { Suspense } from 'react';
 import ConferenceBannerMarkup from './markup';
 
 const ConferenceBanner: React.FC<ComponentPropsWithLocale> = ({ lang }) => {
@@ -12,7 +13,9 @@ const ConferenceBanner: React.FC<ComponentPropsWithLocale> = ({ lang }) => {
         locale: lang,
       }}
     >
-      <ConferenceBannerMarkup lang={lang} />
+      <Suspense fallback={null}>
+        <ConferenceBannerMarkup lang={lang} />
+      </Suspense>
     </PreloadQuery>
   );
 };
