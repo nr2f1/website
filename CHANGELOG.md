@@ -1,5 +1,25 @@
 # Changelog
 
+## [3.6.0](https://github.com/nr2f1/website/compare/v3.5.1...v3.6.0) (2026-02-17)
+
+
+### Features
+
+* upgrade Apollo Client to v4 ([9f41c67](https://github.com/nr2f1/website/commit/9f41c675170e922c0087fe4a6a3ce4618417e064))
+
+
+### Bug Fixes
+
+* apollo client query shortcut and scoping ([96b5656](https://github.com/nr2f1/website/commit/96b5656288aee1c39bcc183688b0c149fc8777f3))
+* apollo client query shortcut and scoping ([1c305e4](https://github.com/nr2f1/website/commit/1c305e47bb09c6d51f51dafc01f2a194f0e52a5b))
+* apollo client query warning and improve request-scoping ([a308040](https://github.com/nr2f1/website/commit/a3080406f39e02fb992fcbe96289372be28214cc))
+* apollo client query warning and improve request-scoping ([f958c69](https://github.com/nr2f1/website/commit/f958c694f1a737341eff96647858bc0e78dcb1f2))
+* apollo client query warning and improve request-scoping ([#400](https://github.com/nr2f1/website/issues/400)) ([45b338b](https://github.com/nr2f1/website/commit/45b338bf1caa3d4326bd6a86b659faae2de3f4ed))
+* build ([13c7dbb](https://github.com/nr2f1/website/commit/13c7dbb29d5212ec5789d4028812c1d8aa24a368))
+* build ([57b5482](https://github.com/nr2f1/website/commit/57b5482cba66822d5d1d8161b40ef025c1989628))
+* build ([#398](https://github.com/nr2f1/website/issues/398)) ([09eb4b7](https://github.com/nr2f1/website/commit/09eb4b78845dfd2b87b779922412ba2967bbdc78))
+* build ([#399](https://github.com/nr2f1/website/issues/399)) ([41c103f](https://github.com/nr2f1/website/commit/41c103f20fac3efa8abd573ccc0983652d7a74f7))
+
 ## [3.5.1](https://github.com/nr2f1/website/compare/v3.5.0...v3.5.1) (2026-02-01)
 
 
