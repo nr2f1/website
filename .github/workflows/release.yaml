@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - .github/workflows/release.yaml
-      - 'CHANGELOG.md'
+      - "CHANGELOG.md"
 
 permissions:
   contents: write
@@ -14,6 +14,8 @@ permissions:
 
 env:
   NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
+  NEXT_PUBLIC_CONTENTFUL_SPACE_ID: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_SPACE_ID }}
+  NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN }}
 
 jobs:
   e2e:
@@ -26,6 +28,9 @@ jobs:
           fetch-depth: 0
       - name: Set environment and install dependencies
         uses: ./.github/actions/prepare
+
+      - name: Generate GraphQL types
+        run: pnpm nx graphql-generate website
 
       - name: 🎭 Install Playwright
         run: pnpm exec playwright install
