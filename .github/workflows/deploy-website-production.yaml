@@ -5,14 +5,16 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: 'Select the tag to deploy to production'
+        description: "Select the tag to deploy to production"
         required: true
         type: string
-        default: 'latest'
+        default: "latest"
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  NEXT_PUBLIC_CONTENTFUL_SPACE_ID: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_SPACE_ID }}
+  NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN: ${{ secrets.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN }}
 
 jobs:
   deploy-to-production:
@@ -38,6 +40,9 @@ jobs:
 
       - name: Install Vercel CLI
         uses: ./.github/actions/install-vercel-cli
+
+      - name: Generate GraphQL types
+        run: pnpm nx graphql-generate website
 
       - name: Pull Vercel environment information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
