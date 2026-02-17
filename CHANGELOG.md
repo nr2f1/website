@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.6.1](https://github.com/nr2f1/website/compare/v3.6.0...v3.6.1) (2026-02-17)
+
+
+### Bug Fixes
+
+* release by generate types ([e2e50b4](https://github.com/nr2f1/website/commit/e2e50b45da1479984996785dd26d81284fa4a15e))
+* release by generate types ([#401](https://github.com/nr2f1/website/issues/401)) ([81fd736](https://github.com/nr2f1/website/commit/81fd7363865948e12f436023c2bceaffd26a2159))
+
 ## [3.6.0](https://github.com/nr2f1/website/compare/v3.5.1...v3.6.0) (2026-02-17)
 
 
