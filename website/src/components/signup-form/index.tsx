@@ -1,10 +1,8 @@
 'use client';
 
+import { Select } from '@base-ui/react/select';
 import Spinner from '@components/icons/spinner';
-import { Option } from '@mui/base/Option';
-import { Select } from '@mui/base/Select';
 import { createContact } from '@services/givebutter/create-contact';
-import type { MuiEvent } from '@shared/types/mui';
 import { useFormik } from 'formik';
 import { useEffect, useReducer } from 'react';
 import {
@@ -79,19 +77,13 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang, registerPatient }) => {
     validationSchema: getValidationSchema(lang),
   });
 
-  const handleSelectRoleOnChange = (
-    _event: MuiEvent,
-    newValue: string | null,
-  ) => {
+  const handleSelectRoleOnValueChange = (newValue: string | null) => {
     if (newValue) {
       setFieldValue('role', newValue);
     }
   };
 
-  const handleSelectCountryOnChange = (
-    _event: MuiEvent,
-    newValue: string | null,
-  ) => {
+  const handleSelectCountryOnValueChange = (newValue: string | null) => {
     if (newValue) {
       setFieldValue('country', newValue);
     }
@@ -207,42 +199,42 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang, registerPatient }) => {
               <div className={styles.form__col}>
                 <div className={styles.form__field}>
                   <label htmlFor="role">{content?.fields.role.label}</label>
-                  <Select
-                    className={
-                      roleError
-                        ? [styles.select, styles['select--error']].join(' ')
-                        : styles.select
-                    }
-                    id="role"
-                    onBlur={handleBlur}
-                    onChange={handleSelectRoleOnChange}
-                    slotProps={{
-                      listbox: {
-                        className: styles.listbox,
-                      },
-                      popup: {
-                        className: styles.popup,
-                        disablePortal: true,
-                      },
-                    }}
+                  <Select.Root
                     value={values.role}
-                    title={
-                      values.role.length > 0
-                        ? values.role
-                        : content?.fields.role.label
-                    }
+                    onValueChange={handleSelectRoleOnValueChange}
                   >
-                    {content?.roles.map(({ label, value }) => (
-                      <Option
-                        key={value}
-                        value={value}
-                        label={label}
-                        className={styles.option}
-                      >
-                        {label}
-                      </Option>
-                    ))}
-                  </Select>
+                    <Select.Trigger
+                      className={
+                        roleError
+                          ? [styles.select, styles['select--error']].join(' ')
+                          : styles.select
+                      }
+                      id="role"
+                      onBlur={handleBlur}
+                      title={
+                        values.role.length > 0
+                          ? values.role
+                          : content?.fields.role.label
+                      }
+                    >
+                      <Select.Value placeholder={content?.fields.role.label} />
+                    </Select.Trigger>
+                    <Select.Portal>
+                      <Select.Positioner className={styles.popup}>
+                        <Select.Popup className={styles.listbox}>
+                          {content?.roles.map(({ label, value }) => (
+                            <Select.Item
+                              key={value}
+                              value={value}
+                              className={styles.option}
+                            >
+                              <Select.ItemText>{label}</Select.ItemText>
+                            </Select.Item>
+                          ))}
+                        </Select.Popup>
+                      </Select.Positioner>
+                    </Select.Portal>
+                  </Select.Root>
                   {roleError && <ErrorMessage errorMessage={errors.role} />}
                 </div>
               </div>
@@ -293,38 +285,42 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang, registerPatient }) => {
                       <label htmlFor="country">
                         {content?.fields.country.label}
                       </label>
-                      <Select
-                        className={
-                          countryError
-                            ? [styles.select, styles['select--error']].join(' ')
-                            : styles.select
-                        }
-                        id="country"
-                        title={content?.fields.country.label}
-                        onBlur={handleBlur}
-                        onChange={handleSelectCountryOnChange}
-                        slotProps={{
-                          listbox: {
-                            className: styles.listbox,
-                          },
-                          popup: {
-                            className: styles.popup,
-                            disablePortal: true,
-                          },
-                        }}
+                      <Select.Root
                         value={values.country}
+                        onValueChange={handleSelectCountryOnValueChange}
                       >
-                        {content?.countries.map(({ label, value }) => (
-                          <Option
-                            key={value}
-                            value={value}
-                            label={label}
-                            className={styles.option}
-                          >
-                            {label}
-                          </Option>
-                        ))}
-                      </Select>
+                        <Select.Trigger
+                          className={
+                            countryError
+                              ? [styles.select, styles['select--error']].join(
+                                  ' ',
+                                )
+                              : styles.select
+                          }
+                          id="country"
+                          title={content?.fields.country.label}
+                          onBlur={handleBlur}
+                        >
+                          <Select.Value
+                            placeholder={content?.fields.country.label}
+                          />
+                        </Select.Trigger>
+                        <Select.Portal>
+                          <Select.Positioner className={styles.popup}>
+                            <Select.Popup className={styles.listbox}>
+                              {content?.countries.map(({ label, value }) => (
+                                <Select.Item
+                                  key={value}
+                                  value={value}
+                                  className={styles.option}
+                                >
+                                  <Select.ItemText>{label}</Select.ItemText>
+                                </Select.Item>
+                              ))}
+                            </Select.Popup>
+                          </Select.Positioner>
+                        </Select.Portal>
+                      </Select.Root>
                       {countryError && (
                         <ErrorMessage errorMessage={errors.country} />
                       )}

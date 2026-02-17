@@ -1,0 +1,552 @@
+
+> nx run website:dev
+
+> next dev
+
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+   [1m[38;2;173;127;168m▲ Next.js 16.0.7[39m[22m (Turbopack)
+   - Local:         http://localhost:3000
+   - Network:       http://192.168.0.2:3000
+   - Experiments (use with caution):
+     [1m✓[22m viewTransition
+
+ [32m[1m✓[22m[39m Starting...
+ [32m[1m✓[22m[39m Ready in 2.2s
+ [37m[1m○[22m[39m Compiling /[lang] ...
+ [31m[1m⨯[22m[39m Error [ServerError]: Response not successful: Received status code 401
+    at [3mignore-listed frames[23m {
+  response: Response {
+    status: [33m401[39m,
+    statusText: [32m'Unauthorized'[39m,
+    headers: Headers {
+      connection: [32m'keep-alive'[39m,
+      [32m'content-length'[39m: [32m'201'[39m,
+      [32m'content-type'[39m: [32m'application/json; charset=utf-8'[39m,
+      [32m'x-contentful-route'[39m: [32m'/spaces/:spaceId'[39m,
+      etag: [32m'"7203423905505836737"'[39m,
+      [32m'cache-control'[39m: [32m'max-age=0'[39m,
+      [32m'x-content-type-options'[39m: [32m'nosniff'[39m,
+      server: [32m'Contentful'[39m,
+      [32m'x-contentful-region'[39m: [32m'us-east-1'[39m,
+      [32m'contentful-api'[39m: [32m'gql'[39m,
+      [32m'access-control-allow-origin'[39m: [32m'*'[39m,
+      [32m'access-control-allow-headers'[39m: [32m'Accept,Accept-Language,Authorization,Cache-Control,Content-Length,Content-Range,Content-Type,DNT,Destination,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Http-Method-Override,X-Mx-ReqToken,X-Requested-With,X-Contentful-Version,X-Contentful-Content-Type,X-Contentful-Organization,X-Contentful-Skip-Transformation,X-Contentful-User-Agent,X-Contentful-Enable-Alpha-Feature,X-Contentful-Resource-Resolution'[39m,
+      [32m'access-control-expose-headers'[39m: [32m'Etag'[39m,
+      [32m'access-control-max-age'[39m: [32m'86400'[39m,
+      [32m'access-control-allow-methods'[39m: [32m'GET,POST,HEAD,OPTIONS'[39m,
+      via: [32m'1.1 varnish, 1.1 varnish'[39m,
+      [32m'accept-ranges'[39m: [32m'bytes'[39m,
+      age: [32m'0'[39m,
+      date: [32m'Tue, 17 Feb 2026 18:41:07 GMT'[39m,
+      [32m'x-served-by'[39m: [32m'cache-ewr-kewr1740034-EWR, cache-chi-klot8100098-CHI'[39m,
+      [32m'x-cache-hits'[39m: [32m'0, 0'[39m,
+      [32m'x-timer'[39m: [32m'S1771353667.029239,VS0,VE61'[39m,
+      [32m'strict-transport-security'[39m: [32m'max-age=15768000'[39m,
+      [32m'x-cache'[39m: [32m'MISS'[39m,
+      [32m'x-contentful-request-id'[39m: [32m'390f4481-d73b-450f-b5db-7302c188e870'[39m
+    },
+    body: [90mundefined[39m,
+    bodyUsed: [33mtrue[39m,
+    ok: [33mfalse[39m,
+    redirected: [33mfalse[39m,
+    type: [32m'basic'[39m,
+    url: [32m'https://graphql.contentful.com/content/v1/spaces/undefined'[39m
+  },
+  statusCode: [33m401[39m,
+  bodyText: [32m'{"errors":[{"message":"Authentication failed. The access token you provided is invalid","extensions":{"contentful":{"code":"ACCESS_TOKEN_INVALID","requestId":"390f4481-d73b-450f-b5db-7302c188e870"}}}]}'[39m,
+  digest: [32m'446020925'[39m
+}
+ [31m[1m⨯[22m[39m Error: Error from event stream. Redacted for security concerns.
+    at [3mignore-listed frames[23m {
+  digest: [32m'321042467'[39m
+}
+ [31m[1m⨯[22m[39m Error [ServerError]: Response not successful: Received status code 401
+    at [3mignore-listed frames[23m {
+  response: Response {
+    status: [33m401[39m,
+    statusText: [32m'Unauthorized'[39m,
+    headers: Headers {
+      connection: [32m'keep-alive'[39m,
+      [32m'content-length'[39m: [32m'201'[39m,
+      [32m'content-type'[39m: [32m'application/json; charset=utf-8'[39m,
+      [32m'x-contentful-route'[39m: [32m'/spaces/:spaceId'[39m,
+      etag: [32m'"7203423905505836737"'[39m,
+      [32m'cache-control'[39m: [32m'max-age=0'[39m,
+      [32m'x-content-type-options'[39m: [32m'nosniff'[39m,
+      server: [32m'Contentful'[39m,
+      [32m'x-contentful-region'[39m: [32m'us-east-1'[39m,
+      [32m'contentful-api'[39m: [32m'gql'[39m,
+      [32m'access-control-allow-origin'[39m: [32m'*'[39m,
+      [32m'access-control-allow-headers'[39m: [32m'Accept,Accept-Language,Authorization,Cache-Control,Content-Length,Content-Range,Content-Type,DNT,Destination,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Http-Method-Override,X-Mx-ReqToken,X-Requested-With,X-Contentful-Version,X-Contentful-Content-Type,X-Contentful-Organization,X-Contentful-Skip-Transformation,X-Contentful-User-Agent,X-Contentful-Enable-Alpha-Feature,X-Contentful-Resource-Resolution'[39m,
+      [32m'access-control-expose-headers'[39m: [32m'Etag'[39m,
+      [32m'access-control-max-age'[39m: [32m'86400'[39m,
+      [32m'access-control-allow-methods'[39m: [32m'GET,POST,HEAD,OPTIONS'[39m,
+      via: [32m'1.1 varnish, 1.1 varnish'[39m,
+      [32m'accept-ranges'[39m: [32m'bytes'[39m,
+      age: [32m'0'[39m,
+      date: [32m'Tue, 17 Feb 2026 18:41:07 GMT'[39m,
+      [32m'x-served-by'[39m: [32m'cache-ewr-kewr1740034-EWR, cache-chi-klot8100098-CHI'[39m,
+      [32m'x-cache-hits'[39m: [32m'0, 0'[39m,
+      [32m'x-timer'[39m: [32m'S1771353667.029239,VS0,VE61'[39m,
+      [32m'strict-transport-security'[39m: [32m'max-age=15768000'[39m,
+      [32m'x-cache'[39m: [32m'MISS'[39m,
+      [32m'x-contentful-request-id'[39m: [32m'390f4481-d73b-450f-b5db-7302c188e870'[39m
+    },
+    body: [90mundefined[39m,
+    bodyUsed: [33mtrue[39m,
+    ok: [33mfalse[39m,
+    redirected: [33mfalse[39m,
+    type: [32m'basic'[39m,
+    url: [32m'https://graphql.contentful.com/content/v1/spaces/undefined'[39m
+  },
+  statusCode: [33m401[39m,
+  bodyText: [32m'{"errors":[{"message":"Authentication failed. The access token you provided is invalid","extensions":{"contentful":{"code":"ACCESS_TOKEN_INVALID","requestId":"390f4481-d73b-450f-b5db-7302c188e870"}}}]}'[39m,
+  digest: [32m'446020925'[39m
+}
+ [31m[1m⨯[22m[39m Error: Error from event stream. Redacted for security concerns.
+    at [3mignore-listed frames[23m {
+  digest: [32m'3613296134'[39m
+}
+ [31m[1m⨯[22m[39m Error: Error from event stream. Redacted for security concerns.
+    at [3mignore-listed frames[23m {
+  digest: [32m'1396873066'[39m
+}
+ [31m[1m⨯[22m[39m Error: Error from event stream. Redacted for security concerns.
+    at [3mignore-listed frames[23m {
+  digest: [32m'2506833126'[39m
+}
+ GET /en [31m500[39m in 17.2s[2m (compile: 11.2s, proxy.ts: 201ms, render: 5.8s)[22m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 1330ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 1328ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 272ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 1326ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 280ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 1368ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 1521ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 54ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ [31m[1m⨯[22m[39m Error [ServerError]: Response not successful: Received status code 401
+    at [3mignore-listed frames[23m {
+  response: Response {
+    status: [33m401[39m,
+    statusText: [32m'Unauthorized'[39m,
+    headers: Headers {
+      connection: [32m'keep-alive'[39m,
+      [32m'content-length'[39m: [32m'201'[39m,
+      [32m'content-type'[39m: [32m'application/json; charset=utf-8'[39m,
+      [32m'x-contentful-route'[39m: [32m'/spaces/:spaceId'[39m,
+      etag: [32m'"7203423905505836737"'[39m,
+      [32m'cache-control'[39m: [32m'max-age=0'[39m,
+      [32m'x-content-type-options'[39m: [32m'nosniff'[39m,
+      server: [32m'Contentful'[39m,
+      [32m'x-contentful-region'[39m: [32m'us-east-1'[39m,
+      [32m'contentful-api'[39m: [32m'gql'[39m,
+      [32m'access-control-allow-origin'[39m: [32m'*'[39m,
+      [32m'access-control-allow-headers'[39m: [32m'Accept,Accept-Language,Authorization,Cache-Control,Content-Length,Content-Range,Content-Type,DNT,Destination,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Http-Method-Override,X-Mx-ReqToken,X-Requested-With,X-Contentful-Version,X-Contentful-Content-Type,X-Contentful-Organization,X-Contentful-Skip-Transformation,X-Contentful-User-Agent,X-Contentful-Enable-Alpha-Feature,X-Contentful-Resource-Resolution'[39m,
+      [32m'access-control-expose-headers'[39m: [32m'Etag'[39m,
+      [32m'access-control-max-age'[39m: [32m'86400'[39m,
+      [32m'access-control-allow-methods'[39m: [32m'GET,POST,HEAD,OPTIONS'[39m,
+      via: [32m'1.1 varnish, 1.1 varnish'[39m,
+      [32m'accept-ranges'[39m: [32m'bytes'[39m,
+      date: [32m'Tue, 17 Feb 2026 18:41:55 GMT'[39m,
+      age: [32m'48'[39m,
+      [32m'x-served-by'[39m: [32m'cache-ewr-kewr1740034-EWR, cache-chi-klot8100085-CHI'[39m,
+      [32m'x-cache-hits'[39m: [32m'0, 1'[39m,
+      [32m'x-timer'[39m: [32m'S1771353716.567100,VS0,VE2'[39m,
+      [32m'strict-transport-security'[39m: [32m'max-age=15768000'[39m,
+      [32m'x-cache'[39m: [32m'HIT'[39m,
+      [32m'x-contentful-request-id'[39m: [32m'4f91c8c5-4f6d-4a34-ba1f-33cec17350bb'[39m
+    },
+    body: [90mundefined[39m,
+    bodyUsed: [33mtrue[39m,
+    ok: [33mfalse[39m,
+    redirected: [33mfalse[39m,
+    type: [32m'basic'[39m,
+    url: [32m'https://graphql.contentful.com/content/v1/spaces/undefined'[39m
+  },
+  statusCode: [33m401[39m,
+  bodyText: [32m'{"errors":[{"message":"Authentication failed. The access token you provided is invalid","extensions":{"contentful":{"code":"ACCESS_TOKEN_INVALID","requestId":"390f4481-d73b-450f-b5db-7302c188e870"}}}]}'[39m,
+  digest: [32m'446020925'[39m
+}
+ [31m[1m⨯[22m[39m Error: Error from event stream. Redacted for security concerns.
+    at [3mignore-listed frames[23m {
+  digest: [32m'321042467'[39m
+}
+ [31m[1m⨯[22m[39m Error [ServerError]: Response not successful: Received status code 401
+    at [3mignore-listed frames[23m {
+  response: Response {
+    status: [33m401[39m,
+    statusText: [32m'Unauthorized'[39m,
+    headers: Headers {
+      connection: [32m'keep-alive'[39m,
+      [32m'content-length'[39m: [32m'201'[39m,
+      [32m'content-type'[39m: [32m'application/json; charset=utf-8'[39m,
+      [32m'x-contentful-route'[39m: [32m'/spaces/:spaceId'[39m,
+      etag: [32m'"7203423905505836737"'[39m,
+      [32m'cache-control'[39m: [32m'max-age=0'[39m,
+      [32m'x-content-type-options'[39m: [32m'nosniff'[39m,
+      server: [32m'Contentful'[39m,
+      [32m'x-contentful-region'[39m: [32m'us-east-1'[39m,
+      [32m'contentful-api'[39m: [32m'gql'[39m,
+      [32m'access-control-allow-origin'[39m: [32m'*'[39m,
+      [32m'access-control-allow-headers'[39m: [32m'Accept,Accept-Language,Authorization,Cache-Control,Content-Length,Content-Range,Content-Type,DNT,Destination,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Http-Method-Override,X-Mx-ReqToken,X-Requested-With,X-Contentful-Version,X-Contentful-Content-Type,X-Contentful-Organization,X-Contentful-Skip-Transformation,X-Contentful-User-Agent,X-Contentful-Enable-Alpha-Feature,X-Contentful-Resource-Resolution'[39m,
+      [32m'access-control-expose-headers'[39m: [32m'Etag'[39m,
+      [32m'access-control-max-age'[39m: [32m'86400'[39m,
+      [32m'access-control-allow-methods'[39m: [32m'GET,POST,HEAD,OPTIONS'[39m,
+      via: [32m'1.1 varnish, 1.1 varnish'[39m,
+      [32m'accept-ranges'[39m: [32m'bytes'[39m,
+      date: [32m'Tue, 17 Feb 2026 18:41:55 GMT'[39m,
+      age: [32m'48'[39m,
+      [32m'x-served-by'[39m: [32m'cache-ewr-kewr1740034-EWR, cache-chi-klot8100085-CHI'[39m,
+      [32m'x-cache-hits'[39m: [32m'0, 1'[39m,
+      [32m'x-timer'[39m: [32m'S1771353716.567100,VS0,VE2'[39m,
+      [32m'strict-transport-security'[39m: [32m'max-age=15768000'[39m,
+      [32m'x-cache'[39m: [32m'HIT'[39m,
+      [32m'x-contentful-request-id'[39m: [32m'4f91c8c5-4f6d-4a34-ba1f-33cec17350bb'[39m
+    },
+    body: [90mundefined[39m,
+    bodyUsed: [33mtrue[39m,
+    ok: [33mfalse[39m,
+    redirected: [33mfalse[39m,
+    type: [32m'basic'[39m,
+    url: [32m'https://graphql.contentful.com/content/v1/spaces/undefined'[39m
+  },
+  statusCode: [33m401[39m,
+  bodyText: [32m'{"errors":[{"message":"Authentication failed. The access token you provided is invalid","extensions":{"contentful":{"code":"ACCESS_TOKEN_INVALID","requestId":"390f4481-d73b-450f-b5db-7302c188e870"}}}]}'[39m,
+  digest: [32m'446020925'[39m
+}
+ [31m[1m⨯[22m[39m Error: Error from event stream. Redacted for security concerns.
+    at [3mignore-listed frames[23m {
+  digest: [32m'2506833126'[39m
+}
+ [31m[1m⨯[22m[39m Error: Error from event stream. Redacted for security concerns.
+    at [3mignore-listed frames[23m {
+  digest: [32m'3613296134'[39m
+}
+ [31m[1m⨯[22m[39m Error: Error from event stream. Redacted for security concerns.
+    at [3mignore-listed frames[23m {
+  digest: [32m'1396873066'[39m
+}
+ GET /en [31m500[39m in 687ms[2m (compile: 47ms, proxy.ts: 14ms, render: 626ms)[22m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 230ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 259ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 257ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 244ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 243ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 162ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 163ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 23ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ [31m[1m⨯[22m[39m Error [ServerError]: Response not successful: Received status code 401
+    at [3mignore-listed frames[23m {
+  response: Response {
+    status: [33m401[39m,
+    statusText: [32m'Unauthorized'[39m,
+    headers: Headers {
+      connection: [32m'keep-alive'[39m,
+      [32m'content-length'[39m: [32m'201'[39m,
+      [32m'content-type'[39m: [32m'application/json; charset=utf-8'[39m,
+      [32m'x-contentful-route'[39m: [32m'/spaces/:spaceId'[39m,
+      etag: [32m'"7203423905505836737"'[39m,
+      [32m'cache-control'[39m: [32m'max-age=0'[39m,
+      [32m'x-content-type-options'[39m: [32m'nosniff'[39m,
+      server: [32m'Contentful'[39m,
+      [32m'x-contentful-region'[39m: [32m'us-east-1'[39m,
+      [32m'contentful-api'[39m: [32m'gql'[39m,
+      [32m'access-control-allow-origin'[39m: [32m'*'[39m,
+      [32m'access-control-allow-headers'[39m: [32m'Accept,Accept-Language,Authorization,Cache-Control,Content-Length,Content-Range,Content-Type,DNT,Destination,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Http-Method-Override,X-Mx-ReqToken,X-Requested-With,X-Contentful-Version,X-Contentful-Content-Type,X-Contentful-Organization,X-Contentful-Skip-Transformation,X-Contentful-User-Agent,X-Contentful-Enable-Alpha-Feature,X-Contentful-Resource-Resolution'[39m,
+      [32m'access-control-expose-headers'[39m: [32m'Etag'[39m,
+      [32m'access-control-max-age'[39m: [32m'86400'[39m,
+      [32m'access-control-allow-methods'[39m: [32m'GET,POST,HEAD,OPTIONS'[39m,
+      via: [32m'1.1 varnish, 1.1 varnish'[39m,
+      [32m'accept-ranges'[39m: [32m'bytes'[39m,
+      date: [32m'Tue, 17 Feb 2026 18:42:06 GMT'[39m,
+      age: [32m'59'[39m,
+      [32m'x-served-by'[39m: [32m'cache-ewr-kewr1740034-EWR, cache-chi-klot8100121-CHI'[39m,
+      [32m'x-cache-hits'[39m: [32m'0, 1'[39m,
+      [32m'x-timer'[39m: [32m'S1771353726.133656,VS0,VE2'[39m,
+      [32m'strict-transport-security'[39m: [32m'max-age=15768000'[39m,
+      [32m'x-cache'[39m: [32m'HIT'[39m,
+      [32m'x-contentful-request-id'[39m: [32m'734a700b-4f91-47f5-9a66-d35f3a722d16'[39m
+    },
+    body: [90mundefined[39m,
+    bodyUsed: [33mtrue[39m,
+    ok: [33mfalse[39m,
+    redirected: [33mfalse[39m,
+    type: [32m'basic'[39m,
+    url: [32m'https://graphql.contentful.com/content/v1/spaces/undefined'[39m
+  },
+  statusCode: [33m401[39m,
+  bodyText: [32m'{"errors":[{"message":"Authentication failed. The access token you provided is invalid","extensions":{"contentful":{"code":"ACCESS_TOKEN_INVALID","requestId":"390f4481-d73b-450f-b5db-7302c188e870"}}}]}'[39m,
+  digest: [32m'446020925'[39m
+}
+ [31m[1m⨯[22m[39m Error [ServerError]: Response not successful: Received status code 401
+    at [3mignore-listed frames[23m {
+  response: Response {
+    status: [33m401[39m,
+    statusText: [32m'Unauthorized'[39m,
+    headers: Headers {
+      connection: [32m'keep-alive'[39m,
+      [32m'content-length'[39m: [32m'201'[39m,
+      [32m'content-type'[39m: [32m'application/json; charset=utf-8'[39m,
+      [32m'x-contentful-route'[39m: [32m'/spaces/:spaceId'[39m,
+      etag: [32m'"7203423905505836737"'[39m,
+      [32m'cache-control'[39m: [32m'max-age=0'[39m,
+      [32m'x-content-type-options'[39m: [32m'nosniff'[39m,
+      server: [32m'Contentful'[39m,
+      [32m'x-contentful-region'[39m: [32m'us-east-1'[39m,
+      [32m'contentful-api'[39m: [32m'gql'[39m,
+      [32m'access-control-allow-origin'[39m: [32m'*'[39m,
+      [32m'access-control-allow-headers'[39m: [32m'Accept,Accept-Language,Authorization,Cache-Control,Content-Length,Content-Range,Content-Type,DNT,Destination,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Http-Method-Override,X-Mx-ReqToken,X-Requested-With,X-Contentful-Version,X-Contentful-Content-Type,X-Contentful-Organization,X-Contentful-Skip-Transformation,X-Contentful-User-Agent,X-Contentful-Enable-Alpha-Feature,X-Contentful-Resource-Resolution'[39m,
+      [32m'access-control-expose-headers'[39m: [32m'Etag'[39m,
+      [32m'access-control-max-age'[39m: [32m'86400'[39m,
+      [32m'access-control-allow-methods'[39m: [32m'GET,POST,HEAD,OPTIONS'[39m,
+      via: [32m'1.1 varnish, 1.1 varnish'[39m,
+      [32m'accept-ranges'[39m: [32m'bytes'[39m,
+      date: [32m'Tue, 17 Feb 2026 18:42:06 GMT'[39m,
+      age: [32m'59'[39m,
+      [32m'x-served-by'[39m: [32m'cache-ewr-kewr1740034-EWR, cache-chi-klot8100121-CHI'[39m,
+      [32m'x-cache-hits'[39m: [32m'0, 1'[39m,
+      [32m'x-timer'[39m: [32m'S1771353726.133656,VS0,VE2'[39m,
+      [32m'strict-transport-security'[39m: [32m'max-age=15768000'[39m,
+      [32m'x-cache'[39m: [32m'HIT'[39m,
+      [32m'x-contentful-request-id'[39m: [32m'734a700b-4f91-47f5-9a66-d35f3a722d16'[39m
+    },
+    body: [90mundefined[39m,
+    bodyUsed: [33mtrue[39m,
+    ok: [33mfalse[39m,
+    redirected: [33mfalse[39m,
+    type: [32m'basic'[39m,
+    url: [32m'https://graphql.contentful.com/content/v1/spaces/undefined'[39m
+  },
+  statusCode: [33m401[39m,
+  bodyText: [32m'{"errors":[{"message":"Authentication failed. The access token you provided is invalid","extensions":{"contentful":{"code":"ACCESS_TOKEN_INVALID","requestId":"390f4481-d73b-450f-b5db-7302c188e870"}}}]}'[39m,
+  digest: [32m'446020925'[39m
+}
+ GET /en [31m500[39m in 593ms[2m (compile: 36ms, proxy.ts: 7ms, render: 550ms)[22m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 210ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 234ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 232ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 250ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 242ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 173ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 174ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 28ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ [31m[1m⨯[22m[39m Error [ServerError]: Response not successful: Received status code 401
+    at [3mignore-listed frames[23m {
+  response: Response {
+    status: [33m401[39m,
+    statusText: [32m'Unauthorized'[39m,
+    headers: Headers {
+      connection: [32m'keep-alive'[39m,
+      [32m'content-length'[39m: [32m'201'[39m,
+      [32m'content-type'[39m: [32m'application/json; charset=utf-8'[39m,
+      [32m'x-contentful-route'[39m: [32m'/spaces/:spaceId'[39m,
+      etag: [32m'"7203423905505836737"'[39m,
+      [32m'cache-control'[39m: [32m'max-age=0'[39m,
+      [32m'x-content-type-options'[39m: [32m'nosniff'[39m,
+      server: [32m'Contentful'[39m,
+      [32m'x-contentful-region'[39m: [32m'us-east-1'[39m,
+      [32m'contentful-api'[39m: [32m'gql'[39m,
+      [32m'access-control-allow-origin'[39m: [32m'*'[39m,
+      [32m'access-control-allow-headers'[39m: [32m'Accept,Accept-Language,Authorization,Cache-Control,Content-Length,Content-Range,Content-Type,DNT,Destination,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Http-Method-Override,X-Mx-ReqToken,X-Requested-With,X-Contentful-Version,X-Contentful-Content-Type,X-Contentful-Organization,X-Contentful-Skip-Transformation,X-Contentful-User-Agent,X-Contentful-Enable-Alpha-Feature,X-Contentful-Resource-Resolution'[39m,
+      [32m'access-control-expose-headers'[39m: [32m'Etag'[39m,
+      [32m'access-control-max-age'[39m: [32m'86400'[39m,
+      [32m'access-control-allow-methods'[39m: [32m'GET,POST,HEAD,OPTIONS'[39m,
+      via: [32m'1.1 varnish, 1.1 varnish'[39m,
+      [32m'accept-ranges'[39m: [32m'bytes'[39m,
+      date: [32m'Tue, 17 Feb 2026 18:42:16 GMT'[39m,
+      age: [32m'70'[39m,
+      [32m'x-served-by'[39m: [32m'cache-ewr-kewr1740034-EWR, cache-chi-klot8100117-CHI'[39m,
+      [32m'x-cache-hits'[39m: [32m'0, 1'[39m,
+      [32m'x-timer'[39m: [32m'S1771353737.623407,VS0,VE2'[39m,
+      [32m'strict-transport-security'[39m: [32m'max-age=15768000'[39m,
+      [32m'x-cache'[39m: [32m'HIT'[39m,
+      [32m'x-contentful-request-id'[39m: [32m'c0748214-b8eb-42d0-8d41-ce3260d7ad97'[39m
+    },
+    body: [90mundefined[39m,
+    bodyUsed: [33mtrue[39m,
+    ok: [33mfalse[39m,
+    redirected: [33mfalse[39m,
+    type: [32m'basic'[39m,
+    url: [32m'https://graphql.contentful.com/content/v1/spaces/undefined'[39m
+  },
+  statusCode: [33m401[39m,
+  bodyText: [32m'{"errors":[{"message":"Authentication failed. The access token you provided is invalid","extensions":{"contentful":{"code":"ACCESS_TOKEN_INVALID","requestId":"390f4481-d73b-450f-b5db-7302c188e870"}}}]}'[39m,
+  digest: [32m'446020925'[39m
+}
+ [31m[1m⨯[22m[39m Error [ServerError]: Response not successful: Received status code 401
+    at [3mignore-listed frames[23m {
+  response: Response {
+    status: [33m401[39m,
+    statusText: [32m'Unauthorized'[39m,
+    headers: Headers {
+      connection: [32m'keep-alive'[39m,
+      [32m'content-length'[39m: [32m'201'[39m,
+      [32m'content-type'[39m: [32m'application/json; charset=utf-8'[39m,
+      [32m'x-contentful-route'[39m: [32m'/spaces/:spaceId'[39m,
+      etag: [32m'"7203423905505836737"'[39m,
+      [32m'cache-control'[39m: [32m'max-age=0'[39m,
+      [32m'x-content-type-options'[39m: [32m'nosniff'[39m,
+      server: [32m'Contentful'[39m,
+      [32m'x-contentful-region'[39m: [32m'us-east-1'[39m,
+      [32m'contentful-api'[39m: [32m'gql'[39m,
+      [32m'access-control-allow-origin'[39m: [32m'*'[39m,
+      [32m'access-control-allow-headers'[39m: [32m'Accept,Accept-Language,Authorization,Cache-Control,Content-Length,Content-Range,Content-Type,DNT,Destination,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Http-Method-Override,X-Mx-ReqToken,X-Requested-With,X-Contentful-Version,X-Contentful-Content-Type,X-Contentful-Organization,X-Contentful-Skip-Transformation,X-Contentful-User-Agent,X-Contentful-Enable-Alpha-Feature,X-Contentful-Resource-Resolution'[39m,
+      [32m'access-control-expose-headers'[39m: [32m'Etag'[39m,
+      [32m'access-control-max-age'[39m: [32m'86400'[39m,
+      [32m'access-control-allow-methods'[39m: [32m'GET,POST,HEAD,OPTIONS'[39m,
+      via: [32m'1.1 varnish, 1.1 varnish'[39m,
+      [32m'accept-ranges'[39m: [32m'bytes'[39m,
+      date: [32m'Tue, 17 Feb 2026 18:42:16 GMT'[39m,
+      age: [32m'70'[39m,
+      [32m'x-served-by'[39m: [32m'cache-ewr-kewr1740034-EWR, cache-chi-klot8100117-CHI'[39m,
+      [32m'x-cache-hits'[39m: [32m'0, 1'[39m,
+      [32m'x-timer'[39m: [32m'S1771353737.623407,VS0,VE2'[39m,
+      [32m'strict-transport-security'[39m: [32m'max-age=15768000'[39m,
+      [32m'x-cache'[39m: [32m'HIT'[39m,
+      [32m'x-contentful-request-id'[39m: [32m'c0748214-b8eb-42d0-8d41-ce3260d7ad97'[39m
+    },
+    body: [90mundefined[39m,
+    bodyUsed: [33mtrue[39m,
+    ok: [33mfalse[39m,
+    redirected: [33mfalse[39m,
+    type: [32m'basic'[39m,
+    url: [32m'https://graphql.contentful.com/content/v1/spaces/undefined'[39m
+  },
+  statusCode: [33m401[39m,
+  bodyText: [32m'{"errors":[{"message":"Authentication failed. The access token you provided is invalid","extensions":{"contentful":{"code":"ACCESS_TOKEN_INVALID","requestId":"390f4481-d73b-450f-b5db-7302c188e870"}}}]}'[39m,
+  digest: [32m'446020925'[39m
+}
+ GET /en [31m500[39m in 10.6s[2m (compile: 33ms, proxy.ts: 5ms, render: 10.6s)[22m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 185ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 197ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 206ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 201ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 30ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ [31m[1m⨯[22m[39m Error [ServerError]: Response not successful: Received status code 401
+    at [3mignore-listed frames[23m {
+  response: Response {
+    status: [33m401[39m,
+    statusText: [32m'Unauthorized'[39m,
+    headers: Headers {
+      connection: [32m'keep-alive'[39m,
+      [32m'content-length'[39m: [32m'201'[39m,
+      [32m'content-type'[39m: [32m'application/json; charset=utf-8'[39m,
+      [32m'x-contentful-route'[39m: [32m'/spaces/:spaceId'[39m,
+      etag: [32m'"7203423905505836737"'[39m,
+      [32m'cache-control'[39m: [32m'max-age=0'[39m,
+      [32m'x-content-type-options'[39m: [32m'nosniff'[39m,
+      server: [32m'Contentful'[39m,
+      [32m'x-contentful-region'[39m: [32m'us-east-1'[39m,
+      [32m'contentful-api'[39m: [32m'gql'[39m,
+      [32m'access-control-allow-origin'[39m: [32m'*'[39m,
+      [32m'access-control-allow-headers'[39m: [32m'Accept,Accept-Language,Authorization,Cache-Control,Content-Length,Content-Range,Content-Type,DNT,Destination,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Http-Method-Override,X-Mx-ReqToken,X-Requested-With,X-Contentful-Version,X-Contentful-Content-Type,X-Contentful-Organization,X-Contentful-Skip-Transformation,X-Contentful-User-Agent,X-Contentful-Enable-Alpha-Feature,X-Contentful-Resource-Resolution'[39m,
+      [32m'access-control-expose-headers'[39m: [32m'Etag'[39m,
+      [32m'access-control-max-age'[39m: [32m'86400'[39m,
+      [32m'access-control-allow-methods'[39m: [32m'GET,POST,HEAD,OPTIONS'[39m,
+      via: [32m'1.1 varnish, 1.1 varnish'[39m,
+      [32m'accept-ranges'[39m: [32m'bytes'[39m,
+      date: [32m'Tue, 17 Feb 2026 18:42:45 GMT'[39m,
+      age: [32m'99'[39m,
+      [32m'x-served-by'[39m: [32m'cache-ewr-kewr1740034-EWR, cache-chi-klot8100122-CHI'[39m,
+      [32m'x-cache-hits'[39m: [32m'0, 1'[39m,
+      [32m'x-timer'[39m: [32m'S1771353766.748196,VS0,VE3'[39m,
+      [32m'strict-transport-security'[39m: [32m'max-age=15768000'[39m,
+      [32m'x-cache'[39m: [32m'HIT'[39m,
+      [32m'x-contentful-request-id'[39m: [32m'3c8605e4-70a4-4351-8448-98dcec5ef658'[39m
+    },
+    body: [90mundefined[39m,
+    bodyUsed: [33mtrue[39m,
+    ok: [33mfalse[39m,
+    redirected: [33mfalse[39m,
+    type: [32m'basic'[39m,
+    url: [32m'https://graphql.contentful.com/content/v1/spaces/undefined'[39m
+  },
+  statusCode: [33m401[39m,
+  bodyText: [32m'{"errors":[{"message":"Authentication failed. The access token you provided is invalid","extensions":{"contentful":{"code":"ACCESS_TOKEN_INVALID","requestId":"390f4481-d73b-450f-b5db-7302c188e870"}}}]}'[39m,
+  digest: [32m'446020925'[39m
+}
+ [31m[1m⨯[22m[39m Error [ServerError]: Response not successful: Received status code 401
+    at [3mignore-listed frames[23m {
+  response: Response {
+    status: [33m401[39m,
+    statusText: [32m'Unauthorized'[39m,
+    headers: Headers {
+      connection: [32m'keep-alive'[39m,
+      [32m'content-length'[39m: [32m'201'[39m,
+      [32m'content-type'[39m: [32m'application/json; charset=utf-8'[39m,
+      [32m'x-contentful-route'[39m: [32m'/spaces/:spaceId'[39m,
+      etag: [32m'"7203423905505836737"'[39m,
+      [32m'cache-control'[39m: [32m'max-age=0'[39m,
+      [32m'x-content-type-options'[39m: [32m'nosniff'[39m,
+      server: [32m'Contentful'[39m,
+      [32m'x-contentful-region'[39m: [32m'us-east-1'[39m,
+      [32m'contentful-api'[39m: [32m'gql'[39m,
+      [32m'access-control-allow-origin'[39m: [32m'*'[39m,
+      [32m'access-control-allow-headers'[39m: [32m'Accept,Accept-Language,Authorization,Cache-Control,Content-Length,Content-Range,Content-Type,DNT,Destination,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Http-Method-Override,X-Mx-ReqToken,X-Requested-With,X-Contentful-Version,X-Contentful-Content-Type,X-Contentful-Organization,X-Contentful-Skip-Transformation,X-Contentful-User-Agent,X-Contentful-Enable-Alpha-Feature,X-Contentful-Resource-Resolution'[39m,
+      [32m'access-control-expose-headers'[39m: [32m'Etag'[39m,
+      [32m'access-control-max-age'[39m: [32m'86400'[39m,
+      [32m'access-control-allow-methods'[39m: [32m'GET,POST,HEAD,OPTIONS'[39m,
+      via: [32m'1.1 varnish, 1.1 varnish'[39m,
+      [32m'accept-ranges'[39m: [32m'bytes'[39m,
+      date: [32m'Tue, 17 Feb 2026 18:42:45 GMT'[39m,
+      age: [32m'99'[39m,
+      [32m'x-served-by'[39m: [32m'cache-ewr-kewr1740034-EWR, cache-chi-klot8100122-CHI'[39m,
+      [32m'x-cache-hits'[39m: [32m'0, 1'[39m,
+      [32m'x-timer'[39m: [32m'S1771353766.748196,VS0,VE3'[39m,
+      [32m'strict-transport-security'[39m: [32m'max-age=15768000'[39m,
+      [32m'x-cache'[39m: [32m'HIT'[39m,
+      [32m'x-contentful-request-id'[39m: [32m'3c8605e4-70a4-4351-8448-98dcec5ef658'[39m
+    },
+    body: [90mundefined[39m,
+    bodyUsed: [33mtrue[39m,
+    ok: [33mfalse[39m,
+    redirected: [33mfalse[39m,
+    type: [32m'basic'[39m,
+    url: [32m'https://graphql.contentful.com/content/v1/spaces/undefined'[39m
+  },
+  statusCode: [33m401[39m,
+  bodyText: [32m'{"errors":[{"message":"Authentication failed. The access token you provided is invalid","extensions":{"contentful":{"code":"ACCESS_TOKEN_INVALID","requestId":"390f4481-d73b-450f-b5db-7302c188e870"}}}]}'[39m,
+  digest: [32m'446020925'[39m
+}
+ GET /en [31m500[39m in 10.6s[2m (compile: 35ms, proxy.ts: 6ms, render: 10.6s)[22m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 248ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 256ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 255ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 256ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 109ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
+ │ [37mPOST https://graphql.contentful.com/content/v1/spaces/undefined 401 in 31ms [33m(cache skip)[37m[39m
+ │ │ [90mCache skipped reason: ([37mauto no cache[90m)[39m
