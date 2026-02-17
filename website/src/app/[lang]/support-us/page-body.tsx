@@ -8,7 +8,6 @@ import type { AvailableLocale } from '@i18n/locales';
 import { supportUsPageParagraphsId } from '@models/paragraphs';
 import styles from './index.module.scss';
 
-
 interface SupportUsPageBodyProps {
   lang: AvailableLocale;
 }

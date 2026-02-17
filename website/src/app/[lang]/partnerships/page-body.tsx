@@ -35,7 +35,6 @@ interface PartnershipsBodyProps {
   lang: AvailableLocale;
 }
 
-
 const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
   const { query } = getClient();
   const { data, error } = await query<GetPartnershipsPageQuery>({

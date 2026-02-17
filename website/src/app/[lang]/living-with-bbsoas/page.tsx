@@ -14,7 +14,6 @@ import LivingWithBbsoasHeader from './page-header';
 import LivingWithBbsoasUpperBody from './page-upper-body';
 import SupportGroupBanner from './support-group-banner';
 
-
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { query } = getClient();
   const { lang } = await params;

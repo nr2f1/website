@@ -23,7 +23,6 @@ interface LivingWithBbsoasBottomBodyProps {
   lang: AvailableLocale;
 }
 
-
 const LivingWithBbsoasBottomBody: React.FC<
   LivingWithBbsoasBottomBodyProps
 > = async ({ lang }) => {

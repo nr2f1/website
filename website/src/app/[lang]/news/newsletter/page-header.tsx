@@ -11,7 +11,6 @@ interface NewsPageHeaderProps {
   lang: AvailableLocale;
 }
 
-
 const NewsletterPageHeader: React.FC<NewsPageHeaderProps> = async ({
   lang,
 }) => {

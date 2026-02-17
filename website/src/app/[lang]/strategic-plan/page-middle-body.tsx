@@ -14,7 +14,6 @@ import {
 import { createHashLink } from '@shared/utils/hash-links';
 import progressStyles from './index.module.scss';
 
-
 interface StrategicPlanMiddleBodyProps {
   lang: AvailableLocale;
 }

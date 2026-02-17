@@ -22,7 +22,6 @@ interface RegisterPageBodyProps {
   lang: AvailableLocale;
 }
 
-
 interface CleanedPublication {
   __typename: 'Publication';
   title: string;

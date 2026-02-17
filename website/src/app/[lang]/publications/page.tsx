@@ -12,7 +12,6 @@ import type { Graph, WebPage, WithContext } from 'schema-dts';
 import RegisterPageBody from './page-body';
 import PublicationsPageHeader from './page-header';
 
-
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { query } = getClient();
   const { lang } = await params;

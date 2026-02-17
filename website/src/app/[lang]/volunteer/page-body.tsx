@@ -8,7 +8,6 @@ import type { AvailableLocale } from '@i18n/locales';
 import { volunteerParagraphsId } from '@models/paragraphs';
 import styles from './index.module.scss';
 
-
 interface VolunteerBodyProps {
   lang: AvailableLocale;
 }

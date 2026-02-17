@@ -15,7 +15,6 @@ import StrategicPlanUpperBody from './page-upper-body';
 import ResearchBanner from './research-banner';
 import VolunteerWithUsBanner from './volunteer-with-us-banner';
 
-
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { query } = getClient();
   const { lang } = await params;

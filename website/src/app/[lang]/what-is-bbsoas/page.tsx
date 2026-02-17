@@ -12,7 +12,6 @@ import type { WebPage, WithContext } from 'schema-dts';
 import WhatIsBbsoasBody from './page-body';
 import WhatIsBbsoas from './page-header';
 
-
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { query } = getClient();
   const { lang } = await params;

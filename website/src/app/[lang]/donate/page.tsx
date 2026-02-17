@@ -15,7 +15,6 @@ import type { WebPage, WithContext } from 'schema-dts';
 import DonatePageBody from './page-body';
 import DonateHeader from './page-header';
 
-
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { query } = getClient();
   const { lang } = await params;

@@ -27,7 +27,6 @@ import { createHashLink } from '@shared/utils/hash-links';
 import { type Links, renderOptions } from '@shared/utils/rich-text';
 import styles from './index.module.scss';
 
-
 const ConferencePageBody: React.FC<ComponentPropsWithLocale> = async ({
   lang,
 }) => {

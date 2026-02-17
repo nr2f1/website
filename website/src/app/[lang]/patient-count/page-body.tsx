@@ -23,7 +23,6 @@ import { createHashLink } from '@shared/utils/hash-links';
 import Link from 'next/link';
 import styles from './index.module.scss';
 
-
 const PatientCountPageBody: React.FC<ComponentPropsWithLocale> = async ({
   lang,
 }) => {

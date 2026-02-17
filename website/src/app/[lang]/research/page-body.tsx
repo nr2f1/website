@@ -24,7 +24,6 @@ interface ResearchPageBodyProps {
   lang: AvailableLocale;
 }
 
-
 const ResearchPageBody: React.FC<ResearchPageBodyProps> = async ({ lang }) => {
   const { query } = getClient();
   const { data, error } = await query<GetResearchPageQuery>({

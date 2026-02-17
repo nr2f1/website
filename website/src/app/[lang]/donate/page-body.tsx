@@ -9,7 +9,6 @@ import type { AvailableLocale } from '@i18n/locales';
 import { donatePageParagraphsId } from '@models/paragraphs';
 import styles from './index.module.scss';
 
-
 interface DonatePageBodyProps {
   lang: AvailableLocale;
 }

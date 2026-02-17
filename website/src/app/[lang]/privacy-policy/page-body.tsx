@@ -8,7 +8,6 @@ import type { AvailableLocale } from '@i18n/locales';
 import { privacyPolicyPageParagraphsId } from '@models/paragraphs';
 import styles from './index.module.scss';
 
-
 interface PrivacyPolicyPageBodyProps {
   lang: AvailableLocale;
 }

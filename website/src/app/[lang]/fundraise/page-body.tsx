@@ -13,7 +13,6 @@ import { createBlogImageProps } from '@shared/utils/image-optimisation';
 import Link from 'next/link';
 import styles from './index.module.scss';
 
-
 interface FundraisePageBodyProps {
   lang: AvailableLocale;
 }

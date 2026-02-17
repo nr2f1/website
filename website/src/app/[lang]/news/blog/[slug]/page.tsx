@@ -20,7 +20,6 @@ import type {
 import type { Blog, WithContext } from 'schema-dts';
 import styles from './index.module.scss';
 
-
 export async function generateMetadata({
   params,
 }: NewsPagePropsWithLocale): Promise<Metadata> {

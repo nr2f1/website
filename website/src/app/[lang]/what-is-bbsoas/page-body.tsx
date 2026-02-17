@@ -54,7 +54,6 @@ interface RegisterPageBodyProps {
   lang: AvailableLocale;
 }
 
-
 const WhatIsBbsoasBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
   const { query } = getClient();
   const { data, error } = await query<GetWhatIsBbsoasPageQuery>({

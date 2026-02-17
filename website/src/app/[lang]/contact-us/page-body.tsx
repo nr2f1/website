@@ -9,7 +9,6 @@ import type { AvailableLocale } from '@i18n/locales';
 import { contactUsPageParagraphsId } from '@models/paragraphs';
 import styles from './index.module.scss';
 
-
 interface ContactUsPageBodyProps {
   lang: AvailableLocale;
 }

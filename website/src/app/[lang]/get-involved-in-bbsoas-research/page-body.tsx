@@ -34,7 +34,6 @@ interface GetInvolvedInBbsoasResearchPageProps {
   lang: AvailableLocale;
 }
 
-
 const GetInvolvedInBbsoasResearchBody: React.FC<
   GetInvolvedInBbsoasResearchPageProps
 > = async ({ lang }) => {

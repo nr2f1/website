@@ -13,7 +13,6 @@ import type { WebPage, WithContext } from 'schema-dts';
 import FundraisePageBody from './page-body';
 import FundraiseHeader from './page-header';
 
-
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { query } = getClient();
   const { lang } = await params;

@@ -8,7 +8,6 @@ import type { AvailableLocale } from '@i18n/locales';
 import { ourFinancialsPageParagraphsId } from '@models/paragraphs';
 import styles from './index.module.scss';
 
-
 interface OurFinancialsPageBodyProps {
   lang: AvailableLocale;
 }

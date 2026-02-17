@@ -12,7 +12,6 @@ import type { WebPage, WithContext } from 'schema-dts';
 import PartnershipsBody from './page-body';
 import PartnershipsHeader from './page-header';
 
-
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { query } = getClient();
   const { lang } = await params;

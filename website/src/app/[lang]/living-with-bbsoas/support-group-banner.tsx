@@ -12,7 +12,6 @@ interface SupportGroupBannerProps {
   lang: AvailableLocale;
 }
 
-
 const SupportGroupBanner: React.FC<SupportGroupBannerProps> = async ({
   lang,
 }) => {

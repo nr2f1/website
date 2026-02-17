@@ -29,7 +29,6 @@ interface RegisterPageBodyProps {
   lang: AvailableLocale;
 }
 
-
 const StrategicPlanUpperBody: React.FC<RegisterPageBodyProps> = async ({
   lang,
 }) => {

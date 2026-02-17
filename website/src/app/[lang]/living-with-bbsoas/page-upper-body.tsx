@@ -28,7 +28,6 @@ interface RegisterPageBodyProps {
   lang: AvailableLocale;
 }
 
-
 const LivingWithBbsoasUpperBody: React.FC<RegisterPageBodyProps> = async ({
   lang,
 }) => {

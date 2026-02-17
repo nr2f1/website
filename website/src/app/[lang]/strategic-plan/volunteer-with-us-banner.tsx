@@ -12,7 +12,6 @@ interface VolunteerWithUsBannerProps {
   lang: AvailableLocale;
 }
 
-
 const VolunteerWithUsBanner: React.FC<VolunteerWithUsBannerProps> = async ({
   lang,
 }) => {

@@ -36,7 +36,6 @@ import type { Metadata, NextPage } from 'next';
 import type { WebPage, WithContext } from 'schema-dts';
 import SupportGroupsHeader from './page-header';
 
-
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { query } = getClient();
   const { lang } = await params;

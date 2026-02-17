@@ -13,7 +13,6 @@ import type { WebPage, WithContext } from 'schema-dts';
 import VolunteerBody from './page-body';
 import VolunteerHeader from './page-header';
 
-
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { query } = getClient();
   const { lang } = await params;

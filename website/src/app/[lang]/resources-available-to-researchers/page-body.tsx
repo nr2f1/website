@@ -26,7 +26,6 @@ interface ResourcesAvailableToResearchersBodyProps {
   lang: AvailableLocale;
 }
 
-
 const ResourcesAvailableToResearchersBody: React.FC<
   ResourcesAvailableToResearchersBodyProps
 > = async ({ lang }) => {

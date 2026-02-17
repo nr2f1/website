@@ -22,7 +22,6 @@ import { createHashLink } from '@shared/utils/hash-links';
 import type { NGO, WithContext } from 'schema-dts';
 import styles from './index.module.scss';
 
-
 export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
   lang,
 }) => {

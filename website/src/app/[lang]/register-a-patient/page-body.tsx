@@ -37,7 +37,6 @@ interface RegisterPageBodyProps {
   lang: AvailableLocale;
 }
 
-
 const alreadyRegister: LocalisedString = {
   de: 'Bereits registriert?',
   en: 'Already registered?',

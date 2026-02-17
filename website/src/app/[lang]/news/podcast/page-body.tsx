@@ -13,7 +13,6 @@ import {
 import type { CollectionPage, WithContext } from 'schema-dts';
 import styles from '../page-body.module.scss';
 
-
 const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
   const { query } = getClient();
   const LIMIT = 12;
