@@ -12,9 +12,9 @@ interface StoreBannerProps {
   lang: AvailableLocale;
 }
 
-const { query } = getClient();
 
 const StoreBanner: React.FC<StoreBannerProps> = async ({ lang }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetBannerQuery>({
     query: GetBannerDocument,
     variables: {

@@ -9,7 +9,6 @@ import type { AvailableLocale } from '@i18n/locales';
 import { donatePageParagraphsId } from '@models/paragraphs';
 import styles from './index.module.scss';
 
-const { query } = getClient();
 
 interface DonatePageBodyProps {
   lang: AvailableLocale;
@@ -18,6 +17,7 @@ interface DonatePageBodyProps {
 export const DonatePageBody: React.FC<DonatePageBodyProps> = async ({
   lang,
 }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetDonatePageQuery>({
     query: GetDonatePageDocument,
     variables: {

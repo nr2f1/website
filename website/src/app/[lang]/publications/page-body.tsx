@@ -22,7 +22,6 @@ interface RegisterPageBodyProps {
   lang: AvailableLocale;
 }
 
-const { query } = getClient();
 
 interface CleanedPublication {
   __typename: 'Publication';
@@ -122,6 +121,7 @@ const PublicationsByYear: React.FC<PublicationsByYearProps> = ({
 };
 
 const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetPublicationsPageQuery>({
     query: GetPublicationsPageDocument,
     variables: {

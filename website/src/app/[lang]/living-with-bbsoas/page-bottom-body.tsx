@@ -23,11 +23,11 @@ interface LivingWithBbsoasBottomBodyProps {
   lang: AvailableLocale;
 }
 
-const { query } = getClient();
 
 const LivingWithBbsoasBottomBody: React.FC<
   LivingWithBbsoasBottomBodyProps
 > = async ({ lang }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetLivingWithBbsoasBottomPageQuery>({
     query: GetLivingWithBbsoasBottomPageDocument,
     variables: {

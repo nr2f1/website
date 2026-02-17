@@ -27,11 +27,11 @@ import { createHashLink } from '@shared/utils/hash-links';
 import { type Links, renderOptions } from '@shared/utils/rich-text';
 import styles from './index.module.scss';
 
-const { query } = getClient();
 
 const ConferencePageBody: React.FC<ComponentPropsWithLocale> = async ({
   lang,
 }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetConferencePageQuery>({
     query: GetConferencePageDocument,
     variables: {

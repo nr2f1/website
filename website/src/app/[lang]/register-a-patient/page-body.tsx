@@ -37,7 +37,6 @@ interface RegisterPageBodyProps {
   lang: AvailableLocale;
 }
 
-const { query } = getClient();
 
 const alreadyRegister: LocalisedString = {
   de: 'Bereits registriert?',
@@ -50,6 +49,7 @@ const alreadyRegister: LocalisedString = {
 };
 
 const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetRegisterPatientPageQuery>({
     query: GetRegisterPatientPageDocument,
     variables: {

@@ -1,4 +1,4 @@
-import { query } from '@graphql/client';
+import { getClient } from '@graphql/client';
 import {
   GetAllBlogPostsForRssDocument,
   type GetAllBlogPostsForRssQuery,
@@ -28,6 +28,8 @@ export async function GET(
   const validLang = lang as AvailableLocale;
 
   const currentDate = new Date().toUTCString();
+
+  const { query } = getClient();
 
   const { data } = await query<GetAllBlogPostsForRssQuery>({
     query: GetAllBlogPostsForRssDocument,

@@ -29,11 +29,11 @@ interface RegisterPageBodyProps {
   lang: AvailableLocale;
 }
 
-const { query } = getClient();
 
 const StrategicPlanUpperBody: React.FC<RegisterPageBodyProps> = async ({
   lang,
 }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetStrategicPlanUpperPageQuery>({
     query: GetStrategicPlanUpperPageDocument,
     variables: {

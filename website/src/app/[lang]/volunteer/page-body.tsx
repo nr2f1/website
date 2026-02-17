@@ -8,13 +8,13 @@ import type { AvailableLocale } from '@i18n/locales';
 import { volunteerParagraphsId } from '@models/paragraphs';
 import styles from './index.module.scss';
 
-const { query } = getClient();
 
 interface VolunteerBodyProps {
   lang: AvailableLocale;
 }
 
 export const VolunteerBody: React.FC<VolunteerBodyProps> = async ({ lang }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetVolunteerPageQuery>({
     query: GetVolunteerPageDocument,
     variables: {

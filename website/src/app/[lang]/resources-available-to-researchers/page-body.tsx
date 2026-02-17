@@ -26,11 +26,11 @@ interface ResourcesAvailableToResearchersBodyProps {
   lang: AvailableLocale;
 }
 
-const { query } = getClient();
 
 const ResourcesAvailableToResearchersBody: React.FC<
   ResourcesAvailableToResearchersBodyProps
 > = async ({ lang }) => {
+  const { query } = getClient();
   const { data, error } =
     await query<GetResourcesAvailableToResearchersPageQuery>({
       query: GetResourcesAvailableToResearchersPageDocument,
