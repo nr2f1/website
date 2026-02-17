@@ -12,9 +12,8 @@ import type { Graph, MedicalStudy, WebPage, WithContext } from 'schema-dts';
 import RegisterPageBody from './page-body';
 import RegisterPageHeader from './page-header';
 
-const { query } = getClient();
-
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
+  const { query } = getClient();
   const { lang } = await params;
 
   const { data } = await query<GetMetadataQuery>({
@@ -75,6 +74,7 @@ export default Page;
 export async function generateMetadata({
   params,
 }: PagePropsWithLocale): Promise<Metadata> {
+  const { query } = getClient();
   const { lang } = await params;
 
   const { data } = await query<GetMetadataQuery>({

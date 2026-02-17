@@ -22,11 +22,10 @@ import { createHashLink } from '@shared/utils/hash-links';
 import type { NGO, WithContext } from 'schema-dts';
 import styles from './index.module.scss';
 
-const { query } = getClient();
-
 export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
   lang,
 }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetOrganizationPageQuery>({
     query: GetOrganizationPageDocument,
     variables: {

@@ -12,11 +12,10 @@ interface VolunteerWithUsBannerProps {
   lang: AvailableLocale;
 }
 
-const { query } = getClient();
-
 const VolunteerWithUsBanner: React.FC<VolunteerWithUsBannerProps> = async ({
   lang,
 }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetBannerQuery>({
     query: GetBannerDocument,
     variables: {

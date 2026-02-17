@@ -11,9 +11,8 @@ interface NewsPageHeaderProps {
   lang: AvailableLocale;
 }
 
-const { query } = getClient();
-
 const PodcastPageHeader: React.FC<NewsPageHeaderProps> = async ({ lang }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetPodcastPageHeaderQuery>({
     query: GetPodcastPageHeaderDocument,
     variables: {

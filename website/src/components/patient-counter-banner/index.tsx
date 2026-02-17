@@ -14,8 +14,6 @@ import { patientCounterParagraphsId } from '@models/paragraphs';
 import Link from 'next/link';
 import styles from './style.module.scss';
 
-const { query } = getClient();
-
 export interface PatientCounterBannerProps {
   lang: AvailableLocale;
 }
@@ -39,6 +37,7 @@ const HeartIcon = () => (
 const PatientCounterBanner: React.FC<PatientCounterBannerProps> = async ({
   lang,
 }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetPatientCounterBannerQuery>({
     query: GetPatientCounterBannerDocument,
     variables: {

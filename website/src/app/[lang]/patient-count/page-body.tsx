@@ -23,11 +23,10 @@ import { createHashLink } from '@shared/utils/hash-links';
 import Link from 'next/link';
 import styles from './index.module.scss';
 
-const { query } = getClient();
-
 const PatientCountPageBody: React.FC<ComponentPropsWithLocale> = async ({
   lang,
 }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetPatientCountPageQuery>({
     query: GetPatientCountPageDocument,
     variables: {

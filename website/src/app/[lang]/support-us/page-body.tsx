@@ -8,8 +8,6 @@ import type { AvailableLocale } from '@i18n/locales';
 import { supportUsPageParagraphsId } from '@models/paragraphs';
 import styles from './index.module.scss';
 
-const { query } = getClient();
-
 interface SupportUsPageBodyProps {
   lang: AvailableLocale;
 }
@@ -17,6 +15,7 @@ interface SupportUsPageBodyProps {
 export const SupportUsPageBody: React.FC<SupportUsPageBodyProps> = async ({
   lang,
 }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetSupportUsPageQuery>({
     query: GetSupportUsPageDocument,
     variables: {

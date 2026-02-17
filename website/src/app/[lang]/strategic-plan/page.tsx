@@ -15,9 +15,8 @@ import StrategicPlanUpperBody from './page-upper-body';
 import ResearchBanner from './research-banner';
 import VolunteerWithUsBanner from './volunteer-with-us-banner';
 
-const { query } = getClient();
-
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
+  const { query } = getClient();
   const { lang } = await params;
 
   const { data } = await query<GetMetadataQuery>({
@@ -62,6 +61,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
 export async function generateMetadata({
   params,
 }: PagePropsWithLocale): Promise<Metadata> {
+  const { query } = getClient();
   const { lang } = await params;
 
   const { data } = await query<GetMetadataQuery>({

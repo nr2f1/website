@@ -11,11 +11,10 @@ interface NewsPageHeaderProps {
   lang: AvailableLocale;
 }
 
-const { query } = getClient();
-
 const NewsletterPageHeader: React.FC<NewsPageHeaderProps> = async ({
   lang,
 }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetNewsletterPageHeaderQuery>({
     query: GetNewsletterPageHeaderDocument,
     variables: {

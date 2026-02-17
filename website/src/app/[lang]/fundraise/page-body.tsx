@@ -13,8 +13,6 @@ import { createBlogImageProps } from '@shared/utils/image-optimisation';
 import Link from 'next/link';
 import styles from './index.module.scss';
 
-const { query } = getClient();
-
 interface FundraisePageBodyProps {
   lang: AvailableLocale;
 }
@@ -100,6 +98,7 @@ const CampaignIdea: React.FC<CampaignProps> = ({
 export const FundraisePageBody: React.FC<FundraisePageBodyProps> = async ({
   lang,
 }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetFunraisePageQuery>({
     query: GetFunraisePageDocument,
     variables: {

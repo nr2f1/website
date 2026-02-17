@@ -14,8 +14,6 @@ import {
 import { createHashLink } from '@shared/utils/hash-links';
 import progressStyles from './index.module.scss';
 
-const { query } = getClient();
-
 interface StrategicPlanMiddleBodyProps {
   lang: AvailableLocale;
 }
@@ -23,6 +21,7 @@ interface StrategicPlanMiddleBodyProps {
 const StrategicPlanMiddleBody: React.FC<StrategicPlanMiddleBodyProps> = async ({
   lang,
 }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetStrategicPlanMiddlePageQuery>({
     query: GetStrategicPlanMiddlePageDocument,
     variables: {

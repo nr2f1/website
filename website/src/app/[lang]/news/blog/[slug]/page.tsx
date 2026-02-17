@@ -20,11 +20,10 @@ import type {
 import type { Blog, WithContext } from 'schema-dts';
 import styles from './index.module.scss';
 
-const { query } = getClient();
-
 export async function generateMetadata({
   params,
 }: NewsPagePropsWithLocale): Promise<Metadata> {
+  const { query } = getClient();
   const { lang, slug } = await params;
 
   const { data } = await query<GetPostQuery>({
@@ -67,6 +66,7 @@ export async function generateMetadata({
 }
 
 const Page: NextPage<NewsPagePropsWithLocale> = async ({ params }) => {
+  const { query } = getClient();
   const { lang, slug } = await params;
 
   const { data } = await query<GetPostQuery>({

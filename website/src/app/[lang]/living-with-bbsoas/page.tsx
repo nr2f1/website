@@ -14,9 +14,8 @@ import LivingWithBbsoasHeader from './page-header';
 import LivingWithBbsoasUpperBody from './page-upper-body';
 import SupportGroupBanner from './support-group-banner';
 
-const { query } = getClient();
-
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
+  const { query } = getClient();
   const { lang } = await params;
 
   const { data: metadataData } = await query<GetMetadataQuery>({
@@ -60,6 +59,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
 export async function generateMetadata({
   params,
 }: PagePropsWithLocale): Promise<Metadata> {
+  const { query } = getClient();
   const { lang } = await params;
 
   const { data } = await query<GetMetadataQuery>({

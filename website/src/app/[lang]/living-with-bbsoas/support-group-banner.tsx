@@ -12,11 +12,10 @@ interface SupportGroupBannerProps {
   lang: AvailableLocale;
 }
 
-const { query } = getClient();
-
 const SupportGroupBanner: React.FC<SupportGroupBannerProps> = async ({
   lang,
 }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetBannerQuery>({
     query: GetBannerDocument,
     variables: {

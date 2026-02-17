@@ -49,7 +49,7 @@ const link = ApolloLink.from([
   }),
  ]);
 
-export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
+export const { getClient, PreloadQuery } = registerApolloClient(() => {
   return new ApolloClient({
     cache: new InMemoryCache({
       typePolicies: {

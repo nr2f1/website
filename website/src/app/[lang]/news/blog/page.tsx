@@ -10,11 +10,10 @@ import type { Metadata, NextPage } from 'next';
 import BlogIndexPageBody from './page-body';
 import BlogIndexPageHeader from './page-header';
 
-const { query } = getClient();
-
 export async function generateMetadata({
   params,
 }: NewsPageProps): Promise<Metadata> {
+  const { query } = getClient();
   const { lang } = await params;
 
   const { data } = await query<GetMetadataQuery>({

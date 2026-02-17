@@ -14,9 +14,8 @@ import type { WebPage, WithContext } from 'schema-dts';
 import SupportUsPageBody from './page-body';
 import SupportUsHeader from './page-header';
 
-const { query } = getClient();
-
 const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
+  const { query } = getClient();
   const { lang } = await params;
 
   const { data } = await query<GetMetadataQuery>({
@@ -58,6 +57,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
 export async function generateMetadata({
   params,
 }: PagePropsWithLocale): Promise<Metadata> {
+  const { query } = getClient();
   const { lang } = await params;
 
   const { data } = await query<GetMetadataQuery>({

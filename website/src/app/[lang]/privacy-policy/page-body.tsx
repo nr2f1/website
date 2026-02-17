@@ -8,8 +8,6 @@ import type { AvailableLocale } from '@i18n/locales';
 import { privacyPolicyPageParagraphsId } from '@models/paragraphs';
 import styles from './index.module.scss';
 
-const { query } = getClient();
-
 interface PrivacyPolicyPageBodyProps {
   lang: AvailableLocale;
 }
@@ -17,6 +15,7 @@ interface PrivacyPolicyPageBodyProps {
 export const PrivacyPolicyPageBody: React.FC<
   PrivacyPolicyPageBodyProps
 > = async ({ lang }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetPrivacyPolicyPageQuery>({
     query: GetPrivacyPolicyPageDocument,
     variables: {

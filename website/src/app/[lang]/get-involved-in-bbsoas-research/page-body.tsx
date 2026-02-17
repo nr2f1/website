@@ -34,11 +34,10 @@ interface GetInvolvedInBbsoasResearchPageProps {
   lang: AvailableLocale;
 }
 
-const { query } = getClient();
-
 const GetInvolvedInBbsoasResearchBody: React.FC<
   GetInvolvedInBbsoasResearchPageProps
 > = async ({ lang }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetGetInvolvedInBbsoasResearchPageQuery>({
     query: GetGetInvolvedInBbsoasResearchPageDocument,
     variables: {

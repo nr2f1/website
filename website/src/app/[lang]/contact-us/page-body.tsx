@@ -9,8 +9,6 @@ import type { AvailableLocale } from '@i18n/locales';
 import { contactUsPageParagraphsId } from '@models/paragraphs';
 import styles from './index.module.scss';
 
-const { query } = getClient();
-
 interface ContactUsPageBodyProps {
   lang: AvailableLocale;
 }
@@ -18,6 +16,7 @@ interface ContactUsPageBodyProps {
 export const ContactUsPageBody: React.FC<ContactUsPageBodyProps> = async ({
   lang,
 }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetContactUsPageQuery>({
     query: GetContactUsPageDocument,
     variables: {

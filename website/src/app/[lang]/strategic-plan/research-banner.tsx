@@ -12,9 +12,8 @@ interface ResearchBannerProps {
   lang: AvailableLocale;
 }
 
-const { query } = getClient();
-
 const ResearchBanner: React.FC<ResearchBannerProps> = async ({ lang }) => {
+  const { query } = getClient();
   const { data, error } = await query<GetBannerQuery>({
     query: GetBannerDocument,
     variables: {
