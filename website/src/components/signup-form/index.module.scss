@@ -32,7 +32,7 @@
     box-shadow: 0 0 0 4px var(--navy-200);
   }
 
-  &[aria-expanded='true'] {
+  &[data-popup-open] {
     background-image: url(icons.$chevron-up);
     box-shadow: 0 0 0 4px var(--navy-200);
   }
@@ -40,7 +40,7 @@
   &--error {
     border-color: var(--border-error);
 
-    &[aria-expanded='true'] {
+    &[data-popup-open] {
       box-shadow: none;
     }
   }
@@ -76,15 +76,17 @@
   padding: var(--spacing-2) var(--spacing-3);
 
   &:hover,
-  &:focus {
+  &:focus,
+  &[data-highlighted] {
     background-color: var(--navy-50);
+    outline: none;
   }
 
   &:active {
     background-color: var(--navy-100);
   }
 
-  &[aria-selected='true'] {
+  &[data-selected] {
     background-image: url(icons.$check);
     background-position-x: calc(100% - var(--spacing-3));
     background-position-y: var(--spacing-3);
