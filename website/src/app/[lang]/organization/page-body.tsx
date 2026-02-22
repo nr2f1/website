@@ -8,12 +8,14 @@ import {
 } from '@graphql/queries/pages/organization/index.generated';
 import {
   boardHeadingId,
+  executiveDirectorHeadingId,
   organizationResearchHeadingId,
   scientificHeadingId,
   volunteersHeadingId,
 } from '@models/headings';
 import {
   boardParagraphsId,
+  executiveDirectorParagraphsId,
   organizationResearchParagraphsId,
   scientificParagraphsId,
 } from '@models/paragraphs';
@@ -31,6 +33,8 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
     variables: {
       boardHeadingId,
       boardParagraphsId,
+      executiveDirectorHeadingId,
+      executiveDirectorParagraphsId,
       locale: lang,
       organizationResearchHeadingId,
       organizationResearchParagraphsId,
@@ -45,6 +49,8 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
   }
 
   const {
+    executiveDirectorHeading,
+    executiveDirectorParagraphs,
     boardHeading,
     boardParagraphs,
     volunteersHeading,
@@ -56,9 +62,11 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
     volunteersMembers,
     scientificMembers,
     researchMembers,
+    executiveDirectorMembers,
   } = data;
 
   const headings = [
+    executiveDirectorHeading?.content ?? '',
     boardHeading?.content ?? '',
     volunteersHeading?.content ?? '',
     scientificHeading?.content ?? '',
@@ -66,6 +74,7 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
   ];
 
   const allMembers = [
+    ...(executiveDirectorMembers?.items || []),
     ...(boardMembers?.items || []),
     ...(volunteersMembers?.items || []),
     ...(scientificMembers?.items || []),
@@ -91,6 +100,28 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
         // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <section>
+        <h2 id={createHashLink(executiveDirectorHeading?.content ?? '')}>
+          {executiveDirectorHeading?.content}
+        </h2>
+        {documentToReactComponents(executiveDirectorParagraphs?.content?.json)}
+
+        <div className={styles.organization__members}>
+          {executiveDirectorMembers?.items?.map((member) => {
+            return (
+              <Member
+                key={crypto.randomUUID()}
+                name={member?.name}
+                image={member?.image ?? null}
+                title={member?.title ?? null}
+                email={member?.email ?? null}
+                lang={lang}
+                about={documentToReactComponents(member?.about?.json)}
+              />
+            );
+          })}
+        </div>
+      </section>
       <section>
         <h2 id={createHashLink(boardHeading?.content ?? '')}>
           {boardHeading?.content}
