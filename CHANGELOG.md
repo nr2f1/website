@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.7.0](https://github.com/nr2f1/website/compare/v3.6.1...v3.7.0) (2026-02-22)
+
+
+### Features
+
+* executive director in org page ([f3739d5](https://github.com/nr2f1/website/commit/f3739d56ba1f4358cf82c7d1a231e0ce19a5c75d))
+* executive director in org page ([#404](https://github.com/nr2f1/website/issues/404)) ([62512b1](https://github.com/nr2f1/website/commit/62512b179dc74188a3865432f1077dc42dc6f43d))
+
 ## [3.6.1](https://github.com/nr2f1/website/compare/v3.6.0...v3.6.1) (2026-02-17)
 
 
