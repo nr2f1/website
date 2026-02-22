@@ -114,6 +114,7 @@ export const sponsorshipParagraphsId = 'hhanXEHeh5VkTumjiZF7m';
 export const pastConferencesParagraphsId = '41nwrdWWQ3r7JXXFOAeYZF';
 
 // Organization page
+export const executiveDirectorParagraphsId = '2MbYFgHOhI3V6vTpPFtCI4';
 export const boardParagraphsId = 'eTWocFLPJRewxHqWpTQSW';
 export const scientificParagraphsId = '3xqtKckUs51mEitvkgDPka';
 export const organizationResearchParagraphsId = '3xqtKckUs51mEitvkgDPka';

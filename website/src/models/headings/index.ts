@@ -77,6 +77,7 @@ export const faqsHeadingId = '3z4BD0PtpoHBHN3S8faiy2';
 export const pastConferencesHeadingId = '6Qgir16Vclazw8NhLCpEvV';
 
 // Organization page
+export const executiveDirectorHeadingId = '2vpah8IaYSuRBmtqcI7BSH';
 export const boardHeadingId = '2tfUSf9KLwAwneLAvzz8lx';
 export const volunteersHeadingId = '2NXHTxt43jW8r75iusawwe';
 export const scientificHeadingId = '1JVvale1oAWVyTbWBtSbpH';
