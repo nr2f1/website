@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.7.1](https://github.com/nr2f1/website/compare/v3.7.0...v3.7.1) (2026-03-15)
+
+
+### Bug Fixes
+
+* change PO box address ([4c3da25](https://github.com/nr2f1/website/commit/4c3da251b19c0cbc060741edd689525a378bf701))
+* change PO box address ([#406](https://github.com/nr2f1/website/issues/406)) ([393a7dc](https://github.com/nr2f1/website/commit/393a7dc6d235bb98df9cc5a8cf774a4321e7d8af))
+
 ## [3.7.0](https://github.com/nr2f1/website/compare/v3.6.1...v3.7.0) (2026-02-22)
 
 
