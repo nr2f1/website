@@ -88,7 +88,7 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
 
               <address>
                 NR2F1 Foundation <br /> PO Box 274 <br />
-                Coppell, 5019-9998
+                Coppell, TX 75019-9998
               </address>
               <a
                 href="mailto:leora.westbrook@nr2f1.org"
