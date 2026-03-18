@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.7.2](https://github.com/nr2f1/website/compare/v3.7.1...v3.7.2) (2026-03-18)
+
+
+### Bug Fixes
+
+* footer postal code ([faf31c8](https://github.com/nr2f1/website/commit/faf31c86de288b370d3bda3db2fc243d99e03222))
+* footer postal code ([#408](https://github.com/nr2f1/website/issues/408)) ([625d0fc](https://github.com/nr2f1/website/commit/625d0fc3ca9f557d626caaacd2a46c44033ae023))
+
 ## [3.7.1](https://github.com/nr2f1/website/compare/v3.7.0...v3.7.1) (2026-03-15)
 
 
