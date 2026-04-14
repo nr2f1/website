@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.8.0](https://github.com/nr2f1/website/compare/v3.7.2...v3.8.0) (2026-04-14)
+
+
+### Features
+
+* remove conference banner ([#410](https://github.com/nr2f1/website/issues/410)) ([17cd961](https://github.com/nr2f1/website/commit/17cd961728f30f680c24fefb451fa9223989da46))
+* **website:** remove conference countdown banner from layout ([263b5e4](https://github.com/nr2f1/website/commit/263b5e4ba96e1eb6297f7053ac3d5403b53b2716))
+
 ## [3.7.2](https://github.com/nr2f1/website/compare/v3.7.1...v3.7.2) (2026-03-18)
 
 
