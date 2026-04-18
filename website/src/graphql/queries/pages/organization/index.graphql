@@ -1,7 +1,5 @@
 query GetOrganizationPage(
   $locale: String
-  $executiveDirectorHeadingId: String!
-  $executiveDirectorParagraphsId: String!
   $boardHeadingId: String!
   $boardParagraphsId: String!
   $volunteersHeadingId: String!
@@ -10,31 +8,6 @@ query GetOrganizationPage(
   $organizationResearchHeadingId: String!
   $organizationResearchParagraphsId: String!
 ) {
-  executiveDirectorHeading: heading(locale: $locale, id: $executiveDirectorHeadingId) {
-    content
-  }
-  executiveDirectorParagraphs: paragraphs(locale: $locale, id: $executiveDirectorParagraphsId) {
-    content {
-      json
-    }
-  }
-  executiveDirectorMembers: memberCollection(
-    where: { category: "director" }
-    order: order_ASC
-  ) {
-    items {
-      image {
-        url
-        width
-      }
-      name
-      title
-      email
-      about {
-        json
-      }
-    }
-  }
   boardHeading: heading(locale: $locale, id: $boardHeadingId) {
     content
   }

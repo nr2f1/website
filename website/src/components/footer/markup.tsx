@@ -87,14 +87,14 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
               {documentToReactComponents(contactUs?.content?.json)}
 
               <address>
-                NR2F1 Foundation <br /> PO Box 274 <br />
-                Coppell, TX 75019-9998
+                NR2F1 Foundation <br /> PO Box 0588 <br />
+                Pflugerville, TX 78691
               </address>
               <a
-                href="mailto:leora.westbrook@nr2f1.org"
-                title="leora.westbrook@nr2f1.org"
+                href="mailto:ashlee.manjon@nr2f1.org"
+                title="ashlee.manjon@nr2f1.org"
               >
-                leora.westbrook@nr2f1.org
+                ashlee.manjon@nr2f1.org
               </a>
             </div>
           </div>
