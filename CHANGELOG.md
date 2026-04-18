@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.9.0](https://github.com/nr2f1/website/compare/v3.8.0...v3.9.0) (2026-04-18)
+
+
+### Features
+
+* remove ed from org ([5332492](https://github.com/nr2f1/website/commit/533249265dd5ad939d10cddbb59912d34a9cfb87))
+* remove ed from org ([#412](https://github.com/nr2f1/website/issues/412)) ([290b14d](https://github.com/nr2f1/website/commit/290b14d4d5f2b87bcb901309fcbbeeba4a33efdd))
+
+
+### Bug Fixes
+
+* org page build ([65b6719](https://github.com/nr2f1/website/commit/65b6719298c0ebc944052873b22be4e260285f70))
+* org page build ([#414](https://github.com/nr2f1/website/issues/414)) ([e11a512](https://github.com/nr2f1/website/commit/e11a5127ae7b6e2dab1011406af4649c27eac938))
+
 ## [3.8.0](https://github.com/nr2f1/website/compare/v3.7.2...v3.8.0) (2026-04-14)
 
 
