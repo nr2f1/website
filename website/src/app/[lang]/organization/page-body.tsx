@@ -45,7 +45,6 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
   }
 
   const {
-    executiveDirectorHeading,
     boardHeading,
     boardParagraphs,
     volunteersHeading,
@@ -60,7 +59,6 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
   } = data;
 
   const headings = [
-    executiveDirectorHeading?.content ?? '',
     boardHeading?.content ?? '',
     volunteersHeading?.content ?? '',
     scientificHeading?.content ?? '',
