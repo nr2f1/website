@@ -17,12 +17,14 @@ import {
 } from '@models/accordions';
 import {
   biorepositoryHeadingId,
+  drugRepurposingObservationalStudyHeadingId,
   patientRegistryHeadingId,
   surveyHeadingId,
 } from '@models/headings';
 import {
   biorepositoryParagraphsAfterAccordionsId,
   biorepositoryParagraphsBeforeAccordionsId,
+  drugRepurposingObservationalStudyParagraphsId,
   registerPatientInOurresearchPageParagraphsId,
   surveyParagraphsAfterAccordionsId,
   surveyParagraphsBeforeAccordionsId,
@@ -45,6 +47,8 @@ const GetInvolvedInBbsoasResearchBody: React.FC<
       biorepositoryHeadingId,
       biorepositoryParagraphsAfterAccordionsId,
       biorepositoryParagraphsBeforeAccordionsId,
+      drugRepurposingObservationalStudyHeadingId,
+      drugRepurposingObservationalStudyParagraphsId,
       locale: lang,
       ortasWhatAccordionId,
       ortasWhoAccordionId,
@@ -78,12 +82,15 @@ const GetInvolvedInBbsoasResearchBody: React.FC<
     ortasWhyAccordion,
     ortasWhoAccordion,
     surveyParagraphsAfterAccordions,
+    drugRepurposingObservationalStudyHeading,
+    drugRepurposingObservationalStudyParagraphs,
   } = data;
 
   const headings = [
     patientRegistryHeading?.content ?? '',
     biorepositoryHeading?.content ?? '',
     surveyHeading?.content ?? '',
+    drugRepurposingObservationalStudyHeading?.content ?? '',
   ];
 
   return (
@@ -149,6 +156,18 @@ const GetInvolvedInBbsoasResearchBody: React.FC<
             surveyParagraphsAfterAccordions?.content?.json,
           )}
         </div>
+      </section>
+      <section>
+        <h2
+          id={createHashLink(
+            drugRepurposingObservationalStudyHeading?.content ?? '',
+          )}
+        >
+          {drugRepurposingObservationalStudyHeading?.content}
+        </h2>
+        {documentToReactComponents(
+          drugRepurposingObservationalStudyParagraphs?.content?.json,
+        )}
       </section>
     </PageBody>
   );

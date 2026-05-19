@@ -14,6 +14,8 @@ query GetGetInvolvedInBbsoasResearchPage(
   $ortasWhyAccordionId: String!
   $ortasWhoAccordionId: String!
   $surveyParagraphsAfterAccordionsId: String!
+  $drugRepurposingObservationalStudyHeadingId: String!
+  $drugRepurposingObservationalStudyParagraphsId: String!
 ) {
   patientRegistryHeading: heading(
     locale: $locale
@@ -117,6 +119,19 @@ query GetGetInvolvedInBbsoasResearchPage(
   surveyParagraphsAfterAccordions: paragraphs(
     locale: $locale
     id: $surveyParagraphsAfterAccordionsId
+  ) {
+    content {
+      json
+    }
+  }
+
+  drugRepurposingObservationalStudyHeading: heading(locale: $locale, id: $drugRepurposingObservationalStudyHeadingId) {
+    content
+  }
+
+  drugRepurposingObservationalStudyParagraphs: paragraphs(
+    locale: $locale
+    id: $drugRepurposingObservationalStudyParagraphsId
   ) {
     content {
       json
