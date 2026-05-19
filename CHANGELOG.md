@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.10.0](https://github.com/nr2f1/website/compare/v3.9.0...v3.10.0) (2026-05-19)
+
+
+### Features
+
+* drug repurposing study ([ff9cec0](https://github.com/nr2f1/website/commit/ff9cec0c7df57cee06f657655a21b94bdf96f3ce))
+* drug repurposing study ([#415](https://github.com/nr2f1/website/issues/415)) ([2866578](https://github.com/nr2f1/website/commit/28665785f851af506e973fc80afc32f3a791a706))
+
 ## [3.9.0](https://github.com/nr2f1/website/compare/v3.8.0...v3.9.0) (2026-04-18)
 
 
