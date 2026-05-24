@@ -29,7 +29,7 @@
     "@axe-core/playwright": "^4.10.2",
     "@axe-core/react": "^4.10.2",
     "@biomejs/biome": "^2.3.8",
-    "@commitlint/cli": "^19.8.1",
+    "@commitlint/cli": "^21.0.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@commitlint/types": "^19.8.1",
     "@contentful/rich-text-types": "^17.1.0",
