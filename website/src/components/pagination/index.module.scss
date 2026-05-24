@@ -3,7 +3,7 @@
 .pagination {
   &:is(ul) {
     display: flex;
-    margin: 0 auto;
+    margin: 0 auto !important;
     max-width: 560px;
     column-gap: var(--spacing-4);
     justify-content: center;

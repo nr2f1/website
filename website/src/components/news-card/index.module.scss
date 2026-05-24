@@ -13,14 +13,6 @@
     min-width: 100%;
   }
 
-  @include breakpoints.large-screen {
-    max-width: calc(33% - calc(var(--spacing-6) * 2));
-  }
-
-  @include breakpoints.extra-large-screen {
-    max-width: calc(33% - calc(var(--spacing-6) * 2));
-  }
-
   &:hover,
   &:focus {
     background-color: var(--background-interactive-hover);
@@ -50,7 +42,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    /* background-image: url(icons.$newsletter); */
     background-image: url(icons.$newsletter_version_2);
 
     @include breakpoints.small-screen {
