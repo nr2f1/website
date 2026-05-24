@@ -16,3 +16,6 @@ certificates
 .github/instructions/nx.instructions.md
 *.generated.tsx
 types.ts
+
+.claude
+website/tsconfig.tsbuildinfo
