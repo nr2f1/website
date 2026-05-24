@@ -11,7 +11,7 @@ import { AVAILABLE_LOCALES } from '@i18n/locales';
 import { BASE_URL, blogPostUrl } from '@routes/index';
 import type { NewsPagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
-import { type Links, renderOptions } from '@shared/utils/rich-text';
+import { renderOptions } from '@shared/utils/rich-text';
 import type { Metadata, NextPage } from 'next';
 import type {
   AlternateLinkDescriptor,
@@ -117,7 +117,7 @@ const Page: NextPage<NewsPagePropsWithLocale> = async ({ params }) => {
             <div className={styles.post__content}>
               {documentToReactComponents(
                 post?.body?.json,
-                renderOptions(post?.body?.links as Links),
+                renderOptions(post?.body?.links),
               )}
             </div>
             <div className={styles.post__aside}>

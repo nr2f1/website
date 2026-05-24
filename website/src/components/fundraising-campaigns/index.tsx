@@ -12,6 +12,7 @@ export const FundrasingCampaignsWithData: React.FC<GivebutterCampaignProps> = ({
   return (
     <PreloadQuery
       query={GetFundraisingCampaignsDocument}
+      errorPolicy="all"
       variables={{
         fundraisingCampaignsHeadingId,
         fundraisingCampaignsLinkId,
