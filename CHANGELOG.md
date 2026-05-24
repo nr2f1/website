@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.10.1](https://github.com/nr2f1/website/compare/v3.10.0...v3.10.1) (2026-05-24)
+
+
+### Bug Fixes
+
+* pagination ([5771090](https://github.com/nr2f1/website/commit/5771090051892664e0cdf191d531d24b896e4a48))
+* pagination ([#417](https://github.com/nr2f1/website/issues/417)) ([f617a2b](https://github.com/nr2f1/website/commit/f617a2b0c9ed60d02cb442a3c1b789e3039c044f))
+
 ## [3.10.0](https://github.com/nr2f1/website/compare/v3.9.0...v3.10.0) (2026-05-19)
 
 
