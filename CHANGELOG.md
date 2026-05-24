@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.10.2](https://github.com/nr2f1/website/compare/v3.10.1...v3.10.2) (2026-05-24)
+
+
+### Bug Fixes
+
+* vulnerabilities ([5196940](https://github.com/nr2f1/website/commit/5196940213048a86783d5b81ef642ae378440bee))
+
 ## [3.10.1](https://github.com/nr2f1/website/compare/v3.10.0...v3.10.1) (2026-05-24)
 
 
