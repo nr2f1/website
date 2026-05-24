@@ -170,8 +170,8 @@ importers:
         specifier: ^6.6.4
         version: 6.6.4
       '@testing-library/react':
-        specifier: ^16.3.0
-        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.1.7(@types/react@19.0.8))(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: ^16.3.2
+        version: 16.3.2(@testing-library/dom@10.4.0)(@types/react-dom@19.1.7(@types/react@19.0.8))(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@testing-library/user-event':
         specifier: ^14.6.1
         version: 14.6.1(@testing-library/dom@10.4.0)
@@ -3321,8 +3321,8 @@ packages:
     resolution: {integrity: sha512-xDXgLjVunjHqczScfkCJ9iyjdNOVHvvCdqHSSxwM9L0l/wHkTRum67SDc020uAlCoqktJplgO2AAQeLP1wgqDQ==}
     engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
 
-  '@testing-library/react@16.3.0':
-    resolution: {integrity: sha512-kFSyxiEDwv1WLl2fgsq6pPBbw5aWKrsY2/noi1Id0TK0UParSF62oFQFGHXIyaG4pp2tEub/Zlel+fjjZILDsw==}
+  '@testing-library/react@16.3.2':
+    resolution: {integrity: sha512-XU5/SytQM+ykqMnAnvB2umaJNIOsLF3PVv//1Ew4CTcpz0/BRyy/af40qqrt7SjKpDdT1saBMc42CUok5gaw+g==}
     engines: {node: '>=18'}
     peerDependencies:
       '@testing-library/dom': ^10.0.0
@@ -8725,7 +8725,7 @@ snapshots:
     dependencies:
       '@babel/generator': 7.28.0
       '@babel/parser': 7.28.0
-      '@babel/runtime': 7.28.2
+      '@babel/runtime': 7.29.2
       chalk: 4.1.2
       fb-watchman: 2.0.2
       graphql: 16.11.0
@@ -11400,7 +11400,7 @@ snapshots:
 
   '@mui/utils@6.4.9(@types/react@19.0.8)(react@19.0.0)':
     dependencies:
-      '@babel/runtime': 7.28.2
+      '@babel/runtime': 7.29.2
       '@mui/types': 7.2.24(@types/react@19.0.8)
       '@types/prop-types': 15.7.15
       clsx: 2.1.1
@@ -12648,9 +12648,9 @@ snapshots:
       picocolors: 1.1.1
       redent: 3.0.0
 
-  '@testing-library/react@16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.1.7(@types/react@19.0.8))(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@testing-library/react@16.3.2(@testing-library/dom@10.4.0)(@types/react-dom@19.1.7(@types/react@19.0.8))(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
-      '@babel/runtime': 7.28.2
+      '@babel/runtime': 7.29.2
       '@testing-library/dom': 10.4.0
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
@@ -17128,7 +17128,7 @@ snapshots:
 
   relay-runtime@12.0.0(encoding@0.1.13):
     dependencies:
-      '@babel/runtime': 7.28.2
+      '@babel/runtime': 7.29.2
       fbjs: 3.0.5(encoding@0.1.13)
       invariant: 2.2.4
     transitivePeerDependencies:
