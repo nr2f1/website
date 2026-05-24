@@ -104,8 +104,8 @@ importers:
         specifier: ^4.10.2
         version: 4.10.2(playwright-core@1.60.0)
       '@axe-core/react':
-        specifier: ^4.10.2
-        version: 4.10.2
+        specifier: ^4.11.3
+        version: 4.11.3
       '@biomejs/biome':
         specifier: ^2.3.8
         version: 2.3.8
@@ -310,8 +310,8 @@ packages:
     peerDependencies:
       playwright-core: '>= 1.0.0'
 
-  '@axe-core/react@4.10.2':
-    resolution: {integrity: sha512-BIHQ+kMtOpPTmtMrJDGQMkXQT8C3YX5GIUmqXQ6tCAUaK7ZwhfbyNBaYlG0h0IdC7mHL0uxTXYxOI6r4Lgnw6w==}
+  '@axe-core/react@4.11.3':
+    resolution: {integrity: sha512-G7TrxptKNFfrQZ+Iygb8nGx5w8Su0jIjwmtVN/9Jc4G6RumCh1rD3pZRT2NzZKjT70q4BReuWVwEazS3HxFfjg==}
 
   '@babel/code-frame@7.27.1':
     resolution: {integrity: sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg==}
@@ -3861,6 +3861,10 @@ packages:
 
   axe-core@4.10.3:
     resolution: {integrity: sha512-Xm7bpRXnDSX2YE2YFfBk2FnF0ep6tmG7xPh8iHee8MIcrgq762Nkce856dYtJYLkuIoYZvGfTs/PbZhideTcEg==}
+    engines: {node: '>=4'}
+
+  axe-core@4.11.4:
+    resolution: {integrity: sha512-KunSNx+TVpkAw/6ULfhnx+HWRecjqZGTOyquAoWHYLRSdK1tB5Ihce1ZW+UY3fj33bYAFWPu7W/GRSmmrCGuxA==}
     engines: {node: '>=4'}
 
   axe-core@4.9.1:
@@ -8750,9 +8754,9 @@ snapshots:
       axe-core: 4.10.3
       playwright-core: 1.60.0
 
-  '@axe-core/react@4.10.2':
+  '@axe-core/react@4.11.3':
     dependencies:
-      axe-core: 4.10.3
+      axe-core: 4.11.4
       requestidlecallback: 0.3.0
 
   '@babel/code-frame@7.27.1':
@@ -13251,6 +13255,8 @@ snapshots:
   axe-core@3.5.6: {}
 
   axe-core@4.10.3: {}
+
+  axe-core@4.11.4: {}
 
   axe-core@4.9.1: {}
 
