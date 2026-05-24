@@ -130,6 +130,10 @@ const FundrasingCampaigns: React.FC<GivebutterCampaignProps> = ({ lang }) => {
     GetFundraisingCampaignsQuery,
     GetFundraisingCampaignsQueryVariables
   >(GetFundraisingCampaignsDocument, {
+    // Surface GraphQL errors via the destructured `error` (handled below)
+    // instead of throwing — required for prerender to succeed when a locale
+    // is missing Contentful translations.
+    errorPolicy: 'all',
     variables: {
       fundraisingCampaignsHeadingId,
       fundraisingCampaignsLinkId,

@@ -1,8 +1,23 @@
 import type { Block, Inline } from '@contentful/rich-text-types';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
-import type { Asset, Entry } from '@graphql/types';
 import type { ReactNode } from 'react';
 import { createBlogImageProps } from './image-optimisation';
+
+// Narrow shapes matching exactly what GraphQL queries select and what
+// renderOptions consumes — decoupled from the wider @graphql/types schema
+// so callers don't need to over-fetch fields just to satisfy types.
+type LinkedAsset = {
+  sys: { id: string };
+  url?: string | null;
+  title?: string | null;
+  width?: number | null;
+  description?: string | null;
+  contentType?: string | null;
+};
+
+type LinkedEntry = {
+  sys: { id: string };
+};
 
 // From https://github.com/contentful/rich-text/tree/master/packages/rich-text-react-renderer
 // Create <br> tag for new line in text
@@ -19,11 +34,11 @@ export const renderText = (text: string) => {
 
 export interface Links {
   assets: {
-    block: Asset[];
+    block: (LinkedAsset | null)[];
   };
   entries: {
-    block: Entry[];
-    inline: Entry[];
+    block: (LinkedEntry | null)[];
+    inline: (LinkedEntry | null)[];
   };
 }
 
@@ -31,24 +46,24 @@ export interface Links {
 // INLINES.EMBEDDED_ENTRY (linked inline entries e.g. a reference to another blog post)
 // and BLOCKS.EMBEDDED_ASSET (linked assets e.g. images)
 
-export const renderOptions = (links: Links) => {
+export const renderOptions = (links: Links | undefined) => {
   // create an asset map
   const assetMap = new Map();
   // loop through the assets and add them to the map
-  for (const asset of links.assets.block) {
-    assetMap.set(asset.sys.id, asset);
+  for (const asset of links?.assets?.block ?? []) {
+    if (asset) assetMap.set(asset.sys.id, asset);
   }
 
   // create an entry map
   const entryMap = new Map();
   // loop through the block linked entries and add them to the map
-  for (const entry of links.entries.block) {
-    entryMap.set(entry.sys.id, entry);
+  for (const entry of links?.entries?.block ?? []) {
+    if (entry) entryMap.set(entry.sys.id, entry);
   }
 
   // loop through the inline linked entries and add them to the map
-  for (const entry of links.entries.inline) {
-    entryMap.set(entry.sys.id, entry);
+  for (const entry of links?.entries?.inline ?? []) {
+    if (entry) entryMap.set(entry.sys.id, entry);
   }
 
   return {

@@ -17,7 +17,7 @@ import {
   readingGeneticReportParagraphsId,
 } from '@models/paragraphs';
 import { createHashLink } from '@shared/utils/hash-links';
-import { type Links, renderOptions } from '@shared/utils/rich-text';
+import { renderOptions } from '@shared/utils/rich-text';
 
 interface LivingWithBbsoasBottomBodyProps {
   lang: AvailableLocale;
@@ -73,9 +73,7 @@ const LivingWithBbsoasBottomBody: React.FC<
         </h2>
         {documentToReactComponents(
           readingGeneticReportParagraphs?.content?.json,
-          renderOptions(
-            readingGeneticReportParagraphs?.content?.links as Links,
-          ),
+          renderOptions(readingGeneticReportParagraphs?.content?.links),
         )}
       </section>
     </PageBodySection>

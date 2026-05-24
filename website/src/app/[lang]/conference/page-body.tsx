@@ -24,7 +24,7 @@ import {
 } from '@models/paragraphs';
 import type { ComponentPropsWithLocale } from '@shared/types/page-with-locale-params';
 import { createHashLink } from '@shared/utils/hash-links';
-import { type Links, renderOptions } from '@shared/utils/rich-text';
+import { renderOptions } from '@shared/utils/rich-text';
 import styles from './index.module.scss';
 
 const ConferencePageBody: React.FC<ComponentPropsWithLocale> = async ({
@@ -95,7 +95,7 @@ const ConferencePageBody: React.FC<ComponentPropsWithLocale> = async ({
       >
         {documentToReactComponents(
           introParagraph?.content?.json,
-          renderOptions(introParagraph?.content?.links as Links),
+          renderOptions(introParagraph?.content?.links),
         )}
       </section>
       <section
@@ -107,7 +107,7 @@ const ConferencePageBody: React.FC<ComponentPropsWithLocale> = async ({
         <BookTicketButton />
         {documentToReactComponents(
           infoParagraph?.content?.json,
-          renderOptions(infoParagraph?.content?.links as Links),
+          renderOptions(infoParagraph?.content?.links),
         )}
       </section>
       <section className={styles.conference__book_tickets}>
