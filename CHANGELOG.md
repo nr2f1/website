@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.11.0](https://github.com/nr2f1/website/compare/v3.10.2...v3.11.0) (2026-06-26)
+
+
+### Features
+
+* add executive director heading to organization page ([f4eeb67](https://github.com/nr2f1/website/commit/f4eeb672f64d7f77029b029f3a63d4da696d1fa0))
+* add executive director heading to organization page ([#429](https://github.com/nr2f1/website/issues/429)) ([472fceb](https://github.com/nr2f1/website/commit/472fcebf3eb25e3b991f22022f35b1fb6e29752f))
+
 ## [3.10.2](https://github.com/nr2f1/website/compare/v3.10.1...v3.10.2) (2026-05-24)
 
 
