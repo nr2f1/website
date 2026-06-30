@@ -2,10 +2,7 @@ import Accordion from '@components/accordion';
 import PageBody from '@components/page-body';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetConferencePageDocument,
-  type GetConferencePageQuery,
-} from '@graphql/queries/pages/conference/index.generated';
+import { GetConferencePageDocument } from '@graphql/queries/pages/conference/index.generated';
 import {
   bookTicketsHeadingId,
   faqsHeadingId,
@@ -31,7 +28,7 @@ const ConferencePageBody: React.FC<ComponentPropsWithLocale> = async ({
   lang,
 }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetConferencePageQuery>({
+  const { data, error } = await query({
     query: GetConferencePageDocument,
     variables: {
       bookTicketsHeadingId,

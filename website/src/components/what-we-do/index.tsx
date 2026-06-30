@@ -1,9 +1,6 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetWhatWeDoDocument,
-  type GetWhatWeDoQuery,
-} from '@graphql/queries/what-we-do/index.generated';
+import { GetWhatWeDoDocument } from '@graphql/queries/what-we-do/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   driveResearchHeadingId,
@@ -29,7 +26,7 @@ interface WhatWeDoProps {
 const WhatWeDo: React.FC<WhatWeDoProps> = async ({ lang }) => {
   const { query } = getClient();
 
-  const { data } = await query<GetWhatWeDoQuery>({
+  const { data } = await query({
     query: GetWhatWeDoDocument,
     variables: {
       driveResearchHeadingId,

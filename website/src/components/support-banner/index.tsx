@@ -1,9 +1,6 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetBannerDocument,
-  type GetBannerQuery,
-} from '@graphql/queries/banner/index.generated';
+import { GetBannerDocument } from '@graphql/queries/banner/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { supportUsBannerId } from '@models/banners/banner';
 import { optimisedAvifImageUrl } from '@shared/utils/image-optimisation';
@@ -16,7 +13,7 @@ interface SupportBannerProps {
 const SupportBanner: React.FC<SupportBannerProps> = async ({ lang }) => {
   const { query } = getClient();
 
-  const { data, error } = await query<GetBannerQuery>({
+  const { data, error } = await query({
     query: GetBannerDocument,
     variables: {
       id: supportUsBannerId,

@@ -1,10 +1,7 @@
 import PageBody from '@components/page-body';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetResearchPageDocument,
-  type GetResearchPageQuery,
-} from '@graphql/queries/pages/research/index.generated';
+import { GetResearchPageDocument } from '@graphql/queries/pages/research/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   initiativesHeadingId,
@@ -26,7 +23,7 @@ interface ResearchPageBodyProps {
 
 const ResearchPageBody: React.FC<ResearchPageBodyProps> = async ({ lang }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetResearchPageQuery>({
+  const { data, error } = await query({
     query: GetResearchPageDocument,
     variables: {
       initiativesHeadingId,

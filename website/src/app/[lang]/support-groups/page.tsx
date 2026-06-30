@@ -3,14 +3,8 @@ import PageBody from '@components/page-body';
 import SupportBanner from '@components/support-banner';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetMetadataDocument,
-  type GetMetadataQuery,
-} from '@graphql/queries/metadata/index.generated';
-import {
-  GetSupportGroupsPageDocument,
-  type GetSupportGroupsPageQuery,
-} from '@graphql/queries/pages/support-groups/index.generated';
+import { GetMetadataDocument } from '@graphql/queries/metadata/index.generated';
+import { GetSupportGroupsPageDocument } from '@graphql/queries/pages/support-groups/index.generated';
 import {
   caregiversHeadingId,
   dadsHeadingId,
@@ -40,7 +34,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { query } = getClient();
   const { lang } = await params;
 
-  const { data: metadataData } = await query<GetMetadataQuery>({
+  const { data: metadataData } = await query({
     query: GetMetadataDocument,
     variables: {
       id: supportGroupsPageMetadataId,
@@ -62,7 +56,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     url: `https://nr2f1.org${routes['support-groups'](lang)}`,
   };
 
-  const { data, error } = await query<GetSupportGroupsPageQuery>({
+  const { data, error } = await query({
     query: GetSupportGroupsPageDocument,
     variables: {
       caregiverParagraphsId,
@@ -171,7 +165,7 @@ export async function generateMetadata({
   const { query } = getClient();
   const { lang } = await params;
 
-  const { data } = await query<GetMetadataQuery>({
+  const { data } = await query({
     query: GetMetadataDocument,
     variables: {
       id: supportGroupsPageMetadataId,

@@ -1,10 +1,7 @@
 import PageBody from '@components/page-body';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetPatientCountPageDocument,
-  type GetPatientCountPageQuery,
-} from '@graphql/queries/pages/patient-count/index.generated';
+import { GetPatientCountPageDocument } from '@graphql/queries/pages/patient-count/index.generated';
 import {
   howToTakePartHeadingId,
   patientCountHeadingCountId,
@@ -27,7 +24,7 @@ const PatientCountPageBody: React.FC<ComponentPropsWithLocale> = async ({
   lang,
 }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetPatientCountPageQuery>({
+  const { data, error } = await query({
     query: GetPatientCountPageDocument,
     variables: {
       howToTakePartHeadingId,

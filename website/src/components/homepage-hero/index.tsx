@@ -1,9 +1,6 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetHomePageHeroDocument,
-  type GetHomePageHeroQuery,
-} from '@graphql/queries/homepage-hero/index.generated';
+import { GetHomePageHeroDocument } from '@graphql/queries/homepage-hero/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { heroHeadingId } from '@models/headings';
 import { heroImageId } from '@models/images';
@@ -20,7 +17,7 @@ interface HomePageHeroProps {
 const HomePageHero: React.FC<HomePageHeroProps> = async ({ lang }) => {
   const { query } = getClient();
 
-  const { data } = await query<GetHomePageHeroQuery>({
+  const { data } = await query({
     query: GetHomePageHeroDocument,
     variables: {
       heroCtaId,

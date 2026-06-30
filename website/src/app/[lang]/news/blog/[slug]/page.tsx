@@ -3,10 +3,7 @@ import PageLatestNews from '@components/page-latest-news';
 import SupportBanner from '@components/support-banner';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetPostDocument,
-  type GetPostQuery,
-} from '@graphql/queries/post/index.generated';
+import { GetPostDocument } from '@graphql/queries/post/index.generated';
 import { AVAILABLE_LOCALES } from '@i18n/locales';
 import { BASE_URL, blogPostUrl } from '@routes/index';
 import type { NewsPagePropsWithLocale } from '@shared/types/page-with-locale-params';
@@ -26,7 +23,7 @@ export async function generateMetadata({
   const { query } = getClient();
   const { lang, slug } = await params;
 
-  const { data } = await query<GetPostQuery>({
+  const { data } = await query({
     query: GetPostDocument,
     variables: { locale: lang, slug },
   });
@@ -69,7 +66,7 @@ const Page: NextPage<NewsPagePropsWithLocale> = async ({ params }) => {
   const { query } = getClient();
   const { lang, slug } = await params;
 
-  const { data } = await query<GetPostQuery>({
+  const { data } = await query({
     query: GetPostDocument,
     variables: { locale: lang, slug },
   });

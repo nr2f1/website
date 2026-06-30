@@ -2,10 +2,7 @@ import FundrasingCampaigns from '@components/fundraising-campaigns';
 import StoreBanner from '@components/store-banner';
 import SupportUsCards from '@components/support-us-cards';
 import { getClient } from '@graphql/client';
-import {
-  GetMetadataDocument,
-  type GetMetadataQuery,
-} from '@graphql/queries/metadata/index.generated';
+import { GetMetadataDocument } from '@graphql/queries/metadata/index.generated';
 import { supportUsPageMetadataId } from '@models/metadata';
 import { getAlternateUrls, routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
@@ -18,7 +15,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { query } = getClient();
   const { lang } = await params;
 
-  const { data } = await query<GetMetadataQuery>({
+  const { data } = await query({
     query: GetMetadataDocument,
     variables: {
       id: supportUsPageMetadataId,
@@ -60,7 +57,7 @@ export async function generateMetadata({
   const { query } = getClient();
   const { lang } = await params;
 
-  const { data } = await query<GetMetadataQuery>({
+  const { data } = await query({
     query: GetMetadataDocument,
     variables: {
       id: supportUsPageMetadataId,

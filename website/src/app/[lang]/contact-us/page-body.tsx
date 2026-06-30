@@ -1,10 +1,7 @@
 import SocialMediaLinks from '@components/footer/social-media-links';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetContactUsPageDocument,
-  type GetContactUsPageQuery,
-} from '@graphql/queries/pages/contact-us/index.generated';
+import { GetContactUsPageDocument } from '@graphql/queries/pages/contact-us/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { contactUsPageParagraphsId } from '@models/paragraphs';
 import styles from './index.module.scss';
@@ -17,7 +14,7 @@ export const ContactUsPageBody: React.FC<ContactUsPageBodyProps> = async ({
   lang,
 }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetContactUsPageQuery>({
+  const { data, error } = await query({
     query: GetContactUsPageDocument,
     variables: {
       contactUsPageParagraphsId,

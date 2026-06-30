@@ -3,10 +3,7 @@ import PageBody from '@components/page-body';
 import SignupForm from '@components/signup-form';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetRegisterPatientPageDocument,
-  type GetRegisterPatientPageQuery,
-} from '@graphql/queries/pages/register-patient/index.generated';
+import { GetRegisterPatientPageDocument } from '@graphql/queries/pages/register-patient/index.generated';
 import type { AvailableLocale, LocalisedString } from '@i18n/locales';
 import {
   matrixLanguagesAccordionId,
@@ -49,7 +46,7 @@ const alreadyRegister: LocalisedString = {
 
 const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetRegisterPatientPageQuery>({
+  const { data, error } = await query({
     query: GetRegisterPatientPageDocument,
     variables: {
       introId,

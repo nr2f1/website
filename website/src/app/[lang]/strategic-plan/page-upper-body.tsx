@@ -1,10 +1,7 @@
 import PageBody from '@components/page-body';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetStrategicPlanUpperPageDocument,
-  type GetStrategicPlanUpperPageQuery,
-} from '@graphql/queries/pages/strategic-plan/index.generated';
+import { GetStrategicPlanUpperPageDocument } from '@graphql/queries/pages/strategic-plan/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   advocacyHeadingId,
@@ -33,7 +30,7 @@ const StrategicPlanUpperBody: React.FC<RegisterPageBodyProps> = async ({
   lang,
 }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetStrategicPlanUpperPageQuery>({
+  const { data, error } = await query({
     query: GetStrategicPlanUpperPageDocument,
     variables: {
       advocacyHeadingId,

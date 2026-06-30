@@ -1,9 +1,6 @@
 import PageHeader from '@components/page-header';
 import { getClient } from '@graphql/client';
-import {
-  GetNewsletterPageHeaderDocument,
-  type GetNewsletterPageHeaderQuery,
-} from '@graphql/queries/page-header/index.generated';
+import { GetNewsletterPageHeaderDocument } from '@graphql/queries/page-header/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { newsletterIndexPageHeaderId } from '@models/page-header';
 
@@ -15,7 +12,7 @@ const NewsletterPageHeader: React.FC<NewsPageHeaderProps> = async ({
   lang,
 }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetNewsletterPageHeaderQuery>({
+  const { data, error } = await query({
     query: GetNewsletterPageHeaderDocument,
     variables: {
       id: newsletterIndexPageHeaderId,

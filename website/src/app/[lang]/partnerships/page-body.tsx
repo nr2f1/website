@@ -1,9 +1,6 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetPartnershipsPageDocument,
-  type GetPartnershipsPageQuery,
-} from '@graphql/queries/pages/partnerships/index.generated';
+import { GetPartnershipsPageDocument } from '@graphql/queries/pages/partnerships/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { partnersHeadingId, partnershipsPageheadingId } from '@models/headings';
 import {
@@ -37,7 +34,7 @@ interface PartnershipsBodyProps {
 
 const PartnershipsBody: React.FC<PartnershipsBodyProps> = async ({ lang }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetPartnershipsPageQuery>({
+  const { data, error } = await query({
     query: GetPartnershipsPageDocument,
     variables: {
       cincinnatiAssetId,

@@ -1,8 +1,5 @@
 import { getClient } from '@graphql/client';
-import {
-  GetBlogPostsSlugsDocument,
-  type GetBlogPostsSlugsQuery,
-} from '@graphql/queries/news/index.generated';
+import { GetBlogPostsSlugsDocument } from '@graphql/queries/news/index.generated';
 import { AVAILABLE_LOCALES } from '@i18n/locales';
 import { BASE_URL, blogPostUrl, routes } from '@routes/index';
 import type { MetadataRoute } from 'next';
@@ -34,7 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const { query } = getClient();
 
-  const { data } = await query<GetBlogPostsSlugsQuery>({
+  const { data } = await query({
     query: GetBlogPostsSlugsDocument,
   });
 

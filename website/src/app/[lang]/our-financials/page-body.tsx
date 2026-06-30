@@ -1,9 +1,6 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetOurFinancialsPageDocument,
-  type GetOurFinancialsPageQuery,
-} from '@graphql/queries/pages/our-financials/index.generated';
+import { GetOurFinancialsPageDocument } from '@graphql/queries/pages/our-financials/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { ourFinancialsPageParagraphsId } from '@models/paragraphs';
 import styles from './index.module.scss';
@@ -16,7 +13,7 @@ export const OurFinancialsPageBody: React.FC<
   OurFinancialsPageBodyProps
 > = async ({ lang }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetOurFinancialsPageQuery>({
+  const { data, error } = await query({
     query: GetOurFinancialsPageDocument,
     variables: {
       locale: lang,

@@ -1,10 +1,7 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import type { Document } from '@contentful/rich-text-types';
 import { getClient } from '@graphql/client';
-import {
-  GetFunraisePageDocument,
-  type GetFunraisePageQuery,
-} from '@graphql/queries/pages/fundraise/index.generated';
+import { GetFunraisePageDocument } from '@graphql/queries/pages/fundraise/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { campaignsHeadingId } from '@models/headings';
 import { fundraisePageParagraphsId } from '@models/paragraphs';
@@ -18,7 +15,7 @@ interface FundraisePageBodyProps {
 }
 
 interface CampaignProps {
-  body: Document;
+  body: Document | null | undefined;
   heading: string;
   slug?: string | null;
   image: {
@@ -99,7 +96,7 @@ export const FundraisePageBody: React.FC<FundraisePageBodyProps> = async ({
   lang,
 }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetFunraisePageQuery>({
+  const { data, error } = await query({
     query: GetFunraisePageDocument,
     variables: {
       campaignsHeadingId,

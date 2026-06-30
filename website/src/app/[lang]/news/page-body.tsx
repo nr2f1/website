@@ -1,10 +1,7 @@
 import NewsCard from '@components/news-card';
 import Pagination from '@components/pagination';
 import { getClient } from '@graphql/client';
-import {
-  GetAllNewsDocument,
-  type GetAllNewsQuery,
-} from '@graphql/queries/news/index.generated';
+import { GetAllNewsDocument } from '@graphql/queries/news/index.generated';
 import type {
   BlogPageCollection,
   NewsletterCollection,
@@ -24,7 +21,7 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
   const { query } = getClient();
   const LIMIT = 12;
 
-  const { data, error } = await query<GetAllNewsQuery>({
+  const { data, error } = await query({
     query: GetAllNewsDocument,
     variables: {
       locale: lang,

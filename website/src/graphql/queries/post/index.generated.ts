@@ -4,6 +4,7 @@ type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 import * as Types from '../../types';
 
+import { Document } from '@contentful/rich-text-types';
 import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
 export type GetPostQueryVariables = Exact<{
   locale?: string | null | undefined;
@@ -11,7 +12,7 @@ export type GetPostQueryVariables = Exact<{
 }>;
 
 
-export type GetPostQuery = { blogPageCollection: { items: Array<{ title: string | null, excerpt: string | null, date: unknown, body: { json: unknown, links: { entries: { inline: Array<
+export type GetPostQuery = { blogPageCollection: { items: Array<{ title: string | null, excerpt: string | null, date: string | null, body: { json: Document, links: { entries: { inline: Array<
               | { sys: { id: string } }
               | { sys: { id: string } }
               | { sys: { id: string } }

@@ -1,9 +1,6 @@
 import AsideNewsCards from '@components/aside-news-cards';
 import { getClient } from '@graphql/client';
-import {
-  GetPageLatestNewsDocument,
-  type GetPageLatestNewsQuery,
-} from '@graphql/queries/page-latest-news/index.generated';
+import { GetPageLatestNewsDocument } from '@graphql/queries/page-latest-news/index.generated';
 import type {
   BlogPageCollection,
   NewsletterCollection,
@@ -33,7 +30,7 @@ const PageLatestNews: React.FC<PageLatestNewsProps> = async ({ lang }) => {
 
   const { query } = getClient();
 
-  const { data, error } = await query<GetPageLatestNewsQuery>({
+  const { data, error } = await query({
     query: GetPageLatestNewsDocument,
     variables: {
       locale: lang,

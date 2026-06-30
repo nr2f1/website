@@ -1,8 +1,5 @@
 import { getClient } from '@graphql/client';
-import {
-  GetMembershipPartnersDocument,
-  type GetMembershipPartnersQuery,
-} from '@graphql/queries/memberships-partners/index.generated';
+import { GetMembershipPartnersDocument } from '@graphql/queries/memberships-partners/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { membershipPartnersId } from '@models/navlinks';
 import styles from './index.module.scss';
@@ -16,7 +13,7 @@ const MembershipsPartners: React.FC<MembershipsPartnersProps> = async ({
 }) => {
   const { query } = getClient();
 
-  const { data, error } = await query<GetMembershipPartnersQuery>({
+  const { data, error } = await query({
     query: GetMembershipPartnersDocument,
     variables: {
       locale: lang,
@@ -34,7 +31,6 @@ const MembershipsPartners: React.FC<MembershipsPartnersProps> = async ({
     (item) => ({
       alt: item?.text?.content ?? '',
       href: item?.target?.url ?? '/',
-      // @ts-expect-error
       imageUrl: item?.referenceCollection?.items?.[0]?.asset?.url ?? '',
     }),
   );

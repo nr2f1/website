@@ -1,10 +1,7 @@
 import PageBody from '@components/page-body';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetResourcesAvailableToResearchersPageDocument,
-  type GetResourcesAvailableToResearchersPageQuery,
-} from '@graphql/queries/pages/resources-available-to-researchers/index.generated';
+import { GetResourcesAvailableToResearchersPageDocument } from '@graphql/queries/pages/resources-available-to-researchers/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   biorepositorySamplesHeadingId,
@@ -30,22 +27,21 @@ const ResourcesAvailableToResearchersBody: React.FC<
   ResourcesAvailableToResearchersBodyProps
 > = async ({ lang }) => {
   const { query } = getClient();
-  const { data, error } =
-    await query<GetResourcesAvailableToResearchersPageQuery>({
-      query: GetResourcesAvailableToResearchersPageDocument,
-      variables: {
-        biorepositorySamplesHeadingId,
-        biorepositorySamplesParagraphsId,
-        grantsHeadingId,
-        grantsSamplesParagraphsId,
-        locale: lang,
-        miceModelsHeadingId,
-        miceModelsParagraphsId,
-        patientRegistryRecordsHeadingId,
-        patientRegistryRecordsParagraphsId,
-        resourcesAvailableintroParagraphsId,
-      },
-    });
+  const { data, error } = await query({
+    query: GetResourcesAvailableToResearchersPageDocument,
+    variables: {
+      biorepositorySamplesHeadingId,
+      biorepositorySamplesParagraphsId,
+      grantsHeadingId,
+      grantsSamplesParagraphsId,
+      locale: lang,
+      miceModelsHeadingId,
+      miceModelsParagraphsId,
+      patientRegistryRecordsHeadingId,
+      patientRegistryRecordsParagraphsId,
+      resourcesAvailableintroParagraphsId,
+    },
+  });
 
   if (error || !data) {
     return null;
