@@ -1,33 +1,19 @@
+/** Internal type. DO NOT USE DIRECTLY. */
+type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+/** Internal type. DO NOT USE DIRECTLY. */
+export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 import * as Types from '../../types';
 
 import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
-export type GetMembershipPartnersQueryVariables = Types.Exact<{
-  membershipPartnersId: Types.Scalars['String']['input'];
-  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
+export type GetMembershipPartnersQueryVariables = Exact<{
+  membershipPartnersId: string;
+  locale?: string | null | undefined;
 }>;
 
 
-export type GetMembershipPartnersQuery = { __typename?: 'Query', navigationList?: { __typename?: 'NavigationList', name?: string | null, linksCollection?: { __typename?: 'NavigationListLinksCollection', items: Array<{ __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null, referenceCollection?: { __typename?: 'LinkReferenceCollection', items: Array<
-            | { __typename?: 'Accordion' }
-            | { __typename?: 'Banner' }
-            | { __typename?: 'BlogPage' }
-            | { __typename?: 'ConferenceBanner' }
-            | { __typename?: 'FundraisingIdea' }
-            | { __typename?: 'Heading' }
-            | { __typename?: 'HtmlHeadMetadata' }
-            | { __typename?: 'Hyperlink' }
-            | { __typename?: 'Image', asset?: { __typename?: 'Asset', url?: string | null } | null }
-            | { __typename?: 'Link' }
-            | { __typename?: 'LinkContent' }
-            | { __typename?: 'Member' }
-            | { __typename?: 'MicrocopyResource' }
-            | { __typename?: 'NavigationList' }
-            | { __typename?: 'Newsletter' }
-            | { __typename?: 'PageHeader' }
-            | { __typename?: 'Paragraphs' }
-            | { __typename?: 'Podcast' }
-            | { __typename?: 'Publication' }
-            | { __typename?: 'ResourceSet' }
+export type GetMembershipPartnersQuery = { navigationList: { name: string | null, linksCollection: { items: Array<{ target: { url: string | null } | null, text: { content: string | null } | null, referenceCollection: { items: Array<
+            | { asset: { url: string | null } | null }
+            | Record<PropertyKey, never>
            | null> } | null } | null> } | null } | null };
 
 

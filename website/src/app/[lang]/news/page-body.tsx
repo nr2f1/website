@@ -38,15 +38,9 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
   const { posts, podcasts, newsletters } = data;
 
   if (
-    !posts ||
-    !posts.items ||
-    !posts.items.length ||
-    !newsletters ||
-    !newsletters.items ||
-    !newsletters.items.length ||
-    !podcasts ||
-    !podcasts.items ||
-    !podcasts.items.length
+    !posts?.items?.length ||
+    !newsletters?.items?.length ||
+    !podcasts?.items?.length
   ) {
     return null;
   }

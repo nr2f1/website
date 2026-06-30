@@ -1,24 +1,28 @@
+/** Internal type. DO NOT USE DIRECTLY. */
+type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+/** Internal type. DO NOT USE DIRECTLY. */
+export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 import * as Types from '../../types';
 
 import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
-export type GetBannerQueryVariables = Types.Exact<{
-  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
-  id: Types.Scalars['String']['input'];
+export type GetBannerQueryVariables = Exact<{
+  locale?: string | null | undefined;
+  id: string;
 }>;
 
 
-export type GetBannerQuery = { __typename?: 'Query', banner?: { __typename?: 'Banner', heading?: { __typename?: 'Heading', content?: string | null } | null, content?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, cta?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null };
+export type GetBannerQuery = { banner: { heading: { content: string | null } | null, content: { content: { json: unknown } | null } | null, cta: { target: { url: string | null } | null, text: { content: string | null } | null } | null, image: { url: string | null } | null } | null };
 
-export type GetPatientCounterBannerQueryVariables = Types.Exact<{
-  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
-  patientNumberHeadingId: Types.Scalars['String']['input'];
-  countriesNumberHeadingId: Types.Scalars['String']['input'];
-  patientCounterParagraphsId: Types.Scalars['String']['input'];
-  patientCounterCtaId: Types.Scalars['String']['input'];
+export type GetPatientCounterBannerQueryVariables = Exact<{
+  locale?: string | null | undefined;
+  patientNumberHeadingId: string;
+  countriesNumberHeadingId: string;
+  patientCounterParagraphsId: string;
+  patientCounterCtaId: string;
 }>;
 
 
-export type GetPatientCounterBannerQuery = { __typename?: 'Query', patientNumberHeading?: { __typename?: 'Heading', content?: string | null } | null, countriesNumberHeading?: { __typename?: 'Heading', content?: string | null } | null, paragraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, link?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null };
+export type GetPatientCounterBannerQuery = { patientNumberHeading: { content: string | null } | null, countriesNumberHeading: { content: string | null } | null, paragraphs: { content: { json: unknown } | null } | null, link: { target: { url: string | null } | null, text: { content: string | null } | null } | null };
 
 
 export const GetBannerDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetBanner"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"id"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"banner"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"id"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"heading"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"}}]}},{"kind":"Field","name":{"kind":"Name","value":"content"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"json"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"cta"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"target"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"text"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<GetBannerQuery, GetBannerQueryVariables>;
