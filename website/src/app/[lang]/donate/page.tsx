@@ -2,10 +2,7 @@ import FundrasingCampaigns from '@components/fundraising-campaigns';
 import StoreBanner from '@components/store-banner';
 
 import { getClient } from '@graphql/client';
-import {
-  GetMetadataDocument,
-  type GetMetadataQuery,
-} from '@graphql/queries/metadata/index.generated';
+import { GetMetadataDocument } from '@graphql/queries/metadata/index.generated';
 import { donatePageMetadataId } from '@models/metadata';
 import { getAlternateUrls, routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
@@ -22,7 +19,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   // Validate locale before any GraphQL queries
   validateLocale(lang);
 
-  const { data } = await query<GetMetadataQuery>({
+  const { data } = await query({
     query: GetMetadataDocument,
     variables: {
       id: donatePageMetadataId,
@@ -67,7 +64,7 @@ export async function generateMetadata({
   // Validate locale before any GraphQL queries
   validateLocale(lang);
 
-  const { data } = await query<GetMetadataQuery>({
+  const { data } = await query({
     query: GetMetadataDocument,
     variables: {
       id: donatePageMetadataId,

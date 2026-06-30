@@ -1,9 +1,6 @@
 import NewsCard from '@components/news-card';
 import { getClient } from '@graphql/client';
-import {
-  GetLatestNewsDocument,
-  type GetLatestNewsQuery,
-} from '@graphql/queries/latest-news/index.generated';
+import { GetLatestNewsDocument } from '@graphql/queries/latest-news/index.generated';
 import type {
   BlogPageCollection,
   NewsletterCollection,
@@ -23,7 +20,7 @@ interface LatestNewsProps {
 const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
   const { query } = getClient();
 
-  const { data, error } = await query<GetLatestNewsQuery>({
+  const { data, error } = await query({
     query: GetLatestNewsDocument,
     variables: {
       latestNewsCtaId,

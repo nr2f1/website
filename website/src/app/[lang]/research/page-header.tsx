@@ -1,9 +1,6 @@
 import PageHeader from '@components/page-header';
 import { getClient } from '@graphql/client';
-import {
-  GetPageHeaderDocument,
-  type GetPageHeaderQuery,
-} from '@graphql/queries/page-header/index.generated';
+import { GetPageHeaderDocument } from '@graphql/queries/page-header/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { researchPageHeaderId } from '@models/page-header';
 
@@ -16,7 +13,7 @@ const ResearchPageHeader: React.FC<ResearchPageHeaderProps> = async ({
 }) => {
   const { query } = getClient();
 
-  const { data, error } = await query<GetPageHeaderQuery>({
+  const { data, error } = await query({
     query: GetPageHeaderDocument,
     variables: {
       id: researchPageHeaderId,

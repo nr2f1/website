@@ -1,10 +1,9 @@
-import { composePlugins, withNx } from '@nx/next';
-import type { WithNxOptions } from '@nx/next/plugins/with-nx';
+import type { NextConfig } from 'next';
 import headers from './src/shared/utils/headers';
 
 const isDev = process.env.NODE_ENV === 'development';
 
-const nextConfig: WithNxOptions = {
+const nextConfig: NextConfig = {
   experimental: {
     viewTransition: true,
   },
@@ -50,9 +49,4 @@ const nextConfig: WithNxOptions = {
   },
 };
 
-const plugins = [
-  // Add more Next.js plugins to this list if needed.
-  withNx,
-];
-
-export default composePlugins(...plugins)(nextConfig);
+export default nextConfig;

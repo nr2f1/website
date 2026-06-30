@@ -1,10 +1,7 @@
 import NewsCard from '@components/news-card';
 import Pagination from '@components/pagination';
 import { getClient } from '@graphql/client';
-import {
-  GetBlogPostsDocument,
-  type GetBlogPostsQuery,
-} from '@graphql/queries/news/index.generated';
+import { GetBlogPostsDocument } from '@graphql/queries/news/index.generated';
 import { blogPostUrl } from '@routes/index';
 import { News } from '@shared/types/news';
 import {
@@ -18,7 +15,7 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
   const { query } = getClient();
   const LIMIT = 12;
 
-  const { data, error } = await query<GetBlogPostsQuery>({
+  const { data, error } = await query({
     query: GetBlogPostsDocument,
     variables: {
       limit: LIMIT,

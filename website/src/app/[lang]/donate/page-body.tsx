@@ -1,10 +1,7 @@
 import DonateForm from '@components/widgets/form';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetDonatePageDocument,
-  type GetDonatePageQuery,
-} from '@graphql/queries/pages/donate/index.generated';
+import { GetDonatePageDocument } from '@graphql/queries/pages/donate/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { donatePageParagraphsId } from '@models/paragraphs';
 import styles from './index.module.scss';
@@ -17,7 +14,7 @@ export const DonatePageBody: React.FC<DonatePageBodyProps> = async ({
   lang,
 }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetDonatePageQuery>({
+  const { data, error } = await query({
     query: GetDonatePageDocument,
     variables: {
       donatePageParagraphsId,

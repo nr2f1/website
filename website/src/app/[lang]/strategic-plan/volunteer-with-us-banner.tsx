@@ -1,10 +1,7 @@
 import Banner from '@components/banner';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetBannerDocument,
-  type GetBannerQuery,
-} from '@graphql/queries/banner/index.generated';
+import { GetBannerDocument } from '@graphql/queries/banner/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { volunteerWithUsBannerId } from '@models/banners/banner';
 
@@ -16,7 +13,7 @@ const VolunteerWithUsBanner: React.FC<VolunteerWithUsBannerProps> = async ({
   lang,
 }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetBannerQuery>({
+  const { data, error } = await query({
     query: GetBannerDocument,
     variables: {
       id: volunteerWithUsBannerId,

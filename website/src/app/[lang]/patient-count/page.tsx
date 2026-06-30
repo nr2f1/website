@@ -1,9 +1,6 @@
 import SupportBanner from '@components/support-banner';
 import { getClient } from '@graphql/client';
-import {
-  GetMetadataDocument,
-  type GetMetadataQuery,
-} from '@graphql/queries/metadata/index.generated';
+import { GetMetadataDocument } from '@graphql/queries/metadata/index.generated';
 import {
   patientCountPageMetadataId,
   researchPageMetadataId,
@@ -19,7 +16,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
   const { query } = getClient();
   const { lang } = await params;
 
-  const { data } = await query<GetMetadataQuery>({
+  const { data } = await query({
     query: GetMetadataDocument,
     variables: {
       id: patientCountPageMetadataId,
@@ -67,7 +64,7 @@ export async function generateMetadata({
   const { query } = getClient();
   const { lang } = await params;
 
-  const { data } = await query<GetMetadataQuery>({
+  const { data } = await query({
     query: GetMetadataDocument,
     variables: {
       id: researchPageMetadataId,

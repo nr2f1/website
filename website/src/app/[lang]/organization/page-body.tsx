@@ -2,10 +2,7 @@ import Member from '@components/member';
 import PageBody from '@components/page-body';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetOrganizationPageDocument,
-  type GetOrganizationPageQuery,
-} from '@graphql/queries/pages/organization/index.generated';
+import { GetOrganizationPageDocument } from '@graphql/queries/pages/organization/index.generated';
 import {
   boardHeadingId,
   executiveDirectorHeadingId,
@@ -27,7 +24,7 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
   lang,
 }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetOrganizationPageQuery>({
+  const { data, error } = await query({
     query: GetOrganizationPageDocument,
     variables: {
       boardHeadingId,

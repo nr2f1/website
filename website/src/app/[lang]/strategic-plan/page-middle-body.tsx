@@ -1,10 +1,7 @@
 import PageBodySection from '@components/page-body-section';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetStrategicPlanMiddlePageDocument,
-  type GetStrategicPlanMiddlePageQuery,
-} from '@graphql/queries/pages/strategic-plan/index.generated';
+import { GetStrategicPlanMiddlePageDocument } from '@graphql/queries/pages/strategic-plan/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { getThereHeadingId } from '@models/headings';
 import {
@@ -22,7 +19,7 @@ const StrategicPlanMiddleBody: React.FC<StrategicPlanMiddleBodyProps> = async ({
   lang,
 }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetStrategicPlanMiddlePageQuery>({
+  const { data, error } = await query({
     query: GetStrategicPlanMiddlePageDocument,
     variables: {
       getThereHeadingId,

@@ -1,10 +1,7 @@
 import Banner from '@components/banner';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetBannerDocument,
-  type GetBannerQuery,
-} from '@graphql/queries/banner/index.generated';
+import { GetBannerDocument } from '@graphql/queries/banner/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { homePageBannerId } from '@models/banners/banner';
 
@@ -15,7 +12,7 @@ interface HomePageBannerProps {
 const HomePageBanner: React.FC<HomePageBannerProps> = async ({ lang }) => {
   const { query } = getClient();
 
-  const { data, error } = await query<GetBannerQuery>({
+  const { data, error } = await query({
     query: GetBannerDocument,
     variables: {
       id: homePageBannerId,

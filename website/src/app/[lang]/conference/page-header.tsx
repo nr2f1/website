@@ -1,9 +1,6 @@
 import PageHeader from '@components/page-header';
 import { getClient } from '@graphql/client';
-import {
-  GetPageHeaderDocument,
-  type GetPageHeaderQuery,
-} from '@graphql/queries/page-header/index.generated';
+import { GetPageHeaderDocument } from '@graphql/queries/page-header/index.generated';
 import { conferencePageHeaderId } from '@models/page-header';
 import type { ComponentPropsWithLocale } from '@shared/types/page-with-locale-params';
 
@@ -13,7 +10,7 @@ const ConferenceHeader: React.FC<ComponentPropsWithLocale> = async ({
   const { query } = getClient();
 
   // TODO: Change query
-  const { data, error } = await query<GetPageHeaderQuery>({
+  const { data, error } = await query({
     query: GetPageHeaderDocument,
     variables: {
       id: conferencePageHeaderId,

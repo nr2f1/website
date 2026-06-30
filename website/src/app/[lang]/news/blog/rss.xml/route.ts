@@ -1,8 +1,5 @@
 import { getClient } from '@graphql/client';
-import {
-  GetAllBlogPostsForRssDocument,
-  type GetAllBlogPostsForRssQuery,
-} from '@graphql/queries/news/index.generated';
+import { GetAllBlogPostsForRssDocument } from '@graphql/queries/news/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { BASE_URL, blogPostUrl } from '@routes/index';
 import type { NextRequest } from 'next/server';
@@ -31,7 +28,7 @@ export async function GET(
 
   const { query } = getClient();
 
-  const { data } = await query<GetAllBlogPostsForRssQuery>({
+  const { data } = await query({
     query: GetAllBlogPostsForRssDocument,
     variables: {
       locale: validLang,

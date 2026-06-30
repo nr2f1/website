@@ -1,10 +1,7 @@
 import PageBodySection from '@components/page-body-section';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetLivingWithBbsoasBottomPageDocument,
-  type GetLivingWithBbsoasBottomPageQuery,
-} from '@graphql/queries/pages/living-with-bbsoas/index.generated';
+import { GetLivingWithBbsoasBottomPageDocument } from '@graphql/queries/pages/living-with-bbsoas/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   bbsoasClinicHeadingId,
@@ -27,7 +24,7 @@ const LivingWithBbsoasBottomBody: React.FC<
   LivingWithBbsoasBottomBodyProps
 > = async ({ lang }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetLivingWithBbsoasBottomPageQuery>({
+  const { data, error } = await query({
     query: GetLivingWithBbsoasBottomPageDocument,
     variables: {
       bbsoasClinicHeadingId,

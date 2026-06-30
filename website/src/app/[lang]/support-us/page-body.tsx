@@ -1,9 +1,6 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetSupportUsPageDocument,
-  type GetSupportUsPageQuery,
-} from '@graphql/queries/pages/support-us/index.generated';
+import { GetSupportUsPageDocument } from '@graphql/queries/pages/support-us/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { supportUsPageParagraphsId } from '@models/paragraphs';
 import styles from './index.module.scss';
@@ -16,7 +13,7 @@ export const SupportUsPageBody: React.FC<SupportUsPageBodyProps> = async ({
   lang,
 }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetSupportUsPageQuery>({
+  const { data, error } = await query({
     query: GetSupportUsPageDocument,
     variables: {
       locale: lang,

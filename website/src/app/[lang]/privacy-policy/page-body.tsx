@@ -1,9 +1,6 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetPrivacyPolicyPageDocument,
-  type GetPrivacyPolicyPageQuery,
-} from '@graphql/queries/pages/privacy-policy/index.generated';
+import { GetPrivacyPolicyPageDocument } from '@graphql/queries/pages/privacy-policy/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import { privacyPolicyPageParagraphsId } from '@models/paragraphs';
 import styles from './index.module.scss';
@@ -16,7 +13,7 @@ export const PrivacyPolicyPageBody: React.FC<
   PrivacyPolicyPageBodyProps
 > = async ({ lang }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetPrivacyPolicyPageQuery>({
+  const { data, error } = await query({
     query: GetPrivacyPolicyPageDocument,
     variables: {
       locale: lang,

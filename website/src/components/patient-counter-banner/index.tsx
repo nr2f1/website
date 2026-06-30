@@ -1,9 +1,6 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetPatientCounterBannerDocument,
-  type GetPatientCounterBannerQuery,
-} from '@graphql/queries/banner/index.generated';
+import { GetPatientCounterBannerDocument } from '@graphql/queries/banner/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   countriesNumberHeadingId,
@@ -38,7 +35,7 @@ const PatientCounterBanner: React.FC<PatientCounterBannerProps> = async ({
   lang,
 }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetPatientCounterBannerQuery>({
+  const { data, error } = await query({
     query: GetPatientCounterBannerDocument,
     variables: {
       countriesNumberHeadingId,

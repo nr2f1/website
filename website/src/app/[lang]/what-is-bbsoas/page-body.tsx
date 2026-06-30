@@ -2,10 +2,7 @@ import Accordion from '@components/accordion';
 import PageBody from '@components/page-body';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetWhatIsBbsoasPageDocument,
-  type GetWhatIsBbsoasPageQuery,
-} from '@graphql/queries/pages/what-is-bbsoas/index.generated';
+import { GetWhatIsBbsoasPageDocument } from '@graphql/queries/pages/what-is-bbsoas/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   adhdAccordionId,
@@ -56,7 +53,7 @@ interface RegisterPageBodyProps {
 
 const WhatIsBbsoasBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetWhatIsBbsoasPageQuery>({
+  const { data, error } = await query({
     query: GetWhatIsBbsoasPageDocument,
     variables: {
       adhdAccordionId,

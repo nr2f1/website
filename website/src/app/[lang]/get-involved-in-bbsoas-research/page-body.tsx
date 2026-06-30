@@ -2,10 +2,7 @@ import Accordion from '@components/accordion';
 import PageBody from '@components/page-body';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetGetInvolvedInBbsoasResearchPageDocument,
-  type GetGetInvolvedInBbsoasResearchPageQuery,
-} from '@graphql/queries/pages/get-involved-in-bbsoas-research/index.generated';
+import { GetGetInvolvedInBbsoasResearchPageDocument } from '@graphql/queries/pages/get-involved-in-bbsoas-research/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   anotherSampleAccordionId,
@@ -40,7 +37,7 @@ const GetInvolvedInBbsoasResearchBody: React.FC<
   GetInvolvedInBbsoasResearchPageProps
 > = async ({ lang }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetGetInvolvedInBbsoasResearchPageQuery>({
+  const { data, error } = await query({
     query: GetGetInvolvedInBbsoasResearchPageDocument,
     variables: {
       anotherSampleAccordionId,

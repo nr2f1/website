@@ -1,10 +1,7 @@
 import NewsCard from '@components/news-card';
 import Pagination from '@components/pagination';
 import { getClient } from '@graphql/client';
-import {
-  GetNewslettersDocument,
-  type GetNewslettersQuery,
-} from '@graphql/queries/news/index.generated';
+import { GetNewslettersDocument } from '@graphql/queries/news/index.generated';
 import { News } from '@shared/types/news';
 import {
   getSkipPagination,
@@ -17,7 +14,7 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
   const { query } = getClient();
   const LIMIT = 12;
 
-  const { data, error } = await query<GetNewslettersQuery>({
+  const { data, error } = await query({
     query: GetNewslettersDocument,
     variables: {
       limit: LIMIT,

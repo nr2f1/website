@@ -1,9 +1,6 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetSupportUsCardsDocument,
-  type GetSupportUsCardsQuery,
-} from '@graphql/queries/support-us-cards/index.generated';
+import { GetSupportUsCardsDocument } from '@graphql/queries/support-us-cards/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   donateHeadingId,
@@ -26,7 +23,7 @@ interface SupportUsCardsProps {
 const SupportUsCards: React.FC<SupportUsCardsProps> = async ({ lang }) => {
   const { query } = getClient();
 
-  const { data } = await query<GetSupportUsCardsQuery>({
+  const { data } = await query({
     query: GetSupportUsCardsDocument,
     variables: {
       donateCtaId,

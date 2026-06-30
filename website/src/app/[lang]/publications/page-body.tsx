@@ -1,10 +1,7 @@
 import PageBody from '@components/page-body';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import {
-  GetPublicationsPageDocument,
-  type GetPublicationsPageQuery,
-} from '@graphql/queries/pages/publications/index.generated';
+import { GetPublicationsPageDocument } from '@graphql/queries/pages/publications/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
 import {
   geneResearchHeadingId,
@@ -121,7 +118,7 @@ const PublicationsByYear: React.FC<PublicationsByYearProps> = ({
 
 const RegisterPageBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
   const { query } = getClient();
-  const { data, error } = await query<GetPublicationsPageQuery>({
+  const { data, error } = await query({
     query: GetPublicationsPageDocument,
     variables: {
       geneResearchContentId,
