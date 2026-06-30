@@ -47,15 +47,9 @@ const PageLatestNews: React.FC<PageLatestNewsProps> = async ({ lang }) => {
   const { posts, podcasts, newsletters } = data;
 
   if (
-    !posts ||
-    !posts.items ||
-    !posts.items.length ||
-    !newsletters ||
-    !newsletters.items ||
-    !newsletters.items.length ||
-    !podcasts ||
-    !podcasts.items ||
-    !podcasts.items.length
+    !posts?.items?.length ||
+    !newsletters?.items?.length ||
+    !podcasts?.items?.length
   ) {
     return null;
   }

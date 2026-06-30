@@ -1,77 +1,81 @@
+/** Internal type. DO NOT USE DIRECTLY. */
+type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+/** Internal type. DO NOT USE DIRECTLY. */
+export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 import * as Types from '../../../types';
 
 import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
-export type GetLivingWithBbsoasUpperPageQueryVariables = Types.Exact<{
-  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
-  testAndTherapiesHeadingId: Types.Scalars['String']['input'];
-  testAndTherapiesParagraphsId: Types.Scalars['String']['input'];
-  registerPatientHeadingId: Types.Scalars['String']['input'];
-  registerPatientParagraphsId: Types.Scalars['String']['input'];
-  registerPatientLinkId: Types.Scalars['String']['input'];
-  understandingBbsoasHeadingId: Types.Scalars['String']['input'];
-  understandingBbsoasParagraphsId: Types.Scalars['String']['input'];
-  handingLettersHeadingId: Types.Scalars['String']['input'];
-  bbsoasClinicHeadingId: Types.Scalars['String']['input'];
-  readingGeneticReportHeadingId: Types.Scalars['String']['input'];
+export type GetLivingWithBbsoasUpperPageQueryVariables = Exact<{
+  locale?: string | null | undefined;
+  testAndTherapiesHeadingId: string;
+  testAndTherapiesParagraphsId: string;
+  registerPatientHeadingId: string;
+  registerPatientParagraphsId: string;
+  registerPatientLinkId: string;
+  understandingBbsoasHeadingId: string;
+  understandingBbsoasParagraphsId: string;
+  handingLettersHeadingId: string;
+  bbsoasClinicHeadingId: string;
+  readingGeneticReportHeadingId: string;
 }>;
 
 
-export type GetLivingWithBbsoasUpperPageQuery = { __typename?: 'Query', testAndTherapiesHeading?: { __typename?: 'Heading', content?: string | null } | null, testAndTherapiesParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerPatientHeading?: { __typename?: 'Heading', content?: string | null } | null, registerPatientParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, registerPatientCta?: { __typename?: 'Link', target?: { __typename?: 'Hyperlink', url?: string | null } | null, text?: { __typename?: 'LinkContent', content?: string | null } | null } | null, understandingBbsoasHeading?: { __typename?: 'Heading', content?: string | null } | null, understandingBbsoasParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, handingLettersHeading?: { __typename?: 'Heading', content?: string | null } | null, bbsoasClinicHeading?: { __typename?: 'Heading', content?: string | null } | null, readingGeneticReportHeading?: { __typename?: 'Heading', content?: string | null } | null };
+export type GetLivingWithBbsoasUpperPageQuery = { testAndTherapiesHeading: { content: string | null } | null, testAndTherapiesParagraphs: { content: { json: unknown } | null } | null, registerPatientHeading: { content: string | null } | null, registerPatientParagraphs: { content: { json: unknown } | null } | null, registerPatientCta: { target: { url: string | null } | null, text: { content: string | null } | null } | null, understandingBbsoasHeading: { content: string | null } | null, understandingBbsoasParagraphs: { content: { json: unknown } | null } | null, handingLettersHeading: { content: string | null } | null, bbsoasClinicHeading: { content: string | null } | null, readingGeneticReportHeading: { content: string | null } | null };
 
-export type GetLivingWithBbsoasBottomPageQueryVariables = Types.Exact<{
-  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
-  handingLettersHeadingId: Types.Scalars['String']['input'];
-  handingLettersParagraphsId: Types.Scalars['String']['input'];
-  bbsoasClinicHeadingId: Types.Scalars['String']['input'];
-  bbsoasClinicParagraphsId: Types.Scalars['String']['input'];
-  readingGeneticReportHeadingId: Types.Scalars['String']['input'];
-  readingGeneticReportParagraphsId: Types.Scalars['String']['input'];
+export type GetLivingWithBbsoasBottomPageQueryVariables = Exact<{
+  locale?: string | null | undefined;
+  handingLettersHeadingId: string;
+  handingLettersParagraphsId: string;
+  bbsoasClinicHeadingId: string;
+  bbsoasClinicParagraphsId: string;
+  readingGeneticReportHeadingId: string;
+  readingGeneticReportParagraphsId: string;
 }>;
 
 
-export type GetLivingWithBbsoasBottomPageQuery = { __typename?: 'Query', handingLettersHeading?: { __typename?: 'Heading', content?: string | null } | null, handingLettersParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, bbsoasClinicHeading?: { __typename?: 'Heading', content?: string | null } | null, bbsoasClinicParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any } | null } | null, readingGeneticReportHeading?: { __typename?: 'Heading', content?: string | null } | null, readingGeneticReportParagraphs?: { __typename?: 'Paragraphs', content?: { __typename?: 'ParagraphsContent', json: any, links: { __typename?: 'ParagraphsContentLinks', entries: { __typename?: 'ParagraphsContentEntries', inline: Array<
-            | { __typename?: 'Accordion', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'Banner', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'BlogPage', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'ConferenceBanner', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'FundraisingIdea', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'Heading', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'HtmlHeadMetadata', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'Hyperlink', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'Image', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'Link', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'LinkContent', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'Member', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'MicrocopyResource', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'NavigationList', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'Newsletter', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'PageHeader', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'Paragraphs', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'Podcast', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'Publication', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'ResourceSet', sys: { __typename?: 'Sys', id: string } }
+export type GetLivingWithBbsoasBottomPageQuery = { handingLettersHeading: { content: string | null } | null, handingLettersParagraphs: { content: { json: unknown } | null } | null, bbsoasClinicHeading: { content: string | null } | null, bbsoasClinicParagraphs: { content: { json: unknown } | null } | null, readingGeneticReportHeading: { content: string | null } | null, readingGeneticReportParagraphs: { content: { json: unknown, links: { entries: { inline: Array<
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
            | null>, block: Array<
-            | { __typename?: 'Accordion', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'Banner', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'BlogPage', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'ConferenceBanner', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'FundraisingIdea', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'Heading', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'HtmlHeadMetadata', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'Hyperlink', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'Image', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'Link', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'LinkContent', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'Member', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'MicrocopyResource', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'NavigationList', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'Newsletter', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'PageHeader', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'Paragraphs', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'Podcast', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'Publication', sys: { __typename?: 'Sys', id: string } }
-            | { __typename?: 'ResourceSet', sys: { __typename?: 'Sys', id: string } }
-           | null> }, assets: { __typename?: 'ParagraphsContentAssets', block: Array<{ __typename?: 'Asset', url?: string | null, title?: string | null, width?: number | null, height?: number | null, description?: string | null, contentType?: string | null, sys: { __typename?: 'Sys', id: string } } | null> } } } | null } | null };
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+            | { sys: { id: string } }
+           | null> }, assets: { block: Array<{ url: string | null, title: string | null, width: number | null, height: number | null, description: string | null, contentType: string | null, sys: { id: string } } | null> } } } | null } | null };
 
 
 export const GetLivingWithBbsoasUpperPageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetLivingWithBbsoasUpperPage"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"testAndTherapiesHeadingId"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"testAndTherapiesParagraphsId"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"registerPatientHeadingId"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"registerPatientParagraphsId"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"registerPatientLinkId"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"understandingBbsoasHeadingId"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"understandingBbsoasParagraphsId"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"handingLettersHeadingId"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"bbsoasClinicHeadingId"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"readingGeneticReportHeadingId"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"testAndTherapiesHeading"},"name":{"kind":"Name","value":"heading"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"testAndTherapiesHeadingId"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"testAndTherapiesParagraphs"},"name":{"kind":"Name","value":"paragraphs"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"testAndTherapiesParagraphsId"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"json"}}]}}]}},{"kind":"Field","alias":{"kind":"Name","value":"registerPatientHeading"},"name":{"kind":"Name","value":"heading"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"registerPatientHeadingId"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"registerPatientParagraphs"},"name":{"kind":"Name","value":"paragraphs"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"registerPatientParagraphsId"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"json"}}]}}]}},{"kind":"Field","alias":{"kind":"Name","value":"registerPatientCta"},"name":{"kind":"Name","value":"link"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"registerPatientLinkId"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"target"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"text"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"}}]}}]}},{"kind":"Field","alias":{"kind":"Name","value":"understandingBbsoasHeading"},"name":{"kind":"Name","value":"heading"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"understandingBbsoasHeadingId"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"understandingBbsoasParagraphs"},"name":{"kind":"Name","value":"paragraphs"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"understandingBbsoasParagraphsId"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"json"}}]}}]}},{"kind":"Field","alias":{"kind":"Name","value":"handingLettersHeading"},"name":{"kind":"Name","value":"heading"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"handingLettersHeadingId"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"bbsoasClinicHeading"},"name":{"kind":"Name","value":"heading"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"bbsoasClinicHeadingId"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"readingGeneticReportHeading"},"name":{"kind":"Name","value":"heading"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"readingGeneticReportHeadingId"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"}}]}}]}}]} as unknown as DocumentNode<GetLivingWithBbsoasUpperPageQuery, GetLivingWithBbsoasUpperPageQueryVariables>;

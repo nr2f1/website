@@ -1,51 +1,55 @@
+/** Internal type. DO NOT USE DIRECTLY. */
+type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+/** Internal type. DO NOT USE DIRECTLY. */
+export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 import * as Types from '../../types';
 
 import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
-export type GetAllNewsQueryVariables = Types.Exact<{
-  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
+export type GetAllNewsQueryVariables = Exact<{
+  locale?: string | null | undefined;
 }>;
 
 
-export type GetAllNewsQuery = { __typename?: 'Query', posts?: { __typename?: 'BlogPageCollection', total: number, items: Array<{ __typename?: 'BlogPage', title?: string | null, date?: any | null, slug?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null, newsletters?: { __typename?: 'NewsletterCollection', total: number, items: Array<{ __typename?: 'Newsletter', date?: any | null, title?: string | null, newsletterContent?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null, podcasts?: { __typename?: 'PodcastCollection', total: number, items: Array<{ __typename?: 'Podcast', title?: string | null, date?: any | null, url?: string | null } | null> } | null };
+export type GetAllNewsQuery = { posts: { total: number, items: Array<{ title: string | null, date: unknown, slug: string | null, image: { url: string | null } | null } | null> } | null, newsletters: { total: number, items: Array<{ date: unknown, title: string | null, newsletterContent: { url: string | null } | null } | null> } | null, podcasts: { total: number, items: Array<{ title: string | null, date: unknown, url: string | null } | null> } | null };
 
-export type GetBlogPostsQueryVariables = Types.Exact<{
-  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
-  limit: Types.Scalars['Int']['input'];
-  skip: Types.Scalars['Int']['input'];
+export type GetBlogPostsQueryVariables = Exact<{
+  locale?: string | null | undefined;
+  limit: number;
+  skip: number;
 }>;
 
 
-export type GetBlogPostsQuery = { __typename?: 'Query', blogPageCollection?: { __typename?: 'BlogPageCollection', total: number, items: Array<{ __typename?: 'BlogPage', date?: any | null, title?: string | null, slug?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null };
+export type GetBlogPostsQuery = { blogPageCollection: { total: number, items: Array<{ date: unknown, title: string | null, slug: string | null, image: { url: string | null } | null } | null> } | null };
 
-export type GetPodcastsQueryVariables = Types.Exact<{
-  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
-  limit: Types.Scalars['Int']['input'];
-  skip: Types.Scalars['Int']['input'];
+export type GetPodcastsQueryVariables = Exact<{
+  locale?: string | null | undefined;
+  limit: number;
+  skip: number;
 }>;
 
 
-export type GetPodcastsQuery = { __typename?: 'Query', podcastCollection?: { __typename?: 'PodcastCollection', total: number, items: Array<{ __typename?: 'Podcast', date?: any | null, title?: string | null, url?: string | null } | null> } | null };
+export type GetPodcastsQuery = { podcastCollection: { total: number, items: Array<{ date: unknown, title: string | null, url: string | null } | null> } | null };
 
-export type GetNewslettersQueryVariables = Types.Exact<{
-  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
-  limit: Types.Scalars['Int']['input'];
-  skip: Types.Scalars['Int']['input'];
+export type GetNewslettersQueryVariables = Exact<{
+  locale?: string | null | undefined;
+  limit: number;
+  skip: number;
 }>;
 
 
-export type GetNewslettersQuery = { __typename?: 'Query', newsletterCollection?: { __typename?: 'NewsletterCollection', total: number, items: Array<{ __typename?: 'Newsletter', date?: any | null, title?: string | null, newsletterContent?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null };
+export type GetNewslettersQuery = { newsletterCollection: { total: number, items: Array<{ date: unknown, title: string | null, newsletterContent: { url: string | null } | null } | null> } | null };
 
-export type GetBlogPostsSlugsQueryVariables = Types.Exact<{ [key: string]: never; }>;
+export type GetBlogPostsSlugsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetBlogPostsSlugsQuery = { __typename?: 'Query', blogPageCollection?: { __typename?: 'BlogPageCollection', items: Array<{ __typename?: 'BlogPage', slug?: string | null, date?: any | null, excerpt?: string | null, title?: string | null } | null> } | null };
+export type GetBlogPostsSlugsQuery = { blogPageCollection: { items: Array<{ slug: string | null, date: unknown, excerpt: string | null, title: string | null } | null> } | null };
 
-export type GetAllBlogPostsForRssQueryVariables = Types.Exact<{
-  locale: Types.Scalars['String']['input'];
+export type GetAllBlogPostsForRssQueryVariables = Exact<{
+  locale: string;
 }>;
 
 
-export type GetAllBlogPostsForRssQuery = { __typename?: 'Query', blogPageCollection?: { __typename?: 'BlogPageCollection', items: Array<{ __typename?: 'BlogPage', date?: any | null, title?: string | null, slug?: string | null, excerpt?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null> } | null };
+export type GetAllBlogPostsForRssQuery = { blogPageCollection: { items: Array<{ date: unknown, title: string | null, slug: string | null, excerpt: string | null, image: { url: string | null } | null } | null> } | null };
 
 
 export const GetAllNewsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAllNews"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"posts"},"name":{"kind":"Name","value":"blogPageCollection"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"order"},"value":{"kind":"EnumValue","value":"date_DESC"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"total"}},{"kind":"Field","name":{"kind":"Name","value":"items"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"date"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}}]}},{"kind":"Field","alias":{"kind":"Name","value":"newsletters"},"name":{"kind":"Name","value":"newsletterCollection"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"order"},"value":{"kind":"EnumValue","value":"date_DESC"}},{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"total"}},{"kind":"Field","name":{"kind":"Name","value":"items"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"date"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"newsletterContent"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}},{"kind":"Field","alias":{"kind":"Name","value":"podcasts"},"name":{"kind":"Name","value":"podcastCollection"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"order"},"value":{"kind":"EnumValue","value":"date_ASC"}},{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"total"}},{"kind":"Field","name":{"kind":"Name","value":"items"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"date"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<GetAllNewsQuery, GetAllNewsQueryVariables>;

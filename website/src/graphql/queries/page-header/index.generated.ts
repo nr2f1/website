@@ -1,37 +1,41 @@
+/** Internal type. DO NOT USE DIRECTLY. */
+type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+/** Internal type. DO NOT USE DIRECTLY. */
+export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 import * as Types from '../../types';
 
 import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
-export type GetPageHeaderQueryVariables = Types.Exact<{
-  id: Types.Scalars['String']['input'];
-  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
+export type GetPageHeaderQueryVariables = Exact<{
+  id: string;
+  locale?: string | null | undefined;
 }>;
 
 
-export type GetPageHeaderQuery = { __typename?: 'Query', pageHeader?: { __typename?: 'PageHeader', title?: string | null, lastUpdated?: any | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null };
+export type GetPageHeaderQuery = { pageHeader: { title: string | null, lastUpdated: unknown, image: { url: string | null } | null } | null };
 
-export type GetBlogPageHeaderQueryVariables = Types.Exact<{
-  id: Types.Scalars['String']['input'];
-  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
+export type GetBlogPageHeaderQueryVariables = Exact<{
+  id: string;
+  locale?: string | null | undefined;
 }>;
 
 
-export type GetBlogPageHeaderQuery = { __typename?: 'Query', pageHeader?: { __typename?: 'PageHeader', title?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null, lastUpdated?: { __typename?: 'BlogPageCollection', items: Array<{ __typename?: 'BlogPage', date?: any | null } | null> } | null };
+export type GetBlogPageHeaderQuery = { pageHeader: { title: string | null, image: { url: string | null } | null } | null, lastUpdated: { items: Array<{ date: unknown } | null> } | null };
 
-export type GetPodcastPageHeaderQueryVariables = Types.Exact<{
-  id: Types.Scalars['String']['input'];
-  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
+export type GetPodcastPageHeaderQueryVariables = Exact<{
+  id: string;
+  locale?: string | null | undefined;
 }>;
 
 
-export type GetPodcastPageHeaderQuery = { __typename?: 'Query', pageHeader?: { __typename?: 'PageHeader', title?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null, lastUpdated?: { __typename?: 'PodcastCollection', items: Array<{ __typename?: 'Podcast', date?: any | null } | null> } | null };
+export type GetPodcastPageHeaderQuery = { pageHeader: { title: string | null, image: { url: string | null } | null } | null, lastUpdated: { items: Array<{ date: unknown } | null> } | null };
 
-export type GetNewsletterPageHeaderQueryVariables = Types.Exact<{
-  id: Types.Scalars['String']['input'];
-  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
+export type GetNewsletterPageHeaderQueryVariables = Exact<{
+  id: string;
+  locale?: string | null | undefined;
 }>;
 
 
-export type GetNewsletterPageHeaderQuery = { __typename?: 'Query', pageHeader?: { __typename?: 'PageHeader', title?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null } | null, lastUpdated?: { __typename?: 'NewsletterCollection', items: Array<{ __typename?: 'Newsletter', date?: any | null } | null> } | null };
+export type GetNewsletterPageHeaderQuery = { pageHeader: { title: string | null, image: { url: string | null } | null } | null, lastUpdated: { items: Array<{ date: unknown } | null> } | null };
 
 
 export const GetPageHeaderDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetPageHeader"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"id"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pageHeader"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"id"}}},{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"lastUpdated"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<GetPageHeaderQuery, GetPageHeaderQueryVariables>;

@@ -40,15 +40,9 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
 
   if (
     !title ||
-    !posts ||
-    !posts.items ||
-    !posts.items.length ||
-    !newsletters ||
-    !newsletters.items ||
-    !newsletters.items.length ||
-    !podcasts ||
-    !podcasts.items ||
-    !podcasts.items.length ||
+    !posts?.items?.length ||
+    !newsletters?.items?.length ||
+    !podcasts?.items?.length ||
     !cta
   ) {
     return null;

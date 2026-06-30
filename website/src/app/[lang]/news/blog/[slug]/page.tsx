@@ -74,11 +74,7 @@ const Page: NextPage<NewsPagePropsWithLocale> = async ({ params }) => {
     variables: { locale: lang, slug },
   });
 
-  if (
-    !data ||
-    !data.blogPageCollection ||
-    data.blogPageCollection.items.length === 0
-  ) {
+  if (!data?.blogPageCollection || data.blogPageCollection.items.length === 0) {
     return null;
   }
 
