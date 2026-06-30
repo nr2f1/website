@@ -87,8 +87,8 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
               {documentToReactComponents(contactUs?.content?.json)}
 
               <address>
-                NR2F1 Foundation <br /> PO Box 0588 <br />
-                Pflugerville, TX 78691
+                NR2F1 Foundation <br /> PO Box 82275 <br />
+                Phoenix, AZ 85071
               </address>
               <a
                 href="mailto:ashlee.manjon@nr2f1.org"
