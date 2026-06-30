@@ -11,7 +11,7 @@ export type GetPageHeaderQueryVariables = Exact<{
 }>;
 
 
-export type GetPageHeaderQuery = { pageHeader: { title: string | null, lastUpdated: unknown, image: { url: string | null } | null } | null };
+export type GetPageHeaderQuery = { pageHeader: { title: string | null, lastUpdated: string | null, image: { url: string | null } | null } | null };
 
 export type GetBlogPageHeaderQueryVariables = Exact<{
   id: string;
@@ -19,7 +19,7 @@ export type GetBlogPageHeaderQueryVariables = Exact<{
 }>;
 
 
-export type GetBlogPageHeaderQuery = { pageHeader: { title: string | null, image: { url: string | null } | null } | null, lastUpdated: { items: Array<{ date: unknown } | null> } | null };
+export type GetBlogPageHeaderQuery = { pageHeader: { title: string | null, image: { url: string | null } | null } | null, lastUpdated: { items: Array<{ date: string | null } | null> } | null };
 
 export type GetPodcastPageHeaderQueryVariables = Exact<{
   id: string;
@@ -27,7 +27,7 @@ export type GetPodcastPageHeaderQueryVariables = Exact<{
 }>;
 
 
-export type GetPodcastPageHeaderQuery = { pageHeader: { title: string | null, image: { url: string | null } | null } | null, lastUpdated: { items: Array<{ date: unknown } | null> } | null };
+export type GetPodcastPageHeaderQuery = { pageHeader: { title: string | null, image: { url: string | null } | null } | null, lastUpdated: { items: Array<{ date: string | null } | null> } | null };
 
 export type GetNewsletterPageHeaderQueryVariables = Exact<{
   id: string;
@@ -35,7 +35,7 @@ export type GetNewsletterPageHeaderQueryVariables = Exact<{
 }>;
 
 
-export type GetNewsletterPageHeaderQuery = { pageHeader: { title: string | null, image: { url: string | null } | null } | null, lastUpdated: { items: Array<{ date: unknown } | null> } | null };
+export type GetNewsletterPageHeaderQuery = { pageHeader: { title: string | null, image: { url: string | null } | null } | null, lastUpdated: { items: Array<{ date: string | null } | null> } | null };
 
 
 export const GetPageHeaderDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetPageHeader"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"id"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pageHeader"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"id"}}},{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"lastUpdated"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<GetPageHeaderQuery, GetPageHeaderQueryVariables>;

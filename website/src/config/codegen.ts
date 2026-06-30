@@ -6,6 +6,10 @@ const config: CodegenConfig = {
   generates: {
     'website/src/graphql/': {
       config: {
+        scalars: {
+          DateTime: 'string',
+          JSON: '@contentful/rich-text-types#Document',
+        },
         withResultType: true,
       },
       overwrite: true,
@@ -17,6 +21,12 @@ const config: CodegenConfig = {
       },
     },
     'website/src/graphql/types.ts': {
+      config: {
+        scalars: {
+          DateTime: 'string',
+          JSON: '@contentful/rich-text-types#Document',
+        },
+      },
       overwrite: true,
       plugins: ['typescript'],
     },

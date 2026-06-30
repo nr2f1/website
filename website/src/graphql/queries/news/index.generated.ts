@@ -10,7 +10,7 @@ export type GetAllNewsQueryVariables = Exact<{
 }>;
 
 
-export type GetAllNewsQuery = { posts: { total: number, items: Array<{ title: string | null, date: unknown, slug: string | null, image: { url: string | null } | null } | null> } | null, newsletters: { total: number, items: Array<{ date: unknown, title: string | null, newsletterContent: { url: string | null } | null } | null> } | null, podcasts: { total: number, items: Array<{ title: string | null, date: unknown, url: string | null } | null> } | null };
+export type GetAllNewsQuery = { posts: { total: number, items: Array<{ title: string | null, date: string | null, slug: string | null, image: { url: string | null } | null } | null> } | null, newsletters: { total: number, items: Array<{ date: string | null, title: string | null, newsletterContent: { url: string | null } | null } | null> } | null, podcasts: { total: number, items: Array<{ title: string | null, date: string | null, url: string | null } | null> } | null };
 
 export type GetBlogPostsQueryVariables = Exact<{
   locale?: string | null | undefined;
@@ -19,7 +19,7 @@ export type GetBlogPostsQueryVariables = Exact<{
 }>;
 
 
-export type GetBlogPostsQuery = { blogPageCollection: { total: number, items: Array<{ date: unknown, title: string | null, slug: string | null, image: { url: string | null } | null } | null> } | null };
+export type GetBlogPostsQuery = { blogPageCollection: { total: number, items: Array<{ date: string | null, title: string | null, slug: string | null, image: { url: string | null } | null } | null> } | null };
 
 export type GetPodcastsQueryVariables = Exact<{
   locale?: string | null | undefined;
@@ -28,7 +28,7 @@ export type GetPodcastsQueryVariables = Exact<{
 }>;
 
 
-export type GetPodcastsQuery = { podcastCollection: { total: number, items: Array<{ date: unknown, title: string | null, url: string | null } | null> } | null };
+export type GetPodcastsQuery = { podcastCollection: { total: number, items: Array<{ date: string | null, title: string | null, url: string | null } | null> } | null };
 
 export type GetNewslettersQueryVariables = Exact<{
   locale?: string | null | undefined;
@@ -37,19 +37,19 @@ export type GetNewslettersQueryVariables = Exact<{
 }>;
 
 
-export type GetNewslettersQuery = { newsletterCollection: { total: number, items: Array<{ date: unknown, title: string | null, newsletterContent: { url: string | null } | null } | null> } | null };
+export type GetNewslettersQuery = { newsletterCollection: { total: number, items: Array<{ date: string | null, title: string | null, newsletterContent: { url: string | null } | null } | null> } | null };
 
 export type GetBlogPostsSlugsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetBlogPostsSlugsQuery = { blogPageCollection: { items: Array<{ slug: string | null, date: unknown, excerpt: string | null, title: string | null } | null> } | null };
+export type GetBlogPostsSlugsQuery = { blogPageCollection: { items: Array<{ slug: string | null, date: string | null, excerpt: string | null, title: string | null } | null> } | null };
 
 export type GetAllBlogPostsForRssQueryVariables = Exact<{
   locale: string;
 }>;
 
 
-export type GetAllBlogPostsForRssQuery = { blogPageCollection: { items: Array<{ date: unknown, title: string | null, slug: string | null, excerpt: string | null, image: { url: string | null } | null } | null> } | null };
+export type GetAllBlogPostsForRssQuery = { blogPageCollection: { items: Array<{ date: string | null, title: string | null, slug: string | null, excerpt: string | null, image: { url: string | null } | null } | null> } | null };
 
 
 export const GetAllNewsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAllNews"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"posts"},"name":{"kind":"Name","value":"blogPageCollection"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}},{"kind":"Argument","name":{"kind":"Name","value":"order"},"value":{"kind":"EnumValue","value":"date_DESC"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"total"}},{"kind":"Field","name":{"kind":"Name","value":"items"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"date"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}}]}},{"kind":"Field","alias":{"kind":"Name","value":"newsletters"},"name":{"kind":"Name","value":"newsletterCollection"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"order"},"value":{"kind":"EnumValue","value":"date_DESC"}},{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"total"}},{"kind":"Field","name":{"kind":"Name","value":"items"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"date"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"newsletterContent"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}},{"kind":"Field","alias":{"kind":"Name","value":"podcasts"},"name":{"kind":"Name","value":"podcastCollection"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"order"},"value":{"kind":"EnumValue","value":"date_ASC"}},{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"total"}},{"kind":"Field","name":{"kind":"Name","value":"items"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"date"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<GetAllNewsQuery, GetAllNewsQueryVariables>;

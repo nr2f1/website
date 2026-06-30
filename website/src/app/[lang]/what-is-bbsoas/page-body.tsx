@@ -199,7 +199,9 @@ const WhatIsBbsoasBody: React.FC<RegisterPageBodyProps> = async ({ lang }) => {
     ],
   };
 
-  const description = intro?.content?.json?.content[0]?.content[0]?.value;
+  const firstTextNode = intro?.content?.json?.content[0]?.content[0];
+  const description =
+    firstTextNode && 'value' in firstTextNode ? firstTextNode.value : undefined;
   const signOrSymptom = headings.map((heading) => ({
     '@type': 'MedicalSignOrSymptom',
     name: heading,

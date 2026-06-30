@@ -18,7 +18,7 @@ interface FundraisePageBodyProps {
 }
 
 interface CampaignProps {
-  body: Document;
+  body: Document | null | undefined;
   heading: string;
   slug?: string | null;
   image: {

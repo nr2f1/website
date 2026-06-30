@@ -9,7 +9,6 @@ import {
 import { BASE_URL } from '@routes/index';
 import type { Metadata } from 'next';
 import { Nunito_Sans } from 'next/font/google';
-// @ts-expect-error
 import { ViewTransition } from 'react';
 
 const nunitoSans = Nunito_Sans({

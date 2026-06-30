@@ -54,7 +54,7 @@ export async function GET(
         <title><![CDATA[${post.title}]]></title>
         <link>${postUrl}</link>
         <guid>${postUrl}</guid>
-        <pubDate>${new Date(post.date).toUTCString()}</pubDate>
+        <pubDate>${new Date(post.date ?? '').toUTCString()}</pubDate>
         <description><![CDATA[${post.excerpt}]]></description>
       </item>`;
     })

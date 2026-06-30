@@ -4,6 +4,7 @@ type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 import * as Types from '../../../types';
 
+import { Document } from '@contentful/rich-text-types';
 import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
 export type GetLivingWithBbsoasUpperPageQueryVariables = Exact<{
   locale?: string | null | undefined;
@@ -20,7 +21,7 @@ export type GetLivingWithBbsoasUpperPageQueryVariables = Exact<{
 }>;
 
 
-export type GetLivingWithBbsoasUpperPageQuery = { testAndTherapiesHeading: { content: string | null } | null, testAndTherapiesParagraphs: { content: { json: unknown } | null } | null, registerPatientHeading: { content: string | null } | null, registerPatientParagraphs: { content: { json: unknown } | null } | null, registerPatientCta: { target: { url: string | null } | null, text: { content: string | null } | null } | null, understandingBbsoasHeading: { content: string | null } | null, understandingBbsoasParagraphs: { content: { json: unknown } | null } | null, handingLettersHeading: { content: string | null } | null, bbsoasClinicHeading: { content: string | null } | null, readingGeneticReportHeading: { content: string | null } | null };
+export type GetLivingWithBbsoasUpperPageQuery = { testAndTherapiesHeading: { content: string | null } | null, testAndTherapiesParagraphs: { content: { json: Document } | null } | null, registerPatientHeading: { content: string | null } | null, registerPatientParagraphs: { content: { json: Document } | null } | null, registerPatientCta: { target: { url: string | null } | null, text: { content: string | null } | null } | null, understandingBbsoasHeading: { content: string | null } | null, understandingBbsoasParagraphs: { content: { json: Document } | null } | null, handingLettersHeading: { content: string | null } | null, bbsoasClinicHeading: { content: string | null } | null, readingGeneticReportHeading: { content: string | null } | null };
 
 export type GetLivingWithBbsoasBottomPageQueryVariables = Exact<{
   locale?: string | null | undefined;
@@ -33,7 +34,7 @@ export type GetLivingWithBbsoasBottomPageQueryVariables = Exact<{
 }>;
 
 
-export type GetLivingWithBbsoasBottomPageQuery = { handingLettersHeading: { content: string | null } | null, handingLettersParagraphs: { content: { json: unknown } | null } | null, bbsoasClinicHeading: { content: string | null } | null, bbsoasClinicParagraphs: { content: { json: unknown } | null } | null, readingGeneticReportHeading: { content: string | null } | null, readingGeneticReportParagraphs: { content: { json: unknown, links: { entries: { inline: Array<
+export type GetLivingWithBbsoasBottomPageQuery = { handingLettersHeading: { content: string | null } | null, handingLettersParagraphs: { content: { json: Document } | null } | null, bbsoasClinicHeading: { content: string | null } | null, bbsoasClinicParagraphs: { content: { json: Document } | null } | null, readingGeneticReportHeading: { content: string | null } | null, readingGeneticReportParagraphs: { content: { json: Document, links: { entries: { inline: Array<
             | { sys: { id: string } }
             | { sys: { id: string } }
             | { sys: { id: string } }

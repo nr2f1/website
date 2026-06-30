@@ -13,10 +13,18 @@
     }
   },
   "namedInputs": {
-    "default": ["sharedGlobals"],
-    "release": ["{workspaceRoot}/.github/workflows/release.yaml"],
-    "sharedGlobals": ["{workspaceRoot}/.github/workflows/pr.yaml"],
-    "unit-test": ["{workspaceRoot}/.github/workflows/pr.yaml"]
+    "default": [
+      "sharedGlobals"
+    ],
+    "release": [
+      "{workspaceRoot}/.github/workflows/release.yaml"
+    ],
+    "sharedGlobals": [
+      "{workspaceRoot}/.github/workflows/pr.yaml"
+    ],
+    "unit-test": [
+      "{workspaceRoot}/.github/workflows/pr.yaml"
+    ]
   },
   "nxCloudId": "67b4f813dcc3cecb27ff0b17",
   "plugins": [
@@ -49,7 +57,9 @@
   "targetDefaults": {
     "e2e": {
       "cache": true,
-      "inputs": ["release"]
+      "inputs": [
+        "release"
+      ]
     },
     "format": {
       "cache": true
@@ -59,7 +69,10 @@
     },
     "test": {
       "cache": true,
-      "inputs": ["unit-test"]
+      "inputs": [
+        "unit-test"
+      ]
     }
-  }
+  },
+  "analytics": true
 }
