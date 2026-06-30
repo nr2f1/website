@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.12.0](https://github.com/nr2f1/website/compare/v3.11.0...v3.12.0) (2026-06-30)
+
+
+### Features
+
+* new po box address ([4d3c9bc](https://github.com/nr2f1/website/commit/4d3c9bc4e2cc73b03fba80ca5d32bd2bfeefa0bd))
+* new po box address ([#431](https://github.com/nr2f1/website/issues/431)) ([386587e](https://github.com/nr2f1/website/commit/386587ee2e3c1edfcc1733ed766db53057776e1e))
+
 ## [3.11.0](https://github.com/nr2f1/website/compare/v3.10.2...v3.11.0) (2026-06-26)
 
 
