@@ -11,7 +11,7 @@
       "dom"
     ],
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "paths": {},
     "rootDir": ".",
     "skipDefaultLibCheck": true,

@@ -7,7 +7,7 @@ import Footer from './markup';
 const locale = 'en';
 
 vi.mock('@apollo/client/react', async (importOriginal) => {
-  const actual = await importOriginal();
+  const actual = await importOriginal<typeof import('@apollo/client/react')>();
   return {
     ...actual,
     useSuspenseQuery: vi.fn(),
@@ -15,9 +15,8 @@ vi.mock('@apollo/client/react', async (importOriginal) => {
 });
 
 vi.mock('next/navigation', async (importOriginal) => {
-  const actual = await importOriginal();
+  const actual = await importOriginal<typeof import('next/navigation')>();
   return {
-    // @ts-expect-error
     ...actual,
     usePathname() {
       return `/${locale}`;

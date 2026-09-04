@@ -4,10 +4,6 @@ import headers from './src/shared/utils/headers';
 const isDev = process.env.NODE_ENV === 'development';
 
 const nextConfig: NextConfig = {
-  experimental: {
-    viewTransition: true,
-  },
-
   headers,
   images: {
     remotePatterns: [
