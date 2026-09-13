@@ -102,7 +102,7 @@ const FundRaisingCampaignCard: React.FC<FundRaisingCampaignCardProps> = ({
   });
 
   return (
-    <li key={crypto.randomUUID()} className={styles.campaign}>
+    <li className={styles.campaign}>
       <a href={url} target="_blank" rel="noopener noreferrer">
         <div
           className={styles.campaign__cover}
@@ -183,7 +183,7 @@ const FundrasingCampaigns: React.FC<GivebutterCampaignProps> = ({ lang }) => {
                     created_at={created_at}
                     url={url}
                     lang={lang}
-                    key={crypto.randomUUID()}
+                    key={url}
                   />
                 ))}
               </ul>

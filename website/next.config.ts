@@ -4,6 +4,7 @@ import headers from './src/shared/utils/headers';
 const isDev = process.env.NODE_ENV === 'development';
 
 const nextConfig: NextConfig = {
+  cacheComponents: true,
   headers,
   images: {
     remotePatterns: [

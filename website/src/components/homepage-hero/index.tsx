@@ -69,7 +69,7 @@ const HomePageHero: React.FC<HomePageHeroProps> = async ({ lang }) => {
               <nav>
                 <ul>
                   {heroNavigationLinkItems.map(({ href, content }) => (
-                    <li key={crypto.randomUUID()}>
+                    <li key={href}>
                       <a href={href} className="signpost-item">
                         {content}
                       </a>
@@ -91,7 +91,7 @@ const HomePageHero: React.FC<HomePageHeroProps> = async ({ lang }) => {
           <nav>
             <ul>
               {heroNavigationLinkItems.map(({ href, content }) => (
-                <li key={crypto.randomUUID()}>
+                <li key={href}>
                   <a href={href} className="signpost-item">
                     {content}
                   </a>

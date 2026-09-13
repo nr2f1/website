@@ -104,7 +104,7 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
           {boardMembers?.items?.map((member) => {
             return (
               <Member
-                key={crypto.randomUUID()}
+                key={member?.name}
                 name={member?.name}
                 image={member?.image ?? null}
                 title={member?.title ?? null}
@@ -126,7 +126,7 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
           {executiveDirectorMembers?.items?.map((member) => {
             return (
               <Member
-                key={crypto.randomUUID()}
+                key={member?.name}
                 name={member?.name}
                 image={member?.image ?? null}
                 title={member?.title ?? null}
@@ -147,7 +147,7 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
           {volunteersMembers?.items?.map((member) => {
             return (
               <Member
-                key={crypto.randomUUID()}
+                key={member?.name}
                 name={member?.name}
                 image={member?.image ?? null}
                 email={member?.email ?? null}
@@ -168,7 +168,7 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
           {scientificMembers?.items?.map((member) => {
             return (
               <Member
-                key={crypto.randomUUID()}
+                key={member?.name}
                 name={member?.name}
                 image={member?.image ?? null}
                 email={member?.email ?? null}
@@ -189,7 +189,7 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
           {researchMembers?.items?.map((member) => {
             return (
               <Member
-                key={crypto.randomUUID()}
+                key={member?.name}
                 name={member?.name}
                 image={member?.image ?? null}
                 email={member?.email ?? null}

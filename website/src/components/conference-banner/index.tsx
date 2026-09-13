@@ -1,10 +1,16 @@
 import { PreloadQuery } from '@graphql/client';
 import { GetConferenceBannerDocument } from '@graphql/queries/conference-banner/index.generated';
 import type { ComponentPropsWithLocale } from '@shared/types/page-with-locale-params';
+import { cacheLife, cacheTag } from 'next/cache';
 import { Suspense } from 'react';
 import ConferenceBannerMarkup from './markup';
 
-const ConferenceBanner: React.FC<ComponentPropsWithLocale> = ({ lang }) => {
+const ConferenceBanner: React.FC<ComponentPropsWithLocale> = async ({
+  lang,
+}) => {
+  'use cache';
+  cacheLife('hours');
+  cacheTag('contentful');
   return (
     <PreloadQuery
       query={GetConferenceBannerDocument}

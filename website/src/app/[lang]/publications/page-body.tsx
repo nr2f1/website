@@ -87,7 +87,7 @@ const PublicationsByYear: React.FC<PublicationsByYearProps> = ({
     .sort(sortByYear);
 
   return publicationsByYear.map(({ year, publications }) => (
-    <div className={styles['publications__by-year']} key={crypto.randomUUID()}>
+    <div className={styles['publications__by-year']} key={year}>
       <h3>{year}</h3>
       <ul>
         {publications.map(({ title, link }) => {
@@ -99,7 +99,7 @@ const PublicationsByYear: React.FC<PublicationsByYearProps> = ({
           };
 
           return (
-            <li key={crypto.randomUUID()}>
+            <li key={link}>
               <script
                 type="application/ld+json"
                 // biome-ignore lint/security/noDangerouslySetInnerHtml: this is a safe usage

@@ -132,7 +132,7 @@ const ConferencePageBody: React.FC<ComponentPropsWithLocale> = async ({
 
         {accordionCollection?.items.map((item) => (
           <Accordion
-            key={crypto.randomUUID()}
+            key={item?.title}
             title={item?.title ?? ''}
             content={documentToReactComponents(item?.content?.json)}
           />

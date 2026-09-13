@@ -62,7 +62,7 @@ const LatestNews: React.FC<LatestNewsProps> = async ({ lang }) => {
             <NewsCard
               date={news.date ?? ''}
               imageUrl={news.imageUrl}
-              key={crypto.randomUUID()}
+              key={news.url}
               lang={lang}
               title={news?.title}
               url={news.url}

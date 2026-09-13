@@ -8,10 +8,14 @@ import {
   socialMediaTextId,
   warningId,
 } from '@models/paragraphs';
+import { cacheLife, cacheTag } from 'next/cache';
 import { Suspense } from 'react';
 import Footer from './markup';
 
-const FooterWithData: React.FC<HeaderProps> = ({ lang }) => {
+const FooterWithData: React.FC<HeaderProps> = async ({ lang }) => {
+  'use cache';
+  cacheLife('hours');
+  cacheTag('contentful');
   return (
     <PreloadQuery
       query={GetFooterDocument}
