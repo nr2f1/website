@@ -44,15 +44,12 @@
 }
 
 .popup {
-  // It is important because styles are inlined
-  top: var(--spacing-1) !important;
   z-index: 10;
 
   &--mobile {
     @include breakpoints.from-small-to-medium-screen {
       display: block;
-      width: 100%;
-      max-width: calc(100% - (var(--spacing-6) * 2));
+      width: var(--anchor-width);
     }
   }
 }
@@ -79,7 +76,8 @@
   padding-right: calc((var(--spacing-3) * 2) + var(--spacing-2));
 
   &:hover,
-  &:focus {
+  &:focus,
+  &[data-highlighted] {
     background-color: var(--navy-50);
   }
 

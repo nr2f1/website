@@ -1,12 +1,10 @@
 'use client';
 
+import { Select } from '@base-ui/react/select';
 import Spinner from '@components/icons/spinner';
-import { Option } from '@mui/base/Option';
-import { Select } from '@mui/base/Select';
 import { createContact } from '@services/givebutter/create-contact';
-import type { MuiEvent } from '@shared/types/mui';
 import { useFormik } from 'formik';
-import { useEffect, useReducer } from 'react';
+import { useEffect, useReducer, useRef } from 'react';
 import {
   getValidationSchema,
   initialState,
@@ -68,6 +66,7 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang, registerPatient }) => {
     handleBlur,
     handleChange,
     handleSubmit,
+    setFieldTouched,
     setFieldValue,
     touched,
     values,
@@ -79,19 +78,22 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang, registerPatient }) => {
     validationSchema: getValidationSchema(lang),
   });
 
-  const handleSelectRoleOnChange = (
-    _event: MuiEvent,
-    newValue: string | null,
-  ) => {
+  // Renders each popup next to its trigger (like the previous `disablePortal`)
+  const rolePortalContainer = useRef<HTMLSpanElement | null>(null);
+  const countryPortalContainer = useRef<HTMLSpanElement | null>(null);
+
+  // Keeps the trigger's line box when nothing is selected yet
+  const labelOrZeroWidthSpace =
+    (items?: { label: string; value: string }[]) => (value: string) =>
+      items?.find((item) => item.value === value)?.label ?? '\u200B';
+
+  const handleSelectRoleOnChange = (newValue: string | null) => {
     if (newValue) {
       setFieldValue('role', newValue);
     }
   };
 
-  const handleSelectCountryOnChange = (
-    _event: MuiEvent,
-    newValue: string | null,
-  ) => {
+  const handleSelectCountryOnChange = (newValue: string | null) => {
     if (newValue) {
       setFieldValue('country', newValue);
     }
@@ -207,42 +209,61 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang, registerPatient }) => {
               <div className={styles.form__col}>
                 <div className={styles.form__field}>
                   <label htmlFor="role">{content?.fields.role.label}</label>
-                  <Select
-                    className={
-                      roleError
-                        ? [styles.select, styles['select--error']].join(' ')
-                        : styles.select
-                    }
-                    id="role"
-                    onBlur={handleBlur}
-                    onChange={handleSelectRoleOnChange}
-                    slotProps={{
-                      listbox: {
-                        className: styles.listbox,
-                      },
-                      popup: {
-                        className: styles.popup,
-                        disablePortal: true,
-                      },
-                    }}
+                  <Select.Root
+                    items={content?.roles}
+                    onValueChange={handleSelectRoleOnChange}
                     value={values.role}
-                    title={
-                      values.role.length > 0
-                        ? values.role
-                        : content?.fields.role.label
-                    }
+                    onOpenChange={(open) => {
+                      // Opening moves focus into the popup, so the field only
+                      // counts as visited once the popup closes
+                      if (!open) {
+                        setFieldTouched('role');
+                      }
+                    }}
                   >
-                    {content?.roles.map(({ label, value }) => (
-                      <Option
-                        key={value}
-                        value={value}
-                        label={label}
-                        className={styles.option}
+                    <Select.Trigger
+                      className={
+                        roleError
+                          ? [styles.select, styles['select--error']].join(' ')
+                          : styles.select
+                      }
+                      id="role"
+                      title={
+                        values.role.length > 0
+                          ? values.role
+                          : content?.fields.role.label
+                      }
+                    >
+                      <Select.Value>
+                        {labelOrZeroWidthSpace(content?.roles)}
+                      </Select.Value>
+                    </Select.Trigger>
+                    <span ref={rolePortalContainer} />
+                    <Select.Portal container={rolePortalContainer}>
+                      <Select.Positioner
+                        align="start"
+                        alignItemWithTrigger={false}
+                        className={styles.popup}
+                        sideOffset={4}
                       >
-                        {label}
-                      </Option>
-                    ))}
-                  </Select>
+                        <Select.Popup
+                          render={<ul />}
+                          className={styles.listbox}
+                        >
+                          {content?.roles.map(({ label, value }) => (
+                            <Select.Item
+                              key={value}
+                              render={<li />}
+                              value={value}
+                              className={styles.option}
+                            >
+                              <Select.ItemText>{label}</Select.ItemText>
+                            </Select.Item>
+                          ))}
+                        </Select.Popup>
+                      </Select.Positioner>
+                    </Select.Portal>
+                  </Select.Root>
                   {roleError && <ErrorMessage errorMessage={errors.role} />}
                 </div>
               </div>
@@ -293,38 +314,57 @@ const SignupForm: React.FC<SignupFormProps> = ({ lang, registerPatient }) => {
                       <label htmlFor="country">
                         {content?.fields.country.label}
                       </label>
-                      <Select
-                        className={
-                          countryError
-                            ? [styles.select, styles['select--error']].join(' ')
-                            : styles.select
-                        }
-                        id="country"
-                        title={content?.fields.country.label}
-                        onBlur={handleBlur}
-                        onChange={handleSelectCountryOnChange}
-                        slotProps={{
-                          listbox: {
-                            className: styles.listbox,
-                          },
-                          popup: {
-                            className: styles.popup,
-                            disablePortal: true,
-                          },
-                        }}
+                      <Select.Root
+                        items={content?.countries}
+                        onValueChange={handleSelectCountryOnChange}
                         value={values.country}
+                        onOpenChange={(open) => {
+                          if (!open) {
+                            setFieldTouched('country');
+                          }
+                        }}
                       >
-                        {content?.countries.map(({ label, value }) => (
-                          <Option
-                            key={value}
-                            value={value}
-                            label={label}
-                            className={styles.option}
+                        <Select.Trigger
+                          className={
+                            countryError
+                              ? [styles.select, styles['select--error']].join(
+                                  ' ',
+                                )
+                              : styles.select
+                          }
+                          id="country"
+                          title={content?.fields.country.label}
+                        >
+                          <Select.Value>
+                            {labelOrZeroWidthSpace(content?.countries)}
+                          </Select.Value>
+                        </Select.Trigger>
+                        <span ref={countryPortalContainer} />
+                        <Select.Portal container={countryPortalContainer}>
+                          <Select.Positioner
+                            align="start"
+                            alignItemWithTrigger={false}
+                            className={styles.popup}
+                            sideOffset={4}
                           >
-                            {label}
-                          </Option>
-                        ))}
-                      </Select>
+                            <Select.Popup
+                              render={<ul />}
+                              className={styles.listbox}
+                            >
+                              {content?.countries.map(({ label, value }) => (
+                                <Select.Item
+                                  key={value}
+                                  render={<li />}
+                                  value={value}
+                                  className={styles.option}
+                                >
+                                  <Select.ItemText>{label}</Select.ItemText>
+                                </Select.Item>
+                              ))}
+                            </Select.Popup>
+                          </Select.Positioner>
+                        </Select.Portal>
+                      </Select.Root>
                       {countryError && (
                         <ErrorMessage errorMessage={errors.country} />
                       )}
