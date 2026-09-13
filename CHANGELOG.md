@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.12.1](https://github.com/nr2f1/website/compare/v3.12.0...v3.12.1) (2026-09-13)
+
+
+### Bug Fixes
+
+* CVEs ([dd78c34](https://github.com/nr2f1/website/commit/dd78c343708c43d17eea6ecf161f7f354ebe5678))
+* upgrade mui ([5278c86](https://github.com/nr2f1/website/commit/5278c86a4668083ef63de5105c607e049ceee046))
+* upgrade mui and fix cve ([#437](https://github.com/nr2f1/website/issues/437)) ([ea228cc](https://github.com/nr2f1/website/commit/ea228ccd9800a68bf36c05aceb1179fcc9d9d1af))
+
 ## [3.12.0](https://github.com/nr2f1/website/compare/v3.11.0...v3.12.0) (2026-06-30)
 
 
