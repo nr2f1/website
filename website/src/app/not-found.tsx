@@ -59,6 +59,9 @@ const nunitoSans = Nunito_Sans({
   variable: '--font-nunito-sans',
 });
 
+// The locale comes from request headers, so this page renders per request
+export const instant = false;
+
 export default async function NotFound() {
   const lang = await getLocale();
 

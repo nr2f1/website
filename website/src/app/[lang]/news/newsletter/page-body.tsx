@@ -69,7 +69,7 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
             {newsletters.map(({ title, url, date, type }) => (
               <NewsCard
                 date={date}
-                key={crypto.randomUUID()}
+                key={url}
                 lang={lang}
                 url={url}
                 title={title}

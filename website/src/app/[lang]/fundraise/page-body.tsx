@@ -123,7 +123,7 @@ export const FundraisePageBody: React.FC<FundraisePageBodyProps> = async ({
             <ul>
               {campaigns?.items.map((campaign) => (
                 <CampaignIdea
-                  key={crypto.randomUUID()}
+                  key={campaign?.heading}
                   lang={lang}
                   heading={campaign?.heading || ''}
                   body={campaign?.body?.json}

@@ -86,7 +86,7 @@ const Pagination: React.FC<PaginationProps> = ({
           <ArrowLeft title={paginationLocales[lang].previous} />
         </Link>
       </li>
-      {paginationRange.map((pageNumber) => {
+      {paginationRange.map((pageNumber, index) => {
         const isDots = pageNumber === DOTS;
         const isCurrentPage =
           pageNumber === currentPage || (pageNumber === 1 && currentPage === 0);
@@ -95,7 +95,8 @@ const Pagination: React.FC<PaginationProps> = ({
           return (
             <li
               className={`${styles.pagination__item} ${styles['pagination__item--dots']}`}
-              key={crypto.randomUUID()}
+              // biome-ignore lint/suspicious/noArrayIndexKey: DOTS can appear twice; the range is rebuilt per page change
+              key={index}
             >
               {DOTS}
             </li>
@@ -104,7 +105,8 @@ const Pagination: React.FC<PaginationProps> = ({
 
         return (
           <li
-            key={crypto.randomUUID()}
+            // biome-ignore lint/suspicious/noArrayIndexKey: the pagination range is rebuilt per page change
+            key={index}
             className={
               isCurrentPage
                 ? `${styles.pagination__item} ${styles['pagination__item--selected']}`

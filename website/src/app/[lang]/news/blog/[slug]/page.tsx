@@ -3,6 +3,7 @@ import PageLatestNews from '@components/page-latest-news';
 import SupportBanner from '@components/support-banner';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
+import { GetBlogPostsSlugsDocument } from '@graphql/queries/news/index.generated';
 import { GetPostDocument } from '@graphql/queries/post/index.generated';
 import { AVAILABLE_LOCALES } from '@i18n/locales';
 import { BASE_URL, blogPostUrl } from '@routes/index';
@@ -16,6 +17,20 @@ import type {
 } from 'next/dist/lib/metadata/types/alternative-urls-types';
 import type { Blog, WithContext } from 'schema-dts';
 import styles from './index.module.scss';
+
+export async function generateStaticParams() {
+  const { query } = getClient();
+  const { data } = await query({ query: GetBlogPostsSlugsDocument });
+
+  const slugs =
+    data?.blogPageCollection?.items
+      ?.map((item) => item?.slug)
+      .filter((slug): slug is string => Boolean(slug)) ?? [];
+
+  return AVAILABLE_LOCALES.flatMap((lang) =>
+    slugs.map((slug) => ({ lang, slug })),
+  );
+}
 
 export async function generateMetadata({
   params,

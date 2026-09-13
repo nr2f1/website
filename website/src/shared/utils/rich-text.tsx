@@ -26,7 +26,8 @@ export const renderText = (text: string) => {
     .split('\n')
     .reduce((children: React.ReactNode[], textSegment, index) => {
       return children.concat(
-        index > 0 && <br key={crypto.randomUUID()} />,
+        // biome-ignore lint/suspicious/noArrayIndexKey: line-break position within a fixed text is stable
+        index > 0 && <br key={`br-${index}`} />,
         textSegment,
       );
     }, []);
@@ -106,9 +107,10 @@ export const renderOptions = (links: Links | undefined) => {
         // Create a link when it's not a youtube video
         return (
           <a href={node.data.uri}>
-            {node.content.map((content) => {
+            {node.content.map((content, index) => {
               return (
-                <span key={crypto.randomUUID()}>
+                // biome-ignore lint/suspicious/noArrayIndexKey: rich-text nodes have no ids and never reorder
+                <span key={index}>
                   {'value' in content ? content.value : ''}
                 </span>
               );

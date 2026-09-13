@@ -25,7 +25,7 @@ const Headings: React.FC<HeadingsProps> = ({ headings }) => {
     <nav>
       <ul>
         {headings.map((heading) => (
-          <li key={crypto.randomUUID()}>
+          <li key={heading}>
             <a href={`#${createHashLink(heading)}`}>{heading}</a>
           </li>
         ))}

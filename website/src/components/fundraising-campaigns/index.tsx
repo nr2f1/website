@@ -2,13 +2,17 @@ import { PreloadQuery } from '@graphql/client';
 import { GetFundraisingCampaignsDocument } from '@graphql/queries/fundraising-campaigns/index.generated';
 import { fundraisingCampaignsHeadingId } from '@models/headings';
 import { fundraisingCampaignsLinkId } from '@models/links';
+import { cacheLife, cacheTag } from 'next/cache';
 import { Suspense } from 'react';
 import FundrasingCampaigns, { type GivebutterCampaignProps } from './markup';
 import FundraisingCampaignsSkeleton from './skeleton';
 
-export const FundrasingCampaignsWithData: React.FC<GivebutterCampaignProps> = ({
-  lang,
-}) => {
+export const FundrasingCampaignsWithData: React.FC<
+  GivebutterCampaignProps
+> = async ({ lang }) => {
+  'use cache';
+  cacheLife('hours');
+  cacheTag('contentful');
   return (
     <PreloadQuery
       query={GetFundraisingCampaignsDocument}

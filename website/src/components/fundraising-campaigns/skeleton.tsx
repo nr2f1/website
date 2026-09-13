@@ -8,8 +8,9 @@ const FundraisingCampaignsSkeleton: React.FC = () => {
           <div className={styles.headingSkeleton} />
 
           <ul className={styles.campaignsList}>
-            {Array.from({ length: 3 }).map((_) => (
-              <li key={crypto.randomUUID()} className={styles.campaignSkeleton}>
+            {Array.from({ length: 3 }).map((_, index) => (
+              // biome-ignore lint/suspicious/noArrayIndexKey: static skeleton placeholders never reorder
+              <li key={index} className={styles.campaignSkeleton}>
                 <div className={styles.campaignSkeleton__cover} />
                 <div className={styles.campaignSkeleton__details}>
                   <div className={styles.campaignSkeleton__title} />

@@ -30,11 +30,15 @@ import {
   supportUsMicrocopyId,
 } from '@models/resource';
 import { aboutCopiesId } from '@models/resource-sets';
+import { cacheLife, cacheTag } from 'next/cache';
 import { Suspense } from 'react';
 import Header, { type HeaderProps } from './markup';
 import HeaderSkeleton from './skeleton';
 
-const HeaderWithData: React.FC<HeaderProps> = ({ lang }) => {
+const HeaderWithData: React.FC<HeaderProps> = async ({ lang }) => {
+  'use cache';
+  cacheLife('hours');
+  cacheTag('contentful');
   return (
     <PreloadQuery
       query={GetHeaderDocument}

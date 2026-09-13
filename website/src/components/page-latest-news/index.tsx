@@ -67,7 +67,7 @@ const PageLatestNews: React.FC<PageLatestNewsProps> = async ({ lang }) => {
 
       <ul className={styles['latest-news-content__list']}>
         {allNews.map(({ title, url, date, type }) => (
-          <li key={crypto.randomUUID()}>
+          <li key={url}>
             <AsideNewsCards
               title={title}
               url={url}

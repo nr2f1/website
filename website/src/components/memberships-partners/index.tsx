@@ -42,7 +42,7 @@ const MembershipsPartners: React.FC<MembershipsPartnersProps> = async ({
           <h2>{navigationList.name}</h2>
           <ul>
             {membershipPartnersAssets.map(({ href, alt, imageUrl }) => (
-              <li key={crypto.randomUUID()}>
+              <li key={href}>
                 <a href={href} title={alt} target="_blank" rel="noreferrer">
                   <picture>
                     <img src={imageUrl} alt={alt} />

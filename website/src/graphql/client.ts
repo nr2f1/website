@@ -5,6 +5,7 @@ import {
   InMemoryCache,
 } from '@apollo/client-integration-nextjs';
 import { Authorization, CONTENTUL_GRAPHQL_API } from '@config/utils';
+import { cacheLife, cacheTag } from 'next/cache';
 import possibleTypesQuery from "./posible-types.json";
 import {
   HttpLink,
@@ -49,22 +50,45 @@ const link = ApolloLink.from([
   }),
  ]);
 
-export const { getClient, PreloadQuery } = registerApolloClient(() => {
-  return new ApolloClient({
-    cache: new InMemoryCache({
-      typePolicies: {
-        Banner: {
-          merge(existing, incoming) {
-            if (!existing) return incoming;
-            return { ...existing, ...incoming };
+const { getClient: getApolloClient, PreloadQuery } = registerApolloClient(
+  () => {
+    return new ApolloClient({
+      cache: new InMemoryCache({
+        typePolicies: {
+          Banner: {
+            merge(existing, incoming) {
+              if (!existing) return incoming;
+              return { ...existing, ...incoming };
+            },
           },
         },
-      },
-      possibleTypes,
-    }),
-    link,
-  });
+        possibleTypes,
+      }),
+      link,
+    });
+  },
+);
+
+type ContentfulQueryFn = ReturnType<typeof getApolloClient>['query'];
+
+// Caches every Contentful read across requests (Cache Components).
+// Editors' changes appear within the 'hours' cacheLife profile, or
+// immediately once a Contentful publish webhook calls revalidateTag.
+const cachedQuery = async (options: unknown) => {
+  'use cache';
+  cacheLife('hours');
+  cacheTag('contentful');
+  const { data, error } = await getApolloClient().query(
+    options as Parameters<ContentfulQueryFn>[0],
+  );
+  return { data, error };
+};
+
+export const getClient = () => ({
+  query: cachedQuery as ContentfulQueryFn,
 });
+
+export { PreloadQuery };
 
 if (isDev) {
   loadDevMessages();

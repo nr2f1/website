@@ -73,7 +73,7 @@ const NewsPageBody: React.FC<NewsPageBodyProps> = async ({ lang, page }) => {
               <NewsCard
                 date={date}
                 imageUrl={imageUrl}
-                key={crypto.randomUUID()}
+                key={url}
                 lang={lang}
                 url={url}
                 title={title}

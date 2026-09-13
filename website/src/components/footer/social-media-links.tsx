@@ -55,11 +55,7 @@ const SocialMediaLinks: React.FC<SocialMediaLinksProps> = ({
   return (
     <ul className={`${styles.social_media_links} ${className ?? ''}`}>
       {SocialMediaItems.map((item) => (
-        <SocialMediaItem
-          {...item}
-          variant={variant}
-          key={crypto.randomUUID()}
-        />
+        <SocialMediaItem {...item} variant={variant} key={item.label} />
       ))}
     </ul>
   );
