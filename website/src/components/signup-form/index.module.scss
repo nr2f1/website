@@ -47,10 +47,8 @@
 }
 
 .popup {
-  // It is important because styles are inlined
-  top: var(--spacing-1) !important;
   z-index: 10;
-  width: 100%;
+  width: var(--anchor-width);
 }
 
 .listbox {
@@ -76,7 +74,8 @@
   padding: var(--spacing-2) var(--spacing-3);
 
   &:hover,
-  &:focus {
+  &:focus,
+  &[data-highlighted] {
     background-color: var(--navy-50);
   }
 

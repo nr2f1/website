@@ -79,7 +79,9 @@ describe('SignUpForm', () => {
   });
 
   it('render the rest of the form when user select role patient', async () => {
-    const user = userEvent.setup();
+    // Base UI toggles pointer-events on the select positioner while tracking
+    // real pointer movement, which jsdom cannot emulate
+    const user = userEvent.setup({ pointerEventsCheck: 0 });
     const patientFirstName = /BBSOAS patient's first name/i;
 
     render(<SignUpForm lang={locale} />);
