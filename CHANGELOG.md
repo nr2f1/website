@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.13.0](https://github.com/nr2f1/website/compare/v3.12.1...v3.13.0) (2026-09-13)
+
+
+### Features
+
+* add cache next cache ([bf11a2e](https://github.com/nr2f1/website/commit/bf11a2e466b53c4bcc175bb001d83d14cd372159))
+* add cache next cache ([#439](https://github.com/nr2f1/website/issues/439)) ([b723793](https://github.com/nr2f1/website/commit/b72379371c2a48cb6ae4260515849fae386d17c6))
+
 ## [3.12.1](https://github.com/nr2f1/website/compare/v3.12.0...v3.12.1) (2026-09-13)
 
 
