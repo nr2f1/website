@@ -28,7 +28,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
       - uses: ./.github/actions/prepare
@@ -41,7 +41,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
 
@@ -59,7 +59,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
 
@@ -80,7 +80,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
 
@@ -93,19 +93,33 @@ jobs:
       - name: Run unit tests
         uses: ./.github/actions/unit-test
 
+  actionlint:
+    name: Actionlint
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Run actionlint
+        run: |
+          bash <(curl -sSfL https://raw.githubusercontent.com/rhysd/actionlint/914e7df21a07ef503a81201c76d2b11c789d3fca/scripts/download-actionlint.bash) 1.7.12
+          ./actionlint -color
+
   ci-validation:
     name: CI validation
-    needs: [prepare, conventional-commits, lint-format, unit-tests]
+    needs: [prepare, conventional-commits, lint-format, unit-tests, actionlint]
     if: ${{ always() }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Check jobs for errors
-        uses: actions/github-script@v8
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
           script: |
             const { default: checkJobsForErrors } = await import('${{ github.workspace }}/.github/workflows/js/check-for-errors.mjs');

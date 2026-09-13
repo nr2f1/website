@@ -1,10 +1,5 @@
 import * as GiveButterService from '@services/givebutter/create-contact';
-import {
-  type RenderResult,
-  render,
-  screen,
-  waitFor,
-} from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import axe from '@tests/a11y/test-utils';
 import { describe, expect, it, vi } from 'vitest';
@@ -16,24 +11,21 @@ const createContactSpy = vi.spyOn(GiveButterService, 'createContact');
 
 describe('SignUpForm', () => {
   it('renders without any accessibility violation', async () => {
-    let result: RenderResult;
+    const { container } = render(<SignUpForm lang={locale} />);
+    await screen.findByRole('button', { name: /Sign up/i });
 
-    await waitFor(() => {
-      result = render(<SignUpForm lang={locale} />);
-    });
-
-    const results = await waitFor(() => axe(result.container), {
-      timeout: 5000,
-    });
+    const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
   it('not submit when is a validation error', async () => {
     const user = userEvent.setup();
 
-    await waitFor(() => render(<SignUpForm lang={locale} />));
+    render(<SignUpForm lang={locale} />);
 
-    const submitButton = screen.getByRole('button', { name: /Sign up/i });
+    const submitButton = await screen.findByRole('button', {
+      name: /Sign up/i,
+    });
     expect(submitButton).toBeInTheDocument();
 
     await user.click(submitButton);
@@ -47,8 +39,8 @@ describe('SignUpForm', () => {
   it('submit when are not validation errors', async () => {
     const user = userEvent.setup();
 
-    await waitFor(() => render(<SignUpForm lang={locale} />));
-    const firstNameInput = screen.getByLabelText(/First name/i);
+    render(<SignUpForm lang={locale} />);
+    const firstNameInput = await screen.findByLabelText(/First name/i);
     expect(firstNameInput).toBeInTheDocument();
 
     const lastNameInput = screen.getByLabelText(/Last name/i);
@@ -90,9 +82,9 @@ describe('SignUpForm', () => {
     const user = userEvent.setup();
     const patientFirstName = /BBSOAS patient's first name/i;
 
-    await waitFor(() => render(<SignUpForm lang={locale} />));
+    render(<SignUpForm lang={locale} />);
 
-    const roleInput = screen.getByRole('combobox');
+    const roleInput = await screen.findByRole('combobox');
     expect(roleInput).toBeInTheDocument();
 
     const patientNameInput = screen.queryByLabelText(patientFirstName);
