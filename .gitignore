@@ -19,3 +19,5 @@ types.ts
 
 .claude
 website/tsconfig.tsbuildinfo
+
+.rtk/
