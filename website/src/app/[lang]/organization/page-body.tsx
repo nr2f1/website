@@ -55,13 +55,10 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
     volunteersMembers,
     scientificMembers,
     researchMembers,
-    executiveDirectorHeading,
-    executiveDirectorMembers,
   } = data;
 
   const headings = [
     boardHeading?.content ?? '',
-    executiveDirectorHeading?.content ?? '',
     volunteersHeading?.content ?? '',
     scientificHeading?.content ?? '',
     researchHeading?.content ?? '',
@@ -69,7 +66,6 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
 
   const allMembers = [
     ...(boardMembers?.items || []),
-    ...(executiveDirectorMembers?.items || []),
     ...(volunteersMembers?.items || []),
     ...(scientificMembers?.items || []),
     ...(researchMembers?.items || []),
@@ -102,28 +98,6 @@ export const OrganizationPageBody: React.FC<ComponentPropsWithLocale> = async ({
 
         <div className={styles.organization__members}>
           {boardMembers?.items?.map((member) => {
-            return (
-              <Member
-                key={member?.name}
-                name={member?.name}
-                image={member?.image ?? null}
-                title={member?.title ?? null}
-                email={member?.email ?? null}
-                lang={lang}
-                about={documentToReactComponents(member?.about?.json)}
-              />
-            );
-          })}
-        </div>
-      </section>
-
-      <section>
-        <h2 id={createHashLink(executiveDirectorHeading?.content ?? '')}>
-          {executiveDirectorHeading?.content}
-        </h2>
-
-        <div className={styles.organization__members}>
-          {executiveDirectorMembers?.items?.map((member) => {
             return (
               <Member
                 key={member?.name}

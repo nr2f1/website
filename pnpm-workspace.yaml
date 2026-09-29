@@ -1,0 +1,58 @@
+# pnpm settings. Since pnpm 12 the "pnpm" field in package.json is ignored;
+# all pnpm configuration lives here. See https://pnpm.io/settings
+
+# Packages allowed to run install/postinstall scripts (replaces onlyBuiltDependencies).
+allowBuilds:
+  "@biomejs/biome": true
+  "@swc/core": true
+  "esbuild": true
+  "nx": true
+  "@parcel/watcher": true
+  "sharp": true
+  "less": false  # transitive optional dep of vite; not built under pnpm 10 either
+
+# Security overrides, mostly from `pnpm audit --fix`.
+overrides:
+  "@babel/plugin-transform-modules-systemjs@>=7.12.0 <=7.29.3": "^7.29.4"
+  "@eslint/plugin-kit@<0.3.4": "^0.3.4"
+  "@tootallnate/once@<2.0.1": "^2.0.1"
+  "ajv@<6.14.0": "^6.14.0"
+  "ajv@>=7.0.0-alpha.0 <8.18.0": "^8.18.0"
+  "axios@>=1.0.0 <1.15.1": "^1.15.1"
+  "brace-expansion@<1.1.16": "^1.1.16"
+  "brace-expansion@>=2.0.0 <2.1.2": "^2.1.2"
+  "browserslist@>=4.0.0 <4.28.7": "^4.28.7"
+  "diff@>=4.0.0 <4.0.4": "^4.0.4"
+  "fast-uri@<3.1.6": "^3.1.6"
+  "flatted@<=3.4.1": "^3.4.2"
+  "follow-redirects@<=1.15.11": "^1.16.0"
+  "glob@>=10.0.0 <10.5.0": "^10.5.0"
+  "immutable@<3.8.3": "^3.8.3"
+  "immutable@>=5.0.0 <5.1.5": "^5.1.5"
+  "js-yaml@<4.3.2": "^4.3.2"
+  "koa@>=3.0.0 <3.1.2": "^3.1.2"
+  "lodash@>=4.0.0 <=4.17.23": "^4.18.1"
+  "lodash-es@>=4.0.0 <=4.17.23": "^4.18.1"
+  "minimatch@<3.1.4": "^3.1.4"
+  "minimatch@>=5.0.0 <5.1.8": "^5.1.8"
+  "minimatch@>=9.0.0 <9.0.7": "^9.0.7"
+  "node-forge@<1.4.0": "^1.4.0"
+  "path-to-regexp@<0.1.13": "^0.1.13"
+  "picomatch@<2.3.2": "^2.3.2"
+  "postcss@<8.5.10": "^8.5.10"
+  "picomatch@>=4.0.0 <4.0.4": "^4.0.4"
+  "playwright@<1.55.1": "^1.55.1"
+  "qs@>=6.7.0 <6.15.2": "^6.15.2"
+  "rollup@>=4.0.0 <4.59.0": "^4.59.0"
+  "serialize-javascript@<7.0.5": "^7.0.5"
+  "smol-toml@<1.7.1": "^1.7.1"
+  "svgo@>=2.1.0 <2.8.1": "^2.8.1"
+  "svgo@>=3.0.0 <3.3.3": "^3.3.3"
+  "tmp@<=0.2.3": "^0.2.5"
+  "uuid@<11.1.1": "^11.1.1"
+  "vite@>=7.0.0 <7.3.2": "^7.3.2"
+  "webpack@>=5.49.0 <5.104.1": "^5.104.1"
+  "webpack-dev-server@<5.2.4": "^5.2.4"
+  "ws@>=8.0.0 <8.20.1": "^8.20.1"
+  "yaml@>=1.0.0 <1.10.3": "^1.10.3"
+  "yaml@>=2.0.0 <2.8.3": "^2.8.3"
