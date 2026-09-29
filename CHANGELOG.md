@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.14.0](https://github.com/nr2f1/website/compare/v3.13.0...v3.14.0) (2026-09-29)
+
+
+### Features
+
+* remove xo ([149f82f](https://github.com/nr2f1/website/commit/149f82f7c3ca3bed30226f85c1f9736bfa7a6f4c))
+* remove xo ([#441](https://github.com/nr2f1/website/issues/441)) ([0028f56](https://github.com/nr2f1/website/commit/0028f56e871af8e622fec68c4a76689b05fd60e0))
+
 ## [3.13.0](https://github.com/nr2f1/website/compare/v3.12.1...v3.13.0) (2026-09-13)
 
 
