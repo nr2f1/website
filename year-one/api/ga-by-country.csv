@@ -1,0 +1,117 @@
+country,dateRange,activeUsers,newUsers,sessions,screenPageViews,engagedSessions,userEngagementDuration
+United States,after,417,400,1664,3990,869,82175
+United Kingdom,after,159,156,460,992,224,22836
+Germany,after,96,96,189,419,105,15391
+France,after,79,78,243,647,144,22955
+United States,before,64,64,158,522,99,12419
+Canada,after,42,41,155,307,76,9053
+United Kingdom,before,32,32,93,594,63,6729
+Italy,after,31,28,132,358,68,9353
+Spain,after,28,28,58,150,38,8398
+Australia,after,27,27,97,160,45,5142
+Brazil,after,18,17,36,67,22,3595
+Poland,after,12,12,56,153,37,5350
+Denmark,after,10,8,15,34,9,1007
+Netherlands,after,10,10,19,31,10,1404
+Portugal,after,9,8,27,50,17,1463
+India,after,7,7,15,33,10,1404
+Austria,after,6,6,9,21,8,522
+Canada,before,6,6,8,16,5,782
+Colombia,after,6,6,8,15,5,403
+Hungary,after,6,6,16,40,10,602
+Mexico,after,6,5,10,25,6,2644
+Czechia,after,5,5,13,39,10,1833
+Germany,before,5,5,6,31,6,1032
+Ireland,after,5,4,7,11,4,380
+Australia,before,4,4,4,6,2,195
+China,after,4,3,9,34,7,3039
+Finland,after,4,4,5,16,5,872
+Italy,before,4,4,9,10,6,332
+Japan,after,4,4,11,23,8,625
+Spain,before,4,4,8,20,2,700
+France,before,3,3,4,7,1,219
+Latvia,after,3,3,15,69,15,1504
+Puerto Rico,after,3,3,14,58,7,1881
+Romania,after,3,3,6,8,3,317
+Sweden,after,3,2,5,6,3,1531
+Switzerland,after,3,2,5,7,2,647
+Taiwan,after,3,3,4,8,3,296
+Türkiye,after,3,3,8,8,1,72
+Argentina,after,2,2,11,24,2,172
+Brazil,before,2,2,2,4,2,139
+Chile,after,2,2,2,8,1,170
+Cyprus,after,2,2,4,13,2,342
+Denmark,before,2,2,3,4,2,33
+Egypt,after,2,2,2,4,2,232
+French Polynesia,before,2,2,5,6,1,2
+Iraq,after,2,2,3,2,0,0
+Norway,after,2,2,3,4,2,57
+Portugal,before,2,2,4,22,2,1722
+Saudi Arabia,after,2,2,7,8,1,47
+Serbia,after,2,2,5,18,4,304
+(not set),after,1,0,1,2,1,20
+Barbados,after,1,0,1,1,1,24
+Belgium,after,1,1,2,5,1,44
+Bulgaria,after,1,1,1,1,1,28
+Greece,after,1,1,1,1,1,29
+Hong Kong,after,1,1,1,1,1,18
+India,before,1,1,1,3,1,121
+Iraq,before,1,1,1,1,0,0
+Ireland,before,1,1,3,11,2,236
+Israel,after,1,1,2,1,1,292
+Japan,before,1,1,1,3,1,36
+Luxembourg,after,1,1,1,1,0,0
+Malaysia,after,1,1,1,1,0,0
+New Zealand,before,1,1,1,8,1,382
+Norway,before,1,1,1,1,0,0
+Paraguay,after,1,1,2,12,2,413
+Philippines,after,1,1,1,2,1,27
+Russia,after,1,1,1,1,0,0
+Réunion,before,1,1,1,2,1,8
+Sweden,before,1,1,1,1,0,4
+Ukraine,after,1,1,1,1,0,0
+United Arab Emirates,after,1,1,1,2,1,0
+Vietnam,after,1,1,1,2,1,2
+(not set),before,0,0,0,0,0,0
+Argentina,before,0,0,0,0,0,0
+Austria,before,0,0,0,0,0,0
+Barbados,before,0,0,0,0,0,0
+Belgium,before,0,0,0,0,0,0
+Bulgaria,before,0,0,0,0,0,0
+Chile,before,0,0,0,0,0,0
+China,before,0,0,0,0,0,0
+Colombia,before,0,0,0,0,0,0
+Croatia,after,0,0,1,1,0,0
+Croatia,before,0,0,0,0,0,0
+Cyprus,before,0,0,0,0,0,0
+Czechia,before,0,0,0,0,0,0
+Egypt,before,0,0,0,0,0,0
+Finland,before,0,0,0,0,0,0
+French Polynesia,after,0,0,0,0,0,0
+Greece,before,0,0,0,0,0,0
+Hong Kong,before,0,0,0,0,0,0
+Hungary,before,0,0,0,0,0,0
+Israel,before,0,0,0,0,0,0
+Latvia,before,0,0,0,0,0,0
+Luxembourg,before,0,0,0,0,0,0
+Malaysia,before,0,0,0,0,0,0
+Mexico,before,0,0,0,0,0,0
+Netherlands,before,0,0,0,0,0,0
+New Zealand,after,0,0,0,0,0,0
+Paraguay,before,0,0,0,0,0,0
+Philippines,before,0,0,0,0,0,0
+Poland,before,0,0,0,0,0,0
+Puerto Rico,before,0,0,0,0,0,0
+Romania,before,0,0,0,0,0,0
+Russia,before,0,0,0,0,0,0
+Réunion,after,0,0,0,0,0,0
+Saudi Arabia,before,0,0,0,0,0,0
+Serbia,before,0,0,0,0,0,0
+South Africa,after,0,0,1,1,0,0
+South Africa,before,0,0,0,0,0,0
+Switzerland,before,0,0,0,0,0,0
+Taiwan,before,0,0,0,0,0,0
+Türkiye,before,0,0,0,0,0,0
+Ukraine,before,0,0,0,0,0,0
+United Arab Emirates,before,0,0,0,0,0,0
+Vietnam,before,0,0,0,0,0,0

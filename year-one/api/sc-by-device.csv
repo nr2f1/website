@@ -1,0 +1,7 @@
+dateRange,device,clicks,impressions,ctr,position
+before,MOBILE,1106,23036,0.048,10.9
+before,DESKTOP,991,44408,0.0223,17.7
+before,TABLET,28,695,0.0403,8.0
+after,MOBILE,3829,51890,0.0738,4.1
+after,DESKTOP,2657,96861,0.0274,9.5
+after,TABLET,87,1605,0.0542,6.7

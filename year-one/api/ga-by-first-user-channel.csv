@@ -1,0 +1,13 @@
+firstUserDefaultChannelGroup,dateRange,activeUsers,newUsers,sessions,screenPageViews,engagedSessions,userEngagementDuration
+Direct,after,562,539,2175,5303,1182,127050
+Organic Search,after,404,401,1100,2373,556,75581
+Direct,before,109,109,268,1192,178,23414
+Organic Social,after,47,47,60,119,35,3306
+Organic Search,before,21,21,31,45,13,551
+Referral,after,16,16,39,93,24,2271
+AI Assistant,after,4,4,4,8,4,707
+Organic Social,before,3,3,3,3,1,0
+Referral,before,3,3,7,26,4,1124
+Unassigned,before,2,2,5,6,1,2
+AI Assistant,before,0,0,0,0,0,0
+Unassigned,after,0,0,0,0,0,0

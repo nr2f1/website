@@ -1,0 +1,36 @@
+{
+ "property": {
+  "name": "properties/502754037",
+  "parent": "accounts/141024568",
+  "createTime": "2025-08-27T13:41:00.564Z",
+  "updateTime": "2025-09-06T17:08:00.643Z",
+  "displayName": "NR2F1 Foundation NEW website",
+  "industryCategory": "HEALTHCARE",
+  "timeZone": "Etc/GMT",
+  "currencyCode": "GBP",
+  "serviceLevel": "GOOGLE_ANALYTICS_STANDARD",
+  "account": "accounts/141024568",
+  "propertyType": "PROPERTY_TYPE_ORDINARY"
+ },
+ "streams": {
+  "dataStreams": [
+   {
+    "name": "properties/502754037/dataStreams/12082787318",
+    "type": "WEB_DATA_STREAM",
+    "displayName": "New website",
+    "createTime": "2025-08-27T13:42:11.712Z",
+    "updateTime": "2025-08-27T13:42:11.712Z",
+    "webStreamData": {
+     "measurementId": "G-N5W3P1K1ZT",
+     "defaultUri": "https://www.nr2f1.org"
+    }
+   }
+  ]
+ },
+ "retention": {
+  "name": "properties/502754037/dataRetentionSettings",
+  "eventDataRetention": "TWO_MONTHS",
+  "resetUserDataOnNewActivity": true,
+  "userDataRetention": "FOURTEEN_MONTHS"
+ }
+}

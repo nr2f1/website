@@ -1,0 +1,7 @@
+deviceCategory,dateRange,activeUsers,newUsers,sessions,screenPageViews,engagedSessions,userEngagementDuration
+mobile,after,730,718,1824,3672,916,100668
+desktop,after,300,286,1540,4205,879,108166
+mobile,before,86,85,133,274,67,6919
+desktop,before,53,52,182,996,131,18156
+tablet,after,3,3,8,19,4,81
+tablet,before,1,1,1,2,1,16

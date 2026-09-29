@@ -1,0 +1,1447 @@
+city,dateRange,activeUsers,newUsers,sessions,screenPageViews,engagedSessions,userEngagementDuration
+(not set),after,139,100,268,558,144,16132
+London,after,59,49,163,369,74,5736
+Dallas,after,21,18,126,203,51,2405
+Bath,after,20,17,42,83,25,1628
+(not set),before,19,18,24,65,13,1186
+Chicago,after,19,12,146,715,92,13604
+Paris,after,16,9,62,158,38,7724
+Frankfurt am Main,after,15,10,19,53,12,1807
+Melbourne,after,15,14,43,84,23,3512
+New York,after,15,8,31,72,22,2340
+London,before,14,14,66,527,45,4679
+Lake Buena Vista,after,13,6,19,41,16,964
+Newark,after,13,8,20,32,14,374
+Toronto,after,13,9,31,44,8,1011
+Turin,after,13,7,75,238,41,6168
+Atlanta,after,12,7,14,29,8,575
+Houston,after,12,7,32,96,19,1370
+Ashburn,after,11,6,19,40,9,897
+Birmingham,after,11,5,13,25,8,1048
+Indianapolis,after,11,8,24,38,9,275
+Miami,after,10,6,23,45,14,1129
+Sydney,after,10,7,15,28,9,942
+Cardiff,after,9,7,14,16,6,60
+Montreal,after,9,9,76,170,44,3825
+Sao Paulo,after,9,8,20,35,12,2011
+Los Angeles,after,8,5,9,14,6,219
+Phoenix,after,8,4,115,212,60,5387
+Heidelberg,after,7,7,22,36,17,675
+Lisbon,after,7,6,22,42,15,1441
+Lyon,after,7,2,19,39,13,628
+Madrid,after,7,7,11,19,6,582
+Milan,after,7,4,12,24,5,444
+Rennes,after,7,6,14,47,10,2822
+The Woodlands,after,7,2,169,501,113,7743
+Westfield,after,7,5,27,62,15,1359
+Berlin,after,6,6,7,29,4,329
+Dortmund,after,6,4,7,14,6,526
+San Diego,after,6,6,9,15,5,184
+Struthers,after,6,6,13,21,13,1018
+Anaheim,after,5,3,6,11,4,52
+Cambridge,after,5,1,7,11,2,105
+Denver,after,5,1,22,30,7,442
+Milton Keynes,after,5,2,8,29,7,929
+Minneapolis,after,5,4,10,11,3,6
+Newcastle upon Tyne,after,5,1,7,16,5,416
+Nice,after,5,4,12,85,7,2300
+Norwich,after,5,0,7,10,4,68
+Ottawa,after,5,3,10,14,5,380
+Peachtree Corners,after,5,6,29,85,17,1870
+Philadelphia,after,5,4,6,11,3,135
+Pittsburgh,after,5,4,11,46,9,601
+Seattle,after,5,4,7,28,4,1908
+Vienna,after,5,4,6,15,5,335
+Austin,after,4,3,6,21,2,670
+Bengaluru,after,4,4,6,20,4,322
+Bristol,after,4,4,12,18,5,211
+Budapest,after,4,4,14,35,8,601
+Cincinnati,after,4,4,68,71,5,334
+Copenhagen,after,4,3,5,9,2,398
+Dublin,after,4,3,4,7,3,358
+Englewood,after,4,4,31,40,6,431
+Heathrow,after,4,3,31,39,12,284
+Jaroslaw,after,4,2,7,34,7,963
+Madison,after,4,4,7,7,3,120
+Maidstone,after,4,2,7,4,2,100
+New York,before,4,3,7,13,5,168
+Orlando,after,4,2,6,21,3,566
+Royal Oak,after,4,1,13,31,7,491
+Svendborg,after,4,4,5,13,4,467
+The Woodlands,before,4,2,6,11,4,124
+Toulouse,after,4,4,6,7,1,0
+Uniontown,after,4,4,4,11,4,206
+Villeurbanne,after,4,3,24,41,12,459
+Virginia Beach,after,4,1,4,3,1,78
+Wolverhampton,after,4,2,5,5,2,75
+Barcelona,after,3,3,3,8,3,282
+Belo Horizonte,after,3,2,4,8,2,680
+Bilbao,after,3,1,3,9,2,162
+Bogota,after,3,3,4,11,3,221
+Bordeaux,after,3,3,3,4,1,1
+Boston,after,3,2,6,11,3,133
+Cleveland,after,3,2,7,15,5,405
+Edinburgh,after,3,1,4,3,4,458
+Essen,after,3,1,8,13,5,508
+Fort Worth,after,3,2,4,7,3,183
+Greenville,after,3,2,4,5,3,276
+Hamburg,after,3,3,3,3,1,0
+Hohenkirchen-Siegertsbrunn,after,3,3,9,42,9,1669
+Hounslow,after,3,2,5,14,1,84
+Houston,before,3,2,29,128,24,2381
+Jacksonville,after,3,2,5,5,2,47
+Leland,after,3,3,6,12,3,260
+Llanelli,after,3,3,4,6,4,1651
+Lublin,after,3,1,17,52,10,1995
+Maidenhead,after,3,3,4,5,2,204
+Morris Township,after,3,1,9,191,7,5947
+Newtown Grant,after,3,2,3,3,2,6
+Poitiers,after,3,3,6,11,3,889
+Prague,after,3,2,4,6,3,185
+Riga,after,3,3,12,54,12,1258
+Rock Hill,before,3,3,4,17,3,502
+Romagnat,after,3,1,6,21,4,566
+Royal Oak,before,3,2,9,23,6,683
+Rugby,after,3,1,4,13,3,548
+Rzeszow,after,3,0,6,7,5,873
+Salt Lake City,after,3,3,4,11,2,255
+San Antonio,after,3,2,5,10,3,67
+San Juan,after,3,2,9,42,7,1798
+Seymour,after,3,3,3,4,3,569
+Swindon,after,3,2,5,6,3,13
+Thones,after,3,2,13,38,11,489
+Vancouver,after,3,3,4,5,1,294
+Waldorf,after,3,3,6,14,4,456
+Worthing,after,3,0,11,26,4,409
+Adelaide,after,2,2,25,28,8,206
+Alexandria,after,2,0,2,4,2,16
+Allen,after,2,2,6,9,4,120
+Andover,after,2,2,2,2,2,100
+Bath,before,2,1,4,4,3,155
+Bayamon,after,2,1,4,13,1,83
+Bellville,after,2,0,2,2,2,552
+Boston,before,2,2,2,2,0,0
+Boynton Beach,after,2,1,4,12,1,139
+Brighton and Hove,after,2,1,5,7,4,205
+Brisbane,after,2,2,3,5,2,155
+Burnley,after,2,1,3,21,2,363
+Calgary,after,2,2,2,2,1,27
+Charlotte,after,2,2,3,8,1,42
+Chateaugiron,after,2,2,3,6,2,464
+Cheektowaga,after,2,2,4,5,1,13
+Chicago,before,2,2,9,94,7,2086
+Columbus,after,2,0,2,2,1,37
+Coppell,after,2,2,95,179,61,2140
+Dallas,before,2,1,5,12,4,358
+Debica,after,2,2,4,4,1,10
+Decin,after,2,2,5,6,3,401
+Denver,before,2,2,2,2,0,0
+Detroit,after,2,2,4,7,2,128
+Durham,after,2,2,5,5,1,44
+Dusseldorf,after,2,2,2,4,1,61
+Elst,after,2,2,6,7,3,748
+Genoa,after,2,2,3,8,1,455
+Grenoble,after,2,1,3,9,2,453
+Hanover,after,2,2,2,2,0,0
+Heavener,after,2,1,3,8,2,452
+Hollidaysburg,after,2,1,7,12,6,178
+Hounslow,before,2,2,4,6,2,112
+Hyderabad,after,2,2,6,8,5,947
+Istanbul,after,2,2,3,3,1,72
+Krakow,after,2,2,7,17,5,604
+Leeds,after,2,1,2,5,1,88
+Leipzig,after,2,2,2,9,2,1097
+Lincoln,after,2,2,4,3,1,8
+Lindau,after,2,2,15,34,10,1394
+Lindenberg im Allgau,after,2,2,2,2,0,0
+Louisville,after,2,2,2,3,1,0
+Madrid,before,2,2,6,11,1,672
+Manchester,after,2,1,2,2,1,476
+Manhattan,after,2,1,2,2,1,10
+Miami,before,2,1,3,4,1,16
+Milton Keynes,before,2,1,2,7,2,132
+Miranda de Ebro,after,2,2,3,10,2,584
+Miribel,after,2,2,4,13,2,216
+Montpellier,after,2,2,2,2,0,0
+Montrose,after,2,2,2,2,1,36
+Munich,after,2,1,5,6,3,9
+Nashville,after,2,2,4,6,3,87
+Nicosia,after,2,2,4,5,2,142
+Oeiras,after,2,2,2,2,0,0
+Omaha,after,2,2,2,2,0,0
+Ottawa,before,2,2,4,10,2,510
+Oxford,after,2,0,9,8,4,3
+Paris,before,2,1,2,5,1,219
+Paterson,after,2,2,5,32,3,744
+Peachtree Corners,before,2,2,10,30,5,1306
+Portland,after,2,2,2,2,0,0
+Praia Grande,after,2,2,3,5,2,3
+Rio de Janeiro,after,2,1,3,6,2,116
+Riyadh,after,2,2,4,5,1,47
+Sabadell,after,2,2,3,10,3,596
+Saint James,after,2,0,2,6,2,133
+Salem,after,2,2,5,4,1,15
+San Jose,after,2,1,3,8,2,169
+Selby,after,2,1,4,4,2,501
+Shallotte,after,2,2,2,4,2,105
+Shoreview,after,2,2,4,6,2,375
+Slough,after,2,0,2,5,2,834
+Stuttgart,after,2,2,4,4,1,1205
+Sunset Beach,after,2,1,2,2,1,26
+Swallownest,after,2,2,2,2,0,0
+Sydney,before,2,2,2,4,2,195
+Szczecin,after,2,1,2,8,2,150
+Tampa,after,2,1,2,2,0,0
+Torrington,after,2,0,2,8,1,237
+Upton,after,2,2,2,4,2,88
+Vitoria-Gasteiz,after,2,1,3,6,2,167
+Warsaw,after,2,1,5,12,5,257
+Washington,after,2,2,4,4,2,109
+Waxhaw,after,2,0,2,5,2,24
+Westfield,before,2,2,4,8,3,186
+Wetherby,after,2,2,2,5,2,87
+Worcester,after,2,1,2,2,1,16
+Aalen,after,1,1,1,3,1,195
+Aberdeen,after,1,1,1,2,1,23
+Aberdeen,before,1,1,1,1,0,0
+Acatzingo de Hidalgo,after,1,0,1,4,1,268
+Adams,after,1,0,1,1,1,119
+Adazi Municipality,after,1,0,1,3,1,26
+Adelsdorf,after,1,1,1,1,0,0
+Aix-les-Bains,after,1,0,1,1,1,6
+Al Ain,after,1,1,1,2,1,0
+Alba,after,1,1,7,14,6,394
+Albstadt,after,1,1,1,3,1,215
+Albuquerque,after,1,1,2,1,0,0
+Alexandria,before,1,1,1,1,0,0
+Algonquin,after,1,0,3,14,2,582
+Algonquin,before,1,0,6,55,5,1651
+Allison Park,after,1,1,1,3,1,84
+Altamonte Springs,after,1,1,2,2,0,0
+Altomunster,after,1,1,1,3,1,74
+Amagasaki,after,1,1,1,1,1,81
+Amos,after,1,0,1,1,1,0
+Amsterdam,after,1,1,1,2,1,25
+Anaheim,before,1,1,1,1,0,0
+Ancenis,before,1,1,1,1,0,0
+Anshun,after,1,1,1,6,1,81
+Antofagasta,after,1,1,1,1,0,0
+Arendal Municipality,after,1,1,2,3,1,12
+Arnprior,after,1,1,1,1,1,61
+Atherstone,after,1,0,4,18,3,587
+Atlanta,before,1,1,1,1,0,0
+Augsburg,after,1,1,1,2,1,0
+Augusta,after,1,1,3,3,0,0
+Aurora,after,1,1,2,2,0,0
+Bad Durrheim,after,1,1,1,1,0,0
+Bad Neuenahr-Ahrweiler,after,1,1,2,3,1,62
+Bad Oeynhausen,after,1,1,1,2,1,8
+Baghdad,before,1,1,1,1,0,0
+Balderton,after,1,0,1,1,1,0
+Ballwin,after,1,1,4,11,2,573
+Baltimore,after,1,0,1,0,1,14
+Bareggio,after,1,1,4,6,1,39
+Barneveld,after,1,1,3,8,2,107
+Barranquilla,after,1,1,1,1,0,0
+Batavia,after,1,0,1,1,1,186
+Baunatal,after,1,1,1,1,0,0
+Bay Village,after,1,1,1,1,1,193
+Bayonne,after,1,1,1,3,1,65
+Beijing,after,1,0,2,4,2,283
+Beinasco,after,1,0,1,2,1,8
+Belfast,after,1,0,3,3,2,31
+Belfast,before,1,1,1,4,1,629
+Belgrade,after,1,1,4,17,4,304
+Bethany,after,1,1,1,6,1,138
+Bethesda,after,1,1,2,2,0,0
+Beverly Hills,before,1,1,1,3,1,86
+Beynost,after,1,0,1,2,1,24
+Big Lake,after,1,1,1,2,1,31
+Billericay,after,1,1,1,4,1,460
+Billings,after,1,1,2,2,0,0
+Blavand,after,1,1,2,2,1,12
+Block Island,before,1,0,1,1,0,0
+Bloomfield,after,1,1,8,9,3,23
+Boise,after,1,1,1,2,1,49
+Bonaventure,after,1,0,1,1,1,0
+Bonn,after,1,1,1,1,0,0
+Bora-Bora,before,1,1,3,4,1,2
+Boras,after,1,1,1,1,1,154
+Boulder,after,1,0,1,1,0,0
+Bourg-Saint-Maurice,after,1,1,1,1,0,0
+Bowie,before,1,1,1,5,1,59
+Bradford West Gwillimbury,after,1,1,4,8,2,287
+Bridport,after,1,1,1,1,0,0
+Brill,after,1,1,2,1,0,0
+Bristow,after,1,0,1,1,1,7
+Bristow,before,1,0,1,2,1,53
+Broadway,after,1,0,2,13,1,188
+Bry-sur-Marne,after,1,1,2,5,2,22
+Bucharest,after,1,1,1,2,1,98
+Bullhead City,after,1,0,2,3,1,9
+Burgess Hill,after,1,1,1,2,1,94
+Burgos,after,1,0,2,2,0,4
+Burke,after,1,1,1,3,1,23
+Burlington,after,1,0,2,8,1,96
+Burlington,before,1,1,1,1,0,0
+Caledonia,after,1,1,1,1,0,0
+Cali,after,1,0,1,0,1,64
+Cambridge,before,1,1,1,1,1,0
+Carcavelos,before,1,1,2,1,0,0
+Carlisle,after,1,1,1,1,0,1
+Carmagnola,after,1,1,6,4,2,75
+Carnforth,after,1,1,1,2,1,32
+Carolina,after,1,0,2,2,1,0
+Carolina Shores,after,1,1,3,6,2,133
+Castelldefels,after,1,0,1,1,0,0
+Castellon de la Plana,after,1,1,4,5,1,130
+Castleford,after,1,1,1,1,0,0
+Central,after,1,1,1,1,0,0
+Chadron,after,1,0,1,1,1,0
+Chapel Hill,after,1,0,2,7,1,201
+Chardon,after,1,0,1,1,1,0
+Charleston,after,1,0,1,1,1,377
+Chemnitz,after,1,1,1,3,1,87
+Chessington,after,1,0,1,0,1,4
+Chester Heights,after,1,1,1,1,1,72
+Chikkaballapur,after,1,0,1,3,1,135
+Christchurch,before,1,1,1,8,1,382
+Churchville,before,1,1,1,1,1,136
+Ciudad Juarez,after,1,1,1,1,0,0
+Ciudad Obregon,after,1,0,1,1,0,0
+Ciudad del Este,after,1,1,2,12,2,413
+Clifton,after,1,0,1,3,1,20
+College Station,after,1,1,1,1,1,42
+Collegno,after,1,0,1,0,0,0
+Cologne,after,1,1,1,2,1,7
+Columbus,before,1,1,1,1,0,0
+Concordville,after,1,1,1,1,0,8
+Congonhas,after,1,1,1,3,1,239
+Cooma,after,1,0,1,2,1,30
+Copenhagen,before,1,1,1,1,1,20
+Coquitlam,after,1,1,2,1,0,21
+Coronado,after,1,1,1,1,0,0
+Cottingham,after,1,1,1,5,1,140
+Council Bluffs,after,1,1,1,7,1,206
+Coventry,after,1,0,1,2,1,50
+Crawfordsville,after,1,0,1,1,0,0
+Crewe,after,1,0,1,1,1,3
+Curitiba,after,1,1,1,1,0,0
+Cuthbert,after,1,1,1,1,1,85
+Cwmbran,after,1,1,1,4,1,31
+Danbury,after,1,1,1,2,1,70
+Dawlish,after,1,0,1,1,1,0
+Dawson,after,1,1,1,1,0,0
+Dayton,after,1,1,1,1,0,0
+DeBary,after,1,1,2,2,1,221
+Decatur,after,1,1,2,2,1,5
+Decatur,before,1,0,1,1,1,0
+Deerfield,after,1,1,1,1,0,0
+Delmar,after,1,0,1,5,1,9
+Donostia-San Sebastian,after,1,1,1,14,1,481
+Dorchester,after,1,1,1,2,1,0
+Doylestown,after,1,1,1,1,0,0
+East Northport,after,1,1,1,1,0,0
+East Peckham,after,1,0,1,1,1,0
+Eastbourne,after,1,0,1,1,1,0
+Eastland,after,1,0,1,0,1,0
+Eccleshall,after,1,0,1,2,1,31
+Eden Township,after,1,1,1,1,1,69
+Edgware,after,1,1,1,1,0,0
+Edmonton,after,1,1,9,30,6,1416
+Eindhoven,after,1,1,1,1,0,0
+Elizabeth,after,1,1,1,2,1,290
+Elmhurst,after,1,1,1,1,1,57
+Elsteraue,after,1,1,3,22,3,1688
+Engelberg,after,1,0,2,3,1,308
+Epsom,after,1,0,1,0,0,12
+Erd,after,1,1,1,2,1,1
+Espoo,after,1,1,1,3,1,85
+Eureka,after,1,1,1,2,1,39
+Evesham,after,1,1,1,1,0,0
+Exeter,after,1,1,1,1,1,79
+Fair Plain,after,1,1,7,41,6,1616
+Fairfax Station,after,1,1,4,11,2,200
+Farndon,after,1,0,1,2,1,60
+Feira de Santana,after,1,0,1,0,1,115
+Ferndale,after,1,0,1,7,1,91
+Five Forks,after,1,1,1,8,1,145
+Flint Hill,after,1,1,1,2,1,12
+Florence,after,1,1,2,10,1,154
+Florence,before,1,1,1,1,1,49
+Flowery Branch,after,1,1,1,4,1,707
+Fordham,after,1,1,1,3,1,22
+Forest Park,after,1,1,1,1,1,38
+Forsyth,after,1,0,1,1,1,0
+Fort Collins,after,1,1,1,1,1,38
+Fort Myers,after,1,1,2,3,1,44
+Fort Wayne,after,1,0,2,2,0,0
+Fountain Hills,after,1,0,1,2,1,4
+Framingham,after,1,1,1,1,0,0
+Franklin Township,after,1,1,1,1,0,0
+Fredericksburg,after,1,1,1,3,1,116
+Fresno,after,1,1,1,1,0,0
+Fridley,after,1,1,1,1,0,0
+Fronton,after,1,0,2,2,1,74
+Furstenfeldbruck,after,1,1,1,1,0,0
+Gerasdorf,after,1,1,1,3,1,98
+Gijon,before,1,1,1,8,1,28
+Giza,after,1,1,1,2,1,105
+Glasgow,after,1,1,2,2,1,5
+Gloucester,after,1,0,1,0,1,4
+Gniezno,after,1,1,2,8,1,352
+Godollo,after,1,1,1,3,1,0
+Goldenrod,after,1,1,10,25,9,1875
+Goppingen,after,1,1,1,1,0,0
+Gotha,after,1,1,1,1,0,0
+Grapevine,after,1,0,1,5,1,154
+Grimsby,after,1,0,1,2,1,19
+Guangzhou,after,1,1,1,4,1,148
+Guildford,after,1,1,1,1,0,6
+Guntersville,after,1,1,1,1,0,0
+Haarlem,after,1,1,1,4,1,301
+Hadsten,after,1,0,1,1,0,9
+Hadsten,before,1,0,1,2,1,13
+Hagen,after,1,1,1,1,1,127
+Hamilton,after,1,1,1,2,1,72
+Hammel,after,1,0,1,3,1,72
+Hardin,after,1,0,1,1,1,0
+Hartford,after,1,0,1,0,1,20
+Haverfordwest,after,1,0,2,3,2,172
+Haverfordwest,before,1,1,1,3,1,27
+Heanor,after,1,0,1,1,1,7
+Hearst,after,1,1,2,4,1,76
+Heathrow,before,1,1,2,7,2,58
+Heidelberg,before,1,1,1,10,1,306
+Helsinki,after,1,1,1,3,1,69
+Hemel Hempstead,after,1,1,2,3,1,0
+Herve,after,1,1,2,5,1,44
+Herzogenrath,after,1,1,1,2,1,106
+High Wycombe,after,1,1,1,1,0,0
+Hinnerup,before,1,1,1,1,0,0
+Ho Chi Minh City,after,1,1,1,2,1,2
+Hollidaysburg,before,1,1,2,8,2,168
+Homestead,after,1,1,1,1,0,0
+Hong Kong,after,1,1,1,1,1,18
+Hornchurch,after,1,1,1,1,1,19
+Huddersfield,after,1,0,1,2,1,16
+Huntsville,after,1,0,1,2,1,16
+Hurstbourne,after,1,0,4,7,3,504
+Iggingen,after,1,1,1,3,1,64
+Ilmenau,after,1,1,1,1,1,337
+Iloilo City,after,1,1,1,2,1,27
+Izmir,after,1,1,5,5,0,0
+Jaipur,before,1,1,1,3,1,121
+Jefferson City,after,1,1,1,1,0,0
+Kafr el-Sheikh,after,1,1,1,2,1,127
+Kaiserslautern,after,1,1,1,2,1,50
+Karlshamn,after,1,0,2,3,2,1377
+Karlshamn,before,1,1,1,1,0,4
+Katowice,after,1,1,1,3,1,105
+Kempten,after,1,0,2,5,1,551
+Kennebunk,after,1,1,2,4,1,44
+Kirchheim bei Munchen,after,1,1,1,2,1,23
+Kitchener,after,1,1,1,2,1,0
+Kolkwitz,after,1,1,4,5,1,0
+Konigswinter,after,1,1,1,2,1,10
+Krnov,after,1,0,1,4,1,262
+Kuala Lumpur,after,1,1,1,1,0,0
+Kyiv,after,1,1,1,1,0,0
+La Couronne,after,1,1,1,1,1,301
+La Rochelle,after,1,1,1,7,1,134
+Lake Mary,after,1,1,1,1,1,55
+Lancing,after,1,0,1,1,1,0
+Langerwehe,after,1,1,3,10,1,597
+Lansing,after,1,0,1,2,1,8
+Laredo,after,1,1,1,1,1,0
+Laredo,before,1,1,1,3,1,151
+Larnaca,after,1,0,1,5,1,182
+Las Vegas,after,1,1,1,4,1,0
+Lavras,before,1,1,1,3,1,133
+Leicester,after,1,1,1,1,0,0
+Lempdes,after,1,0,2,9,1,267
+Leukerbad,after,1,1,1,2,1,337
+Leutkirch im Allgau,after,1,1,1,1,0,0
+Levittown,after,1,1,1,1,0,0
+Lich,after,1,0,1,0,0,1
+Lille,after,1,1,1,1,0,3
+Limburg,after,1,1,2,2,0,0
+Lino Lakes,before,1,1,1,1,0,0
+Lisbon,before,1,1,2,21,2,1722
+Lismore,after,1,0,1,1,1,265
+Little Silver,after,1,1,1,1,0,5
+Littlefield,after,1,0,1,4,1,41
+Locust,before,1,0,3,2,0,2
+Los Mochis,after,1,0,1,3,1,23
+Louisville,before,1,1,1,2,1,0
+Luton,after,1,0,2,3,1,3
+Lyndon,after,1,1,1,1,1,11
+Lyndon,before,1,1,1,5,1,447
+Maastricht,after,1,1,1,1,0,4
+Mackay,after,1,0,1,2,1,11
+Maidenhead,before,1,1,1,1,1,58
+Malaga,after,1,0,1,3,1,134
+Mamaroneck,before,1,1,1,1,0,0
+Mannheim,after,1,1,2,7,1,218
+Maplewood,after,1,1,1,2,1,0
+Marbella,after,1,1,2,3,1,222
+Marica,after,1,0,1,0,1,244
+Maryville,after,1,1,3,3,0,0
+Matamoros,after,1,1,1,1,1,576
+McPherson,after,1,1,1,1,1,16
+Mechanicsville,after,1,1,1,1,1,0
+Medellin,after,1,1,1,1,0,8
+Medford,after,1,0,1,1,1,0
+Melbourne,before,1,1,1,1,0,0
+Mentor,after,1,1,2,2,0,0
+Miami Beach,after,1,0,1,1,0,4
+Middletown,before,1,1,1,2,1,86
+Middletown Township,after,1,1,1,1,0,0
+Mildenhall,after,1,1,1,8,1,960
+Millburn,after,1,1,2,2,1,65
+Millcreek,after,1,0,1,3,1,33
+Millersburg,after,1,1,1,1,0,0
+Milton,after,1,1,1,1,1,17
+Minneapolis,before,1,1,1,3,1,10
+Miqdadiyah,after,1,1,2,1,0,0
+Mistelbach,after,1,0,1,1,1,89
+Mont-Joli,after,1,0,1,1,0,0
+Mont-Tremblant,after,1,1,1,1,0,0
+Montreal,before,1,1,1,1,1,3
+Monza,after,1,1,2,5,1,264
+Mooresville,after,1,1,1,1,0,0
+Morecambe,after,1,1,1,1,0,0
+Moreno Valley,after,1,1,1,1,1,0
+Moscow,after,1,1,1,1,0,0
+Mount Laurel Township,after,1,1,1,2,1,217
+Municipal District of Enniscorthy,after,1,1,3,4,1,22
+Municipal District of Enniscorthy,before,1,0,1,2,1,0
+Municipality of Cartagena,after,1,0,1,6,1,71
+Naas,before,1,1,3,9,2,236
+Nacogdoches,after,1,1,2,2,1,105
+Nashville,before,1,0,1,1,0,0
+Navojoa,after,1,0,1,0,0,0
+Needham,after,1,1,1,1,0,5
+New Delhi,after,1,1,1,1,0,0
+New Haven,after,1,1,1,1,0,0
+New Kingstown,after,1,1,2,4,1,29
+New Orleans,after,1,1,3,22,3,843
+New Smyrna Beach,after,1,1,3,5,1,19
+Newark,before,1,1,1,1,0,0
+Nokia,after,1,1,2,9,2,603
+Nottingham,after,1,1,2,1,0,0
+Novara,after,1,1,1,1,0,1
+Noyal-Chatillon-sur-Seiche,after,1,1,1,2,1,0
+Oak Island,after,1,0,1,1,1,96
+Oakland,after,1,1,1,1,1,107
+Ocean Township,after,1,1,1,1,0,0
+Olympia,after,1,1,1,1,1,9
+Onaway,after,1,1,1,1,0,0
+Orem,after,1,0,1,0,1,0
+Orlando,before,1,1,1,1,1,23
+Orleans,after,1,0,1,0,1,260
+Oro Valley,after,1,0,1,1,1,2
+Osaka,before,1,1,1,3,1,36
+Osimo,after,1,1,1,11,1,653
+Oslo Municipality,after,1,1,1,1,1,45
+Oslo Municipality,before,1,1,1,1,0,0
+Ostroleka,after,1,1,2,4,1,41
+Oughtibridge,after,1,1,1,1,0,0
+Oxford,before,1,0,2,4,1,232
+Palatine,after,1,1,1,1,0,3
+Palmer,after,1,1,1,1,0,0
+Panorama,after,1,1,1,1,1,29
+Papeete,before,1,1,2,2,0,0
+Park Forest Village,after,1,0,2,3,1,9
+Park Gate,after,1,1,1,2,1,38
+Parthenay,after,1,1,1,1,0,0
+Pawnee City,after,1,0,1,1,1,0
+Penn Yan,after,1,0,1,1,1,0
+Pequannock Township,after,1,1,1,1,0,0
+Perpignan,after,1,1,1,7,1,254
+Pflugerville,after,1,1,2,2,1,30
+Phoenix,before,1,1,12,23,7,631
+Piedecuesta,after,1,1,1,2,1,110
+Pisa,after,1,0,1,7,1,87
+Pisa,before,1,0,1,2,1,74
+Piscataway,after,1,0,1,2,1,28
+Pistoia,after,1,0,1,1,1,89
+Playa del Carmen,after,1,1,2,3,1,1
+Pleasanton,after,1,1,1,1,1,0
+Plovdiv,after,1,1,1,1,1,28
+Plymouth,after,1,0,3,9,1,107
+Pontevedra,after,1,1,1,1,0,0
+Port Macquarie,after,1,1,1,1,0,0
+Portsmouth,after,1,0,1,3,1,156
+Pottsgrove,after,1,0,2,4,1,16
+Pouso Alegre,after,1,0,1,0,1,12
+Preston,after,1,1,8,8,0,0
+Provins,after,1,1,1,1,0,0
+Puebla,after,1,1,1,8,1,1066
+Quincy,after,1,1,1,1,1,29
+Racine,after,1,1,1,3,1,36
+Rankweil,after,1,1,1,2,1,0
+Rapid City,after,1,0,1,1,1,86
+Rawlins,after,1,1,1,1,1,0
+Reading,after,1,0,1,2,1,50
+Recife,after,1,1,3,8,3,175
+Red Cross,after,1,1,5,6,0,0
+Red Cross,before,1,1,1,1,0,0
+Redditch,after,1,0,1,0,1,60
+Reston,after,1,1,1,4,1,155
+Rheine,after,1,1,1,1,0,0
+Rio de Janeiro,before,1,1,1,1,1,6
+Roanoke,after,1,0,1,0,0,0
+Rochdale,after,1,0,1,0,1,15
+Rochester,after,1,1,1,1,0,0
+Rome,after,1,1,1,1,0,0
+Romford,after,1,1,1,3,1,263
+Ropazi Municipality,after,1,0,2,12,2,220
+Rotherham,after,1,0,2,6,2,248
+Rotterdam,after,1,1,2,3,1,6
+Roubaix,after,1,1,1,1,0,0
+Rouen,after,1,1,2,3,1,0
+Rouyn-Noranda,after,1,1,1,1,0,0
+Royston,after,1,0,1,2,1,2
+Rudesheim am Rhein,after,1,1,1,1,1,184
+Ruidoso,before,1,1,1,1,0,0
+Sacramento,after,1,1,1,1,0,4
+Saint Michael,after,1,0,1,1,1,24
+Saint-Cesaire,after,1,0,1,1,0,0
+Saint-Cyr-sur-Loire,after,1,0,2,3,1,92
+Saint-Denis,before,1,0,1,1,1,7
+Saint-Etienne,after,1,1,1,1,0,0
+Saint-Germain-en-Laye,after,1,1,1,1,1,25
+Saint-Paul,before,1,1,1,1,1,1
+Saint-Prix,after,1,1,1,1,1,153
+San Diego,before,1,1,1,3,1,135
+San Jose,before,1,1,1,1,0,0
+San Luis Rio Colorado,after,1,1,1,4,1,710
+San Nicolas de los Arroyos,after,1,1,1,13,1,172
+Sandalfoot Cove,after,1,0,1,1,1,1
+Sandy Springs,after,1,1,2,4,2,194
+Sanford,after,1,0,1,4,1,289
+Sanmin District,after,1,1,1,4,1,242
+Santa Clara,before,1,1,1,1,0,4
+Santa Claus,after,1,0,1,0,1,42
+Santa Fe,after,1,1,8,9,1,0
+Santiago,after,1,1,1,7,1,170
+Santos,after,1,1,1,1,0,0
+Sao Domingos de Rana,after,1,0,1,2,1,0
+Sarnia,after,1,1,1,2,1,78
+Sarnia,before,1,1,1,2,1,138
+Saskatoon,after,1,1,1,5,1,509
+Scheidegg,after,1,0,2,6,2,82
+Schwabisch Gmund,after,1,0,3,2,1,21
+Scotch Plains,after,1,0,2,4,2,9
+Scottsburg,after,1,1,1,1,0,0
+Seattle,before,1,1,1,1,1,182
+Sebring,after,1,0,1,5,1,209
+Shelton,after,1,1,2,2,0,0
+Sheridan,after,1,0,1,1,1,123
+Shibuya,after,1,1,5,12,4,404
+Shinagawa City,after,1,1,1,5,1,77
+Shinjuku City,after,1,0,2,3,2,63
+Shipley,after,1,1,1,1,0,0
+Sierre,after,1,1,1,1,0,1
+Sioux Falls,after,1,1,2,2,1,26
+Sioux Lookout,before,1,1,1,1,0,0
+Skarup,after,1,0,1,6,1,49
+Smyrna,after,1,0,1,1,0,3
+Snellville,after,1,1,2,1,0,0
+Sokolow Podlaski,after,1,0,1,1,0,0
+Southport,after,1,1,1,3,1,10
+Sowerby Bridge,after,1,1,1,1,0,0
+Springfield,after,1,1,3,2,0,0
+St-Just-la-Pendue,after,1,1,3,3,1,7
+St. John's,after,1,1,1,1,1,29
+St. Joseph,after,1,0,2,2,1,731
+St. Louis,after,1,1,4,9,2,240
+Stanmore,before,1,1,1,1,1,20
+State College,after,1,0,2,7,2,81
+Stockholm,after,1,1,1,1,0,0
+Stockton,before,1,1,1,1,1,0
+Stoke-on-Trent,after,1,0,2,2,1,8
+Stoke-on-Trent,before,1,1,1,1,1,35
+Stone,after,1,0,1,1,1,0
+Stotfold,after,1,0,1,1,0,0
+Stranraer,after,1,1,1,2,1,161
+Strasbourg,after,1,0,1,5,1,248
+Stratford,after,1,0,1,1,0,0
+Strovolos,after,1,0,1,3,1,18
+Suffolk,after,1,0,1,3,1,534
+Suita,after,1,1,1,1,0,0
+Tampere,after,1,1,1,1,1,115
+Tarboro,after,1,0,1,1,0,0
+Targu Mures,after,1,1,3,4,1,0
+Tel Aviv-Yafo,after,1,1,2,1,1,292
+Telford,after,1,0,1,2,1,58
+Tempe,after,1,0,4,9,2,30
+Terre Haute,after,1,1,1,4,1,54
+Thatcham,before,1,1,1,2,1,176
+Timisoara,after,1,1,1,1,1,219
+Tomar,after,1,0,1,3,1,22
+Tonyrefail,after,1,1,1,1,0,0
+Toowoomba,after,1,0,1,1,0,5
+Toowoomba,before,1,1,1,1,0,0
+Toronto,before,1,1,1,2,1,131
+Torrance,after,1,1,1,3,1,22
+Torrington,before,1,1,1,1,0,0
+Tourcoing,after,1,1,1,1,0,0
+Tours,after,1,1,1,2,1,59
+Trebechovice pod Orebem,after,1,1,1,1,1,110
+Troy,after,1,0,1,8,1,172
+Tubingen,before,1,1,2,9,2,155
+Tucson,after,1,1,2,4,1,0
+Tumwater,after,1,1,3,3,1,0
+Turin,before,1,1,3,3,2,14
+Tyler,after,1,1,1,3,1,36
+Umka,after,1,1,1,1,0,0
+Union,after,1,0,1,1,1,1
+Union Grove,after,1,1,1,1,1,0
+Utica,after,1,1,1,2,1,15
+Utrecht,after,1,1,1,2,1,183
+Valdagno,before,1,1,1,1,1,40
+Valencia,after,1,1,1,6,1,39
+Vaudreuil-Dorion,after,1,1,1,3,1,540
+Venice,before,1,1,1,2,1,155
+Ventura,after,1,1,1,1,0,0
+Verbania,after,1,0,1,1,0,8
+Verona,after,1,1,1,1,0,0
+Victorville,before,1,1,1,2,1,264
+Villeneuve-d'Ascq,after,1,1,1,1,1,72
+Villingen-Schwenningen,before,1,1,1,2,1,208
+Vimercate,after,1,1,1,7,1,132
+Viol,after,1,1,1,3,1,197
+Virden,after,1,1,1,2,1,410
+Waleska,after,1,1,1,1,1,4
+Waltenhofen,after,1,1,5,7,2,6
+Warrensburg,after,1,1,1,1,0,0
+Warrenton,after,1,1,1,1,0,0
+Warrnambool,after,1,1,1,1,0,0
+Washington,before,1,1,1,2,1,25
+Waterflow,after,1,0,1,1,0,0
+Waukesha,after,1,0,3,4,2,9
+Waxahachie,after,1,0,1,2,1,7
+Weissenburg in Bayern,after,1,1,2,2,0,0
+Wenatchee,after,1,1,1,1,0,0
+West Bridgford,after,1,1,1,1,0,0
+West Chester,after,1,1,1,3,1,26
+West Point,before,1,0,1,4,1,85
+Westminster,after,1,1,1,3,1,10
+Weston,after,1,1,1,1,1,135
+Weston,before,1,1,1,3,1,4
+Whiston,after,1,0,1,1,1,29
+Wijchen,after,1,0,1,1,0,0
+Wilmington,after,1,1,1,1,0,0
+Windsor,after,1,0,1,3,1,26
+Winter Park,after,1,0,1,3,1,42
+Wolverhampton,before,1,1,1,1,0,0
+Woodbury,after,1,1,1,5,1,83
+Wrens,after,1,1,1,2,1,3
+Yakima,after,1,0,1,3,1,352
+Yantai,after,1,1,1,7,1,142
+Yongkang District,after,1,1,1,1,1,8
+Youngstown,after,1,0,1,1,1,335
+Zamora,after,1,1,2,3,2,41
+Zaragoza,after,1,1,7,19,6,3702
+Zurich,after,1,0,1,1,0,1
+Aalen,before,0,0,0,0,0,0
+Acatzingo de Hidalgo,before,0,0,0,0,0,0
+Adams,before,0,0,0,0,0,0
+Adazi Municipality,before,0,0,0,0,0,0
+Adelaide,before,0,0,0,0,0,0
+Adelsdorf,before,0,0,0,0,0,0
+Aix-les-Bains,before,0,0,0,0,0,0
+Al Ain,before,0,0,0,0,0,0
+Alba,before,0,0,0,0,0,0
+Albstadt,before,0,0,0,0,0,0
+Albuquerque,before,0,0,0,0,0,0
+Allen,before,0,0,0,0,0,0
+Allison Park,before,0,0,0,0,0,0
+Altamonte Springs,before,0,0,0,0,0,0
+Altomunster,before,0,0,0,0,0,0
+Amagasaki,before,0,0,0,0,0,0
+Amos,before,0,0,0,0,0,0
+Amsterdam,before,0,0,0,0,0,0
+Ancenis,after,0,0,0,0,0,0
+Andover,before,0,0,0,0,0,0
+Anshun,before,0,0,0,0,0,0
+Antofagasta,before,0,0,0,0,0,0
+Arendal Municipality,before,0,0,0,0,0,0
+Arnprior,before,0,0,0,0,0,0
+Ashburn,before,0,0,0,0,0,0
+Atherstone,before,0,0,0,0,0,0
+Augsburg,before,0,0,0,0,0,0
+Augusta,before,0,0,0,0,0,0
+Aurora,before,0,0,0,0,0,0
+Austin,before,0,0,0,0,0,0
+Bad Durrheim,before,0,0,0,0,0,0
+Bad Neuenahr-Ahrweiler,before,0,0,0,0,0,0
+Bad Oeynhausen,before,0,0,0,0,0,0
+Baghdad,after,0,0,0,0,0,0
+Balderton,before,0,0,0,0,0,0
+Ballwin,before,0,0,0,0,0,0
+Baltimore,before,0,0,0,0,0,0
+Barcelona,before,0,0,0,0,0,0
+Bareggio,before,0,0,0,0,0,0
+Barneveld,before,0,0,0,0,0,0
+Barranquilla,before,0,0,0,0,0,0
+Batavia,before,0,0,0,0,0,0
+Batesville,after,0,0,1,1,0,0
+Batesville,before,0,0,0,0,0,0
+Baunatal,before,0,0,0,0,0,0
+Bay Village,before,0,0,0,0,0,0
+Bayamon,before,0,0,0,0,0,0
+Bayonne,before,0,0,0,0,0,0
+Beijing,before,0,0,0,0,0,0
+Beinasco,before,0,0,0,0,0,0
+Belgrade,before,0,0,0,0,0,0
+Bellville,before,0,0,0,0,0,0
+Belo Horizonte,before,0,0,0,0,0,0
+Bengaluru,before,0,0,0,0,0,0
+Berlin,before,0,0,0,0,0,0
+Bethany,before,0,0,0,0,0,0
+Bethesda,before,0,0,0,0,0,0
+Beverly Hills,after,0,0,0,0,0,0
+Beynost,before,0,0,0,0,0,0
+Big Lake,before,0,0,0,0,0,0
+Bilbao,before,0,0,0,0,0,0
+Billericay,before,0,0,0,0,0,0
+Billings,before,0,0,0,0,0,0
+Birmingham,before,0,0,0,0,0,0
+Blavand,before,0,0,0,0,0,0
+Block Island,after,0,0,0,0,0,0
+Bloomfield,before,0,0,0,0,0,0
+Blue Ash,after,0,0,1,1,0,0
+Blue Ash,before,0,0,0,0,0,0
+Bogota,before,0,0,0,0,0,0
+Boise,before,0,0,0,0,0,0
+Bologna,after,0,0,0,0,0,0
+Bologna,before,0,0,1,1,0,0
+Bonaventure,before,0,0,0,0,0,0
+Bonn,before,0,0,0,0,0,0
+Bora-Bora,after,0,0,0,0,0,0
+Boras,before,0,0,0,0,0,0
+Bordeaux,before,0,0,0,0,0,0
+Boulder,before,0,0,0,0,0,0
+Bourg-Saint-Maurice,before,0,0,0,0,0,0
+Bowie,after,0,0,0,0,0,0
+Boynton Beach,before,0,0,0,0,0,0
+Bradford West Gwillimbury,before,0,0,0,0,0,0
+Bridport,before,0,0,0,0,0,0
+Brighton and Hove,before,0,0,0,0,0,0
+Brill,before,0,0,0,0,0,0
+Brisbane,before,0,0,0,0,0,0
+Bristol,before,0,0,0,0,0,0
+Broadway,before,0,0,0,0,0,0
+Bry-sur-Marne,before,0,0,0,0,0,0
+Bucharest,before,0,0,0,0,0,0
+Budapest,before,0,0,0,0,0,0
+Buenos Aires,after,0,0,2,2,0,0
+Buenos Aires,before,0,0,0,0,0,0
+Bullhead City,before,0,0,0,0,0,0
+Bungendore,after,0,0,1,1,0,0
+Bungendore,before,0,0,0,0,0,0
+Burgess Hill,before,0,0,0,0,0,0
+Burgos,before,0,0,0,0,0,0
+Burke,before,0,0,0,0,0,0
+Burnley,before,0,0,0,0,0,0
+Cagliari,after,0,0,1,1,0,0
+Cagliari,before,0,0,0,0,0,0
+Caledonia,before,0,0,0,0,0,0
+Calgary,before,0,0,0,0,0,0
+Cali,before,0,0,0,0,0,0
+Carcavelos,after,0,0,0,0,0,0
+Cardiff,before,0,0,0,0,0,0
+Carlisle,before,0,0,0,0,0,0
+Carmagnola,before,0,0,0,0,0,0
+Carnforth,before,0,0,0,0,0,0
+Carolina,before,0,0,0,0,0,0
+Carolina Shores,before,0,0,0,0,0,0
+Castelldefels,before,0,0,0,0,0,0
+Castellon de la Plana,before,0,0,0,0,0,0
+Castleford,before,0,0,0,0,0,0
+Central,before,0,0,0,0,0,0
+Chadron,before,0,0,0,0,0,0
+Chapel Hill,before,0,0,0,0,0,0
+Chardon,before,0,0,0,0,0,0
+Charleston,before,0,0,0,0,0,0
+Charlotte,before,0,0,0,0,0,0
+Chateaugiron,before,0,0,0,0,0,0
+Cheektowaga,before,0,0,0,0,0,0
+Chemnitz,before,0,0,0,0,0,0
+Chessington,before,0,0,0,0,0,0
+Chester Heights,before,0,0,0,0,0,0
+Chikkaballapur,before,0,0,0,0,0,0
+Chippenham,after,0,0,1,1,0,0
+Chippenham,before,0,0,0,0,0,0
+Christchurch,after,0,0,0,0,0,0
+Churchville,after,0,0,0,0,0,0
+Cincinnati,before,0,0,0,0,0,0
+Ciudad Juarez,before,0,0,0,0,0,0
+Ciudad Obregon,before,0,0,0,0,0,0
+Ciudad del Este,before,0,0,0,0,0,0
+Cleveland,before,0,0,0,0,0,0
+Clifton,before,0,0,0,0,0,0
+College Station,before,0,0,0,0,0,0
+Collegno,before,0,0,1,0,0,0
+Cologne,before,0,0,0,0,0,0
+Concordville,before,0,0,0,0,0,0
+Congonhas,before,0,0,0,0,0,0
+Cooma,before,0,0,0,0,0,0
+Coppell,before,0,0,0,0,0,0
+Coquitlam,before,0,0,0,0,0,0
+Coronado,before,0,0,0,0,0,0
+Cottingham,before,0,0,0,0,0,0
+Council Bluffs,before,0,0,0,0,0,0
+Coventry,before,0,0,0,0,0,0
+Crawfordsville,before,0,0,0,0,0,0
+Crewe,before,0,0,0,0,0,0
+Cumming,after,0,0,1,0,0,0
+Cumming,before,0,0,0,0,0,0
+Curitiba,before,0,0,0,0,0,0
+Cuthbert,before,0,0,0,0,0,0
+Cwmbran,before,0,0,0,0,0,0
+Danbury,before,0,0,0,0,0,0
+Dawlish,before,0,0,0,0,0,0
+Dawson,before,0,0,0,0,0,0
+Dayton,before,0,0,0,0,0,0
+DeBary,before,0,0,0,0,0,0
+Debica,before,0,0,0,0,0,0
+Decin,before,0,0,0,0,0,0
+Deerfield,before,0,0,0,0,0,0
+Delmar,before,0,0,0,0,0,0
+Detroit,before,0,0,0,0,0,0
+Donostia-San Sebastian,before,0,0,0,0,0,0
+Dorchester,before,0,0,0,0,0,0
+Dortmund,before,0,0,0,0,0,0
+Doylestown,before,0,0,0,0,0,0
+Dublin,before,0,0,0,0,0,0
+Durham,before,0,0,0,0,0,0
+Dusseldorf,before,0,0,0,0,0,0
+East Northport,before,0,0,0,0,0,0
+East Peckham,before,0,0,0,0,0,0
+Eastbourne,before,0,0,0,0,0,0
+Eastland,before,0,0,0,0,0,0
+Eau Claire,after,0,0,1,1,0,0
+Eau Claire,before,0,0,0,0,0,0
+Eccleshall,before,0,0,0,0,0,0
+Eden Township,before,0,0,0,0,0,0
+Edgware,before,0,0,0,0,0,0
+Edinburgh,before,0,0,0,0,0,0
+Edmonton,before,0,0,0,0,0,0
+Eindhoven,before,0,0,0,0,0,0
+Elizabeth,before,0,0,0,0,0,0
+Elmhurst,before,0,0,0,0,0,0
+Elst,before,0,0,0,0,0,0
+Elsteraue,before,0,0,0,0,0,0
+Engelberg,before,0,0,0,0,0,0
+Englewood,before,0,0,0,0,0,0
+Epsom,before,0,0,0,0,0,0
+Erd,before,0,0,0,0,0,0
+Espoo,before,0,0,0,0,0,0
+Essen,before,0,0,0,0,0,0
+Eureka,before,0,0,0,0,0,0
+Evesham,before,0,0,0,0,0,0
+Exeter,before,0,0,0,0,0,0
+Fair Plain,before,0,0,0,0,0,0
+Fairfax Station,before,0,0,0,0,0,0
+Fargelanda,after,0,0,1,1,0,0
+Fargelanda,before,0,0,0,0,0,0
+Farndon,before,0,0,0,0,0,0
+Feira de Santana,before,0,0,0,0,0,0
+Ferndale,before,0,0,0,0,0,0
+Five Forks,before,0,0,0,0,0,0
+Flint Hill,before,0,0,0,0,0,0
+Flowery Branch,before,0,0,0,0,0,0
+Fordham,before,0,0,0,0,0,0
+Forest Park,before,0,0,0,0,0,0
+Forsyth,before,0,0,0,0,0,0
+Fort Collins,before,0,0,0,0,0,0
+Fort Myers,before,0,0,0,0,0,0
+Fort Thomas,after,0,0,2,2,0,0
+Fort Thomas,before,0,0,0,0,0,0
+Fort Wayne,before,0,0,0,0,0,0
+Fort Worth,before,0,0,0,0,0,0
+Fountain Hills,before,0,0,0,0,0,0
+Framingham,before,0,0,0,0,0,0
+Frankfurt am Main,before,0,0,0,0,0,0
+Franklin Township,before,0,0,0,0,0,0
+Fredericksburg,before,0,0,0,0,0,0
+Fresno,before,0,0,0,0,0,0
+Fridley,before,0,0,0,0,0,0
+Fronton,before,0,0,0,0,0,0
+Furstenfeldbruck,before,0,0,0,0,0,0
+Gallarate,after,0,0,1,1,0,0
+Gallarate,before,0,0,0,0,0,0
+Genoa,before,0,0,0,0,0,0
+Gerasdorf,before,0,0,0,0,0,0
+Gijon,after,0,0,0,0,0,0
+Giza,before,0,0,0,0,0,0
+Glasgow,before,0,0,0,0,0,0
+Gloucester,before,0,0,0,0,0,0
+Gniezno,before,0,0,0,0,0,0
+Godollo,before,0,0,0,0,0,0
+Goldenrod,before,0,0,0,0,0,0
+Goppingen,before,0,0,0,0,0,0
+Gotha,before,0,0,0,0,0,0
+Grand Rapids,after,0,0,1,0,0,0
+Grand Rapids,before,0,0,0,0,0,0
+Grapevine,before,0,0,0,0,0,0
+Greenville,before,0,0,0,0,0,0
+Grenoble,before,0,0,0,0,0,0
+Grimsby,before,0,0,0,0,0,0
+Guangzhou,before,0,0,0,0,0,0
+Guildford,before,0,0,0,0,0,0
+Guntersville,before,0,0,0,0,0,0
+Haarlem,before,0,0,0,0,0,0
+Hagen,before,0,0,0,0,0,0
+Hamburg,before,0,0,0,0,0,0
+Hamilton,before,0,0,0,0,0,0
+Hammel,before,0,0,0,0,0,0
+Hanover,before,0,0,0,0,0,0
+Hardin,before,0,0,0,0,0,0
+Hartford,before,0,0,0,0,0,0
+Heanor,before,0,0,0,0,0,0
+Hearst,before,0,0,0,0,0,0
+Heavener,before,0,0,0,0,0,0
+Helsinki,before,0,0,0,0,0,0
+Hemel Hempstead,before,0,0,0,0,0,0
+Herve,before,0,0,0,0,0,0
+Herzogenrath,before,0,0,0,0,0,0
+High Wycombe,before,0,0,0,0,0,0
+Hinnerup,after,0,0,0,0,0,0
+Ho Chi Minh City,before,0,0,0,0,0,0
+Hobart,after,0,0,1,1,0,0
+Hobart,before,0,0,0,0,0,0
+Hohenkirchen-Siegertsbrunn,before,0,0,0,0,0,0
+Homestead,before,0,0,0,0,0,0
+Hong Kong,before,0,0,0,0,0,0
+Hornchurch,before,0,0,0,0,0,0
+Huddersfield,before,0,0,0,0,0,0
+Huntsville,before,0,0,0,0,0,0
+Hurstbourne,before,0,0,0,0,0,0
+Hyderabad,before,0,0,0,0,0,0
+Iggingen,before,0,0,0,0,0,0
+Ilmenau,before,0,0,0,0,0,0
+Iloilo City,before,0,0,0,0,0,0
+Indianapolis,before,0,0,1,1,0,0
+Istanbul,before,0,0,0,0,0,0
+Izmir,before,0,0,0,0,0,0
+Jacksonville,before,0,0,0,0,0,0
+Jaipur,after,0,0,0,0,0,0
+Jaroslaw,before,0,0,0,0,0,0
+Jeddah,after,0,0,2,2,0,0
+Jeddah,before,0,0,0,0,0,0
+Jefferson City,before,0,0,0,0,0,0
+Johannesburg,after,0,0,1,1,0,0
+Johannesburg,before,0,0,0,0,0,0
+Kafr el-Sheikh,before,0,0,0,0,0,0
+Kaiserslautern,before,0,0,0,0,0,0
+Katowice,before,0,0,0,0,0,0
+Kempten,before,0,0,0,0,0,0
+Kennebunk,before,0,0,0,0,0,0
+Kidlington,after,0,0,1,1,0,0
+Kidlington,before,0,0,0,0,0,0
+Kingston upon Hull,after,0,0,1,0,0,0
+Kingston upon Hull,before,0,0,0,0,0,0
+Kirchheim bei Munchen,before,0,0,0,0,0,0
+Kitchener,before,0,0,0,0,0,0
+Kolkwitz,before,0,0,0,0,0,0
+Konigswinter,before,0,0,0,0,0,0
+Krakow,before,0,0,0,0,0,0
+Krnov,before,0,0,0,0,0,0
+Kuala Lumpur,before,0,0,0,0,0,0
+Kyiv,before,0,0,0,0,0,0
+La Couronne,before,0,0,0,0,0,0
+La Rochelle,before,0,0,0,0,0,0
+Lake Buena Vista,before,0,0,0,0,0,0
+Lake Mary,before,0,0,0,0,0,0
+Lancaster,after,0,0,2,2,0,0
+Lancaster,before,0,0,0,0,0,0
+Lancing,before,0,0,0,0,0,0
+Langerwehe,before,0,0,0,0,0,0
+Lansing,before,0,0,0,0,0,0
+Larnaca,before,0,0,0,0,0,0
+Las Palmas de Gran Canaria,after,0,0,1,1,0,0
+Las Palmas de Gran Canaria,before,0,0,0,0,0,0
+Las Vegas,before,0,0,0,0,0,0
+Lavras,after,0,0,0,0,0,0
+Leeds,before,0,0,0,0,0,0
+Leicester,before,0,0,0,0,0,0
+Leipzig,before,0,0,0,0,0,0
+Leland,before,0,0,0,0,0,0
+Lempdes,before,0,0,0,0,0,0
+Lenexa,after,0,0,1,1,0,0
+Lenexa,before,0,0,0,0,0,0
+Leukerbad,before,0,0,0,0,0,0
+Leutkirch im Allgau,before,0,0,0,0,0,0
+Levittown,before,0,0,0,0,0,0
+Lich,before,0,0,0,0,0,0
+Lille,before,0,0,0,0,0,0
+Limburg,before,0,0,0,0,0,0
+Lincoln,before,0,0,0,0,0,0
+Lindau,before,0,0,0,0,0,0
+Lindenberg im Allgau,before,0,0,0,0,0,0
+Lino Lakes,after,0,0,0,0,0,0
+Lismore,before,0,0,0,0,0,0
+Little Silver,before,0,0,0,0,0,0
+Littlefield,before,0,0,0,0,0,0
+Llanelli,before,0,0,0,0,0,0
+Locust,after,0,0,0,0,0,0
+Los Angeles,before,0,0,0,0,0,0
+Los Mochis,before,0,0,0,0,0,0
+Lublin,before,0,0,0,0,0,0
+Lumbarda,after,0,0,1,1,0,0
+Lumbarda,before,0,0,0,0,0,0
+Luton,before,0,0,0,0,0,0
+Lyon,before,0,0,0,0,0,0
+Maastricht,before,0,0,0,0,0,0
+Mackay,before,0,0,0,0,0,0
+Madinah,after,0,0,1,1,0,0
+Madinah,before,0,0,0,0,0,0
+Madison,before,0,0,0,0,0,0
+Maidstone,before,0,0,0,0,0,0
+Malaga,before,0,0,0,0,0,0
+Mamaroneck,after,0,0,0,0,0,0
+Manchester,before,0,0,0,0,0,0
+Manhattan,before,0,0,0,0,0,0
+Mannheim,before,0,0,0,0,0,0
+Maplewood,before,0,0,0,0,0,0
+Marbella,before,0,0,0,0,0,0
+Marica,before,0,0,0,0,0,0
+Maryville,before,0,0,0,0,0,0
+Matamoros,before,0,0,0,0,0,0
+McPherson,before,0,0,0,0,0,0
+Mechanicsville,before,0,0,0,0,0,0
+Medellin,before,0,0,0,0,0,0
+Medford,before,0,0,0,0,0,0
+Mentor,before,0,0,0,0,0,0
+Miami Beach,before,0,0,0,0,0,0
+Middletown,after,0,0,0,0,0,0
+Middletown Township,before,0,0,0,0,0,0
+Milan,before,0,0,0,0,0,0
+Mildenhall,before,0,0,0,0,0,0
+Millburn,before,0,0,0,0,0,0
+Millcreek,before,0,0,0,0,0,0
+Millersburg,before,0,0,0,0,0,0
+Milton,before,0,0,0,0,0,0
+Miqdadiyah,before,0,0,0,0,0,0
+Miranda de Ebro,before,0,0,0,0,0,0
+Miribel,before,0,0,0,0,0,0
+Mistelbach,before,0,0,0,0,0,0
+Mont-Joli,before,0,0,0,0,0,0
+Mont-Tremblant,before,0,0,0,0,0,0
+Montijo,after,0,0,1,1,0,0
+Montijo,before,0,0,0,0,0,0
+Montpellier,before,0,0,0,0,0,0
+Montrose,before,0,0,0,0,0,0
+Monza,before,0,0,0,0,0,0
+Mooresville,before,0,0,0,0,0,0
+Morecambe,before,0,0,0,0,0,0
+Moreno Valley,before,0,0,0,0,0,0
+Morris Township,before,0,0,0,0,0,0
+Morristown,after,0,0,1,1,0,0
+Morristown,before,0,0,0,0,0,0
+Moscow,before,0,0,0,0,0,0
+Mount Laurel Township,before,0,0,0,0,0,0
+Mount Pleasant,after,0,0,1,0,0,0
+Mount Pleasant,before,0,0,0,0,0,0
+Munich,before,0,0,0,0,0,0
+Municipality of Cartagena,before,0,0,0,0,0,0
+Naas,after,0,0,0,0,0,0
+Nacogdoches,before,0,0,0,0,0,0
+Navojoa,before,0,0,0,0,0,0
+Needham,before,0,0,0,0,0,0
+New Delhi,before,0,0,0,0,0,0
+New Haven,before,0,0,0,0,0,0
+New Kingstown,before,0,0,0,0,0,0
+New Orleans,before,0,0,0,0,0,0
+New Smyrna Beach,before,0,0,0,0,0,0
+Newcastle,after,0,0,1,1,0,0
+Newcastle,before,0,0,0,0,0,0
+Newcastle upon Tyne,before,0,0,0,0,0,0
+Newtown Grant,before,0,0,0,0,0,0
+Nice,before,0,0,0,0,0,0
+Nicosia,before,0,0,0,0,0,0
+Nokia,before,0,0,0,0,0,0
+Norwich,before,0,0,0,0,0,0
+Nottingham,before,0,0,0,0,0,0
+Novara,before,0,0,0,0,0,0
+Noyal-Chatillon-sur-Seiche,before,0,0,0,0,0,0
+Oak Island,before,0,0,0,0,0,0
+Oakland,before,0,0,0,0,0,0
+Ocean Township,before,0,0,0,0,0,0
+Oeiras,before,0,0,0,0,0,0
+Olympia,before,0,0,0,0,0,0
+Omaha,before,0,0,0,0,0,0
+Onaway,before,0,0,0,0,0,0
+Orem,before,0,0,0,0,0,0
+Orleans,before,0,0,0,0,0,0
+Oro Valley,before,0,0,0,0,0,0
+Osaka,after,0,0,1,1,0,0
+Osimo,before,0,0,0,0,0,0
+Osnabruck,after,0,0,1,1,0,0
+Osnabruck,before,0,0,0,0,0,0
+Ostroleka,before,0,0,0,0,0,0
+Oughtibridge,before,0,0,0,0,0,0
+Palatine,before,0,0,0,0,0,0
+Palmer,before,0,0,0,0,0,0
+Panorama,before,0,0,0,0,0,0
+Papeete,after,0,0,0,0,0,0
+Park Forest Village,before,0,0,0,0,0,0
+Park Gate,before,0,0,0,0,0,0
+Parthenay,before,0,0,0,0,0,0
+Paterson,before,0,0,0,0,0,0
+Pawnee City,before,0,0,0,0,0,0
+Penn Yan,before,0,0,0,0,0,0
+Pequannock Township,before,0,0,0,0,0,0
+Perpignan,before,0,0,0,0,0,0
+Perry,after,0,0,1,1,0,0
+Perry,before,0,0,0,0,0,0
+Perth,after,0,0,1,1,0,0
+Perth,before,0,0,0,0,0,0
+Pflugerville,before,0,0,0,0,0,0
+Philadelphia,before,0,0,0,0,0,0
+Piedecuesta,before,0,0,0,0,0,0
+Pinecrest,after,0,0,1,1,0,0
+Pinecrest,before,0,0,0,0,0,0
+Piscataway,before,0,0,0,0,0,0
+Pistoia,before,0,0,0,0,0,0
+Pittsburgh,before,0,0,0,0,0,0
+Platte City,after,0,0,1,1,0,0
+Platte City,before,0,0,0,0,0,0
+Playa del Carmen,before,0,0,0,0,0,0
+Pleasanton,before,0,0,0,0,0,0
+Plovdiv,before,0,0,0,0,0,0
+Plymouth,before,0,0,0,0,0,0
+Poitiers,before,0,0,0,0,0,0
+Pontevedra,before,0,0,0,0,0,0
+Port Macquarie,before,0,0,0,0,0,0
+Portland,before,0,0,0,0,0,0
+Portsmouth,before,0,0,0,0,0,0
+Pottsgrove,before,0,0,0,0,0,0
+Pouso Alegre,before,0,0,0,0,0,0
+Poznan,after,0,0,3,3,0,0
+Poznan,before,0,0,0,0,0,0
+Prague,before,0,0,0,0,0,0
+Praia Grande,before,0,0,0,0,0,0
+Preston,before,0,0,0,0,0,0
+Provins,before,0,0,0,0,0,0
+Puebla,before,0,0,0,0,0,0
+Quincy,before,0,0,0,0,0,0
+Racine,before,0,0,0,0,0,0
+Rankweil,before,0,0,0,0,0,0
+Rapid City,before,0,0,0,0,0,0
+Rawlins,before,0,0,0,0,0,0
+Reading,before,0,0,1,1,0,0
+Recife,before,0,0,0,0,0,0
+Redditch,before,0,0,0,0,0,0
+Rennes,before,0,0,0,0,0,0
+Reston,before,0,0,0,0,0,0
+Rheine,before,0,0,0,0,0,0
+Richboro,after,0,0,1,1,0,0
+Richboro,before,0,0,0,0,0,0
+Richmond Hill,after,0,0,1,1,0,0
+Richmond Hill,before,0,0,0,0,0,0
+Riga,before,0,0,0,0,0,0
+Riyadh,before,0,0,0,0,0,0
+Roanoke,before,0,0,0,0,0,0
+Rochdale,before,0,0,0,0,0,0
+Rochester,before,0,0,0,0,0,0
+Rock Hill,after,0,0,0,0,0,0
+Romagnat,before,0,0,0,0,0,0
+Rome,before,0,0,0,0,0,0
+Romford,before,0,0,0,0,0,0
+Ropazi Municipality,before,0,0,0,0,0,0
+Rosenheim,after,0,0,1,1,0,0
+Rosenheim,before,0,0,0,0,0,0
+Rotherham,before,0,0,0,0,0,0
+Rotterdam,before,0,0,0,0,0,0
+Roubaix,before,0,0,0,0,0,0
+Rouen,before,0,0,0,0,0,0
+Rouyn-Noranda,before,0,0,0,0,0,0
+Royston,before,0,0,0,0,0,0
+Rudesheim am Rhein,before,0,0,0,0,0,0
+Rugby,before,0,0,0,0,0,0
+Ruidoso,after,0,0,0,0,0,0
+Rzeszow,before,0,0,0,0,0,0
+Sabadell,before,0,0,0,0,0,0
+Sacramento,before,0,0,0,0,0,0
+Saint James,before,0,0,0,0,0,0
+Saint Michael,before,0,0,0,0,0,0
+Saint-Cesaire,before,0,0,0,0,0,0
+Saint-Cyr-sur-Loire,before,0,0,0,0,0,0
+Saint-Denis,after,0,0,0,0,0,0
+Saint-Etienne,before,0,0,0,0,0,0
+Saint-Germain-en-Laye,before,0,0,0,0,0,0
+Saint-Paul,after,0,0,0,0,0,0
+Saint-Prix,before,0,0,0,0,0,0
+Saint-Quentin,after,0,0,1,1,0,0
+Saint-Quentin,before,0,0,0,0,0,0
+Salem,before,0,0,0,0,0,0
+Salt Lake City,before,0,0,0,0,0,0
+San Antonio,before,0,0,0,0,0,0
+San Juan,before,0,0,0,0,0,0
+San Luis Rio Colorado,before,0,0,0,0,0,0
+San Nicolas de los Arroyos,before,0,0,0,0,0,0
+Sandalfoot Cove,before,0,0,0,0,0,0
+Sandy Springs,before,0,0,0,0,0,0
+Sanford,before,0,0,0,0,0,0
+Sanmin District,before,0,0,0,0,0,0
+Santa Clara,after,0,0,0,0,0,0
+Santa Claus,before,0,0,0,0,0,0
+Santa Fe,before,0,0,0,0,0,0
+Santiago,before,0,0,0,0,0,0
+Santos,before,0,0,0,0,0,0
+Sao Domingos de Rana,before,0,0,0,0,0,0
+Sao Paulo,before,0,0,0,0,0,0
+Saskatoon,before,0,0,0,0,0,0
+Scheidegg,before,0,0,0,0,0,0
+Schwabisch Gmund,before,0,0,0,0,0,0
+Scotch Plains,before,0,0,0,0,0,0
+Scottsburg,before,0,0,0,0,0,0
+Sebring,before,0,0,0,0,0,0
+Selby,before,0,0,0,0,0,0
+Seymour,before,0,0,0,0,0,0
+Shallotte,before,0,0,0,0,0,0
+Shelton,before,0,0,0,0,0,0
+Sheridan,before,0,0,0,0,0,0
+Shibuya,before,0,0,0,0,0,0
+Shinagawa City,before,0,0,0,0,0,0
+Shinjuku City,before,0,0,0,0,0,0
+Shipley,before,0,0,0,0,0,0
+Shoreview,before,0,0,0,0,0,0
+Sibiu,after,0,0,1,1,0,0
+Sibiu,before,0,0,0,0,0,0
+Sierre,before,0,0,0,0,0,0
+Sioux Falls,before,0,0,0,0,0,0
+Sioux Lookout,after,0,0,0,0,0,0
+Skarup,before,0,0,0,0,0,0
+Slough,before,0,0,0,0,0,0
+Smyrna,before,0,0,0,0,0,0
+Snellville,before,0,0,0,0,0,0
+Sokolow Podlaski,before,0,0,0,0,0,0
+Southport,before,0,0,0,0,0,0
+Sowerby Bridge,before,0,0,0,0,0,0
+Springfield,before,0,0,0,0,0,0
+St-Just-la-Pendue,before,0,0,0,0,0,0
+St. John's,before,0,0,0,0,0,0
+St. Joseph,before,0,0,0,0,0,0
+St. Louis,before,0,0,0,0,0,0
+Stanmore,after,0,0,0,0,0,0
+State College,before,0,0,0,0,0,0
+Stillwater,after,0,0,1,1,0,0
+Stillwater,before,0,0,0,0,0,0
+Stockholm,before,0,0,0,0,0,0
+Stockton,after,0,0,0,0,0,0
+Stone,before,0,0,0,0,0,0
+Stotfold,before,0,0,0,0,0,0
+Stranraer,before,0,0,0,0,0,0
+Strasbourg,before,0,0,0,0,0,0
+Stratford,before,0,0,0,0,0,0
+Strovolos,before,0,0,0,0,0,0
+Struthers,before,0,0,0,0,0,0
+Stuttgart,before,0,0,0,0,0,0
+Suffolk,before,0,0,0,0,0,0
+Suita,before,0,0,0,0,0,0
+Sunset Beach,before,0,0,0,0,0,0
+Svendborg,before,0,0,0,0,0,0
+Swallownest,before,0,0,0,0,0,0
+Swindon,before,0,0,0,0,0,0
+Szczecin,before,0,0,0,0,0,0
+Tampa,before,0,0,0,0,0,0
+Tampere,before,0,0,0,0,0,0
+Tarboro,before,0,0,0,0,0,0
+Targu Mures,before,0,0,0,0,0,0
+Tel Aviv-Yafo,before,0,0,0,0,0,0
+Telford,before,0,0,0,0,0,0
+Tempe,before,0,0,0,0,0,0
+Terre Haute,before,0,0,0,0,0,0
+Thatcham,after,0,0,0,0,0,0
+Thones,before,0,0,0,0,0,0
+Thorne,after,0,0,2,2,0,0
+Thorne,before,0,0,0,0,0,0
+Timisoara,before,0,0,0,0,0,0
+Tomar,before,0,0,0,0,0,0
+Tonyrefail,before,0,0,0,0,0,0
+Torrance,before,0,0,0,0,0,0
+Toulouse,before,0,0,0,0,0,0
+Tourcoing,before,0,0,0,0,0,0
+Tours,before,0,0,0,0,0,0
+Trebechovice pod Orebem,before,0,0,0,0,0,0
+Troy,before,0,0,0,0,0,0
+Tubingen,after,0,0,0,0,0,0
+Tucson,before,0,0,0,0,0,0
+Tumwater,before,0,0,0,0,0,0
+Tyler,before,0,0,0,0,0,0
+Ulm,after,0,0,1,1,0,0
+Ulm,before,0,0,0,0,0,0
+Umka,before,0,0,0,0,0,0
+Union,before,0,0,0,0,0,0
+Union Grove,before,0,0,0,0,0,0
+Uniontown,before,0,0,0,0,0,0
+Upton,before,0,0,0,0,0,0
+Utica,before,0,0,0,0,0,0
+Utrecht,before,0,0,0,0,0,0
+Valdagno,after,0,0,0,0,0,0
+Valencia,before,0,0,0,0,0,0
+Vancouver,before,0,0,0,0,0,0
+Vaudreuil-Dorion,before,0,0,0,0,0,0
+Venice,after,0,0,2,2,0,0
+Ventura,before,0,0,0,0,0,0
+Verbania,before,0,0,0,0,0,0
+Verona,before,0,0,0,0,0,0
+Victorville,after,0,0,0,0,0,0
+Vienna,before,0,0,0,0,0,0
+Villeneuve-d'Ascq,before,0,0,0,0,0,0
+Villeurbanne,before,0,0,0,0,0,0
+Villingen-Schwenningen,after,0,0,0,0,0,0
+Vimercate,before,0,0,0,0,0,0
+Viol,before,0,0,0,0,0,0
+Virden,before,0,0,0,0,0,0
+Virginia Beach,before,0,0,0,0,0,0
+Visakhapatnam,after,0,0,1,1,0,0
+Visakhapatnam,before,0,0,0,0,0,0
+Vitoria-Gasteiz,before,0,0,0,0,0,0
+Waldorf,before,0,0,0,0,0,0
+Waleska,before,0,0,0,0,0,0
+Waltenhofen,before,0,0,0,0,0,0
+Warrensburg,before,0,0,0,0,0,0
+Warrenton,before,0,0,0,0,0,0
+Warrnambool,before,0,0,0,0,0,0
+Warsaw,before,0,0,0,0,0,0
+Waterflow,before,0,0,0,0,0,0
+Waukesha,before,0,0,0,0,0,0
+Waxahachie,before,0,0,0,0,0,0
+Waxhaw,before,0,0,0,0,0,0
+Weissenburg in Bayern,before,0,0,0,0,0,0
+Wenatchee,before,0,0,0,0,0,0
+Weslaco,after,0,0,3,3,0,0
+Weslaco,before,0,0,0,0,0,0
+West Bridgford,before,0,0,0,0,0,0
+West Chester,before,0,0,0,0,0,0
+West Point,after,0,0,0,0,0,0
+Westminster,before,0,0,0,0,0,0
+Wetherby,before,0,0,0,0,0,0
+Whiston,before,0,0,0,0,0,0
+Wijchen,before,0,0,0,0,0,0
+Wilmington,before,0,0,0,0,0,0
+Windsor,before,0,0,0,0,0,0
+Winnipeg,after,0,0,1,1,0,0
+Winnipeg,before,0,0,0,0,0,0
+Winter Park,before,0,0,0,0,0,0
+Wollongong,after,0,0,1,1,0,0
+Wollongong,before,0,0,0,0,0,0
+Woodbury,before,0,0,0,0,0,0
+Worcester,before,0,0,0,0,0,0
+Worthing,before,0,0,0,0,0,0
+Wrens,before,0,0,0,0,0,0
+Yakima,before,0,0,0,0,0,0
+Yantai,before,0,0,0,0,0,0
+Yongkang District,before,0,0,0,0,0,0
+Youngstown,before,0,0,0,0,0,0
+Zamora,before,0,0,0,0,0,0
+Zaragoza,before,0,0,0,0,0,0
+Zurich,before,0,0,0,0,0,0

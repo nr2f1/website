@@ -1,0 +1,17 @@
+sessionDefaultChannelGroup,dateRange,activeUsers,newUsers,sessions,screenPageViews,engagedSessions,userEngagementDuration
+Direct,after,556,539,1307,3333,687,78054
+Organic Search,after,480,401,1623,3584,865,109341
+Direct,before,109,109,238,1108,161,21572
+Organic Social,after,57,47,96,170,50,4491
+Referral,after,34,16,290,776,191,14201
+Organic Search,before,26,21,45,91,23,1663
+AI Assistant,after,7,4,12,23,7,1180
+Referral,before,6,3,18,54,9,1715
+Organic Social,before,5,3,8,13,3,139
+Unassigned,after,4,0,42,6,0,1537
+Unassigned,before,2,2,5,6,1,2
+Organic Shopping,after,1,0,2,1,0,82
+Organic Video,after,1,0,1,3,1,29
+AI Assistant,before,0,0,0,0,0,0
+Organic Shopping,before,0,0,0,0,0,0
+Organic Video,before,0,0,0,0,0,0

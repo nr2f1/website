@@ -1,0 +1,9 @@
+hostName,dateRange,activeUsers,newUsers,sessions,screenPageViews,engagedSessions,userEngagementDuration
+www.nr2f1.org,after,1001,977,3254,7146,1719,191707
+www.nr2f1.org,before,121,121,231,530,135,15185
+website-nr2f1.vercel.app,after,25,23,88,559,58,15209
+website-nr2f1.vercel.app,before,13,13,60,363,44,6382
+localhost,after,5,5,27,188,22,1999
+localhost,before,4,4,23,379,18,3524
+www-nr2f1-org.translate.goog,after,2,2,2,3,1,0
+www-nr2f1-org.translate.goog,before,0,0,0,0,0,0

@@ -1,0 +1,1725 @@
+# ----------------------------------------
+# User attributes overview
+# Account: NR2F1 Foundation
+# Property: NR2F1 Foundation NEW website
+# ----------------------------------------
+#  
+# Start date: 20250921
+# End date: 20260914
+Country ID,Active users
+AE,1
+AR,2
+AT,6
+AU,27
+BB,1
+BE,1
+BG,1
+BR,18
+CA,42
+CH,3
+CL,2
+CN,4
+CO,6
+CY,2
+CZ,5
+DE,96
+DK,10
+EG,2
+ES,28
+FI,4
+FR,79
+GB,159
+GR,1
+HK,1
+HU,6
+IE,5
+IL,1
+IN,7
+IQ,2
+IT,31
+JP,4
+LU,1
+LV,3
+MX,6
+MY,1
+NL,10
+NO,2
+NZ,0
+PF,0
+PH,1
+PL,12
+PR,3
+PT,9
+PY,1
+RE,0
+RO,3
+RS,2
+RU,1
+SA,2
+SE,3
+TR,3
+TW,3
+UA,1
+US,417
+VN,1
+
+# Start date: 20240921
+# End date: 20250920
+Country ID,Active users
+AE,
+AR,
+AT,
+AU,
+BB,
+BE,
+BG,
+BR,
+CA,
+CH,
+CL,
+CN,
+CO,
+CY,
+CZ,
+DE,
+DK,
+EG,
+ES,
+FI,
+FR,
+GB,
+GR,
+HK,
+HU,
+IE,
+IL,
+IN,
+IQ,
+IT,
+JP,
+LU,
+LV,
+MX,
+MY,
+NL,
+NO,
+NZ,
+PF,
+PH,
+PL,
+PR,
+PT,
+PY,
+RE,
+RO,
+RS,
+RU,
+SA,
+SE,
+TR,
+TW,
+UA,
+US,
+VN,
+
+# Start date: 20250921
+# End date: 20260914
+Country,Active users
+US,417
+GB,159
+DE,96
+FR,79
+CA,42
+IT,31
+ES,28
+
+# Start date: 20240921
+# End date: 20250920
+Country,Active users
+US,64
+GB,32
+DE,5
+FR,3
+CA,6
+IT,4
+ES,4
+
+#  
+# Start date: 20250921
+# End date: 20260914
+Town/City,Active users
+London,59
+Dallas,21
+Bath,20
+Chicago,19
+New York,15
+Paris,16
+Melbourne,15
+Frankfurt am Main,15
+Houston,12
+Newark,13
+Toronto,13
+Turin,13
+Atlanta,12
+Lake Buena Vista,13
+Miami,10
+Sydney,10
+Ashburn,11
+Birmingham,11
+Indianapolis,11
+The Woodlands,7
+Montreal,9
+Cardiff,9
+Madrid,7
+Phoenix,8
+Sao Paulo,9
+Westfield,7
+Heidelberg,7
+Lisbon,7
+Los Angeles,8
+Denver,5
+Lyon,7
+Milan,7
+Milton Keynes,5
+Ottawa,5
+Peachtree Corners,5
+Rennes,7
+Royal Oak,4
+San Diego,6
+Anaheim,5
+Berlin,6
+Cambridge,5
+Dortmund,6
+Minneapolis,5
+Seattle,5
+Struthers,6
+Boston,3
+Copenhagen,4
+Heathrow,4
+Hounslow,3
+Newcastle upon Tyne,5
+Nice,5
+Norwich,5
+Orlando,4
+Philadelphia,5
+Pittsburgh,5
+Vienna,5
+Wolverhampton,4
+Austin,4
+Bengaluru,4
+Bristol,4
+Budapest,4
+Cincinnati,4
+Dublin,4
+Englewood,4
+Jaroslaw,4
+Madison,4
+Maidenhead,3
+Maidstone,4
+Svendborg,4
+Toulouse,4
+Uniontown,4
+Villeurbanne,4
+Virginia Beach,4
+Alexandria,2
+Barcelona,3
+Belo Horizonte,3
+Bilbao,3
+Bogota,3
+Bordeaux,3
+Cleveland,3
+Columbus,2
+Edinburgh,3
+Essen,3
+Fort Worth,3
+Greenville,3
+Hamburg,3
+Hohenkirchen-Siegertsbrunn,3
+Hollidaysburg,2
+Jacksonville,3
+Leland,3
+Llanelli,3
+Louisville,2
+Lublin,3
+Morris Township,3
+Nashville,2
+Newtown Grant,3
+Oxford,2
+Poitiers,3
+Prague,3
+Riga,3
+Rio de Janeiro,2
+Rock Hill,0
+Romagnat,3
+Rugby,3
+Rzeszow,3
+Salt Lake City,3
+San Antonio,3
+San Jose,2
+San Juan,3
+Seymour,3
+Swindon,3
+Thones,3
+Torrington,2
+Vancouver,3
+Waldorf,3
+Washington,2
+Worthing,3
+Aberdeen,1
+Adelaide,2
+Algonquin,1
+Allen,2
+Andover,2
+Bayamon,2
+Belfast,1
+Bellville,2
+Boynton Beach,2
+Brighton and Hove,2
+Brisbane,2
+Bristow,1
+Burlington,1
+Burnley,2
+Calgary,2
+Charlotte,2
+Chateaugiron,2
+Cheektowaga,2
+Coppell,2
+Debica,2
+Decatur,1
+Decin,2
+Detroit,2
+Durham,2
+Dusseldorf,2
+Elst,2
+Florence,1
+Genoa,2
+Grenoble,2
+Hadsten,1
+Hanover,2
+Haverfordwest,1
+Heavener,2
+Hyderabad,2
+Istanbul,2
+Karlshamn,1
+Krakow,2
+Laredo,1
+Leeds,2
+Leipzig,2
+Lincoln,2
+Lindau,2
+Lindenberg im Allgau,2
+Lyndon,1
+Manchester,2
+Manhattan,2
+Miranda de Ebro,2
+Miribel,2
+Montpellier,2
+Montrose,2
+Munich,2
+Municipal District of Enniscorthy,1
+Nicosia,2
+Oeiras,2
+Omaha,2
+Oslo Municipality,1
+Paterson,2
+Pisa,1
+Portland,2
+Praia Grande,2
+Red Cross,1
+Riyadh,2
+Sabadell,2
+Saint James,2
+Salem,2
+Sarnia,1
+Selby,2
+Shallotte,2
+Shoreview,2
+Slough,2
+Stoke-on-Trent,1
+Stuttgart,2
+Sunset Beach,2
+Swallownest,2
+Szczecin,2
+Tampa,2
+Toowoomba,1
+Upton,2
+Vitoria-Gasteiz,2
+Warsaw,2
+Waxhaw,2
+Weston,1
+Wetherby,2
+Worcester,2
+Aalen,1
+Acatzingo de Hidalgo,1
+Adams,1
+Adazi Municipality,1
+Adelsdorf,1
+Aix-les-Bains,1
+Al Ain,1
+Alba,1
+Albstadt,1
+Albuquerque,1
+Allison Park,1
+Altamonte Springs,1
+Altomunster,1
+Amagasaki,1
+Amos,1
+Amsterdam,1
+Ancenis,0
+Anshun,1
+Antofagasta,1
+Arendal Municipality,1
+Arnprior,1
+Atherstone,1
+Augsburg,1
+Augusta,1
+Aurora,1
+Bad Durrheim,1
+Bad Neuenahr-Ahrweiler,1
+Bad Oeynhausen,1
+Baghdad,0
+Balderton,1
+Ballwin,1
+Baltimore,1
+Bareggio,1
+Barneveld,1
+Barranquilla,1
+Batavia,1
+Baunatal,1
+Bay Village,1
+Bayonne,1
+Beijing,1
+Beinasco,1
+Belgrade,1
+Bethany,1
+Bethesda,1
+Beverly Hills,0
+Beynost,1
+Big Lake,1
+Billericay,1
+Billings,1
+Blavand,1
+Block Island,0
+Bloomfield,1
+Boise,1
+Bonaventure,1
+Bonn,1
+Bora-Bora,0
+Boras,1
+Boulder,1
+Bourg-Saint-Maurice,1
+Bowie,0
+Bradford West Gwillimbury,1
+Bridport,1
+Brill,1
+Broadway,1
+Bry-sur-Marne,1
+Bucharest,1
+Bullhead City,1
+Burgess Hill,1
+Burgos,1
+Burke,1
+Caledonia,1
+Cali,1
+Carcavelos,0
+Carlisle,1
+Carmagnola,1
+Carnforth,1
+Carolina,1
+Carolina Shores,1
+Castelldefels,1
+Castellon de la Plana,1
+Castleford,1
+Central,1
+Chadron,1
+Chapel Hill,1
+Chardon,1
+Charleston,1
+Chemnitz,1
+Chessington,1
+Chester Heights,1
+Chikkaballapur,1
+Christchurch,0
+Churchville,0
+Ciudad Juarez,1
+Ciudad Obregon,1
+Ciudad del Este,1
+Clifton,1
+College Station,1
+Collegno,1
+Cologne,1
+Concordville,1
+Congonhas,1
+Cooma,1
+Coquitlam,1
+Coronado,1
+Cottingham,1
+Council Bluffs,1
+Coventry,1
+Crawfordsville,1
+Crewe,1
+Curitiba,1
+Cuthbert,1
+Cwmbran,1
+Danbury,1
+Dawlish,1
+Dawson,1
+Dayton,1
+DeBary,1
+Deerfield,1
+Delmar,1
+Donostia-San Sebastian,1
+Dorchester,1
+Doylestown,1
+East Northport,1
+East Peckham,1
+Eastbourne,1
+Eastland,1
+Eccleshall,1
+Eden Township,1
+Edgware,1
+Edmonton,1
+Eindhoven,1
+Elizabeth,1
+Elmhurst,1
+Elsteraue,1
+Engelberg,1
+Epsom,1
+Erd,1
+Espoo,1
+Eureka,1
+Evesham,1
+Exeter,1
+Fair Plain,1
+Fairfax Station,1
+Farndon,1
+Feira de Santana,1
+Ferndale,1
+Five Forks,1
+Flint Hill,1
+Flowery Branch,1
+Fordham,1
+Forest Park,1
+Forsyth,1
+Fort Collins,1
+Fort Myers,1
+Fort Wayne,1
+Fountain Hills,1
+Framingham,1
+Franklin Township,1
+Fredericksburg,1
+Fresno,1
+Fridley,1
+Fronton,1
+Furstenfeldbruck,1
+Gerasdorf,1
+Gijon,0
+Giza,1
+Glasgow,1
+Gloucester,1
+Gniezno,1
+Godollo,1
+Goldenrod,1
+Goppingen,1
+Gotha,1
+Grapevine,1
+Grimsby,1
+Guangzhou,1
+Guildford,1
+Guntersville,1
+Haarlem,1
+Hagen,1
+Hamilton,1
+Hammel,1
+Hardin,1
+Hartford,1
+Heanor,1
+Hearst,1
+Helsinki,1
+Hemel Hempstead,1
+Herve,1
+Herzogenrath,1
+High Wycombe,1
+Hinnerup,0
+Ho Chi Minh City,1
+Homestead,1
+Hong Kong,1
+Hornchurch,1
+Huddersfield,1
+Huntsville,1
+Hurstbourne,1
+Iggingen,1
+Ilmenau,1
+Iloilo City,1
+Izmir,1
+Jaipur,0
+Jefferson City,1
+Kafr el-Sheikh,1
+Kaiserslautern,1
+Katowice,1
+Kempten,1
+Kennebunk,1
+Kirchheim bei Munchen,1
+Kitchener,1
+Kolkwitz,1
+Konigswinter,1
+Krnov,1
+Kuala Lumpur,1
+Kyiv,1
+La Couronne,1
+La Rochelle,1
+Lake Mary,1
+Lancing,1
+Langerwehe,1
+Lansing,1
+Larnaca,1
+Las Vegas,1
+Lavras,0
+Leicester,1
+Lempdes,1
+Leukerbad,1
+Leutkirch im Allgau,1
+Levittown,1
+Lich,1
+Lille,1
+Limburg,1
+Lino Lakes,0
+Lismore,1
+Little Silver,1
+Littlefield,1
+Locust,0
+Los Mochis,1
+Luton,1
+Maastricht,1
+Mackay,1
+Malaga,1
+Mamaroneck,0
+Mannheim,1
+Maplewood,1
+Marbella,1
+Marica,1
+Maryville,1
+Matamoros,1
+McPherson,1
+Mechanicsville,1
+Medellin,1
+Medford,1
+Mentor,1
+Miami Beach,1
+Middletown,0
+Middletown Township,1
+Mildenhall,1
+Millburn,1
+Millcreek,1
+Millersburg,1
+Milton,1
+Miqdadiyah,1
+Mistelbach,1
+Mont-Joli,1
+Mont-Tremblant,1
+Monza,1
+Mooresville,1
+Morecambe,1
+Moreno Valley,1
+Moscow,1
+Mount Laurel Township,1
+Municipality of Cartagena,1
+Naas,0
+Nacogdoches,1
+Navojoa,1
+Needham,1
+New Delhi,1
+New Haven,1
+New Kingstown,1
+New Orleans,1
+New Smyrna Beach,1
+Nokia,1
+Nottingham,1
+Novara,1
+Noyal-Chatillon-sur-Seiche,1
+Oak Island,1
+Oakland,1
+Ocean Township,1
+Olympia,1
+Onaway,1
+Orem,1
+Orleans,1
+Oro Valley,1
+Osaka,0
+Osimo,1
+Ostroleka,1
+Oughtibridge,1
+Palatine,1
+Palmer,1
+Panorama,1
+Papeete,0
+Park Forest Village,1
+Park Gate,1
+Parthenay,1
+Pawnee City,1
+Penn Yan,1
+Pequannock Township,1
+Perpignan,1
+Pflugerville,1
+Piedecuesta,1
+Piscataway,1
+Pistoia,1
+Playa del Carmen,1
+Pleasanton,1
+Plovdiv,1
+Plymouth,1
+Pontevedra,1
+Port Macquarie,1
+Portsmouth,1
+Pottsgrove,1
+Pouso Alegre,1
+Preston,1
+Provins,1
+Puebla,1
+Quincy,1
+Racine,1
+Rankweil,1
+Rapid City,1
+Rawlins,1
+Reading,1
+Recife,1
+Redditch,1
+Reston,1
+Rheine,1
+Roanoke,1
+Rochdale,1
+Rochester,1
+Rome,1
+Romford,1
+Ropazi Municipality,1
+Rotherham,1
+Rotterdam,1
+Roubaix,1
+Rouen,1
+Rouyn-Noranda,1
+Royston,1
+Rudesheim am Rhein,1
+Ruidoso,0
+Sacramento,1
+Saint Michael,1
+Saint-Cesaire,1
+Saint-Cyr-sur-Loire,1
+Saint-Denis,0
+Saint-Etienne,1
+Saint-Germain-en-Laye,1
+Saint-Paul,0
+Saint-Prix,1
+San Luis Rio Colorado,1
+San Nicolas de los Arroyos,1
+Sandalfoot Cove,1
+Sandy Springs,1
+Sanford,1
+Sanmin District,1
+Santa Clara,0
+Santa Claus,1
+Santa Fe,1
+Santiago,1
+Santos,1
+Sao Domingos de Rana,1
+Saskatoon,1
+Scheidegg,1
+Schwabisch Gmund,1
+Scotch Plains,1
+Scottsburg,1
+Sebring,1
+Shelton,1
+Sheridan,1
+Shibuya,1
+Shinagawa City,1
+Shinjuku City,1
+Shipley,1
+Sierre,1
+Sioux Falls,1
+Sioux Lookout,0
+Skarup,1
+Smyrna,1
+Snellville,1
+Sokolow Podlaski,1
+Southport,1
+Sowerby Bridge,1
+Springfield,1
+St-Just-la-Pendue,1
+St. John's,1
+St. Joseph,1
+St. Louis,1
+Stanmore,0
+State College,1
+Stockholm,1
+Stockton,0
+Stone,1
+Stotfold,1
+Stranraer,1
+Strasbourg,1
+Stratford,1
+Strovolos,1
+Suffolk,1
+Suita,1
+Tampere,1
+Tarboro,1
+Targu Mures,1
+Tel Aviv-Yafo,1
+Telford,1
+Tempe,1
+Terre Haute,1
+Thatcham,0
+Timisoara,1
+Tomar,1
+Tonyrefail,1
+Torrance,1
+Tourcoing,1
+Tours,1
+Trebechovice pod Orebem,1
+Troy,1
+Tubingen,0
+Tucson,1
+Tumwater,1
+Tyler,1
+Umka,1
+Union,1
+Union Grove,1
+Utica,1
+Utrecht,1
+Valdagno,0
+Valencia,1
+Vaudreuil-Dorion,1
+Venice,0
+Ventura,1
+Verbania,1
+Verona,1
+Victorville,0
+Villeneuve-d'Ascq,1
+Villingen-Schwenningen,0
+Vimercate,1
+Viol,1
+Virden,1
+Waleska,1
+Waltenhofen,1
+Warrensburg,1
+Warrenton,1
+Warrnambool,1
+Waterflow,1
+Waukesha,1
+Waxahachie,1
+Weissenburg in Bayern,1
+Wenatchee,1
+West Bridgford,1
+West Chester,1
+West Point,0
+Westminster,1
+Whiston,1
+Wijchen,1
+Wilmington,1
+Windsor,1
+Winter Park,1
+Woodbury,1
+Wrens,1
+Yakima,1
+Yantai,1
+Yongkang District,1
+Youngstown,1
+Zamora,1
+Zaragoza,1
+Zurich,1
+
+# Start date: 20240921
+# End date: 20250920
+Town/City,Active users
+London,14
+Dallas,2
+Bath,2
+Chicago,2
+New York,4
+Paris,2
+Melbourne,1
+Frankfurt am Main,0
+Houston,3
+Newark,1
+Toronto,1
+Turin,1
+Atlanta,1
+Lake Buena Vista,0
+Miami,2
+Sydney,2
+Ashburn,0
+Birmingham,0
+Indianapolis,0
+The Woodlands,4
+Montreal,1
+Cardiff,0
+Madrid,2
+Phoenix,1
+Sao Paulo,0
+Westfield,2
+Heidelberg,1
+Lisbon,1
+Los Angeles,0
+Denver,2
+Lyon,0
+Milan,0
+Milton Keynes,2
+Ottawa,2
+Peachtree Corners,2
+Rennes,0
+Royal Oak,3
+San Diego,1
+Anaheim,1
+Berlin,0
+Cambridge,1
+Dortmund,0
+Minneapolis,1
+Seattle,1
+Struthers,0
+Boston,2
+Copenhagen,1
+Heathrow,1
+Hounslow,2
+Newcastle upon Tyne,0
+Nice,0
+Norwich,0
+Orlando,1
+Philadelphia,0
+Pittsburgh,0
+Vienna,0
+Wolverhampton,1
+Austin,0
+Bengaluru,0
+Bristol,0
+Budapest,0
+Cincinnati,0
+Dublin,0
+Englewood,0
+Jaroslaw,0
+Madison,0
+Maidenhead,1
+Maidstone,0
+Svendborg,0
+Toulouse,0
+Uniontown,0
+Villeurbanne,0
+Virginia Beach,0
+Alexandria,1
+Barcelona,0
+Belo Horizonte,0
+Bilbao,0
+Bogota,0
+Bordeaux,0
+Cleveland,0
+Columbus,1
+Edinburgh,0
+Essen,0
+Fort Worth,0
+Greenville,0
+Hamburg,0
+Hohenkirchen-Siegertsbrunn,0
+Hollidaysburg,1
+Jacksonville,0
+Leland,0
+Llanelli,0
+Louisville,1
+Lublin,0
+Morris Township,0
+Nashville,1
+Newtown Grant,0
+Oxford,1
+Poitiers,0
+Prague,0
+Riga,0
+Rio de Janeiro,1
+Rock Hill,3
+Romagnat,0
+Rugby,0
+Rzeszow,0
+Salt Lake City,0
+San Antonio,0
+San Jose,1
+San Juan,0
+Seymour,0
+Swindon,0
+Thones,0
+Torrington,1
+Vancouver,0
+Waldorf,0
+Washington,1
+Worthing,0
+Aberdeen,1
+Adelaide,0
+Algonquin,1
+Allen,0
+Andover,0
+Bayamon,0
+Belfast,1
+Bellville,0
+Boynton Beach,0
+Brighton and Hove,0
+Brisbane,0
+Bristow,1
+Burlington,1
+Burnley,0
+Calgary,0
+Charlotte,0
+Chateaugiron,0
+Cheektowaga,0
+Coppell,0
+Debica,0
+Decatur,1
+Decin,0
+Detroit,0
+Durham,0
+Dusseldorf,0
+Elst,0
+Florence,1
+Genoa,0
+Grenoble,0
+Hadsten,1
+Hanover,0
+Haverfordwest,1
+Heavener,0
+Hyderabad,0
+Istanbul,0
+Karlshamn,1
+Krakow,0
+Laredo,1
+Leeds,0
+Leipzig,0
+Lincoln,0
+Lindau,0
+Lindenberg im Allgau,0
+Lyndon,1
+Manchester,0
+Manhattan,0
+Miranda de Ebro,0
+Miribel,0
+Montpellier,0
+Montrose,0
+Munich,0
+Municipal District of Enniscorthy,1
+Nicosia,0
+Oeiras,0
+Omaha,0
+Oslo Municipality,1
+Paterson,0
+Pisa,1
+Portland,0
+Praia Grande,0
+Red Cross,1
+Riyadh,0
+Sabadell,0
+Saint James,0
+Salem,0
+Sarnia,1
+Selby,0
+Shallotte,0
+Shoreview,0
+Slough,0
+Stoke-on-Trent,1
+Stuttgart,0
+Sunset Beach,0
+Swallownest,0
+Szczecin,0
+Tampa,0
+Toowoomba,1
+Upton,0
+Vitoria-Gasteiz,0
+Warsaw,0
+Waxhaw,0
+Weston,1
+Wetherby,0
+Worcester,0
+Aalen,0
+Acatzingo de Hidalgo,0
+Adams,0
+Adazi Municipality,0
+Adelsdorf,0
+Aix-les-Bains,0
+Al Ain,0
+Alba,0
+Albstadt,0
+Albuquerque,0
+Allison Park,0
+Altamonte Springs,0
+Altomunster,0
+Amagasaki,0
+Amos,0
+Amsterdam,0
+Ancenis,1
+Anshun,0
+Antofagasta,0
+Arendal Municipality,0
+Arnprior,0
+Atherstone,0
+Augsburg,0
+Augusta,0
+Aurora,0
+Bad Durrheim,0
+Bad Neuenahr-Ahrweiler,0
+Bad Oeynhausen,0
+Baghdad,1
+Balderton,0
+Ballwin,0
+Baltimore,0
+Bareggio,0
+Barneveld,0
+Barranquilla,0
+Batavia,0
+Baunatal,0
+Bay Village,0
+Bayonne,0
+Beijing,0
+Beinasco,0
+Belgrade,0
+Bethany,0
+Bethesda,0
+Beverly Hills,1
+Beynost,0
+Big Lake,0
+Billericay,0
+Billings,0
+Blavand,0
+Block Island,1
+Bloomfield,0
+Boise,0
+Bonaventure,0
+Bonn,0
+Bora-Bora,1
+Boras,0
+Boulder,0
+Bourg-Saint-Maurice,0
+Bowie,1
+Bradford West Gwillimbury,0
+Bridport,0
+Brill,0
+Broadway,0
+Bry-sur-Marne,0
+Bucharest,0
+Bullhead City,0
+Burgess Hill,0
+Burgos,0
+Burke,0
+Caledonia,0
+Cali,0
+Carcavelos,1
+Carlisle,0
+Carmagnola,0
+Carnforth,0
+Carolina,0
+Carolina Shores,0
+Castelldefels,0
+Castellon de la Plana,0
+Castleford,0
+Central,0
+Chadron,0
+Chapel Hill,0
+Chardon,0
+Charleston,0
+Chemnitz,0
+Chessington,0
+Chester Heights,0
+Chikkaballapur,0
+Christchurch,1
+Churchville,1
+Ciudad Juarez,0
+Ciudad Obregon,0
+Ciudad del Este,0
+Clifton,0
+College Station,0
+Collegno,0
+Cologne,0
+Concordville,0
+Congonhas,0
+Cooma,0
+Coquitlam,0
+Coronado,0
+Cottingham,0
+Council Bluffs,0
+Coventry,0
+Crawfordsville,0
+Crewe,0
+Curitiba,0
+Cuthbert,0
+Cwmbran,0
+Danbury,0
+Dawlish,0
+Dawson,0
+Dayton,0
+DeBary,0
+Deerfield,0
+Delmar,0
+Donostia-San Sebastian,0
+Dorchester,0
+Doylestown,0
+East Northport,0
+East Peckham,0
+Eastbourne,0
+Eastland,0
+Eccleshall,0
+Eden Township,0
+Edgware,0
+Edmonton,0
+Eindhoven,0
+Elizabeth,0
+Elmhurst,0
+Elsteraue,0
+Engelberg,0
+Epsom,0
+Erd,0
+Espoo,0
+Eureka,0
+Evesham,0
+Exeter,0
+Fair Plain,0
+Fairfax Station,0
+Farndon,0
+Feira de Santana,0
+Ferndale,0
+Five Forks,0
+Flint Hill,0
+Flowery Branch,0
+Fordham,0
+Forest Park,0
+Forsyth,0
+Fort Collins,0
+Fort Myers,0
+Fort Wayne,0
+Fountain Hills,0
+Framingham,0
+Franklin Township,0
+Fredericksburg,0
+Fresno,0
+Fridley,0
+Fronton,0
+Furstenfeldbruck,0
+Gerasdorf,0
+Gijon,1
+Giza,0
+Glasgow,0
+Gloucester,0
+Gniezno,0
+Godollo,0
+Goldenrod,0
+Goppingen,0
+Gotha,0
+Grapevine,0
+Grimsby,0
+Guangzhou,0
+Guildford,0
+Guntersville,0
+Haarlem,0
+Hagen,0
+Hamilton,0
+Hammel,0
+Hardin,0
+Hartford,0
+Heanor,0
+Hearst,0
+Helsinki,0
+Hemel Hempstead,0
+Herve,0
+Herzogenrath,0
+High Wycombe,0
+Hinnerup,1
+Ho Chi Minh City,0
+Homestead,0
+Hong Kong,0
+Hornchurch,0
+Huddersfield,0
+Huntsville,0
+Hurstbourne,0
+Iggingen,0
+Ilmenau,0
+Iloilo City,0
+Izmir,0
+Jaipur,1
+Jefferson City,0
+Kafr el-Sheikh,0
+Kaiserslautern,0
+Katowice,0
+Kempten,0
+Kennebunk,0
+Kirchheim bei Munchen,0
+Kitchener,0
+Kolkwitz,0
+Konigswinter,0
+Krnov,0
+Kuala Lumpur,0
+Kyiv,0
+La Couronne,0
+La Rochelle,0
+Lake Mary,0
+Lancing,0
+Langerwehe,0
+Lansing,0
+Larnaca,0
+Las Vegas,0
+Lavras,1
+Leicester,0
+Lempdes,0
+Leukerbad,0
+Leutkirch im Allgau,0
+Levittown,0
+Lich,0
+Lille,0
+Limburg,0
+Lino Lakes,1
+Lismore,0
+Little Silver,0
+Littlefield,0
+Locust,1
+Los Mochis,0
+Luton,0
+Maastricht,0
+Mackay,0
+Malaga,0
+Mamaroneck,1
+Mannheim,0
+Maplewood,0
+Marbella,0
+Marica,0
+Maryville,0
+Matamoros,0
+McPherson,0
+Mechanicsville,0
+Medellin,0
+Medford,0
+Mentor,0
+Miami Beach,0
+Middletown,1
+Middletown Township,0
+Mildenhall,0
+Millburn,0
+Millcreek,0
+Millersburg,0
+Milton,0
+Miqdadiyah,0
+Mistelbach,0
+Mont-Joli,0
+Mont-Tremblant,0
+Monza,0
+Mooresville,0
+Morecambe,0
+Moreno Valley,0
+Moscow,0
+Mount Laurel Township,0
+Municipality of Cartagena,0
+Naas,1
+Nacogdoches,0
+Navojoa,0
+Needham,0
+New Delhi,0
+New Haven,0
+New Kingstown,0
+New Orleans,0
+New Smyrna Beach,0
+Nokia,0
+Nottingham,0
+Novara,0
+Noyal-Chatillon-sur-Seiche,0
+Oak Island,0
+Oakland,0
+Ocean Township,0
+Olympia,0
+Onaway,0
+Orem,0
+Orleans,0
+Oro Valley,0
+Osaka,1
+Osimo,0
+Ostroleka,0
+Oughtibridge,0
+Palatine,0
+Palmer,0
+Panorama,0
+Papeete,1
+Park Forest Village,0
+Park Gate,0
+Parthenay,0
+Pawnee City,0
+Penn Yan,0
+Pequannock Township,0
+Perpignan,0
+Pflugerville,0
+Piedecuesta,0
+Piscataway,0
+Pistoia,0
+Playa del Carmen,0
+Pleasanton,0
+Plovdiv,0
+Plymouth,0
+Pontevedra,0
+Port Macquarie,0
+Portsmouth,0
+Pottsgrove,0
+Pouso Alegre,0
+Preston,0
+Provins,0
+Puebla,0
+Quincy,0
+Racine,0
+Rankweil,0
+Rapid City,0
+Rawlins,0
+Reading,0
+Recife,0
+Redditch,0
+Reston,0
+Rheine,0
+Roanoke,0
+Rochdale,0
+Rochester,0
+Rome,0
+Romford,0
+Ropazi Municipality,0
+Rotherham,0
+Rotterdam,0
+Roubaix,0
+Rouen,0
+Rouyn-Noranda,0
+Royston,0
+Rudesheim am Rhein,0
+Ruidoso,1
+Sacramento,0
+Saint Michael,0
+Saint-Cesaire,0
+Saint-Cyr-sur-Loire,0
+Saint-Denis,1
+Saint-Etienne,0
+Saint-Germain-en-Laye,0
+Saint-Paul,1
+Saint-Prix,0
+San Luis Rio Colorado,0
+San Nicolas de los Arroyos,0
+Sandalfoot Cove,0
+Sandy Springs,0
+Sanford,0
+Sanmin District,0
+Santa Clara,1
+Santa Claus,0
+Santa Fe,0
+Santiago,0
+Santos,0
+Sao Domingos de Rana,0
+Saskatoon,0
+Scheidegg,0
+Schwabisch Gmund,0
+Scotch Plains,0
+Scottsburg,0
+Sebring,0
+Shelton,0
+Sheridan,0
+Shibuya,0
+Shinagawa City,0
+Shinjuku City,0
+Shipley,0
+Sierre,0
+Sioux Falls,0
+Sioux Lookout,1
+Skarup,0
+Smyrna,0
+Snellville,0
+Sokolow Podlaski,0
+Southport,0
+Sowerby Bridge,0
+Springfield,0
+St-Just-la-Pendue,0
+St. John's,0
+St. Joseph,0
+St. Louis,0
+Stanmore,1
+State College,0
+Stockholm,0
+Stockton,1
+Stone,0
+Stotfold,0
+Stranraer,0
+Strasbourg,0
+Stratford,0
+Strovolos,0
+Suffolk,0
+Suita,0
+Tampere,0
+Tarboro,0
+Targu Mures,0
+Tel Aviv-Yafo,0
+Telford,0
+Tempe,0
+Terre Haute,0
+Thatcham,1
+Timisoara,0
+Tomar,0
+Tonyrefail,0
+Torrance,0
+Tourcoing,0
+Tours,0
+Trebechovice pod Orebem,0
+Troy,0
+Tubingen,1
+Tucson,0
+Tumwater,0
+Tyler,0
+Umka,0
+Union,0
+Union Grove,0
+Utica,0
+Utrecht,0
+Valdagno,1
+Valencia,0
+Vaudreuil-Dorion,0
+Venice,1
+Ventura,0
+Verbania,0
+Verona,0
+Victorville,1
+Villeneuve-d'Ascq,0
+Villingen-Schwenningen,1
+Vimercate,0
+Viol,0
+Virden,0
+Waleska,0
+Waltenhofen,0
+Warrensburg,0
+Warrenton,0
+Warrnambool,0
+Waterflow,0
+Waukesha,0
+Waxahachie,0
+Weissenburg in Bayern,0
+Wenatchee,0
+West Bridgford,0
+West Chester,0
+West Point,1
+Westminster,0
+Whiston,0
+Wijchen,0
+Wilmington,0
+Windsor,0
+Winter Park,0
+Woodbury,0
+Wrens,0
+Yakima,0
+Yantai,0
+Yongkang District,0
+Youngstown,0
+Zamora,0
+Zaragoza,0
+Zurich,0
+
+#  
+# Start date: 20250921
+# End date: 20260914
+Gender,Active users
+
+
+# Start date: 20240921
+# End date: 20250920
+Gender,Active users
+
+
+#  
+# Start date: 20250921
+# End date: 20260914
+Interests,Active users
+
+
+# Start date: 20240921
+# End date: 20250920
+Interests,Active users
+
+
+#  
+# Start date: 20250921
+# End date: 20260914
+Age,Active users
+
+
+# Start date: 20240921
+# End date: 20250920
+Age,Active users
+
+
+#  
+# Start date: 20250921
+# End date: 20260914
+Language,Active users
+English,680
+French,91
+German,92
+Spanish,44
+Italian,28
+Portuguese,25
+Polish,12
+Dutch,10
+Danish,8
+Chinese,9
+Hungarian,5
+Romanian,5
+Swedish,4
+Czech,3
+Japanese,2
+Latvian,3
+Norwegian Bokmål,2
+Finnish,2
+Arabic,1
+Greek,1
+Hebrew,1
+Russian,1
+Turkish,1
+Ukrainian,1
+Vietnamese,1
+
+# Start date: 20240921
+# End date: 20250920
+Language,Active users
+English,112
+French,5
+German,4
+Spanish,3
+Italian,4
+Portuguese,4
+Polish,0
+Dutch,1
+Danish,2
+Chinese,0
+Hungarian,0
+Romanian,0
+Swedish,1
+Czech,0
+Japanese,1
+Latvian,0
+Norwegian Bokmål,1
+Finnish,0
+Arabic,0
+Greek,0
+Hebrew,0
+Russian,0
+Turkish,0
+Ukrainian,0
+Vietnamese,0
+
+#  
+# Start date: 20260518
+# End date: 20260914
+Cohort,Average 120d value
+0000,0
+0001,0
+0002,0
+0003,0
+0004,0
+0005,0
+0006,0
+0007,0
+0008,0
+0009,0
+0010,0
+0011,0
+0012,0
+0013,0
+0014,0
+0015,0
+0016,0
+0017,0
+0018,0
+0019,0
+0020,0
+0021,0
+0022,0
+0023,0
+0024,0
+0025,0
+0026,0
+0027,0
+0028,0
+0029,0
+0030,0
+0031,0
+0032,0
+0033,0
+0034,0
+0035,0
+0036,0
+0037,0
+0038,0
+0039,0
+0040,0
+0041,0
+0042,0
+0043,0
+0044,0
+0045,0
+0046,0
+0047,0
+0048,0
+0049,0
+0050,0
+0051,0
+0052,0
+0053,0
+0054,0
+0055,0
+0056,0
+0057,0
+0058,0
+0059,0
+0060,0
+0061,0
+0062,0
+0063,0
+0064,0
+0065,0
+0066,0
+0067,0
+0068,0
+0069,0
+0070,0
+0071,0
+0072,0
+0073,0
+0074,0
+0075,0
+0076,0
+0077,0
+0078,0
+0079,0
+0080,0
+0081,0
+0082,0
+0083,0
+0084,0
+0085,0
+0086,0
+0087,0
+0088,0
+0089,0
+0090,0
+0091,0
+0092,0
+0093,0
+0094,0
+0095,0
+0096,0
+0097,0
+0098,0
+0099,0
+0100,0
+0101,0
+0102,0
+0103,0
+0104,0
+0105,0
+0106,0
+0107,0
+0108,0
+0109,0
+0110,0
+0111,0
+0112,0
+0113,0
+0114,0
+0115,0
+0116,0
+0117,0
+0118,0
+0119,0
