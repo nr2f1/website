@@ -34,7 +34,7 @@
     "@contentful/rich-text-types": "^17.2.7",
     "@graphql-codegen/cli": "^7.4.1",
     "@graphql-codegen/near-operation-file-preset": "^5.2.2",
-    "@graphql-codegen/typed-document-node": "^7.1.0",
+    "@graphql-codegen/typed-document-node": "^7.1.1",
     "@graphql-codegen/typescript": "^6.1.0",
     "@nx/devkit": "23.2.1",
     "@nx/js": "23.2.1",
