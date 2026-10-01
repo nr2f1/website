@@ -29,7 +29,7 @@
     "@axe-core/react": "^4.13.0",
     "@biomejs/biome": "^2.5.13",
     "@commitlint/cli": "^21.2.2",
-    "@commitlint/config-conventional": "^21.2.2",
+    "@commitlint/config-conventional": "^21.2.3",
     "@commitlint/types": "^21.2.0",
     "@contentful/rich-text-types": "^17.2.7",
     "@graphql-codegen/cli": "^7.4.1",
