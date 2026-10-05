@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.14.1](https://github.com/nr2f1/website/compare/v3.14.0...v3.14.1) (2026-10-05)
+
+
+### Bug Fixes
+
+* favicon ([464d7a2](https://github.com/nr2f1/website/commit/464d7a2b6834f4974fc088cee50636f61ef8ad16))
+* favicon ([#448](https://github.com/nr2f1/website/issues/448)) ([26e9e01](https://github.com/nr2f1/website/commit/26e9e0199bea547703f5865e9ce84ae88779f656))
+
 ## [3.14.0](https://github.com/nr2f1/website/compare/v3.13.0...v3.14.0) (2026-09-29)
 
 
