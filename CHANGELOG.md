@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.14.2](https://github.com/nr2f1/website/compare/v3.14.1...v3.14.2) (2026-10-05)
+
+
+### Bug Fixes
+
+* search console errors ([#450](https://github.com/nr2f1/website/issues/450)) ([3ac10ae](https://github.com/nr2f1/website/commit/3ac10aea33016c9468383fd2f1690e51b8547432))
+
 ## [3.14.1](https://github.com/nr2f1/website/compare/v3.14.0...v3.14.1) (2026-10-05)
 
 
