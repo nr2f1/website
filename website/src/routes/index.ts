@@ -1,4 +1,8 @@
-import { AVAILABLE_LOCALES, type AvailableLocale } from '@i18n/locales';
+import {
+  AVAILABLE_LOCALES,
+  type AvailableLocale,
+  DEFAULT_LOCALE,
+} from '@i18n/locales';
 import type { Metadata } from 'next';
 import type {
   AlternateLinkDescriptor,
@@ -7,7 +11,7 @@ import type {
 
 type LocalisedRoute = (locale: AvailableLocale) => string;
 
-export const BASE_URL = 'https://nr2f1.org';
+export const BASE_URL = 'https://www.nr2f1.org';
 
 interface BlogPostUrl {
   locale: AvailableLocale;
@@ -47,7 +51,7 @@ type RouteProperty =
 export const routes: Record<RouteProperty, LocalisedRoute> = {
   blog: (locale: AvailableLocale) => `/${locale}/news/blog`,
   conference: (locale: AvailableLocale) => {
-    return `/${locale}/conferences`;
+    return `/${locale}/conference`;
   },
   'contact-us': (locale: AvailableLocale) => {
     return `/${locale}/contact-us`;
@@ -122,24 +126,27 @@ interface GetAlternateUrls {
   route: RouteProperty;
 }
 
+type LanguageAlternates = Languages<
+  null | string | URL | AlternateLinkDescriptor[]
+>;
+
+// hreflang sets must include the page itself and an x-default, otherwise
+// Google may ignore the whole set
+export const getLanguageAlternates = (
+  toPath: LocalisedRoute,
+): LanguageAlternates =>
+  AVAILABLE_LOCALES.reduce(
+    (acc, language) => {
+      acc[language] = BASE_URL + toPath(language);
+      return acc;
+    },
+    { 'x-default': BASE_URL + toPath(DEFAULT_LOCALE) } as LanguageAlternates,
+  );
+
 export const getAlternateUrls = ({
   locale,
   route,
-}: GetAlternateUrls): Metadata['alternates'] => {
-  const canonicalUrl = BASE_URL + routes[route](locale);
-
-  const languages = AVAILABLE_LOCALES.filter(
-    (language) => language !== locale,
-  ).reduce(
-    (acc, language) => {
-      acc[language] = BASE_URL + routes[route](language);
-      return acc;
-    },
-    {} as Languages<null | string | URL | AlternateLinkDescriptor[]>,
-  );
-
-  return {
-    canonical: canonicalUrl,
-    languages,
-  };
-};
+}: GetAlternateUrls): Metadata['alternates'] => ({
+  canonical: BASE_URL + routes[route](locale),
+  languages: getLanguageAlternates(routes[route]),
+});

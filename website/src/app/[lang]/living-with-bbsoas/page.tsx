@@ -2,7 +2,7 @@ import SupportBanner from '@components/support-banner';
 import { getClient } from '@graphql/client';
 import { GetMetadataDocument } from '@graphql/queries/metadata/index.generated';
 import { livingWithBbsoasPageMetadataId } from '@models/metadata';
-import { getAlternateUrls, routes } from '@routes/index';
+import { BASE_URL, getAlternateUrls, routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
 import type { WebPage, WithContext } from 'schema-dts';
@@ -34,7 +34,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     inLanguage: lang,
     keywords,
     name: title,
-    url: `https://nr2f1.org${routes['living-with-bbsoas'](lang)}`,
+    url: `${BASE_URL}${routes['living-with-bbsoas'](lang)}`,
   };
 
   return (

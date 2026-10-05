@@ -7,7 +7,7 @@ import WhatWeDo from '@components/what-we-do';
 import { getClient } from '@graphql/client';
 import { GetMetadataDocument } from '@graphql/queries/metadata/index.generated';
 import { homepageMetadataId } from '@models/metadata';
-import { getAlternateUrls } from '@routes/index';
+import { BASE_URL, getAlternateUrls, routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { validateLocale } from '@shared/utils/validate-locale';
 import type { Metadata, NextPage } from 'next';
@@ -78,13 +78,13 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
         '@type': 'WebPage',
         inLanguage: lang,
         name: data?.htmlHeadMetadata?.title || 'NR2F1 Foundation',
-        url: 'https://nr2f1.org',
+        url: BASE_URL + routes.homepage(lang),
       },
       {
         '@type': 'Organization',
         description: data?.htmlHeadMetadata?.description || '',
         name: data?.htmlHeadMetadata?.title || 'NR2F1 Foundation',
-        url: 'https://nr2f1.org',
+        url: BASE_URL,
       },
     ],
   };

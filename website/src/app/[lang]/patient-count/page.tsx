@@ -5,7 +5,7 @@ import {
   patientCountPageMetadataId,
   researchPageMetadataId,
 } from '@models/metadata';
-import { getAlternateUrls, routes } from '@routes/index';
+import { BASE_URL, getAlternateUrls, routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
 import type { WebPage, WithContext } from 'schema-dts';
@@ -36,12 +36,18 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     keywords,
     mainEntity: {
       '@type': 'Dataset',
+      creator: {
+        '@type': 'Organization',
+        name: 'NR2F1 Foundation',
+        url: BASE_URL,
+      },
       description,
       isAccessibleForFree: true,
+      license: 'https://creativecommons.org/licenses/by/4.0/',
       name: title,
     },
     name: title,
-    url: `https://nr2f1.org${routes['patient-count'](lang)}`,
+    url: `${BASE_URL}${routes['patient-count'](lang)}`,
   };
 
   return (

@@ -23,7 +23,7 @@ import {
   supportGroupsIntroParagraphsId,
   virtualParentsParagraphsId,
 } from '@models/paragraphs';
-import { getAlternateUrls, routes } from '@routes/index';
+import { BASE_URL, getAlternateUrls, routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { createHashLink } from '@shared/utils/hash-links';
 import type { Metadata, NextPage } from 'next';
@@ -53,7 +53,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     inLanguage: lang,
     keywords,
     name: title,
-    url: `https://nr2f1.org${routes['support-groups'](lang)}`,
+    url: `${BASE_URL}${routes['support-groups'](lang)}`,
   };
 
   const { data, error } = await query({
