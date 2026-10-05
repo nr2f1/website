@@ -6,7 +6,7 @@ const MainLogo = () => (
     fill="none"
     viewBox="0 0 206 48"
   >
-    <title>NRF1 Foundation</title>
+    <title>NR2F1 Foundation</title>
     <g clipPath="url(#clip0_447_4285)">
       <path
         fill="#fff"

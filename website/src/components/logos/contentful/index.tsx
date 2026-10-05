@@ -1,7 +1,7 @@
 const Contentful = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 102 34">
-      <title>powered by contentul</title>
+      <title>Powered by Contentful</title>
       <g clipPath="url(#a)">
         <path
           stroke="#fff"

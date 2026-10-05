@@ -1,7 +1,7 @@
 import { getClient } from '@graphql/client';
 import { GetMetadataDocument } from '@graphql/queries/metadata/index.generated';
 import { privacyPolicyPageMetadataId } from '@models/metadata';
-import { getAlternateUrls, routes } from '@routes/index';
+import { BASE_URL, getAlternateUrls, routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
 import type { WebPage, WithContext } from 'schema-dts';
@@ -29,7 +29,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     description,
     inLanguage: lang,
     name: title,
-    url: `https://nr2f1.org${routes['privacy-policy'](lang)}`,
+    url: `${BASE_URL}${routes['privacy-policy'](lang)}`,
   };
 
   return (

@@ -17,7 +17,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
         return acc;
       },
-      {} as Record<string, string>,
+      { 'x-default': url } as Record<string, string>,
     );
 
     return {
@@ -50,7 +50,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
             return acc;
           },
-          {} as Record<string, string>,
+          { 'x-default': url } as Record<string, string>,
         );
 
         return {

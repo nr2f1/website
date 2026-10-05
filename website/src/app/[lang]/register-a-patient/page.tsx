@@ -2,7 +2,7 @@ import SupportBanner from '@components/support-banner';
 import { getClient } from '@graphql/client';
 import { GetMetadataDocument } from '@graphql/queries/metadata/index.generated';
 import { registerPatientPageMetadataId } from '@models/metadata';
-import { getAlternateUrls } from '@routes/index';
+import { BASE_URL, getAlternateUrls, routes } from '@routes/index';
 import type { PagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import type { Metadata, NextPage } from 'next';
 import type { Graph, MedicalStudy, WebPage, WithContext } from 'schema-dts';
@@ -33,7 +33,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
       {
         '@type': 'RegisterAction',
         name: title,
-        target: `https://nr2f1.org/${lang}/register-patient`,
+        target: `${BASE_URL}${routes['register-a-patient'](lang)}`,
       },
     ],
   };
@@ -44,7 +44,7 @@ const Page: NextPage<PagePropsWithLocale> = async ({ params }) => {
     description,
     inLanguage: lang,
     name: title,
-    url: `https://nr2f1.org/${lang}/register-a-patient`,
+    url: `${BASE_URL}${routes['register-a-patient'](lang)}`,
   };
 
   const jsonLd: Graph = {

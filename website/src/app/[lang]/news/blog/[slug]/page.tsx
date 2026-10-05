@@ -6,16 +6,11 @@ import { getClient } from '@graphql/client';
 import { GetBlogPostsSlugsDocument } from '@graphql/queries/news/index.generated';
 import { GetPostDocument } from '@graphql/queries/post/index.generated';
 import { AVAILABLE_LOCALES } from '@i18n/locales';
-import { BASE_URL, blogPostUrl } from '@routes/index';
+import { BASE_URL, blogPostUrl, getLanguageAlternates } from '@routes/index';
 import type { NewsPagePropsWithLocale } from '@shared/types/page-with-locale-params';
-import { getIntlDateStrings } from '@shared/utils/intl-date';
 import { renderOptions } from '@shared/utils/rich-text';
 import type { Metadata, NextPage } from 'next';
-import type {
-  AlternateLinkDescriptor,
-  Languages,
-} from 'next/dist/lib/metadata/types/alternative-urls-types';
-import type { Blog, WithContext } from 'schema-dts';
+import type { BlogPosting, Organization, WithContext } from 'schema-dts';
 import styles from './index.module.scss';
 
 export async function generateStaticParams() {
@@ -47,20 +42,12 @@ export async function generateMetadata({
   const description = data?.blogPageCollection?.items[0]?.excerpt ?? '';
   const imgUrl = data?.blogPageCollection?.items[0]?.image?.url ?? '';
 
-  const languages = AVAILABLE_LOCALES.filter(
-    (language) => language !== lang,
-  ).reduce(
-    (acc, language) => {
-      acc[language] = BASE_URL + blogPostUrl({ locale: language, slug });
-      return acc;
-    },
-    {} as Languages<null | string | URL | AlternateLinkDescriptor[]>,
-  );
-
   return {
     alternates: {
       canonical: BASE_URL + blogPostUrl({ locale: lang, slug }),
-      languages,
+      languages: getLanguageAlternates((locale) =>
+        blogPostUrl({ locale, slug }),
+      ),
     },
     description,
     openGraph: {
@@ -92,18 +79,23 @@ const Page: NextPage<NewsPagePropsWithLocale> = async ({ params }) => {
 
   const [post] = data.blogPageCollection.items;
 
-  const { publishedString } = getIntlDateStrings({
-    date: post?.date ?? '',
-    locale: lang,
-  });
+  const nr2f1Foundation: Organization = {
+    '@type': 'Organization',
+    name: 'NR2F1 Foundation',
+    url: BASE_URL,
+  };
 
-  const jsonLd: WithContext<Blog> = {
+  const jsonLd: WithContext<BlogPosting> = {
     '@context': 'https://schema.org',
-    '@type': 'Blog',
+    '@type': 'BlogPosting',
     abstract: post?.excerpt ?? '',
-    datePublished: publishedString,
+    author: nr2f1Foundation,
+    datePublished: post?.date ?? undefined,
     headline: post?.title ?? '',
-    url: `https://nr2f1.org/news/blog/${slug}`,
+    image: post?.image?.url ?? undefined,
+    inLanguage: lang,
+    publisher: nr2f1Foundation,
+    url: BASE_URL + blogPostUrl({ locale: lang, slug }),
   };
 
   return (
