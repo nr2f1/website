@@ -20,29 +20,29 @@ export const localiseHref = (
   url: string | null | undefined,
   lang: AvailableLocale,
 ): string => {
+  // Keep this as a guard so TypeScript narrows `url` to `string` in the switch.
   if (!url) {
     return '';
   }
 
-  // Absolute, protocol-relative, mailto/tel, or in-page anchor.
-  if (/^(https?:)?\/\//i.test(url) || /^(mailto:|tel:|#)/i.test(url)) {
-    return url;
-  }
+  switch (true) {
+    // Absolute, protocol-relative, mailto/tel, or in-page anchor...
+    case /^(https?:)?\/\//i.test(url) || /^(mailto:|tel:|#)/i.test(url):
+    // ...or any path that is not root-relative: leave untouched.
+    case !url.startsWith('/'):
+      return url;
 
-  // Only root-relative internal paths are localised.
-  if (!url.startsWith('/')) {
-    return url;
-  }
+    // The bare root becomes the localised homepage.
+    case url === '/':
+      return `/${lang}`;
 
-  if (url === '/') {
-    return `/${lang}`;
-  }
+    // Already starts with a known locale segment (e.g. `/en/donate`).
+    // `/donate` -> ['', 'donate']; the first segment tells us if it is localised.
+    case LOCALES.includes(url.split('/')[1] ?? ''):
+      return url;
 
-  // `/donate` -> ['', 'donate']; the first segment tells us if it is localised.
-  const firstSegment = url.split('/')[1];
-  if (firstSegment && LOCALES.includes(firstSegment)) {
-    return url;
+    // `/donate` -> `/<lang>/donate`.
+    default:
+      return `/${lang}${url}`;
   }
-
-  return `/${lang}${url}`;
 };
