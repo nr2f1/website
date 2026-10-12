@@ -21,3 +21,4 @@ types.ts
 website/tsconfig.tsbuildinfo
 
 .rtk/
+/reports

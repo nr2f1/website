@@ -72,6 +72,7 @@ const WhatWeDo: React.FC<WhatWeDoProps> = async ({ lang }) => {
               <Link
                 href={routes['what-is-bbsoas'](lang)}
                 className="button button--on-light"
+                aria-label={`${learnMoreCta?.content ?? ''} ${educatePeopleHeading?.content ?? ''}`.trim()}
               >
                 {learnMoreCta?.content}
               </Link>
@@ -85,6 +86,7 @@ const WhatWeDo: React.FC<WhatWeDoProps> = async ({ lang }) => {
               <Link
                 href={routes['living-with-bbsoas'](lang)}
                 className="button button--on-light"
+                aria-label={`${learnMoreCta?.content ?? ''} ${empowerFamiliesHeading?.content ?? ''}`.trim()}
               >
                 {learnMoreCta?.content}
               </Link>
@@ -96,6 +98,7 @@ const WhatWeDo: React.FC<WhatWeDoProps> = async ({ lang }) => {
               <Link
                 href={routes.research(lang)}
                 className="button button--on-light"
+                aria-label={`${learnMoreCta?.content ?? ''} ${driveResearchHeading?.content ?? ''}`.trim()}
               >
                 {learnMoreCta?.content}
               </Link>

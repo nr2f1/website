@@ -29,10 +29,13 @@ describe('banner', () => {
       />,
     );
 
-    const link = getByRole('link', { name: 'click here' });
+    // The link's accessible name carries the heading as context (via
+    // aria-label) so it is descriptive rather than a generic "click here".
+    const link = getByRole('link', { name: 'click here heading' });
 
     expect(getByRole('heading', { level: 2 })).toHaveTextContent('heading');
     expect(link).toBeInTheDocument();
+    expect(link).toHaveTextContent('click here');
     expect(link).toHaveAttribute('href', 'https://example.com');
   });
 });

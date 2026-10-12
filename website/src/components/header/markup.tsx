@@ -39,6 +39,7 @@ import {
 } from '@models/resource';
 import { aboutCopiesId } from '@models/resource-sets';
 import type { LocalisedLinkProps } from '@shared/types/link';
+import { localiseHref } from '@shared/utils/localise-href';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -193,13 +194,16 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
                 <li>
                   <RegisterPatientButton
                     content={registerPatient?.text?.content ?? ''}
-                    href={registerPatient?.target?.url ?? ''}
+                    href={localiseHref(
+                      registerPatient?.target?.url ?? '',
+                      lang,
+                    )}
                   />
                 </li>
                 <li>
                   <DonateButton
                     content={donate?.text?.content ?? ''}
-                    href={donate?.target?.url ?? ''}
+                    href={localiseHref(donate?.target?.url ?? '', lang)}
                   />
                 </li>
               </ul>
@@ -222,12 +226,22 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
                   <span>{whoWeAre?.value ?? ''}</span>
                   <ul>
                     <li>
-                      <Link href={aboutUsLinkOrganisation?.target?.url ?? '/'}>
+                      <Link
+                        href={localiseHref(
+                          aboutUsLinkOrganisation?.target?.url ?? '/',
+                          lang,
+                        )}
+                      >
                         {aboutUsLinkOrganisation?.text?.content ?? ''}
                       </Link>
                     </li>
                     <li>
-                      <Link href={aboutUsLinkOurStrategy?.target?.url ?? '/'}>
+                      <Link
+                        href={localiseHref(
+                          aboutUsLinkOurStrategy?.target?.url ?? '/',
+                          lang,
+                        )}
+                      >
                         {aboutUsLinkOurStrategy?.text?.content ?? ''}
                       </Link>
                     </li>
@@ -237,22 +251,42 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
                   <span>{whatWeDo?.value ?? ''}</span>
                   <ul>
                     <li>
-                      <Link href={aboutUsLinkOurNews?.target?.url ?? '/'}>
+                      <Link
+                        href={localiseHref(
+                          aboutUsLinkOurNews?.target?.url ?? '/',
+                          lang,
+                        )}
+                      >
                         {aboutUsLinkOurNews?.text?.content ?? ''}
                       </Link>
                     </li>
                     <li>
-                      <Link href={aboutUsFinancials?.target?.url ?? '/'}>
+                      <Link
+                        href={localiseHref(
+                          aboutUsFinancials?.target?.url ?? '/',
+                          lang,
+                        )}
+                      >
                         {aboutUsFinancials?.text?.content ?? ''}
                       </Link>
                     </li>
                     <li>
-                      <Link href={aboutUsParnerships?.target?.url ?? '/'}>
+                      <Link
+                        href={localiseHref(
+                          aboutUsParnerships?.target?.url ?? '/',
+                          lang,
+                        )}
+                      >
                         {aboutUsParnerships?.text?.content ?? ''}
                       </Link>
                     </li>
                     <li>
-                      <Link href={aboutUsConference?.target?.url ?? '/'}>
+                      <Link
+                        href={localiseHref(
+                          aboutUsConference?.target?.url ?? '/',
+                          lang,
+                        )}
+                      >
                         {aboutUsConference?.text?.content ?? ''}
                       </Link>
                     </li>
@@ -260,23 +294,38 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
                 </li>
               </ul>
             </NavList>
-            <Link href={whatIsBbsoas?.target?.url ?? '/'}>
+            <Link href={localiseHref(whatIsBbsoas?.target?.url ?? '/', lang)}>
               <span>{whatIsBbsoas?.text?.content ?? ''}</span>
             </Link>
             <NavList name={livingWithBbsoasMicrocopy?.value ?? ''}>
               <ul>
                 <li>
-                  <Link href={livingWithBbsoasLink?.target?.url ?? '/'}>
+                  <Link
+                    href={localiseHref(
+                      livingWithBbsoasLink?.target?.url ?? '/',
+                      lang,
+                    )}
+                  >
                     {livingWithBbsoasLink?.text?.content ?? ''}
                   </Link>
                 </li>
                 <li>
-                  <Link href={registerABbsoasPatientLink?.target?.url ?? '/'}>
+                  <Link
+                    href={localiseHref(
+                      registerABbsoasPatientLink?.target?.url ?? '/',
+                      lang,
+                    )}
+                  >
                     {registerABbsoasPatientLink?.text?.content ?? ''}
                   </Link>
                 </li>
                 <li>
-                  <Link href={supportGroupsLink?.target?.url ?? '/'}>
+                  <Link
+                    href={localiseHref(
+                      supportGroupsLink?.target?.url ?? '/',
+                      lang,
+                    )}
+                  >
                     {supportGroupsLink?.text?.content ?? ''}
                   </Link>
                 </li>
@@ -285,31 +334,49 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
             <NavList name={researchMicrocopy?.value ?? ''}>
               <ul>
                 <li>
-                  <Link href={researchLink?.target?.url ?? '/'}>
+                  <Link
+                    href={localiseHref(researchLink?.target?.url ?? '/', lang)}
+                  >
                     {researchLink?.text?.content ?? ''}
                   </Link>
                 </li>
                 <li>
-                  <Link href={patientCountLink?.target?.url ?? '/'}>
+                  <Link
+                    href={localiseHref(
+                      patientCountLink?.target?.url ?? '/',
+                      lang,
+                    )}
+                  >
                     {patientCountLink?.text?.content ?? ''}
                   </Link>
                 </li>
                 <li>
-                  <Link href={getInvolvedInBbsoasLink?.target?.url ?? '/'}>
+                  <Link
+                    href={localiseHref(
+                      getInvolvedInBbsoasLink?.target?.url ?? '/',
+                      lang,
+                    )}
+                  >
                     {getInvolvedInBbsoasLink?.text?.content ?? ''}
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href={
-                      resourcesAvailableToresearchersLink?.target?.url ?? '/'
-                    }
+                    href={localiseHref(
+                      resourcesAvailableToresearchersLink?.target?.url ?? '/',
+                      lang,
+                    )}
                   >
                     {resourcesAvailableToresearchersLink?.text?.content ?? ''}
                   </Link>
                 </li>
                 <li>
-                  <Link href={publicationsLink?.target?.url ?? '/'}>
+                  <Link
+                    href={localiseHref(
+                      publicationsLink?.target?.url ?? '/',
+                      lang,
+                    )}
+                  >
                     {publicationsLink?.text?.content ?? ''}
                   </Link>
                 </li>
@@ -318,29 +385,35 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
             <NavList name={supportUsMicrocopy?.value ?? ''}>
               <ul>
                 <li>
-                  <Link href={supportUsLink?.target?.url ?? '/'}>
+                  <Link
+                    href={localiseHref(supportUsLink?.target?.url ?? '/', lang)}
+                  >
                     {supportUsLink?.text?.content ?? ''}
                   </Link>
                 </li>
                 <li>
-                  <Link href={fundraiseLink?.target?.url ?? '/'}>
+                  <Link
+                    href={localiseHref(fundraiseLink?.target?.url ?? '/', lang)}
+                  >
                     {fundraiseLink?.text?.content ?? ''}
                   </Link>
                 </li>
                 <li>
-                  <Link href={donate?.target?.url ?? '/'}>
+                  <Link href={localiseHref(donate?.target?.url ?? '/', lang)}>
                     {donate?.text?.content ?? ''}
                   </Link>
                 </li>
                 <li>
-                  <Link href={volunteerLink?.target?.url ?? '/'}>
+                  <Link
+                    href={localiseHref(volunteerLink?.target?.url ?? '/', lang)}
+                  >
                     {volunteerLink?.text?.content ?? ''}
                   </Link>
                 </li>
                 <li>
                   <a
                     className={styles['open-other-tab']}
-                    href={shopLink?.target?.url ?? '/'}
+                    href={localiseHref(shopLink?.target?.url ?? '/', lang)}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -349,7 +422,7 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
                 </li>
               </ul>
             </NavList>
-            <Link href={contactUs?.target?.url ?? ''}>
+            <Link href={localiseHref(contactUs?.target?.url ?? '', lang)}>
               <span>{contactUs?.text?.content ?? ''}</span>
             </Link>
           </nav>
@@ -358,14 +431,14 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
               <li>
                 <RegisterPatientButton
                   content={registerPatient?.text?.content ?? ''}
-                  href={registerPatient?.target?.url ?? ''}
+                  href={localiseHref(registerPatient?.target?.url ?? '', lang)}
                   isMobile
                 />
               </li>
               <li>
                 <DonateButton
                   content={donate?.text?.content ?? ''}
-                  href={donate?.target?.url ?? ''}
+                  href={localiseHref(donate?.target?.url ?? '', lang)}
                   isMobile
                 />
               </li>
