@@ -5,6 +5,7 @@ import {
   type NewsCardProps,
   newsTypeLocale,
 } from '@shared/utils/from-news-items-to-news-cards';
+import { createOptimizedImageUrl } from '@shared/utils/image-optimisation';
 import { getIntlDateStrings } from '@shared/utils/intl-date';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -24,6 +25,17 @@ const NewsCard: React.FC<NewsCardProps> = ({
   });
 
   const router = useRouter();
+
+  // The blog card renders the Contentful asset as a CSS background. Request a
+  // resized AVIF (the card is at most ~384px wide, so 768px covers retina)
+  // instead of the editor's full-resolution upload, which can be several MB.
+  const optimisedImageUrl = imageUrl
+    ? createOptimizedImageUrl(imageUrl, {
+        format: 'avif',
+        quality: 85,
+        width: 768,
+      })
+    : '';
 
   switch (type) {
     case News.PODCAST:
@@ -81,12 +93,12 @@ const NewsCard: React.FC<NewsCardProps> = ({
     default:
       return (
         <li className={styles.article}>
-          <Link href={`/news/blog/${url}`}>
+          <Link href={`/${lang}/news/blog/${url}`}>
             <article>
               <div
                 className={styles.article__img}
                 style={{
-                  backgroundImage: `url(${imageUrl})`,
+                  backgroundImage: `url(${optimisedImageUrl})`,
                 }}
               />
               <div className={styles.article__content}>

@@ -67,6 +67,9 @@ const PatientCounterBanner: React.FC<PatientCounterBannerProps> = async ({
             <Link
               href={data.link?.target?.url ?? '/'}
               className="button button--on-dark"
+              aria-label={`${data.link?.text?.content ?? ''} ${data.patientNumberHeading?.content ?? ''} ${data.countriesNumberHeading?.content ?? ''}`
+                .replace(/\s+/g, ' ')
+                .trim()}
             >
               {data.link?.text?.content}
             </Link>

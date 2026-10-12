@@ -35,6 +35,9 @@ const Banner: React.FC<BannerProps> = ({
               href={ctaUrl}
               className={`button ${openNewTab ? ' button--on-light-open-new-tab' : 'button--on-light'}`}
               title={ctaContent}
+              aria-label={
+                headingContent ? `${ctaContent} ${headingContent}` : undefined
+              }
             >
               {ctaContent}
             </a>
