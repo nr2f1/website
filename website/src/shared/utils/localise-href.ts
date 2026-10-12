@@ -21,7 +21,7 @@ export const localiseHref = (
   lang: AvailableLocale,
 ): string => {
   if (!url) {
-    return url ?? '';
+    return '';
   }
 
   // Absolute, protocol-relative, mailto/tel, or in-page anchor.
