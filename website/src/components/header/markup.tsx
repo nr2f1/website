@@ -1,43 +1,8 @@
 'use client';
 
-import { useSuspenseQuery } from '@apollo/client/react';
 import MainOnLight from '@components/logos/main-on-light';
-import {
-  GetHeaderDocument,
-  type GetHeaderQuery,
-  type GetHeaderQueryVariables,
-} from '@graphql/queries/header/index.generated';
+import type { GetHeaderQuery } from '@graphql/queries/header/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
-import {
-  aboutUsLinkConferenceId,
-  aboutUsLinkFinancialsId,
-  aboutUsLinkOrganisationId,
-  aboutUsLinkOurNewsId,
-  aboutUsLinkOurStrategyId,
-  aboutUsLinkParnershipsId,
-  contactUsLinkId,
-  donateId,
-  fundraiseLinkId,
-  getInvolvedInBbsoasLinkId,
-  livingWithBbsoasLinkId,
-  patientCountLinkId,
-  publicationsLinkId,
-  registerABbsoasPatientLinkId,
-  registerPatientId,
-  researchLinkId,
-  resourcesAvailableToresearchersLinkId,
-  shopLinkId,
-  supportGroupsLinkId,
-  supportUsLinkId,
-  volunteerLinkId,
-  whatIsBbsoasLinkId,
-} from '@models/links';
-import {
-  livingWithBbsoasMicrocopyId,
-  researchMicrocopyId,
-  supportUsMicrocopyId,
-} from '@models/resource';
-import { aboutCopiesId } from '@models/resource-sets';
 import type { LocalisedLinkProps } from '@shared/types/link';
 import { localiseHref } from '@shared/utils/localise-href';
 import Link from 'next/link';
@@ -78,10 +43,11 @@ const DonateButton: React.FC<CtaButtons> = ({ content, href, isMobile }) => (
 );
 
 export interface HeaderProps {
+  data: GetHeaderQuery;
   lang: AvailableLocale;
 }
 
-const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
+const NewHeader: React.FC<HeaderProps> = ({ data, lang }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
@@ -98,49 +64,6 @@ const NewHeader: React.FC<HeaderProps> = ({ lang }) => {
       document.body.classList.remove('menu-open');
     }
   }, [isMenuOpen]);
-
-  const {
-    data,
-    // TODO: Handle error
-    error,
-  } = useSuspenseQuery<GetHeaderQuery, GetHeaderQueryVariables>(
-    GetHeaderDocument,
-    {
-      variables: {
-        aboutCopiesId,
-        aboutUsLinkConferenceId,
-        aboutUsLinkFinancialsId,
-        aboutUsLinkOrganisationId,
-        aboutUsLinkOurNewsId,
-        aboutUsLinkOurStrategyId,
-        aboutUsLinkParnershipsId,
-        contactUsLinkId,
-        donateId,
-        fundraiseLinkId,
-        getInvolvedInBbsoasLinkId,
-        livingWithBbsoasLinkId,
-        livingWithBbsoasMicrocopyId,
-        locale: lang,
-        patientCountLinkId,
-        publicationsLinkId,
-        registerABbsoasPatientLinkId,
-        registerPatientId,
-        researchLinkId,
-        researchMicrocopyId,
-        resourcesAvailableToresearchersLinkId,
-        shopLinkId,
-        supportGroupsLinkId,
-        supportUsLinkId,
-        supportUsMicrocopyId,
-        volunteerLinkId,
-        whatIsBbsoasLinkId,
-      },
-    },
-  );
-
-  if (!data || error) {
-    return null;
-  }
 
   const {
     registerPatient,

@@ -1,13 +1,7 @@
 'use client';
 
-import { useSuspenseQuery } from '@apollo/client/react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import {
-  GetCookieBannerDocument,
-  type GetCookieBannerQuery,
-  type GetCookieBannerQueryVariables,
-} from '@graphql/queries/cookie-banner/index.generated';
-import type { ComponentPropsWithLocale } from '@shared/types/page-with-locale-params';
+import type { GetCookieBannerQuery } from '@graphql/queries/cookie-banner/index.generated';
 import {
   LOCAL_STORAGE_KEY_TRACKING_KEY,
   TRACKING_CONSENT,
@@ -16,16 +10,13 @@ import { useEffect, useState } from 'react';
 import { useLocalStorage } from 'website/src/hooks/local-storage';
 import styles from './index.module.scss';
 
-const CookieBanner: React.FC<ComponentPropsWithLocale> = ({ lang }) => {
+interface CookieBannerProps {
+  data: GetCookieBannerQuery;
+}
+
+const CookieBanner: React.FC<CookieBannerProps> = ({ data }) => {
   const [consent, setConsent] = useLocalStorage(LOCAL_STORAGE_KEY_TRACKING_KEY);
   const [isHydrated, setIsHydrated] = useState(false);
-
-  const { data } = useSuspenseQuery<
-    GetCookieBannerQuery,
-    GetCookieBannerQueryVariables
-  >(GetCookieBannerDocument, {
-    variables: { locale: lang },
-  });
 
   useEffect(() => {
     setIsHydrated(true);
@@ -34,7 +25,6 @@ const CookieBanner: React.FC<ComponentPropsWithLocale> = ({ lang }) => {
   if (
     consent === TRACKING_CONSENT.GRANTED ||
     consent === TRACKING_CONSENT.DENIED ||
-    !data ||
     !isHydrated
   ) {
     return null;

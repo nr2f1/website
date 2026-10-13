@@ -21,3 +21,5 @@ We will use Apollo Client in our Next.js project for fetching data from Contentf
 - Increased complexity: Introducing Apollo Client into our project will add a layer of complexity. We will need to learn and understand its concepts and best practices, which may require additional time and effort.
 - Potential performance overhead: While Apollo Client can improve performance in many cases, there may be scenarios where its overhead can impact loading times. We will need to monitor performance and optimize as needed.
 - Dependency management: Adding Apollo Client as a dependency will increase the overall size of our project and introduce potential compatibility issues. We will need to carefully manage dependencies and stay updated with the latest versions.
+
+Amended by [ADR 0013](./00013-apollo-client-server-only.md): since October 2026 Apollo Client runs on the server only.

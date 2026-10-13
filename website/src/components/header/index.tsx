@@ -1,4 +1,4 @@
-import { PreloadQuery } from '@graphql/client';
+import { getClient } from '@graphql/client';
 import { GetHeaderDocument } from '@graphql/queries/header/index.generated';
 import {
   aboutUsLinkConferenceId,
@@ -30,53 +30,54 @@ import {
   supportUsMicrocopyId,
 } from '@models/resource';
 import { aboutCopiesId } from '@models/resource-sets';
+import type { ComponentPropsWithLocale } from '@shared/types/page-with-locale-params';
 import { cacheLife, cacheTag } from 'next/cache';
-import { Suspense } from 'react';
-import Header, { type HeaderProps } from './markup';
-import HeaderSkeleton from './skeleton';
+import Header from './markup';
 
-const HeaderWithData: React.FC<HeaderProps> = async ({ lang }) => {
+const HeaderWithData: React.FC<ComponentPropsWithLocale> = async ({ lang }) => {
   'use cache';
   cacheLife('hours');
   cacheTag('contentful');
-  return (
-    <PreloadQuery
-      query={GetHeaderDocument}
-      variables={{
-        aboutCopiesId,
-        aboutUsLinkConferenceId,
-        aboutUsLinkFinancialsId,
-        aboutUsLinkOrganisationId,
-        aboutUsLinkOurNewsId,
-        aboutUsLinkOurStrategyId,
-        aboutUsLinkParnershipsId,
-        contactUsLinkId,
-        donateId,
-        fundraiseLinkId,
-        getInvolvedInBbsoasLinkId,
-        livingWithBbsoasLinkId,
-        livingWithBbsoasMicrocopyId,
-        locale: lang,
-        patientCountLinkId,
-        publicationsLinkId,
-        registerABbsoasPatientLinkId,
-        registerPatientId,
-        researchLinkId,
-        researchMicrocopyId,
-        resourcesAvailableToresearchersLinkId,
-        shopLinkId,
-        supportGroupsLinkId,
-        supportUsLinkId,
-        supportUsMicrocopyId,
-        volunteerLinkId,
-        whatIsBbsoasLinkId,
-      }}
-    >
-      <Suspense fallback={<HeaderSkeleton />}>
-        <Header lang={lang} />
-      </Suspense>
-    </PreloadQuery>
-  );
+
+  const { query } = getClient();
+  const { data, error } = await query({
+    query: GetHeaderDocument,
+    variables: {
+      aboutCopiesId,
+      aboutUsLinkConferenceId,
+      aboutUsLinkFinancialsId,
+      aboutUsLinkOrganisationId,
+      aboutUsLinkOurNewsId,
+      aboutUsLinkOurStrategyId,
+      aboutUsLinkParnershipsId,
+      contactUsLinkId,
+      donateId,
+      fundraiseLinkId,
+      getInvolvedInBbsoasLinkId,
+      livingWithBbsoasLinkId,
+      livingWithBbsoasMicrocopyId,
+      locale: lang,
+      patientCountLinkId,
+      publicationsLinkId,
+      registerABbsoasPatientLinkId,
+      registerPatientId,
+      researchLinkId,
+      researchMicrocopyId,
+      resourcesAvailableToresearchersLinkId,
+      shopLinkId,
+      supportGroupsLinkId,
+      supportUsLinkId,
+      supportUsMicrocopyId,
+      volunteerLinkId,
+      whatIsBbsoasLinkId,
+    },
+  });
+
+  if (error || !data) {
+    return null;
+  }
+
+  return <Header data={data} lang={lang} />;
 };
 
 export default HeaderWithData;
