@@ -23,6 +23,8 @@ export default defineConfig({
       '@shared': '/shared',
       '@styles': '/styles',
       '@tests': '/tests',
+      // tsconfig baseUrl lets some modules import 'website/src/...'
+      'website/src': '/',
     },
     environment: 'jsdom',
     globals: true,

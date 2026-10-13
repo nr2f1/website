@@ -50,7 +50,7 @@ const link = ApolloLink.from([
   }),
  ]);
 
-const { getClient: getApolloClient, PreloadQuery } = registerApolloClient(
+const { getClient: getApolloClient } = registerApolloClient(
   () => {
     return new ApolloClient({
       cache: new InMemoryCache({
@@ -90,8 +90,6 @@ const cachedQuery = async (options: unknown) => {
 export const getClient = () => ({
   query: cachedQuery as ContentfulQueryFn,
 });
-
-export { PreloadQuery };
 
 if (isDev) {
   loadDevMessages();
