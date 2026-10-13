@@ -67,7 +67,12 @@ jobs:
 
       - name: Deploy project artifacts to Vercel
         id: deploy
-        run: echo "url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})" >> "$GITHUB_OUTPUT"
+        # --archive=tgz uploads one file instead of every build file, which keeps
+        # us under Vercel's daily upload limit. Assigning first (not inside echo)
+        # lets a failed deploy fail the step.
+        run: |
+          url=$(vercel deploy --prebuilt --archive=tgz --token=${{ secrets.VERCEL_TOKEN }})
+          echo "url=$url" >> "$GITHUB_OUTPUT"
   ci-validation:
     name: CI validation
     needs: [release-please, deploy-to-preview]
