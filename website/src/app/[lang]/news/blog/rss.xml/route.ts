@@ -1,7 +1,7 @@
 import { getClient } from '@graphql/client';
 import { GetAllBlogPostsForRssDocument } from '@graphql/queries/news/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
-import { BASE_URL, blogPostUrl } from '@routes/index';
+import { BASE_URL, blogPostUrl, routes } from '@routes/index';
 import type { NextRequest } from 'next/server';
 
 const description: Record<AvailableLocale, string> = {
@@ -52,24 +52,29 @@ export async function GET(
         <link>${postUrl}</link>
         <guid>${postUrl}</guid>
         <pubDate>${new Date(post.date ?? '').toUTCString()}</pubDate>
-        <description><![CDATA[${post.excerpt}]]></description>
+        <description><![CDATA[${post.excerpt ?? ''}]]></description>
       </item>`;
     })
     .join('\n');
 
+  const feedUrl = `${BASE_URL}${routes.blog(validLang)}/rss.xml`;
+
   const rssFeed = `<?xml version="1.0" encoding="UTF-8" ?>
-  <rss version="2.0">
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
       <title>NR2F1 Blog</title>
       <link>${BASE_URL}</link>
+      <atom:link href="${feedUrl}" rel="self" type="application/rss+xml" />
       <description>${description[validLang] ?? description.en}</description>
       <language>${validLang}</language>
       <lastBuildDate>${currentDate}</lastBuildDate>
       <pubDate>${currentDate}</pubDate>
       <image>
-        <url>${BASE_URL}/${validLang}/icon.svg</url>
-        <width>502.93</width>
-        <height>463.04</height>
+        <url>${BASE_URL}/rss-logo.png</url>
+        <title>NR2F1 Blog</title>
+        <link>${BASE_URL}</link>
+        <width>144</width>
+        <height>133</height>
       </image>
       ${rssItems}
     </channel>
@@ -77,7 +82,7 @@ export async function GET(
 
   const headers = new Headers({
     'cache-control': 'public, max-age=3600',
-    'content-type': 'application/xml',
+    'content-type': 'application/rss+xml; charset=utf-8',
   });
 
   return new Response(rssFeed, { headers });
