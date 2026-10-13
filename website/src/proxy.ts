@@ -30,7 +30,8 @@ export function proxy(request: NextRequest) {
     pathname === '/sitemap.xml' ||
     pathname === '/robots.txt' ||
     pathname === '/favicon.ico' ||
-    pathname === '/icon.svg';
+    pathname === '/icon.svg' ||
+    pathname === '/rss-logo.png';
 
   if (pathnameHasLocale || isApiRoute || isStaticFile) return;
 
@@ -43,6 +44,6 @@ export function proxy(request: NextRequest) {
 export const config = {
   matcher: [
     // Apply middleware to all routes except API routes, Next.js internals, and static files
-    '/((?!api|_next/static|_next/image|_next/webpack-hmr|favicon.ico|icon.svg|sitemap.xml|robots.txt).*)',
+    '/((?!api|_next/static|_next/image|_next/webpack-hmr|favicon.ico|icon.svg|rss-logo.png|sitemap.xml|robots.txt).*)',
   ],
 };

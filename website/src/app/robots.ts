@@ -13,17 +13,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         allow: '/',
-        disallow: [
-          '/api/',
-          '/admin/',
-          '/private/',
-          '/_next/',
-          '/*.json$',
-          '/*/opengraph-image*',
-          '/*/twitter-image*',
-          '/*/icon*',
-          '/*/apple-icon*',
-        ],
+        // Leave /_next/ crawlable: Google renders pages with their CSS and JS.
+        disallow: ['/api/', '/admin/', '/private/', '/*.json$'],
         userAgent: '*',
       },
       {

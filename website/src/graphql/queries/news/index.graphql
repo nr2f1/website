@@ -70,13 +70,14 @@ query GetNewsletters($locale: String, $limit: Int!, $skip: Int!) {
   }
 }
 
-query GetBlogPostsSlugs {
-  blogPageCollection {
+query GetBlogPostsSlugs($limit: Int!, $skip: Int!) {
+  blogPageCollection(limit: $limit, skip: $skip, order: date_DESC) {
+    total
     items {
       slug
-      date
-      excerpt
-      title
+      sys {
+        publishedAt
+      }
     }
   }
 }

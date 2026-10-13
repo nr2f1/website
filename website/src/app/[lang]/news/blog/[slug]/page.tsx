@@ -3,10 +3,10 @@ import PageLatestNews from '@components/page-latest-news';
 import SupportBanner from '@components/support-banner';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { getClient } from '@graphql/client';
-import { GetBlogPostsSlugsDocument } from '@graphql/queries/news/index.generated';
 import { GetPostDocument } from '@graphql/queries/post/index.generated';
 import { AVAILABLE_LOCALES } from '@i18n/locales';
 import { BASE_URL, blogPostUrl, getLanguageAlternates } from '@routes/index';
+import { getAllBlogPosts } from '@services/contentful/blog-posts';
 import type { NewsPagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { renderOptions } from '@shared/utils/rich-text';
 import type { Metadata, NextPage } from 'next';
@@ -15,13 +15,7 @@ import type { BlogPosting, Organization, WithContext } from 'schema-dts';
 import styles from './index.module.scss';
 
 export async function generateStaticParams() {
-  const { query } = getClient();
-  const { data } = await query({ query: GetBlogPostsSlugsDocument });
-
-  const slugs =
-    data?.blogPageCollection?.items
-      ?.map((item) => item?.slug)
-      .filter((slug): slug is string => Boolean(slug)) ?? [];
+  const slugs = (await getAllBlogPosts()).map(({ slug }) => slug);
 
   return AVAILABLE_LOCALES.flatMap((lang) =>
     slugs.map((slug) => ({ lang, slug })),
