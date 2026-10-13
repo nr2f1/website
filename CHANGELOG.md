@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.0.0](https://github.com/nr2f1/website/compare/v3.14.2...v4.0.0) (2026-10-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* move to server side ([#453](https://github.com/nr2f1/website/issues/453))
+
+### Features
+
+* move to server side ([#453](https://github.com/nr2f1/website/issues/453)) ([9d2d308](https://github.com/nr2f1/website/commit/9d2d308742283ba91111845113d9185191683726))
+
 ## [3.14.2](https://github.com/nr2f1/website/compare/v3.14.1...v3.14.2) (2026-10-05)
 
 
