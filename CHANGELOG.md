@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.1.0](https://github.com/nr2f1/website/compare/v4.0.0...v4.1.0) (2026-10-13)
+
+
+### Features
+
+* apollo server only ([#455](https://github.com/nr2f1/website/issues/455)) ([2ac049d](https://github.com/nr2f1/website/commit/2ac049db441ab7279cbbd0ca83d4ab5868c5dc4f))
+
 ## [4.0.0](https://github.com/nr2f1/website/compare/v3.14.2...v4.0.0) (2026-10-13)
 
 
