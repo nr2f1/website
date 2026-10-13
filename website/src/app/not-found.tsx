@@ -1,3 +1,4 @@
+import { nunitoSans } from '@app/fonts';
 import Footer from '@components/footer';
 import Header from '@components/header';
 import type { AvailableLocale } from '@i18n/locales';
@@ -48,16 +49,6 @@ const translations: Record<AvailableLocale, Record<string, string>> = {
     title: '抱歉，此页面不可用',
   },
 };
-
-import { Nunito_Sans } from 'next/font/google';
-
-const nunitoSans = Nunito_Sans({
-  adjustFontFallback: false,
-  display: 'swap',
-  preload: true,
-  subsets: ['latin'],
-  variable: '--font-nunito-sans',
-});
 
 // The locale comes from request headers, so this page renders per request
 export const instant = false;

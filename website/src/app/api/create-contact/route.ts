@@ -45,10 +45,6 @@ const validationSchema = object({
 });
 
 export async function POST(request: Request) {
-  if (request.method !== 'POST') {
-    return new Response('Method Not Allowed', { status: 405 });
-  }
-
   const data: SignupFormValues = await request.json();
 
   try {
@@ -102,7 +98,7 @@ export async function POST(request: Request) {
     const response = await fetch('https://api.givebutter.com/v1/contacts', {
       body: JSON.stringify(dto),
       headers: {
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_GIVEBUTTER_API_KEY}`,
+        Authorization: `Bearer ${process.env.GIVEBUTTER_API_KEY}`,
         'Content-Type': 'application/json',
       },
       method: 'POST',

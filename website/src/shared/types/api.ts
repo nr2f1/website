@@ -1,19 +1,18 @@
+// One campaign in Givebutter's GET /v1/campaigns response (only the fields
+// services/givebutter/campaigns.ts reads).
 export interface GivebutterCampaign {
-  title: string;
-  cover: {
-    url: string;
-  };
+  cover: { url: string } | null;
   created_at: string;
-  url: string;
-  raised: number;
   currency: string;
+  raised: number;
+  title: string;
+  url: string;
 }
 
-export interface CampaignApiResponse {
+// What the fundraising cards render.
+export interface Campaign {
   coverUrl: string;
-  created_at: string;
-  currency: string;
-  raised: number;
+  createdAt: string;
   title: string;
   url: string;
 }
