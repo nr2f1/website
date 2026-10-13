@@ -1,6 +1,5 @@
 import '@styles/main.scss';
 
-import { ApolloWrapper } from '@app/apollo-wrapper';
 import { GoogleTag } from '@components/google-tag-manager';
 import { metadataLanguages } from '@i18n/locales';
 import { BASE_URL } from '@routes/index';
@@ -40,10 +39,10 @@ interface RootLayoutProps {
 
 const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
   return (
-    <ApolloWrapper>
+    <>
       <GoogleTag />
       {children}
-    </ApolloWrapper>
+    </>
   );
 };
 

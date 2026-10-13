@@ -1,18 +1,10 @@
-import { useSuspenseQuery } from '@apollo/client/react';
+import type { GetFooterQuery } from '@graphql/queries/footer/index.generated';
 import { render, waitFor } from '@testing-library/react';
 import axe from '@tests/a11y/test-utils';
 import { describe, expect, it, vi } from 'vitest';
 import Footer from './markup';
 
 const locale = 'en';
-
-vi.mock('@apollo/client/react', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@apollo/client/react')>();
-  return {
-    ...actual,
-    useSuspenseQuery: vi.fn(),
-  };
-});
 
 vi.mock('next/navigation', async (importOriginal) => {
   const actual = await importOriginal<typeof import('next/navigation')>();
@@ -148,21 +140,11 @@ const result = {
   },
 };
 
-describe('Header', () => {
-  vi.mocked(useSuspenseQuery).mockImplementation(() => ({
-    ...result,
-    // @ts-expect-error
-    client: null,
-    // @ts-expect-error
-    error: null,
-    // @ts-expect-error
-    fetchMore: null,
-    // @ts-expect-error
-    networkStatus: null,
-  }));
+const data = result.data as unknown as GetFooterQuery;
 
+describe('Footer', () => {
   it('renders without any accessibility violation', async () => {
-    const { container } = render(<Footer lang={locale} />);
+    const { container } = render(<Footer data={data} lang={locale} />);
     const results = await waitFor(() => axe(container), { timeout: 5000 });
     expect(results).toHaveNoViolations();
   });
