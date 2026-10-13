@@ -10,6 +10,7 @@ import { BASE_URL, blogPostUrl, getLanguageAlternates } from '@routes/index';
 import type { NewsPagePropsWithLocale } from '@shared/types/page-with-locale-params';
 import { renderOptions } from '@shared/utils/rich-text';
 import type { Metadata, NextPage } from 'next';
+import { notFound } from 'next/navigation';
 import type { BlogPosting, Organization, WithContext } from 'schema-dts';
 import styles from './index.module.scss';
 
@@ -38,9 +39,15 @@ export async function generateMetadata({
     variables: { locale: lang, slug },
   });
 
-  const title = data?.blogPageCollection?.items[0]?.title ?? '';
-  const description = data?.blogPageCollection?.items[0]?.excerpt ?? '';
-  const imgUrl = data?.blogPageCollection?.items[0]?.image?.url ?? '';
+  const post = data?.blogPageCollection?.items[0];
+
+  if (!post) {
+    notFound();
+  }
+
+  const title = post.title ?? '';
+  const description = post.excerpt ?? '';
+  const imgUrl = post.image?.url ?? '';
 
   return {
     alternates: {
@@ -73,11 +80,11 @@ const Page: NextPage<NewsPagePropsWithLocale> = async ({ params }) => {
     variables: { locale: lang, slug },
   });
 
-  if (!data?.blogPageCollection || data.blogPageCollection.items.length === 0) {
-    return null;
-  }
+  const post = data?.blogPageCollection?.items[0];
 
-  const [post] = data.blogPageCollection.items;
+  if (!post) {
+    notFound();
+  }
 
   const nr2f1Foundation: Organization = {
     '@type': 'Organization',

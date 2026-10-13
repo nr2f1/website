@@ -1,4 +1,6 @@
-'use server';
+// Server-only: `next/headers` cannot be bundled into client components, so
+// no directive is needed. ('use server' would turn these into public Server
+// Actions.)
 
 import { match } from '@formatjs/intl-localematcher';
 import {

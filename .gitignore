@@ -22,3 +22,5 @@ website/tsconfig.tsbuildinfo
 
 .rtk/
 /reports
+
+docs/superpowers

@@ -1,14 +1,16 @@
 'use client';
-import { LOCAL_STORAGE_KEY_TRACKING_KEY } from '@shared/utils/analytics-tracking';
+import {
+  GA_ID,
+  isTrackingConsent,
+  LOCAL_STORAGE_KEY_TRACKING_KEY,
+} from '@shared/utils/analytics-tracking';
 import Script from 'next/script';
 import { useLocalStorage } from 'website/src/hooks/local-storage';
-
-export const GA_ID = 'GTM-N8JW7VZF';
 
 export const GoogleTag = () => {
   const [consent] = useLocalStorage(LOCAL_STORAGE_KEY_TRACKING_KEY);
 
-  if (!consent) return null;
+  if (!isTrackingConsent(consent)) return null;
 
   return (
     <>

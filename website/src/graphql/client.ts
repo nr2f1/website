@@ -72,8 +72,8 @@ const { getClient: getApolloClient, PreloadQuery } = registerApolloClient(
 type ContentfulQueryFn = ReturnType<typeof getApolloClient>['query'];
 
 // Caches every Contentful read across requests (Cache Components).
-// Editors' changes appear within the 'hours' cacheLife profile, or
-// immediately once a Contentful publish webhook calls revalidateTag.
+// Editors' changes appear within the 'hours' cacheLife profile, or on the
+// next request once Contentful's publish webhook hits /api/revalidate.
 const cachedQuery = async (options: unknown) => {
   'use cache';
   cacheLife('hours');
@@ -81,7 +81,10 @@ const cachedQuery = async (options: unknown) => {
   const { data, error } = await getApolloClient().query(
     options as Parameters<ContentfulQueryFn>[0],
   );
-  return { data, error };
+  // Cache entries are serialised with React's client serialiser, which does
+  // not accept class instances such as Apollo's error objects. Callers only
+  // test `error` for truthiness, so keep the message and drop the rest.
+  return { data, error: error ? { message: error.message } : undefined };
 };
 
 export const getClient = () => ({

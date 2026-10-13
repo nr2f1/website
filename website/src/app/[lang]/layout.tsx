@@ -1,3 +1,4 @@
+import { nunitoSans } from '@app/fonts';
 import CookieBanner from '@components/cookie-banner';
 import Footer from '@components/footer';
 import Header from '@components/header';
@@ -8,16 +9,7 @@ import {
 } from '@i18n/locales';
 import { BASE_URL } from '@routes/index';
 import type { Metadata } from 'next';
-import { Nunito_Sans } from 'next/font/google';
 import { ViewTransition } from 'react';
-
-const nunitoSans = Nunito_Sans({
-  adjustFontFallback: false,
-  display: 'swap',
-  preload: false,
-  subsets: ['latin'],
-  variable: '--font-nunito-sans',
-});
 
 export const metadata: Metadata = {
   alternates: {

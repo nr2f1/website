@@ -5,3 +5,8 @@ export enum TRACKING_CONSENT {
   GRANTED = 'granted',
   DENIED = 'denied',
 }
+
+// The stored consent is interpolated into an inline script, so only the two
+// values the cookie banner writes may pass.
+export const isTrackingConsent = (value: unknown): value is TRACKING_CONSENT =>
+  value === TRACKING_CONSENT.GRANTED || value === TRACKING_CONSENT.DENIED;

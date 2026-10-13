@@ -1,30 +1,25 @@
 'use client'; // Error boundaries must be Client Components
 
+import { nunitoSans } from '@app/fonts';
 import MainOnLight from '@components/logos/main-on-light';
 import { english } from '@i18n/locales';
-import { Nunito_Sans } from 'next/font/google';
 import Link from 'next/link';
 import styles from './not-found.module.scss';
 
-const nunitoSans = Nunito_Sans({
-  adjustFontFallback: false,
-  display: 'swap',
-  preload: true,
-  subsets: ['latin'],
-  variable: '--font-nunito-sans',
-});
-
 const DEFAULT_LANG = english;
 
-export default function GlobalError({
-  error,
-}: {
+interface ErrorPageProps {
   error: Error & { digest?: string };
-}) {
+  reset: () => void;
+}
+
+// Root error boundary. The root layout renders no <html>, so this document
+// has to. Next already replaces server error messages in production; the
+// digest is the only detail worth showing, as a support reference.
+export default function ErrorPage({ error, reset }: ErrorPageProps) {
   return (
     <html lang={DEFAULT_LANG} className={nunitoSans.variable}>
       <body>
-        {/*<Header lang={DEFAULT_LANG} />*/}
         <header>
           <div className={styles.notfound}>
             <div className={styles.notfound__header_content_wrapper}>
@@ -40,18 +35,28 @@ export default function GlobalError({
           <div className={styles.notfound}>
             <div className={styles.notfound__content_wrapper}>
               <article>
-                <h2>Something went wrong!</h2>
-
-                <Link href="/" className="button button--on-light">
-                  Go back home
-                </Link>
-
-                <h3>Name</h3>
-                <p>{error.name}</p>
-                <h3>Message</h3>
-                <p>{error.message}</p>
-                <h3>Digest</h3>
-                <p>{error.digest}</p>
+                <h1>Something went wrong</h1>
+                <menu className={styles.notfound__actions}>
+                  <li>
+                    <button
+                      type="button"
+                      className="button button--on-light"
+                      onClick={reset}
+                    >
+                      Try again
+                    </button>
+                  </li>
+                  <li>
+                    <Link href="/" className="button button--on-dark">
+                      Go back home
+                    </Link>
+                  </li>
+                </menu>
+                {error.digest && (
+                  <p>
+                    <small>Error reference: {error.digest}</small>
+                  </p>
+                )}
               </article>
             </div>
           </div>

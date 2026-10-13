@@ -1,3 +1,4 @@
+import PartnerLogo from '@components/partner-logo';
 import { getClient } from '@graphql/client';
 import { GetMembershipPartnersDocument } from '@graphql/queries/memberships-partners/index.generated';
 import type { AvailableLocale } from '@i18n/locales';
@@ -30,8 +31,8 @@ const MembershipsPartners: React.FC<MembershipsPartnersProps> = async ({
   const membershipPartnersAssets = navigationList.linksCollection.items.map(
     (item) => ({
       alt: item?.text?.content ?? '',
+      asset: item?.referenceCollection?.items?.[0]?.asset,
       href: item?.target?.url ?? '/',
-      imageUrl: item?.referenceCollection?.items?.[0]?.asset?.url ?? '',
     }),
   );
 
@@ -41,12 +42,10 @@ const MembershipsPartners: React.FC<MembershipsPartnersProps> = async ({
         <section>
           <h2>{navigationList.name}</h2>
           <ul>
-            {membershipPartnersAssets.map(({ href, alt, imageUrl }) => (
+            {membershipPartnersAssets.map(({ alt, asset, href }) => (
               <li key={href}>
                 <a href={href} title={alt} target="_blank" rel="noreferrer">
-                  <picture>
-                    <img src={imageUrl} alt={alt} />
-                  </picture>
+                  <PartnerLogo alt={alt} asset={asset} displayHeight={96} />
                 </a>
               </li>
             ))}

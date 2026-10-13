@@ -1,23 +1,39 @@
-import type { CampaignApiResponse } from '@shared/types/api';
+import type { Campaign, GivebutterCampaign } from '@shared/types/api';
 
-export const getCampaigns = async () => {
-  try {
-    const response = await fetch(`${window.origin}/api/campaigns`, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+const GIVEBUTTER_CAMPAIGNS_URL = 'https://api.givebutter.com/v1/campaigns';
+const MAX_CAMPAIGNS = 6;
 
-    if (!response.ok) {
-      throw new Error('Failed to fetch campaigns from API');
-    }
+interface GivebutterCampaignsResponse {
+  data: GivebutterCampaign[];
+}
 
-    const data = await response.json();
+// Server-only: reads the private Givebutter key. Throws on any failure so a
+// broken response is never written to a cache; the caller decides what to
+// render instead (see components/fundraising-campaigns/index.tsx).
+export const getCampaigns = async (): Promise<Campaign[]> => {
+  const apiKey = process.env.GIVEBUTTER_API_KEY;
 
-    return data as CampaignApiResponse[];
-  } catch (error) {
-    throw new Error(
-      `Failed to fetch campaigns from API, message: ${(error as Error).message}`,
-    );
+  if (!apiKey) {
+    throw new Error('GIVEBUTTER_API_KEY is not configured');
   }
+
+  const response = await fetch(GIVEBUTTER_CAMPAIGNS_URL, {
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Givebutter responded with ${response.status}`);
+  }
+
+  const { data } = (await response.json()) as GivebutterCampaignsResponse;
+
+  return data.slice(0, MAX_CAMPAIGNS).map((campaign) => ({
+    coverUrl: campaign.cover?.url ?? '',
+    createdAt: campaign.created_at,
+    title: campaign.title,
+    url: campaign.url,
+  }));
 };
