@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.1.1](https://github.com/nr2f1/website/compare/v4.1.0...v4.1.1) (2026-10-13)
+
+
+### Bug Fixes
+
+* robots, sitemap and rss ([#457](https://github.com/nr2f1/website/issues/457)) ([7e268f4](https://github.com/nr2f1/website/commit/7e268f44190a6b2cc9082ba80cd3eee19fa79c17))
+
 ## [4.1.0](https://github.com/nr2f1/website/compare/v4.0.0...v4.1.0) (2026-10-13)
 
 
