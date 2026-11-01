@@ -62,7 +62,7 @@
     "baseline-browser-mapping": "^2.11.23",
     "jest-axe": "^11.0.0",
     "jsdom": "^30.0.1",
-    "nx": "23.2.1",
+    "nx": "24.0.2",
     "sass": "^1.104.1",
     "sass-loader": "^17.0.1",
     "swc-loader": "^0.2.7",
