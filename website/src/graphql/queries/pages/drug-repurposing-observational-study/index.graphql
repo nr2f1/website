@@ -1,0 +1,157 @@
+query GetDrugRepurposingStudyPage(
+  $locale: String
+  $drugRepurposingStudyIntroParagraphsId: String!
+  $howTheStudyWorksHeadingId: String!
+  $howTheStudyWorksParagraphsId: String!
+  $whoCanTakePartHeadingId: String!
+  $whoCanParticipateParagraphsId: String!
+  $whatHappensWithResultsHeadingId: String!
+  $whatHappensWithResultsParagraphsId: String!
+  $getReadyToParticipateHeadingId: String!
+  $getReadyToParticipateParagraphsId: String!
+  $questionsOrPasswordResetHeadingId: String!
+  $questionsOrPasswordResetParagraphsId: String!
+  $faqsHeadingId: String!
+  $isThisAClinicalTrialAccordionId: String!
+  $foundationGiveDrugAccordionId: String!
+  $takeBothDrugsAccordionId: String!
+  $stayOnCurrentMedicationsAccordionId: String!
+  $stopDrugOrSideEffectsAccordionId: String!
+  $joinToStayInRegistryAccordionId: String!
+) {
+  drugRepurposingStudyIntro: paragraphs(
+    locale: $locale
+    id: $drugRepurposingStudyIntroParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  howTheStudyWorksHeading: heading(
+    locale: $locale
+    id: $howTheStudyWorksHeadingId
+  ) {
+    content
+  }
+  howTheStudyWorksParagraphs: paragraphs(
+    locale: $locale
+    id: $howTheStudyWorksParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  whoCanTakePartHeading: heading(
+    locale: $locale
+    id: $whoCanTakePartHeadingId
+  ) {
+    content
+  }
+  whoCanParticipateParagraphs: paragraphs(
+    locale: $locale
+    id: $whoCanParticipateParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  whatHappensWithResultsHeading: heading(
+    locale: $locale
+    id: $whatHappensWithResultsHeadingId
+  ) {
+    content
+  }
+  whatHappensWithResultsParagraphs: paragraphs(
+    locale: $locale
+    id: $whatHappensWithResultsParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  getReadyToParticipateHeading: heading(
+    locale: $locale
+    id: $getReadyToParticipateHeadingId
+  ) {
+    content
+  }
+  getReadyToParticipateParagraphs: paragraphs(
+    locale: $locale
+    id: $getReadyToParticipateParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  questionsOrPasswordResetHeading: heading(
+    locale: $locale
+    id: $questionsOrPasswordResetHeadingId
+  ) {
+    content
+  }
+  questionsOrPasswordResetParagraphs: paragraphs(
+    locale: $locale
+    id: $questionsOrPasswordResetParagraphsId
+  ) {
+    content {
+      json
+    }
+  }
+  faqsHeading: heading(locale: $locale, id: $faqsHeadingId) {
+    content
+  }
+  isThisAClinicalTrialAccordion: accordion(
+    locale: $locale
+    id: $isThisAClinicalTrialAccordionId
+  ) {
+    title
+    content {
+      json
+    }
+  }
+  foundationGiveDrugAccordion: accordion(
+    locale: $locale
+    id: $foundationGiveDrugAccordionId
+  ) {
+    title
+    content {
+      json
+    }
+  }
+  takeBothDrugsAccordion: accordion(
+    locale: $locale
+    id: $takeBothDrugsAccordionId
+  ) {
+    title
+    content {
+      json
+    }
+  }
+  stayOnCurrentMedicationsAccordion: accordion(
+    locale: $locale
+    id: $stayOnCurrentMedicationsAccordionId
+  ) {
+    title
+    content {
+      json
+    }
+  }
+  stopDrugOrSideEffectsAccordion: accordion(
+    locale: $locale
+    id: $stopDrugOrSideEffectsAccordionId
+  ) {
+    title
+    content {
+      json
+    }
+  }
+  joinToStayInRegistryAccordion: accordion(
+    locale: $locale
+    id: $joinToStayInRegistryAccordionId
+  ) {
+    title
+    content {
+      json
+    }
+  }
+}

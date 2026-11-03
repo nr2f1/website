@@ -129,3 +129,11 @@ export const patientCountParagraphId = '4o4KR03D4xgl5eIJ68B8FI';
 export const patientCountParagraphJoinId = '6cfWyvnHsArzSk3h02KEea';
 export const howToTakePartParagraphId = '669CjUPsxbL44LL2NxvktO';
 export const missionParagraphId = '2uRInEXVJBE7fLXU3XVBvN';
+
+// Drug repurposing observational study page
+export const drugRepurposingStudyIntroParagraphsId = '6AaRCfEA94vYMo2SRWkDSk';
+export const howTheStudyWorksParagraphsId = '60cg4XITKpQ7pVK5QRZBrr';
+export const whoCanParticipateParagraphsId = '1EPIMgh40pXwdxnf5Nnq1K';
+export const whatHappensWithResultsParagraphsId = '3GADCIM1dCESL2dWRvFwGw';
+export const getReadyToParticipateParagraphsId = '35pXmb1B75C9SBVDSFZ0eA';
+export const questionsOrPasswordResetParagraphsId = '6wxcmiDQZ4Ar3YhMqgceBJ';

@@ -93,3 +93,10 @@ export const countriesNumberHeadingId = '5YUeEDHcEpUw3b3kMavENg';
 export const patientCountHeadingCountId = '55qg0ab2FRX8bfdB4IjpyB';
 export const patientCountHeadingJoinId = '5ODLedUDVoqdzZgULHme6x';
 export const howToTakePartHeadingId = '3M1ugbuyyLFe4IxDEuqnMn';
+
+// Drug repurposing observational study page
+export const howTheStudyWorksHeadingId = '1b0gD72raj3mEkx8goOsiF';
+export const whoCanTakePartHeadingId = '5uAa24QmQMUj53ZV7sQ83R';
+export const whatHappensWithResultsHeadingId = '3oHknbOXLBHeCJpXELb5he';
+export const getReadyToParticipateHeadingId = 'fgBdc2EQPxOsKRYIijjVu';
+export const questionsOrPasswordResetHeadingId = '5lIjsjoml2nOtnFiAcXO7i';

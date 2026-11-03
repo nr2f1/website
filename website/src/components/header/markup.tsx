@@ -90,6 +90,7 @@ const NewHeader: React.FC<HeaderProps> = ({ data, lang }) => {
     volunteerLink,
     shopLink,
     getInvolvedInBbsoasLink,
+    drugRepurposingStudyLink,
     fundraiseLink,
     patientCountLink,
   } = data;
@@ -281,6 +282,16 @@ const NewHeader: React.FC<HeaderProps> = ({ data, lang }) => {
                     )}
                   >
                     {getInvolvedInBbsoasLink?.text?.content ?? ''}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href={localiseHref(
+                      drugRepurposingStudyLink?.target?.url ?? '/',
+                      lang,
+                    )}
+                  >
+                    {drugRepurposingStudyLink?.text?.content ?? ''}
                   </Link>
                 </li>
                 <li>
