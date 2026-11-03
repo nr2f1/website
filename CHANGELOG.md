@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.2.0](https://github.com/nr2f1/website/compare/v4.1.1...v4.2.0) (2026-11-03)
+
+
+### Features
+
+* new drug-repurposing-observational-study page ([#465](https://github.com/nr2f1/website/issues/465)) ([b9fd669](https://github.com/nr2f1/website/commit/b9fd669029f33e742ef79b75f917bc0ec6d7e5b9))
+
 ## [4.1.1](https://github.com/nr2f1/website/compare/v4.1.0...v4.1.1) (2026-10-13)
 
 
