@@ -26,3 +26,6 @@ export const volunteerPageHeaderId = '2czDepGuAARiBIdOhBWP6F';
 export const conferencePageHeaderId = '4B9DwCTPtJ3y9QNsz6FpMG';
 export const organizationPageHeaderId = '4guqtzV5xTR72BsovIg1Gs';
 export const patientCountPageHeaderId = '42NBIxxjmYvitvhhVUoru4';
+
+// Drug repurposing observational study page
+export const drugRepurposingStudyPageHeaderId = '5y6xzfGj0Lm9T9IyroNXQy';

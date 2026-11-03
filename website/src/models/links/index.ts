@@ -28,6 +28,7 @@ export const supportGroupsLinkId = 'IKD704qiG5a5ulCGLFgZc';
 export const researchLinkId = '4hAFfmRSjOSF6a0DfX1m9r';
 export const patientCountLinkId = '1RoeNhV4IALuknptwPVL9G';
 export const getInvolvedInBbsoasLinkId = '4MCYVneft8uv08HqzlPGXo';
+export const drugRepurposingStudyLinkId = '1eiTF8R5QCYeoCWbSoEBGT';
 export const publicationsLinkId = '5V8x3yb4RE1613k7l8xh3o';
 export const resourcesAvailableToresearchersLinkId = '4yixndvvAce1kno9jVioR1';
 export const supportUsLinkId = '5SRoXh7o51CaK92GkkjVPV';
