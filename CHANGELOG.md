@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.2.1](https://github.com/nr2f1/website/compare/v4.2.0...v4.2.1) (2026-11-05)
+
+
+### Bug Fixes
+
+* support youtu.be links and enable rich-text video embeds on drug study page ([#467](https://github.com/nr2f1/website/issues/467)) ([e50c953](https://github.com/nr2f1/website/commit/e50c9536e5dd37b3888b2162eadfa8e9495a36c9))
+
 ## [4.2.0](https://github.com/nr2f1/website/compare/v4.1.1...v4.2.0) (2026-11-03)
 
 
