@@ -30,6 +30,7 @@ import {
 } from '@models/paragraphs';
 import type { ComponentPropsWithLocale } from '@shared/types/page-with-locale-params';
 import { createHashLink } from '@shared/utils/hash-links';
+import { renderOptions } from '@shared/utils/rich-text';
 
 interface SectionProps {
   heading: string;
@@ -39,7 +40,7 @@ interface SectionProps {
 const Section: React.FC<SectionProps> = ({ heading, content }) => (
   <section>
     <h2 id={createHashLink(heading)}>{heading}</h2>
-    {documentToReactComponents(content)}
+    {documentToReactComponents(content, renderOptions())}
   </section>
 );
 
@@ -135,7 +136,10 @@ const DrugRepurposingStudyPageBody: React.FC<
 
   return (
     <PageBody lang={lang} headings={headings}>
-      {documentToReactComponents(drugRepurposingStudyIntro?.content?.json)}
+      {documentToReactComponents(
+        drugRepurposingStudyIntro?.content?.json,
+        renderOptions(),
+      )}
       {sections.map(({ heading, content }) => (
         <Section key={heading} heading={heading} content={content} />
       ))}
@@ -145,7 +149,10 @@ const DrugRepurposingStudyPageBody: React.FC<
           <Accordion
             key={accordion?.title}
             title={accordion?.title ?? ''}
-            content={documentToReactComponents(accordion?.content?.json)}
+            content={documentToReactComponents(
+              accordion?.content?.json,
+              renderOptions(),
+            )}
           />
         ))}
       </section>
