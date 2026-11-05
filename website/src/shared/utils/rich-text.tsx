@@ -33,6 +33,44 @@ export const renderText = (text: string) => {
     }, []);
 };
 
+export const getYouTubeVideoId = (uri: string): string | null => {
+  try {
+    const urlObj = new URL(uri);
+    if (urlObj.protocol !== 'http:' && urlObj.protocol !== 'https:') {
+      return null;
+    }
+
+    const hostname = urlObj.hostname.toLowerCase();
+
+    if (hostname === 'youtu.be' || hostname === 'www.youtu.be') {
+      const videoId = urlObj.pathname.split('/').filter(Boolean)[0];
+      return videoId && /^[a-zA-Z0-9_-]{11}$/.test(videoId) ? videoId : null;
+    }
+
+    if (
+      hostname === 'youtube.com' ||
+      hostname === 'www.youtube.com' ||
+      hostname === 'm.youtube.com'
+    ) {
+      const v = urlObj.searchParams.get('v');
+      if (v && /^[a-zA-Z0-9_-]{11}$/.test(v)) {
+        return v;
+      }
+
+      const pathSegments = urlObj.pathname.split('/').filter(Boolean);
+      if (['embed', 'v', 'shorts'].includes(pathSegments[0])) {
+        const videoId = pathSegments[1];
+        if (videoId && /^[a-zA-Z0-9_-]{11}$/.test(videoId)) {
+          return videoId;
+        }
+      }
+    }
+  } catch {
+    return null;
+  }
+  return null;
+};
+
 export interface Links {
   assets: {
     block: (LinkedAsset | null)[];
@@ -47,7 +85,7 @@ export interface Links {
 // INLINES.EMBEDDED_ENTRY (linked inline entries e.g. a reference to another blog post)
 // and BLOCKS.EMBEDDED_ASSET (linked assets e.g. images)
 
-export const renderOptions = (links: Links | undefined) => {
+export const renderOptions = (links?: Links) => {
   // create an asset map
   const assetMap = new Map();
   // loop through the assets and add them to the map
@@ -72,35 +110,19 @@ export const renderOptions = (links: Links | undefined) => {
       // From https://miguelcrespo.co/posts/rendering-youtube-videos-using-rich-text-contentful/
       // Create an iframe when a hyperlink is a youtube video
       [INLINES.HYPERLINK]: (node: Block | Inline, _children: ReactNode) => {
-        // Only process youtube links
-        let isYoutube = false;
-        try {
-          const urlObj = new URL(node.data.uri);
-          isYoutube =
-            urlObj.hostname === 'youtube.com' ||
-            urlObj.hostname === 'www.youtube.com';
-        } catch {
-          isYoutube = false;
-        }
-        if (isYoutube) {
-          // Extract videoId from the URL
-          const match =
-            /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/.exec(
-              node.data.uri,
-            );
-          const videoId = match && match[7].length === 11 ? match[7] : null;
+        const videoId = getYouTubeVideoId(node.data.uri);
+
+        if (videoId) {
           return (
-            videoId && (
-              <section className="video-container">
-                <iframe
-                  className="video"
-                  title={`https://youtube.com/embed/${videoId}`}
-                  src={`https://youtube.com/embed/${videoId}`}
-                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </section>
-            )
+            <section className="video-container">
+              <iframe
+                className="video"
+                title={`https://youtube.com/embed/${videoId}`}
+                src={`https://youtube.com/embed/${videoId}`}
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </section>
           );
         }
 
